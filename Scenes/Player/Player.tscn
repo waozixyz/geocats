@@ -1,0 +1,114 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/Cats/Knapsack/red_idle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Cats/Knapsack/red_climb.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Cats/Knapsack/red_crouch.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Cats/Knapsack/red_blink.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Cats/Knapsack/red_look_up.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Cats/Knapsack/red_wall_cling.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Cats/Knapsack/red_walk.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=12]
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 137, 83 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 137, 0, 137, 83 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 29, 92 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 29, 0, 29, 92 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 58, 0, 29, 92 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 54, 108 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 54, 0, 54, 108 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 108, 0, 54, 108 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "cling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "blink",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "look_up",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 42.5874, 26.4722 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 13 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 7.91261, 4.72225 )
+shape = SubResource( 6 )
+
+[node name="RightRaycast" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 45, 0 )
+
+[node name="LeftRaycast" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -30, 0 )
