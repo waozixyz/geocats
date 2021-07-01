@@ -807,7 +807,7 @@ extents = Vector2( 171, 10 )
 extents = Vector2( 18, 81 )
 
 [sub_resource type="RectangleShape2D" id=89]
-extents = Vector2( 9, 99 )
+extents = Vector2( 18, 99 )
 
 [node name="World" type="Node2D"]
 

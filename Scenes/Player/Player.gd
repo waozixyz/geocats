@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 #State Vars
-var states = ["idle", "run", "climb", "dash", "fall", "jump", "double_jump"] #list of all states
+var states = ["idle", "run", "crouch", "climb", "dash", "fall", "jump", "double_jump"] #list of all states
 var currentState = states[0] #what state's logic is being called every frame
 var previousState = null #last state that was being calles
 
@@ -20,6 +20,7 @@ var isJumpPressed = 0 #will be 1 on the frame that the jump button was pressed
 var isJumpReleased #will be 1 on the frame that the jump button was released
 
 var isUpPressed = 0 #will be 1 on the frame that the up button was pressed
+var isDownPressed = 0 #will be 1 on the frame that the down button was pressed
 
 var coyoteStartTime = 0 #ticks when you pressed jump button
 var elapsedCoyoteTime = 0 #elapsed time since you last clicked jump
@@ -136,6 +137,7 @@ func get_input():
 		lastDirection = movementInput #set last direction if movement input isnt 0
 		
 	isUpPressed = Input.is_action_just_pressed("up")
+	isDownPressed = Input.is_action_just_pressed("down")
 	
 	isJumpPressed = Input.is_action_just_pressed("jump")
 	isJumpReleased = Input.is_action_just_released("jump")
@@ -145,7 +147,7 @@ func get_input():
 		#if you press jump and your not already in coyote time
 		jumpInput = int(isJumpPressed) #set jump to 1
 		coyoteStartTime = OS.get_ticks_msec() #start timer
-	
+
 	elapsedCoyoteTime = OS.get_ticks_msec() - coyoteStartTime
 
 	if jumpInput != 0 && elapsedCoyoteTime > coyoteDuration:
@@ -154,6 +156,7 @@ func get_input():
 		coyoteStartTime = 0 #reset timer
 	
 	isDashPressed = Input.is_action_just_pressed("dash")
+
 
 
 func apply_gravity(delta):
@@ -204,6 +207,9 @@ func default_logic():
 		
 	if isUpPressed && on_ladder:
 		set_state("climb")
+		
+	if Input.get_action_strength("down") > 0:
+		set_state("crouch")
 
 #State Functions
 func climb_enter_logic():
@@ -214,10 +220,28 @@ func climb_logic(delta):
 		#jump if you press button
 		jump(jumpVelocity)
 		set_state("jump")
-
+	if not on_ladder || is_on_floor() && movementInputY >= 0:
+		set_state("idle")
+	if movementInput != 0 and movementInputY == 0:
+		set_state("run")
 func climb_exit_logic():
 	pass
-	
+
+func crouch_enter_logic():
+	pass
+
+func crouch_logic(delta):
+	default_logic()
+	if Input.get_action_strength("down") > 0:
+		anim = "crouch"
+	else:
+		set_state("idle")
+	move_horizontally(0)
+
+func crouch_exit_logic():
+	pass
+
+
 func idle_enter_logic():
 	anim = "idle"
 	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
@@ -274,7 +298,8 @@ func fall_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
-	
+	if isUpPressed && on_ladder:
+		set_state("climb")
 	if isJumpPressed:
 		#if you press jump
 		if !isDoubleJumped && elapsedJumpBuffer > jumpBuffer:
@@ -344,7 +369,8 @@ func jump_enter_logic():
 func jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
-	
+	if isUpPressed && on_ladder:
+		set_state("climb")
 	if velocity.y < 0:
 		#if you are rising
 		if isJumpReleased:
@@ -378,7 +404,8 @@ func double_jump_enter_logic():
 func double_jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
-	
+	if isUpPressed && on_ladder:
+		set_state("climb")
 	if velocity.y < 0:
 		#if you are rising
 		if isJumpReleased:
@@ -443,7 +470,8 @@ func wall_jump_enter_logic():
 func wall_jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally
-	
+	if isUpPressed && on_ladder:
+		set_state("climb")
 	#if you want to add a wall jump thrust you can do so by:
 	#deifining a wallJumpThrust variable
 	#and putting velocity.x += wallJumpThrust * lastDirection here
