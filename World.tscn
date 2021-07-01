@@ -1,33 +1,33 @@
 [gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/CatCradle/stereo.png" type="Texture" id=2]
-[ext_resource path="res://Assets/CatCradle/kitchen.png" type="Texture" id=3]
-[ext_resource path="res://Assets/CatCradle/window_3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/CatCradle/poster_3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/CatCradle/bath.png" type="Texture" id=6]
-[ext_resource path="res://Assets/CatCradle/poster.png" type="Texture" id=7]
-[ext_resource path="res://Assets/CatCradle/stairs.png" type="Texture" id=8]
-[ext_resource path="res://Assets/CatCradle/kitchen_bckg.png" type="Texture" id=9]
-[ext_resource path="res://Assets/CatCradle/plant_1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/CatCradle/hall_bckg.png" type="Texture" id=11]
-[ext_resource path="res://Assets/CatCradle/window_2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/CatCradle/window_3_bckg.png" type="Texture" id=13]
-[ext_resource path="res://Assets/CatCradle/bed.png" type="Texture" id=14]
-[ext_resource path="res://Assets/CatCradle/window_1.png" type="Texture" id=15]
-[ext_resource path="res://Assets/CatCradle/background_tileset.png" type="Texture" id=16]
-[ext_resource path="res://Assets/CatCradle/window_4.png" type="Texture" id=17]
-[ext_resource path="res://Assets/CatCradle/bookshelf.png" type="Texture" id=18]
-[ext_resource path="res://Assets/CatCradle/plant_2.png" type="Texture" id=19]
-[ext_resource path="res://Assets/CatCradle/walls_tileset.png" type="Texture" id=20]
-[ext_resource path="res://Assets/CatCradle/table.png" type="Texture" id=21]
-[ext_resource path="res://Assets/CatCradle/hallway.png" type="Texture" id=22]
-[ext_resource path="res://Assets/CatCradle/present.png" type="Texture" id=23]
-[ext_resource path="res://Assets/CatCradle/poster_2.png" type="Texture" id=24]
-[ext_resource path="res://Assets/CatCradle/catladder_left.png" type="Texture" id=25]
-[ext_resource path="res://Assets/CatCradle/ladder_bed.png" type="Texture" id=26]
-[ext_resource path="res://Assets/CatCradle/last_ladder.png" type="Texture" id=27]
-[ext_resource path="res://Assets/CatCradle/statue.png" type="Texture" id=28]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/stereo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/kitchen.png" type="Texture" id=3]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/window_3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/poster_3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/bath.png" type="Texture" id=6]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/poster.png" type="Texture" id=7]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/stairs.png" type="Texture" id=8]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/kitchen_bckg.png" type="Texture" id=9]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/plant_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/hall_bckg.png" type="Texture" id=11]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/window_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/window_3_bckg.png" type="Texture" id=13]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/bed.png" type="Texture" id=14]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/window_1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/background_tileset.png" type="Texture" id=16]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/window_4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/bookshelf.png" type="Texture" id=18]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/plant_2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/walls_tileset.png" type="Texture" id=20]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/table.png" type="Texture" id=21]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/hallway.png" type="Texture" id=22]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/present.png" type="Texture" id=23]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/poster_2.png" type="Texture" id=24]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/catladder_left.png" type="Texture" id=25]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/ladder_bed.png" type="Texture" id=26]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/last_ladder.png" type="Texture" id=27]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/statue.png" type="Texture" id=28]
 
 [sub_resource type="TileSet" id=1]
 0/name = "background_tilemap.png 0"
@@ -1056,12 +1056,10 @@ position = Vector2( 189, 549 )
 texture = ExtResource( 25 )
 centered = false
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1692, 495 )
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1674, 486 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-scale = Vector2( 0.999905, 1.00016 )
+[node name="Camera2D" type="Camera2D" parent="Player2"]
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_speed = 9.0

@@ -1,15 +1,15 @@
 extends KinematicBody2D
 
 #State Vars
-var states = ["idle", "run", "dash", "fall", "jump", "double_jump"] #list of all states
+var states = ["idle", "run", "climb", "dash", "fall", "jump", "double_jump"] #list of all states
 var currentState = states[0] #what state's logic is being called every frame
 var previousState = null #last state that was being calles
 
 #Nodes & paths
 onready var sprite = $AnimatedSprite #path to the player's sprite
 
-onready var rightRaycast = $RightRaycast #path to the right raycast
-onready var leftRaycast = $LeftRaycast  #path to the left raycast
+onready var RightRaycast = $RightRaycast #path to the right raycast
+onready var LeftRaycast = $LeftRaycast  #path to the left raycast
 
 #Input Vars
 var movementInput = 0 #will be 1, -1, 0 depending on if you are holding right, left, or nothing
@@ -30,15 +30,15 @@ var isDashPressed #will be 1 on the frame that the dash button was pressed
 var velocity = Vector2.ZERO #linear velocity applied to move and slide
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
-var maxSpeed = 190 #maximum current speed can reach when moving horizontally
-var acceleration = 25 #by how much does current speed approach max speed when moving
-var decceleration = 40 #by how much does velocity approach when you stop moving horizontally
+var maxSpeed = 300 #maximum current speed can reach when moving horizontally
+var acceleration = 50 #by how much does current speed approach max speed when moving
+var decceleration = 80 #by how much does velocity approach when you stop moving horizontally
 
 var airFriction = 60 #how much you subtract velocity when you start moving horizontally in the air
 
 #dash
-var dashSpeed = 60 #how fast you dash
-var dashDurration = 160  #how long you dash for (in milisecconds)
+var dashSpeed = 120 #how fast you dash
+var dashDurration = 200  #how long you dash for (in milisecconds)
 
 var canDash = true #can the character dash
 var dashStartTime #how many miliseconds passed when you started dashing 
@@ -46,7 +46,7 @@ var elapsedDashTime #how many milisecconds elapsed since you started dashing
 var dashDirection = 1 #direction of dash will be 1 or -1 if you are dashing left or right
 
 #fall
-var gravity = 700 #how much is added to y velocity constantly
+onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jumpBufferStartTime  = 0 #ticks when you ran of the platform
 var elapsedJumpBuffer = 0 #how many seconds passed in the jump nuffer
@@ -54,11 +54,11 @@ var jumpBuffer = 100 #how many miliseconds allowance you give jumps after you ru
 
 
 #jump
-var jumpHeight = 270  #How high the peak of the jump is in pixels
+var jumpHeight = 256  #How high the peak of the jump is in pixels
 var jumpVelocity #how much to apply to velocity.y to reach jump height
 
 #double jump
-var doubleJumpHeight = 132 #How high the peak of the double jump is in pixels
+var doubleJumpHeight = 128 #How high the peak of the double jump is in pixels
 var doubleJumpVelocity #how much to apply to velocity.y to reach double jump height
 
 var isDoubleJumped = false #if you have double jumped
@@ -71,6 +71,9 @@ var wallJumpHeight = 128 #how high you want the peak of your wall jump to be in 
 var wallJumpVelocity #how much to apply to velocity.y to reach wall jump height
 
 
+# sprite animation
+var anim = "idle"
+
 #functions
 func _ready():
 	#use kin functions to set jump velocites
@@ -79,6 +82,8 @@ func _ready():
 	
 	wallJumpVelocity = -sqrt(2 * gravity * jumpHeight)
 
+onready var coll_climb = $CollisionClimb
+onready var coll_default = $CollisionDefault
 
 func _physics_process(delta):
 	get_input()
@@ -87,9 +92,21 @@ func _physics_process(delta):
 	
 	call(currentState + "_logic", delta) #call the current states main method
 	
+	if anim == "slide_wall":
+		coll_climb.disabled = false
+		coll_default.disabled = true
+	else:
+		coll_climb.disabled = true
+		coll_default.disabled = false
+		
 	velocity = move_and_slide(velocity, Vector2.UP) #aply velocity to movement
 
 	sprite.flip_h = lastDirection - 1 #flip sprite depending on which direction you last moved in
+
+	sprite.play(anim)
+	sprite.animation = anim
+
+
 
 func get_input():
 	#set input vars
@@ -114,12 +131,13 @@ func get_input():
 		jumpInput = 0 #reset jump input
 		coyoteStartTime = 0 #reset timer
 	
+	isDashPressed = Input.is_action_just_pressed("dash")
 
 
 func apply_gravity(delta):
-	velocity.y += gravity * delta
-
-
+	#apply gravity in every state except dash
+	if currentState != "dash":
+		velocity.y += gravity * delta
 
 
 func set_state(new_state : String):
@@ -143,14 +161,13 @@ func move_horizontally(subtractor):
 func jump(jumpVelocity):
 	velocity.y = 0 #reset velocity
 	velocity.y = jumpVelocity #apply velocity
-
-func jump_enter_logic():
-	pass
+	canDash = true #allow the player to dash when they jump
 	
+
 #State Functions
 
 func idle_enter_logic():
-	sprite.play("idle") #play the idle animation
+	anim = "idle"
 
 func idle_logic(delta):
 	if jumpInput:
@@ -158,6 +175,9 @@ func idle_logic(delta):
 		jump(jumpVelocity)
 		set_state("jump")
 	
+	if isDashPressed:
+		#dash if you press button
+		set_state("dash")
 	
 	if movementInput != 0:
 		#start running if you press a movement button
@@ -171,13 +191,17 @@ func idle_exit_logic():
 
 
 func run_enter_logic():
-	sprite.play("walk") #play the run animation
+	anim = "walk"
 
 func run_logic(delta):
 	if jumpInput:
 		#jump if you press the jump button
 		jump(jumpVelocity)
 		set_state("jump")
+		
+	if isDashPressed:
+		#dash if you press the dash button
+		set_state("dash")
 	
 	if !is_on_floor():
 		#if your not on a floor, start falling and set jumpbuffer start time
@@ -195,10 +219,16 @@ func run_logic(delta):
 func run_exit_logic():
 	pass
 
+
+
 func fall_enter_logic():
 	pass
-	
+
 func fall_logic(delta):
+	if velocity.x == 0:
+		anim = "idle"
+	else:
+		anim = "walk"
 	move_horizontally(airFriction) #move horizontally
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
 	
@@ -220,13 +250,16 @@ func fall_logic(delta):
 				jump(wallJumpVelocity) #jump with wall jump velocity
 				set_state("wall_jump") #set state to wall jump
 	
+	if isDashPressed && canDash:
+		#dash if you press dash button
+		set_state("dash")
+	
 	if is_on_floor():
 		#if player is on a floor
 		set_state("run") #set state to run (we set to run to keep momentum)
 		isDoubleJumped = false #reset is double jumped
 		
-		
-	if leftRaycast.is_colliding() && movementInput == -1 || rightRaycast.is_colliding() && movementInput == 1:
+	if LeftRaycast.is_colliding() && movementInput == -1 || RightRaycast.is_colliding() && movementInput == 1:
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")
 	
@@ -234,7 +267,42 @@ func fall_logic(delta):
 func fall_exit_logic():
 	jumpBufferStartTime = 0 #reset jump buffer start time
 
+
+
+func dash_enter_logic():
+	dashDirection = lastDirection #set dash direction (we use lastDirection to make sure we dash even when idle)
+	dashStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
+	
+	velocity = Vector2.ZERO #set velocity to zero
+	
+	anim = "idle"
+	sprite.modulate = Color.purple #tint the player sprite purple
+
+func dash_logic(delta):
+	elapsedDashTime = OS.get_ticks_msec() - dashStartTime #set elapsed dash time
+	
+	velocity.x += dashSpeed * dashDirection #add dash speed to velocity and multiply by dash direction
+	
+	if elapsedDashTime > dashDurration: 
+		#if elapsed dash time is greater then the dash durration
+		set_state(previousState) #go back to the previous state
+
+func dash_exit_logic():
+	velocity = Vector2.ZERO  #reset velocity to zero
+	if !is_on_floor():
+		canDash = false #limit the amount of air dashes someone can do
+	
+	sprite.modulate = Color.white #untint the sprite
+
+
+func jump_enter_logic():
+	pass
+
 func jump_logic(delta):
+	if velocity.x == 0:
+		anim = "idle"
+	else:
+		anim = "walk"
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
 	
 	if velocity.y < 0:
@@ -247,6 +315,10 @@ func jump_logic(delta):
 			#if its your first time double jumping and you press the jump button
 			jump(doubleJumpVelocity)  #apply double jump velocity
 			set_state("double_jump") #set state to double jump
+		
+		if isDashPressed && canDash:
+			#if you can dash and you press the dash button
+			set_state("dash") #set state to dash
 			 
 		if is_on_ceiling():
 			#if you hit a ceiling
@@ -271,7 +343,11 @@ func double_jump_logic(delta):
 		if isJumpReleased:
 			#and you release jump button lower velocity
 			velocity.y /= 2
-
+		
+		if isDashPressed && canDash:
+			#and you press dash button and you can dash
+			set_state("dash") #dash
+		
 		if is_on_ceiling():
 			#and you hit a ceiling 
 			set_state("fall") #fall
@@ -287,17 +363,17 @@ func double_jump_exit_logic():
 func wall_slide_enter_logic():
 	velocity = Vector2.ZERO #reset velocity to stop all momentum
 	
-	sprite.play("cling") #play wall slide animation
-
+	anim = "slide_wall"
+	
 func wall_slide_logic(delta):
 	velocity.y = wallSlideSpeed #override apply_gravity and apply a constant slide speed
 	
-	if leftRaycast.is_colliding() && movementInput != -1 || rightRaycast.is_colliding() && movementInput != 1:
+	if LeftRaycast.is_colliding() && movementInput != -1 || RightRaycast.is_colliding() && movementInput != 1:
 		#if your raycast is coliding and you are trying to move in that direction
 		jumpBufferStartTime = OS.get_ticks_msec() #start jump buffer timer
 		set_state("fall") #set state to fall
 	#this could be done in one long if statement but I split it up to make it easiar to read
-	if !leftRaycast.is_colliding() && movementInput == -1 || !rightRaycast.is_colliding() && movementInput == 1:
+	if !LeftRaycast.is_colliding() && movementInput == -1 || !RightRaycast.is_colliding() && movementInput == 1:
 		#if you are holding in a direction but no longer coliding with a wall in that direction
 		set_state("fall")
 	
@@ -305,7 +381,12 @@ func wall_slide_logic(delta):
 		#if you hit the floor set state to idle
 		jumpBufferStartTime = OS.get_ticks_msec() #start jump buffer timer
 		set_state("idle")
-
+		
+	
+	if isDashPressed:
+		#dash if you press dash button
+		set_state("dash")
+	
 	if isJumpPressed:
 		jump(wallJumpVelocity) #jump with walljump y velocity
 		set_state("wall_jump")
@@ -336,6 +417,9 @@ func wall_jump_logic(delta):
 			#we use isJumpPressed here instead of jumpInput so we dont imeadiatly double jump when we originaly jump
 			jump(doubleJumpVelocity) 
 			set_state("double_jump")
+		
+		if isDashPressed:
+			set_state("dash")
 			
 		if is_on_ceiling():
 			#and you hit a ceiling fall
@@ -343,3 +427,6 @@ func wall_jump_logic(delta):
 	else:
 		#if your not rising
 		set_state("fall")
+
+func wall_jump_exit_logic():
+	canDash = true #allow the players to dash again if they wall jump
