@@ -18,6 +18,9 @@ var lastDirection = 1 #last direction pressed that is not 0
 var isJumpPressed = 0 #will be 1 on the frame that the jump button was pressed
 var isJumpReleased #will be 1 on the frame that the jump button was released
 
+var isUpPressed = 0 #will be 1 on the frame that the up button was pressed
+var isUpReleased #will be 1 on the frame that the up button was released
+
 var coyoteStartTime = 0 #ticks when you pressed jump button
 var elapsedCoyoteTime = 0 #elapsed time since you last clicked jump
 var coyoteDuration = 100 #how many miliseconds to remember a jump press
@@ -35,6 +38,12 @@ var acceleration = 50 #by how much does current speed approach max speed when mo
 var decceleration = 80 #by how much does velocity approach when you stop moving horizontally
 
 var airFriction = 60 #how much you subtract velocity when you start moving horizontally in the air
+
+#idle
+var idleDurration = 1800  #how long cat should be idle until it blinks
+var blinkDurration = 100 # how long cat should be in the blink anim
+var idleStartTime = 0#how many miliseconds passed when you become idle
+var elapsedIdleTime = 0 #how many milisecconds elapsed since you started being idle
 
 #dash
 var dashSpeed = 120 #how fast you dash
@@ -106,14 +115,20 @@ func _physics_process(delta):
 	sprite.play(anim)
 	sprite.animation = anim
 
-
+func default_anim():
+	if velocity.x == 0:
+		anim = "idle"
+	else:
+		anim = "walk"
 
 func get_input():
 	#set input vars
 	movementInput = Input.get_action_strength("right") - Input.get_action_strength("left") #set movement input to 1,-1, or 0
 	if movementInput != 0:
 		lastDirection = movementInput #set last direction if movement input isnt 0
-	
+		
+	isUpPressed = Input.is_action_just_pressed("up")
+	isUpReleased = Input.is_action_just_released("up")	
 	
 	isJumpPressed = Input.is_action_just_pressed("jump") 
 	isJumpReleased = Input.is_action_just_released("jump")
@@ -168,8 +183,17 @@ func jump(jumpVelocity):
 
 func idle_enter_logic():
 	anim = "idle"
-
+	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
+		
 func idle_logic(delta):
+	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
+	if elapsedIdleTime > idleDurration: 
+		anim = "blink"
+		if elapsedIdleTime - idleDurration > blinkDurration:
+			idleStartTime = OS.get_ticks_msec() 
+	else:
+		anim = "idle"
+		
 	if jumpInput:
 		#jump if you press button
 		jump(jumpVelocity)
@@ -225,10 +249,7 @@ func fall_enter_logic():
 	pass
 
 func fall_logic(delta):
-	if velocity.x == 0:
-		anim = "idle"
-	else:
-		anim = "walk"
+	default_anim()
 	move_horizontally(airFriction) #move horizontally
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
 	
@@ -299,10 +320,7 @@ func jump_enter_logic():
 	pass
 
 func jump_logic(delta):
-	if velocity.x == 0:
-		anim = "idle"
-	else:
-		anim = "walk"
+	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
 	
 	if velocity.y < 0:
@@ -336,6 +354,7 @@ func double_jump_enter_logic():
 	isDoubleJumped = true #make sure you can only double jump once
 	
 func double_jump_logic(delta):
+	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
 	
 	if velocity.y < 0:
@@ -400,6 +419,7 @@ func wall_jump_enter_logic():
 	currentSpeed = 0 #erase momentum form run
 
 func wall_jump_logic(delta):
+	default_anim()
 	move_horizontally(airFriction) #move horizontally
 	
 	#if you want to add a wall jump thrust you can do so by:

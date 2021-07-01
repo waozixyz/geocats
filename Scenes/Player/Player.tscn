@@ -102,7 +102,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "slide_wall"
-frame = 1
 playing = true
 flip_h = true
 
