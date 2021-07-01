@@ -13,13 +13,13 @@ onready var LeftRaycast = $LeftRaycast  #path to the left raycast
 
 #Input Vars
 var movementInput = 0 #will be 1, -1, 0 depending on if you are holding right, left, or nothing
+var movementInputY = 0 #will be 1, -1, 0 depending on if you are holding up, d, or nothing
 var lastDirection = 1 #last direction pressed that is not 0
 
 var isJumpPressed = 0 #will be 1 on the frame that the jump button was pressed
 var isJumpReleased #will be 1 on the frame that the jump button was released
 
 var isUpPressed = 0 #will be 1 on the frame that the up button was pressed
-var isUpReleased #will be 1 on the frame that the up button was released
 
 var coyoteStartTime = 0 #ticks when you pressed jump button
 var elapsedCoyoteTime = 0 #elapsed time since you last clicked jump
@@ -50,7 +50,7 @@ var dashSpeed = 120 #how fast you dash
 var dashDurration = 200  #how long you dash for (in milisecconds)
 
 var canDash = true #can the character dash
-var dashStartTime #how many miliseconds passed when you started dashing 
+var dashStartTime #how many miliseconds passed when you started dashing
 var elapsedDashTime #how many milisecconds elapsed since you started dashing
 var dashDirection = 1 #direction of dash will be 1 or -1 if you are dashing left or right
 
@@ -83,31 +83,38 @@ var wallJumpVelocity #how much to apply to velocity.y to reach wall jump height
 # sprite animation
 var anim = "idle"
 
+# ladder
+var on_ladder = false
+
 #functions
 func _ready():
 	#use kin functions to set jump velocites
-	jumpVelocity = -sqrt(2 * gravity * jumpHeight) 
-	doubleJumpVelocity = -sqrt(2 * gravity * doubleJumpHeight) 
+	jumpVelocity = -sqrt(2 * gravity * jumpHeight)
+	doubleJumpVelocity = -sqrt(2 * gravity * doubleJumpHeight)
 	
-	wallJumpVelocity = -sqrt(2 * gravity * jumpHeight)
+	wallJumpVelocity = -sqrt(2 * gravity * jumpHeight)		
 
 onready var coll_climb = $CollisionClimb
+onready var coll_slide = $CollisionSlide
 onready var coll_default = $CollisionDefault
+	
+func default_coll():
+	if anim == "slide_wall":
+		coll_slide.disabled = false
+		coll_default.disabled = true
+	else:
+		coll_slide.disabled = true
+		coll_default.disabled = false
 
 func _physics_process(delta):
+	default_coll()
+		
 	get_input()
-	
+
 	apply_gravity(delta)
 	
 	call(currentState + "_logic", delta) #call the current states main method
-	
-	if anim == "slide_wall":
-		coll_climb.disabled = false
-		coll_default.disabled = true
-	else:
-		coll_climb.disabled = true
-		coll_default.disabled = false
-		
+
 	velocity = move_and_slide(velocity, Vector2.UP) #aply velocity to movement
 
 	sprite.flip_h = lastDirection - 1 #flip sprite depending on which direction you last moved in
@@ -124,13 +131,13 @@ func default_anim():
 func get_input():
 	#set input vars
 	movementInput = Input.get_action_strength("right") - Input.get_action_strength("left") #set movement input to 1,-1, or 0
+	movementInputY = Input.get_action_strength("down") - Input.get_action_strength("up")
 	if movementInput != 0:
 		lastDirection = movementInput #set last direction if movement input isnt 0
 		
 	isUpPressed = Input.is_action_just_pressed("up")
-	isUpReleased = Input.is_action_just_released("up")	
 	
-	isJumpPressed = Input.is_action_just_pressed("jump") 
+	isJumpPressed = Input.is_action_just_pressed("jump")
 	isJumpReleased = Input.is_action_just_released("jump")
 	
 	#set coyote jump time (remember jump presses to make the jump more forgiving)
@@ -172,6 +179,12 @@ func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
 	
 	velocity.x = currentSpeed * movementInput #apply curent speed to velocity and multiply by direction
+	
+func move_vertically():
+	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
+	
+	velocity.y = currentSpeed * movementInputY #apply curent speed to velocity and multiply by direction
+	velocity.x = 0
 
 func jump(jumpVelocity):
 	velocity.y = 0 #reset velocity
@@ -179,21 +192,7 @@ func jump(jumpVelocity):
 	canDash = true #allow the player to dash when they jump
 	
 
-#State Functions
-
-func idle_enter_logic():
-	anim = "idle"
-	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
-		
-func idle_logic(delta):
-	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
-	if elapsedIdleTime > idleDurration: 
-		anim = "blink"
-		if elapsedIdleTime - idleDurration > blinkDurration:
-			idleStartTime = OS.get_ticks_msec() 
-	else:
-		anim = "idle"
-		
+func default_logic():
 	if jumpInput:
 		#jump if you press button
 		jump(jumpVelocity)
@@ -202,7 +201,38 @@ func idle_logic(delta):
 	if isDashPressed:
 		#dash if you press button
 		set_state("dash")
+		
+	if isUpPressed && on_ladder:
+		set_state("climb")
+
+#State Functions
+func climb_enter_logic():
+	anim = "climb"
+func climb_logic(delta):
+	move_vertically()
+	if jumpInput:
+		#jump if you press button
+		jump(jumpVelocity)
+		set_state("jump")
+
+func climb_exit_logic():
+	pass
 	
+func idle_enter_logic():
+	anim = "idle"
+	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
+		
+func idle_logic(delta):
+	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
+	if elapsedIdleTime > idleDurration:
+		anim = "blink"
+		if elapsedIdleTime - idleDurration > blinkDurration:
+			idleStartTime = OS.get_ticks_msec()
+	else:
+		anim = "idle"
+	
+	default_logic()
+		
 	if movementInput != 0:
 		#start running if you press a movement button
 		set_state("run")
@@ -213,19 +243,11 @@ func idle_exit_logic():
 	currentSpeed = 0 #reset current speed (we do this here to keep momentum on run jumps)
 
 
-
 func run_enter_logic():
 	anim = "walk"
 
 func run_logic(delta):
-	if jumpInput:
-		#jump if you press the jump button
-		jump(jumpVelocity)
-		set_state("jump")
-		
-	if isDashPressed:
-		#dash if you press the dash button
-		set_state("dash")
+	default_logic()
 	
 	if !is_on_floor():
 		#if your not on a floor, start falling and set jumpbuffer start time
@@ -304,7 +326,7 @@ func dash_logic(delta):
 	
 	velocity.x += dashSpeed * dashDirection #add dash speed to velocity and multiply by dash direction
 	
-	if elapsedDashTime > dashDurration: 
+	if elapsedDashTime > dashDurration:
 		#if elapsed dash time is greater then the dash durration
 		set_state(previousState) #go back to the previous state
 
@@ -411,7 +433,7 @@ func wall_slide_logic(delta):
 		set_state("wall_jump")
 
 func wall_slide_exit_logic():
-	isDoubleJumped = false #allow you to double jump again when you wall jump 
+	isDoubleJumped = false #allow you to double jump again when you wall jump
 
 
 
@@ -435,7 +457,7 @@ func wall_jump_logic(delta):
 		if isJumpPressed && !isDoubleJumped:
 			#doublejump if you press button and its your first timme double jumping
 			#we use isJumpPressed here instead of jumpInput so we dont imeadiatly double jump when we originaly jump
-			jump(doubleJumpVelocity) 
+			jump(doubleJumpVelocity)
 			set_state("double_jump")
 		
 		if isDashPressed:
