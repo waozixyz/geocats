@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Geocats"
-run/main_scene="res://World.tscn"
+run/main_scene="res://Scenes/1_CatCradle.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 
 [global]
 
