@@ -12,15 +12,12 @@ onready var RightRaycast = $RightRaycast #path to the right raycast
 onready var LeftRaycast = $LeftRaycast  #path to the left raycast
 
 #Input Vars
-var movementInput = 0 #will be 1, -1, 0 depending on if you are holding right, left, or nothing
+var movementInputX = 0 #will be 1, -1, 0 depending on if you are holding right, left, or nothing
 var movementInputY = 0 #will be 1, -1, 0 depending on if you are holding up, d, or nothing
 var lastDirection = 1 #last direction pressed that is not 0
 
 var isJumpPressed = 0 #will be 1 on the frame that the jump button was pressed
 var isJumpReleased #will be 1 on the frame that the jump button was released
-
-var isUpPressed = 0 #will be 1 on the frame that the up button was pressed
-var isDownPressed = 0 #will be 1 on the frame that the down button was pressed
 
 var coyoteStartTime = 0 #ticks when you pressed jump button
 var elapsedCoyoteTime = 0 #elapsed time since you last clicked jump
@@ -131,13 +128,10 @@ func default_anim():
 
 func get_input():
 	#set input vars
-	movementInput = Input.get_action_strength("right") - Input.get_action_strength("left") #set movement input to 1,-1, or 0
+	movementInputX = Input.get_action_strength("right") - Input.get_action_strength("left") #set movement input to 1,-1, or 0
 	movementInputY = Input.get_action_strength("down") - Input.get_action_strength("up")
-	if movementInput != 0:
-		lastDirection = movementInput #set last direction if movement input isnt 0
-		
-	isUpPressed = Input.is_action_just_pressed("up")
-	isDownPressed = Input.is_action_just_pressed("down")
+	if movementInputX != 0:
+		lastDirection = movementInputX #set last direction if movement input isnt 0
 	
 	isJumpPressed = Input.is_action_just_pressed("jump")
 	isJumpReleased = Input.is_action_just_released("jump")
@@ -157,13 +151,10 @@ func get_input():
 	
 	isDashPressed = Input.is_action_just_pressed("dash")
 
-
-
 func apply_gravity(delta):
 	#apply gravity in every state except dash
 	if currentState != "dash":
 		velocity.y += gravity * delta
-
 
 func set_state(new_state : String):
 	#update state values
@@ -181,7 +172,7 @@ func set_state(new_state : String):
 func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
 	
-	velocity.x = currentSpeed * movementInput #apply curent speed to velocity and multiply by direction
+	velocity.x = currentSpeed * movementInputX #apply curent speed to velocity and multiply by direction
 	
 func move_vertically():
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
@@ -205,7 +196,7 @@ func default_logic():
 		#dash if you press button
 		set_state("dash")
 		
-	if isUpPressed && on_ladder:
+	if movementInputY && on_ladder:
 		set_state("climb")
 		
 	if Input.get_action_strength("down") > 0:
@@ -220,9 +211,9 @@ func climb_logic(delta):
 		#jump if you press button
 		jump(jumpVelocity)
 		set_state("jump")
-	if not on_ladder || is_on_floor() && movementInputY >= 0:
+	if not on_ladder || is_on_floor():
 		set_state("idle")
-	if movementInput != 0 and movementInputY == 0:
+	if movementInputX != 0 and movementInputY == 0:
 		set_state("run")
 func climb_exit_logic():
 	pass
@@ -257,7 +248,7 @@ func idle_logic(delta):
 	
 	default_logic()
 		
-	if movementInput != 0:
+	if movementInputX != 0:
 		#start running if you press a movement button
 		set_state("run")
 	velocity.x = move_toward(velocity.x, 0, decceleration) #deccelerate
@@ -279,7 +270,7 @@ func run_logic(delta):
 		set_state("fall")
 		
 	
-	if movementInput == 0:
+	if movementInputX == 0:
 		#if your not pressing a move button go idle
 		set_state("idle")
 	else:
@@ -298,7 +289,7 @@ func fall_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
-	if isUpPressed && on_ladder:
+	if movementInputY && on_ladder:
 		set_state("climb")
 	if isJumpPressed:
 		#if you press jump
@@ -326,12 +317,21 @@ func fall_logic(delta):
 		#if player is on a floor
 		set_state("run") #set state to run (we set to run to keep momentum)
 		isDoubleJumped = false #reset is double jumped
-		
-	if LeftRaycast.is_colliding() && movementInput == -1 || RightRaycast.is_colliding() && movementInput == 1:
+
+	if LeftRaycast.is_colliding() && movementInputX == -1:
+		for child in LeftRaycast.get_collider().get_children():
+			if child.is_one_way_collision_enabled():
+				return
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")
 	
-
+	if RightRaycast.is_colliding() && movementInputX == 1:
+		for child in RightRaycast.get_collider().get_children():
+			if child.is_one_way_collision_enabled():
+				return
+		#if your raycast is coliding and you are trying to move in that direction
+		set_state("wall_slide")
+		
 func fall_exit_logic():
 	jumpBufferStartTime = 0 #reset jump buffer start time
 
@@ -369,7 +369,7 @@ func jump_enter_logic():
 func jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
-	if isUpPressed && on_ladder:
+	if movementInputY && on_ladder:
 		set_state("climb")
 	if velocity.y < 0:
 		#if you are rising
@@ -404,7 +404,7 @@ func double_jump_enter_logic():
 func double_jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
-	if isUpPressed && on_ladder:
+	if movementInputY && on_ladder:
 		set_state("climb")
 	if velocity.y < 0:
 		#if you are rising
@@ -426,8 +426,6 @@ func double_jump_logic(delta):
 func double_jump_exit_logic():
 	pass
 
-
-
 func wall_slide_enter_logic():
 	velocity = Vector2.ZERO #reset velocity to stop all momentum
 	
@@ -436,12 +434,12 @@ func wall_slide_enter_logic():
 func wall_slide_logic(delta):
 	velocity.y = wallSlideSpeed #override apply_gravity and apply a constant slide speed
 	
-	if LeftRaycast.is_colliding() && movementInput != -1 || RightRaycast.is_colliding() && movementInput != 1:
+	if LeftRaycast.is_colliding() && movementInputX != -1 || RightRaycast.is_colliding() && movementInputX != 1:
 		#if your raycast is coliding and you are trying to move in that direction
 		jumpBufferStartTime = OS.get_ticks_msec() #start jump buffer timer
 		set_state("fall") #set state to fall
 	#this could be done in one long if statement but I split it up to make it easiar to read
-	if !LeftRaycast.is_colliding() && movementInput == -1 || !RightRaycast.is_colliding() && movementInput == 1:
+	if !LeftRaycast.is_colliding() && movementInputX == -1 || !RightRaycast.is_colliding() && movementInputX == 1:
 		#if you are holding in a direction but no longer coliding with a wall in that direction
 		set_state("fall")
 	
@@ -470,7 +468,7 @@ func wall_jump_enter_logic():
 func wall_jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally
-	if isUpPressed && on_ladder:
+	if movementInputY && on_ladder:
 		set_state("climb")
 	#if you want to add a wall jump thrust you can do so by:
 	#deifining a wallJumpThrust variable

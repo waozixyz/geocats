@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Player/ladder_detect.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 14.2295, 33.3125 )
+extents = Vector2( 14.2433, 53.5372 )
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -104,11 +104,10 @@ __meta__ = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 script = ExtResource( 9 )
 
 [node name="CollisionClimb" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -3.1498 )
+position = Vector2( 0, 6.48319 )
 shape = SubResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
