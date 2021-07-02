@@ -8,8 +8,11 @@ var previousState = null #last state that was being calles
 #Nodes & paths
 onready var sprite = $AnimatedSprite #path to the player's sprite
 
-onready var RightRaycast = $RightRaycast #path to the right raycast
-onready var LeftRaycast = $LeftRaycast  #path to the left raycast
+onready var right_raycast = $RightRaycast #path to the right raycast
+onready var left_raycast = $LeftRaycast  #path to the left raycast
+onready var down_raycast = $DownRaycast  #path to the left raycast
+
+
 
 #Input Vars
 var movementInputX = 0 #will be 1, -1, 0 depending on if you are holding right, left, or nothing
@@ -38,7 +41,7 @@ var decceleration = 80 #by how much does velocity approach when you stop moving 
 var airFriction = 60 #how much you subtract velocity when you start moving horizontally in the air
 
 #idle
-var idleDurration = 1800  #how long cat should be idle until it blinks
+var idleDurration = 3800  #how long cat should be idle until it blinks
 var blinkDurration = 100 # how long cat should be in the blink anim
 var idleStartTime = 0#how many miliseconds passed when you become idle
 var elapsedIdleTime = 0 #how many milisecconds elapsed since you started being idle
@@ -83,6 +86,9 @@ var anim = "idle"
 
 # ladder
 var on_ladder = false
+# one way collding platform
+var on_platform = false
+var current_platforms
 
 #functions
 func _ready():
@@ -105,6 +111,18 @@ func default_coll():
 		coll_default.disabled = false
 
 func _physics_process(delta):
+	if current_platforms and not on_platform:
+		for platform in current_platforms:
+			platform.disabled = false
+	if down_raycast.is_colliding():
+		current_platforms = down_raycast.get_collider().get_children()
+		for child in current_platforms:
+			if child.is_one_way_collision_enabled():
+				on_platform = true
+
+	else:
+		on_platform = false
+
 	default_coll()
 		
 	get_input()
@@ -195,12 +213,16 @@ func default_logic():
 	if isDashPressed:
 		#dash if you press button
 		set_state("dash")
-		
-	if movementInputY && on_ladder:
-		set_state("climb")
-		
-	if Input.get_action_strength("down") > 0:
+	if movementInputY > 0:
 		set_state("crouch")
+	if movementInputY && on_ladder:
+		if is_on_floor() and movementInputY < 0 and not on_platform || not is_on_floor():
+			set_state("climb")
+		if on_platform and movementInputY > 0:
+			fall_through()
+			set_state("climb")
+		
+
 
 #State Functions
 func climb_enter_logic():
@@ -218,13 +240,22 @@ func climb_logic(delta):
 func climb_exit_logic():
 	pass
 
+func fall_through():
+	for platform in current_platforms:
+		platform.disabled = true
+		
 func crouch_enter_logic():
 	pass
 
 func crouch_logic(delta):
-	default_logic()
+	if isDashPressed:
+		#dash if you press button
+		set_state("dash")
+	if jumpInput and on_platform:
+		fall_through()
 	if Input.get_action_strength("down") > 0:
 		anim = "crouch"
+
 	else:
 		set_state("idle")
 	move_horizontally(0)
@@ -318,15 +349,15 @@ func fall_logic(delta):
 		set_state("run") #set state to run (we set to run to keep momentum)
 		isDoubleJumped = false #reset is double jumped
 
-	if LeftRaycast.is_colliding() && movementInputX == -1:
-		for child in LeftRaycast.get_collider().get_children():
+	if left_raycast.is_colliding() && movementInputX == -1:
+		for child in left_raycast.get_collider().get_children():
 			if child.is_one_way_collision_enabled():
 				return
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")
 	
-	if RightRaycast.is_colliding() && movementInputX == 1:
-		for child in RightRaycast.get_collider().get_children():
+	if right_raycast.is_colliding() && movementInputX == 1:
+		for child in right_raycast.get_collider().get_children():
 			if child.is_one_way_collision_enabled():
 				return
 		#if your raycast is coliding and you are trying to move in that direction
@@ -434,12 +465,12 @@ func wall_slide_enter_logic():
 func wall_slide_logic(delta):
 	velocity.y = wallSlideSpeed #override apply_gravity and apply a constant slide speed
 	
-	if LeftRaycast.is_colliding() && movementInputX != -1 || RightRaycast.is_colliding() && movementInputX != 1:
+	if left_raycast.is_colliding() && movementInputX != -1 || right_raycast.is_colliding() && movementInputX != 1:
 		#if your raycast is coliding and you are trying to move in that direction
 		jumpBufferStartTime = OS.get_ticks_msec() #start jump buffer timer
 		set_state("fall") #set state to fall
 	#this could be done in one long if statement but I split it up to make it easiar to read
-	if !LeftRaycast.is_colliding() && movementInputX == -1 || !RightRaycast.is_colliding() && movementInputX == 1:
+	if !left_raycast.is_colliding() && movementInputX == -1 || !right_raycast.is_colliding() && movementInputX == 1:
 		#if you are holding in a direction but no longer coliding with a wall in that direction
 		set_state("fall")
 	

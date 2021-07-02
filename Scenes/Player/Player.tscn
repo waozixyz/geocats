@@ -10,57 +10,57 @@
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Player/ladder_detect.gd" type="Script" id=9]
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 14.2433, 53.5372 )
-
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 100, 108 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.243, 40 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 0, 108, 100, 108 )
+region = Rect2( 0, 0, 100, 108 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 0, 216, 100, 108 )
+region = Rect2( 0, 108, 100, 108 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 137, 83 )
+atlas = ExtResource( 5 )
+region = Rect2( 0, 216, 100, 108 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 137, 0, 137, 83 )
+region = Rect2( 0, 0, 137, 83 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 29, 92 )
+atlas = ExtResource( 7 )
+region = Rect2( 137, 0, 137, 83 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 29, 0, 29, 92 )
+region = Rect2( 0, 0, 29, 92 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 2 )
+region = Rect2( 29, 0, 29, 92 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
 region = Rect2( 58, 0, 29, 92 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 5.0
@@ -75,12 +75,12 @@ animations = [ {
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
@@ -91,10 +91,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 18.3628, 36.7931 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 48.9132, 26.0343 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -107,22 +107,21 @@ __meta__ = {
 script = ExtResource( 9 )
 
 [node name="CollisionClimb" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 6.48319 )
-shape = SubResource( 12 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 9 )
-animation = "walk"
-frame = 1
+frames = SubResource( 10 )
+animation = "climb"
+frame = 2
 playing = true
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
 position = Vector2( 30.8777, -8.68248 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="CollisionDefault" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5.48319 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="RightRaycast" type="RayCast2D" parent="."]
 enabled = true
@@ -131,3 +130,6 @@ cast_to = Vector2( 50, 0 )
 [node name="LeftRaycast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -50, 0 )
+
+[node name="DownRaycast" type="RayCast2D" parent="."]
+enabled = true
