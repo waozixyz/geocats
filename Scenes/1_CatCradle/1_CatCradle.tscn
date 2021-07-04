@@ -28,7 +28,7 @@
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/last_ladder.png" type="Texture" id=26]
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/statue.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/1_CatCradle/GoToGeoCity.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/1_CatCradle/Exit.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/Letter.png" type="Texture" id=32]
@@ -781,72 +781,72 @@ extents = Vector2( 468, 18 )
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 54, 9 )
 
-[sub_resource type="RectangleShape2D" id=79]
+[sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 40.3612, 4.12903 )
 
-[sub_resource type="RectangleShape2D" id=80]
+[sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 36.0177, 3.87598 )
 
-[sub_resource type="RectangleShape2D" id=81]
+[sub_resource type="RectangleShape2D" id=80]
 extents = Vector2( 90, 9 )
 
-[sub_resource type="RectangleShape2D" id=82]
+[sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 9, 81 )
 
-[sub_resource type="RectangleShape2D" id=83]
+[sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 81, 9 )
 
-[sub_resource type="RectangleShape2D" id=84]
+[sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 10, 36 )
 
-[sub_resource type="RectangleShape2D" id=85]
+[sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 49.5, 4.83636 )
 
-[sub_resource type="RectangleShape2D" id=86]
+[sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 144, 7.09192 )
 
-[sub_resource type="RectangleShape2D" id=87]
+[sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 171, 18 )
 
-[sub_resource type="RectangleShape2D" id=88]
+[sub_resource type="RectangleShape2D" id=87]
 extents = Vector2( 10, 54 )
 
-[sub_resource type="RectangleShape2D" id=89]
+[sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 171, 10 )
 
-[sub_resource type="RectangleShape2D" id=90]
+[sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 18, 81 )
 
-[sub_resource type="RectangleShape2D" id=91]
+[sub_resource type="RectangleShape2D" id=90]
 extents = Vector2( 41, 27 )
 
-[sub_resource type="RectangleShape2D" id=92]
+[sub_resource type="RectangleShape2D" id=91]
 extents = Vector2( 54, 10 )
 
-[sub_resource type="RectangleShape2D" id=93]
+[sub_resource type="RectangleShape2D" id=92]
 extents = Vector2( 27, 153 )
 
-[sub_resource type="RectangleShape2D" id=94]
+[sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 18, 112.5 )
 
-[sub_resource type="RectangleShape2D" id=95]
+[sub_resource type="RectangleShape2D" id=94]
 extents = Vector2( 27, 184.5 )
 
-[sub_resource type="RectangleShape2D" id=78]
+[sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 77, 43.1203 )
 
 [sub_resource type="RectangleShape2D" id=96]
 extents = Vector2( 18, 84.8504 )
 
-[sub_resource type="DynamicFontData" id=99]
+[sub_resource type="DynamicFontData" id=97]
 font_path = "res://Assets/Fonts/FSEX300.ttf"
 
-[sub_resource type="DynamicFont" id=97]
+[sub_resource type="DynamicFont" id=98]
 size = 20
-font_data = SubResource( 99 )
+font_data = SubResource( 97 )
 
-[sub_resource type="Theme" id=98]
-default_font = SubResource( 97 )
+[sub_resource type="Theme" id=99]
+default_font = SubResource( 98 )
 
 [node name="CatCradle" type="Node2D"]
 
@@ -991,12 +991,12 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stereo/StaticBody2D"]
 position = Vector2( 40.5138, 4.25403 )
-shape = SubResource( 79 )
+shape = SubResource( 78 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Stereo/StaticBody2D"]
 position = Vector2( 125.903, 21.8504 )
-shape = SubResource( 80 )
+shape = SubResource( 79 )
 one_way_collision = true
 
 [node name="Bath" type="Sprite" parent="Objects"]
@@ -1008,26 +1008,26 @@ position = Vector2( 0, 72 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bath/StaticBody2D"]
 visible = false
-shape = SubResource( 81 )
+shape = SubResource( 80 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Bath/StaticBody2D"]
 visible = false
 position = Vector2( -81, -81 )
-shape = SubResource( 82 )
+shape = SubResource( 81 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Objects/Bath/StaticBody2D"]
 visible = false
 position = Vector2( 9, -162 )
-shape = SubResource( 83 )
+shape = SubResource( 82 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Objects/Bath/StaticBody2D"]
 visible = false
 position = Vector2( 90, -126 )
-shape = SubResource( 84 )
+shape = SubResource( 83 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Objects/Bath/StaticBody2D"]
 position = Vector2( -4.67725, -40.4545 )
-shape = SubResource( 85 )
+shape = SubResource( 84 )
 one_way_collision = true
 
 [node name="Bed" type="Sprite" parent="Objects"]
@@ -1038,14 +1038,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/StaticBody2D"]
 position = Vector2( 0, 4.25424 )
-shape = SubResource( 86 )
+shape = SubResource( 85 )
 one_way_collision = true
 
 [node name="KitchenPlatform" type="StaticBody2D" parent="Objects"]
 position = Vector2( 243, 747 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/KitchenPlatform"]
-shape = SubResource( 87 )
+shape = SubResource( 86 )
 one_way_collision = true
 
 [node name="Kitchen" type="Sprite" parent="Objects"]
@@ -1058,17 +1058,17 @@ centered = false
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Kitchen/Kitchen"]
 visible = false
 position = Vector2( 351, 198 )
-shape = SubResource( 88 )
+shape = SubResource( 87 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Objects/Kitchen/Kitchen"]
 visible = false
 position = Vector2( 171, 0 )
-shape = SubResource( 89 )
+shape = SubResource( 88 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Objects/Kitchen/Kitchen"]
 visible = false
 position = Vector2( 351, 72 )
-shape = SubResource( 90 )
+shape = SubResource( 89 )
 
 [node name="Table" type="Sprite" parent="Objects"]
 position = Vector2( 117, 990 )
@@ -1079,7 +1079,7 @@ centered = false
 position = Vector2( 40, 27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Table/StaticBody2D"]
-shape = SubResource( 91 )
+shape = SubResource( 90 )
 one_way_collision = true
 
 [node name="Statue" type="Sprite" parent="Objects"]
@@ -1091,7 +1091,7 @@ position = Vector2( -9, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Statue/StaticBody2D"]
 position = Vector2( 36, -108 )
-shape = SubResource( 92 )
+shape = SubResource( 91 )
 one_way_collision = true
 
 [node name="Ladders" type="Node2D" parent="."]
@@ -1108,7 +1108,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/KitchenLadder"]
 position = Vector2( 54, 153 )
-shape = SubResource( 93 )
+shape = SubResource( 92 )
 
 [node name="BedLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
@@ -1121,7 +1121,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/BedLadder"]
 position = Vector2( 45, 112.25 )
-shape = SubResource( 94 )
+shape = SubResource( 93 )
 
 [node name="LastLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
@@ -1134,7 +1134,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
 position = Vector2( 53.25, 184.5 )
-shape = SubResource( 95 )
+shape = SubResource( 94 )
 
 [node name="Present" type="Sprite" parent="."]
 position = Vector2( 157, 966 )
@@ -1145,7 +1145,7 @@ script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present/Area2D"]
 position = Vector2( 0, 4.1203 )
-shape = SubResource( 78 )
+shape = SubResource( 95 )
 
 [node name="Teleport" type="Area2D" parent="."]
 position = Vector2( 0, 950 )
@@ -1156,7 +1156,7 @@ position = Vector2( 18, 4 )
 shape = SubResource( 96 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]
-position = Vector2( 486, 981 )
+position = Vector2( 1863, 261 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -1191,7 +1191,7 @@ margin_left = 88.0
 margin_top = 88.0
 margin_right = 928.0
 margin_bottom = 472.0
-theme = SubResource( 98 )
+theme = SubResource( 99 )
 fit_content_height = true
 script = ExtResource( 31 )
 __meta__ = {

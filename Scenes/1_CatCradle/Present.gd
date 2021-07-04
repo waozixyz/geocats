@@ -17,4 +17,4 @@ func _input(event):
 			letter.visible = toggle(letter.visible)
 
 		get_parent().visible = false
-		print("hi")
+

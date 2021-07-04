@@ -1,0 +1,145 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/LevelAssets/1a_Complex/alley_house.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/1a_Complex/Exit.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 486, 18 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 76.0518, 1323 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 76.0518, 1323 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 681, 21 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 15, 102 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 17, 102 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 477, 17.5359 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 507, 27 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 225, 18 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 2646, 45 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 54, 144 )
+
+[node name="Complex" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1000.0
+margin_top = -500.0
+margin_right = 7000.0
+margin_bottom = 3300.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="alley_house" type="Sprite" parent="."]
+scale = Vector2( 9, 9 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="floor3_platform" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor3_platform"]
+position = Vector2( 3204, 1296 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 1 )
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2( 4707, 1413 )
+shape = SubResource( 2 )
+
+[node name="EndWall" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWall"]
+position = Vector2( -306, 1323 )
+shape = SubResource( 9 )
+
+[node name="WallTop" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
+position = Vector2( 2736, 99 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 3 )
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2( 738, 333 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 4 )
+
+[node name="WallLeft2" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft2"]
+position = Vector2( 747, 945 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 10 )
+
+[node name="floor2_platform" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2_platform"]
+position = Vector2( 2160, 684 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 5 )
+
+[node name="floor1_platform" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor1_platform"]
+position = Vector2( 2223, 1971 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 6 )
+
+[node name="floor2_platform2" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2_platform2"]
+position = Vector2( 918, 1260 )
+shape = SubResource( 7 )
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2( 234, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2( 2421, 2601 )
+shape = SubResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2710.58, 1062.24 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="Teleport" type="Area2D" parent="."]
+position = Vector2( 0, 950 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+position = Vector2( 63, 1435 )
+shape = SubResource( 12 )
