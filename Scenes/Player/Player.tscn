@@ -103,22 +103,26 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ClimbArea" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 9 )
 
-[node name="CollisionClimb" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionClimb" type="CollisionShape2D" parent="ClimbArea"]
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
 animation = "climb"
+frame = 1
 playing = true
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 30.8777, -8.68248 )
 shape = SubResource( 11 )
 
 [node name="CollisionDefault" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 5.48319 )
 shape = SubResource( 12 )
 
