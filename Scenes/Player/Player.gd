@@ -34,9 +34,9 @@ var isDashPressed #will be 1 on the frame that the dash button was pressed
 var velocity = Vector2.ZERO #linear velocity applied to move and slide
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
-var maxSpeed = 300 #maximum current speed can reach when moving horizontally
-var acceleration = 50 #by how much does current speed approach max speed when moving
-var decceleration = 80 #by how much does velocity approach when you stop moving horizontally
+var maxSpeed = 400 #maximum current speed can reach when moving horizontally
+var acceleration = 80 #by how much does current speed approach max speed when moving
+var decceleration = 100 #by how much does velocity approach when you stop moving horizontally
 
 var airFriction = 60 #how much you subtract velocity when you start moving horizontally in the air
 
@@ -89,7 +89,8 @@ var on_ladder = false
 # one way collding platform
 var on_platform = false
 var current_platforms
-
+var fall_through_timer = 0
+var fall_through_time = 500
 #functions
 func _ready():
 	#use kin functions to set jump velocites
@@ -109,28 +110,34 @@ func default_coll():
 	else:
 		coll_slide.disabled = true
 		coll_default.disabled = false
-
+		
+func check_child_collision(child):
+	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
+		return true
+	else:
+		return false
+		
 func _physics_process(delta):
+	default_coll()
+
 	if current_platforms and not on_platform:
 		for platform in current_platforms:
 			platform.disabled = false
-	if down_raycast.is_colliding():
-		current_platforms = []
-		for child in down_raycast.get_collider().get_children():
-
-			if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
-				current_platforms.insert(current_platforms.size(), child)
-				on_platform = true
-
+	if fall_through_timer > 0:
+		fall_through_timer -= OS.get_ticks_msec() * .01
 	else:
-		on_platform = false
-
-	default_coll()
-		
+		if down_raycast.is_colliding():
+			current_platforms = []
+			for child in down_raycast.get_collider().get_children():
+				if check_child_collision(child):
+					current_platforms.insert(current_platforms.size(), child)
+					on_platform = true
+		else:
+			on_platform = false
 	get_input()
 
 	apply_gravity(delta)
-	
+
 	call(currentState + "_logic", delta) #call the current states main method
 
 	velocity = move_and_slide(velocity, Vector2.UP) #aply velocity to movement
@@ -245,6 +252,7 @@ func climb_exit_logic():
 func fall_through():
 	for platform in current_platforms:
 		platform.disabled = true
+	fall_through_timer = fall_through_time
 		
 func crouch_enter_logic():
 	pass
@@ -353,14 +361,14 @@ func fall_logic(delta):
 
 	if left_raycast.is_colliding() && movementInputX == -1:
 		for child in left_raycast.get_collider().get_children():
-			if  (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
+			if check_child_collision(child):
 				return
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")
 	
 	if right_raycast.is_colliding() && movementInputX == 1:
 		for child in right_raycast.get_collider().get_children():
-			if  (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
+			if check_child_collision(child):
 				return
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")

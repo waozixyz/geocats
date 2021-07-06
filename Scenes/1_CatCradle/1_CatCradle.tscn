@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/stereo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/kitchen.png" type="Texture" id=2]
@@ -776,16 +776,10 @@ extents = Vector2( 9, 125 )
 extents = Vector2( 121.5, 4.92044 )
 
 [sub_resource type="RectangleShape2D" id=76]
-extents = Vector2( 468, 18 )
+extents = Vector2( 459, 18 )
 
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 54, 9 )
-
-[sub_resource type="RectangleShape2D" id=78]
-extents = Vector2( 40.3612, 4.12903 )
-
-[sub_resource type="RectangleShape2D" id=79]
-extents = Vector2( 36.0177, 3.87598 )
 
 [sub_resource type="RectangleShape2D" id=80]
 extents = Vector2( 90, 9 )
@@ -989,14 +983,8 @@ centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Objects/Stereo"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stereo/StaticBody2D"]
-position = Vector2( 40.5138, 4.25403 )
-shape = SubResource( 78 )
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Stereo/StaticBody2D"]
-position = Vector2( 125.903, 21.8504 )
-shape = SubResource( 79 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/Stereo/StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 81, 0, 81, 18, 162, 18, 162, 27, 0, 27 )
 one_way_collision = true
 
 [node name="Bath" type="Sprite" parent="Objects"]
