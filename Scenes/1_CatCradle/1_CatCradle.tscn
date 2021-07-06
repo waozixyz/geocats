@@ -1156,7 +1156,7 @@ position = Vector2( 18, 4 )
 shape = SubResource( 96 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]
-position = Vector2( 1863, 261 )
+position = Vector2( 1881, 270 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

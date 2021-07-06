@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/alley_house.png-b209dbb6b909034be840670e9f5dc270.stex"
+path="res://.import/plant.png-8b9033208f31af242ceff456a6de87cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/LevelAssets/1a_Complex/alley_house.png"
-dest_files=[ "res://.import/alley_house.png-b209dbb6b909034be840670e9f5dc270.stex" ]
+source_file="res://Assets/LevelAssets/1a_Complex/plant.png"
+dest_files=[ "res://.import/plant.png-8b9033208f31af242ceff456a6de87cf.stex" ]
 
 [params]
 

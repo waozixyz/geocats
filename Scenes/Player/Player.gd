@@ -115,9 +115,11 @@ func _physics_process(delta):
 		for platform in current_platforms:
 			platform.disabled = false
 	if down_raycast.is_colliding():
-		current_platforms = down_raycast.get_collider().get_children()
-		for child in current_platforms:
-			if child.is_one_way_collision_enabled():
+		current_platforms = []
+		for child in down_raycast.get_collider().get_children():
+
+			if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
+				current_platforms.insert(current_platforms.size(), child)
 				on_platform = true
 
 	else:
@@ -351,14 +353,14 @@ func fall_logic(delta):
 
 	if left_raycast.is_colliding() && movementInputX == -1:
 		for child in left_raycast.get_collider().get_children():
-			if child.is_one_way_collision_enabled():
+			if  (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
 				return
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")
 	
 	if right_raycast.is_colliding() && movementInputX == 1:
 		for child in right_raycast.get_collider().get_children():
-			if child.is_one_way_collision_enabled():
+			if  (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
 				return
 		#if your raycast is coliding and you are trying to move in that direction
 		set_state("wall_slide")
