@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/stereo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/kitchen.png" type="Texture" id=2]
@@ -763,6 +763,12 @@ extents = Vector2( 459, 18 )
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 54, 9 )
 
+[sub_resource type="RectangleShape2D" id=109]
+extents = Vector2( 40.5, 5.5 )
+
+[sub_resource type="RectangleShape2D" id=110]
+extents = Vector2( 36, 5.5 )
+
 [sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 90, 9 )
 
@@ -794,7 +800,7 @@ extents = Vector2( 171, 10 )
 extents = Vector2( 18, 81 )
 
 [sub_resource type="RectangleShape2D" id=88]
-extents = Vector2( 41, 27 )
+extents = Vector2( 41, 9 )
 
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 54, 10 )
@@ -809,10 +815,10 @@ extents = Vector2( 18, 112.5 )
 extents = Vector2( 27, 184.5 )
 
 [sub_resource type="RectangleShape2D" id=93]
-extents = Vector2( 77, 43.1203 )
+extents = Vector2( 95, 70.157 )
 
 [sub_resource type="RectangleShape2D" id=94]
-extents = Vector2( 18, 84.8504 )
+extents = Vector2( 9, 84.8504 )
 
 [sub_resource type="DynamicFontData" id=95]
 font_path = "res://Assets/Fonts/FSEX300.ttf"
@@ -965,8 +971,14 @@ centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Objects/Stereo"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/Stereo/StaticBody2D"]
-polygon = PoolVector2Array( 0, 0, 81, 0, 81, 18, 162, 18, 162, 27, 0, 27 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stereo/StaticBody2D"]
+position = Vector2( 40.5, 4.5 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Stereo/StaticBody2D"]
+position = Vector2( 126, 25.157 )
+shape = SubResource( 110 )
 one_way_collision = true
 
 [node name="Bath" type="Sprite" parent="Objects"]
@@ -1049,6 +1061,7 @@ centered = false
 position = Vector2( 40, 27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Table/StaticBody2D"]
+position = Vector2( 0, -9 )
 shape = SubResource( 88 )
 one_way_collision = true
 
@@ -1114,7 +1127,7 @@ texture = ExtResource( 23 )
 script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present/Area2D"]
-position = Vector2( 0, 4.1203 )
+position = Vector2( 14, -4.84302 )
 shape = SubResource( 93 )
 
 [node name="Teleport" type="Area2D" parent="."]
@@ -1122,7 +1135,7 @@ position = Vector2( 0, 950 )
 script = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
-position = Vector2( 18, 4 )
+position = Vector2( 9, 4 )
 shape = SubResource( 94 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]

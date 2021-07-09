@@ -34,7 +34,7 @@ var isDashPressed #will be 1 on the frame that the dash button was pressed
 var velocity = Vector2.ZERO #linear velocity applied to move and slide
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
-var maxSpeed = 400 #maximum current speed can reach when moving horizontally
+var maxSpeed = 600 #maximum current speed can reach when moving horizontally
 var acceleration = 80 #by how much does current speed approach max speed when moving
 var decceleration = 100 #by how much does velocity approach when you stop moving horizontally
 
@@ -104,12 +104,18 @@ onready var coll_slide = $CollisionSlide
 onready var coll_default = $CollisionDefault
 	
 func default_coll():
-	if anim == "slide_wall":
-		coll_slide.disabled = false
-		coll_default.disabled = true
-	else:
+	if currentState == "climb":
 		coll_slide.disabled = true
-		coll_default.disabled = false
+		coll_default.disabled = true
+		coll_climb.disabled = false
+	else:
+		coll_climb.disabled = true
+		if anim == "slide_wall":
+			coll_slide.disabled = false
+			coll_default.disabled = true
+		else:
+			coll_slide.disabled = true
+			coll_default.disabled = false
 
 func check_collision_shape(child):
 	if  (child is CollisionShape2D || child is CollisionPolygon2D):
@@ -127,18 +133,19 @@ func rotate_on_slope():
 	if is_on_floor():
 		for i in get_slide_count():
 			var collision = get_slide_collision(i)
-			var normal = collision.normal
-			var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
-			var mul = 1
-			if normal.x < 0:
-				mul = -1
-			rotation_degrees = -slope_angle * 3 * mul
+			if not on_platform:
+				var normal = collision.normal
+				var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
+				var mul = 1
+				if normal.x < 0:
+					mul = -1
+				rotation_degrees = -slope_angle * 3 * mul
 		
 
 				
 
 func _physics_process(delta):
-	default_coll()
+
 	if current_platforms and not on_platform:
 		for platform in current_platforms:
 			platform.disabled = false
@@ -158,7 +165,7 @@ func _physics_process(delta):
 	apply_gravity(delta)
 
 	call(currentState + "_logic", delta) #call the current states main method
-
+	default_coll()
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 
 

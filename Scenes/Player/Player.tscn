@@ -107,12 +107,13 @@ __meta__ = {
 visible = false
 script = ExtResource( 9 )
 
-[node name="CollisionClimb" type="CollisionShape2D" parent="ClimbArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
-animation = "walk"
+animation = "climb"
+frame = 1
 playing = true
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
@@ -120,6 +121,9 @@ visible = false
 position = Vector2( 30.8777, -8.68248 )
 shape = SubResource( 11 )
 disabled = true
+
+[node name="CollisionClimb" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 
 [node name="CollisionDefault" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5.48319 )
