@@ -90,7 +90,7 @@ var on_ladder = false
 var on_platform = false
 var current_platforms
 var fall_through_timer = 0
-var fall_through_time = 500
+var fall_through_time = 1000
 #functions
 func _ready():
 	#use kin functions to set jump velocites
@@ -110,16 +110,35 @@ func default_coll():
 	else:
 		coll_slide.disabled = true
 		coll_default.disabled = false
-		
-func check_child_collision(child):
-	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
+
+func check_collision_shape(child):
+	if  (child is CollisionShape2D || child is CollisionPolygon2D):
 		return true
 	else:
 		return false
+
+func check_child_collision(child):
+	if check_collision_shape(child) && child.is_one_way_collision_enabled():
+		return true
+	else:
+		return false
+
+func rotate_on_slope():
+	if is_on_floor():
+		for i in get_slide_count():
+			var collision = get_slide_collision(i)
+			var normal = collision.normal
+			var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
+			var mul = 1
+			if normal.x < 0:
+				mul = -1
+			rotation_degrees = -slope_angle * 3 * mul
 		
+
+				
+
 func _physics_process(delta):
 	default_coll()
-
 	if current_platforms and not on_platform:
 		for platform in current_platforms:
 			platform.disabled = false
@@ -140,7 +159,8 @@ func _physics_process(delta):
 
 	call(currentState + "_logic", delta) #call the current states main method
 
-	velocity = move_and_slide(velocity, Vector2.UP) #aply velocity to movement
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+
 
 	sprite.flip_h = lastDirection - 1 #flip sprite depending on which direction you last moved in
 
@@ -218,6 +238,8 @@ func default_logic():
 		#jump if you press button
 		jump(jumpVelocity)
 		set_state("jump")
+
+
 	
 	if isDashPressed:
 		#dash if you press button
@@ -303,6 +325,7 @@ func run_enter_logic():
 	anim = "walk"
 
 func run_logic(delta):
+	rotate_on_slope()
 	default_logic()
 	
 	if !is_on_floor():
@@ -395,7 +418,7 @@ func dash_logic(delta):
 	if elapsedDashTime > dashDurration:
 		#if elapsed dash time is greater then the dash durration
 		set_state(previousState) #go back to the previous state
-
+	rotate_on_slope()
 func dash_exit_logic():
 	velocity = Vector2.ZERO  #reset velocity to zero
 	if !is_on_floor():
@@ -408,6 +431,7 @@ func jump_enter_logic():
 	pass
 
 func jump_logic(delta):
+	rotation_degrees = 0
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
 	if movementInputY && on_ladder:

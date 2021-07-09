@@ -112,19 +112,19 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
-animation = "climb"
-frame = 1
+animation = "walk"
 playing = true
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 30.8777, -8.68248 )
 shape = SubResource( 11 )
+disabled = true
 
 [node name="CollisionDefault" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 5.48319 )
 shape = SubResource( 12 )
+disabled = true
 
 [node name="RightRaycast" type="RayCast2D" parent="."]
 enabled = true
