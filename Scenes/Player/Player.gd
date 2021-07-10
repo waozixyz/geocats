@@ -133,14 +133,21 @@ func rotate_on_slope():
 	if is_on_floor():
 		for i in get_slide_count():
 			var collision = get_slide_collision(i)
-			if not on_platform:
-				var normal = collision.normal
-				var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
-				var mul = 1
-				if normal.x < 0:
-					mul = -1
-				rotation_degrees = -slope_angle * 3 * mul
-		
+			var normal = collision.normal
+			var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
+			var mul = 1
+			if normal.x < 0:
+				mul = -1
+			sprite.rotation_degrees = -slope_angle * 3 * mul
+
+func rotate_to_idle():
+	var rot = sprite.rotation_degrees
+	if rot > 1:
+		rot -= rot * .1
+	if rot < -1:
+		rot += rot * .1
+	sprite.rotation_degrees = rot
+	print(rot)
 
 				
 
@@ -266,6 +273,7 @@ func default_logic():
 func climb_enter_logic():
 	anim = "climb"
 func climb_logic(delta):
+	rotate_to_idle()
 	move_vertically()
 	if jumpInput:
 		#jump if you press button
@@ -357,6 +365,7 @@ func fall_enter_logic():
 	pass
 
 func fall_logic(delta):
+	rotate_to_idle()
 	default_anim()
 	move_horizontally(airFriction) #move horizontally
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
@@ -438,7 +447,7 @@ func jump_enter_logic():
 	pass
 
 func jump_logic(delta):
-	rotation_degrees = 0
+	rotate_to_idle()
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
 	if movementInputY && on_ladder:

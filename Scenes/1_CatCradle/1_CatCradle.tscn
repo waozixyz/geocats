@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/stereo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/kitchen.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Scenes/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/Letter.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/UI/InteractWith.tscn" type="PackedScene" id=33]
 
 [sub_resource type="TileSet" id=1]
 0/name = "background_tilemap.png 0"
@@ -821,10 +822,10 @@ extents = Vector2( 95, 70.157 )
 extents = Vector2( 9, 84.8504 )
 
 [sub_resource type="DynamicFontData" id=95]
-font_path = "res://Assets/Fonts/FSEX300.ttf"
+font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=96]
-size = 20
+size = 18
 font_data = SubResource( 95 )
 
 [sub_resource type="Theme" id=97]
@@ -1146,9 +1147,12 @@ current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 
-[node name="Letter" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Content" type="ViewportContainer" parent="Letter"]
+[node name="InteractWith" parent="CanvasLayer" instance=ExtResource( 33 )]
+visible = false
+
+[node name="Letter" type="ViewportContainer" parent="CanvasLayer"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -1156,23 +1160,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Letter" type="Sprite" parent="Letter/Content"]
+[node name="Letter" type="Sprite" parent="CanvasLayer/Letter"]
 position = Vector2( 36, 36 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.8, 0.9 )
 texture = ExtResource( 32 )
 centered = false
 
-[node name="Letter2" type="Sprite" parent="Letter/Content"]
+[node name="Letter2" type="Sprite" parent="CanvasLayer/Letter"]
 position = Vector2( 500, 36 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.8, 0.9 )
 texture = ExtResource( 32 )
 centered = false
 flip_h = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Letter/Content"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Letter"]
 margin_left = 88.0
 margin_top = 88.0
-margin_right = 928.0
+margin_right = 940.0
 margin_bottom = 472.0
 theme = SubResource( 97 )
 fit_content_height = true
