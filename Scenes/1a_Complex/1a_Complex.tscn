@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://Assets/LevelAssets/1a_Complex/alley_house_ladder.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -78,6 +78,24 @@
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=75]
+extents = Vector2( 81, 10 )
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 220.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=57]
+extents = Vector2( 63, 9 )
+
+[sub_resource type="RectangleShape2D" id=58]
+extents = Vector2( 63, 9 )
+
+[sub_resource type="RectangleShape2D" id=59]
+extents = Vector2( 36, 9 )
+
+[sub_resource type="RectangleShape2D" id=60]
+extents = Vector2( 36, 9 )
+
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
 
@@ -148,7 +166,7 @@ points = PoolVector2Array( 0, 0, 72, 0, 72, 53.9083, 0, 54.1409 )
 points = PoolVector2Array( 0, 0, 72, 0, 72, 54.4177, 0.0306702, 54.0828 )
 
 [sub_resource type="ConvexPolygonShape2D" id=26]
-points = PoolVector2Array( 0, 0, 72, 0, 72, 53.2106, 0, 53.4431 )
+points = PoolVector2Array( 0, 0, 61.6736, 0.840393, 60.9792, 52.9237, 0, 53.4431 )
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
 points = PoolVector2Array( 0, 0.426697, 72, 0, 72, 42.0563, 59.8842, 41.8238, 59.6516, 53.9173, 0, 53.9173 )
@@ -211,13 +229,13 @@ points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
 points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
 
 [sub_resource type="ConvexPolygonShape2D" id=48]
-points = PoolVector2Array( 0, 17.8113, 72, 17.2327, 72, 72, 0, 72 )
+points = PoolVector2Array( 0, 17.8113, 72, 18.448, 72, 72, 0, 72 )
 
 [sub_resource type="ConvexPolygonShape2D" id=49]
 points = PoolVector2Array( 0, 0, 72, 0, 72, 11.1945, 0, 10.8596 )
 
-[sub_resource type="ConvexPolygonShape2D" id=55]
-points = PoolVector2Array( 0, 19.4922, 57.5416, 19.4922, 60.875, 72, 0, 72 )
+[sub_resource type="ConvexPolygonShape2D" id=76]
+points = PoolVector2Array( 0, 18.6598, 62.3681, 18.7119, 61.6736, 72, 0, 72 )
 
 [sub_resource type="TileSet" id=50]
 0/name = "complex_tileset.png 0"
@@ -520,25 +538,10 @@ points = PoolVector2Array( 0, 19.4922, 57.5416, 19.4922, 60.875, 72, 0, 72 )
 "autotile_coord": Vector2( 3, 9 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 55 ),
+"shape": SubResource( 76 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=56]
-extents = Vector2( 220.5, 10 )
-
-[sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 63, 9 )
-
-[sub_resource type="RectangleShape2D" id=58]
-extents = Vector2( 63, 9 )
-
-[sub_resource type="RectangleShape2D" id=59]
-extents = Vector2( 36, 9 )
-
-[sub_resource type="RectangleShape2D" id=60]
-extents = Vector2( 36, 9 )
 
 [sub_resource type="TileSet" id=51]
 0/name = "skyscraper_tileset.png 0"
@@ -707,11 +710,11 @@ points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
 [sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 54, 1008 )
 
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 45, 4.5 )
+
 [sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 18, 99 )
-
-[sub_resource type="RectangleShape2D" id=74]
-extents = Vector2( 45, 10 )
 
 [node name="Complex" type="Node2D"]
 __meta__ = {
@@ -729,7 +732,8 @@ __meta__ = {
 }
 
 [node name="Sky" type="ColorRect" parent="."]
-margin_right = 630.0
+margin_left = 18.0
+margin_right = 648.0
 margin_bottom = 1656.0
 color = Color( 0.67451, 0.768627, 0.764706, 1 )
 __meta__ = {
@@ -786,243 +790,255 @@ position = Vector2( 288, 1152 )
 texture = ExtResource( 11 )
 centered = false
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Houses/balcony"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/balcony/StaticBody2D"]
+position = Vector2( 153, 207 )
+shape = SubResource( 75 )
+one_way_collision = true
+
 [node name="street_lamp" type="Sprite" parent="Houses"]
 position = Vector2( 144, 864 )
 texture = ExtResource( 15 )
+centered = false
+
+[node name="bckg" type="Node2D" parent="."]
+
+[node name="window_2" type="Sprite" parent="bckg"]
+position = Vector2( 792, 1368 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="elevator" type="Sprite" parent="bckg"]
+position = Vector2( 2232, 1368 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="plant" type="Sprite" parent="bckg"]
+position = Vector2( 2592, 1008 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bckg/plant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bckg/plant/StaticBody2D"]
+position = Vector2( 274.5, 549 )
+shape = SubResource( 56 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bckg/plant/StaticBody2D"]
+position = Vector2( 423, 432 )
+shape = SubResource( 57 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bckg/plant/StaticBody2D"]
+position = Vector2( 306, 360 )
+shape = SubResource( 58 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bckg/plant/StaticBody2D"]
+position = Vector2( 315, 99 )
+shape = SubResource( 59 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="bckg/plant/StaticBody2D"]
+position = Vector2( 459, 261 )
+shape = SubResource( 60 )
+one_way_collision = true
+
+[node name="plant_2" type="Sprite" parent="bckg"]
+position = Vector2( 720, 577 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="window" type="Sprite" parent="bckg"]
+position = Vector2( 2736, 1008 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="window_3" type="Sprite" parent="bckg"]
+position = Vector2( 648, 577 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="ceiling_plant" type="Sprite" parent="bckg"]
+position = Vector2( 1080, 432 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="trolley" type="Sprite" parent="bckg"]
+position = Vector2( 648, 288 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="dial" type="Sprite" parent="bckg"]
+position = Vector2( 648, 1368 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Complex" type="TileMap" parent="."]
 tile_set = SubResource( 50 )
 cell_size = Vector2( 72, 72 )
 cell_custom_transform = Transform2D( 72, 0, 0, 72, 0, 0 )
+show_collision = true
 format = 1
-tile_data = PoolIntArray( 8, 0, 0, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 27, 0, 1, 28, 0, 1, 29, 0, 1, 30, 0, 1, 31, 0, 1, 32, 0, 1, 33, 0, 1, 34, 0, 1, 35, 0, 1, 36, 0, 1, 37, 0, 1, 38, 0, 1, 39, 0, 1, 40, 0, 1, 41, 0, 1, 42, 0, 1, 43, 0, 1, 44, 0, 1, 65544, 0, 65536, 65545, 0, 65537, 65546, 0, 196611, 65547, 0, 196611, 65548, 0, 196611, 65549, 0, 196611, 65550, 0, 196611, 65551, 0, 196611, 65552, 0, 196611, 65553, 0, 196611, 65554, 0, 196611, 65555, 0, 196611, 65556, 0, 196611, 65557, 0, 196611, 65558, 0, 196611, 65559, 0, 196611, 65560, 0, 196611, 65561, 0, 196611, 65562, 0, 196611, 65563, 0, 196611, 65564, 0, 196611, 65565, 0, 196611, 65566, 0, 196611, 65567, 0, 196611, 65568, 0, 196611, 65569, 0, 196611, 65570, 0, 196611, 65571, 0, 196611, 65572, 0, 196611, 65573, 0, 196611, 65574, 0, 196611, 65575, 0, 196611, 65576, 0, 196611, 65577, 0, 196611, 65578, 0, 196611, 65579, 0, 196611, 65580, 0, 65539, 131080, 0, 65536, 131081, 0, 2, 131116, 0, 131075, 196616, 0, 65536, 196617, 0, 2, 196652, 0, 131075, 262152, 0, 65536, 262153, 0, 2, 262188, 0, 131075, 327688, 0, 131072, 327689, 0, 131073, 327690, 0, 65538, 327691, 0, 65538, 327692, 0, 65538, 327693, 0, 65538, 327694, 0, 65538, 327695, 0, 65538, 327696, 0, 65538, 327697, 0, 65538, 327698, 0, 65538, 327699, 0, 65538, 327700, 0, 65538, 327701, 0, 65538, 327702, 0, 65538, 327703, 0, 65538, 327704, 0, 65538, 327705, 0, 65538, 327706, 0, 65538, 327707, 0, 65538, 327708, 0, 65538, 327709, 0, 65538, 327710, 0, 65538, 327711, 0, 65538, 327712, 0, 65538, 327713, 0, 65538, 327714, 0, 65538, 327724, 0, 131075, 393224, 0, 196608, 393225, 0, 196609, 393226, 0, 131074, 393227, 0, 131074, 393228, 0, 131074, 393229, 0, 131074, 393230, 0, 131074, 393231, 0, 131074, 393232, 0, 131074, 393233, 0, 131074, 393234, 0, 131074, 393235, 0, 131074, 393236, 0, 131074, 393237, 0, 131074, 393238, 0, 131074, 393239, 0, 131074, 393240, 0, 131074, 393241, 0, 131074, 393242, 0, 131074, 393243, 0, 131074, 393244, 0, 131074, 393245, 0, 131074, 393246, 0, 131074, 393247, 0, 131074, 393248, 0, 131074, 393249, 0, 131074, 393250, 0, 131074, 393251, 0, 131074, 393252, 0, 131074, 393260, 0, 131075, 458760, 0, 262144, 458761, 0, 262145, 458796, 0, 131075, 524296, 0, 262144, 524297, 0, 262145, 524332, 0, 131075, 589832, 0, 262144, 589833, 0, 262145, 589868, 0, 131075, 655368, 0, 262144, 655369, 0, 262145, 655404, 0, 131075, 720904, 0, 327680, 720905, 0, 327681, 720906, 0, 327682, 720907, 0, 327683, 720908, 0, 524291, 720916, 0, 196610, 720917, 0, 196610, 720918, 0, 196610, 720919, 0, 196610, 720920, 0, 196610, 720921, 0, 196610, 720922, 0, 196610, 720923, 0, 196610, 720924, 0, 196610, 720925, 0, 196610, 720926, 0, 196610, 720927, 0, 196610, 720928, 0, 196610, 720929, 0, 196610, 720930, 0, 196610, 720931, 0, 196610, 720932, 0, 196610, 720933, 0, 196610, 720934, 0, 196610, 720935, 0, 196610, 720936, 0, 196610, 720937, 0, 196610, 720938, 0, 196610, 720939, 0, 196610, 720940, 0, 393219, 786440, 0, 393216, 786441, 0, 393217, 786442, 0, 458754, 786452, 0, 262146, 786453, 0, 262147, 786454, 0, 262147, 786455, 0, 262147, 786456, 0, 262147, 786457, 0, 262147, 786458, 0, 262147, 786459, 0, 262147, 786460, 0, 262147, 786461, 0, 262147, 786462, 0, 262147, 786463, 0, 262147, 786464, 0, 262147, 786465, 0, 262147, 786466, 0, 262147, 786467, 0, 262147, 786468, 0, 262147, 786469, 0, 262147, 786470, 0, 262147, 786471, 0, 262147, 786472, 0, 262147, 786473, 0, 262147, 786474, 0, 262147, 786475, 0, 262147, 786476, 0, 458755, 851976, 0, 458752, 851977, 0, 458753, 851978, 0, 458754, 852012, 0, 131075, 917512, 0, 524288, 917513, 0, 524289, 917514, 0, 524290, 917548, 0, 131075, 983048, 0, 589824, 983049, 0, 589825, 983050, 0, 589826, 983084, 0, 131075, 1048584, 0, 589824, 1048585, 0, 589825, 1048586, 0, 589826, 1048620, 0, 131075, 1114120, 0, 655360, 1114121, 0, 655361, 1114122, 0, 655362, 1114123, 0, 655362, 1114124, 0, 655362, 1114125, 0, 655362, 1114126, 0, 655362, 1114127, 0, 655363, 1114128, 0, 655363, 1114129, 0, 655363, 1114130, 0, 655363, 1114131, 0, 655363, 1114132, 0, 655363, 1114133, 0, 655363, 1114134, 0, 655363, 1114135, 0, 655363, 1114136, 0, 655363, 1114137, 0, 655363, 1114138, 0, 655363, 1114139, 0, 655363, 1114140, 0, 655363, 1114141, 0, 655363, 1114142, 0, 655363, 1114143, 0, 655363, 1114144, 0, 655363, 1114145, 0, 655363, 1114146, 0, 655363, 1114147, 0, 655363, 1114148, 0, 589827, 1114156, 0, 131075, 1179656, 0, 720896, 1179657, 0, 720897, 1179658, 0, 720898, 1179659, 0, 720898, 1179660, 0, 720898, 1179661, 0, 720898, 1179662, 0, 720898, 1179663, 0, 720898, 1179664, 0, 720898, 1179665, 0, 720898, 1179666, 0, 720898, 1179667, 0, 720898, 1179668, 0, 720898, 1179669, 0, 720898, 1179670, 0, 720898, 1179671, 0, 720898, 1179672, 0, 720898, 1179673, 0, 720898, 1179674, 0, 720898, 1179675, 0, 720898, 1179676, 0, 720898, 1179677, 0, 720898, 1179678, 0, 720898, 1179679, 0, 720898, 1179680, 0, 720898, 1179681, 0, 720898, 1179682, 0, 720898, 1179683, 0, 720898, 1179684, 0, 786435, 1179692, 0, 131075, 1245192, 0, 786432, 1245193, 0, 786433, 1245228, 0, 131075, 1310728, 0, 786432, 1310729, 0, 786433, 1310764, 0, 131075, 1376264, 0, 786432, 1376265, 0, 786433, 1376300, 0, 131075, 1441800, 0, 786432, 1441801, 0, 786433, 1441836, 0, 131075 )
+tile_data = PoolIntArray( 8, 0, 0, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 27, 0, 1, 28, 0, 1, 29, 0, 1, 30, 0, 1, 31, 0, 1, 32, 0, 1, 33, 0, 1, 34, 0, 1, 35, 0, 1, 36, 0, 1, 37, 0, 1, 38, 0, 1, 39, 0, 1, 40, 0, 1, 41, 0, 1, 42, 0, 1, 43, 0, 1, 44, 0, 1, 65544, 0, 65536, 65545, 0, 65537, 65546, 0, 196611, 65547, 0, 196611, 65548, 0, 196611, 65549, 0, 196611, 65550, 0, 196611, 65551, 0, 196611, 65552, 0, 196611, 65553, 0, 196611, 65554, 0, 196611, 65555, 0, 196611, 65556, 0, 196611, 65557, 0, 196611, 65558, 0, 196611, 65559, 0, 196611, 65560, 0, 196611, 65561, 0, 196611, 65562, 0, 196611, 65563, 0, 196611, 65564, 0, 196611, 65565, 0, 196611, 65566, 0, 196611, 65567, 0, 196611, 65568, 0, 196611, 65569, 0, 196611, 65570, 0, 196611, 65571, 0, 196611, 65572, 0, 196611, 65573, 0, 196611, 65574, 0, 196611, 65575, 0, 196611, 65576, 0, 196611, 65577, 0, 196611, 65578, 0, 196611, 65579, 0, 196611, 65580, 0, 65539, 131080, 0, 65536, 131081, 0, 2, 131116, 0, 131075, 196616, 0, 65536, 196617, 0, 2, 196652, 0, 131075, 262152, 0, 65536, 262153, 0, 2, 262188, 0, 131075, 327688, 0, 131072, 327689, 0, 131073, 327690, 0, 65538, 327691, 0, 65538, 327692, 0, 65538, 327693, 0, 65538, 327694, 0, 65538, 327695, 0, 65538, 327696, 0, 65538, 327697, 0, 65538, 327698, 0, 65538, 327699, 0, 65538, 327700, 0, 65538, 327701, 0, 65538, 327702, 0, 65538, 327703, 0, 65538, 327704, 0, 65538, 327705, 0, 65538, 327706, 0, 65538, 327707, 0, 65538, 327708, 0, 65538, 327709, 0, 65538, 327710, 0, 65538, 327711, 0, 65538, 327712, 0, 65538, 327713, 0, 65538, 327714, 0, 65538, 327724, 0, 131075, 393224, 0, 196608, 393225, 0, 196609, 393226, 0, 131074, 393227, 0, 131074, 393228, 0, 131074, 393229, 0, 131074, 393230, 0, 131074, 393231, 0, 131074, 393232, 0, 131074, 393233, 0, 131074, 393234, 0, 131074, 393235, 0, 131074, 393236, 0, 131074, 393237, 0, 131074, 393238, 0, 131074, 393239, 0, 131074, 393240, 0, 131074, 393241, 0, 131074, 393242, 0, 131074, 393243, 0, 131074, 393244, 0, 131074, 393245, 0, 131074, 393246, 0, 131074, 393247, 0, 131074, 393248, 0, 131074, 393249, 0, 131074, 393250, 0, 131074, 393260, 0, 131075, 458760, 0, 262144, 458761, 0, 262145, 458796, 0, 131075, 524296, 0, 262144, 524297, 0, 262145, 524332, 0, 131075, 589832, 0, 262144, 589833, 0, 262145, 589868, 0, 131075, 655368, 0, 262144, 655369, 0, 262145, 655404, 0, 131075, 720904, 0, 327680, 720905, 0, 327681, 720906, 0, 327682, 720907, 0, 327683, 720908, 0, 524291, 720916, 0, 196610, 720917, 0, 196610, 720918, 0, 196610, 720919, 0, 196610, 720920, 0, 196610, 720921, 0, 196610, 720922, 0, 196610, 720923, 0, 196610, 720924, 0, 196610, 720925, 0, 196610, 720926, 0, 196610, 720927, 0, 196610, 720928, 0, 196610, 720929, 0, 196610, 720930, 0, 196610, 720931, 0, 196610, 720932, 0, 196610, 720933, 0, 196610, 720934, 0, 196610, 720935, 0, 196610, 720936, 0, 196610, 720937, 0, 196610, 720938, 0, 196610, 720939, 0, 196610, 720940, 0, 393219, 786440, 0, 393216, 786441, 0, 393217, 786442, 0, 458754, 786452, 0, 262146, 786453, 0, 262147, 786454, 0, 262147, 786455, 0, 262147, 786456, 0, 262147, 786457, 0, 262147, 786458, 0, 262147, 786459, 0, 262147, 786460, 0, 262147, 786461, 0, 262147, 786462, 0, 262147, 786463, 0, 262147, 786464, 0, 262147, 786465, 0, 262147, 786466, 0, 262147, 786467, 0, 262147, 786468, 0, 262147, 786469, 0, 262147, 786470, 0, 262147, 786471, 0, 262147, 786472, 0, 262147, 786473, 0, 262147, 786474, 0, 262147, 786475, 0, 262147, 786476, 0, 458755, 851976, 0, 458752, 851977, 0, 458753, 851978, 0, 458754, 852012, 0, 131075, 917512, 0, 524288, 917513, 0, 524289, 917514, 0, 524290, 917548, 0, 131075, 983048, 0, 589824, 983049, 0, 589825, 983050, 0, 589826, 983084, 0, 131075, 1048584, 0, 589824, 1048585, 0, 589825, 1048586, 0, 589826, 1048620, 0, 131075, 1114120, 0, 655360, 1114121, 0, 655361, 1114122, 0, 655362, 1114123, 0, 655362, 1114124, 0, 655362, 1114125, 0, 655362, 1114126, 0, 655362, 1114127, 0, 655363, 1114128, 0, 655363, 1114129, 0, 655363, 1114130, 0, 655363, 1114131, 0, 655363, 1114132, 0, 655363, 1114133, 0, 655363, 1114134, 0, 655363, 1114135, 0, 655363, 1114136, 0, 655363, 1114137, 0, 655363, 1114138, 0, 655363, 1114139, 0, 655363, 1114140, 0, 655363, 1114141, 0, 655363, 1114142, 0, 655363, 1114143, 0, 655363, 1114144, 0, 655363, 1114145, 0, 655363, 1114146, 0, 655363, 1114147, 0, 655363, 1114148, 0, 589827, 1114156, 0, 131075, 1179656, 0, 720896, 1179657, 0, 720897, 1179658, 0, 720898, 1179659, 0, 720898, 1179660, 0, 720898, 1179661, 0, 720898, 1179662, 0, 720898, 1179663, 0, 720898, 1179664, 0, 720898, 1179665, 0, 720898, 1179666, 0, 720898, 1179667, 0, 720898, 1179668, 0, 720898, 1179669, 0, 720898, 1179670, 0, 720898, 1179671, 0, 720898, 1179672, 0, 720898, 1179673, 0, 720898, 1179674, 0, 720898, 1179675, 0, 720898, 1179676, 0, 720898, 1179677, 0, 720898, 1179678, 0, 720898, 1179679, 0, 720898, 1179680, 0, 720898, 1179681, 0, 720898, 1179682, 0, 720898, 1179683, 0, 720898, 1179684, 0, 720899, 1179692, 0, 131075, 1245192, 0, 786432, 1245193, 0, 786433, 1245228, 0, 131075, 1310728, 0, 786432, 1310729, 0, 786433, 1310764, 0, 131075, 1376264, 0, 786432, 1376265, 0, 786433, 1376300, 0, 131075, 1441800, 0, 786432, 1441801, 0, 786433, 1441836, 0, 131075 )
 
-[node name="dial" type="Sprite" parent="Complex"]
-position = Vector2( 648, 1368 )
-texture = ExtResource( 14 )
-centered = false
+[node name="Doors" type="Node2D" parent="."]
 
-[node name="DoorsFloor1" type="Node2D" parent="Complex"]
-
-[node name="door" type="Sprite" parent="Complex/DoorsFloor1"]
-position = Vector2( 2421, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door2" type="Sprite" parent="Complex/DoorsFloor1"]
-position = Vector2( 2165, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door3" type="Sprite" parent="Complex/DoorsFloor1"]
-position = Vector2( 1909, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door4" type="Sprite" parent="Complex/DoorsFloor1"]
-position = Vector2( 1653, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door5" type="Sprite" parent="Complex/DoorsFloor1"]
-position = Vector2( 1397, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door6" type="Sprite" parent="Complex/DoorsFloor1"]
-position = Vector2( 1211, 1188 )
-texture = ExtResource( 23 )
-
-[node name="DoorsFloor2" type="Node2D" parent="Complex"]
-position = Vector2( 409, -432 )
-
-[node name="door" type="Sprite" parent="Complex/DoorsFloor2"]
-position = Vector2( 2421, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door2" type="Sprite" parent="Complex/DoorsFloor2"]
-position = Vector2( 2165, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door3" type="Sprite" parent="Complex/DoorsFloor2"]
-position = Vector2( 1909, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door4" type="Sprite" parent="Complex/DoorsFloor2"]
-position = Vector2( 1653, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door5" type="Sprite" parent="Complex/DoorsFloor2"]
-position = Vector2( 1397, 1080 )
-texture = ExtResource( 27 )
-centered = false
-
-[node name="door6" type="Sprite" parent="Complex/DoorsFloor2"]
-position = Vector2( 1211, 1188 )
-texture = ExtResource( 27 )
-
-[node name="DoorsFloor3" type="Node2D" parent="Complex"]
+[node name="DoorsFloor3" type="Node2D" parent="Doors"]
 position = Vector2( -103, -840 )
 
-[node name="door" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="door" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 2421, 1080 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="door2" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="door2" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 2165, 1080 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="door3" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="door3" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 1909, 1080 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="door4" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="door4" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 1653, 1080 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="door5" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="door5" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 1397, 1080 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="door6" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="door6" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 1211, 1188 )
 texture = ExtResource( 27 )
 
-[node name="window_4" type="Sprite" parent="Complex/DoorsFloor3"]
+[node name="window_4" type="Sprite" parent="Doors/DoorsFloor3"]
 position = Vector2( 2565, 984 )
 texture = ExtResource( 22 )
 centered = false
 
-[node name="stairs_1" type="Sprite" parent="Complex"]
-position = Vector2( 792, 1008 )
-texture = ExtResource( 10 )
+[node name="DoorsFloor2" type="Node2D" parent="Doors"]
+position = Vector2( 409, -432 )
+
+[node name="door" type="Sprite" parent="Doors/DoorsFloor2"]
+position = Vector2( 2421, 1080 )
+texture = ExtResource( 27 )
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Complex/stairs_1" groups=[
-"Stairs",
-]]
-position = Vector2( -162, -1008 )
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Complex/stairs_1/StaticBody2D"]
-visible = false
-position = Vector2( 1.03009, 0 )
-polygon = PoolVector2Array( 178.594, 1043.94, 564.653, 1241.83, 160.197, 1241.49, 160.989, 1043.94 )
-
-[node name="window_2" type="Sprite" parent="Complex"]
-position = Vector2( 792, 1368 )
-texture = ExtResource( 6 )
+[node name="door2" type="Sprite" parent="Doors/DoorsFloor2"]
+position = Vector2( 2165, 1080 )
+texture = ExtResource( 27 )
 centered = false
 
-[node name="elevator" type="Sprite" parent="Complex"]
-position = Vector2( 2232, 1368 )
-texture = ExtResource( 19 )
+[node name="door3" type="Sprite" parent="Doors/DoorsFloor2"]
+position = Vector2( 1909, 1080 )
+texture = ExtResource( 27 )
 centered = false
 
-[node name="stairs_2" type="Sprite" parent="Complex"]
+[node name="door4" type="Sprite" parent="Doors/DoorsFloor2"]
+position = Vector2( 1653, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door5" type="Sprite" parent="Doors/DoorsFloor2"]
+position = Vector2( 1397, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door6" type="Sprite" parent="Doors/DoorsFloor2"]
+position = Vector2( 1211, 1188 )
+texture = ExtResource( 27 )
+
+[node name="DoorsFloor1" type="Node2D" parent="Doors"]
+
+[node name="door" type="Sprite" parent="Doors/DoorsFloor1"]
+position = Vector2( 2421, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door2" type="Sprite" parent="Doors/DoorsFloor1"]
+position = Vector2( 2165, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door3" type="Sprite" parent="Doors/DoorsFloor1"]
+position = Vector2( 1909, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door4" type="Sprite" parent="Doors/DoorsFloor1"]
+position = Vector2( 1653, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door5" type="Sprite" parent="Doors/DoorsFloor1"]
+position = Vector2( 1397, 1080 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="door6" type="Sprite" parent="Doors/DoorsFloor1"]
+position = Vector2( 1211, 1188 )
+texture = ExtResource( 23 )
+
+[node name="Stairs" type="Node2D" parent="."]
+
+[node name="stairs_2" type="Sprite" parent="Stairs"]
 position = Vector2( 864, 792 )
 texture = ExtResource( 13 )
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Complex/stairs_2" groups=[
+[node name="StaticBody2D" type="StaticBody2D" parent="Stairs/stairs_2" groups=[
 "Stairs",
 ]]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Complex/stairs_2/StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( 576.5, 19, 576, 143.5, 564, 144, 564, 221.5, 53, 222.5, 451, 18 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs/stairs_2/StaticBody2D"]
+polygon = PoolVector2Array( 576.5, 19, 576, 143.5, 564, 144, 564, 221.5, 81, 216, 477, 18 )
 one_way_collision = true
 
-[node name="window" type="Sprite" parent="Complex"]
-position = Vector2( 2736, 1008 )
-texture = ExtResource( 17 )
+[node name="stairs_1" type="Sprite" parent="Stairs"]
+position = Vector2( 792, 1008 )
+texture = ExtResource( 10 )
 centered = false
 
-[node name="plant" type="Sprite" parent="Complex"]
-position = Vector2( 2592, 1008 )
-texture = ExtResource( 20 )
-centered = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Complex/plant"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Complex/plant/StaticBody2D"]
-position = Vector2( 274.5, 549 )
-shape = SubResource( 56 )
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Complex/plant/StaticBody2D"]
-position = Vector2( 423, 432 )
-shape = SubResource( 57 )
-one_way_collision = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Complex/plant/StaticBody2D"]
-position = Vector2( 306, 360 )
-shape = SubResource( 58 )
-one_way_collision = true
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Complex/plant/StaticBody2D"]
-position = Vector2( 315, 99 )
-shape = SubResource( 59 )
-one_way_collision = true
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Complex/plant/StaticBody2D"]
-position = Vector2( 459, 261 )
-shape = SubResource( 60 )
-one_way_collision = true
-
-[node name="window_3" type="Sprite" parent="Complex"]
-position = Vector2( 648, 577 )
-texture = ExtResource( 26 )
-centered = false
-
-[node name="trolley" type="Sprite" parent="Complex"]
-position = Vector2( 648, 288 )
-texture = ExtResource( 25 )
-centered = false
-
-[node name="plant_2" type="Sprite" parent="Complex"]
-position = Vector2( 720, 577 )
-texture = ExtResource( 21 )
-centered = false
-
-[node name="ceiling_plant" type="Sprite" parent="Complex"]
-position = Vector2( 1080, 432 )
-texture = ExtResource( 24 )
-centered = false
-
-[node name="stairs_4" type="Sprite" parent="Complex"]
-position = Vector2( 2376, 360 )
-texture = ExtResource( 8 )
-centered = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Complex/stairs_4" groups=[
+[node name="StaticBody2D" type="StaticBody2D" parent="Stairs/stairs_1" groups=[
 "Stairs",
 ]]
+position = Vector2( -162, -1008 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Complex/stairs_4/StaticBody2D"]
-polygon = PoolVector2Array( 0.80249, 42.7957, 232.295, 41.2065, 623.237, 238.267, 623.237, 252.04, 228.587, 250.45, 227.422, 245.682, 114.319, 246.079, 113.526, 161.946, 60.7446, 161.153, 60.3477, 113.927, 0.820312, 113.531 )
-one_way_collision = true
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Stairs/stairs_1/StaticBody2D"]
+position = Vector2( 1.03009, 0 )
+polygon = PoolVector2Array( 547.97, 1242, 151.97, 1233, 151.97, 1044 )
 
-[node name="stairs_3" type="Sprite" parent="Complex"]
+[node name="stairs_3" type="Sprite" parent="Stairs"]
 position = Vector2( 2736, 577 )
 texture = ExtResource( 18 )
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Complex/stairs_3" groups=[
+[node name="StaticBody2D" type="StaticBody2D" parent="Stairs/stairs_3" groups=[
 "Stairs",
 ]]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Complex/stairs_3/StaticBody2D"]
-polygon = PoolVector2Array( 495.566, 53.6694, 366.872, 53.6694, 16.1475, 231.86, 492.737, 231.153 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs/stairs_3/StaticBody2D"]
+polygon = PoolVector2Array( 495.566, 53.6694, 396, 53, 36, 233, 492.737, 231.153 )
+
+[node name="stairs_4" type="Sprite" parent="Stairs"]
+position = Vector2( 2376, 360 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stairs/stairs_4" groups=[
+"Stairs",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs/stairs_4/StaticBody2D"]
+polygon = PoolVector2Array( 0.80249, 42.7957, 225, 45, 623.237, 252.04, 228.587, 250.45, 227.422, 245.682, 114.319, 246.079, 113.526, 161.946, 60.7446, 161.153, 60.3477, 113.927, 0.820312, 113.531 )
+one_way_collision = true
 
 [node name="Skyscraper" type="TileMap" parent="."]
 tile_set = SubResource( 51 )
@@ -1043,12 +1059,14 @@ position = Vector2( 1611, 351 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_smoothed = true
+smoothing_enabled = true
 
 [node name="Teleport" type="Area2D" parent="."]
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
-position = Vector2( 36, 1008 )
+position = Vector2( 513, 1008 )
 shape = SubResource( 53 )
 
 [node name="alley_house_ladder" type="Sprite" parent="."]
@@ -1056,15 +1074,17 @@ position = Vector2( 2655, 1233 )
 texture = ExtResource( 1 )
 centered = false
 
+[node name="platform" type="StaticBody2D" parent="alley_house_ladder"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="alley_house_ladder/platform"]
+position = Vector2( 36, 13.5 )
+shape = SubResource( 74 )
+one_way_collision = true
+
 [node name="StaticBody2D" type="Area2D" parent="alley_house_ladder" groups=[
 "ladder",
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="alley_house_ladder/StaticBody2D"]
-position = Vector2( 35.9998, 117 )
+position = Vector2( 36, 108 )
 shape = SubResource( 54 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="alley_house_ladder/StaticBody2D"]
-position = Vector2( 36, 9 )
-shape = SubResource( 74 )
-one_way_collision = true

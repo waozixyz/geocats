@@ -112,8 +112,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
-animation = "climb"
-frame = 2
+animation = "walk"
 playing = true
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
@@ -125,7 +124,11 @@ disabled = true
 [node name="CollisionClimb" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="CollisionDefault" type="CollisionShape2D" parent="."]
+[node name="CollisionDefault" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 5.48319 )
+polygon = PoolVector2Array( 50, -27.4832, 50, -0.48319, 23, -0.48319, 23, 26.5168, -31, 26.5168, -31, -18.4832, -13, -18.4832, -13, -27.4832 )
+
+[node name="del" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5.48319 )
 shape = SubResource( 12 )
 disabled = true
@@ -137,6 +140,3 @@ cast_to = Vector2( 50, 0 )
 [node name="LeftRaycast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -50, 0 )
-
-[node name="DownRaycast" type="RayCast2D" parent="."]
-enabled = true

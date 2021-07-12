@@ -10,7 +10,7 @@ onready var sprite = $AnimatedSprite #path to the player's sprite
 
 onready var right_raycast = $RightRaycast #path to the right raycast
 onready var left_raycast = $LeftRaycast  #path to the left raycast
-onready var down_raycast = $DownRaycast  #path to the left raycast
+
 
 
 
@@ -87,10 +87,10 @@ var anim = "idle"
 # ladder
 var on_ladder = false
 # one way collding platform
-var on_platform = false
-var current_platforms
+var current_platforms = []
+var disabled_platforms = []
 var fall_through_timer = 0
-var fall_through_time = 1000
+var fall_through_time = 2000
 #functions
 func _ready():
 	#use kin functions to set jump velocites
@@ -129,50 +129,48 @@ func check_child_collision(child):
 	else:
 		return false
 
-func rotate_on_slope():
+func check_collisions():
+	current_platforms = []
 	if is_on_floor():
 		for i in get_slide_count():
 			var collision = get_slide_collision(i)
+			for child in collision.collider.get_children():
+				if check_child_collision(child):
+					current_platforms.insert(current_platforms.size(), child)
 			var normal = collision.normal
+
 			var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
 			var mul = 1
 			if normal.x < 0:
 				mul = -1
-			sprite.rotation_degrees = -slope_angle * 3 * mul
+			sprite.rotation_degrees = -slope_angle * 4 * mul
 
 func rotate_to_idle():
 	var rot = sprite.rotation_degrees
 	if rot > 1:
-		rot -= rot * .1
+		rot -= 1
 	if rot < -1:
-		rot += rot * .1
+		rot += 1
 	sprite.rotation_degrees = rot
-	print(rot)
-
-				
 
 func _physics_process(delta):
 
-	if current_platforms and not on_platform:
-		for platform in current_platforms:
-			platform.disabled = false
 	if fall_through_timer > 0:
 		fall_through_timer -= OS.get_ticks_msec() * .01
 	else:
-		if down_raycast.is_colliding():
-			current_platforms = []
-			for child in down_raycast.get_collider().get_children():
-				if check_child_collision(child):
-					current_platforms.insert(current_platforms.size(), child)
-					on_platform = true
-		else:
-			on_platform = false
+		for platform in disabled_platforms:
+			platform.disabled = false
+
+		disabled_platforms = []
+	check_collisions()
 	get_input()
 
 	apply_gravity(delta)
+	default_coll()
 
 	call(currentState + "_logic", delta) #call the current states main method
-	default_coll()
+
+	
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 
 
@@ -261,9 +259,9 @@ func default_logic():
 	if movementInputY > 0:
 		set_state("crouch")
 	if movementInputY && on_ladder:
-		if is_on_floor() and movementInputY < 0 and not on_platform || not is_on_floor():
+		if is_on_floor() and movementInputY < 0 and not current_platforms || not is_on_floor():
 			set_state("climb")
-		if on_platform and movementInputY > 0:
+		if 	current_platforms and movementInputY > 0:
 			fall_through()
 			set_state("climb")
 		
@@ -289,6 +287,7 @@ func climb_exit_logic():
 func fall_through():
 	for platform in current_platforms:
 		platform.disabled = true
+		disabled_platforms.insert(disabled_platforms.size(), platform)
 	fall_through_timer = fall_through_time
 		
 func crouch_enter_logic():
@@ -298,7 +297,7 @@ func crouch_logic(delta):
 	if isDashPressed:
 		#dash if you press button
 		set_state("dash")
-	if jumpInput and on_platform:
+	if jumpInput and current_platforms:
 		fall_through()
 	if Input.get_action_strength("down") > 0:
 		anim = "crouch"
@@ -340,7 +339,7 @@ func run_enter_logic():
 	anim = "walk"
 
 func run_logic(delta):
-	rotate_on_slope()
+
 	default_logic()
 	
 	if !is_on_floor():
@@ -434,7 +433,7 @@ func dash_logic(delta):
 	if elapsedDashTime > dashDurration:
 		#if elapsed dash time is greater then the dash durration
 		set_state(previousState) #go back to the previous state
-	rotate_on_slope()
+
 func dash_exit_logic():
 	velocity = Vector2.ZERO  #reset velocity to zero
 	if !is_on_floor():
