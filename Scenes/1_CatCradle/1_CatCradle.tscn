@@ -31,7 +31,7 @@
 [ext_resource path="res://Scenes/1_CatCradle/Exit.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
-[ext_resource path="res://Assets/LevelAssets/1_CatCradle/Letter.png" type="Texture" id=32]
+[ext_resource path="res://Assets/LevelAssets/1_CatCradle/letter.png" type="Texture" id=32]
 [ext_resource path="res://Scenes/UI/InteractWith.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Assets/Sfx/GeoCats_Jazz_2.mp3" type="AudioStream" id=34]
 [ext_resource path="res://Scenes/UI/E_Button.tscn" type="PackedScene" id=35]
@@ -833,7 +833,8 @@ extents = Vector2( 54, 84.8504 )
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=97]
-size = 18
+size = 13
+outline_color = Color( 0.843137, 0.843137, 0.843137, 1 )
 font_data = SubResource( 96 )
 
 [sub_resource type="Theme" id=98]
@@ -852,7 +853,8 @@ __meta__ = {
 }
 
 [node name="Background" type="ColorRect" parent="."]
-margin_right = 2151.0
+margin_left = 3.0
+margin_right = 2154.0
 margin_bottom = 1080.0
 color = Color( 0.827451, 0.47451, 0.145098, 1 )
 __meta__ = {
@@ -1171,6 +1173,29 @@ shape = SubResource( 99 )
 position = Vector2( -36, 64 )
 shape = SubResource( 99 )
 
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1574.0
+margin_top = 76.0
+margin_right = 1874.0
+margin_bottom = 327.0
+stretch = true
+stretch_shrink = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 150, 125 )
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="ViewportContainer/Viewport"]
+current = true
+zoom = Vector2( 1.5, 2 )
+
 [node name="Teleport" type="Area2D" parent="."]
 position = Vector2( 0, 950 )
 script = ExtResource( 29 )
@@ -1193,30 +1218,35 @@ visible = false
 
 [node name="Letter" type="ViewportContainer" parent="CanvasLayer"]
 visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = -1.0
+anchor_top = -1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1, 1.1 )
+stretch = true
+stretch_shrink = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Letter" type="Sprite" parent="CanvasLayer/Letter"]
-position = Vector2( 36, 36 )
-scale = Vector2( 0.8, 0.9 )
+[node name="Viewport" type="Viewport" parent="CanvasLayer/Letter"]
+size = Vector2( 426, 320 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="letter" type="Sprite" parent="CanvasLayer/Letter/Viewport"]
 texture = ExtResource( 32 )
 centered = false
 
-[node name="Letter2" type="Sprite" parent="CanvasLayer/Letter"]
-position = Vector2( 500, 36 )
-scale = Vector2( 0.8, 0.9 )
-texture = ExtResource( 32 )
-centered = false
-flip_h = true
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Letter/Viewport"]
+current = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Letter"]
-margin_left = 88.0
-margin_top = 88.0
-margin_right = 940.0
-margin_bottom = 472.0
+margin_left = 670.0
+margin_top = 509.091
+margin_right = 1260.0
+margin_bottom = 1049.09
 theme = SubResource( 98 )
 fit_content_height = true
 script = ExtResource( 31 )

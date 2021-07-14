@@ -129,6 +129,7 @@ func check_child_collision(child):
 	else:
 		return false
 
+var prev_rot: int
 func check_collisions():
 	var rot = rotation_degrees
 	current_platforms = []
@@ -146,11 +147,13 @@ func check_collisions():
 				if normal.x < 0:
 					mul = -1
 				rot = (rot + -slope_angle * 4 * mul) * .5
+				rot = (rot + prev_rot) * .5
 	else:
 		if rot > 1:
 			rot -= 1
 		if rot < -1:
 			rot += 1
+	prev_rot = rot
 	rotation_degrees = rot
 
 func _physics_process(delta):
