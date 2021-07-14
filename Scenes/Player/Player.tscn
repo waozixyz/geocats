@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Player/ladder_detect.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.243, 40 )
+extents = Vector2( 13, 38 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -30,28 +30,28 @@ region = Rect2( 0, 216, 100, 108 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 137, 83 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 137, 0, 137, 83 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 29, 92 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 29, 0, 29, 92 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 58, 0, 29, 92 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 137, 83 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 137, 0, 137, 83 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
@@ -70,32 +70,32 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "cling",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "cling",
+"name": "walk",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 18.3628, 36.7931 )
+extents = Vector2( 18, 40 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 48.9132, 26.0343 )
+extents = Vector2( 38, 26.0343 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 8 )
@@ -124,14 +124,9 @@ disabled = true
 [node name="CollisionClimb" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="CollisionDefault" type="CollisionPolygon2D" parent="."]
-position = Vector2( 0, 5.48319 )
-polygon = PoolVector2Array( 50, -27.4832, 50, -0.48319, 23, -0.48319, 23, 26.5168, -31, 26.5168, -31, -18.4832, -13, -18.4832, -13, -27.4832 )
-
-[node name="del" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 5.48319 )
+[node name="CollisionDefault" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 5 )
 shape = SubResource( 12 )
-disabled = true
 
 [node name="RightRaycast" type="RayCast2D" parent="."]
 enabled = true

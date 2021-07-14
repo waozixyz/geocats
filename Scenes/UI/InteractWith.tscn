@@ -2,18 +2,18 @@
 
 [ext_resource path="res://Scenes/UI/E_Button.tscn" type="PackedScene" id=1]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.741176 )
 corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=2]
-font_data = SubResource( 1 )
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 2 )
 
 [node name="InteractWith" type="Control"]
 __meta__ = {
@@ -25,7 +25,7 @@ margin_left = 9.0
 margin_top = 9.0
 margin_right = 198.0
 margin_bottom = 171.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,7 +41,7 @@ margin_left = 18.0
 margin_top = 36.0
 margin_right = 189.0
 margin_bottom = 72.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Interact With"
 scroll_active = false
 __meta__ = {

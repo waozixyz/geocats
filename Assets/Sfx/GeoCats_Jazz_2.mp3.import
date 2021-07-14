@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GeoCats_Jazz_2.mp3-f16056654f2322d9da8899cd9e557f91.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/GeoCats_Jazz_2.mp3"
+dest_files=[ "res://.import/GeoCats_Jazz_2.mp3-f16056654f2322d9da8899cd9e557f91.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

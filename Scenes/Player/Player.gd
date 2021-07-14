@@ -90,7 +90,7 @@ var on_ladder = false
 var current_platforms = []
 var disabled_platforms = []
 var fall_through_timer = 0
-var fall_through_time = 2000
+var fall_through_time = 1000
 #functions
 func _ready():
 	#use kin functions to set jump velocites
@@ -130,28 +130,28 @@ func check_child_collision(child):
 		return false
 
 func check_collisions():
+	var rot = rotation_degrees
 	current_platforms = []
 	if is_on_floor():
 		for i in get_slide_count():
 			var collision = get_slide_collision(i)
+			
 			for child in collision.collider.get_children():
 				if check_child_collision(child):
 					current_platforms.insert(current_platforms.size(), child)
 			var normal = collision.normal
-
-			var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
-			var mul = 1
-			if normal.x < 0:
-				mul = -1
-			sprite.rotation_degrees = -slope_angle * 4 * mul
-
-func rotate_to_idle():
-	var rot = sprite.rotation_degrees
-	if rot > 1:
-		rot -= 1
-	if rot < -1:
-		rot += 1
-	sprite.rotation_degrees = rot
+			if normal.x > -.8 && normal.x < .8:
+				var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
+				var mul = 1
+				if normal.x < 0:
+					mul = -1
+				rot = (rot + -slope_angle * 4 * mul) * .5
+	else:
+		if rot > 1:
+			rot -= 1
+		if rot < -1:
+			rot += 1
+	rotation_degrees = rot
 
 func _physics_process(delta):
 
@@ -175,7 +175,7 @@ func _physics_process(delta):
 
 
 	sprite.flip_h = lastDirection - 1 #flip sprite depending on which direction you last moved in
-
+	coll_default.position.x = 8 * lastDirection
 	sprite.play(anim)
 	sprite.animation = anim
 
@@ -271,7 +271,6 @@ func default_logic():
 func climb_enter_logic():
 	anim = "climb"
 func climb_logic(delta):
-	rotate_to_idle()
 	move_vertically()
 	if jumpInput:
 		#jump if you press button
@@ -364,7 +363,6 @@ func fall_enter_logic():
 	pass
 
 func fall_logic(delta):
-	rotate_to_idle()
 	default_anim()
 	move_horizontally(airFriction) #move horizontally
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
@@ -446,7 +444,6 @@ func jump_enter_logic():
 	pass
 
 func jump_logic(delta):
-	rotate_to_idle()
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
 	if movementInputY && on_ladder:
