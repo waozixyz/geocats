@@ -11,9 +11,6 @@ onready var sprite = $AnimatedSprite #path to the player's sprite
 onready var right_raycast = $RightRaycast #path to the right raycast
 onready var left_raycast = $LeftRaycast  #path to the left raycast
 
-
-
-
 #Input Vars
 var movementInputX = 0 #will be 1, -1, 0 depending on if you are holding right, left, or nothing
 var movementInputY = 0 #will be 1, -1, 0 depending on if you are holding up, d, or nothing
@@ -157,7 +154,6 @@ func check_collisions():
 	rotation_degrees = rot
 
 func _physics_process(delta):
-
 	if fall_through_timer > 0:
 		fall_through_timer -= OS.get_ticks_msec() * .01
 	else:
@@ -173,10 +169,9 @@ func _physics_process(delta):
 
 	call(currentState + "_logic", delta) #call the current states main method
 
-	
+
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-
-
+	
 	sprite.flip_h = lastDirection - 1 #flip sprite depending on which direction you last moved in
 	coll_default.position.x = 8 * lastDirection
 	sprite.play(anim)
@@ -253,9 +248,7 @@ func default_logic():
 		#jump if you press button
 		jump(jumpVelocity)
 		set_state("jump")
-
-
-	
+		
 	if isDashPressed:
 		#dash if you press button
 		set_state("dash")
@@ -330,8 +323,7 @@ func idle_logic(delta):
 	if movementInputX != 0:
 		#start running if you press a movement button
 		set_state("run")
-	velocity.x = move_toward(velocity.x, 0, decceleration) #deccelerate
-
+	velocity.x = move_toward(velocity.x, 0, decceleration) #deccelerat
 
 func idle_exit_logic():
 	currentSpeed = 0 #reset current speed (we do this here to keep momentum on run jumps)

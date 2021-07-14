@@ -18,7 +18,7 @@ func _on_body_exited(body):
 
 
 func _input(event):
-	if Input.is_action_just_pressed("interact") && button.visible == true:
+	if (Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("jump")) && button.visible == true:
 		button.visible = false
 		if get_parent().name == "UpElevator":
 			player.position.x = 2400
@@ -26,3 +26,5 @@ func _input(event):
 		if get_parent().name == "DownElevator":
 			player.position.x = 1100
 			player.position.y = 300
+		if get_parent().name == "HomeDoor":
+			SceneChanger.change_scene("res://Scenes/1_CatCradle/1_CatCradle.tscn")

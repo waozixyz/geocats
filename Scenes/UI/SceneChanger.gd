@@ -6,7 +6,7 @@ var scene : String
 var timer : int
 var change : bool
 
-func change_scene(new_scene, anim):
+func change_scene(new_scene):
 	scene = new_scene
 	timer = 1000
 	change = true

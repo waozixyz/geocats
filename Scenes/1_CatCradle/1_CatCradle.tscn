@@ -799,9 +799,6 @@ extents = Vector2( 171, 10 )
 [sub_resource type="RectangleShape2D" id=87]
 extents = Vector2( 18, 81 )
 
-[sub_resource type="RectangleShape2D" id=88]
-extents = Vector2( 41, 9 )
-
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 54, 10 )
 
@@ -820,6 +817,9 @@ extents = Vector2( 27, 184.5 )
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 81, 70.157 )
 
+[sub_resource type="RectangleShape2D" id=88]
+extents = Vector2( 41, 6 )
+
 [sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 9, 125 )
 
@@ -832,13 +832,13 @@ extents = Vector2( 54, 84.8504 )
 [sub_resource type="DynamicFontData" id=96]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=97]
+[sub_resource type="DynamicFont" id=103]
 size = 13
 outline_color = Color( 0.843137, 0.843137, 0.843137, 1 )
 font_data = SubResource( 96 )
 
 [sub_resource type="Theme" id=98]
-default_font = SubResource( 97 )
+default_font = SubResource( 103 )
 
 [node name="CatCradle" type="Node2D"]
 
@@ -1056,19 +1056,6 @@ visible = false
 position = Vector2( 351, 72 )
 shape = SubResource( 87 )
 
-[node name="Table" type="Sprite" parent="Objects"]
-position = Vector2( 117, 990 )
-texture = ExtResource( 22 )
-centered = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Objects/Table"]
-position = Vector2( 40, 27 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Table/StaticBody2D"]
-position = Vector2( 0, -9 )
-shape = SubResource( 88 )
-one_way_collision = true
-
 [node name="Statue" type="Sprite" parent="Objects"]
 position = Vector2( 1710, 918 )
 texture = ExtResource( 27 )
@@ -1139,6 +1126,19 @@ script = ExtResource( 30 )
 position = Vector2( 41, -4.84302 )
 shape = SubResource( 101 )
 
+[node name="Table" type="Sprite" parent="."]
+position = Vector2( 117, 990 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table"]
+position = Vector2( 40, 27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D"]
+position = Vector2( 0, -21 )
+shape = SubResource( 88 )
+one_way_collision = true
+
 [node name="Player" parent="." instance=ExtResource( 28 )]
 position = Vector2( 1863, 288 )
 
@@ -1172,29 +1172,6 @@ shape = SubResource( 99 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWall"]
 position = Vector2( -36, 64 )
 shape = SubResource( 99 )
-
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1574.0
-margin_top = 76.0
-margin_right = 1874.0
-margin_bottom = 327.0
-stretch = true
-stretch_shrink = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 150, 125 )
-handle_input_locally = false
-render_target_update_mode = 0
-
-[node name="Camera2D" type="Camera2D" parent="ViewportContainer/Viewport"]
-current = true
-zoom = Vector2( 1.5, 2 )
 
 [node name="Teleport" type="Area2D" parent="."]
 position = Vector2( 0, 950 )
