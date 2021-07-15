@@ -7,8 +7,9 @@ var timer : int
 var change : bool
 
 func change_scene(new_scene):
+	get_tree().paused = true
 	scene = new_scene
-	timer = 1000
+	timer = 700
 	change = true
 	Sprite.visible = true
 
@@ -24,6 +25,7 @@ func _physics_process(delta):
 func _new_scene():
 	Sprite.visible = false
 	get_tree().change_scene(scene)
+	get_tree().paused = false
 	change = false
 
 

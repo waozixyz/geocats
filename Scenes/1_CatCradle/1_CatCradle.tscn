@@ -34,7 +34,7 @@
 [ext_resource path="res://Assets/LevelAssets/1_CatCradle/letter.png" type="Texture" id=32]
 [ext_resource path="res://Scenes/UI/InteractWith.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Assets/Sfx/GeoCats_Jazz_2.mp3" type="AudioStream" id=34]
-[ext_resource path="res://Scenes/UI/E_Button.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Assets/UI/ebutton/e_Button_press.png" type="Texture" id=35]
 
 [sub_resource type="TileSet" id=1]
 0/name = "background_tilemap.png 0"
@@ -1166,12 +1166,11 @@ script = ExtResource( 29 )
 position = Vector2( -27, 4 )
 shape = SubResource( 95 )
 
-[node name="Button" parent="Teleport" instance=ExtResource( 35 )]
+[node name="Button" type="Sprite" parent="Teleport"]
 visible = false
-margin_left = -63.0
-margin_top = -23.0
-margin_right = -18.0
-margin_bottom = 24.0
+position = Vector2( -28, 2 )
+scale = Vector2( 0.321428, 0.302884 )
+texture = ExtResource( 35 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

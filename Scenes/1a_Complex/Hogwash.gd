@@ -1,25 +1,43 @@
-extends KinematicBody2D
-
-onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-onready var sprite = $ViewportContainer/Viewport/AnimatedSprite
+extends Entity
 
 var anim = "idle"
-var velocity = Vector2()
-var elapsed : int
+
+var start_time : int
+var elapsed_time : int
 
 var direction = 1
+var jump_height = 1000
+var move_speed = 200
 
+var f = 0.01
+
+func _ready():
+	sprite = $ViewportContainer/Viewport/AnimatedSprite
+	to_rotate = $ViewportContainer
+	._ready()
+	start_time = OS.get_ticks_msec() * f #start timer
+
+
+var start_jump_time = 20
+var end_jump_time = 30
+	
 func _physics_process(delta):
-	velocity.y += delta * gravity
+	elapsed_time = OS.get_ticks_msec() * f - start_time
 
-	elapsed +=  OS.get_ticks_msec() * 0.001
-	if elapsed > 100:
-		velocity.x = 200 * direction
-		if elapsed > 220:
-			elapsed = 0
-
+	if elapsed_time > 10:
+		velocity.x = move_speed * direction
+		if elapsed_time > start_jump_time and elapsed_time < end_jump_time:
+			if is_on_floor():
+				jump(jump_height)
+		if elapsed_time > 40:
+			start_time = OS.get_ticks_msec() * f #start timer
+			velocity.x = 0
+			start_jump_time = 10 + randi() % end_jump_time
+			end_jump_time = start_jump_time + randi() % 10 
+			if (randi() % 50 > 25):
+				direction *= -1
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	rotation()
+
 	if is_on_wall():
 		direction *= -1
 	sprite.flip_h = direction - 1
@@ -31,24 +49,3 @@ func _physics_process(delta):
 	sprite.play(anim)
 	sprite.animation = anim
 
-var prev_rot: float = rotation
-func rotation():
-	var rot = rotation_degrees
-	if is_on_floor():
-		for i in get_slide_count():
-			var collision = get_slide_collision(i)
-			var normal = collision.normal
-			if normal.x > -.6 && normal.x < .6:
-				var slope_angle = normal.dot(Vector2(0,-1)) - 57
-				var mul = 1
-				if normal.x < 0:
-					mul = -1
-				rot = (rot + -slope_angle * 4 * mul) * .5
-				rot = (rot + prev_rot) * .5
-	else:
-		if rot > 1:
-			rot -= 1
-		if rot < -1:
-			rot += 1
-	prev_rot = rot
-	rotation_degrees = rot

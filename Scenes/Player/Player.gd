@@ -1,12 +1,10 @@
-extends KinematicBody2D
+extends Entity
 class_name Player
-
-onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var horizontal : int = 0
 var vertical : int = 0
 var up : bool = false 
-var velocity: Vector2 = Vector2.ZERO
+
 var vx: float = 0 setget _set_vx, _get_vx
 var vy: float = 0 setget _set_vy, _get_vy
 
@@ -19,7 +17,6 @@ var ladder_x : float
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
-onready var sprite : AnimatedSprite = $AnimatedSprite
 onready var state_machine: PlayerFSM = $PlayerStates
 onready var tween : Tween = $Tween
 
@@ -42,25 +39,6 @@ var jumpInput : int = 0
 
 var on_ladder : bool = false
 var previous_state : String setget ,_get_previous_state_tag
-
-
-func _get_previous_state_tag():
-	return state_machine.previous_state_tag
-
-func _ready():
-	state_machine.enter_logic(self) 
-	
-# one way collding platform
-var current_platforms = []
-var disabled_platforms = []
-var fall_through_timer = 0
-var fall_through_time = 1000
-
-func fall_through():
-	for platform in current_platforms:
-		platform.disabled = true
-		disabled_platforms.insert(disabled_platforms.size(), platform)
-	fall_through_timer = fall_through_time
 
 var airFriction = 60 #how much you subtract velocity when you start moving horizontally in the air
 
@@ -88,10 +66,6 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 		return true
 	else:
 		return false	
-func jump(jumpHeight):
-	velocity.y = 0 #reset velocity
-	velocity.y = -sqrt(20 * gravity * jumpHeight) 
-	
 
 func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
@@ -102,36 +76,18 @@ func move_vertically():
 	_set_vy(currentSpeed * vertical)#apply curent speed to velocity and multiply by direction
 	_set_vx(0)
 
-func _physics_process(delta):
-	if fall_through_timer > 0:
-		fall_through_timer -= OS.get_ticks_msec() * .01
-	else:
-		for platform in disabled_platforms:
-			platform.disabled = false
 
-		disabled_platforms = []
-	current_platforms = []
-	if is_on_floor():
-		for i in get_slide_count():
-			var collision = get_slide_collision(i)
-			for child in collision.collider.get_children():
-				if check_child_collision(child):
-					current_platforms.insert(current_platforms.size(), child)
-			var normal = collision.normal
-			
-			if normal.x > -.7 && normal.x < .7:
-				var slope_angle = normal.dot(Vector2(0,-1)) - 1
-				var mul = 1
-				if normal.x < 0:
-					mul = -1
-				sprite.rotation = -slope_angle * 4 * mul
-	else:
-		sprite.rotation *= .9
-	#rotation_degrees = -30
+func _get_previous_state_tag():
+	return state_machine.previous_state_tag
+
+func _ready():
+	sprite = $AnimatedSprite
+	state_machine.enter_logic(self) 
+	._ready()
+
+func _physics_process(delta):
+	._physics_process(delta)
 	update_inputs()
-	
-	apply_gravity(delta)
-	print(state_machine.active_state.tag)
 	state_machine.logic(delta)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 		
@@ -162,9 +118,6 @@ func update_inputs():
 func move():
 	var old = velocity
 	velocity = move_and_slide(velocity, Vector2.UP, false)
-
-func apply_gravity (delta: float):
-	velocity.y += gravity
 
 func play(animation:String):
 	if sprite.animation == animation:
@@ -209,9 +162,3 @@ func _get_jumping():
 
 func _on_PlatformTimer_timeout():
 	collision_layer = 1 | 2
-
-func check_child_collision(child):
-	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
-		return true
-	else:
-		return false

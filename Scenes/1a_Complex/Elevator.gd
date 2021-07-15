@@ -27,4 +27,5 @@ func _input(event):
 			player.position.x = 1100
 			player.position.y = 300
 		if get_parent().name == "HomeDoor":
+
 			SceneChanger.change_scene("res://Scenes/1_CatCradle/1_CatCradle.tscn")

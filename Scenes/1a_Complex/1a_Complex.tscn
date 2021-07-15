@@ -732,10 +732,10 @@ points = PoolVector2Array( 0, 60, 72, 60, 72, 72, 0, 72 )
 extents = Vector2( 45, 4.5 )
 
 [sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 18, 108 )
+extents = Vector2( 18, 110 )
 
 [sub_resource type="RectangleShape2D" id=78]
-extents = Vector2( 42, 18 )
+extents = Vector2( 35, 18 )
 
 [sub_resource type="SpriteFrames" id=79]
 animations = [ {
@@ -756,7 +756,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=80]
-extents = Vector2( 54, 1008 )
+extents = Vector2( 54, 84.8504 )
 
 [node name="Complex" type="Node2D"]
 __meta__ = {
@@ -790,8 +790,8 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="ComplexBckg" type="ColorRect" parent="bckg"]
-margin_left = 630.0
-margin_right = 3600.0
+margin_left = 629.0
+margin_right = 3599.0
 margin_bottom = 1656.0
 color = Color( 0.733333, 0.627451, 0.364706, 1 )
 __meta__ = {
@@ -1102,8 +1102,9 @@ position = Vector2( 52, 74 )
 shape = SubResource( 59 )
 
 [node name="Button" type="Sprite" parent="HomeDoor/Area2D"]
-position = Vector2( 58.125, -38.2347 )
-scale = Vector2( 0.283163, 0.283948 )
+visible = false
+position = Vector2( 59, -35 )
+scale = Vector2( 0.405612, 0.406736 )
 texture = ExtResource( 34 )
 
 [node name="UpElevator" type="Sprite" parent="."]
@@ -1124,8 +1125,8 @@ shape = SubResource( 59 )
 
 [node name="Button" type="Sprite" parent="UpElevator/Area2D"]
 visible = false
-position = Vector2( 96, -16 )
-scale = Vector2( 0.214286, 0.214286 )
+position = Vector2( 95, -18 )
+scale = Vector2( 0.260204, 0.260204 )
 texture = ExtResource( 34 )
 
 [node name="DownElevator" type="Sprite" parent="."]
@@ -1183,17 +1184,17 @@ one_way_collision = true
 position = Vector2( 2655, 1233 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-position = Vector2( 36, 117 )
+position = Vector2( 35, 113 )
 shape = SubResource( 77 )
 
 [node name="Hogwash" type="KinematicBody2D" parent="."]
-position = Vector2( 2000, 150 )
+position = Vector2( 2030, 350 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hogwash"]
-position = Vector2( 44, 26 )
+position = Vector2( 46, 15 )
 shape = SubResource( 78 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Hogwash"]
@@ -1202,6 +1203,7 @@ margin_top = -9.0
 margin_right = 89.0
 margin_bottom = 41.0
 rect_scale = Vector2( 1, 1.1 )
+rect_pivot_offset = Vector2( 45, 25 )
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -1221,6 +1223,8 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1875, 365 )
+scale = Vector2( 0.6, 0.6 )
+collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2( 0.6, 0.6 )
@@ -1228,14 +1232,20 @@ current = true
 limit_smoothed = true
 smoothing_enabled = true
 
-[node name="Teleport" type="Area2D" parent="."]
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
-position = Vector2( 513, 1008 )
-shape = SubResource( 80 )
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 36 )
 autoplay = true
 max_distance = 80000.0
+
+[node name="Teleport" type="Area2D" parent="."]
+position = Vector2( 600, 1560 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+shape = SubResource( 80 )
+
+[node name="Button" type="Sprite" parent="Teleport"]
+visible = false
+position = Vector2( 0, -4 )
+scale = Vector2( 0.321428, 0.302884 )
+texture = ExtResource( 34 )
