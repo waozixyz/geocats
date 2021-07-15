@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://Assets/LevelAssets/1a_Complex/alley_house_ladder.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -73,6 +73,9 @@
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 710, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=88]
+extents = Vector2( 65, 4 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 220.5, 10 )
@@ -260,13 +263,13 @@ points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
 points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
 
 [sub_resource type="ConvexPolygonShape2D" id=58]
-points = PoolVector2Array( 0, 18.741, 72, 18.448, 72, 72, 0, 72 )
+points = PoolVector2Array( 0, 19, 72, 19, 72, 72, 0, 72 )
 
 [sub_resource type="ConvexPolygonShape2D" id=59]
 points = PoolVector2Array( 0, 0, 72, 0, 72, 12, 0, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=60]
-points = PoolVector2Array( 0, 18.6598, 61.8029, 19.4008, 61.6736, 72, 0, 72 )
+points = PoolVector2Array( 0, 19, 61, 19, 61, 72, 0, 72 )
 
 [sub_resource type="TileSet" id=61]
 0/name = "complex_tileset.png 0"
@@ -797,9 +800,6 @@ __meta__ = {
 }
 
 [node name="bckg" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Black" type="ColorRect" parent="bckg"]
 margin_left = -1770.0
@@ -808,7 +808,6 @@ margin_right = 6230.0
 margin_bottom = 2939.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -817,7 +816,6 @@ margin_right = 630.0
 margin_bottom = 1656.0
 color = Color( 0.67451, 0.768627, 0.764706, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -827,7 +825,6 @@ margin_right = 3599.0
 margin_bottom = 1656.0
 color = Color( 0.733333, 0.627451, 0.364706, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -859,9 +856,6 @@ centered = false
 position = Vector2( 792, 1368 )
 texture = ExtResource( 6 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="bckg/window_2"]
 position = Vector2( 720, 198 )
@@ -874,33 +868,28 @@ one_way_collision = true
 position = Vector2( 2736, 1008 )
 texture = ExtResource( 17 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="window_3" type="Sprite" parent="bckg"]
 position = Vector2( 648, 577 )
 texture = ExtResource( 26 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="trolley" type="Sprite" parent="bckg"]
 position = Vector2( 648, 288 )
 texture = ExtResource( 25 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bckg/trolley"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bckg/trolley/StaticBody2D"]
+position = Vector2( 162, 28.4694 )
+shape = SubResource( 88 )
+one_way_collision = true
 
 [node name="dial" type="Sprite" parent="bckg"]
 position = Vector2( 648, 1368 )
 texture = ExtResource( 14 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="plants" type="Node2D" parent="bckg"]
 
@@ -1287,19 +1276,19 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="platform" type="StaticBody2D" parent="Ladder_Sprite"]
+position = Vector2( 36, 14 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder_Sprite/platform"]
-position = Vector2( 36, 13.5 )
 shape = SubResource( 79 )
 one_way_collision = true
 
 [node name="Ladder" type="Area2D" parent="." groups=[
 "ladder",
 ]]
-position = Vector2( 2655, 1233 )
+position = Vector2( 2640, 1233 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-position = Vector2( 35, 113 )
+position = Vector2( 50, 113 )
 shape = SubResource( 80 )
 
 [node name="Cleopartis" type="KinematicBody2D" parent="."]
@@ -1421,7 +1410,7 @@ position = Vector2( 736.111, -44.4445 )
 shape = SubResource( 85 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1926, 337 )
+position = Vector2( 1992, 1123 )
 scale = Vector2( 0.6, 0.6 )
 collision_layer = 1
 

@@ -16,7 +16,7 @@ func _on_body_exited(body):
 
 
 func _input(event):
-	if Input.is_action_just_pressed("interact") && button.visible == true:
+	if Input.is_action_just_pressed("ui_down") && button.visible == true:
 		MasterAudio.stream = load("res://Assets/Sfx/Wood_Door_Latch_Open_1.mp3")
 		MasterAudio.play()
 		SceneChanger.change_scene("res://Scenes/1a_Complex/1a_Complex.tscn")
