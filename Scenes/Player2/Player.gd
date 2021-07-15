@@ -236,9 +236,9 @@ func move_vertically():
 	velocity.y = currentSpeed * movementInputY #apply curent speed to velocity and multiply by direction
 	velocity.x = 0
 
-func jump(jumpVelocity):
+func jump(jumpHeight):
 	velocity.y = 0 #reset velocity
-	velocity.y = jumpVelocity #apply velocity
+	velocity.y = -sqrt(2 * gravity * jumpHeight) 
 	canDash = true #allow the player to dash when they jump
 	
 
@@ -293,7 +293,8 @@ func crouch_logic(delta):
 		set_state("dash")
 	if jumpInput and current_platforms:
 		fall_through()
-
+	if Input.get_action_strength("down") > 0:
+		anim = "crouch"
 
 	else:
 		set_state("idle")
@@ -474,7 +475,8 @@ func double_jump_enter_logic():
 func double_jump_logic(delta):
 	default_anim()
 	move_horizontally(airFriction) #move horizontally and subtract airfriction from max speed
-
+	if movementInputY && on_ladder:
+		set_state("climb")
 	if velocity.y < 0:
 		#if you are rising
 		if isJumpReleased:

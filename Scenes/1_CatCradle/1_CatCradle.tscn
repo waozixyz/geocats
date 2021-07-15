@@ -1096,7 +1096,7 @@ texture = ExtResource( 25 )
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/BedLadder"]
-position = Vector2( 45, 112.25 )
+position = Vector2( 46, 101.75 )
 shape = SubResource( 90 )
 
 [node name="LastLadder" type="Area2D" parent="Ladders" groups=[

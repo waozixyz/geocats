@@ -6,8 +6,12 @@ var blinkDurration = 100 # how long cat should be in the blink anim
 var idleStartTime = 0#how many miliseconds passed when you become idle
 var elapsedIdleTime = 0 #how many milisecconds elapsed since you started being idle
 
+func enter_logic(player: KinematicBody2D):
+	.enter_logic(player)
+	player.vx = 0
+	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
+		
 func logic(player: KinematicBody2D, delta: float):
-
 	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
 	if elapsedIdleTime > idleDurration:
 		player.play("blink")
@@ -21,7 +25,6 @@ func logic(player: KinematicBody2D, delta: float):
 			player.fall_through()
 			return "fall"
 
-
 	if player.vy > 0:
 		player.vy = 0
 	if player.vertical && player.on_ladder:
@@ -31,10 +34,6 @@ func logic(player: KinematicBody2D, delta: float):
 			player.fall_through()
 			return "climb"
 
-	if player.horizontal == 0 and player.vertical > 0:
-		player.platform_timer.start()
-		player.apply_gravity(player.gravity)
-		player.move()
 	if player.underwater:
 		return "swim"
 	if not player.grounded:

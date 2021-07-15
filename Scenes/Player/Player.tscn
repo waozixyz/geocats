@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/red_climb.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Scenes/Player/StateLadder.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Player2/ladder_detect.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Player/StateAir.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Player/StateWallSlide.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Player/StateWallJump.gd" type="Script" id=19]
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -102,6 +104,9 @@ extents = Vector2( 14, 32 )
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 45, 26.0343 )
 
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 18, 40 )
+
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 16.7305
 height = 12.3406
@@ -115,10 +120,6 @@ collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="Timers" type="Node2D" parent="."]
-
-[node name="JumpTimer" type="Timer" parent="Timers"]
-wait_time = 0.2
-one_shot = true
 
 [node name="FloorTimer" type="Timer" parent="Timers"]
 wait_time = 0.1
@@ -152,6 +153,12 @@ script = ExtResource( 9 )
 [node name="Climb" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 15 )
 
+[node name="Wall_Slide" type="Node2D" parent="PlayerStates"]
+script = ExtResource( 18 )
+
+[node name="Wall_Jump" type="Node2D" parent="PlayerStates"]
+script = ExtResource( 19 )
+
 [node name="Swim" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 12 )
 tag = "swim"
@@ -159,13 +166,11 @@ tag = "swim"
 [node name="Walk" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 8 )
 tag = "walk"
-walk_speed = 500.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -5, 0 )
 frames = SubResource( 10 )
-animation = "climb"
-frame = 2
+animation = "walk"
 playing = true
 
 [node name="CollisionClimb" type="CollisionShape2D" parent="."]
@@ -174,8 +179,21 @@ shape = SubResource( 15 )
 disabled = true
 
 [node name="CollisionDefault" type="CollisionShape2D" parent="."]
-position = Vector2( -5, 5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 13 )
+
+[node name="CollisionSlide" type="CollisionShape2D" parent="."]
+position = Vector2( 30, -8 )
+shape = SubResource( 16 )
+disabled = true
+
+[node name="RightRaycast" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 50, 0 )
+
+[node name="LeftRaycast" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -50, 0 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 visible = false

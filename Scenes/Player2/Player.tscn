@@ -114,11 +114,9 @@ shape = SubResource( 1 )
 position = Vector2( -5, 0 )
 frames = SubResource( 10 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 30.8777, -8.68248 )
 shape = SubResource( 11 )
 disabled = true

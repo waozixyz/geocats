@@ -11,7 +11,7 @@ func _ready():
 # Player State Base
 #################################################
 func enter_logic(player: KinematicBody2D):
-	player.play(tag)
+	pass
 
 func logic(player: KinematicBody2D, delta: float):
 	return null
