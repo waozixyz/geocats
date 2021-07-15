@@ -31,7 +31,7 @@ func _physics_process(delta):
 	sprite.play(anim)
 	sprite.animation = anim
 
-var prev_rot: int = rotation_degrees
+var prev_rot: float = rotation
 func rotation():
 	var rot = rotation_degrees
 	if is_on_floor():
@@ -39,7 +39,7 @@ func rotation():
 			var collision = get_slide_collision(i)
 			var normal = collision.normal
 			if normal.x > -.6 && normal.x < .6:
-				var slope_angle = rad2deg(normal.dot(Vector2(0,-1))) - 57
+				var slope_angle = normal.dot(Vector2(0,-1)) - 57
 				var mul = 1
 				if normal.x < 0:
 					mul = -1

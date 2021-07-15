@@ -18,7 +18,7 @@ func _on_body_exited(body):
 
 
 func _input(event):
-	if (Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("jump")) && button.visible == true:
+	if Input.is_action_just_pressed("interact") && button.visible == true:
 		button.visible = false
 		if get_parent().name == "UpElevator":
 			player.position.x = 2400
