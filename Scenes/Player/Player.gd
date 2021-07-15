@@ -60,7 +60,7 @@ func default_anim():
 func check_wall_slide(raycast: RayCast2D, direction: int):
 	if raycast.is_colliding() && horizontal == direction:
 		for child in raycast.get_collider().get_children():
-			if check_child_collision(child):
+			if check_child_collision(child) || 	child.is_in_group("end"):
 				return false
 		#if your raycast is coliding and you are trying to move in that direction
 		return true

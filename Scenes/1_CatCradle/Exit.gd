@@ -16,7 +16,7 @@ func _on_body_exited(body):
 
 
 func _input(event):
-	if (Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("jump")) && button.visible == true:
+	if Input.is_action_just_pressed("interact") && button.visible == true:
 		SceneChanger.change_scene("res://Scenes/1a_Complex/1a_Complex.tscn")
 		button.visible = false
 

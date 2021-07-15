@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/red_climb.png" type="Texture" id=2]
@@ -102,16 +102,12 @@ animations = [ {
 extents = Vector2( 14, 32 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 45, 26.0343 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 18, 40 )
-
-[sub_resource type="CapsuleShape2D" id=13]
-radius = 16.7305
-height = 12.3406
+extents = Vector2( 40, 26 )
 
 [sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 18, 40 )
+
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 13, 38 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -168,7 +164,6 @@ script = ExtResource( 8 )
 tag = "walk"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -5, 0 )
 frames = SubResource( 9 )
 animation = "walk"
 playing = true
@@ -184,7 +179,7 @@ shape = SubResource( 11 )
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
 position = Vector2( 30, -8 )
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 disabled = true
 
 [node name="RightRaycast" type="RayCast2D" parent="."]
@@ -195,23 +190,6 @@ cast_to = Vector2( 50, 0 )
 enabled = true
 cast_to = Vector2( -50, 0 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-visible = false
-z_index = 5
-collision_layer = 1024
-collision_mask = 32768
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="HurtBox" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -0.916466, -2.38734 )
-z_index = 100
-shape = SubResource( 13 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Tween" type="Tween" parent="."]
 
 [node name="ClimbArea" type="Area2D" parent="."]
@@ -219,6 +197,6 @@ visible = false
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [connection signal="timeout" from="Timers/PlatformTimer" to="." method="_on_PlatformTimer_timeout"]

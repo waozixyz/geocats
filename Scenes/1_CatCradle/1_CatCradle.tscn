@@ -1133,6 +1133,10 @@ position = Vector2( 1843, 272 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 2154
+limit_bottom = 1080
 
 [node name="EndWall" type="StaticBody2D" parent="."]
 position = Vector2( 0, 800 )
@@ -1146,7 +1150,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWall" groups=[
+"end",
+]]
 position = Vector2( -63, 150 )
 shape = SubResource( 93 )
 
@@ -1168,7 +1174,7 @@ shape = SubResource( 95 )
 
 [node name="Button" type="Sprite" parent="Teleport"]
 visible = false
-position = Vector2( -28, 2 )
+position = Vector2( 45, -41 )
 scale = Vector2( 0.321428, 0.302884 )
 texture = ExtResource( 35 )
 

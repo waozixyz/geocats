@@ -40,7 +40,7 @@ func _get_rotation():
 
 func jump(jumpHeight):
 	velocity.y = 0 #reset velocity
-	velocity.y = -sqrt(20 * gravity * jumpHeight) 
+	velocity.y = -sqrt(50 * gravity * jumpHeight) 
 	
 func _set_rotation(rot):
 	if to_rotate is ViewportContainer:

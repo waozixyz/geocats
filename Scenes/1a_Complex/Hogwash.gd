@@ -6,7 +6,7 @@ var start_time : int
 var elapsed_time : int
 
 var direction = 1
-var jump_height = 1000
+var jump_height = 400
 var move_speed = 200
 
 var f = 0.01

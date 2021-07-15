@@ -20,6 +20,7 @@ func _on_body_exited(body):
 func _input(event):
 	if Input.is_action_just_pressed("interact") && button.visible == true:
 		button.visible = false
+		print(get_parent().name)
 		if get_parent().name == "UpElevator":
 			player.position.x = 2400
 			player.position.y = 1600
@@ -27,5 +28,10 @@ func _input(event):
 			player.position.x = 1100
 			player.position.y = 300
 		if get_parent().name == "HomeDoor":
-
 			SceneChanger.change_scene("res://Scenes/1_CatCradle/1_CatCradle.tscn")
+		if get_parent().name == "Exit":
+			SceneChanger.change_scene("res://Scenes/2_GeoCity/2_GeoCity.tscn")
+		if get_parent().name == "Hogwash":
+			print("yes")
+		if get_parent().name == "Cleopartis":
+			print("hii")
