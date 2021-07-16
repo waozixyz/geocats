@@ -19,13 +19,13 @@ func _on_body_exited(body):
 func _input(event):
 	if Input.is_action_just_pressed("ui_down") && button.visible == true:
 		button.visible = false
-		if get_parent().name == "UpElevator":
-			player.position.x = 2400
-			player.position.y = 1600
-		if get_parent().name == "DownElevator":
-			player.position.x = 1100
-			player.position.y = 300
-		if get_parent().name == "HomeDoor":
+		if name == "UpElevator":
+			player.position.x = 1600
+			player.position.y = 1000
+		if name == "DownElevator":
+			player.position.x = 710
+			player.position.y = 180
+		if name == "HomeDoor":
 			MasterAudio.stream = load("res://Assets/Sfx/Wood_Door_Latch_Open_1.mp3")
 			MasterAudio.play()
 			SceneChanger.change_scene("res://Scenes/1_CatCradle/1_CatCradle.tscn")

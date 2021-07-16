@@ -1,7 +1,7 @@
 [gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scenes/UI/SceneChanger.gd" type="Script" id=1]
-[ext_resource path="res://Assets/LevelAssets/loading_loop.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/loading_loop.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=103]
 flags = 4

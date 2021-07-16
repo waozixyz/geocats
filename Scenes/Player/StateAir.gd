@@ -21,7 +21,7 @@ func logic(player: KinematicBody2D, delta: float):
 		return "idle" if player.horizontal == 0 else "walk"
 	if player.grounded and player.jumping and not player.sprite.animation == "crouch":
 		return "jump"
-		
+
 	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
 		
 	if player.isJumpPressed:
@@ -35,8 +35,6 @@ func logic(player: KinematicBody2D, delta: float):
 				return "jump" #set state to jump
 			if player.previous_state == "wall_slide":
 				return "wall_jump"
-
-	
 
 	player.default_anim()
 	player.move_horizontally(player.airFriction) #move horizontally

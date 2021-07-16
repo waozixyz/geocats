@@ -40,12 +40,12 @@ var jumpInput : int = 0
 var on_ladder : bool = false
 var previous_state : String setget ,_get_previous_state_tag
 
-var airFriction = 60 #how much you subtract velocity when you start moving horizontally in the air
+var airFriction = 10 #how much you subtract velocity when you start moving horizontally in the air
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
 var maxSpeed = 600 #maximum current speed can reach when moving horizontally
-var acceleration = 80 #by how much does current speed approach max speed when moving
-var decceleration = 100 #by how much does velocity approach when you stop moving horizontally
+var acceleration = 100 #by how much does current speed approach max speed when moving
+var decceleration = 120 #by how much does velocity approach when you stop moving horizontally
 
 func default_anim():
 	if vertical > 0:
@@ -76,17 +76,18 @@ func move_vertically():
 	_set_vy(currentSpeed * vertical)#apply curent speed to velocity and multiply by direction
 	_set_vx(0)
 
-
 func _get_previous_state_tag():
 	return state_machine.previous_state_tag
 
 func _ready():
-	sprite = $AnimatedSprite
+	sprite = $ViewportContainer/Viewport/AnimatedSprite
+	to_rotate = $ViewportContainer
 	state_machine.enter_logic(self) 
 	._ready()
 
 func _physics_process(delta):
 	._physics_process(delta)
+
 	update_inputs()
 	state_machine.logic(delta)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement

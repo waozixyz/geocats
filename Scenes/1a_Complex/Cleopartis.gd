@@ -7,10 +7,4 @@ func _ready():
 	to_rotate = $ViewportContainer
 	._ready()
 
-	
-func _physics_process(delta):
-	
-
-	sprite.play("idle")
-	sprite.animation = anim
 
