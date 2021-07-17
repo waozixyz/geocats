@@ -6,13 +6,13 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 484, 19 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 253 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 506, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -64,7 +64,7 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -473, 228 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="EndWalls" type="StaticBody2D" parent="." groups=[
 "end",
@@ -73,15 +73,15 @@ position = Vector2( 2408, 1117 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -2417, -881 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -1440, -885 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -1943, -1127 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="GeoCity" type="Area2D" parent="."]
 position = Vector2( 12, 395 )

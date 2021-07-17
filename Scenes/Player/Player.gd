@@ -89,10 +89,11 @@ func _ready():
 	to_rotate = $ViewportContainer
 	state_machine.enter_logic(self) 
 	._ready()
+	if global.player_position:
+		position = global.player_position
 
 func _physics_process(delta):
 	._physics_process(delta)
-
 	update_inputs()
 	state_machine.logic(delta)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement

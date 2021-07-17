@@ -388,7 +388,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 visible = false
 frames = SubResource( 65 )
-frame = 13
+frame = 2
 speed_scale = 2.0
 playing = true
 centered = false

@@ -754,76 +754,76 @@ points = PoolVector2Array( 0, 0, 36, 0, 36, 36, 0, 36 )
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=92]
+[sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 81, 70.157 )
 
-[sub_resource type="RectangleShape2D" id=72]
+[sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 121.5, 4.92044 )
 
-[sub_resource type="RectangleShape2D" id=73]
+[sub_resource type="RectangleShape2D" id=74]
 extents = Vector2( 459, 18 )
 
-[sub_resource type="RectangleShape2D" id=74]
+[sub_resource type="RectangleShape2D" id=75]
 extents = Vector2( 54, 9 )
 
-[sub_resource type="RectangleShape2D" id=75]
+[sub_resource type="RectangleShape2D" id=76]
 extents = Vector2( 40.5, 5.5 )
 
-[sub_resource type="RectangleShape2D" id=76]
+[sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 27, 5.5 )
 
-[sub_resource type="RectangleShape2D" id=77]
+[sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 90, 9 )
 
-[sub_resource type="RectangleShape2D" id=78]
+[sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 9, 81 )
 
-[sub_resource type="RectangleShape2D" id=79]
+[sub_resource type="RectangleShape2D" id=80]
 extents = Vector2( 81, 9 )
 
-[sub_resource type="RectangleShape2D" id=80]
+[sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 10, 36 )
 
-[sub_resource type="RectangleShape2D" id=81]
+[sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 49.5, 4.83636 )
 
-[sub_resource type="RectangleShape2D" id=82]
+[sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 144, 7.09192 )
 
-[sub_resource type="RectangleShape2D" id=83]
+[sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 171, 18 )
 
-[sub_resource type="RectangleShape2D" id=84]
+[sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 10, 54 )
 
-[sub_resource type="RectangleShape2D" id=85]
+[sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 171, 10 )
 
-[sub_resource type="RectangleShape2D" id=86]
+[sub_resource type="RectangleShape2D" id=87]
 extents = Vector2( 18, 81 )
 
-[sub_resource type="RectangleShape2D" id=87]
+[sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 54, 10 )
 
-[sub_resource type="RectangleShape2D" id=88]
+[sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 27, 10 )
 
-[sub_resource type="RectangleShape2D" id=93]
+[sub_resource type="RectangleShape2D" id=90]
 extents = Vector2( 9, 125 )
 
-[sub_resource type="RectangleShape2D" id=94]
+[sub_resource type="RectangleShape2D" id=91]
 extents = Vector2( 72, 9 )
 
-[sub_resource type="RectangleShape2D" id=95]
+[sub_resource type="RectangleShape2D" id=92]
 extents = Vector2( 54, 84.8504 )
 
-[sub_resource type="RectangleShape2D" id=89]
+[sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 13.5, 76.5 )
 
-[sub_resource type="RectangleShape2D" id=90]
+[sub_resource type="RectangleShape2D" id=94]
 extents = Vector2( 9, 56.25 )
 
-[sub_resource type="RectangleShape2D" id=91]
+[sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 13.5, 92.25 )
 
 [sub_resource type="DynamicFontData" id=96]
@@ -947,7 +947,7 @@ script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Present/Present"]
 position = Vector2( 41, -4.84302 )
-shape = SubResource( 92 )
+shape = SubResource( 72 )
 
 [node name="Objects" type="Node2D" parent="Scaledown"]
 
@@ -960,14 +960,14 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Bookshelf/StaticBody2D"]
 position = Vector2( 121.375, 58.7955 )
-shape = SubResource( 72 )
+shape = SubResource( 73 )
 one_way_collision = true
 
 [node name="Platform" type="StaticBody2D" parent="Scaledown/Objects"]
 position = Vector2( 540, 198 )
 
 [node name="Platform" type="CollisionShape2D" parent="Scaledown/Objects/Platform"]
-shape = SubResource( 73 )
+shape = SubResource( 74 )
 one_way_collision = true
 
 [node name="Hallway" type="StaticBody2D" parent="Scaledown/Objects"]
@@ -988,7 +988,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Hallway"]
 visible = false
 position = Vector2( 144, 0 )
-shape = SubResource( 74 )
+shape = SubResource( 75 )
 
 [node name="Stereo" type="Sprite" parent="Scaledown/Objects"]
 position = Vector2( 1098, 936 )
@@ -999,12 +999,12 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Stereo/StaticBody2D"]
 position = Vector2( 40.5, 4.5 )
-shape = SubResource( 75 )
+shape = SubResource( 76 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/Objects/Stereo/StaticBody2D"]
 position = Vector2( 126, 25.157 )
-shape = SubResource( 76 )
+shape = SubResource( 77 )
 one_way_collision = true
 
 [node name="Bath" type="Sprite" parent="Scaledown/Objects"]
@@ -1016,26 +1016,26 @@ position = Vector2( 0, 72 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Bath/StaticBody2D"]
 visible = false
-shape = SubResource( 77 )
+shape = SubResource( 78 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/Objects/Bath/StaticBody2D"]
 visible = false
 position = Vector2( -81, -81 )
-shape = SubResource( 78 )
+shape = SubResource( 79 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Scaledown/Objects/Bath/StaticBody2D"]
 visible = false
 position = Vector2( 9, -162 )
-shape = SubResource( 79 )
+shape = SubResource( 80 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Scaledown/Objects/Bath/StaticBody2D"]
 visible = false
 position = Vector2( 90, -126 )
-shape = SubResource( 80 )
+shape = SubResource( 81 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Scaledown/Objects/Bath/StaticBody2D"]
 position = Vector2( -4.67725, -38.4545 )
-shape = SubResource( 81 )
+shape = SubResource( 82 )
 one_way_collision = true
 
 [node name="Bed" type="Sprite" parent="Scaledown/Objects"]
@@ -1046,14 +1046,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Bed/StaticBody2D"]
 position = Vector2( 0, 4.25424 )
-shape = SubResource( 82 )
+shape = SubResource( 83 )
 one_way_collision = true
 
 [node name="KitchenPlatform" type="StaticBody2D" parent="Scaledown/Objects"]
 position = Vector2( 243, 747 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/KitchenPlatform"]
-shape = SubResource( 83 )
+shape = SubResource( 84 )
 one_way_collision = true
 
 [node name="Kitchen" type="Sprite" parent="Scaledown/Objects"]
@@ -1066,17 +1066,17 @@ centered = false
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/Objects/Kitchen/Kitchen"]
 visible = false
 position = Vector2( 351, 198 )
-shape = SubResource( 84 )
+shape = SubResource( 85 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Scaledown/Objects/Kitchen/Kitchen"]
 visible = false
 position = Vector2( 171, 0 )
-shape = SubResource( 85 )
+shape = SubResource( 86 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Scaledown/Objects/Kitchen/Kitchen"]
 visible = false
 position = Vector2( 351, 72 )
-shape = SubResource( 86 )
+shape = SubResource( 87 )
 
 [node name="Statue" type="Sprite" parent="Scaledown/Objects"]
 position = Vector2( 1710, 918 )
@@ -1087,12 +1087,12 @@ position = Vector2( -9, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Statue/StaticBody2D"]
 position = Vector2( 36, -108 )
-shape = SubResource( 87 )
+shape = SubResource( 88 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/Objects/Statue/StaticBody2D"]
 position = Vector2( -45, 0 )
-shape = SubResource( 88 )
+shape = SubResource( 89 )
 one_way_collision = true
 
 [node name="EndWall" type="StaticBody2D" parent="Scaledown"]
@@ -1111,15 +1111,15 @@ __meta__ = {
 "end",
 ]]
 position = Vector2( -63, 150 )
-shape = SubResource( 93 )
+shape = SubResource( 90 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/EndWall"]
 position = Vector2( -54, 244 )
-shape = SubResource( 94 )
+shape = SubResource( 91 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Scaledown/EndWall"]
 position = Vector2( -36, 64 )
-shape = SubResource( 94 )
+shape = SubResource( 91 )
 
 [node name="Teleport" type="Area2D" parent="Scaledown"]
 position = Vector2( 0, 950 )
@@ -1127,7 +1127,7 @@ script = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Teleport"]
 position = Vector2( -27, 4 )
-shape = SubResource( 95 )
+shape = SubResource( 92 )
 
 [node name="Button" type="Sprite" parent="Scaledown/Teleport"]
 visible = false
@@ -1161,7 +1161,7 @@ position = Vector2( 0, 475 )
 position = Vector2( 180, -34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/KitchenLadder"]
-shape = SubResource( 89 )
+shape = SubResource( 93 )
 
 [node name="BedLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
@@ -1169,7 +1169,7 @@ shape = SubResource( 89 )
 position = Vector2( 945.5, -257.494 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/BedLadder"]
-shape = SubResource( 90 )
+shape = SubResource( 94 )
 
 [node name="LastLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
@@ -1177,7 +1177,7 @@ shape = SubResource( 90 )
 position = Vector2( 85.125, -292.75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
-shape = SubResource( 91 )
+shape = SubResource( 95 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]
 position = Vector2( 930, 124 )

@@ -45,8 +45,9 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
-Global="*res://Scenes/UI/Global.gd"
+global="*res://Scenes/global.gd"
 MasterAudio="*res://Scenes/UI/MasterAudio.tscn"
+data="*res://Scenes/data.gd"
 
 [display]
 

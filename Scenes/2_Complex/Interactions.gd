@@ -29,9 +29,9 @@ func _input(event):
 		if name == "HomeDoor":
 			MasterAudio.stream = load("res://Assets/Sfx/Wood_Door_Latch_Open_1.mp3")
 			MasterAudio.play()
-			SceneChanger.change_scene("res://Scenes/1_CatCradle/1_CatCradle.tscn")
+			SceneChanger.change_scene("CatCradle", 1)
 		if name == "Exit":
-			SceneChanger.change_scene("res://Scenes/3_GeoCity/3_GeoCity.tscn")
+			SceneChanger.change_scene("GeoCity", 0)
 	if Input.is_action_just_pressed("interact") && button.visible == true:
 		if get_parent().name == "Hogwash":
 			print("yes")
