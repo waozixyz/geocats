@@ -19,6 +19,7 @@ func _on_body_exited(body):
 func _input(event):
 	if Input.is_action_just_pressed("ui_down") && button.visible == true:
 		button.visible = false
+
 		if name == "UpElevator":
 			player.position.x = 1600
 			player.position.y = 1000

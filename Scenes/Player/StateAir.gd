@@ -10,7 +10,6 @@ func enter_logic(player: KinematicBody2D):
 func logic(player: KinematicBody2D, delta: float):
 	if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
 		return "wall_slide"
-
 	
 	if player.on_ladder and player.vertical != 0:
 		return "climb"
@@ -34,7 +33,7 @@ func logic(player: KinematicBody2D, delta: float):
 			if player.previous_state == "run":
 				return "jump" #set state to jump
 			if player.previous_state == "wall_slide":
-				return "wall_jump"
+				return "jump"
 
 	player.default_anim()
 	player.move_horizontally(player.airFriction) #move horizontally

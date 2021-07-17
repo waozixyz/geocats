@@ -3,11 +3,12 @@ extends BasePlayerState
 export var climb_speed : float = 400
 
 func enter_logic(player: KinematicBody2D):
+	player.coll_default.disabled = true
+	player.coll_climb.disabled = false
 	player.tween_to_ladder()
 	.enter_logic(player)
 	player.play("climb")
-	player.coll_default.disabled = true
-	player.coll_climb.disabled = false
+
 
 func logic(player: KinematicBody2D, delta: float):
 	if player.underwater:

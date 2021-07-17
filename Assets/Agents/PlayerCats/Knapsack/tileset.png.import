@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/catclimb2.png-51c1445fd620481bcef0769678fef597.stex"
+path="res://.import/tileset.png-dd930d96e80e157baa90c7274d9719ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/PlayerCats/Knapsack/catclimb2.png"
-dest_files=[ "res://.import/catclimb2.png-51c1445fd620481bcef0769678fef597.stex" ]
+source_file="res://Assets/Agents/PlayerCats/Knapsack/tileset.png"
+dest_files=[ "res://.import/tileset.png-dd930d96e80e157baa90c7274d9719ee.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -15,14 +15,8 @@ func logic(player: KinematicBody2D, delta: float):
 	if player.grounded:
 		#if you hit a ceiling
 		return "idle" #start falling	
-	if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
-		return "wall_slide"
+
 	if player.vy < 0:
-		#if you are rising
-		if player.isJumpReleased:
-			#and you release jump button
-			player.vy /= 2 #lower velocity
-			
 		if player.isJumpPressed && !player.isDoubleJumped:
 			return "double_jump" #set state to double jump
 

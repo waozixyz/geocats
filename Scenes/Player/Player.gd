@@ -59,14 +59,13 @@ func default_anim():
 
 func check_wall_slide(raycast: RayCast2D, direction: int):
 	if raycast.is_colliding() && horizontal == direction:
-		for child in raycast.get_collider().get_children():
-			if check_child_collision(child) || 	child.is_in_group("end"):
-				return false
-		#if your raycast is coliding and you are trying to move in that direction
-		return true
-	else:
-		return false	
-
+		var shape_id = raycast.get_collider_shape()
+		var collider = raycast.get_collider()
+		if collider:
+			var hit_node = collider.shape_owner_get_owner(shape_id)
+			if hit_node:
+				if not check_child_collision(hit_node) and not hit_node.is_in_group("end"):
+					return true
 func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
@@ -127,6 +126,7 @@ func play(animation:String):
 
 func tween_to_ladder():
 	var target = Vector2(ladder_x, position.y)
+
 	tween.interpolate_property(self, "position", position, target,
 		0.05, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	tween.start()
@@ -142,7 +142,7 @@ func _get_vx():
 func _set_vx(val:float):
 	if val != 0:
 		sprite.flip_h = (val < 0)
-		coll_slide.position.x = 30 * (int(val > 0) * 2 -1)
+		coll_slide.position.x = 12 * (int(val > 0) * 2 -1)
 
 	velocity.x = val
 	vx = val
@@ -161,5 +161,3 @@ func _get_jumping():
 	return jumpInput
 ###########################################################
 
-func _on_PlatformTimer_timeout():
-	collision_layer = 1 | 2

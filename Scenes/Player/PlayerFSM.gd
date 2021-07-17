@@ -17,7 +17,6 @@ func enter_logic(player: KinematicBody2D):
 	active_state = states.idle
 	active_state.enter_logic(self.player)
 
-
 func logic(delta: float):
 	var next_state_tag = active_state.logic(player, delta)
 	if next_state_tag:
