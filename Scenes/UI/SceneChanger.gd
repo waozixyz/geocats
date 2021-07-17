@@ -1,7 +1,8 @@
 extends CanvasLayer
 
-onready var Animation = $ViewportContainer/Viewport/AnimationPlayer
+
 onready var Sprite = $ViewportContainer/Viewport/AnimatedSprite
+onready var Container = $Container
 onready var MusicPlayer = $AudioStreamPlayer2D
 
 var scene : String
@@ -18,6 +19,7 @@ func change_scene(new_scene):
 	load_time = timer + 10
 	change = true
 	Sprite.visible = true
+	Container.visible = true
 
 func _physics_process(delta):
 	timer = OS.get_ticks_msec() * 0.01
@@ -27,6 +29,7 @@ func _physics_process(delta):
 	
 func _new_scene():
 	Sprite.visible = false
+	Container.visible = false
 	get_tree().change_scene(scene)
 	get_tree().paused = false
 	change = false

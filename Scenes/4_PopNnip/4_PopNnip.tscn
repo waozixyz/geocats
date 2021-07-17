@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/4_PopNnip/Interactions.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Levels/4_PopNnip/potentialBG_popnnip.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 484, 19 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 253 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 506, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 27, 47 )
+
+[node name="GeoCity" type="Node2D"]
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 960.0
+margin_bottom = 480.0
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 240, 120 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="potentialBG_popnnip" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="popnnip_FG" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40, 411 )
+collision_layer = 1
+collision_mask = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 480
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 968, 232 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -473, 228 )
+shape = SubResource( 3 )
+
+[node name="EndWalls" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 2408, 1117 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -2417, -881 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -1440, -885 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -1943, -1127 )
+shape = SubResource( 2 )
+
+[node name="GeoCity" type="Area2D" parent="."]
+position = Vector2( 12, 395 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GeoCity"]
+shape = SubResource( 4 )
+
+[node name="Button" type="Sprite" parent="GeoCity"]
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 10 )

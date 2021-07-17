@@ -19,9 +19,7 @@ func _on_body_exited(body):
 func _input(event):
 	if Input.is_action_just_pressed("ui_down") && button.visible == true:
 		button.visible = false
-		if name == "GoToComplex":
-			SceneChanger.change_scene("res://Scenes/2_Complex/2_Complex.tscn")
-		if name == "PopNnip":
-			SceneChanger.change_scene("res://Scenes/4_PopNnip/4_PopNnip.tscn")
+		if name == "GeoCity":
+			SceneChanger.change_scene("res://Scenes/3_GeoCity/3_GeoCity.tscn")
 	if Input.is_action_just_pressed("interact") && button.visible == true:
 		pass

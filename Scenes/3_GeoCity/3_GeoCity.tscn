@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Levels/2_GeoCity/City_Ladder_Right.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -116,8 +116,11 @@ extents = Vector2( 8, 605 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 2499, 10 )
 
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 75, 96 )
+
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 28, 78 )
+extents = Vector2( 75, 47 )
 
 [node name="GeoCity" type="Node2D"]
 
@@ -223,6 +226,10 @@ flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 4800
+limit_bottom = 1200
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -400,16 +407,32 @@ position = Vector2( -47, -1127 )
 shape = SubResource( 14 )
 
 [node name="GoToComplex" type="Area2D" parent="."]
-position = Vector2( 4667, 954 )
+position = Vector2( 4667, 942 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToComplex"]
-shape = SubResource( 30 )
+shape = SubResource( 31 )
 
 [node name="Button" type="Sprite" parent="GoToComplex"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 10 )
+
+[node name="PopNnip" type="Area2D" parent="."]
+position = Vector2( 2647, 974 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PopNnip"]
+shape = SubResource( 30 )
+
+[node name="Button" type="Sprite" parent="PopNnip"]
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
