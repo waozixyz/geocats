@@ -62,10 +62,16 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 		var shape_id = raycast.get_collider_shape()
 		var collider = raycast.get_collider()
 		if collider:
-			var hit_node = collider.shape_owner_get_owner(shape_id)
-			if hit_node:
-				if not check_child_collision(hit_node) and not hit_node.is_in_group("end"):
-					return true
+			if collider is TileMap:
+				for child in collider.get_children():
+					if check_child_collision(child) and child.is_in_group("end"):
+						return false
+				return true
+			else:
+				var hit_node = collider.shape_owner_get_owner(shape_id)
+				if hit_node:
+					if not check_child_collision(hit_node) and not hit_node.is_in_group("end"):
+						return true
 func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
