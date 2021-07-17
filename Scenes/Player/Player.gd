@@ -70,7 +70,7 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 			else:
 				var hit_node = collider.shape_owner_get_owner(shape_id)
 				if hit_node:
-					if not check_child_collision(hit_node) and not hit_node.is_in_group("end"):
+					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
 						return true
 func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed

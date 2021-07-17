@@ -118,7 +118,7 @@ interact={
 
 common/enable_pause_aware_picking=true
 2d/cell_size=36
-2d/default_gravity=4
+2d/default_gravity=8
 
 [rendering]
 

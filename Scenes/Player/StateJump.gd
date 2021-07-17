@@ -8,7 +8,7 @@ func enter_logic(player: KinematicBody2D):
 
 func logic(player: KinematicBody2D, delta: float):
 	player.default_anim()
-	player.move_horizontally(player.airFriction)
+	player.move_horizontally(player.airFriction) #move horizontally
 		
 	if player.on_ladder and player.vertical != 0:
 		return "climb"
