@@ -645,7 +645,7 @@ animations = [ {
 extents = Vector2( 40.75, 29.2 )
 
 [sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 60, 43 )
+extents = Vector2( 50, 28 )
 
 [sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 31.748, 1946.04 )
@@ -1242,7 +1242,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 80 )
 animation = "idle"
-frame = 3
 playing = true
 centered = false
 
@@ -1266,7 +1265,7 @@ position = Vector2( 1056, 480 )
 script = ExtResource( 43 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Hogwash/Area2D"]
-position = Vector2( 50, 12 )
+position = Vector2( 42, 6 )
 shape = SubResource( 82 )
 
 [node name="Button" type="Sprite" parent="Node2D/Hogwash/Area2D"]

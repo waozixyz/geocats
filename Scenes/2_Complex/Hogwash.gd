@@ -48,6 +48,7 @@ func _physics_process(delta):
 		
 	if is_on_wall():
 		direction *= -1
+		velocity.x = 0
 
 	sprite.flip_h = direction - 1		
 

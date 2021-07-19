@@ -1148,7 +1148,7 @@ texture = ExtResource( 24 )
 centered = false
 
 [node name="last_ladder" type="Sprite" parent="Scaledown/Ladders"]
-position = Vector2( 117, 180 )
+position = Vector2( 113, 180 )
 texture = ExtResource( 26 )
 centered = false
 
