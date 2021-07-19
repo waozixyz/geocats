@@ -10,9 +10,9 @@ var file_data = {
 }
 
 func _ready():
-	data.loadit()
-	SceneChanger.change_scene(file_data.scene, file_data.location)
-
+	#data.loadit()
+	#SceneChanger.change_scene(file_data.scene, file_data.location)
+	pass
 func saveit():
 	var file = File.new()
 	file.open(FILE_NAME, File.WRITE)

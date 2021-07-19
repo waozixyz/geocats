@@ -2,13 +2,15 @@
 
 [ext_resource path="res://Scenes/UI/SceneChanger.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/loading_loop.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/GeoType17-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=66]
-size = 42
-font_data = ExtResource( 3 )
+size = 52
+font_data = SubResource( 1 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=67]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 100, 100 )
@@ -330,7 +332,7 @@ region = Rect2( 1500, 300, 100, 100 )
 
 [sub_resource type="SpriteFrames" id=65]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"frames": [ SubResource( 67 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -356,22 +358,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Container"]
+[node name="RichTextLabel" type="Label" parent="Container"]
 margin_left = 144.0
 margin_top = 414.0
 margin_right = 522.0
 margin_bottom = 477.0
-custom_fonts/normal_font = SubResource( 66 )
-text = "Loading..."
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_fonts/font = SubResource( 66 )
+text = "LOADING"
+align = 1
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 128.0
-margin_right = 88.0
+margin_left = 126.0
+margin_right = 86.0
 margin_bottom = -40.0
 stretch = true
 stretch_shrink = 4
@@ -388,7 +388,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 visible = false
 frames = SubResource( 65 )
-frame = 2
+frame = 59
 speed_scale = 2.0
 playing = true
 centered = false

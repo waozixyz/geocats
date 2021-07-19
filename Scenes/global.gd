@@ -1,6 +1,8 @@
 extends Node
+
 var player_position
 var player_direction
+
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)
 

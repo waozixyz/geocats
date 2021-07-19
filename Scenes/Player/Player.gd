@@ -40,7 +40,7 @@ var jumpInput : int = 0
 var on_ladder : bool = false
 var previous_state : String setget ,_get_previous_state_tag
 
-var airFriction = 10 #how much you subtract velocity when you start moving horizontally in the air
+var airFriction = 5 #how much you subtract velocity when you start moving horizontally in the air
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
 var maxSpeed = 600 #maximum current speed can reach when moving horizontally

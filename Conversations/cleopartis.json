@@ -1,0 +1,11 @@
+{
+  "first": {
+    "name": "Cleopartis",
+    "avatar": "cleopartis.png",
+    "position": "left",
+    "type": "text",
+    "content": "Hey!!",
+    "animation_in": "move_in",
+    "next": ""
+  }
+}

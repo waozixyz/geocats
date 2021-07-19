@@ -18,22 +18,18 @@ func _on_body_exited(body):
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_down") && button.visible == true:
-		button.visible = false
-
 		if name == "UpElevator":
 			player.position.x = 1600
 			player.position.y = 1000
-		if name == "DownElevator":
+
+		elif name == "DownElevator":
 			player.position.x = 710
 			player.position.y = 180
-		if name == "HomeDoor":
+
+		elif name == "HomeDoor":
 			MasterAudio.stream = load("res://Assets/Sfx/Wood_Door_Latch_Open_1.mp3")
 			MasterAudio.play()
 			SceneChanger.change_scene("CatCradle", 1)
-		if name == "Exit":
+		elif name == "Exit":
 			SceneChanger.change_scene("GeoCity", 0)
-	if Input.is_action_just_pressed("interact") && button.visible == true:
-		if get_parent().name == "Hogwash":
-			print("yes")
-		if get_parent().name == "Cleopartis":
-			print("hii")
+

@@ -1,0 +1,11 @@
+{
+  "first": {
+    "name": "Hogwash",
+    "avatar": "hogwash.png",
+    "position": "left",
+    "type": "text",
+    "content": "Hey",
+    "animation_in": "move_in",
+    "next": ""
+  }
+}
