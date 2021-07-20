@@ -21,5 +21,8 @@ func _input(event):
 		button.visible = false
 		if name == "GeoCity":
 			SceneChanger.change_scene("GeoCity", 1, "WayoWayo", .5)
-	if Input.is_action_just_pressed("interact") && button.visible == true:
-		pass
+		elif name == "Arcade":
+			SceneChanger.change_scene("Arcade", 0, "", 1)
+		elif name == "PopNnip":
+			SceneChanger.change_scene("PopNnip", 1, "", .5)
+

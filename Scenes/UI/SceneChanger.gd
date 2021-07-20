@@ -37,6 +37,8 @@ func _get_scene():
 				1: 
 					pos = Vector2(720, 423)
 			return ["res://Scenes/4_PopNnip/4_PopNnip.tscn", pos, dir]
+		"Arcade":
+			return ["res://Scenes/4_PopNnip/Arcade.tscn", pos, dir]
 
 
 func _ready():
@@ -71,8 +73,10 @@ func _new_scene():
 	data.file_data.scene = scene
 	data.file_data.location = location
 	var scene_data = _get_scene()
+	print(scene_data)
 	get_tree().change_scene(scene_data[0])
-	global.player_position = scene_data[1]
+	if scene_data[1]:
+		global.player_position = scene_data[1]
 	global.player_direction = scene_data[2]
 
 	get_tree().paused = false

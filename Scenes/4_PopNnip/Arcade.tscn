@@ -1,0 +1,195 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/4_PopNnip/Interactions.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/CRT_Effect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/FG_Arcade_Machine.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/Catsylvania.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/bg.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/4_PopNnip/Catsylvania.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/staircase.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 484, 19 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 216, 19 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 17, 54 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 286, 5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 477, 15 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 217, 19 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 61, 57 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 119, 29 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8, 253 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 506, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 48, 47 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 8, 66 )
+
+[node name="Arcade" type="Node2D"]
+
+[node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 960.0
+margin_bottom = 480.0
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 240, 120 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="FG_Arcade_Machine" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Catsylvania" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 7 )
+centered = false
+script = ExtResource( 9 )
+
+[node name="staircase" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 753, 404 )
+collision_layer = 1
+collision_mask = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 480
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 968, 232 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -473, 228 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -735, 178 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=[
+"end",
+]]
+position = Vector2( -937, 147 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=[
+"end",
+]]
+position = Vector2( -934, 14 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -667, 73 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -484, -104 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -639, 49 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -73, 178 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -192, 7 )
+shape = SubResource( 8 )
+one_way_collision = true
+
+[node name="EndWalls" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 2408, 1117 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -2417, -881 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -1440, -885 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -1943, -1127 )
+shape = SubResource( 10 )
+
+[node name="PopNnip" type="Area2D" parent="."]
+position = Vector2( 769, 393 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PopNnip"]
+shape = SubResource( 11 )
+
+[node name="Button" type="Sprite" parent="PopNnip"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Ladder2" type="Area2D" parent="." groups=[
+"ladder",
+]]
+position = Vector2( 569, 366 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
+shape = SubResource( 12 )

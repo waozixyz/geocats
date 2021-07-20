@@ -19,6 +19,7 @@ func logic(player: KinematicBody2D, delta: float):
 	if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
 		if player.jumping and not player.is_on_ceiling():
 			player.jump(500)
+			return "fall"
 	else:
 		return "fall"
 func exit_logic(player: KinematicBody2D):

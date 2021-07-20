@@ -1,6 +1,6 @@
 extends BasePlayerState
 
-export var jump_height : float = 500
+export var jump_height : float = 300
 
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)

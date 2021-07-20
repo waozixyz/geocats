@@ -1,6 +1,6 @@
 extends BasePlayerState
 
-export var jump_height : float = 900
+export var jump_height : float = 500
 
 func enter_logic(player: KinematicBody2D):
 	player.isDoubleJumped = true #make sure you can only double jump once

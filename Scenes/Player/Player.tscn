@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Scenes/Player/ladder_detect.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Player/StateAir.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Player/StateWallSlide.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Player/StateWallJump.gd" type="Script" id=19]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -169,9 +168,6 @@ script = ExtResource( 15 )
 
 [node name="Wall_Slide" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 18 )
-
-[node name="Wall_Jump" type="Node2D" parent="PlayerStates"]
-script = ExtResource( 19 )
 
 [node name="Swim" type="Node2D" parent="PlayerStates"]
 script = ExtResource( 12 )

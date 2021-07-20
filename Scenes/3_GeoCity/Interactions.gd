@@ -23,5 +23,3 @@ func _input(event):
 			SceneChanger.change_scene("Complex", 1, "FootstepsOnGravelFast", 1.5)
 		if name == "PopNnip":
 			SceneChanger.change_scene("PopNnip", 0, "WayoWayo", .5)
-	if Input.is_action_just_pressed("interact") && button.visible == true:
-		pass
