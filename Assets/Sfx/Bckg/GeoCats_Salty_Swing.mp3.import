@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GeoCats_Salty_Swing.mp3-f5c2d38d641392e1531090239a653e7d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/Bckg/GeoCats_Salty_Swing.mp3"
+dest_files=[ "res://.import/GeoCats_Salty_Swing.mp3-f5c2d38d641392e1531090239a653e7d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

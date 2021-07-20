@@ -137,7 +137,6 @@ func set_frame(): # Mostly aligment operations.
 			self.anchor_bottom = 0
 			self.rect_position = Vector2(0, frame_margin_vertical)
 		'bottom':
-			print('bottom')
 			self.anchor_left = 0.5
 			self.anchor_top = 1
 			self.anchor_right = 0.5

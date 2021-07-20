@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/FootStepsOnGravelFast.mp3-41f9982a9163224a7793bf7753e77e14.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/Transition/FootStepsOnGravelFast.mp3"
+dest_files=[ "res://.import/FootStepsOnGravelFast.mp3-41f9982a9163224a7793bf7753e77e14.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

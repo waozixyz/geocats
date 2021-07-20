@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GeoCats_Regge_groove.mp3-3ada9aaa277bb622d59834561d570df9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/Bckg/GeoCats_Regge_groove.mp3"
+dest_files=[ "res://.import/GeoCats_Regge_groove.mp3-3ada9aaa277bb622d59834561d570df9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

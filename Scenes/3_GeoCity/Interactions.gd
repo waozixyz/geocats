@@ -20,8 +20,8 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_down") && button.visible == true:
 		button.visible = false
 		if name == "GoToComplex":
-			SceneChanger.change_scene("Complex", 1)
+			SceneChanger.change_scene("Complex", 1, "FootstepsOnGravelFast", 1.5)
 		if name == "PopNnip":
-			SceneChanger.change_scene("PopNnip", 0)
+			SceneChanger.change_scene("PopNnip", 0, "WayoWayo", .5)
 	if Input.is_action_just_pressed("interact") && button.visible == true:
 		pass

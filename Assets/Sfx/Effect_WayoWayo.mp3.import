@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Effect_WayoWayo.mp3-5d21603eae8871561a80db476267f404.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effect_WayoWayo.mp3"
+dest_files=[ "res://.import/Effect_WayoWayo.mp3-5d21603eae8871561a80db476267f404.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

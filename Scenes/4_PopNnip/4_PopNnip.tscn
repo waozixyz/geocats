@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/4_PopNnip/Interactions.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Levels/4_PopNnip/potentialBG_popnnip.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/UI/CRT_Effect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -19,6 +20,8 @@ extents = Vector2( 506, 10 )
 extents = Vector2( 27, 47 )
 
 [node name="GeoCity" type="Node2D"]
+
+[node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
 
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 960.0

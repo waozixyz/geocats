@@ -21,39 +21,39 @@ func _get_scene():
 			match location:
 				1: 
 					pos = Vector2(25, 500)
-					dir = 1
 			return ["res://Scenes/1_CatCradle/1_CatCradle.tscn", pos, dir]
 		"Complex":
 			match location:
 				1: 
 					pos = Vector2(400, 1077)
-					dir = 1
 			return ["res://Scenes/2_Complex/2_Complex.tscn", pos, dir]
 		"GeoCity":
 			match location:
 				1: 
 					pos = Vector2(2630, 1010)
-					dir = 1
 			return ["res://Scenes/3_GeoCity/3_GeoCity.tscn", pos, dir]
 		"PopNnip":
 			match location:
 				1: 
 					pos = Vector2(720, 423)
-					dir = 1
 			return ["res://Scenes/4_PopNnip/4_PopNnip.tscn", pos, dir]
 
 
 func _ready():
 	timer = OS.get_ticks_msec() * 0.01
 	
-func change_scene(new_scene, new_location):
-	MasterAudio.stream_paused = false
+func change_scene(new_scene, new_location, sound, volume):
+	if not sound == "":
+		MusicPlayer.stream = load("res://Assets/Sfx/Transition/" + sound + ".mp3")
+		MusicPlayer.stream.set_loop(false)
+		MusicPlayer.set_volume_db(linear2db(volume))
+		MusicPlayer.play()
 	get_tree().paused = true
 	prev_scene = scene
 	scene = new_scene
 	location = new_location
 	
-	load_time = timer + 10
+	load_time = timer + 5
 	change = true
 	Sprite.visible = true
 	Container.visible = true
@@ -78,6 +78,5 @@ func _new_scene():
 	get_tree().paused = false
 	change = false
 
-	MasterAudio.stream = null
 
 

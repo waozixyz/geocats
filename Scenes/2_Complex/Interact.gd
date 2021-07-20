@@ -27,9 +27,7 @@ func _input(event):
 			player.position.y = 180
 
 		elif name == "HomeDoor":
-			MasterAudio.stream = load("res://Assets/Sfx/Wood_Door_Latch_Open_1.mp3")
-			MasterAudio.play()
-			SceneChanger.change_scene("CatCradle", 1)
+			SceneChanger.change_scene("CatCradle", 1, "WoodDoorLatchOpen1", 1)
 		elif name == "Exit":
-			SceneChanger.change_scene("GeoCity", 0)
+			SceneChanger.change_scene("GeoCity", 0, "FootstepsOnGravelFast", 1.5)
 
