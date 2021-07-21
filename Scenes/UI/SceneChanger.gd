@@ -75,8 +75,8 @@ func _new_scene():
 	var scene_data = _get_scene()
 	print(scene_data)
 	get_tree().change_scene(scene_data[0])
-	if scene_data[1]:
-		global.player_position = scene_data[1]
+
+	global.player_position = scene_data[1]
 	global.player_direction = scene_data[2]
 
 	get_tree().paused = false

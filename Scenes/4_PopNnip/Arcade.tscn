@@ -346,6 +346,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -361,13 +362,14 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 8 )
-frame = 6
+frame = 10
 playing = true
 centered = false
 
 [node name="spaceship" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 29, 86 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.05
 playing = true
 centered = false
@@ -383,6 +385,7 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 48 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -404,6 +407,7 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 57 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -411,7 +415,7 @@ centered = false
 [node name="npc" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 13, 57 )
 frames = SubResource( 61 )
-frame = 1
+frame = 2
 speed_scale = 0.23
 playing = true
 centered = false
@@ -419,6 +423,7 @@ centered = false
 [node name="npc2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 13, 89 )
 frames = SubResource( 64 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
