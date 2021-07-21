@@ -28,9 +28,9 @@ func logic(player: KinematicBody2D, delta: float):
 	if player.vy > 0:
 		player.vy = 0
 	if player.vertical && player.on_ladder:
-		if player.is_on_floor() and player.vertical < 0 and not player.current_platforms || not player.is_on_floor():
+		if player.is_on_floor() and player.vertical != 0 and not player.current_platforms:
 			return "climb"
-		if player.current_platforms and player.vertical > 0:
+		if player.current_platforms and player.vertical != 0:
 			player.fall_through()
 			return "climb"
 

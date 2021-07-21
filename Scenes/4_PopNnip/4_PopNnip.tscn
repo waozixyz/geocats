@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/UI/CRT_Effect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/Catsylvania.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/4_PopNnip/keep.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -98,6 +98,11 @@ centered = false
 texture = ExtResource( 4 )
 centered = false
 
+[node name="keep" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 110, 90 )
+texture = ExtResource( 7 )
+centered = false
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 40, 411 )
 collision_layer = 1
@@ -149,7 +154,7 @@ shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -555, -201 )
+position = Vector2( -549, -194 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground"]
@@ -245,10 +250,6 @@ visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 10 )
-
-[node name="Catsylvania" type="Sprite" parent="Arcade"]
-position = Vector2( -48, 96 )
-texture = ExtResource( 7 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )

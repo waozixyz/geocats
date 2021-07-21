@@ -1,6 +1,6 @@
 extends BasePlayerState
 
-export var wall_slide_speed : float = 100
+export var wall_slide_speed : float = 20
 
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
@@ -11,17 +11,11 @@ func enter_logic(player: KinematicBody2D):
 
 func logic(player: KinematicBody2D, delta: float):
 	player.vy = wall_slide_speed #override apply_gravity and apply a constant slide speed
-
-	if player.grounded:
-		#if you hit a ceiling
-		return "idle" #start falling	
-
-	if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
-		if player.jumping and not player.is_on_ceiling():
-			player.jump(500)
-			return "fall"
-	else:
-		return "fall"
+	if player.jumping and not player.is_on_ceiling():
+		if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
+			player.vy = -500
+		else:
+			return "jump"
 func exit_logic(player: KinematicBody2D):
 	.exit_logic(player)
 
