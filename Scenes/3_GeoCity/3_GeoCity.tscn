@@ -225,7 +225,6 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="AnimatedSprite" parent="Player/ViewportContainer/Viewport" index="0"]
-frame = 0
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

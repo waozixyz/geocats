@@ -1,0 +1,44 @@
+{
+  "first": {
+    "name": "Shopkeeper",
+    "avatar": "shopkeeper.png",
+    "position": "left",
+    "type": "text",
+    "content": "Welcome to POPNNIP!!",
+    "animation_in": "move_in",
+    "next": "0"
+  },
+  "0": {
+    "name": "Shopkeeper",
+    "avatar": "shopkeeper.png",
+    "position": "left",
+    "type": "text",
+    "content": "Your source for mindless consumption",
+    "next": "1"
+  },
+  "1": {
+    "name": "Shopkeeper",
+    "avatar": "shopkeeper.png",
+    "position": "left",
+    "type": "text",
+    "content": "in the post-modern era!",
+    "next": "2"
+  },
+  "2": {
+    "name": "Shopkeeper",
+    "avatar": "shopkeeper.png",
+    "position": "left",
+    "type": "text",
+    "content": "Only kidding, I'm contractually obligated to greet you in a friendly way.",
+
+    "next": "3"
+  },
+ "3": {
+    "name": "Shopkeeper",
+    "avatar": "shopkeeper.png",
+    "position": "left",
+    "type": "text",
+    "content": "Have a nice day.",
+    "next": ""
+  }
+}

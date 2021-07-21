@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/4_PopNnip/Interactions.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Chat.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/ebutton/e_Button_press.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 484, 19 )
@@ -72,7 +73,7 @@ extents = Vector2( 27, 27 )
 extents = Vector2( 4.5, 70 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 26, 28 )
+extents = Vector2( 29, 47 )
 
 [node name="PopNnip" type="Node2D"]
 
@@ -271,15 +272,25 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
 shape = SubResource( 20 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Shopkeeper" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Shopkeeper"]
 position = Vector2( 418, 378 )
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 42, 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper/Area2D"]
+position = Vector2( 41, 15 )
 shape = SubResource( 21 )
 
-[node name="Button" type="Sprite" parent="Area2D"]
+[node name="Button" type="Sprite" parent="Shopkeeper/Area2D"]
+visible = false
 position = Vector2( 39, -55 )
 scale = Vector2( 0.321428, 0.302884 )
 texture = ExtResource( 9 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChatWith" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = false
+margin_right = 292.0
+margin_bottom = 309.0
