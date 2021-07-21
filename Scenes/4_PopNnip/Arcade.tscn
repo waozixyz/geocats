@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/hairball_screen.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/spaceship_screen.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/npc.png" type="Texture" id=18]
+[ext_resource path="res://Assets/UI/ebutton/e_Button_press.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Chat.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -311,6 +314,9 @@ extents = Vector2( 48, 47 )
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 8, 69 )
 
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 29, 47 )
+
 [node name="Arcade" type="Node2D"]
 
 [node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
@@ -353,7 +359,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 164, 51 )
 frames = SubResource( 21 )
-frame = 1
+frame = 3
 speed_scale = 0.08
 playing = true
 centered = false
@@ -361,13 +367,14 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 8 )
-frame = 11
+frame = 5
 playing = true
 centered = false
 
 [node name="spaceship" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 29, 86 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.05
 playing = true
 centered = false
@@ -375,6 +382,7 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 48, 89 )
 frames = SubResource( 45 )
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -382,7 +390,6 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 48 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -390,6 +397,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 96, 56 )
 frames = SubResource( 51 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -397,6 +405,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 31, 56 )
 frames = SubResource( 54 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -411,6 +420,7 @@ centered = false
 [node name="npc" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 13, 57 )
 frames = SubResource( 61 )
+frame = 2
 speed_scale = 0.23
 playing = true
 centered = false
@@ -418,7 +428,7 @@ centered = false
 [node name="npc2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 13, 89 )
 frames = SubResource( 64 )
-frame = 2
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -531,3 +541,46 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
 shape = SubResource( 20 )
+
+[node name="Gamecat2" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Gamecat2"]
+position = Vector2( 41, 232 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gamecat2/Area2D"]
+position = Vector2( 41, 15 )
+shape = SubResource( 68 )
+
+[node name="Button" type="Sprite" parent="Gamecat2/Area2D"]
+visible = false
+position = Vector2( 39, -55 )
+scale = Vector2( 0.321428, 0.302884 )
+texture = ExtResource( 19 )
+
+[node name="Gamecat" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Gamecat"]
+position = Vector2( 47, 374 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gamecat/Area2D"]
+position = Vector2( 41, 15 )
+shape = SubResource( 68 )
+
+[node name="Button" type="Sprite" parent="Gamecat/Area2D"]
+visible = false
+position = Vector2( 39, -55 )
+scale = Vector2( 0.321428, 0.302884 )
+texture = ExtResource( 19 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChatWith" parent="CanvasLayer" instance=ExtResource( 21 )]
+visible = false

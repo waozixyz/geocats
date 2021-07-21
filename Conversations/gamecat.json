@@ -1,0 +1,19 @@
+{
+  "first": {
+    "name": "",
+    "avatar": "gamecat.png",
+    "position": "left",
+    "type": "text",
+    "content": "...",
+    "animation_in": "move_in",
+    "next": "0"
+  },
+  "0": {
+    "name": "",
+    "avatar": "gamecat.png",
+    "position": "left",
+    "type": "text",
+    "content": "...This game is terrible, yet I can't stop playing...",
+    "next": ""
+  }
+}
