@@ -10,7 +10,7 @@ var velocity : Vector2 = Vector2.ZERO
 var current_platforms = []
 var disabled_platforms = []
 var fall_through_timer = 0
-var fall_through_time = 50
+var fall_through_time = 30
 
 func fall_through():
 	for platform in current_platforms:

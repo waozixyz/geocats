@@ -16,16 +16,17 @@ func logic(player: KinematicBody2D, delta: float):
 	else:
 		player.vy = player.vertical * climb_speed
 
-	player.move_vertically()
 	if player.jumping:
-		return "jump"
+		return "fall"
+	
 	if not player.on_ladder or player.is_on_floor():
 		return "fall"
 
 	if player.horizontal != 0 and player.vertical == 0:
 		return "fall"
-		
-	return null
+
+	player.move_vertically()
+
 
 func exit_logic(player: KinematicBody2D):
 	.exit_logic(player)

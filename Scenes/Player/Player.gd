@@ -56,7 +56,6 @@ func default_anim():
 		else:
 			play("walk")
 
-
 func check_wall_slide(raycast: RayCast2D, direction: int):
 	if raycast.is_colliding() && horizontal == direction:
 		var shape_id = raycast.get_collider_shape()
@@ -72,6 +71,7 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 				if hit_node:
 					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
 						return true
+
 func move_horizontally(subtractor):
 	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
