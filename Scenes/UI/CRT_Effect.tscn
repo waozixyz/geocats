@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="Shader" id=99]
+[sub_resource type="Shader" id=1]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/VHS-and-CRT-monitor-effect
@@ -231,12 +231,12 @@ void fragment()
 	COLOR = text;
 }"
 
-[sub_resource type="ShaderMaterial" id=100]
-shader = SubResource( 99 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/overlay = true
-shader_param/scanlines_opacity = 0.07
+shader_param/scanlines_opacity = 0.05
 shader_param/scanlines_width = 0.1
-shader_param/grille_opacity = 0.136
+shader_param/grille_opacity = 0.07
 shader_param/resolution = Vector2( 640, 480 )
 shader_param/pixelate = false
 shader_param/roll = false
@@ -258,7 +258,7 @@ shader_param/vignette_opacity = 0.5
 [node name="CRT_Effect" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 100 )
+material = SubResource( 2 )
 margin_right = 640.0
 margin_bottom = 480.0
 __meta__ = {

@@ -1,0 +1,36 @@
+{
+  "first": {
+    "name": "Affogato",
+    "avatar": "affogato.png",
+    "position": "left",
+    "type": "text",
+    "content": "Hey, nice to meet you. I'm AffoGato.",
+    "animation_in": "move_in",
+    "next": "1"
+  },
+  "1": {
+    "position": "left",
+    "type": "text",
+    "content": "I like videogames and donuts!",
+    "next": "2"
+  },
+  "2": {
+    "position": "left",
+    "type": "question",
+    "content": "Want to hang out at my place and meet my friend Donut-Bot?",
+    "options": ["yes", "no"],
+    "next": ["no_option", "yes_option"]
+  },
+  "no_option": {
+    "position": "left",
+    "type": "text",
+    "text": "Huh, ok. I'll stay here and play GeoCats.",
+  },
+  "yes_option": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Ok, I'll meet you at Donut-Shack!",
+    "value": [["question", "2"]]
+  },
+}
