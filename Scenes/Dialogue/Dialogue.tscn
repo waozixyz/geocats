@@ -58,14 +58,16 @@ __meta__ = {
 }
 
 [node name="SpriteLeft" type="Sprite" parent="Frame"]
-position = Vector2( 40, -60 )
+position = Vector2( -1.19209e-06, -83 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="SpriteRight" type="Sprite" parent="Frame"]
-position = Vector2( 570, -60 )
+position = Vector2( 503, -83 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 1 )
+centered = false
 flip_h = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Frame"]

@@ -1,6 +1,6 @@
 {
   "first": {
-    "name": "",
+    "name": "Gamecat",
     "avatar": "gamecat2.png",
     "position": "left",
     "type": "text",
@@ -9,7 +9,7 @@
     "next": "0"
   },
   "0": {
-    "name": "",
+    "name": "Gamecat",
     "avatar": "gamecat2.png",
     "position": "left",
     "type": "text",
