@@ -1,9 +1,9 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/4_PopNnip/Interactions.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/CRT_Effect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/FG_Arcade_Machine.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/Catsylvania.png" type="Texture" id=7]
@@ -19,9 +19,7 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/spaceship_screen.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/npc.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/Chat.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/4_PopNnip/npc.gd" type="Script" id=22]
-[ext_resource path="res://Assets/Agents/NPC/affogato.png" type="Texture" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -279,26 +277,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 7, 6 )
-
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 23 )
-region = Rect2( 7, 0, 7, 6 )
-
-[sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 23 )
-region = Rect2( 14, 0, 7, 6 )
-
-[sub_resource type="SpriteFrames" id=57]
-animations = [ {
-"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 484, 19 )
 
@@ -336,7 +314,7 @@ extents = Vector2( 48, 47 )
 extents = Vector2( 8, 69 )
 
 [sub_resource type="RectangleShape2D" id=70]
-extents = Vector2( 29, 47 )
+extents = Vector2( 20, 18 )
 
 [node name="Arcade" type="Node2D"]
 
@@ -373,6 +351,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -380,6 +359,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 164, 51 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.08
 playing = true
 centered = false
@@ -387,7 +367,6 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 27 )
-frame = 6
 playing = true
 centered = false
 
@@ -402,7 +381,6 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 48, 89 )
 frames = SubResource( 33 )
-frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -410,7 +388,6 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 36 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -450,27 +427,6 @@ frames = SubResource( 53 )
 speed_scale = 0.23
 centered = false
 script = ExtResource( 22 )
-
-[node name="affogato" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
-position = Vector2( 159, 102 )
-frames = SubResource( 57 )
-frame = 2
-playing = true
-centered = false
-flip_h = true
-script = ExtResource( 22 )
-
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 753, 404 )
-collision_layer = 1
-collision_mask = 1
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 960
-limit_bottom = 480
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
@@ -595,20 +551,18 @@ __meta__ = {
 position = Vector2( 41, 15 )
 shape = SubResource( 70 )
 
-[node name="question" type="Node2D" parent="."]
+[node name="Default" parent="." instance=ExtResource( 4 )]
 
-[node name="Area2D" type="Area2D" parent="question"]
-position = Vector2( 616, 398 )
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Affogato" parent="Default" index="0"]
+visible = true
+position = Vector2( 654, 410 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="question/Area2D"]
-position = Vector2( 41, 15 )
-shape = SubResource( 70 )
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 740, 404 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 960
+limit_bottom = 480
 
-[node name="ChatWith" parent="CanvasLayer" instance=ExtResource( 21 )]
-visible = false
+[editable path="Default"]
+[editable path="Default/Player"]

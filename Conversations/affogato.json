@@ -9,28 +9,46 @@
     "next": "1"
   },
   "1": {
-    "position": "left",
     "type": "text",
     "content": "I like videogames and donuts!",
     "next": "2"
   },
   "2": {
-    "position": "left",
     "type": "question",
-    "content": "Want to hang out at my place and meet my friend Donut-Bot?",
+    "text": "Want to hang out at my place and meet my friend Donut-Bot?",
     "options": ["yes", "no"],
-    "next": ["no_option", "yes_option"]
+    "next": ["yes_option", "no_option"]
   },
   "no_option": {
-    "position": "left",
     "type": "text",
-    "text": "Huh, ok. I'll stay here and play GeoCats.",
+    "content": "Huh, ok. I'll stay here and play GeoCats.",
   },
   "yes_option": {
     "type": "action",
     "operation": "variable",
     "dictionary": "variables",
     "text": "Ok, I'll meet you at Donut-Shack!",
-    "value": [["question", "2"]]
+    "value": [["follow", true]]
+  },
+  "repeat": {
+    "name": "Affogato",
+    "avatar": "affogato.png",
+    "position": "left",
+    "type": "question",
+    "text": "Hey. Have you changed your mind?",
+    "animation_in": "move_in",
+    "options": ["yes", "no"],
+    "next": ["yes_option_2", "no_option_2"]
+  },
+  "no_option_2": {
+    "type": "text",
+    "content": "Huh... ok!",
+  },
+  "yes_option_2": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Ok, let's go!",
+    "value": [["follow", true]]
   },
 }

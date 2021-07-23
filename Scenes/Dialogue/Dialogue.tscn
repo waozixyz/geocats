@@ -48,10 +48,8 @@ anims/Continue_Indicator = SubResource( 1 )
 one_shot = true
 
 [node name="Frame" type="ColorRect" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 620.0
-margin_bottom = 210.0
+margin_right = 600.0
+margin_bottom = 200.0
 color = Color( 0.175781, 0.175781, 0.175781, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

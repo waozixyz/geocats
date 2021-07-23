@@ -2,7 +2,7 @@ extends Area2D
 
 onready var button = $Button
 onready var sound = $Sound
-onready var player =  get_tree().get_current_scene().get_node("Player")
+
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")

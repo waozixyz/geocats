@@ -73,7 +73,7 @@ func _new_scene():
 	data.file_data.scene = scene
 	data.file_data.location = location
 	var scene_data = _get_scene()
-	print(scene_data)
+
 	get_tree().change_scene(scene_data[0])
 
 	global.player_position = scene_data[1]

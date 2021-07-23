@@ -1,0 +1,36 @@
+
+  "repeat": {
+    "name": "Affogato",
+    "avatar": "affogato.png",
+    "type": "question",
+    "content": "Hey. Have you changed your mind?",
+    "next": "question_block",
+    "options": ["yes", "no"],
+    "next": ["no_option_2", "yes_option_2"]
+  },
+
+
+  "no_option": {
+    "position": "left",
+    "type": "text",
+    "text": "Huh, ok. I'll stay here and play GeoCats.",
+  },
+  "yes_option": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Ok, I'll meet you at Donut-Shack!",
+    "value": [["question", "2"]]
+  },
+  "no_option_2": 
+    "position": "left",
+    "type": "text",
+    "text": "Huh... ok!",
+  },
+  "yes_option_2": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Ok, let's go!",
+    "value": [["question", "2"]]
+  },

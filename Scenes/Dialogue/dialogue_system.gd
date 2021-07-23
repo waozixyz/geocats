@@ -151,12 +151,15 @@ func set_frame(): # Mostly aligment operations.
 			frame_height - continue_indicator.get_rect().size.y - label_margin)
 	
 	frame.rect_size = Vector2(frame_width, frame_height)
-	frame.rect_position = Vector2(-frame_width/2, 0)
+	frame.rect_position = Vector2(0, 480)
+
 	
 	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 2) )
 	label.rect_position = Vector2(label_margin, label_margin)
 	
 	frame.hide() # Hide the dialogue frame
+
+
 	continue_indicator.hide()
 	
 	sprite_left.modulate = white_transparent
@@ -201,6 +204,7 @@ func not_question():
 
 func first(block):
 	frame.show()
+
 	if block == 'first': # Check if we are going to use the default 'first' block
 		if dialogue.has('repeat'):
 			if progress.get(dialogues_dict).has(id): # Checks if it's the first interaction.
@@ -637,7 +641,7 @@ func question(text, options, next):
 	
 	choices.rect_position = Vector2(choice_node_align_x,
 			frame_height - ((choice_height + choice_plus_y) * options.size() + label_margin + choice_margin_vertical))
-	
+
 	for a in options:
 		var choice = choice_scene.instance()
 		

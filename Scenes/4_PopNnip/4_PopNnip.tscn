@@ -1,16 +1,14 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/4_PopNnip/Interactions.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Levels/4_PopNnip/potentialBG_popnnip.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/UI/CRT_Effect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/4_PopNnip/keep.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Chat.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/ebutton/e_Button_press.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 484, 19 )
@@ -77,8 +75,6 @@ extents = Vector2( 29, 47 )
 
 [node name="PopNnip" type="Node2D"]
 
-[node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
-
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 960.0
 margin_bottom = 480.0
@@ -108,18 +104,6 @@ centered = false
 position = Vector2( 110, 90 )
 texture = ExtResource( 7 )
 centered = false
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40, 411 )
-collision_layer = 1
-collision_mask = 1
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 960
-limit_bottom = 480
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
@@ -288,9 +272,14 @@ position = Vector2( 39, -55 )
 scale = Vector2( 0.321428, 0.302884 )
 texture = ExtResource( 9 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Default" parent="." instance=ExtResource( 2 )]
 
-[node name="ChatWith" parent="CanvasLayer" instance=ExtResource( 11 )]
-visible = false
-margin_right = 292.0
-margin_bottom = 309.0
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 40, 411 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 960
+limit_bottom = 480
+
+[editable path="Default"]
+[editable path="Default/Player"]

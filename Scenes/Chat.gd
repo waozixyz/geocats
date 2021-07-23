@@ -1,9 +1,10 @@
 extends Area2D
 
-onready var player =  get_tree().get_current_scene().get_node("Player")
-onready var chat_with = get_tree().get_current_scene().get_node("CanvasLayer/ChatWith")
+onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 
 var active : bool
+var disabled : bool
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -21,7 +22,7 @@ func hide_chat():
 	active = false
 
 func _on_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and not disabled:
 		show_chat()
 
 func _on_body_exited(body):
@@ -29,6 +30,8 @@ func _on_body_exited(body):
 		hide_chat()
 
 func _process(delta):
+	if disabled and active:
+		hide_chat()
 	if active and "idle" in get_parent():
 		if chat_with.started:
 			get_parent().idle = true

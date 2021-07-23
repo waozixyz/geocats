@@ -2,8 +2,8 @@ extends Area2D
 
 onready var button = $Button
 onready var sound = $Sound
-onready var player =  get_tree().get_current_scene().get_node("Player")
-
+onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var affogato =  get_tree().get_current_scene().get_node("Default/Affogato")
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
@@ -21,11 +21,12 @@ func _input(event):
 		if name == "UpElevator":
 			player.position.x = 1600
 			player.position.y = 1000
+			affogato.position = player.position
 
 		elif name == "DownElevator":
 			player.position.x = 710
 			player.position.y = 180
-
+			affogato.position = player.position
 		elif name == "HomeDoor":
 			SceneChanger.change_scene("CatCradle", 1, "WoodDoorLatchOpen1", 1)
 		elif name == "Exit":
