@@ -51,7 +51,6 @@ func _physics_process(delta):
 		else:
 			if climbing:
 				position.y = player.position.y
-
 				climbing = false
 
 	ticks += 1
