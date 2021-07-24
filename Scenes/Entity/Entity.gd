@@ -5,6 +5,7 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var sprite
 var to_rotate
+var no_rotate = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
 var current_platforms = []
@@ -43,11 +44,12 @@ func jump(jumpHeight):
 	velocity.y = -sqrt(50 * gravity * jumpHeight) 
 	
 func _set_rotation(rot):
-	if to_rotate is ViewportContainer:
+	if no_rotate == false:
+		if to_rotate is ViewportContainer:
 
-		to_rotate.rect_rotation = rad2deg(rot)
-	else:
-		to_rotate.rotation = rot
+			to_rotate.rect_rotation = rad2deg(rot)
+		else:
+			to_rotate.rotation = rot
 	
 func _physics_process(delta):
 	var rot = _get_rotation()
@@ -65,8 +67,8 @@ func _physics_process(delta):
 				if check_child_collision(child):
 					current_platforms.insert(current_platforms.size(), child)
 			var normal = collision.normal
-			
-			if normal.x > -.7 && normal.x < .7:
+
+			if normal.x > -.7 && normal.x < .7 && normal.y < .7:
 				var slope_angle = normal.dot(Vector2(0,-1)) - 1
 				var mul = 1
 				if normal.x < 0:

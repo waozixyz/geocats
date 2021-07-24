@@ -43,8 +43,8 @@ var previous_state : String setget ,_get_previous_state_tag
 var airFriction = 20 #how much you subtract velocity when you start moving horizontally in the air
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
-var maxSpeed = 600 #maximum current speed can reach when moving horizontally
-var acceleration = 100 #by how much does current speed approach max speed when moving
+var maxSpeed = 500 #maximum current speed can reach when moving horizontally
+var acceleration = 60 #by how much does current speed approach max speed when moving
 var decceleration = 120 #by how much does velocity approach when you stop moving horizontally
 
 func default_anim():
