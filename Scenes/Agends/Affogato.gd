@@ -22,6 +22,7 @@ var init = false
 var lastDiff = 0
 var diff = 0
 var climbing = false
+
 func _physics_process(delta):
 	velocity.x = 0
 	if PROGRESS.variables.get("follow"):
@@ -36,14 +37,14 @@ func _physics_process(delta):
 		elif position.x > player.position.x + margin:
 			position.x -= mov_speed
 		if position.y > player.position.y + margin * 2:
-			jump_height = 800 
+			jump_height = 600 
 		elif position.y > player.position.y + margin:
 			jump_height = 400
 		elif position.y < player.position.y - margin:
 			fall_through()
 		else:
-			if ticks > 10:
-				jump_height = 400
+			if ticks > 100:
+				jump_height = 300
 				ticks = 0
 			else:
 				jump_height = 15

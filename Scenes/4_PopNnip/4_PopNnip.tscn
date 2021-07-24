@@ -124,14 +124,13 @@ centered = false
 [node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.2
 playing = true
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -473, 228 )
@@ -219,8 +218,8 @@ one_way_collision = true
 "end",
 ]]
 position = Vector2( 2408, 1117 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -2417, -881 )
@@ -299,9 +298,6 @@ position = Vector2( 40, 411 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960
 limit_bottom = 480
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
 
 [editable path="Default"]
 [editable path="Default/Player"]

@@ -962,8 +962,8 @@ shape = SubResource( 72 )
 [node name="Kitchen" type="StaticBody2D" parent="Scaledown/Objects"]
 position = Vector2( 68, 576 )
 scale = Vector2( 1.00556, 1 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/Objects/Kitchen"]
 visible = false
@@ -986,8 +986,8 @@ texture = ExtResource( 17 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scaledown/Objects/Bookshelf"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Bookshelf/StaticBody2D"]
 position = Vector2( 121.375, 58.7955 )
@@ -996,8 +996,8 @@ one_way_collision = true
 
 [node name="Platform" type="StaticBody2D" parent="Scaledown/Objects"]
 position = Vector2( 540, 198 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="Platform" type="CollisionShape2D" parent="Scaledown/Objects/Platform"]
 position = Vector2( -6, 0 )
@@ -1006,8 +1006,8 @@ one_way_collision = true
 
 [node name="Hallway" type="StaticBody2D" parent="Scaledown/Objects"]
 position = Vector2( 1134, 558 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="hall_bckg" type="Sprite" parent="Scaledown/Objects/Hallway"]
 position = Vector2( 162, -90 )
@@ -1033,8 +1033,8 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scaledown/Objects/Stereo"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Stereo/StaticBody2D"]
 position = Vector2( 40.5, 4.5 )
@@ -1052,8 +1052,8 @@ texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scaledown/Objects/Bath"]
 position = Vector2( 0, 72 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Bath/StaticBody2D"]
 visible = false
@@ -1084,8 +1084,8 @@ position = Vector2( 1971, 329 )
 texture = ExtResource( 14 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scaledown/Objects/Bed"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Bed/StaticBody2D"]
 position = Vector2( 0, 4.25424 )
@@ -1094,8 +1094,8 @@ one_way_collision = true
 
 [node name="KitchenPlatform" type="StaticBody2D" parent="Scaledown/Objects"]
 position = Vector2( 243, 747 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/KitchenPlatform"]
 shape = SubResource( 87 )
@@ -1108,8 +1108,8 @@ texture = ExtResource( 27 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scaledown/Objects/Statue"]
 position = Vector2( -9, 0 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Statue/StaticBody2D"]
 position = Vector2( 36, -108 )
@@ -1123,8 +1123,8 @@ one_way_collision = true
 
 [node name="EndWall" type="StaticBody2D" parent="Scaledown"]
 position = Vector2( 0, 800 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="ColorRect" type="ColorRect" parent="Scaledown/EndWall"]
 margin_left = -81.0
@@ -1262,9 +1262,6 @@ position = Vector2( 930, 124 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2150
 limit_bottom = 1080
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
 
 [editable path="Default"]
 [editable path="Default/Player"]

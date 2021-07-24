@@ -31,8 +31,8 @@ animations = [ {
 extents = Vector2( 11, 11 )
 
 [node name="Affogato" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -65,6 +65,7 @@ render_target_update_mode = 3
 
 [node name="affogato" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 frames = SubResource( 5 )
+frame = 2
 speed_scale = 2.0
 playing = true
 centered = false

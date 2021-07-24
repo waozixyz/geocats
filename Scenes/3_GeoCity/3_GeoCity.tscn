@@ -151,7 +151,7 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 34 ) ],
+"frames": [ SubResource( 34 ), SubResource( 33 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -160,13 +160,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 46, 42 )
 
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
-
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 18 )
 region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 18 )
@@ -174,12 +174,12 @@ region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=40]
 animations = [ {
-"frames": [ SubResource( 37 ), SubResource( 38 ) ],
+"frames": [ SubResource( 38 ), SubResource( 37 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 39 ) ],
+"frames": [ SubResource( 39 ), SubResource( 37 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -204,7 +204,7 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 43 ) ],
+"frames": [ SubResource( 43 ), SubResource( 41 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -305,8 +305,8 @@ shape = SubResource( 4 )
 
 [node name="Bricks" type="StaticBody2D" parent="."]
 position = Vector2( 2800, 500 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks"]
 position = Vector2( 88, 42 )
@@ -324,8 +324,8 @@ shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Houses" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Houses"]
 position = Vector2( 291, 314 )
@@ -442,11 +442,11 @@ position = Vector2( 4554, 151 )
 shape = SubResource( 26 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Houses"]
-polygon = PoolVector2Array( 4612, 1035, 4696, 985, 4722, 985, 4725, 844, 4556, 846, 4556, 205, 4799, 201, 4801, 1032 )
+polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 205, 4799, 201, 4801, 1032 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 2410, 1113 )
@@ -456,8 +456,8 @@ shape = SubResource( 27 )
 "end",
 ]]
 position = Vector2( 2408, 1117 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -2416, -532 )
@@ -540,8 +540,7 @@ shape = SubResource( 32 )
 [node name="ViewportContainer" type="ViewportContainer" parent="Longcat"]
 margin_right = 44.0
 margin_bottom = 29.0
-rect_scale = Vector2( 1, 1.1 )
-rect_pivot_offset = Vector2( 45, 25 )
+rect_pivot_offset = Vector2( 22.5, 12.5 )
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -557,6 +556,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Longcat/ViewportContainer/Viewport"]
 frames = SubResource( 35 )
 animation = "walk"
+frame = 1
 playing = true
 centered = false
 
@@ -572,19 +572,16 @@ position = Vector2( 4124, 689 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat"]
-position = Vector2( 20.8, 14 )
 shape = SubResource( 32 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Nonacat"]
-margin_right = 44.0
-margin_bottom = 29.0
-rect_scale = Vector2( 1, 1.1 )
-rect_pivot_offset = Vector2( 45, 25 )
+margin_left = -22.0
+margin_top = -15.0
+margin_right = 22.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -600,6 +597,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Nonacat/ViewportContainer/Viewport"]
 frames = SubResource( 40 )
 animation = "walk"
+frame = 1
 playing = true
 centered = false
 
@@ -607,11 +605,11 @@ centered = false
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat/Area2D"]
-position = Vector2( 24, 13 )
+position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 36 )
 
 [node name="Lasagne" type="KinematicBody2D" parent="."]
-position = Vector2( 979, 968 )
+position = Vector2( 2034, 986 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 15 )
@@ -626,8 +624,7 @@ shape = SubResource( 32 )
 [node name="ViewportContainer" type="ViewportContainer" parent="Lasagne"]
 margin_right = 44.0
 margin_bottom = 29.0
-rect_scale = Vector2( 1, 1.1 )
-rect_pivot_offset = Vector2( 45, 25 )
+rect_pivot_offset = Vector2( 22.5, 12.5 )
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -645,6 +642,7 @@ frames = SubResource( 44 )
 animation = "walk"
 playing = true
 centered = false
+flip_h = true
 
 [node name="Area2D" type="Area2D" parent="Lasagne"]
 script = ExtResource( 2 )
@@ -656,11 +654,14 @@ shape = SubResource( 36 )
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1178, 918 )
+position = Vector2( 4611, 947 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
 limit_bottom = 1200
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
