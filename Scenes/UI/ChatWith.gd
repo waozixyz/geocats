@@ -7,13 +7,15 @@ var started : bool = false
 var hide_after: bool = false
 func start(name, hide = false):
 	hide_after = hide
+
 	if not started:
+		dialogue.exit()
 		dialogue.initiate(name.to_lower())
 		started = true
 
 func stop():
 	started = false
-	dialogue.frame.hide()
+	dialogue.exit()
 	if hide_after:
 		visible = false
 
@@ -25,6 +27,7 @@ func _process(delta):
 	else:
 		panel.visible = true
 		started = false
+
 		if hide_after:
 			visible = false
 

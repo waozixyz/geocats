@@ -384,7 +384,21 @@ func clean_bbcode(string):
 		label.bbcode_text = label.get('bbcode_text') + phrase[counter] + '\n'
 		counter += 1
 
-
+func exit():
+	clean()
+	sprite_left.modulate = white_transparent
+	sprite_right.modulate = white_transparent
+	dialogue = null
+	name_left.hide()
+	name_right.hide()
+	frame.hide() 
+	avatar_left = ''
+	avatar_right = ''
+	number_characters = 0
+	is_question = false
+	for child in choices.get_children():
+		choices.remove_child(child)
+		child.propagate_call("queue_free", [])
 func next():
 	if not dialogue or on_animation: # Check if is in the middle of a dialogue 
 		return

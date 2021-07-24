@@ -611,7 +611,7 @@ position = Vector2( 24, 13 )
 shape = SubResource( 36 )
 
 [node name="Lasagne" type="KinematicBody2D" parent="."]
-position = Vector2( 1929, 988 )
+position = Vector2( 979, 968 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 15 )
@@ -661,9 +661,6 @@ position = Vector2( 1178, 918 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
 limit_bottom = 1200
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
