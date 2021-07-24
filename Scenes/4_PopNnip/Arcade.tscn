@@ -351,6 +351,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -366,7 +367,6 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 27 )
-frame = 2
 playing = true
 centered = false
 
@@ -568,9 +568,6 @@ position = Vector2( 740, 404 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960
 limit_bottom = 480
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
 
 [editable path="Default"]
 [editable path="Default/Player"]

@@ -1,0 +1,22 @@
+{
+  "first": {
+    "name": "Lasagne",
+    "avatar": "lasagne.png",
+    "position": "left",
+    "type": "question",
+    "text": "Have you seen any of those creepy green cats?",
+    "animation_in": "move_in",
+    "options": ["yes", "no"],
+    "next": ["yes_option", "no_option"]
+  },
+  "yes_option": {
+    "type": "text",
+    "content": "Something nefarious is brewing...",
+    "next": "",
+  },
+  "no_option": {
+    "type": "text",
+    "content": "Watch out! One of them tried to bite me...",
+    "next": "",
+  },
+}

@@ -1,6 +1,5 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=125 format=2]
 
-[ext_resource path="res://Assets/UI/ebutton/e_Button_press.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/2_Complex/elevator.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/2_Complex/bckg_deko.png" type="Texture" id=4]
@@ -1237,7 +1236,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 80 )
 animation = "idle"
-frame = 1
 playing = true
 centered = false
 
@@ -1248,12 +1246,6 @@ script = ExtResource( 43 )
 position = Vector2( 20.8, 33.5306 )
 shape = SubResource( 81 )
 
-[node name="Button" type="Sprite" parent="Node2D/Cleopartis/Area2D"]
-visible = false
-position = Vector2( 27, -34.6631 )
-scale = Vector2( 0.321428, 0.302884 )
-texture = ExtResource( 1 )
-
 [node name="Hogwash" parent="Node2D" instance=ExtResource( 38 )]
 position = Vector2( 1056, 480 )
 
@@ -1263,12 +1255,6 @@ script = ExtResource( 43 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Hogwash/Area2D"]
 position = Vector2( 42, 6 )
 shape = SubResource( 82 )
-
-[node name="Button" type="Sprite" parent="Node2D/Hogwash/Area2D"]
-visible = false
-position = Vector2( 46, -56 )
-scale = Vector2( 0.321428, 0.302884 )
-texture = ExtResource( 1 )
 
 [node name="EndWalls" type="StaticBody2D" parent="."]
 scale = Vector2( 0.36, 0.36 )

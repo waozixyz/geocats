@@ -1,0 +1,11 @@
+{
+  "first": {
+    "name": "Nonacat",
+    "avatar": "nonacat.png",
+    "position": "left",
+    "type": "text",
+    "content": "Art makes the passage of time bearable.",
+    "animation_in": "move_in",
+    "next": ""
+  }
+}

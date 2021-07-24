@@ -13,9 +13,10 @@ var file_data = {
 
 func _ready():
 	data.loadit()
-	PROGRESS.variables = file_data.progress # load dialogue system data
+	if file_data.progress:
+		PROGRESS.variables = file_data.progress # load dialogue system data
 	#SceneChanger.change_scene(file_data.scene, file_data.location, "", 1)
-	pass
+
 func saveit():
 	file_data.progress = PROGRESS.variables
 	var file = File.new()
