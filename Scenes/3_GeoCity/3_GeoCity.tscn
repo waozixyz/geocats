@@ -503,6 +503,22 @@ position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 10 )
 
+[node name="DonutShop" type="Area2D" parent="."]
+position = Vector2( 1023, 977 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DonutShop"]
+shape = SubResource( 31 )
+
+[node name="Button" type="Sprite" parent="DonutShop"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 10 )
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
@@ -640,7 +656,7 @@ shape = SubResource( 36 )
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 4601, 979 )
+position = Vector2( 1178, 918 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800

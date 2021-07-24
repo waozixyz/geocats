@@ -695,6 +695,9 @@ func change_choice(dir):
 #						choices.get_child(current_choice).self_modulate = active_choice
 		
 			next_step = current['next'][current_choice]
+		return true
+	else:
+		return false
 
 
 func update_variable(variables_array, current_dict):
@@ -706,7 +709,8 @@ func _input(event): # This function can be easily replaced. Just make sure you c
 	if event.is_action_pressed('%s' % previous_command):
 		change_choice('previous')
 	if event.is_action_pressed('%s' % next_command):
-		change_choice('next')
+		if not change_choice('next'):
+			next()
 	if event.is_action_pressed('%s' % continue_command):
 		next()
 

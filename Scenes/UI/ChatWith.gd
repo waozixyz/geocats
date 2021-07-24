@@ -4,7 +4,9 @@ onready var panel = $Panel
 onready var name_label = $Panel/NameLabel
 
 var started : bool = false
-func start(name):
+var hide_after: bool = false
+func start(name, hide = false):
+	hide_after = hide
 	if not started:
 		dialogue.initiate(name.to_lower())
 		started = true
@@ -12,6 +14,8 @@ func start(name):
 func stop():
 	started = false
 	dialogue.frame.hide()
+	if hide_after:
+		visible = false
 
 	#get_parent().idle = false
 func _process(delta):
@@ -21,4 +25,6 @@ func _process(delta):
 	else:
 		panel.visible = true
 		started = false
+		if hide_after:
+			visible = false
 

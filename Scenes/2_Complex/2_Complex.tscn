@@ -1236,7 +1236,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 80 )
 animation = "idle"
-frame = 2
+frame = 4
 playing = true
 centered = false
 
@@ -1287,9 +1287,6 @@ position = Vector2( 1162, 233 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
 limit_bottom = 1200
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
 
 [editable path="Default"]
 [editable path="Default/Player"]

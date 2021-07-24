@@ -13,6 +13,7 @@ func _ready():
 
 func show_chat():
 	active = true
+	chat_with.hide_after = false
 	chat_with.visible = true
 	chat_with.name_label.text = get_parent().name
 	
