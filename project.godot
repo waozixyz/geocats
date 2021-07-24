@@ -46,9 +46,8 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 global="*res://Scenes/global.gd"
-MasterAudio="*res://Scenes/UI/MasterAudio.tscn"
-data="*res://Scenes/data.gd"
 PROGRESS="*res://Scenes/Dialogue/progress.gd"
+data="*res://Scenes/data.gd"
 
 [display]
 

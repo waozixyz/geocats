@@ -6,14 +6,18 @@ const FILE_NAME = "user://game-data.json"
 	
 var file_data = {
 	"scene": "CatCradle",
-	"location": 0
+	"location": 0,
+	"present": true,
+	"progress": {},
 }
 
 func _ready():
-	#data.loadit()
+	data.loadit()
+	PROGRESS.variables = file_data.progress # load dialogue system data
 	#SceneChanger.change_scene(file_data.scene, file_data.location, "", 1)
 	pass
 func saveit():
+	file_data.progress = PROGRESS.variables
 	var file = File.new()
 	file.open(FILE_NAME, File.WRITE)
 	file.store_string(to_json(file_data))

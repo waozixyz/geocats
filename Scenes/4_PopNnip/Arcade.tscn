@@ -277,43 +277,43 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 484, 19 )
 
-[sub_resource type="RectangleShape2D" id=59]
+[sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 216, 19 )
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 17, 54 )
 
-[sub_resource type="RectangleShape2D" id=61]
+[sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 286, 5 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 477, 15 )
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 238, 19 )
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 61, 57 )
 
-[sub_resource type="RectangleShape2D" id=65]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 119, 29 )
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 8, 253 )
 
-[sub_resource type="RectangleShape2D" id=67]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 506, 10 )
 
-[sub_resource type="RectangleShape2D" id=68]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 48, 47 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 8, 69 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 20, 18 )
 
 [node name="Arcade" type="Node2D"]
@@ -351,7 +351,6 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -374,6 +373,7 @@ centered = false
 [node name="spaceship" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 29, 86 )
 frames = SubResource( 30 )
+frame = 1
 speed_scale = 0.05
 playing = true
 centered = false
@@ -396,6 +396,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 96, 56 )
 frames = SubResource( 39 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -403,6 +404,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 31, 56 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -410,6 +412,7 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 45 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -435,46 +438,46 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -473, 228 )
-shape = SubResource( 58 )
+shape = SubResource( 54 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -735, 178 )
-shape = SubResource( 59 )
+shape = SubResource( 55 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=[
 "end",
 ]]
 position = Vector2( -937, 147 )
-shape = SubResource( 60 )
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=[
 "end",
 ]]
 position = Vector2( -934, 14 )
-shape = SubResource( 60 )
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -667, 73 )
-shape = SubResource( 61 )
+shape = SubResource( 57 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -484, -104 )
-shape = SubResource( 62 )
+shape = SubResource( 58 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -669, 48 )
-shape = SubResource( 63 )
+shape = SubResource( 59 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -73, 178 )
-shape = SubResource( 64 )
+shape = SubResource( 60 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -192, 7 )
-shape = SubResource( 65 )
+shape = SubResource( 61 )
 one_way_collision = true
 
 [node name="EndWalls" type="StaticBody2D" parent="." groups=[
@@ -486,15 +489,15 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -2417, -881 )
-shape = SubResource( 66 )
+shape = SubResource( 62 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -1440, -885 )
-shape = SubResource( 66 )
+shape = SubResource( 62 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -1943, -1127 )
-shape = SubResource( 67 )
+shape = SubResource( 63 )
 
 [node name="PopNnip" type="Area2D" parent="."]
 position = Vector2( 769, 393 )
@@ -504,7 +507,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PopNnip"]
-shape = SubResource( 68 )
+shape = SubResource( 64 )
 
 [node name="Button" type="Sprite" parent="PopNnip"]
 visible = false
@@ -525,7 +528,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
-shape = SubResource( 69 )
+shape = SubResource( 65 )
 
 [node name="Gamecat2" type="Node2D" parent="."]
 
@@ -538,7 +541,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gamecat2/Area2D"]
 position = Vector2( 41, 15 )
-shape = SubResource( 70 )
+shape = SubResource( 66 )
 
 [node name="Gamecat" type="Node2D" parent="."]
 
@@ -551,7 +554,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gamecat/Area2D"]
 position = Vector2( 41, 15 )
-shape = SubResource( 70 )
+shape = SubResource( 66 )
 
 [node name="Default" parent="." instance=ExtResource( 4 )]
 

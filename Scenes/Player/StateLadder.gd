@@ -21,6 +21,7 @@ func logic(player: KinematicBody2D, delta: float):
 		return "fall"
 	
 	if not player.on_ladder or player.is_on_floor():
+		player.vy *= .5
 		return "fall"
 
 	if player.horizontal != 0 and player.vertical == 0:
