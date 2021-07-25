@@ -8,17 +8,22 @@ var file_data = {
 	"scene": "CatCradle",
 	"location": 0,
 	"present": true,
-	"progress": {},
+	"prog_var": {},
+	"prog_dia": {},
 }
 
 func _ready():
 	data.loadit()
-	if file_data.progress:
-		PROGRESS.variables = file_data.progress # load dialogue system data
+
+	# load dialogue system data
+	PROGRESS.variables = file_data.prog_var
+	PROGRESS.dialogues = file_data.prog_dia
+
 	#SceneChanger.change_scene(file_data.scene, file_data.location, "", 1)
 
 func saveit():
-	file_data.progress = PROGRESS.variables
+	file_data.prog_var = PROGRESS.variables
+	file_data.prog_dia = PROGRESS.dialogues
 	var file = File.new()
 	file.open(FILE_NAME, File.WRITE)
 	file.store_string(to_json(file_data))
