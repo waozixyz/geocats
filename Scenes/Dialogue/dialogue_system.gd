@@ -208,7 +208,15 @@ func first(block):
 	if block == 'first': # Check if we are going to use the default 'first' block
 		if dialogue.has('repeat'):
 			if progress.get(dialogues_dict).has(id): # Checks if it's the first interaction.
-				update_dialogue(dialogue['repeat']) # It's not. Use the 'repeat' block.
+				if dialogue.has('after_repeat'):					
+					if progress.get(dialogues_dict).has("r_" + id): # Checks if it's the first interaction.
+						update_dialogue(dialogue['after_repeat']) # It's not. Use the 'repeat' block.
+					else:
+						progress.get(dialogues_dict)["r_" + id] = true # Updates the singleton containing the interactions log.
+						update_dialogue(dialogue['repeat']) # It is. Use the 'first' block.
+				else:
+					update_dialogue(dialogue['repeat']) # It's not. Use the 'repeat' block.
+
 			else:
 				progress.get(dialogues_dict)[id] = true # Updates the singleton containing the interactions log.
 				update_dialogue(dialogue['first']) # It is. Use the 'first' block.
@@ -644,6 +652,8 @@ func load_image(sprite, image):
 	var w = sprite.texture.get_width()
 	if w > 100:
 		sprite.scale = Vector2(.5,.5)
+	elif w > 20:
+		sprite.scale = Vector2(2.8, 2.8)
 	elif w > 15:
 		sprite.scale = Vector2(4,4)
 	else:
