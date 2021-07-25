@@ -357,7 +357,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 11
+frame = 4
 playing = true
 centered = false
 
@@ -372,7 +372,6 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 48, 89 )
 frames = SubResource( 30 )
-frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -388,6 +387,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -395,6 +395,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -402,6 +403,7 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -546,7 +548,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -580,7 +582,6 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 65 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

@@ -175,9 +175,6 @@ position = Vector2( 23, 401 )
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
-
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
 margin_bottom = 1200.0
@@ -311,6 +308,16 @@ one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 154, 249 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 153, 209 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 155, 298 )
 shape = SubResource( 6 )
 one_way_collision = true
 
