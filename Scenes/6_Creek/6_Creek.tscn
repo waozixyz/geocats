@@ -1,0 +1,178 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Levels/6_Creek/creek_level_bg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/6_Creek/creek_level_fg.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_twelveeight.ogg" type="AudioStream" id=12]
+
+[node name="DonutShop" type="Node2D"]
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 9000.0
+margin_bottom = 5400.0
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 1500, 900 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="creek_level_bg" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Ground" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 1666, 4096, 2372, 3853, 2785, 3634, 3160, 3480, 3308, 3441, 3603, 3438, 3973, 3550, 4169, 3613, 4438, 3758, 4838, 3909, 5036, 3950, 5263, 4035, 5452, 4152, 5873, 4220, 6061, 4260, 6235, 4328, 6055, 4279, 5830, 4238, 5437, 4174, 5230, 4055, 4958, 3958, 4609, 3876, 4112, 3643, 3629, 3478, 3401, 3482, 3280, 3488, 2822, 3662, 2410, 3869, 1703, 4129 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 1666, 4096, 1357, 4181, 975, 4235, 469, 4170, 69, 4034, -2, 4006, -5, 4059, 522, 4230, 1039, 4273, 1432, 4210, 1704, 4134 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 6513, 4401, 6433, 4399, 6248, 4475, 5862, 4637, 5533, 4731, 5276, 4827, 4864, 4935, 4482, 5033, 3972, 5135, 3466, 5265, 3037, 5374, 3117, 5385, 3558, 5280, 4043, 5154, 4597, 5041, 4970, 4936, 5457, 4812, 5908, 4664, 6301, 4501, 6484, 4468 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 6513, 4401, 6845, 4600, 7190, 4758, 7371, 4857, 7833, 4999, 8407, 5059, 8915, 5033, 8918, 5093, 8465, 5090, 7836, 5036, 7327, 4892, 7077, 4774, 6687, 4599, 6484, 4466 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 3776, 3388, 4070, 3346, 4309, 3321, 4672, 3256, 5190, 3186, 5579, 3113, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6867, 2741, 6798, 2804, 6767, 2882, 6735, 2939, 6737, 3305, 6728, 3416, 6635, 3550, 5847, 3430, 5095, 3270, 4314, 3380 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 9009, 984, 8949, 987, 8755, 1072, 8595, 1152, 8522, 1159, 8251, 1234, 7820, 1429, 7737, 1491, 7715, 1565, 7693, 1619, 7657, 1650, 7656, 1750, 7786, 1797, 7885, 1842, 7998, 2124, 8172, 2575, 8194, 2926, 8404, 3359, 8503, 3765, 8509, 4202, 8515, 4601, 8509, 4844, 8542, 4868, 8578, 4358, 8587, 3762, 8986, 3746 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 8918, 5036, 8909, 4773, 8865, 4687, 8806, 4689, 8817, 3746, 9002, 3744, 9007, 5084, 8921, 5088 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 3033, 3484, 2862, 3511, 2650, 3553, 2411, 3597, 2209, 3602, 2209, 3621, 2427, 3609, 2667, 3564, 2943, 3516, 3144, 3489, 3146, 3479 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 2213, 3600, 2233, 2920, 2259, 2239, 2272, 1833, 2286, 1347, 2284, 1019, 2297, 599, 2134, 653, 2048, 647, 2049, 667, 2017, 666, 1999, 673, 1866, 672, 1694, 730, 1621, 757, 1557, 757, 1428, 828, 1449, 832, 1520, 793, 1549, 795, 1562, 810, 1559, 1059, 1525, 1092, 1439, 1108, 1451, 1113, 1515, 1102, 1471, 1137, 1484, 1141, 1553, 1100, 1556, 1417, 1443, 1462, 1466, 1469, 1529, 1444, 1500, 1474, 1520, 1474, 1556, 1449, 1549, 1746, 1413, 1824, 1303, 1880, 1186, 1880, 1075, 1823, 1000, 1818, 1019, 1829, 1138, 1883, 1305, 1896, 1540, 1782, 1519, 2783, 1806, 3424 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 2378, 3418, 2390, 2280, 2392, 1655, 2390, 1123, 2392, 610, 2909, 784, 2986, 792, 3192, 889, 3494, 948, 3766, 945, 3995, 867, 4115, 867, 4391, 903, 4390, 912, 4144, 885, 4287, 969, 4280, 983, 4112, 889, 4059, 885, 3966, 946, 3773, 1006, 3427, 1046, 2985, 898, 2428, 739, 2395, 3401 )
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 2737, 3368, 3056, 3054, 3236, 2762, 3736, 2395, 4104, 2388, 4417, 2413, 5358, 2288, 5600, 2334, 6235, 2245, 6723, 2138, 6990, 2156, 7029, 2274, 6983, 2366, 6922, 2409, 6801, 2213, 6124, 2331, 5422, 2395, 5247, 2363, 4613, 2512, 4096, 2455, 3786, 2505, 3344, 2794, 3102, 3122, 2810, 3389 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 1895, 619, 1956, 612, 1960, -5, 1872, -7 )
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 2301, 520, 2417, 505, 2412, -63, 2306, -63 )
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 2899, 700, 2982, 703, 2998, -3, 2889, -5 )
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 3977, 741, 4057, 736, 4063, -6, 3970, -3 )
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 4866, -2, 4888, 844, 4791, 843, 4802, -15 )
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 4524, 926, 4746, 957, 4944, 961, 5347, 827, 5641, 725, 5742, 726, 6120, 853, 6207, 873, 6207, 947, 6194, 942, 6197, 888, 5744, 745, 5740, 1314, 5659, 1321, 5664, 745, 5633, 745, 4948, 978, 4886, 1000, 4884, 1081, 4789, 1073, 4786, 990, 4570, 969 )
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 4279, 1146, 4355, 1128, 4463, 1137, 4577, 1153, 4693, 1164, 4847, 1178, 4921, 1190, 5217, 1253, 5215, 1263, 5118, 1255, 4956, 1226, 4999, 1263, 5048, 1282, 5007, 1278, 4934, 1229, 4885, 1221, 4787, 1225, 4643, 1185, 4479, 1233, 4436, 1216, 4614, 1174, 4371, 1143 )
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 5127, 1420, 5231, 1388, 5363, 1411, 5505, 1431, 5657, 1400, 5765, 1397, 6189, 1334, 6183, 1350, 5918, 1395, 5951, 1424, 6043, 1422, 6007, 1447, 5895, 1418, 5853, 1411, 5774, 1442, 5639, 1444, 5552, 1431, 5457, 1507, 5516, 1449, 5386, 1442, 5244, 1418 )
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 6198, 1400, 6524, 1343, 6679, 1339, 6807, 1332, 6975, 1296, 7085, 1285, 7054, 1296, 6816, 1352, 6728, 1406, 6609, 1404, 6531, 1368, 6465, 1384, 6371, 1440, 6434, 1384 )
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 6605, 1241, 6724, 1241, 6719, 885, 6762, 882, 6945, 953, 6982, 957, 6731, 850, 6597, 846, 6548, 867, 6301, 886, 6293, 910, 6323, 897, 6515, 888, 6599, 868, 6624, 897 )
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 6630, 759, 6719, 756, 6723, -35, 6615, -35 )
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 6958, 1052, 7140, 1062, 7141, 1043 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 7140, 1045, 7317, 1011, 7507, 929, 7605, 931, 7751, 1000, 7838, 1024, 7935, 1027, 7932, 1032, 7859, 1044, 7721, 1002, 7747, 1038, 7826, 1067, 7827, 1076, 7745, 1054, 7705, 1003, 7613, 960, 7470, 980, 7247, 1046, 7136, 1060 )
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 7505, 801, 7598, 803, 7586, -22, 7484, -18 )
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 1447, 1242, 1326, 1261, 1322, 979, 1368, 938, 1399, 941, 1408, 943, 1406, 933, 1390, 922, 1349, 922, 1322, 945, 1300, 444, 1286, 156, 1276, 263, 1270, 439, 1276, 688, 1275, 979, 1264, 1290, 1273, 1485, 1330, 1491, 1330, 1294, 1384, 1265 )
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 1565, 704, 1601, 697, 1602, 387, 1588, 331, 1578, 408 )
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 1425, 1564, 1350, 1570, 1332, 1561, 1251, 1562, 794, 1404, 768, 1398, 675, 1399, 557, 1358, 494, 1358, 484, 1359, 493, 1373, 577, 1381, 671, 1414, 812, 1433, 1228, 1568, 1342, 1583, 1372, 1595, 1378, 1582 )
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 748, 1712, 874, 1846, 1046, 1916, 1021, 1923, 909, 1885, 1019, 1966, 968, 1966, 867, 1861, 743, 1759 )
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 694, 1304, 760, 1314, 751, 384, 733, 203, 699, 358, 719, 590, 706, 632 )
+
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 719, 596, 607, 636, 551, 636, 551, 657, 643, 655, 705, 636 )
+
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 551, 636, 486, 637, 393, 595, 387, 598, 470, 643, 365, 682, 365, 690, 459, 661, 552, 660 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="Ground"]
+
+[node name="Default" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 105, 3963 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 9000
+limit_bottom = 5400
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
+
+[node name="AbovePlayer" type="ViewportContainer" parent="."]
+margin_right = 9000.0
+margin_bottom = 5400.0
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="AbovePlayer"]
+size = Vector2( 1500, 900 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="creek_level_fg" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[editable path="Default"]
+[editable path="Default/Player"]
