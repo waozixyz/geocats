@@ -51,5 +51,4 @@ func _process(delta):
 func _input(event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
-			print(convo_file)
 			chat_with.start(convo_file)

@@ -4,51 +4,46 @@
     "avatar": "affogato.png",
     "position": "left",
     "type": "text",
-    "content": "Hiii.",
+    "content": "Oh wow! A retro FeLine system... How rare!",
     "animation_in": "move_in",
     "next": "1"
   },
   "1": {
     "type": "text",
-    "content": "I like videogames and donuts!",
+    "content": "Here, let me show you how to use the mapz function",
     "next": "2"
   },
   "2": {
-    "type": "question",
-    "text": "Want to hang out at my place and meet my friend Donut-Bot?",
-    "options": ["yes", "no"],
-    "next": ["yes_option", "no_option"]
-  },
-  "no_option": {
     "type": "text",
-    "content": "Huh, ok. I'll stay here and play GeoCats.",
+    "content": "To travel somewhere new and exciting!",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "...Oh... Sorry, your operating system is broken. Typical Nonaco...",
+    "next": "4"
+  },
+  "4": {
+    "type": "question",
+    "text": "Would you like to go to Canopy Creek?",
+    "options": ["yes", "no"],
+    "next": ["yes_option", ""]
   },
   "yes_option": {
     "type": "action",
     "operation": "variable",
     "dictionary": "variables",
-    "text": "Ok, I'll meet you at Donut-Shack!",
-    "value": [["follow", true]]
+    "text": "...",
+    "value": [["teleport", true]]
   },
   "repeat": {
     "name": "Affogato",
     "avatar": "affogato.png",
     "position": "left",
     "type": "question",
-    "text": "Hey. Have you changed your mind?",
+    "text": "Would you like to go to Canopy Creek?",
     "animation_in": "move_in",
     "options": ["yes", "no"],
-    "next": ["yes_option_2", "no_option_2"]
-  },
-  "no_option_2": {
-    "type": "text",
-    "content": "Huh... ok!",
-  },
-  "yes_option_2": {
-    "type": "action",
-    "operation": "variable",
-    "dictionary": "variables",
-    "text": "Ok, let's go!",
-    "value": [["follow", true]]
+    "next": ["yes_option", ""]
   },
 }
