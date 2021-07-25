@@ -48,7 +48,7 @@ func _ready():
 	
 func change_scene(new_scene, new_location, sound, volume):
 	if not sound == "":
-		MusicPlayer.stream = load("res://Assets/Sfx/Transition/" + sound + ".mp3")
+		MusicPlayer.stream = load("res://Assets/Sfx/Transition/" + sound + ".ogg")
 		MusicPlayer.stream.set_loop(false)
 		MusicPlayer.set_volume_db(linear2db(volume))
 		MusicPlayer.play()

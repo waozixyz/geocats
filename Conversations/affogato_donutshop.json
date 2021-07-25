@@ -24,6 +24,15 @@
     "next": "4"
   },
   "4": {
+    "name": "Affogato",
+    "avatar": "affogato.png",
+    "type": "text",
+    "content": "Typical Nonaco...",
+    "next": "5"
+  },
+  "5": {
+    "name": "Affogato",
+    "avatar": "affogato.png",
     "type": "question",
     "text": "Would you like to go to Canopy Creek?",
     "options": ["yes", "no"],

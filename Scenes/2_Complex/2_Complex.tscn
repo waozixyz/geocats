@@ -1,5 +1,6 @@
 [gd_scene load_steps=125 format=2]
 
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Regge_groove.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/2_Complex/elevator.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/2_Complex/bckg_deko.png" type="Texture" id=4]
@@ -15,7 +16,6 @@
 [ext_resource path="res://Assets/Levels/2_Complex/elevator_button.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/2_Complex/bckg_deko_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/3.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Regge_groove.mp3" type="AudioStream" id=17]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/4.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/5.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/6.png" type="Texture" id=20]
@@ -1238,7 +1238,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 80 )
 animation = "idle"
-frame = 1
 playing = true
 centered = false
 
@@ -1277,7 +1276,7 @@ position = Vector2( 550, -27.7778 )
 shape = SubResource( 84 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 1 )
 autoplay = true
 max_distance = 80000.0
 
@@ -1289,6 +1288,9 @@ position = Vector2( 1162, 233 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
 limit_bottom = 1200
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 0
 
 [editable path="Default"]
 [editable path="Default/Player"]

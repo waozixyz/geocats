@@ -28,7 +28,7 @@ func _input(event):
 				PROGRESS.variables.follow = false
 				PROGRESS.variables.donut_open = true
 			if  PROGRESS.variables.get("donut_open"):
-				SceneChanger.change_scene("DonutShop", 0, "WayoWayo", .5)
+				SceneChanger.change_scene("DonutShop", 0, "WoodDoorLatchOpen1", 1)
 			else:
 				chat_with.visible = true
 				chat_with.start("door_closed", true)
