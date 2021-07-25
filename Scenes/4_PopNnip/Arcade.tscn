@@ -356,7 +356,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 2
+frame = 5
 playing = true
 centered = false
 
@@ -377,7 +377,6 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -385,6 +384,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -392,6 +392,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false

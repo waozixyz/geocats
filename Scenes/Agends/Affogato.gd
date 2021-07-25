@@ -12,6 +12,7 @@ func _ready():
 
 onready var chat = $Area2D
 
+var anim = "idle"
 var f = 0.002
 var elapsed = 0
 var ticks = 0
@@ -69,9 +70,14 @@ func _physics_process(delta):
 				climbing = false
 
 	ticks += 1
+	if int(ticks* .1) % 40 == 0 and velocity.x == 0:
+		anim = "blink"
+	else:
+		anim = "idle"
 	if is_on_floor():
 		jump(jump_height)
 	if not climbing:
 		velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-
+	sprite.play(anim)
+	sprite.animation = anim
 		

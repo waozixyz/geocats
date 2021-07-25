@@ -20,12 +20,14 @@
   },
   "3": {
     "type": "text",
-    "content": "...Oh... Sorry, your operating system is broken. Typical Nonaco...",
+    "content": "...Oh... Sorry, your operating system is broken.",
     "next": "4"
   },
   "4": {
-    "name": "Affogato",
-    "avatar": "affogato.png",
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "move_in",
+    "position": "left",
     "type": "text",
     "content": "Typical Nonaco...",
     "next": "5"
@@ -33,6 +35,8 @@
   "5": {
     "name": "Affogato",
     "avatar": "affogato.png",
+    "animation_in": "move_in",
+    "position": "left",
     "type": "question",
     "text": "Would you like to go to Canopy Creek?",
     "options": ["yes", "no"],

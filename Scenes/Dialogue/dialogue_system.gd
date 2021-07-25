@@ -641,8 +641,13 @@ func animate_sprite(direction, image, animation):
 
 func load_image(sprite, image):
 	sprite.texture = load('%s/%s' % [characters_folder, image])
-
-
+	var w = sprite.texture.get_width()
+	if w > 100:
+		sprite.scale = Vector2(.5,.5)
+	elif w > 15:
+		sprite.scale = Vector2(4,4)
+	else:
+		sprite.scale = Vector2(10,10)
 func question(text, options, next):
 	check_pauses(label.get_text())
 	var n = 0 # Just a looping var.
