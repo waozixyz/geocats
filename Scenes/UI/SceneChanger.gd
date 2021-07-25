@@ -39,6 +39,8 @@ func _get_scene():
 			return ["res://Scenes/4_PopNnip/4_PopNnip.tscn", pos, dir]
 		"Arcade":
 			return ["res://Scenes/4_PopNnip/Arcade.tscn", pos, dir]
+		"DonutShop":
+			return ["res://Scenes/5_DonutShop/5_DonutShop.tscn", pos, dir]
 
 
 func _ready():

@@ -24,8 +24,16 @@ var diff = 0
 var climbing = false
 
 func _physics_process(delta):
+	var scene_name = get_tree().get_current_scene().name
+
+	var donut_open = PROGRESS.variables.get("donut_open")
+	var follow = PROGRESS.variables.get("follow")
+	if not follow && donut_open && scene_name != "DonutShop":
+		visible = false
+		return
+	
 	velocity.x = 0
-	if PROGRESS.variables.get("follow"):
+	if follow:
 		if not init:
 			visible = true
 			position = player.position

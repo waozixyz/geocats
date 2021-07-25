@@ -24,7 +24,14 @@ func _input(event):
 		if name == "PopNnip":
 			SceneChanger.change_scene("PopNnip", 0, "WayoWayo", .5)
 		if name == "DonutShop":
-			chat_with.visible = true
-			chat_with.start("door_closed", true)
-			button.visible = true
-		#	SceneChanger.change_scene("DonutShop", 0, "WayoWayo", .5)
+			if PROGRESS.variables.get("follow"):
+				PROGRESS.variables.follow = false
+				PROGRESS.variables.donut_open = true
+			if  PROGRESS.variables.get("donut_open"):
+				SceneChanger.change_scene("DonutShop", 0, "WayoWayo", .5)
+			else:
+				chat_with.visible = true
+				chat_with.start("door_closed", true)
+				button.visible = true
+			
+

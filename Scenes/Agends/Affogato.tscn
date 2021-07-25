@@ -65,7 +65,7 @@ render_target_update_mode = 3
 
 [node name="affogato" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 2.0
 playing = true
 centered = false
