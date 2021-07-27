@@ -30,6 +30,7 @@ func _physics_process(delta):
 	var follow = PROGRESS.variables.get("follow")
 	if not follow && donut_open && scene_name != "DonutShop":
 		visible = false
+		chat.disabled = true
 		return
 
 	if scene_name == "DonutShop":
@@ -37,6 +38,7 @@ func _physics_process(delta):
 		jump_height = 0
 	
 	velocity.x = 0
+
 	if follow:
 		if not init:
 			visible = true

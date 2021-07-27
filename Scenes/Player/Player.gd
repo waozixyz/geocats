@@ -19,6 +19,7 @@ onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
 onready var state_machine: PlayerFSM = $PlayerStates
 onready var tween : Tween = $Tween
+onready var waves : Particles2D = $Waves
 
 onready var right_raycast = $RightRaycast #path to the right raycast
 onready var left_raycast = $LeftRaycast  #path to the left raycast
