@@ -16,9 +16,10 @@ var fall_through_time = 30
 func fall_through():
 	for platform in current_platforms:
 		platform.disabled = true
+
 		disabled_platforms.insert(disabled_platforms.size(), platform)
 	fall_through_timer =  OS.get_ticks_msec() * 0.001 + fall_through_time
-
+	print(current_platforms)
 func check_child_collision(child):
 	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
 		return true
@@ -55,6 +56,7 @@ func _physics_process(delta):
 	var rot = _get_rotation()
 	if fall_through_timer >  OS.get_ticks_msec() * 0.001:
 		fall_through_timer -= 1
+
 	else:
 		for platform in disabled_platforms:
 			platform.disabled = false

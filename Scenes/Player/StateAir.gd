@@ -15,7 +15,7 @@ func logic(player: KinematicBody2D, delta: float):
 		return "climb"
 	if player.underwater:
 		return "swim"
-	if player.grounded:
+	if player.is_on_floor():
 		player.isDoubleJumped = false #reset is double jumped
 		return "idle" if player.horizontal == 0 else "walk"
 	if player.grounded and player.jumping and not player.sprite.animation == "crouch":
@@ -32,8 +32,6 @@ func logic(player: KinematicBody2D, delta: float):
 			#if your in the jump buffer window
 			if player.previous_state == "run":
 				return "jump" #set state to jump
-			if player.previous_state == "wall_slide":
-				return "jump"
 	
 	player.default_anim()
 	if not player.is_on_wall():

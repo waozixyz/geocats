@@ -76,7 +76,7 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 						return true
 
 func move_horizontally(subtractor):
-	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
+	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 
 func move_vertically():
