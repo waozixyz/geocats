@@ -349,7 +349,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -357,7 +357,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 4
+frame = 10
 playing = true
 centered = false
 
@@ -372,7 +372,6 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 48, 89 )
 frames = SubResource( 30 )
-frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -491,7 +490,7 @@ shape = SubResource( 60 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndWalls"]
 polygon = PoolVector2Array( -1714, -646, -1553, -786, -1688, -775, -1688, -794, -1737, -796, -1749, -897, -1675, -973, -1446, -972, -1441, -642, -1681, -642 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
 
@@ -580,7 +579,6 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 65 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

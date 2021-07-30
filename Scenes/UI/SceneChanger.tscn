@@ -342,7 +342,7 @@ animations = [ {
 pause_mode = 2
 script = ExtResource( 1 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Container" type="Control" parent="."]
 visible = false
@@ -390,7 +390,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 visible = false
 frames = SubResource( 67 )
-frame = 24
+frame = 44
 speed_scale = 2.0
 playing = true
 centered = false

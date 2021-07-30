@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WayoWayo.ogg-7c760ddec82297b9cb1b160541f0b33f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Transition/WayoWayo.ogg"
+dest_files=[ "res://.import/WayoWayo.ogg-7c760ddec82297b9cb1b160541f0b33f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
