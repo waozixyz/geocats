@@ -133,6 +133,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 frames = SubResource( 12 )
 animation = "slide_wall"
+frame = 2
 playing = true
 centered = false
 
