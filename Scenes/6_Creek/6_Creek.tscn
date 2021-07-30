@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_fg.png" type="Texture" id=2]
@@ -9,43 +9,47 @@
 [ext_resource path="res://Assets/Levels/6_Creek/creek.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/6_Creek/creek_stones.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/6_Creek/water_2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/6_Creek/water_3.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_twelveeight.ogg" type="AudioStream" id=12]
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 60, 26 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 6 )
 region = Rect2( 120, 0, 60, 26 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 4000 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 492 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4500, 9 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 106, 18 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 57, 18 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 476.178, 131.2 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 798.91, 131.2 )
+
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 12, 1480 )
 
 [sub_resource type="RectangleShape2D" id=11]
@@ -76,11 +80,13 @@ centered = false
 
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 240, 80 )
-frames = SubResource( 10 )
+frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.3
 playing = true
 
 [node name="creek" type="Sprite" parent="BelowPlayer/Viewport"]
+visible = false
 texture = ExtResource( 7 )
 centered = false
 
@@ -102,10 +108,10 @@ polygon = PoolVector2Array( 1720.9, 4125.14, 1890.57, 4057.34, 2053.86, 3990.8, 
 polygon = PoolVector2Array( 1749.41, 4115.34, 1596.18, 4167.9, 1362.76, 4181.27, 1141.8, 4181.77, 925.651, 4185.55, 692.1, 4181.9, 510.042, 4160.48, 432.692, 4130.86, 342.608, 4081.09, 202.568, 4009.95, -0.849123, 3948.5, 0.210312, 3948.5, 0.21034, 3972.87, 182.438, 4022.66, 323.079, 4108.81, 490.523, 4209.35, 923.43, 4224.22, 1133.07, 4214.17, 1381.98, 4204.92, 1607.76, 4198.19, 1737.67, 4166.36 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 6513, 4401, 6433, 4399, 6248, 4475, 5862, 4637, 5533, 4731, 5276, 4827, 4864, 4935, 4482, 5033, 3972, 5135, 3466, 5265, 2706, 5401, 2826, 5400, 3558, 5280, 4043, 5154, 4597, 5041, 4970, 4936, 5457, 4812, 5908, 4664, 6301, 4501, 6484, 4468 )
+polygon = PoolVector2Array( 6449, 4417, 6385, 4433, 6248, 4475, 6033, 4578, 5865, 4640, 5536, 4736, 5276, 4827, 5078, 4884, 4864, 4935, 4487, 5041, 3972, 5135, 3466, 5265, 2706, 5401, 2826, 5400, 3558, 5280, 4043, 5154, 4597, 5041, 4970, 4936, 5457, 4812, 5908, 4664, 6301, 4501, 6394, 4454 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 6513, 4401, 6845, 4600, 7190, 4758, 7371, 4857, 7833, 4999, 8406, 5040, 8915, 4927, 8949, 5000, 8454, 5077, 7836, 5036, 7327, 4892, 7077, 4774, 6687, 4599, 6484, 4466 )
+polygon = PoolVector2Array( 6449, 4417, 6811, 4622, 6975, 4701, 7128, 4776, 7336, 4858, 7565, 4922, 7772, 4949, 8254, 4987, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7735, 4984, 7531, 4947, 7302, 4906, 7059, 4809, 6687, 4599, 6387, 4446, 6384, 4433, 6435.85, 4420.24 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4674, 3264, 5190, 3186, 5579, 3113, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4314, 3380, 3952, 3392 )
@@ -116,7 +122,7 @@ polygon = PoolVector2Array( 9000, 984, 8965, 984, 8869, 1018, 8832, 1036, 8762, 
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( 2, -20 )
-polygon = PoolVector2Array( 8914, 5024, 8912, 4949, 8972, 4931, 8965, 4729, 8869, 4689, 8806, 4689, 8812, 1245, 8998, 1194, 8999, 5033 )
+polygon = PoolVector2Array( 8972, 5033, 8972, 4960, 8965, 4729, 8869, 4689, 8806, 4689, 8812, 1245, 8998, 1194, 8999, 5033 )
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 3037, 3480, 3008, 3492, 2964, 3493, 2906, 3504, 2844, 3516, 2777, 3528, 2714, 3542, 2653, 3560, 2558, 3576, 2467, 3588, 2417, 3588, 2388, 3601, 2389, 3637, 2425, 3636, 2666, 3584, 2943, 3516, 3054, 3493, 3073, 3480 )
@@ -203,40 +209,37 @@ one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -7, 2000 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 9010, 492 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 4500, -9 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 4500, 5400 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 2300, 3619 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 2360, 625 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 3038, 3261 )
+position = Vector2( 7090, 4561 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 9000
 limit_bottom = 5400
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -246,7 +249,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
 position = Vector2( 1108.09, 4207.2 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 
 [node name="waterarea2" type="Area2D" parent="."]
 position = Vector2( 2082, 1092 )
@@ -257,7 +260,19 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea2"]
 position = Vector2( 1108.09, 4207.2 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
+
+[node name="waterarea3" type="Area2D" parent="."]
+position = Vector2( 7198, 849 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea3"]
+visible = false
+position = Vector2( 1108.09, 4207.2 )
+shape = SubResource( 12 )
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 9000.0
@@ -281,13 +296,18 @@ position = Vector2( 450, 844 )
 texture = ExtResource( 9 )
 centered = false
 
-[node name="creek_level_fg" type="Sprite" parent="AbovePlayer/Viewport"]
-texture = ExtResource( 2 )
-centered = false
-
 [node name="water_1" type="Sprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 695 )
 texture = ExtResource( 3 )
+centered = false
+
+[node name="water_3" type="Sprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 1094, 794 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="creek_level_fg" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 2 )
 centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -304,7 +324,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 
 [node name="Ladder2" type="Area2D" parent="." groups=[
 "ladder",

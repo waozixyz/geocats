@@ -1263,8 +1263,5 @@ position = Vector2( 930, 124 )
 limit_right = 2150
 limit_bottom = 1080
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
-
 [editable path="Default"]
 [editable path="Default/Player"]
