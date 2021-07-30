@@ -31,6 +31,8 @@ func _get_scene():
 			match location:
 				1: 
 					pos = Vector2(2630, 1010)
+				2:
+					pos = Vector2(1023, 1010)
 			return ["res://Scenes/3_GeoCity/3_GeoCity.tscn", pos, dir]
 		"PopNnip":
 			match location:
@@ -41,7 +43,8 @@ func _get_scene():
 			return ["res://Scenes/4_PopNnip/Arcade.tscn", pos, dir]
 		"DonutShop":
 			return ["res://Scenes/5_DonutShop/5_DonutShop.tscn", pos, dir]
-
+		"Creek":
+			return ["res://Scenes/6_Creek/6_Creek.tscn", pos, dir]			
 
 func _ready():
 	timer = OS.get_ticks_msec() * 0.01

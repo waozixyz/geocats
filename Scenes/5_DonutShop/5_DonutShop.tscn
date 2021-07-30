@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Assets/Levels/5_DonutShop/glow_fg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/5_DonutShop/bg.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Assets/Levels/5_DonutShop/donutbot/head_fg.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_twelveeight.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Chat.gd" type="Script" id=13]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/5_DonutShop/interactions.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/5_DonutShop/5_DonutShop.gd" type="Script" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -128,7 +131,11 @@ extents = Vector2( 12, 176 )
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 80, 98 )
 
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 21, 37 )
+
 [node name="DonutShop" type="Node2D"]
+script = ExtResource( 16 )
 
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 960.0
@@ -162,6 +169,7 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 68, 59 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -176,15 +184,15 @@ centered = false
 visible = true
 position = Vector2( 800, 410 )
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 2
+
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 19, 405 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960
 limit_bottom = 480
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -210,6 +218,7 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 143, 73 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -223,7 +232,6 @@ color = Color( 0, 0, 0, 1 )
 [node name="donutbot_head" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 70, 49 )
 frames = SubResource( 9 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -404,5 +412,22 @@ __meta__ = {
 position = Vector2( 41, 15 )
 shape = SubResource( 31 )
 
+[node name="GoToCity" type="Area2D" parent="."]
+position = Vector2( 21, 401 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToCity"]
+shape = SubResource( 32 )
+
+[node name="Button" type="Sprite" parent="GoToCity"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 14 )
+
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]
