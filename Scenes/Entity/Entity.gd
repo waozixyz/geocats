@@ -75,6 +75,6 @@ func _physics_process(delta):
 					mul = -1
 				rot = -slope_angle * 4 * mul
 	else:
-		rot *= .9
+		rot *= .99
 	_set_rotation(rot)
 	apply_gravity(delta)

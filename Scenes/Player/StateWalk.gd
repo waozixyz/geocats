@@ -4,6 +4,7 @@ extends BasePlayerState
 func logic(player: KinematicBody2D, delta: float):
 	player.play("walk")
 	player.move_horizontally(0)
+
 	if !player.grounded:
 		return "fall"
 	if player.vertical > 0:

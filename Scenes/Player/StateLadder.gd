@@ -9,13 +9,16 @@ func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
 	player.play("climb")
 
-
 func logic(player: KinematicBody2D, delta: float):
+	if player.ladder_rot != 0:
+		var diff_y = player.position.y / player.ladder_y
+		player.position.x = player.ladder_x - 25 *  (diff_y - 1) * player.ladder_rot
+
 	if player.underwater:
 		player.vy = player.vertical * climb_speed / 2
 	else:
-		player.vy = player.vertical * climb_speed
-	player.move_vertically()
+		player.vy = player.vertical * climb_speed 
+	#player.move_vertically()
 
 	if player.jumping:
 		return "fall"

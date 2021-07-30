@@ -13,6 +13,8 @@ var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 
 var ladder_x : float
+var ladder_y : float
+var ladder_rot : float
 
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
@@ -97,8 +99,8 @@ func _physics_process(delta):
 	._physics_process(delta)
 	update_inputs()
 	state_machine.logic(delta)
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-		
+	move()
+	
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -124,17 +126,20 @@ func update_inputs():
 		floor_timer.start()
 
 func move():
-	var old = velocity
-	velocity = move_and_slide(velocity, Vector2.UP, false)
-
+	velocity = move_and_slide(velocity, Vector2.UP, true)
+	
 func play(animation:String):
 	if sprite.animation == animation:
 		return
 	sprite.play(animation)
 
 func tween_to_ladder():
-	var target = Vector2(ladder_x, position.y)
+	var new_x = ladder_x
+	if ladder_rot != 0:
+		var diff_y = position.y / ladder_y
+		new_x = ladder_x - 25 *  (diff_y - 1) * ladder_rot
 
+	var target = Vector2(new_x, position.y)
 	tween.interpolate_property(self, "position", position, target,
 		0.05, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	tween.start()
