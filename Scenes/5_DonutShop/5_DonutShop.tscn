@@ -162,7 +162,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 68, 59 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -211,7 +210,6 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 143, 73 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -225,6 +223,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="donutbot_head" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 70, 49 )
 frames = SubResource( 9 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

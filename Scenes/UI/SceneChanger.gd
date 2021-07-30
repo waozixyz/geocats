@@ -3,7 +3,7 @@ extends CanvasLayer
 
 onready var Sprite = $ViewportContainer/Viewport/AnimatedSprite
 onready var Container = $Container
-onready var MusicPlayer = $AudioStreamPlayer2D
+onready var MusicPlayer = $AudioStreamPlayer
 
 var location : int
 var scene : String 

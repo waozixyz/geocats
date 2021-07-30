@@ -654,8 +654,8 @@ func load_image(sprite, image):
 		sprite.scale = Vector2(.5,.5)
 	elif w > 20:
 		sprite.scale = Vector2(2.8, 2.8)
-	elif w > 15:
-		sprite.scale = Vector2(4,4)
+	elif w > 14:
+		sprite.scale = Vector2(5,5)
 	else:
 		sprite.scale = Vector2(10,10)
 func question(text, options, next):

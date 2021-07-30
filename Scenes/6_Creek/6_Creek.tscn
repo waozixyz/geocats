@@ -172,9 +172,6 @@ position = Vector2( 105, 3952.92 )
 limit_right = 9000
 limit_bottom = 5400
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
-
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
 
