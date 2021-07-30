@@ -46,11 +46,11 @@ func jump(jumpHeight):
 func _set_rotation(rot):
 	if no_rotate == false:
 		if to_rotate is ViewportContainer:
-
 			to_rotate.rect_rotation = rad2deg(rot)
 		else:
 			to_rotate.rotation = rot
-	
+
+var new_rot : float
 func _physics_process(delta):
 	var rot = _get_rotation()
 	if fall_through_timer >  OS.get_ticks_msec() * 0.001:
@@ -73,8 +73,10 @@ func _physics_process(delta):
 				var mul = 1
 				if normal.x < 0:
 					mul = -1
-				rot = -slope_angle * 4 * mul
+				new_rot = -slope_angle * 4 * mul
+		if rot != new_rot:
+			rot = (new_rot + rot * 3) / 4
 	else:
-		rot *= .99
+		rot *= .97
 	_set_rotation(rot)
 	apply_gravity(delta)

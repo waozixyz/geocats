@@ -184,6 +184,9 @@ centered = false
 visible = true
 position = Vector2( 800, 410 )
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 2
+
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 19, 405 )
 
@@ -192,7 +195,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
