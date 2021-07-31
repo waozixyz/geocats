@@ -25,5 +25,10 @@ func _input(event):
 		elif name == "CaveToUp":
 			player.position.x = 4350
 			player.position.y = 3250
-
+		elif name == "JokeRoom":
+			SceneChanger.change_scene("JokeRoom", 0, "", 1)
+		elif name == "CavityPuzzleRoom":
+			SceneChanger.change_scene("CavityPuzzleRoom", 0, "", 1)
+		elif name == "GeoCacheRoom":
+			SceneChanger.change_scene("GeoCacheRoom", 0, "", 1)
 

@@ -184,7 +184,7 @@ extents = Vector2( 12, 1480 )
 extents = Vector2( 12, 100 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 108, 60 )
+extents = Vector2( 98.6899, 155.642 )
 
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 130.769, 92.1748 )
@@ -243,7 +243,7 @@ centered = false
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 11
+frame = 1
 speed_scale = 1.5
 playing = true
 centered = false
@@ -251,7 +251,7 @@ centered = false
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 8
+frame = 3
 speed_scale = 2.2
 playing = true
 centered = false
@@ -259,7 +259,7 @@ centered = false
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 1
+frame = 3
 playing = true
 centered = false
 
@@ -423,6 +423,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 5778, 2628, 5535, 2619, 5427, 2592, 5346, 2583, 5220, 2583, 5058, 2601, 4896, 2610, 4743, 2619, 4662, 2619, 4635, 2619, 4491, 2583, 4428, 2556, 4347, 2529, 4131, 2421, 4005, 2403, 3879, 2403, 3780, 2412, 3717, 2439, 3636, 2475, 3537, 2520, 3465, 2565, 3393, 2628, 3312, 2691, 3213, 2790, 3177, 2853, 3141, 2934, 3114, 2988, 3060, 3060, 2952, 3159, 2790, 3312, 2646, 3474, 2673, 3474, 2808, 3339, 3060, 3105, 3240, 2817, 3420, 2664, 3591, 2556, 3798, 2448, 4104, 2448, 4554, 2637, 5535, 2637, 5778, 2646 )
+one_way_collision = true
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 6327, 2673, 6237, 2673, 5958, 2628, 5778, 2628, 5778, 2646, 5958, 2646, 6228, 2691, 6327, 2682 )
@@ -441,6 +442,9 @@ scale = Vector2( 1.3, 1.3 )
 zoom = Vector2( 1.5, 1.5 )
 limit_right = 9000
 limit_bottom = 5400
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -589,6 +593,57 @@ position = Vector2( 108, 148 )
 shape = SubResource( 39 )
 
 [node name="Button" type="Sprite" parent="CaveToDown"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="JokeRoom" type="Area2D" parent="."]
+position = Vector2( 2856.3, 3303.9 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="JokeRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 39 )
+
+[node name="Button" type="Sprite" parent="JokeRoom"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="CavityPuzzleRoom" type="Area2D" parent="."]
+position = Vector2( 5418.25, 3966.81 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="CavityPuzzleRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 39 )
+
+[node name="Button" type="Sprite" parent="CavityPuzzleRoom"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="GeoCacheRoom" type="Area2D" parent="."]
+position = Vector2( 8737.83, 4711.48 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GeoCacheRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 39 )
+
+[node name="Button" type="Sprite" parent="GeoCacheRoom"]
 position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
@@ -605,6 +660,7 @@ position = Vector2( 108, 148 )
 shape = SubResource( 40 )
 
 [node name="Button" type="Sprite" parent="CaveToUp"]
+visible = false
 position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
