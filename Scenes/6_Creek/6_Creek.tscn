@@ -134,21 +134,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 42, 24 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 17 )
 region = Rect2( 42, 0, 42, 24 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 17 )
 region = Rect2( 84, 0, 42, 24 )
 
 [sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 39 ), SubResource( 40 ), SubResource( 39 ), SubResource( 41 ), SubResource( 39 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -207,6 +207,7 @@ centered = false
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 240, 80 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -227,7 +228,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 19 )
-frame = 5
+frame = 2
 speed_scale = 2.0
 playing = true
 centered = false
@@ -235,7 +236,6 @@ centered = false
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 26 )
-frame = 11
 speed_scale = 1.5
 playing = true
 centered = false
@@ -243,7 +243,7 @@ centered = false
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 34 )
-frame = 15
+frame = 14
 speed_scale = 2.2
 playing = true
 centered = false

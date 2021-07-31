@@ -803,7 +803,7 @@ extents = Vector2( 144, 7.09192 )
 extents = Vector2( 171, 18 )
 
 [sub_resource type="RectangleShape2D" id=88]
-extents = Vector2( 54, 10 )
+extents = Vector2( 52, 10 )
 
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 27, 10 )
@@ -821,7 +821,7 @@ extents = Vector2( 54, 84.8504 )
 extents = Vector2( 13.5, 76.5 )
 
 [sub_resource type="RectangleShape2D" id=94]
-extents = Vector2( 9, 56.25 )
+extents = Vector2( 9, 48 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 13.5, 92.25 )
@@ -850,7 +850,7 @@ __meta__ = {
 }
 
 [node name="Scaledown" type="Node2D" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.7, 0.7 )
 
 [node name="Orange" type="ColorRect" parent="Scaledown"]
 margin_right = 2151.0
@@ -1112,7 +1112,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Statue/StaticBody2D"]
-position = Vector2( 36, -108 )
+position = Vector2( 37, -104.056 )
 shape = SubResource( 88 )
 one_way_collision = true
 
@@ -1181,12 +1181,12 @@ texture = ExtResource( 26 )
 centered = false
 
 [node name="Ladders" type="Node2D" parent="."]
-position = Vector2( 0, 475 )
 
 [node name="KitchenLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
 ]]
-position = Vector2( 180, -34 )
+position = Vector2( 252, 617.4 )
+scale = Vector2( 1.4, 1.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/KitchenLadder"]
 shape = SubResource( 93 )
@@ -1194,15 +1194,18 @@ shape = SubResource( 93 )
 [node name="BedLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
 ]]
-position = Vector2( 945.5, -257.494 )
+position = Vector2( 1323.7, 304.508 )
+scale = Vector2( 1.4, 1.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/BedLadder"]
+position = Vector2( 0.928589, -0.363174 )
 shape = SubResource( 94 )
 
 [node name="LastLadder" type="Area2D" parent="Ladders" groups=[
 "ladder",
 ]]
-position = Vector2( 85.125, -292.75 )
+position = Vector2( 119.175, 255.15 )
+scale = Vector2( 1.4, 1.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
 shape = SubResource( 95 )
@@ -1262,6 +1265,9 @@ position = Vector2( 930, 124 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2150
 limit_bottom = 1080
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 0
 
 [editable path="Default"]
 [editable path="Default/Player"]
