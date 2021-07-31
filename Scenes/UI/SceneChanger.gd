@@ -20,7 +20,7 @@ func _get_scene():
 		"CatCradle":
 			match location:
 				1: 
-					pos = Vector2(25, 500)
+					pos = Vector2(25, 950 * 0.7)
 			return ["res://Scenes/1_CatCradle/1_CatCradle.tscn", pos, dir]
 		"Complex":
 			match location:

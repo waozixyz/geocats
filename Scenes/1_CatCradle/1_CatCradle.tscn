@@ -1037,12 +1037,12 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scaledown/Objects/Stereo/StaticBody2D"]
-position = Vector2( 40.5, 4.5 )
+position = Vector2( 39.1429, 8.20288 )
 shape = SubResource( 79 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scaledown/Objects/Stereo/StaticBody2D"]
-position = Vector2( 126, 25.157 )
+position = Vector2( 126.286, 26.5886 )
 shape = SubResource( 80 )
 one_way_collision = true
 
@@ -1260,14 +1260,11 @@ autoplay = true
 [node name="Default" parent="." instance=ExtResource( 28 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 930, 124 )
+position = Vector2( 1300, 188 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2150
 limit_bottom = 1080
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
 
 [editable path="Default"]
 [editable path="Default/Player"]
