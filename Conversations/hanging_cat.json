@@ -1,0 +1,15 @@
+{
+  "first": {
+    "avatar": "hanging_cat.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "Don't be alarmed...",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "I'm just hanging out.",
+    "next": ""
+  }
+}

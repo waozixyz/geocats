@@ -20,7 +20,7 @@ func show_chat():
 	if parent_name == "Affogato":
 		convo_file = _get_complex_convo()
 	else:
-		convo_file = parent_name.replace(" ", "_")
+		convo_file = parent_name
 	active = true
 	chat_with.hide_after = false
 	chat_with.visible = true

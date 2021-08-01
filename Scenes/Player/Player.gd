@@ -95,7 +95,6 @@ func _ready():
 	if global.player_position:
 		position = global.player_position
 		sprite.flip_h  = global.player_direction * -1
-		print(global.player_direction)
 		
 
 func _physics_process(delta):

@@ -25,7 +25,7 @@
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/gc5.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/gc9.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/gc2.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/7_Mountain/ticket_machine.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/6_Creek/ticket_machine.gd" type="Script" id=26]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/machine.png" type="Texture" id=27]
 
 [sub_resource type="AtlasTexture" id=66]
@@ -76,312 +76,312 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 27 )
 region = Rect2( 105, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=91]
+[sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 27 )
 region = Rect2( 210, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=92]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 27 )
 region = Rect2( 315, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=93]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 27 )
 region = Rect2( 420, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=94]
+[sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 27 )
 region = Rect2( 525, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=95]
+[sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 27 )
 region = Rect2( 630, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=96]
+[sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=97]
+[sub_resource type="AtlasTexture" id=85]
 atlas = ExtResource( 27 )
 region = Rect2( 105, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=98]
+[sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 27 )
 region = Rect2( 210, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=99]
+[sub_resource type="AtlasTexture" id=87]
 atlas = ExtResource( 27 )
 region = Rect2( 315, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=100]
+[sub_resource type="AtlasTexture" id=88]
 atlas = ExtResource( 27 )
 region = Rect2( 420, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=101]
+[sub_resource type="AtlasTexture" id=89]
 atlas = ExtResource( 27 )
 region = Rect2( 525, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=102]
+[sub_resource type="AtlasTexture" id=90]
 atlas = ExtResource( 27 )
 region = Rect2( 630, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=103]
+[sub_resource type="AtlasTexture" id=91]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=104]
+[sub_resource type="AtlasTexture" id=92]
 atlas = ExtResource( 27 )
 region = Rect2( 105, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=105]
+[sub_resource type="AtlasTexture" id=93]
 atlas = ExtResource( 27 )
 region = Rect2( 210, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=106]
+[sub_resource type="AtlasTexture" id=94]
 atlas = ExtResource( 27 )
 region = Rect2( 315, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=107]
+[sub_resource type="AtlasTexture" id=95]
 atlas = ExtResource( 27 )
 region = Rect2( 420, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=108]
+[sub_resource type="AtlasTexture" id=96]
 atlas = ExtResource( 27 )
 region = Rect2( 525, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=109]
+[sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 27 )
 region = Rect2( 630, 122, 105, 61 )
 
-[sub_resource type="SpriteFrames" id=87]
+[sub_resource type="SpriteFrames" id=98]
 animations = [ {
-"frames": [ SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ) ],
+"frames": [ SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=88]
+[sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 81, 70.157 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=100]
 atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 6, 38 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 21 )
 region = Rect2( 6, 0, 6, 38 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=102]
 atlas = ExtResource( 21 )
 region = Rect2( 12, 0, 6, 38 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 21 )
 region = Rect2( 18, 0, 6, 38 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=104]
 atlas = ExtResource( 21 )
 region = Rect2( 24, 0, 6, 38 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=105]
 atlas = ExtResource( 21 )
 region = Rect2( 30, 0, 6, 38 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=106]
 atlas = ExtResource( 21 )
 region = Rect2( 36, 0, 6, 38 )
 
-[sub_resource type="SpriteFrames" id=77]
+[sub_resource type="SpriteFrames" id=107]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 12 ), SubResource( 11 ), SubResource( 10 ), SubResource( 9 ), SubResource( 8 ), SubResource( 7 ), SubResource( 7 ) ],
+"frames": [ SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 105 ), SubResource( 104 ), SubResource( 103 ), SubResource( 102 ), SubResource( 101 ), SubResource( 100 ), SubResource( 100 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=108]
 atlas = ExtResource( 22 )
 region = Rect2( 20, 0, 5, 21 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=109]
 atlas = ExtResource( 22 )
 region = Rect2( 15, 0, 5, 21 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=110]
 atlas = ExtResource( 22 )
 region = Rect2( 10, 0, 5, 21 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=111]
 atlas = ExtResource( 22 )
 region = Rect2( 5, 0, 5, 21 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=112]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 5, 21 )
 
-[sub_resource type="SpriteFrames" id=78]
+[sub_resource type="SpriteFrames" id=113]
 animations = [ {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ), SubResource( 15 ) ],
+"frames": [ SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 112 ), SubResource( 111 ), SubResource( 110 ), SubResource( 109 ), SubResource( 108 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=114]
 atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 6, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=115]
 atlas = ExtResource( 20 )
 region = Rect2( 6, 0, 6, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=116]
 atlas = ExtResource( 20 )
 region = Rect2( 12, 0, 6, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=117]
 atlas = ExtResource( 20 )
 region = Rect2( 18, 0, 6, 32 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=118]
 atlas = ExtResource( 20 )
 region = Rect2( 24, 0, 6, 32 )
 
-[sub_resource type="SpriteFrames" id=79]
+[sub_resource type="SpriteFrames" id=119]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 24 ), SubResource( 23 ), SubResource( 22 ), SubResource( 21 ) ],
+"frames": [ SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 117 ), SubResource( 116 ), SubResource( 115 ), SubResource( 114 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=120]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 0, 5, 30 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=121]
 atlas = ExtResource( 23 )
 region = Rect2( 5, 0, 5, 30 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=122]
 atlas = ExtResource( 23 )
 region = Rect2( 10, 0, 5, 30 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=123]
 atlas = ExtResource( 23 )
 region = Rect2( 15, 0, 5, 30 )
 
-[sub_resource type="SpriteFrames" id=80]
+[sub_resource type="SpriteFrames" id=124]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 28 ), SubResource( 27 ) ],
+"frames": [ SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 123 ), SubResource( 122 ), SubResource( 121 ), SubResource( 120 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=125]
 atlas = ExtResource( 25 )
 region = Rect2( 20, 0, 4, 21 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=126]
 atlas = ExtResource( 25 )
 region = Rect2( 16, 0, 4, 21 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=127]
 atlas = ExtResource( 25 )
 region = Rect2( 12, 0, 4, 21 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=128]
 atlas = ExtResource( 25 )
 region = Rect2( 8, 0, 4, 21 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=129]
 atlas = ExtResource( 25 )
 region = Rect2( 4, 0, 4, 21 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=130]
 atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 4, 21 )
 
-[sub_resource type="SpriteFrames" id=81]
+[sub_resource type="SpriteFrames" id=131]
 animations = [ {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 42 ), SubResource( 41 ), SubResource( 41 ), SubResource( 40 ), SubResource( 39 ), SubResource( 38 ) ],
+"frames": [ SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 130 ), SubResource( 129 ), SubResource( 129 ), SubResource( 128 ), SubResource( 127 ), SubResource( 126 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=132]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 5, 25 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=133]
 atlas = ExtResource( 17 )
 region = Rect2( 5, 0, 5, 25 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=134]
 atlas = ExtResource( 17 )
 region = Rect2( 10, 0, 5, 25 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=135]
 atlas = ExtResource( 17 )
 region = Rect2( 15, 0, 5, 25 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=136]
 atlas = ExtResource( 17 )
 region = Rect2( 20, 0, 5, 25 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=137]
 atlas = ExtResource( 17 )
 region = Rect2( 25, 0, 5, 25 )
 
-[sub_resource type="SpriteFrames" id=82]
+[sub_resource type="SpriteFrames" id=138]
 animations = [ {
-"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 50 ), SubResource( 49 ), SubResource( 48 ), SubResource( 47 ), SubResource( 46 ), SubResource( 45 ), SubResource( 45 ) ],
+"frames": [ SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 137 ), SubResource( 136 ), SubResource( 135 ), SubResource( 134 ), SubResource( 133 ), SubResource( 132 ), SubResource( 132 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=139]
 atlas = ExtResource( 19 )
 region = Rect2( 0, 0, 18, 8 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=140]
 atlas = ExtResource( 19 )
 region = Rect2( 18, 0, 18, 8 )
 
-[sub_resource type="AtlasTexture" id=54]
+[sub_resource type="AtlasTexture" id=141]
 atlas = ExtResource( 19 )
 region = Rect2( 36, 0, 18, 8 )
 
-[sub_resource type="AtlasTexture" id=55]
+[sub_resource type="AtlasTexture" id=142]
 atlas = ExtResource( 19 )
 region = Rect2( 54, 0, 18, 8 )
 
-[sub_resource type="AtlasTexture" id=56]
+[sub_resource type="AtlasTexture" id=143]
 atlas = ExtResource( 19 )
 region = Rect2( 72, 0, 18, 8 )
 
-[sub_resource type="AtlasTexture" id=57]
+[sub_resource type="AtlasTexture" id=144]
 atlas = ExtResource( 19 )
 region = Rect2( 90, 0, 18, 8 )
 
-[sub_resource type="AtlasTexture" id=58]
+[sub_resource type="AtlasTexture" id=145]
 atlas = ExtResource( 19 )
 region = Rect2( 108, 0, 18, 8 )
 
-[sub_resource type="SpriteFrames" id=83]
+[sub_resource type="SpriteFrames" id=146]
 animations = [ {
-"frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 58 ), SubResource( 57 ), SubResource( 56 ), SubResource( 55 ), SubResource( 54 ), SubResource( 53 ), SubResource( 52 ), SubResource( 52 ) ],
+"frames": [ SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 145 ), SubResource( 144 ), SubResource( 143 ), SubResource( 142 ), SubResource( 141 ), SubResource( 140 ), SubResource( 139 ), SubResource( 139 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -391,59 +391,59 @@ animations = [ {
 atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 26, 6 )
 
-[sub_resource type="AtlasTexture" id=61]
+[sub_resource type="AtlasTexture" id=147]
 atlas = ExtResource( 24 )
 region = Rect2( 26, 0, 26, 6 )
 
-[sub_resource type="AtlasTexture" id=62]
+[sub_resource type="AtlasTexture" id=148]
 atlas = ExtResource( 24 )
 region = Rect2( 52, 0, 26, 6 )
 
-[sub_resource type="AtlasTexture" id=63]
+[sub_resource type="AtlasTexture" id=149]
 atlas = ExtResource( 24 )
 region = Rect2( 78, 0, 26, 6 )
 
-[sub_resource type="AtlasTexture" id=64]
+[sub_resource type="AtlasTexture" id=150]
 atlas = ExtResource( 24 )
 region = Rect2( 104, 0, 26, 6 )
 
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=151]
 atlas = ExtResource( 24 )
 region = Rect2( 130, 0, 26, 6 )
 
-[sub_resource type="SpriteFrames" id=84]
+[sub_resource type="SpriteFrames" id=152]
 animations = [ {
-"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 65 ), SubResource( 64 ), SubResource( 63 ), SubResource( 62 ), SubResource( 61 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ) ],
+"frames": [ SubResource( 60 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ), SubResource( 150 ), SubResource( 151 ), SubResource( 151 ), SubResource( 150 ), SubResource( 149 ), SubResource( 148 ), SubResource( 147 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=153]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 5, 20 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=154]
 atlas = ExtResource( 18 )
 region = Rect2( 5, 0, 5, 20 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=155]
 atlas = ExtResource( 18 )
 region = Rect2( 10, 0, 5, 20 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=156]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 5, 20 )
 
-[sub_resource type="SpriteFrames" id=85]
+[sub_resource type="SpriteFrames" id=157]
 animations = [ {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 35 ), SubResource( 34 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ) ],
+"frames": [ SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 156 ), SubResource( 155 ), SubResource( 154 ), SubResource( 153 ), SubResource( 153 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=86]
+[sub_resource type="RectangleShape2D" id=158]
 extents = Vector2( 50, 50 )
 
 [node name="CavityPuzzleRoom" type="Node2D"]
@@ -511,11 +511,11 @@ script = ExtResource( 26 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TicketMachine"]
 position = Vector2( 603, 430 )
-frames = SubResource( 87 )
+frames = SubResource( 98 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TicketMachine"]
 position = Vector2( 602, 446 )
-shape = SubResource( 88 )
+shape = SubResource( 99 )
 
 [node name="Default" parent="." instance=ExtResource( 9 )]
 
@@ -525,9 +525,6 @@ position = Vector2( 127, 427 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
 limit_bottom = 700
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -548,44 +545,45 @@ render_target_update_mode = 3
 
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 25, 102 )
-frames = SubResource( 77 )
-frame = 3
+frames = SubResource( 107 )
+frame = 8
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 234, 104 )
-frames = SubResource( 78 )
-frame = 6
+frames = SubResource( 113 )
+frame = 1
 speed_scale = 0.7
 playing = true
 centered = false
 
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 0 )
-frames = SubResource( 79 )
+frames = SubResource( 119 )
+frame = 2
 speed_scale = 0.7
 playing = true
 centered = false
 
 [node name="gc5" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 165, 0 )
-frames = SubResource( 80 )
-frame = 5
+frames = SubResource( 124 )
+frame = 2
 playing = true
 centered = false
 
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 127, 118 )
-frames = SubResource( 81 )
-frame = 1
+frames = SubResource( 131 )
+frame = 3
 speed_scale = 1.2
 playing = true
 centered = false
 
 [node name="gc7" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 191, 5 )
-frames = SubResource( 82 )
+frames = SubResource( 138 )
 frame = 5
 speed_scale = 0.9
 playing = true
@@ -593,23 +591,23 @@ centered = false
 
 [node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 235, 75 )
-frames = SubResource( 83 )
-frame = 7
+frames = SubResource( 146 )
+frame = 12
 speed_scale = 0.7
 playing = true
 centered = false
 
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 35 )
-frames = SubResource( 84 )
-frame = 5
+frames = SubResource( 152 )
+frame = 6
 speed_scale = 0.7
 playing = true
 centered = false
 
 [node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 69, 8 )
-frames = SubResource( 85 )
+frames = SubResource( 157 )
 frame = 2
 speed_scale = 1.1
 playing = true
@@ -630,7 +628,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPuzzleRoom"]
 position = Vector2( 94, 62.187 )
-shape = SubResource( 86 )
+shape = SubResource( 158 )
 
 [node name="Button" type="Sprite" parent="ExitPuzzleRoom"]
 position = Vector2( 88, -5.81299 )

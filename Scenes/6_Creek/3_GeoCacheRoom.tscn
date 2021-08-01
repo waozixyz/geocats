@@ -43,7 +43,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
