@@ -35,5 +35,7 @@ func _input(event):
 			SceneChanger.change_scene("Creek", 2, "", 1)
 		elif name == "ExitPuzzleRoom":
 			SceneChanger.change_scene("Creek", 1, "", 1)
+		elif name == "ExitGeoCache":
+			SceneChanger.change_scene("Creek", 3, "", 1)
 		elif name == "ToMountain":
 			SceneChanger.change_scene("Mountain", 0, "", 1)

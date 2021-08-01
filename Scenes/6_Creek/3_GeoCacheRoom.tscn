@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/FG_Frame.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/BG.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/6_Creek/Interact.gd" type="Script" id=4]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 50 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -38,7 +43,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -61,10 +66,28 @@ render_target_update_mode = 3
 texture = ExtResource( 2 )
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 73, 462, 819, 460, 980, 434, 1197, 435, 1196, 460, 983, 460, 822, 483, 73, 486 )
+polygon = PoolVector2Array( 73, 462, 819, 460, 980, 434, 1234, 434, 1233, 459, 983, 460, 822, 483, 73, 486 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 74, 810, 71, 1097, 99, 1173, 202, 1217, 394, 1228, 434, 1248, 434, 1207, 273, 1187, 192, 1107, 77, 838, 47, 540, 58, 331, 58, 254, 97, 195, 210, 60, 285, 55, 467 )
+
+[node name="ExitGeoCache" type="Area2D" parent="."]
+position = Vector2( 33, 354.813 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
+position = Vector2( 94, 62.187 )
+shape = SubResource( 1 )
+
+[node name="Button" type="Sprite" parent="ExitGeoCache"]
+position = Vector2( 88, -5.81299 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 5 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
