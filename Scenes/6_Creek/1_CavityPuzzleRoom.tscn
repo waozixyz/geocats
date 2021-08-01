@@ -526,6 +526,9 @@ position = Vector2( 127, 427 )
 limit_right = 1300
 limit_bottom = 700
 
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 0
+
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
 margin_bottom = 700.0
@@ -546,14 +549,14 @@ render_target_update_mode = 3
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 25, 102 )
 frames = SubResource( 77 )
-frame = 1
+frame = 3
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 234, 104 )
 frames = SubResource( 78 )
-frame = 7
+frame = 6
 speed_scale = 0.7
 playing = true
 centered = false
@@ -561,7 +564,6 @@ centered = false
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 0 )
 frames = SubResource( 79 )
-frame = 1
 speed_scale = 0.7
 playing = true
 centered = false
@@ -576,7 +578,7 @@ centered = false
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 127, 118 )
 frames = SubResource( 81 )
-frame = 4
+frame = 1
 speed_scale = 1.2
 playing = true
 centered = false
@@ -584,7 +586,7 @@ centered = false
 [node name="gc7" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 191, 5 )
 frames = SubResource( 82 )
-frame = 8
+frame = 5
 speed_scale = 0.9
 playing = true
 centered = false
@@ -592,7 +594,7 @@ centered = false
 [node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 235, 75 )
 frames = SubResource( 83 )
-frame = 8
+frame = 7
 speed_scale = 0.7
 playing = true
 centered = false
@@ -600,6 +602,7 @@ centered = false
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 35 )
 frames = SubResource( 84 )
+frame = 5
 speed_scale = 0.7
 playing = true
 centered = false
@@ -607,7 +610,7 @@ centered = false
 [node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 69, 8 )
 frames = SubResource( 85 )
-frame = 6
+frame = 2
 speed_scale = 1.1
 playing = true
 centered = false

@@ -1238,7 +1238,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 80 )
 animation = "idle"
-frame = 4
+frame = 6
 playing = true
 centered = false
 

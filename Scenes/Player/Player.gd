@@ -49,7 +49,7 @@ var currentSpeed = 0 #how much you add to x velocity when moving horizontally
 var maxSpeed = 500 #maximum current speed can reach when moving horizontally
 var acceleration = 60 #by how much does current speed approach max speed when moving
 var decceleration = 120 #by how much does velocity approach when you stop moving horizontally
-
+var disabled = false
 func default_anim():
 	if vertical > 0:
 		play("crouch")
@@ -99,10 +99,11 @@ func _ready():
 		
 
 func _physics_process(delta):
-	._physics_process(delta)
-	update_inputs()
-	state_machine.logic(delta)
-	move()
+	if not disabled:
+		._physics_process(delta)
+		update_inputs()
+		state_machine.logic(delta)
+		move()
 	
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")

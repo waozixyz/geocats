@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/6_Creek/Interact.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Levels/6_Creek/2_JokeRoom/BG.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Levels/6_Creek/2_JokeRoom/FG.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sfx/Bckg/Cave_Ambience.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/6_Creek/Jokecat_GetOut.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -35,6 +36,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 304.082, 352.202 )
 
 [sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 50, 50 )
@@ -65,7 +69,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 207, 75 )
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 centered = false
 
@@ -78,6 +82,9 @@ position = Vector2( 132, 528.083 )
 zoom = Vector2( 1.5, 1.5 )
 limit_right = 1560
 limit_bottom = 840
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 0
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1560.0
@@ -109,6 +116,13 @@ polygon = PoolVector2Array( 148.531, 553.231, 270.08, 552.546, 380.997, 540.518,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 1472.49, 550.41, 1460.71, 363.521, 1363.05, 165.406, 1197.49, 110.405, 1085.24, 120.508, 958.406, 81.2213, 686.77, 76.7315, 373.042, 97.497, 239.469, 267.55, 109.825, 348.929, 82.8855, 438.164, 82.3243, 560.513, 56.5077, 562.196, 54.2627, 362.959, 225.438, 211.427, 370.797, 58.2109, 740.648, 55.9659, 1142.49, 66.0681, 1448.36, 160.916, 1501.12, 374.745, 1505.04, 554.339 )
+
+[node name="Jokecat_GetOut" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jokecat_GetOut"]
+position = Vector2( 1213.16, 414.187 )
+shape = SubResource( 45 )
 
 [node name="ExitJokeRoom" type="Area2D" parent="."]
 position = Vector2( 33, 354.813 )

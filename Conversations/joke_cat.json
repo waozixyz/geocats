@@ -1,0 +1,15 @@
+{
+  "first": {
+    "avatar": "joke_cat.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "Hey!",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "Would you please give me some privacy!?",
+    "next": ""
+  }
+}

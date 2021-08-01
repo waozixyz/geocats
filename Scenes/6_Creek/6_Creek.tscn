@@ -239,7 +239,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 7
+frame = 8
 speed_scale = 2.0
 playing = true
 centered = false
@@ -247,7 +247,7 @@ centered = false
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 8
+frame = 6
 speed_scale = 1.5
 playing = true
 centered = false
@@ -255,7 +255,7 @@ centered = false
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 1
+frame = 17
 speed_scale = 2.2
 playing = true
 centered = false
@@ -263,7 +263,7 @@ centered = false
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 7
+frame = 5
 playing = true
 centered = false
 
