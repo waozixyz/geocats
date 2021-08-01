@@ -36,7 +36,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 50, 50 )
 
 [node name="JokeRoom" type="Node2D"]
@@ -65,19 +65,9 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 207, 75 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 centered = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
-"end",
-]]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 148.531, 553.231, 270.08, 552.546, 380.997, 540.518, 444.696, 542.3, 616.194, 594.863, 751.611, 595.754, 987.699, 559.227, 1155.63, 524.928, 1339.16, 529.382, 1472.96, 534.378, 1476.17, 624.411, 84.2158, 627.502, 83.8817, 552.1 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 1472.49, 550.41, 1460.71, 363.521, 1363.05, 165.406, 1197.49, 110.405, 1085.24, 120.508, 958.406, 81.2213, 686.77, 76.7315, 373.042, 97.497, 239.469, 267.55, 109.825, 348.929, 82.8855, 438.164, 82.3243, 560.513, 56.5077, 562.196, 54.2627, 362.959, 225.438, 211.427, 370.797, 58.2109, 740.648, 55.9659, 1142.49, 66.0681, 1448.36, 160.916, 1501.12, 374.745, 1505.04, 554.339 )
 
 [node name="Default" parent="." instance=ExtResource( 1 )]
 
@@ -85,6 +75,7 @@ polygon = PoolVector2Array( 1472.49, 550.41, 1460.71, 363.521, 1363.05, 165.406,
 position = Vector2( 132, 528.083 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
 limit_right = 1560
 limit_bottom = 840
 
@@ -112,13 +103,23 @@ render_target_update_mode = 3
 texture = ExtResource( 6 )
 centered = false
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 148.531, 553.231, 270.08, 552.546, 380.997, 540.518, 444.696, 542.3, 616.194, 594.863, 751.611, 595.754, 987.699, 559.227, 1155.63, 524.928, 1339.16, 529.382, 1472.96, 534.378, 1476.17, 624.411, 84.2158, 627.502, 83.8817, 552.1 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 1472.49, 550.41, 1460.71, 363.521, 1363.05, 165.406, 1197.49, 110.405, 1085.24, 120.508, 958.406, 81.2213, 686.77, 76.7315, 373.042, 97.497, 239.469, 267.55, 109.825, 348.929, 82.8855, 438.164, 82.3243, 560.513, 56.5077, 562.196, 54.2627, 362.959, 225.438, 211.427, 370.797, 58.2109, 740.648, 55.9659, 1142.49, 66.0681, 1448.36, 160.916, 1501.12, 374.745, 1505.04, 554.339 )
+
 [node name="ExitJokeRoom" type="Area2D" parent="."]
 position = Vector2( 33, 354.813 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitJokeRoom"]
 position = Vector2( 108, 148 )
-shape = SubResource( 7 )
+shape = SubResource( 44 )
 
 [node name="Button" type="Sprite" parent="ExitJokeRoom"]
 visible = false

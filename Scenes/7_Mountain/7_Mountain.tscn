@@ -106,10 +106,9 @@ centered = false
 texture = ExtResource( 1 )
 centered = false
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
-visible = false
+[node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -125,7 +124,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
@@ -268,6 +267,7 @@ position = Vector2( 10.0032, 0 )
 shape = SubResource( 8 )
 
 [node name="Button" type="Sprite" parent="GoUp"]
+visible = false
 position = Vector2( -65.7659, 0 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
