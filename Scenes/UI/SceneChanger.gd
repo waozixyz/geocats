@@ -51,6 +51,9 @@ func _get_scene():
 					pos = Vector2(2950, 3460)
 				3:
 					pos = Vector2(8800, 4900)
+				4:
+					dir = -1
+					pos = Vector2(8900, 950)
 			return ["res://Scenes/6_Creek/6_Creek.tscn", pos, dir]
 		"CavityPuzzleRoom":	
 			return ["res://Scenes/6_Creek/1_CavityPuzzleRoom.tscn", pos, dir]
@@ -58,6 +61,8 @@ func _get_scene():
 			return ["res://Scenes/6_Creek/2_JokeRoom.tscn", pos, dir]
 		"GeoCacheRoom":	
 			return ["res://Scenes/6_Creek/3_GeoCacheRoom.tscn", pos, dir]
+		"Mountain":	
+			return ["res://Scenes/7_Mountain/7_Mountain.tscn", pos, dir]
 func _ready():
 	timer = OS.get_ticks_msec() * 0.01
 	

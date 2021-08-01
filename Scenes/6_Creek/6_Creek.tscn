@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_fg.png" type="Texture" id=2]
@@ -189,6 +189,9 @@ extents = Vector2( 98.6899, 155.642 )
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 130.769, 92.1748 )
 
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 50, 50 )
+
 [node name="Creek" type="Node2D"]
 
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
@@ -236,7 +239,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 6
+frame = 7
 speed_scale = 2.0
 playing = true
 centered = false
@@ -244,7 +247,7 @@ centered = false
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 10
+frame = 8
 speed_scale = 1.5
 playing = true
 centered = false
@@ -252,7 +255,7 @@ centered = false
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 5
+frame = 1
 speed_scale = 2.2
 playing = true
 centered = false
@@ -260,7 +263,7 @@ centered = false
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 1
+frame = 7
 playing = true
 centered = false
 
@@ -445,7 +448,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -663,6 +666,23 @@ position = Vector2( 108, 148 )
 shape = SubResource( 40 )
 
 [node name="Button" type="Sprite" parent="CaveToUp"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="ToMountain" type="Area2D" parent="."]
+position = Vector2( 8845.83, 794 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToMountain"]
+position = Vector2( 108, 148 )
+shape = SubResource( 41 )
+
+[node name="Button" type="Sprite" parent="ToMountain"]
 visible = false
 position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )

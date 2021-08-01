@@ -45,7 +45,7 @@ extents = Vector2( 128, 8 )
 extents = Vector2( 440, 11 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 549, 33 )
+extents = Vector2( 493, 33 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 54, 170 )
@@ -166,7 +166,7 @@ shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -549, -194 )
+position = Vector2( -490, -201 )
 shape = SubResource( 10 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground"]
@@ -300,7 +300,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 0
 
 [editable path="Default"]
 [editable path="Default/Player"]

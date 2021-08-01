@@ -349,7 +349,6 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -357,14 +356,13 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 10
+frame = 7
 playing = true
 centered = false
 
 [node name="spaceship" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 29, 86 )
 frames = SubResource( 27 )
-frame = 1
 speed_scale = 0.05
 playing = true
 centered = false
@@ -400,7 +398,6 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
-frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -579,6 +576,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 65 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

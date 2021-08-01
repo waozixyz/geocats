@@ -25,5 +25,6 @@ func _input(event):
 		elif name == "GoUp":
 			player.position.x = 1900
 			player.position.y = 3000
-
+		elif name == "ToCreek":
+			SceneChanger.change_scene("Creek", 4, "", 1)
 

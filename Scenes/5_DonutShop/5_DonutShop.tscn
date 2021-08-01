@@ -169,6 +169,7 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 68, 59 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -183,18 +184,12 @@ centered = false
 visible = true
 position = Vector2( 800, 410 )
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 0
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 19, 405 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960
 limit_bottom = 480
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -233,7 +228,6 @@ color = Color( 0, 0, 0, 1 )
 [node name="donutbot_head" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 70, 49 )
 frames = SubResource( 9 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
