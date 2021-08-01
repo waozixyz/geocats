@@ -1,0 +1,281 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/7_Mountain/ground.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/7_Mountain/Mountain_art.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Levels/7_Mountain/clouds.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Levels/7_Mountain/solidcliff.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/7_Mountain/ring.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/7_Mountain/Interact.gd" type="Script" id=12]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 1000, 1000 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 11 )
+region = Rect2( 1000, 0, 1000, 1000 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 11 )
+region = Rect2( 2000, 0, 1000, 1000 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 11 )
+region = Rect2( 3000, 0, 1000, 1000 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 3000 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 108, 60 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 333.22, 75.1597 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 263.429, 31.8784 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 363.695, 11.3206 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 417.327, 9.84888 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 14.0625, 259.238 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 143.323, 9.84888 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 259.636, 9.84888 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 547.368, 81.8821 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 263.179, 18.8103 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 94.5837, 127.792 )
+
+[node name="Mountain" type="Node2D"]
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 6000.0
+margin_bottom = 6000.0
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Mountain_art" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ring" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="telescope" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+frames = SubResource( 7 )
+frame = 3
+speed_scale = 0.2
+playing = true
+centered = false
+
+[node name="Default" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 1526, 5047.59 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 6000
+limit_bottom = 6000
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 0
+
+[node name="EndWalls" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -10, 3000 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( 6010, 3000 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( 3000, 6010 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( 3000, -10 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AbovePlayer" type="ViewportContainer" parent="."]
+margin_right = 6000.0
+margin_bottom = 6000.0
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="AbovePlayer"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="clouds" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="solidplatform" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="solidcliff" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ground" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="GoUp" type="Area2D" parent="."]
+position = Vector2( 1738.58, 4771.34 )
+script = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoUp"]
+position = Vector2( 108.749, 148 )
+shape = SubResource( 8 )
+
+[node name="Button" type="Sprite" parent="GoUp"]
+visible = false
+position = Vector2( 25.0032, 148 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="GoDown" type="Area2D" parent="."]
+position = Vector2( 1738.58, 2843.43 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoDown"]
+position = Vector2( 108.749, 148 )
+shape = SubResource( 8 )
+
+[node name="Button" type="Sprite" parent="GoDown"]
+visible = false
+position = Vector2( 25.0032, 148 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2( 3000, -10 )
+rotation = 1.5708
+polygon = PoolVector2Array( 5945.85, 2997.91, 5933.5, 2945, 5892.64, 2857.73, 5795.42, 2703.05, 5767.08, 2653.15, 5717.46, 2568.17, 5643.73, 2477, 5597.4, 2417.98, 5527.99, 2329.88, 5468.77, 2241.67, 5421.92, 2172.17, 5390.36, 2110.3, 5349.58, 2028.72, 5288.13, 1966.21, 5265.35, 1899.99, 5256.36, 1757.98, 5244.01, 1637.32, 5213.14, 1575.02, 5161.5, 1509.5, 5146.31, 1481.07, 5129.38, 1403.12, 4989.83, 812.137, 4940.44, 682.685, 4941.56, 532.644, 4989.44, 343.253, 4999.85, 123.843, 4967.3, -83.8123, 4880.87, -316.723, 4825.87, -518.205, 4792.76, -721.932, 4778.18, -847.757, 4786.5, -1058.25, 4846.31, -1380.98, 4827.57, -1719.49, 4812.12, -1801.41, 4785.15, -2061.45, 4645.14, -2252.37, 4570.71, -2396.02, 4533.42, -2511.17, 4456.67, -2866.18, 4447.03, -2945.43, 4460.03, -2999.89, 4511.8, -2999.03, 4521.31, -2800.43, 4635.48, -2438.92, 4844.48, -2116.77, 4888.26, -1598.19, 4932.03, -711.443, 5088.06, 18.1575, 5039.79, 564.797, 5154.28, 1120.42, 5305.81, 1576.14, 5349.59, 1907.26, 5571.83, 2190.12, 5925.16, 2761.07, 5997.25, 2998.29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1931.84, 5056.36 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1901.82, 3086 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2002.64, 3065.56 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2002.64, 3000 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2056.67, 2663.51 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2464.26, 2560.28 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2056.67, 2597.1 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2452.61, 2309.99 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2048.93, 2386.82 )
+shape = SubResource( 15 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2049.93, 2157.58 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1901.82, 2581.8 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2464.26, 3026.46 )
+shape = SubResource( 12 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 2.30923, 1802.14, 108.326, 1772.74, 435.286, 1758.49, 704.337, 1689, 886.972, 1661.38, 1063.37, 1660.49, 1249.57, 1666.73, 1310.15, 1702.36, 1333.31, 1754.04, 1340.44, 1834.22, 1339.55, 1890.34, 1302.13, 1953.6, 1278.97, 2027.54, 1250.46, 2085.45, 1219.28, 2201.27, 1181.86, 2281.45, 1090.99, 2352.72, 1021.5, 2415.97, 939.535, 2526.44, 903.008, 2589.7, 874.499, 2706.41, 779.173, 2865.88, 725.196, 2988.12, 711.742, 3083.99, 693.242, 3134.44, 662.97, 3303.46, 649.516, 3517.89, 628.493, 3584.32, 557.017, 3665.05, 444.337, 3828.18, 439.842, 3908.7, 472.383, 4003.15, 493.02, 4070.61, 481.908, 4177.76, 448.572, 4238.08, 396.188, 4303.96, 361.265, 4397.62, 298.563, 4531.75, 247.766, 4602.39, 81.8827, 4761.13, 0.974106, 4842.04 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 1859.96, 2076.94, 1874.12, 2013.7, 1900.55, 1980.67, 1973.23, 1971.23, 2100.18, 1976.42, 2214.39, 1997.66, 2338.98, 1990.58, 2432.42, 1959.9, 2500.38, 1948.11, 2559.37, 1951.41, 2571, 1964, 2597.75, 1963.75, 2597.25, 2076.5 )
+
+[editable path="Default"]
+[editable path="Default/Player"]

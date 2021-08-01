@@ -215,6 +215,7 @@ centered = false
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 240, 80 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -235,7 +236,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 5
+frame = 6
 speed_scale = 2.0
 playing = true
 centered = false
@@ -243,7 +244,7 @@ centered = false
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 1
+frame = 10
 speed_scale = 1.5
 playing = true
 centered = false
@@ -251,7 +252,7 @@ centered = false
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 3
+frame = 5
 speed_scale = 2.2
 playing = true
 centered = false
@@ -259,7 +260,7 @@ centered = false
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 
@@ -288,7 +289,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( -867.235, 806.8 )
-polygon = PoolVector2Array( 5969.1, 2774.14, 6265, 2797, 6447.97, 2819.5, 6586.66, 2892.54 )
+polygon = PoolVector2Array( 5969.1, 2774.14, 6265, 2797, 6403.39, 2802.02, 6494.33, 2845.53, 6603.63, 2906.9 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="Ground"]
@@ -298,7 +299,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( -871.239, 1065.6 )
-polygon = PoolVector2Array( 6154.17, 2854.13, 6310.34, 2823.43, 6454.51, 2805.93, 6553.28, 2823.29 )
+polygon = PoolVector2Array( 6154.17, 2854.13, 6310.34, 2823.43, 6454.51, 2805.93, 6554.66, 2819.74 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="Ground"]
@@ -542,6 +543,7 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="mist2" type="Sprite" parent="AbovePlayer2/Viewport"]
+visible = false
 texture = ExtResource( 15 )
 centered = false
 
@@ -644,6 +646,7 @@ position = Vector2( 108, 148 )
 shape = SubResource( 39 )
 
 [node name="Button" type="Sprite" parent="GeoCacheRoom"]
+visible = false
 position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )

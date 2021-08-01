@@ -46,9 +46,9 @@ func _get_scene():
 		"Creek":
 			match location:
 				1: 
-					pos = Vector2(5500, 4000)
+					pos = Vector2(5500, 4120)
 				2:
-					pos = Vector2(3000, 3400)
+					pos = Vector2(2950, 3460)
 				3:
 					pos = Vector2(8800, 4900)
 			return ["res://Scenes/6_Creek/6_Creek.tscn", pos, dir]

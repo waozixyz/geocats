@@ -1,3 +1,194 @@
-[gd_scene format=2]
+[gd_scene load_steps=29 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/pocket.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/6_Creek/Interact.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/holr.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/floor.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/computerstand.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/bg.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/surveysign.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/rocksBG.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/testgeocat.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/fgframecover.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/FGtexturedfetures.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/grassBG.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/computer4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sfx/Bckg/Cave_Ambience.ogg" type="AudioStream" id=16]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 15 )
+region = Rect2( 21, 0, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 15 )
+region = Rect2( 42, 0, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 15 )
+region = Rect2( 63, 0, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 15 )
+region = Rect2( 84, 0, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 19, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 15 )
+region = Rect2( 21, 19, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 15 )
+region = Rect2( 42, 19, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 15 )
+region = Rect2( 63, 19, 21, 19 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 15 )
+region = Rect2( 84, 19, 21, 19 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 50 )
+
+[node name="CavityPuzzleRoom" type="Node2D"]
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 1560.0
+margin_bottom = 840.0
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 260, 140 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="pocket" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="computerstand" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="rocksBG" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="floor" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="grassBG" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 14 )
+centered = false
+
+[node name="holr" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="surveysign" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="testgeocat" type="Sprite" parent="BelowPlayer/Viewport"]
+visible = false
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Computer" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 120, 89 )
+frames = SubResource( 12 )
+
+[node name="Default" parent="." instance=ExtResource( 9 )]
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 132, 512.149 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 1560
+limit_bottom = 860
+
+[node name="AbovePlayer" type="ViewportContainer" parent="."]
+margin_right = 1560.0
+margin_bottom = 840.0
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="AbovePlayer"]
+size = Vector2( 260, 140 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="fgframecover" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 12 )
+centered = false
+
+[node name="FGtexturedfetures" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 13 )
+centered = false
+
+[node name="ExitPuzzleRoom" type="Area2D" parent="."]
+position = Vector2( 33, 354.813 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPuzzleRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 1 )
+
+[node name="Button" type="Sprite" parent="ExitPuzzleRoom"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 148.531, 553.231, 270.08, 552.546, 380.997, 540.518, 444.696, 542.3, 616.194, 594.863, 751.611, 595.754, 987.699, 559.227, 1155.63, 524.928, 1339.16, 529.382, 1472.96, 534.378, 1476.17, 624.411, 84.2158, 627.502, 83.8817, 552.1 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 1472.49, 550.41, 1460.71, 363.521, 1363.05, 165.406, 1197.49, 110.405, 1085.24, 120.508, 958.406, 81.2213, 686.77, 76.7315, 373.042, 97.497, 239.469, 267.55, 109.825, 348.929, 82.8855, 438.164, 82.3243, 560.513, 56.5077, 562.196, 54.2627, 362.959, 225.438, 211.427, 370.797, 58.2109, 740.648, 55.9659, 1142.49, 66.0681, 1448.36, 160.916, 1501.12, 374.745, 1505.04, 554.339 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+autoplay = true
+
+[editable path="Default"]
+[editable path="Default/Player"]
