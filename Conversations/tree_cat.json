@@ -1,0 +1,20 @@
+{
+  "first": {
+    "avatar": "tree_cat.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "No idea how I got up here.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "No idea how to get back down.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "At least the view is nice.",
+    "next": ""
+  }
+}
