@@ -20,11 +20,11 @@ func _on_body_exited(body):
 func _input(event):
 	if Input.is_action_just_pressed("ui_down") && button.visible == true && not chat_with.started:
 		if name == "GoDown":
-			player.position.x = 1900
-			player.position.y = 4900
+			player.position.x = 1580
+			player.position.y = 4080
 		elif name == "GoUp":
-			player.position.x = 1900
-			player.position.y = 3000
+			player.position.x = 1580
+			player.position.y = 2500
 		elif name == "ToCreek":
 			SceneChanger.change_scene("Creek", 4, "", 1)
 
