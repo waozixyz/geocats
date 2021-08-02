@@ -923,7 +923,6 @@ centered = false
 
 [node name="bg2" type="Sprite" parent="Scaledown/Windows"]
 position = Vector2( 3, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 36 )
 centered = false
 
@@ -1275,7 +1274,7 @@ limit_right = 2150
 limit_bottom = 1080
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 2
 
 [editable path="Default"]
 [editable path="Default/Player"]

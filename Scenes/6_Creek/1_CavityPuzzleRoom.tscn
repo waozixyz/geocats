@@ -362,87 +362,87 @@ extents = Vector2( 50, 50 )
 [sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 119, 68 )
 
-[sub_resource type="AtlasTexture" id=75]
+[sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=76]
+[sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 27 )
 region = Rect2( 105, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=77]
+[sub_resource type="AtlasTexture" id=76]
 atlas = ExtResource( 27 )
 region = Rect2( 210, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=78]
+[sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 27 )
 region = Rect2( 315, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=79]
+[sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 27 )
 region = Rect2( 420, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=80]
+[sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 27 )
 region = Rect2( 525, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=81]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 27 )
 region = Rect2( 630, 0, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=82]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=83]
+[sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 27 )
 region = Rect2( 105, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=84]
+[sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 27 )
 region = Rect2( 210, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=85]
+[sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 27 )
 region = Rect2( 315, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=86]
+[sub_resource type="AtlasTexture" id=85]
 atlas = ExtResource( 27 )
 region = Rect2( 525, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=87]
+[sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 27 )
 region = Rect2( 630, 61, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=88]
+[sub_resource type="AtlasTexture" id=87]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=88]
 atlas = ExtResource( 27 )
 region = Rect2( 105, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=89]
 atlas = ExtResource( 27 )
 region = Rect2( 210, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=91]
+[sub_resource type="AtlasTexture" id=90]
 atlas = ExtResource( 27 )
 region = Rect2( 315, 122, 105, 61 )
 
-[sub_resource type="AtlasTexture" id=92]
+[sub_resource type="AtlasTexture" id=91]
 atlas = ExtResource( 27 )
 region = Rect2( 420, 122, 105, 61 )
 
-[sub_resource type="SpriteFrames" id=93]
+[sub_resource type="SpriteFrames" id=92]
 animations = [ {
-"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=74]
+[sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 24, 14 )
 
 [sub_resource type="RectangleShape2D" id=94]
@@ -524,6 +524,9 @@ position = Vector2( 127, 427 )
 limit_right = 1300
 limit_bottom = 700
 
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
+
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
 margin_bottom = 700.0
@@ -545,13 +548,13 @@ render_target_update_mode = 3
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 25, 102 )
 frames = SubResource( 20 )
+frame = 2
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 234, 104 )
 frames = SubResource( 26 )
-frame = 9
 speed_scale = 0.7
 playing = true
 centered = false
@@ -559,7 +562,7 @@ centered = false
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 0 )
 frames = SubResource( 32 )
-frame = 5
+frame = 7
 speed_scale = 0.7
 playing = true
 centered = false
@@ -574,7 +577,7 @@ centered = false
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 127, 118 )
 frames = SubResource( 44 )
-frame = 10
+frame = 5
 speed_scale = 1.2
 playing = true
 centered = false
@@ -582,7 +585,7 @@ centered = false
 [node name="gc7" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 191, 5 )
 frames = SubResource( 51 )
-frame = 11
+frame = 12
 speed_scale = 0.9
 playing = true
 centered = false
@@ -590,6 +593,7 @@ centered = false
 [node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 235, 75 )
 frames = SubResource( 59 )
+frame = 11
 speed_scale = 0.7
 playing = true
 centered = false
@@ -597,7 +601,7 @@ centered = false
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 35 )
 frames = SubResource( 66 )
-frame = 2
+frame = 13
 speed_scale = 0.7
 playing = true
 centered = false
@@ -605,7 +609,7 @@ centered = false
 [node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 69, 8 )
 frames = SubResource( 71 )
-frame = 8
+frame = 7
 speed_scale = 1.1
 playing = true
 centered = false
@@ -663,7 +667,7 @@ visible = false
 [node name="Machine" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 310, 102 )
 scale = Vector2( 3, 3 )
-frames = SubResource( 93 )
+frames = SubResource( 92 )
 centered = false
 
 [node name="Enter" type="Area2D" parent="CanvasLayer/HUD"]
@@ -680,7 +684,7 @@ frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Enter"]
 position = Vector2( 6.99997, -21 )
-shape = SubResource( 74 )
+shape = SubResource( 93 )
 
 [node name="Plus" type="Area2D" parent="CanvasLayer/HUD"]
 position = Vector2( 535, 191 )
@@ -695,7 +699,7 @@ hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Plus"]
 position = Vector2( 6.99997, 8 )
-shape = SubResource( 74 )
+shape = SubResource( 93 )
 
 [node name="Minus" type="Area2D" parent="CanvasLayer/HUD"]
 script = ExtResource( 30 )
