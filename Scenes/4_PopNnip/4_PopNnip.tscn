@@ -87,7 +87,7 @@ extents = Vector2( 27, 27 )
 extents = Vector2( 4.5, 70 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 29, 47 )
+extents = Vector2( 60.1039, 35 )
 
 [node name="PopNnip" type="Node2D"]
 
@@ -124,6 +124,7 @@ centered = false
 [node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -287,7 +288,7 @@ position = Vector2( 418, 378 )
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper/Area2D"]
-position = Vector2( 41, 15 )
+position = Vector2( -2, 16 )
 shape = SubResource( 24 )
 
 [node name="Default" parent="." instance=ExtResource( 2 )]
@@ -300,7 +301,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 2
 
 [editable path="Default"]
 [editable path="Default/Player"]
