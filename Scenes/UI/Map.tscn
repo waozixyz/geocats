@@ -1,0 +1,115 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/UI/feline_map/City_Letterin_Feline_Map.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/feline_map/City_Feline_Map.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/feline_map/Lock_Closed_Feline_Map.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/feline_map/Lodge_Lettering_Feline_Map.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/feline_map/Lodge_Feline_Map.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/feline_map/Litterbox_Feline_Map.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/feline_map/Cats_Cradle_Letting_Feline_Map.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/feline_map/Creek_Feline_Map.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/feline_map/Litterbox_Lettering_Feline_Map.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/feline_map/Lock_Open_Feline_Map.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/feline_map/Creek_Lettering_Feline_Map.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/feline_map/Apartment_Lettering_Feline_Map.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/feline_map/Apartment_Feline_Map.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/feline_map/Cat_Feline_Map.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UI/feline_map/Cats_Cradle_Feline_Map.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UI/feline_map/Background_Feline_Map.png" type="Texture" id=16]
+
+[node name="Control" type="Control"]
+margin_top = 1.58427
+margin_right = 40.0
+margin_bottom = 41.5843
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Feline_Map" type="Sprite" parent="."]
+position = Vector2( 82.1118, 43 )
+texture = ExtResource( 16 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Apartment_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 151.35, 65.9553 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Apartment_Lettering_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 125.436, 41 )
+scale = Vector2( 0.57681, 0.678214 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Cats_Cradle_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 53.1577, 71.8543 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="Cats_Cradle_Letting_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 47.3497, 41 )
+scale = Vector2( 0.71251, 0.886412 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Cat_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 74.5328, 119.381 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="City_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 277.507, 65.9553 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="City_Letterin_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 279.507, 41 )
+scale = Vector2( 1.00734, 0.706473 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Creek_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 47.3496, 189.902 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Creek_Lettering_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 50.3496, 148.832 )
+scale = Vector2( 0.872642, 0.78 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Litterbox_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 168.893, 186.902 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Litterbox_Lettering_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 157.202, 149.551 )
+scale = Vector2( 0.720435, 0.751611 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Lodge_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 281.507, 177.902 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Lodge_Lettering_Feline_Map" type="Sprite" parent="Feline_Map"]
+position = Vector2( 280.507, 145.832 )
+scale = Vector2( 0.909816, 0.78 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Lock_Closed_Feline_Map" type="Sprite" parent="."]
+position = Vector2( 22.2363, 43 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Lock_Open_Feline_Map" type="Sprite" parent="."]
+position = Vector2( 22.2363, 106.854 )
+texture = ExtResource( 10 )
+centered = false

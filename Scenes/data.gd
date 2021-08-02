@@ -14,7 +14,7 @@ var file_data = {
 }
 
 func _ready():
-	data.loadit()
+	#data.loadit()
 
 	# load dialogue system data
 	PROGRESS.variables = file_data.prog_var
