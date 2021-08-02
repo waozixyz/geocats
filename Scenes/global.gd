@@ -2,6 +2,7 @@ extends Node
 
 var player_position
 var player_direction
+var crt_noise = 0.0
 
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)

@@ -4,6 +4,7 @@ extends CanvasLayer
 onready var Sprite = $ViewportContainer/Viewport/AnimatedSprite
 onready var Container = $Container
 onready var MusicPlayer = $AudioStreamPlayer
+onready var respawn = $Respawn
 
 var location : int
 var scene : String 
@@ -88,6 +89,15 @@ func _physics_process(delta):
 	if change:
 		if timer  > load_time:
 			_new_scene()
+	if data.file_data.player_hp < 1:
+		respawn.visible = true
+		get_tree().paused = true
+func _input(event):
+	if respawn.visible:
+		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
+			respawn.visible = false
+			data.file_data.player_hp = 100.0
+			change_scene(get_tree().get_current_scene().name, 0, "", 1)
 	
 func _new_scene():
 	Sprite.visible = false

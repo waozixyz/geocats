@@ -10,6 +10,7 @@ var file_data = {
 	"present": true,
 	"prog_var": {},
 	"prog_dia": {},
+	"player_hp": 100.0,
 }
 
 func _ready():

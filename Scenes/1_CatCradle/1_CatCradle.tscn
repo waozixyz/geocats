@@ -884,8 +884,14 @@ position = Vector2( 1098, 630 )
 texture = ExtResource( 4 )
 centered = false
 
+[node name="bg2" type="Sprite" parent="Scaledown"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 36 )
+centered = false
+
 [node name="kitchen_bckg" type="Sprite" parent="Scaledown"]
-position = Vector2( 252, 666 )
+position = Vector2( 253.428, 666 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
 [node name="Kitchen" type="Sprite" parent="Scaledown/kitchen_bckg"]
@@ -919,11 +925,6 @@ centered = false
 [node name="window_4" type="Sprite" parent="Scaledown/Windows"]
 position = Vector2( 1335, 664.157 )
 texture = ExtResource( 15 )
-centered = false
-
-[node name="bg2" type="Sprite" parent="Scaledown/Windows"]
-position = Vector2( 3, 0 )
-texture = ExtResource( 36 )
 centered = false
 
 [node name="Plants" type="Node2D" parent="Scaledown"]
@@ -1178,12 +1179,12 @@ texture = ExtResource( 25 )
 centered = false
 
 [node name="Sprite" type="Sprite" parent="Scaledown/Ladders"]
-position = Vector2( 305.714, 728.572 )
+position = Vector2( 307.143, 730.001 )
 texture = ExtResource( 24 )
 centered = false
 
 [node name="last_ladder" type="Sprite" parent="Scaledown/Ladders"]
-position = Vector2( 113, 180 )
+position = Vector2( 117.286, 180 )
 texture = ExtResource( 26 )
 centered = false
 
