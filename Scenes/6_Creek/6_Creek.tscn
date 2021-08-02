@@ -254,6 +254,7 @@ centered = false
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 240, 80 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -275,7 +276,7 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 2
+frame = 7
 speed_scale = 2.0
 playing = true
 centered = false
@@ -283,7 +284,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 7
+frame = 3
 speed_scale = 1.5
 playing = true
 centered = false
@@ -291,7 +292,7 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 1
+frame = 6
 speed_scale = 2.2
 playing = true
 centered = false
@@ -299,13 +300,14 @@ centered = false
 [node name="HangingCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
+frame = 6
 playing = true
 centered = false
 
 [node name="TreeCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 43, 104 )
 frames = SubResource( 33 )
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 centered = false
@@ -431,7 +433,7 @@ polygon = PoolVector2Array( 744, 1712, 874, 1846, 1046, 1916, 1021, 1923, 909, 1
 
 [node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( -14, 0 )
-polygon = PoolVector2Array( 690, 1432, 769, 1436, 752, 1928, 749, 2933, 639, 2919 )
+polygon = PoolVector2Array( 690, 1432, 769, 1436, 752, 1928, 685, 1929 )
 
 [node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 694, 1304, 760, 1314, 751, 384, 733, 203, 699, 358, 719, 590, 706, 632 )
@@ -516,6 +518,9 @@ scale = Vector2( 1.3, 1.3 )
 zoom = Vector2( 1.5, 1.5 )
 limit_right = 9000
 limit_bottom = 5400
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -703,7 +708,7 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="CaveToUp" type="Area2D" parent="."]
-position = Vector2( 4296.95, 4832.37 )
+position = Vector2( 4301, 4828 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true

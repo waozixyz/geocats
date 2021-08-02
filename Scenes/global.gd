@@ -9,10 +9,11 @@ func _enter_tree():
 
 func _unhandled_input(event):
 	if event is InputEventKey:
-		if event.pressed and event.scancode == KEY_ESCAPE:
-			data.saveit()
-			get_tree().quit()
-
+		#if event.pressed and event.scancode == KEY_ESCAPE:
+		#	data.saveit()
+		#	get_tree().quit()
+		pass
+		
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		data.saveit()

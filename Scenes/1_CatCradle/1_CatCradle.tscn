@@ -885,13 +885,11 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="bg2" type="Sprite" parent="Scaledown"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 36 )
 centered = false
 
 [node name="kitchen_bckg" type="Sprite" parent="Scaledown"]
 position = Vector2( 253.428, 666 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
 [node name="Kitchen" type="Sprite" parent="Scaledown/kitchen_bckg"]
