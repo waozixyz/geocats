@@ -39,3 +39,4 @@ func _input(event):
 			SceneChanger.change_scene("Creek", 3, "", 1)
 		elif name == "ToMountain":
 			SceneChanger.change_scene("Mountain", 0, "", 1)
+

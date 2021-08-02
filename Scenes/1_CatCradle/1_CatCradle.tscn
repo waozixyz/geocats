@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=135 format=2]
 
 [ext_resource path="res://Assets/Levels/1_CatCradle/stereo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/1_CatCradle/kitchen.png" type="Texture" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Scenes/UI/InteractWith.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Jazz_2.ogg" type="AudioStream" id=34]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/1_CatCradle/bg2.png" type="Texture" id=36]
 
 [sub_resource type="TileSet" id=1]
 0/name = "background_tilemap.png 0"
@@ -920,6 +921,12 @@ position = Vector2( 1335, 664.157 )
 texture = ExtResource( 15 )
 centered = false
 
+[node name="bg2" type="Sprite" parent="Scaledown/Windows"]
+position = Vector2( 3, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 36 )
+centered = false
+
 [node name="Plants" type="Node2D" parent="Scaledown"]
 
 [node name="plant_1" type="Sprite" parent="Scaledown/Plants"]
@@ -933,6 +940,7 @@ texture = ExtResource( 20 )
 centered = false
 
 [node name="Ground" type="TileMap" parent="Scaledown"]
+visible = false
 position = Vector2( -3, 72 )
 tile_set = SubResource( 71 )
 cell_size = Vector2( 36, 36 )
@@ -1171,7 +1179,7 @@ texture = ExtResource( 25 )
 centered = false
 
 [node name="Sprite" type="Sprite" parent="Scaledown/Ladders"]
-position = Vector2( 304, 729 )
+position = Vector2( 305.714, 728.572 )
 texture = ExtResource( 24 )
 centered = false
 
@@ -1260,11 +1268,14 @@ autoplay = true
 [node name="Default" parent="." instance=ExtResource( 28 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1300, 188 )
+position = Vector2( 1283, 194 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2150
 limit_bottom = 1080
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
 
 [editable path="Default"]
 [editable path="Default/Player"]
