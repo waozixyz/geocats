@@ -524,9 +524,6 @@ position = Vector2( 127, 427 )
 limit_right = 1300
 limit_bottom = 700
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
-
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
 margin_bottom = 700.0
@@ -548,13 +545,14 @@ render_target_update_mode = 3
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 25, 102 )
 frames = SubResource( 20 )
-frame = 2
+frame = 5
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 234, 104 )
 frames = SubResource( 26 )
+frame = 9
 speed_scale = 0.7
 playing = true
 centered = false
@@ -562,7 +560,7 @@ centered = false
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 0 )
 frames = SubResource( 32 )
-frame = 7
+frame = 1
 speed_scale = 0.7
 playing = true
 centered = false
@@ -570,14 +568,14 @@ centered = false
 [node name="gc5" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 165, 0 )
 frames = SubResource( 37 )
-frame = 2
+frame = 3
 playing = true
 centered = false
 
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 127, 118 )
 frames = SubResource( 44 )
-frame = 5
+frame = 11
 speed_scale = 1.2
 playing = true
 centered = false
@@ -585,7 +583,7 @@ centered = false
 [node name="gc7" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 191, 5 )
 frames = SubResource( 51 )
-frame = 12
+frame = 9
 speed_scale = 0.9
 playing = true
 centered = false
@@ -593,7 +591,7 @@ centered = false
 [node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 235, 75 )
 frames = SubResource( 59 )
-frame = 11
+frame = 5
 speed_scale = 0.7
 playing = true
 centered = false
@@ -601,7 +599,7 @@ centered = false
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 35 )
 frames = SubResource( 66 )
-frame = 13
+frame = 2
 speed_scale = 0.7
 playing = true
 centered = false
@@ -609,7 +607,7 @@ centered = false
 [node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 69, 8 )
 frames = SubResource( 71 )
-frame = 7
+frame = 3
 speed_scale = 1.1
 playing = true
 centered = false
