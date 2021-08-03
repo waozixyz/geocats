@@ -16,6 +16,7 @@ font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 font_data = SubResource( 2 )
 
 [node name="InteractWith" type="Control"]
+mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

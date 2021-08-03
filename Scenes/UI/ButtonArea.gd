@@ -2,6 +2,8 @@ extends Area2D
 
 var pressed : bool = false
 var hovered: bool = false
+var selected: bool = false
+var disabled: bool = false
 func _ready():
 	connect("input_event", self, "_on_input_event")
 	connect("mouse_entered", self, "_on_mouse_entered")

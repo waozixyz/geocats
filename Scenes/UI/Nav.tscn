@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/feline_nav/feline_base.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/feline_nav/feline_icons.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/UI/Feline.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/UI/Nav.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
@@ -19,10 +19,17 @@ extents = Vector2( 364.184, 68.0394 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 42.8969, 43.563 )
 
-[node name="Control" type="CanvasLayer"]
+[node name="FelineNav" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 1
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Base" type="Sprite" parent="."]
+visible = false
 position = Vector2( 165.036, 71.6721 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
@@ -43,11 +50,13 @@ frame = 1
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Map" type="Label" parent="Base/Icons"]
-margin_left = 385.0
-margin_top = 318.0
-margin_right = 968.0
-margin_bottom = 418.0
+[node name="Map" type="Area2D" parent="Base/Icons"]
+position = Vector2( 385, 318 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Base/Icons/Map"]
+margin_right = 583.0
+margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.333333, 0.164706, 1 )
 text = "Map"
@@ -55,6 +64,10 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Map"]
+position = Vector2( 112.478, 43.362 )
+shape = SubResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="Base/Icons/Map"]
 margin_left = -255.0
@@ -67,18 +80,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Base/Icons/Map"]
+[node name="Location" type="Area2D" parent="Base/Icons"]
+position = Vector2( 385, 503.209 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Map/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Location"]
 position = Vector2( 112.478, 43.362 )
 shape = SubResource( 3 )
 
-[node name="Location" type="Label" parent="Base/Icons"]
-margin_left = 385.0
-margin_top = 503.209
-margin_right = 968.0
-margin_bottom = 603.209
+[node name="Label" type="Label" parent="Base/Icons/Location"]
+margin_right = 583.0
+margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.333333, 0.164706, 1 )
 text = "Home"
@@ -97,18 +109,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Base/Icons/Location"]
+[node name="Return" type="Area2D" parent="Base/Icons"]
+position = Vector2( 385, 678.407 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Location/Area2D"]
-position = Vector2( 112.478, 43.362 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Return"]
+position = Vector2( 112.478, 32.5932 )
 shape = SubResource( 3 )
 
-[node name="Return" type="Label" parent="Base/Icons"]
-margin_left = 385.0
-margin_top = 678.407
-margin_right = 968.0
-margin_bottom = 778.407
+[node name="Label" type="Label" parent="Base/Icons/Return"]
+margin_right = 583.0
+margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.333333, 0.164706, 1 )
 text = "Exit"
@@ -127,15 +138,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Base/Icons/Return"]
+[node name="Exit" type="Area2D" parent="Base/Icons"]
+position = Vector2( -6.10352e-05, -3.05176e-05 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Return/Area2D"]
-position = Vector2( 112.478, 32.5932 )
-shape = SubResource( 3 )
-
-[node name="Exit" type="Node2D" parent="Base/Icons"]
-position = Vector2( 1.52588e-05, 0.000148773 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Exit"]
+position = Vector2( 917.867, 298.678 )
+shape = SubResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Base/Icons/Exit"]
 margin_left = 873.0
@@ -147,11 +156,3 @@ color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Area2D" type="Area2D" parent="Base/Icons/Exit"]
-position = Vector2( -3.05176e-05, -0.000148773 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Exit/Area2D"]
-position = Vector2( 917.867, 298.678 )
-shape = SubResource( 4 )

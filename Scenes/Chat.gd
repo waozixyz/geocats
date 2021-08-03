@@ -22,13 +22,15 @@ func show_chat():
 	else:
 		convo_file = parent_name.replace(" ", "_")
 	active = true
-	chat_with.hide_after = false
-	chat_with.visible = true
-	chat_with.name_label.text = parent_name
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
 	
 func hide_chat():
-	chat_with.visible = false
-	chat_with.stop()
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
 	active = false
 
 func _on_body_entered(body):

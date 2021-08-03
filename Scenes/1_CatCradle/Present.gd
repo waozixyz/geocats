@@ -8,7 +8,7 @@ func _ready():
 	set_process_input(true)
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
-	if not data.file_data.present:
+	if not global.data.present:
 		get_parent().visible = false
 	
 func _on_body_entered(body):
@@ -34,6 +34,6 @@ func _input(event):
 		if touching and get_parent().visible:
 			letter.visible = true
 			get_parent().visible = false
-			data.file_data.present = false
+			global.data.present = false
 
 

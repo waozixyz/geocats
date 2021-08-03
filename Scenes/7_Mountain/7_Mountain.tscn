@@ -12,64 +12,64 @@
 [ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/7_Mountain/Interact.gd" type="Script" id=12]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 1000, 1000 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 11 )
 region = Rect2( 1000, 0, 1000, 1000 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 11 )
 region = Rect2( 2000, 0, 1000, 1000 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 11 )
 region = Rect2( 3000, 0, 1000, 1000 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 263.429, 31.8784 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 363.695, 11.3206 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 417.327, 10.4514 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 143.323, 9.84888 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 259.303, 9.84888 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 264.105, 18.8103 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 333.22, 75.1597 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 14.0625, 259.238 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 549.106, 81.9512 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 94.5837, 127.792 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 10, 3000 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 108, 60 )
 
 [sub_resource type="RectangleShape2D" id=18]
@@ -80,6 +80,7 @@ extents = Vector2( 50, 50 )
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
 margin_bottom = 5000.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 5
 __meta__ = {
@@ -107,13 +108,16 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
-frames = SubResource( 7 )
-frame = 1
+frames = SubResource( 5 )
+frame = 2
 speed_scale = 0.2
 playing = true
 centered = false
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
+
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 1
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 74, 4870.94 )
@@ -124,11 +128,12 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
 margin_bottom = 5000.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 5
 __meta__ = {
@@ -172,41 +177,41 @@ polygon = PoolVector2Array( 5945.85, 2997.91, 5933.5, 2945, 5892.64, 2857.73, 57
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 1902.76, 3087.64 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2008.4, 3066.03 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2008.4, 3001.2 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2056.42, 2665.07 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2056.42, 2599.04 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2454.98, 2312.12 )
-shape = SubResource( 14 )
+shape = SubResource( 9 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2050.42, 2387.76 )
-shape = SubResource( 15 )
+shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 1902.76, 2582.23 )
-shape = SubResource( 17 )
+shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="Walls" type="StaticBody2D" parent="Node2D"]
@@ -216,7 +221,7 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( -118.468, 615.335 )
-shape = SubResource( 2 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 415.331, -1877.98 )
@@ -224,7 +229,7 @@ shape = SubResource( 13 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 1.48633, -2279.79 )
-shape = SubResource( 16 )
+shape = SubResource( 14 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Node2D/Walls"]
 position = Vector2( -2048.93, -4438.25 )
@@ -232,7 +237,7 @@ polygon = PoolVector2Array( 1859.96, 2076.94, 1874.12, 2013.7, 1900.55, 1980.67,
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 418.053, -1408.24 )
-shape = SubResource( 12 )
+shape = SubResource( 15 )
 
 [node name="EndWalls" type="StaticBody2D" parent="Node2D" groups=[
 "end",
@@ -242,21 +247,21 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( -10, 3000 )
-shape = SubResource( 1 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 6010, 3000 )
-shape = SubResource( 1 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 3000, 6010 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 3000, -10 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 16 )
 
 [node name="GoUp" type="Area2D" parent="."]
 position = Vector2( 1523.67, 4085.24 )
@@ -264,7 +269,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoUp"]
 position = Vector2( 10.0032, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 17 )
 
 [node name="Button" type="Sprite" parent="GoUp"]
 visible = false
@@ -281,7 +286,7 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoDown"]
 position = Vector2( 108.749, 148 )
-shape = SubResource( 8 )
+shape = SubResource( 17 )
 
 [node name="Button" type="Sprite" parent="GoDown"]
 visible = false
@@ -307,4 +312,5 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]

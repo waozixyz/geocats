@@ -3,31 +3,30 @@ extends Node
 
 const FILE_NAME = "user://game-data.json"
 
-	
-var file_data = {
-	"scene": "CatCradle",
-	"location": 0,
-	"present": true,
-	"prog_var": {},
-	"prog_dia": {},
-	"player_hp": 100.0,
-}
+
+func _correct_data(dat):
+	var out = global.data
+	for key in dat:
+		out[key] = dat[key]
+
+	return out
+
 
 func _ready():
-	#data.loadit()
+	#loadit()
 
 	# load dialogue system data
-	PROGRESS.variables = file_data.prog_var
-	PROGRESS.dialogues = file_data.prog_dia
-
-	#SceneChanger.change_scene(file_data.scene, file_data.location, "", 1)
+	PROGRESS.variables = global.data.prog_var
+	PROGRESS.dialogues = global.data.prog_dia
+	if not global.debug:
+		SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
 
 func saveit():
-	file_data.prog_var = PROGRESS.variables
-	file_data.prog_dia = PROGRESS.dialogues
+	global.data.prog_var = PROGRESS.variables
+	global.data.prog_dia = PROGRESS.dialogues
 	var file = File.new()
 	file.open(FILE_NAME, File.WRITE)
-	file.store_string(to_json(file_data))
+	file.store_string(to_json(global.data))
 	file.close()
 
 func loadit():
@@ -37,7 +36,7 @@ func loadit():
 		var data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
-			file_data = data
+			global.data = _correct_data(data)
 		else:
 			printerr("Corrupted data!")
 	else:

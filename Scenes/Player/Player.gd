@@ -100,15 +100,19 @@ func _ready():
 		
 
 func _physics_process(delta):
-	if not disabled:
-		._physics_process(delta)
+
+	if disabled:
+		velocity.x = 0
+	else:
 		update_inputs()
 		state_machine.logic(delta)
-		move()
-	var hp = data.file_data.player_hp 
+		._physics_process(delta)
+
+	move()
+	var hp = global.data.player_hp 
 	if hp < 100:
 		hp += 0.1
-	data.file_data.player_hp = hp
+	global.data.player_hp = hp
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")

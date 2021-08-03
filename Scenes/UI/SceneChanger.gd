@@ -64,6 +64,7 @@ func _get_scene():
 			return ["res://Scenes/6_Creek/3_GeoCacheRoom.tscn", pos, dir]
 		"Mountain":	
 			return ["res://Scenes/7_Mountain/7_Mountain.tscn", pos, dir]
+
 func _ready():
 	timer = OS.get_ticks_msec() * 0.01
 	
@@ -89,22 +90,25 @@ func _physics_process(delta):
 	if change:
 		if timer  > load_time:
 			_new_scene()
-	if data.file_data.player_hp < 1:
+	if global.data.player_hp < 1:
 		respawn.visible = true
 		get_tree().paused = true
+
 func _input(event):
 	if respawn.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			respawn.visible = false
-			data.file_data.player_hp = 100.0
+			global.data.player_hp = 100.0
 			change_scene(get_tree().get_current_scene().name, 0, "", 1)
 	
 func _new_scene():
 	Sprite.visible = false
 	Container.visible = false
-	data.file_data.scene = scene
-	data.file_data.location = location
+	global.data.scene = scene
+	global.data.location = location
 	var scene_data = _get_scene()
+	global.data.nav_unlocked[scene] = true
+
 
 	get_tree().change_scene(scene_data[0])
 

@@ -28,7 +28,7 @@
 [ext_resource path="res://Assets/Levels/1_CatCradle/last_ladder.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/1_CatCradle/statue.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/1_CatCradle/Exit.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/1_CatCradle/Interact.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=32]
@@ -845,6 +845,7 @@ margin_left = -628.0
 margin_top = -516.0
 margin_right = 3287.0
 margin_bottom = 1635.0
+mouse_filter = 2
 color = Color( 0.117647, 0.00392157, 0.168627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -856,6 +857,7 @@ scale = Vector2( 0.7, 0.7 )
 [node name="Orange" type="ColorRect" parent="Scaledown"]
 margin_right = 2151.0
 margin_bottom = 1080.0
+mouse_filter = 2
 color = Color( 0.827451, 0.47451, 0.145098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1220,6 +1222,7 @@ shape = SubResource( 95 )
 
 [node name="InteractWith" parent="CanvasLayer" instance=ExtResource( 33 )]
 visible = false
+mouse_filter = 2
 
 [node name="Letter" type="ViewportContainer" parent="CanvasLayer"]
 visible = false
@@ -1230,6 +1233,7 @@ anchor_bottom = 1.0
 margin_left = 640.0
 margin_top = 530.0
 margin_bottom = 50.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 3
 __meta__ = {
@@ -1272,5 +1276,9 @@ position = Vector2( 1283, 194 )
 limit_right = 2150
 limit_bottom = 1080
 
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
+
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]
