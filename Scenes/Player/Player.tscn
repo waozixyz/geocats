@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=2]
@@ -18,49 +18,69 @@
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 30, 0, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 30, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 15, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 30, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 15, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 0, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
 region = Rect2( 45, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 2 )
 region = Rect2( 30, 0, 15, 15 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 1 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 1 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 27 ), SubResource( 1 ), SubResource( 27 ), SubResource( 27 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -70,37 +90,37 @@ animations = [ {
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ) ],
 "loop": true,
 "name": "slide_wall",
-"speed": 5.0
+"speed": 12.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 19 ) ],
 "loop": true,
 "name": "crouch",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 6, 19 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 19, 13 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 8, 20 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 13, 38 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -132,9 +152,9 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
-frames = SubResource( 12 )
-animation = "slide_wall"
-frame = 2
+frames = SubResource( 20 )
+animation = "idle"
+frame = 30
 playing = true
 centered = false
 
@@ -185,16 +205,16 @@ tag = "walk"
 
 [node name="CollisionClimb" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
-shape = SubResource( 13 )
+shape = SubResource( 21 )
 disabled = true
 
 [node name="CollisionDefault" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
-shape = SubResource( 14 )
+shape = SubResource( 22 )
 
 [node name="CollisionSlide" type="CollisionShape2D" parent="."]
 position = Vector2( 12, 2 )
-shape = SubResource( 15 )
+shape = SubResource( 23 )
 disabled = true
 
 [node name="RightRaycast" type="RayCast2D" parent="."]
@@ -212,7 +232,7 @@ visible = false
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
-shape = SubResource( 16 )
+shape = SubResource( 24 )
 
 [node name="Waves" parent="." instance=ExtResource( 3 )]
 z_index = 1
