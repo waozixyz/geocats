@@ -14,6 +14,7 @@ extents = Vector2( 50, 50 )
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
 margin_bottom = 700.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 5
 __meta__ = {
@@ -35,6 +36,9 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 1 )]
 position = Vector2( 402, 304 )
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 1
+
 [node name="Player" parent="Default" index="1"]
 position = Vector2( -284, 125 )
 
@@ -42,9 +46,13 @@ position = Vector2( -284, 125 )
 limit_right = 1300
 limit_bottom = 700
 
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 1
+
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
 margin_bottom = 700.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 5
 __meta__ = {
@@ -87,4 +95,5 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 5 )
 
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]

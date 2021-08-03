@@ -22,6 +22,7 @@ extents = Vector2( 42.8969, 43.563 )
 [node name="FelineNav" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 1
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false

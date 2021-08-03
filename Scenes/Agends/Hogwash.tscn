@@ -16,14 +16,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "mad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -46,6 +46,7 @@ margin_right = 89.0
 margin_bottom = 36.0
 rect_scale = Vector2( 1, 1.1 )
 rect_pivot_offset = Vector2( 45, 25 )
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {

@@ -241,6 +241,7 @@ animations = [ {
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
 margin_bottom = 1200.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -582,6 +583,7 @@ shape = SubResource( 35 )
 margin_right = 44.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -597,7 +599,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Longcat/ViewportContainer/Viewport"]
 frames = SubResource( 38 )
 animation = "walk"
-frame = 1
 playing = true
 centered = false
 
@@ -623,6 +624,7 @@ margin_top = -15.0
 margin_right = 22.0
 margin_bottom = 15.0
 rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -638,7 +640,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Nonacat/ViewportContainer/Viewport"]
 frames = SubResource( 43 )
 animation = "walk"
-frame = 1
 playing = true
 centered = false
 
@@ -666,6 +667,7 @@ shape = SubResource( 35 )
 margin_right = 44.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -681,7 +683,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lasagne/ViewportContainer/Viewport"]
 frames = SubResource( 47 )
 animation = "walk"
-frame = 1
 playing = true
 centered = false
 flip_h = true
@@ -706,6 +707,7 @@ shape = SubResource( 35 )
 margin_right = 75.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
 stretch = true
 stretch_shrink = 5
 __meta__ = {
@@ -721,7 +723,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 50 )
 animation = "idle"
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -742,6 +743,9 @@ position = Vector2( 4601, 945 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
 limit_bottom = 1200
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
@@ -779,4 +783,5 @@ position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
 
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]

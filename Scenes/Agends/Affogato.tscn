@@ -60,6 +60,7 @@ margin_right = 19.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1, 1.1 )
 rect_pivot_offset = Vector2( 45, 25 )
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {

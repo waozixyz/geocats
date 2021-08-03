@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/UI/feline_map/City_Letterin_Feline_Map.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/feline_map/City_Feline_Map.png" type="Texture" id=2]
@@ -17,9 +17,14 @@
 [ext_resource path="res://Assets/UI/feline_map/Cats_Cradle_Feline_Map.png" type="Texture" id=15]
 [ext_resource path="res://Assets/UI/feline_map/Background_Feline_Map.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/UI/Map.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.9674, 40.625 )
 
 [node name="Control" type="Control"]
 rect_scale = Vector2( 1.6, 1.6 )
+mouse_filter = 1
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,36 +37,62 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CatCradle" type="Node2D" parent="Device"]
+[node name="CatCradle" type="Area2D" parent="Device"]
 scale = Vector2( 1, 1 )
+script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/CatCradle"]
+visible = false
 position = Vector2( 47.3497, 41 )
 scale = Vector2( 0.71251, 0.886412 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="Lock" type="Sprite" parent="Device/CatCradle"]
+visible = false
 position = Vector2( 63.1577, 70 )
 scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/CatCradle"]
+visible = false
 position = Vector2( 63.1577, 70 )
 scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Map" type="Sprite" parent="Device/CatCradle"]
-visible = false
 position = Vector2( 53.1577, 71.8543 )
 scale = Vector2( 1, 1 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="Complex" type="Node2D" parent="Device"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/CatCradle"]
+visible = false
+position = Vector2( 83.7827, 78.75 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/CatCradle"]
+margin_left = 40.0
+margin_top = 38.0
+margin_right = 125.0
+margin_bottom = 134.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/CatCradle"]
+position = Vector2( 73.5996, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Complex" type="Area2D" parent="Device"]
 scale = Vector2( 1, 1 )
+script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/Complex"]
 position = Vector2( 125.086, 41 )
@@ -88,8 +119,31 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 centered = false
 
-[node name="GeoCity" type="Node2D" parent="Device"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Complex"]
+visible = false
+position = Vector2( 188.893, 78.75 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Complex"]
+margin_left = 125.0
+margin_top = 38.0
+margin_right = 268.0
+margin_bottom = 134.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Complex"]
+position = Vector2( 181.794, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="GeoCity" type="Area2D" parent="Device"]
 scale = Vector2( 1, 1 )
+script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/GeoCity"]
 position = Vector2( 279.507, 41 )
@@ -116,8 +170,31 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Creek" type="Node2D" parent="Device"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/GeoCity"]
+visible = false
+position = Vector2( 310.658, 78.75 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/GeoCity"]
+margin_left = 268.0
+margin_top = 38.0
+margin_right = 362.0
+margin_bottom = 134.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/GeoCity"]
+position = Vector2( 302.673, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Creek" type="Area2D" parent="Device"]
 scale = Vector2( 1, 1 )
+script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/Creek"]
 position = Vector2( 49.3496, 148.832 )
@@ -126,23 +203,47 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Lock" type="Sprite" parent="Device/Creek"]
+visible = false
 position = Vector2( 77.3496, 190 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/Creek"]
+visible = false
 position = Vector2( 77.3496, 190 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Map" type="Sprite" parent="Device/Creek"]
-visible = false
 position = Vector2( 47.3496, 189.902 )
 texture = ExtResource( 8 )
 centered = false
 
-[node name="Litterbox" type="Node2D" parent="Device"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Creek"]
+visible = false
+position = Vector2( 97.5327, 194.209 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Creek"]
+margin_left = 40.0
+margin_top = 146.0
+margin_right = 145.0
+margin_bottom = 252.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Creek"]
+position = Vector2( 83.7827, 238 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Litterbox" type="Area2D" parent="Device"]
 scale = Vector2( 1, 1 )
+script = ExtResource( 18 )
 
 [node name="Map" type="Sprite" parent="Device/Litterbox"]
 visible = false
@@ -157,42 +258,84 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Lock" type="Sprite" parent="Device/Litterbox"]
+visible = false
 position = Vector2( 188.893, 190 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/Litterbox"]
+visible = false
 position = Vector2( 188.893, 190 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="Lodge" type="Node2D" parent="Device"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Litterbox"]
+visible = false
+position = Vector2( 205.5, 194.209 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Litterbox"]
+margin_left = 145.0
+margin_top = 146.0
+margin_right = 268.0
+margin_bottom = 252.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Litterbox"]
+position = Vector2( 199.138, 238 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Lodge" type="Area2D" parent="Device"]
 scale = Vector2( 1, 1 )
+script = ExtResource( 18 )
 
 [node name="Map" type="Sprite" parent="Device/Lodge"]
-visible = false
 position = Vector2( 281.507, 177.902 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="Label" type="Sprite" parent="Device/Lodge"]
-position = Vector2( 280.507, 145.832 )
+position = Vector2( 280.507, 150 )
 scale = Vector2( 0.909816, 0.78 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="Lock" type="Sprite" parent="Device/Lodge"]
+visible = false
 position = Vector2( 291.507, 190 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/Lodge"]
+visible = false
 position = Vector2( 291.507, 190 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="Cat_Feline_Map" type="Sprite" parent="."]
-position = Vector2( 119.252, 194.209 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Lodge"]
+visible = false
+position = Vector2( 310.658, 194.209 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Lodge"]
+margin_left = 267.0
+margin_top = 146.0
+margin_right = 362.0
+margin_bottom = 252.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Lodge"]
+position = Vector2( 302.673, 238 )
 scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 14 )
 centered = false

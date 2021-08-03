@@ -94,6 +94,7 @@ extents = Vector2( 60.1039, 35 )
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
 margin_right = 960.0
 margin_bottom = 480.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -124,7 +125,6 @@ centered = false
 [node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -293,6 +293,9 @@ shape = SubResource( 24 )
 
 [node name="Default" parent="." instance=ExtResource( 2 )]
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 1
+
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 40, 411 )
 
@@ -300,8 +303,6 @@ position = Vector2( 40, 411 )
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
-
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]

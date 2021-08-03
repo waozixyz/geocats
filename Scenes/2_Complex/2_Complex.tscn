@@ -658,6 +658,7 @@ extents = Vector2( 690.476, 23.832 )
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 2400.0
 margin_bottom = 1200.0
+mouse_filter = 2
 stretch = true
 stretch_shrink = 4
 __meta__ = {
@@ -677,6 +678,7 @@ margin_left = -252.0
 margin_top = -123.0
 margin_right = 890.0
 margin_bottom = 419.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -685,6 +687,7 @@ __meta__ = {
 [node name="Sky" type="ColorRect" parent="ViewportContainer/Viewport"]
 margin_right = 108.0
 margin_bottom = 270.0
+mouse_filter = 2
 color = Color( 0.67451, 0.768627, 0.764706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -695,6 +698,7 @@ margin_left = 109.0
 margin_top = -3.0
 margin_right = 542.0
 margin_bottom = 275.0
+mouse_filter = 2
 color = Color( 0.733333, 0.627451, 0.364706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1246,6 +1250,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 81 )
 animation = "idle"
+frame = 5
 playing = true
 centered = false
 
@@ -1297,7 +1302,8 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 0
 
 [editable path="Default"]
+[editable path="Default/Affogato"]
 [editable path="Default/Player"]
