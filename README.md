@@ -2,7 +2,7 @@
 
 # Geocats
 
-### Perquisites
+### Prerequisites
  - [Godot Engine](https://godotengine.org/)
  - Catnip (optional)
 
