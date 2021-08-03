@@ -21,7 +21,7 @@ or as an [archive](https://git.disroot.org/Nonaco/Geocats/Nonaco/Geocats/archive
 ### Have fun!
 
 ### Collaborate
-We are always looking for ways to collaborate. If you are interested email us [here](mailto://geocats@protonmail.com)
+We are always looking for ways to collaborate. If you are interested email us [here](mailto:geocats@protonmail.com)
 
 ### Project Chat Rooms
  - [Telegram](https://t.me/GeocatsOfficial)
