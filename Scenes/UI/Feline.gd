@@ -1,8 +1,11 @@
-extends CanvasLayer
+extends Control
 
 onready var base = $Base
 onready var eyes = $Base/Eyes
 onready var icons = $Base/Icons
+
+# feline map
+onready var feline_map = get_tree().get_current_scene().get_node("Default/CanvasLayer/FelineMap")
 
 ## buttons
 onready var bt_exit = icons.get_node("Exit")
@@ -22,6 +25,10 @@ func check(button, action):
 		area.pressed = false
 		if action == "exit":
 			active = false
+		if action == "map":
+			feline_map.visible = true
+			active = false
+			
 	if area.hovered:
 		rect.visible = true
 	else:

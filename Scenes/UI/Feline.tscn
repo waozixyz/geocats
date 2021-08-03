@@ -19,8 +19,13 @@ extents = Vector2( 364.184, 68.0394 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 42.8969, 43.563 )
 
-[node name="Control" type="CanvasLayer"]
+[node name="FelineNav" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Base" type="Sprite" parent="."]
 position = Vector2( 165.036, 71.6721 )
