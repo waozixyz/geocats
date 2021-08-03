@@ -614,6 +614,9 @@ position = Vector2( 4124, 689 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat"]
 shape = SubResource( 35 )
@@ -698,6 +701,9 @@ shape = SubResource( 39 )
 position = Vector2( 1600, 311 )
 collision_layer = 2
 collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garbitage"]
 position = Vector2( 27, 33 )
@@ -738,15 +744,15 @@ shape = SubResource( 39 )
 
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 2
+
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 4601, 945 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
 limit_bottom = 1200
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )

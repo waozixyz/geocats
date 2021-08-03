@@ -13,7 +13,7 @@ var data =  {
 	"prog_dia": {},
 	"player_hp": 100.0,
 	"nav_visible": {},
-	"nav_unlocked": {},
+	"nav_unlocked": {"CatCradle": true},
 }
 
 func _enter_tree():

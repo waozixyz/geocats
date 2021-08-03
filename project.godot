@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Entity/Entity.gd"
 }, {
+"base": "Control",
+"class": "Feline",
+"language": "GDScript",
+"path": "res://Scenes/UI/Feline.gd"
+}, {
+"base": "Area2D",
+"class": "MainInteract",
+"language": "GDScript",
+"path": "res://Scenes/UI/MainInteract.gd"
+}, {
 "base": "Entity",
 "class": "Player",
 "language": "GDScript",
@@ -32,6 +42,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BasePlayerState": "",
 "Entity": "",
+"Feline": "",
+"MainInteract": "",
 "Player": "",
 "PlayerFSM": ""
 }

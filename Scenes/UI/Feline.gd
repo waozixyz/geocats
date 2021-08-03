@@ -1,75 +1,60 @@
 extends Control
+class_name Feline
 
-onready var base = $Base
-onready var eyes = $Base/Eyes
-onready var icons = $Base/Icons
+func _unselect_others(device):
+	for child in device.get_children():
+		child.selected = false
 
-# feline map
-onready var feline_map = get_tree().get_current_scene().get_node("Default/CanvasLayer/FelineMap")
+func _action(child):
+	return
 
-## buttons
-onready var bt_exit = icons.get_node("Exit")
-onready var bt_map = icons.get_node("Map")
-onready var bt_location = icons.get_node("Location")
-onready var bt_return = icons.get_node("Return")
+func _get_id(device, id, diff):
+	var start_id = id
+	id += diff
+	if id < 0:
+		id += device.get_child_count()
+	if id > device.get_child_count() - 1:
+		id -= device.get_child_count()
 
-var active : bool = false
+	while device.get_child(id).disabled:
+		id += diff
+		if id < 0:
+			id = device.get_child_count() - 1
+		if id > device.get_child_count() - 1:
+			id = 0
+		if id == start_id:
+			return -1
 
-func _ready():
-	pass
-
-func check(button, action):
-	var rect = button.get_node("ColorRect")
-	var area = button.get_node("Area2D")
-	if area.pressed:
-		area.pressed = false
-		if action == "exit":
-			active = false
-		if action == "map":
-			feline_map.visible = true
-			active = false
+	return id
+func _get_ids(device):
+	current_id = -1
+	prev_id = -1
+	next_id = -1
+	for id in device.get_child_count():
+		var child = device.get_child(id)
+		if child.selected and not child.disabled:
+			current_id = id
 			
-	if area.hovered:
-		rect.visible = true
-	else:
-		rect.visible = false
+			var num = -1
+			prev_id = _get_id(device, id, -1)
+			next_id = _get_id(device, id, +1)
+			return
 
-var ticks = 0
-func _process(delta):
-	if active:
-		if ticks < 10 :
-			eyes.frame = 2
-		if ticks == 10:
-			eyes.frame = 1
-		## make icons visible
-		if ticks > 15:
-			eyes.visible = false
-			icons.visible = true
-			
-			# exit button
-			check(bt_exit, "exit")
-			check(bt_map, "map")
-			check(bt_location, "location")
-			check(bt_return, "menu")
 
-		else:
-			icons.visible = false
-			eyes.visible = true
-
-		if ticks < 30:
-			ticks += .5
-		base.visible = true
-	else:
-		# start shutdown and hide feline
-		base.visible = false
-		if ticks > 0:
-			if ticks == 14:
-				ticks = 5
-			ticks -= .5
-	
-func _input(event):
-	if event.is_action_pressed("escape"):
-		if active:
-			active = false
-		else:
-			active = true
+var current_id
+var prev_id
+var next_id
+func input(device, event):
+	_get_ids(device)
+	if event.is_action_pressed("ui_accept"):
+		var child = device.get_child(current_id)
+		if child and not child.disabled:
+			_action(child)
+	if prev_id != -1:
+		if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_up"):
+			_unselect_others(device)
+			device.get_child(prev_id).selected = true
+	if next_id != -1:
+		if event.is_action_pressed("ui_right") or event.is_action_pressed("ui_down"):
+			_unselect_others(device)
+			device.get_child(next_id).selected = true

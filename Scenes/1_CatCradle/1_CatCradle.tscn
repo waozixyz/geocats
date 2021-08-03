@@ -28,7 +28,7 @@
 [ext_resource path="res://Assets/Levels/1_CatCradle/last_ladder.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/1_CatCradle/statue.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/1_CatCradle/Exit.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/1_CatCradle/Interact.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=32]
@@ -1270,7 +1270,7 @@ autoplay = true
 [node name="Default" parent="." instance=ExtResource( 28 )]
 
 [node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 1283, 194 )
@@ -1280,7 +1280,7 @@ limit_right = 2150
 limit_bottom = 1080
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

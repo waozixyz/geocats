@@ -249,7 +249,6 @@ func update_dialogue(step): # step == whole dialogue block
 				
 		'divert': # Simple way to create complex dialogue trees
 			not_question()
-			print(step['true'])
 			match step['condition']:
 				'boolean':
 					if progress.get(step['dictionary']).has(step['variable']):

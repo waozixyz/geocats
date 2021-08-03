@@ -38,7 +38,6 @@ __meta__ = {
 }
 
 [node name="CatCradle" type="Area2D" parent="Device"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/CatCradle"]
@@ -51,20 +50,17 @@ centered = false
 [node name="Lock" type="Sprite" parent="Device/CatCradle"]
 visible = false
 position = Vector2( 63.1577, 70 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/CatCradle"]
 visible = false
 position = Vector2( 63.1577, 70 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Map" type="Sprite" parent="Device/CatCradle"]
 position = Vector2( 53.1577, 71.8543 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 15 )
 centered = false
 
@@ -91,7 +87,6 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="Complex" type="Area2D" parent="Device"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/Complex"]
@@ -102,20 +97,17 @@ centered = false
 
 [node name="Lock" type="Sprite" parent="Device/Complex"]
 position = Vector2( 171, 70 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/Complex"]
 position = Vector2( 171, 70 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Map" type="Sprite" parent="Device/Complex"]
 visible = false
 position = Vector2( 151, 65.955 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 centered = false
 
@@ -142,7 +134,6 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="GeoCity" type="Area2D" parent="Device"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/GeoCity"]
@@ -153,20 +144,17 @@ centered = false
 
 [node name="Lock" type="Sprite" parent="Device/GeoCity"]
 position = Vector2( 287.507, 70 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Unlock" type="Sprite" parent="Device/GeoCity"]
 position = Vector2( 287.507, 70 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Map" type="Sprite" parent="Device/GeoCity"]
 visible = false
 position = Vector2( 277.507, 65.9553 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -193,7 +181,6 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="Creek" type="Area2D" parent="Device"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Label" type="Sprite" parent="Device/Creek"]
@@ -242,7 +229,6 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="Litterbox" type="Area2D" parent="Device"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Map" type="Sprite" parent="Device/Litterbox"]
@@ -291,7 +277,6 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="Lodge" type="Area2D" parent="Device"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Map" type="Sprite" parent="Device/Lodge"]
