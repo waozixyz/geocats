@@ -1269,9 +1269,6 @@ autoplay = true
 
 [node name="Default" parent="." instance=ExtResource( 28 )]
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 0
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 1283, 194 )
 
@@ -1280,7 +1277,7 @@ limit_right = 2150
 limit_bottom = 1080
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 1
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
