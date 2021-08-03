@@ -30,20 +30,23 @@ func _update_ui():
 			if key == child.name:
 				unlock.visible = true
 				lock.visible = false
-		if child.pressed and unlock.visible:
-			nv[child.name] = true
-			child.pressed = false
+
 		for key in nv:
 			if key == child.name:
 				unlock.visible = false
 				map.visible = true
 				label.visible = true
+		if child.pressed and unlock.visible:
+			nv[child.name] = true
+			child.pressed = false
 		if child.hovered and (map.visible or unlock.visible):
 			child.selected = true
 			_unselect_others(child.name)
 
 
-	
+		if child.pressed:
+			SceneChanger.change_scene(child.name, 0, "", 1)
+			visible = false
 		if child.selected:
 			cat.visible = true
 			rect.visible = true

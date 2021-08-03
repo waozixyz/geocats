@@ -246,7 +246,6 @@ scale = Vector2( 1, 1 )
 script = ExtResource( 18 )
 
 [node name="Map" type="Sprite" parent="Device/Litterbox"]
-visible = false
 position = Vector2( 168.893, 186.902 )
 texture = ExtResource( 6 )
 centered = false
