@@ -51,9 +51,6 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 1 )]
 position = Vector2( 402, 304 )
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 1
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( -284, 125 )
 
