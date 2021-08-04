@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -8,9 +8,11 @@
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidcliff.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/7_Mountain/ring.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/7_Mountain/Interact.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Chat.gd" type="Script" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -75,6 +77,69 @@ extents = Vector2( 108, 60 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 50, 50 )
 
+[sub_resource type="GDScript" id=19]
+script/source = "extends Entity
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $ViewportContainer/Viewport/AnimatedSprite
+	to_rotate = $ViewportContainer
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = false
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 33, 47 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 16, 19 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 16, 19 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "idle",
+"speed": 0.3
+} ]
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 80, 49 )
+
 [node name="Mountain" type="Node2D"]
 
 [node name="BelowPlayer" type="ViewportContainer" parent="."]
@@ -109,15 +174,21 @@ centered = false
 
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
+[node name="Affogato" parent="Default" index="0"]
+visible = true
+
+[node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
+render_target_update_mode = 3
+
 [node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 0
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 74, 4870.94 )
@@ -128,7 +199,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 28
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
@@ -310,6 +381,46 @@ visible = false
 position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
+
+[node name="NonafestCat" type="KinematicBody2D" parent="."]
+position = Vector2( 2101, 2381 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NonafestCat"]
+shape = SubResource( 20 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="NonafestCat"]
+margin_left = -34.0
+margin_top = -32.0
+margin_right = 33.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="NonafestCat/ViewportContainer"]
+size = Vector2( 16, 19 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NonafestCat/ViewportContainer/Viewport"]
+frames = SubResource( 23 )
+animation = "idle"
+playing = true
+centered = false
+
+[node name="Area2D" type="Area2D" parent="NonafestCat"]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NonafestCat/Area2D"]
+shape = SubResource( 24 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
