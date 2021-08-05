@@ -5,25 +5,25 @@
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Menu_Music.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Fonts/GeoType17.tres" type="DynamicFont" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( 270, 0, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 150, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
 region = Rect2( 270, 150, 270, 150 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -32,7 +32,7 @@ animations = [ {
 [sub_resource type="DynamicFontData" id=6]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=12]
 size = 10
 font_data = SubResource( 6 )
 
@@ -87,8 +87,8 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 9.53674e-07, 0 )
 scale = Vector2( 2.37407, 2.4 )
-frames = SubResource( 5 )
-frame = 3
+frames = SubResource( 11 )
+frame = 2
 speed_scale = 0.1
 playing = true
 centered = false
@@ -114,7 +114,7 @@ margin_left = 46.0
 margin_top = 365.0
 margin_right = 611.0
 margin_bottom = 377.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.768627, 0.105882, 0.67451, 1 )
 text = "Email or Password Incorrect"
 align = 1
@@ -128,7 +128,7 @@ margin_left = 46.0
 margin_top = 365.0
 margin_right = 611.0
 margin_bottom = 377.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.768627, 0.105882, 0.67451, 1 )
 text = "GeoKey Missing"
 align = 1
