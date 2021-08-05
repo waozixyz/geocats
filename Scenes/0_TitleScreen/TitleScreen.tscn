@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/0_TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/0_TitleScreen/Slideshow.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Menu_Music.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Fonts/GeoType17.tres" type="DynamicFont" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -54,20 +56,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Username" type="TextEdit" parent="."]
-margin_left = 54.0
+[node name="Username" type="LineEdit" parent="."]
+margin_left = 45.0
 margin_top = 382.0
-margin_right = 276.0
-margin_bottom = 436.0
+margin_right = 267.0
+margin_bottom = 432.0
+placeholder_text = "Enter Vulkan Email"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Password" type="TextEdit" parent="."]
-margin_left = 297.0
+[node name="Password" type="LineEdit" parent="."]
+margin_left = 288.0
 margin_top = 382.0
-margin_right = 504.0
-margin_bottom = 436.0
+margin_right = 510.0
+margin_bottom = 432.0
+secret = true
+placeholder_text = "Enter Vulkan Password"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,7 +81,22 @@ __meta__ = {
 position = Vector2( 9.53674e-07, 0 )
 scale = Vector2( 2.36667, 2.4 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 9.0
+margin_top = 450.0
+margin_right = 246.0
+margin_bottom = 475.0
+custom_fonts/font = ExtResource( 4 )
+text = "V1 - Primary Survey"
+__meta__ = {
+"_edit_use_anchors_": false
+}
