@@ -2,6 +2,7 @@ extends Feline
 
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 onready var device = $Device
+onready var label = $Label
 
 func _ready():
 	var first_child = device.get_node("CatCradle")
@@ -13,7 +14,19 @@ func _action(child):
 	SceneChanger.change_scene(child.name, 0, "", 1)
 	visible = false
 
-
+func _get_label_name(cm):
+	if cm == "CatCradle": 
+		return "\"Cat's Cradel\""
+	elif cm == "Complex":
+		return "\"NONACO Housing Project #420\""
+	elif cm == "GeoCity":
+		return "\"GeoCity\""
+	elif cm == "Creek":
+		return "\"Canopy Creek\""
+	elif cm == "LitterBox":
+		return "\"The Great Litterbox\""
+	elif cm == "Lodge":
+		return "\"GeoLodge\""
 # Called when the node enters the scene tree for the first time.
 func _update_ui():
 	var unlocked = global.data.nav_unlocked
@@ -23,11 +36,11 @@ func _update_ui():
 		var unlock = child.get_node("Unlock")
 		var lock = child.get_node("Lock")
 		var map = child.get_node("Map")
-		var label = child.get_node("Label")
+
 		var rect = child.get_node("ColorRect")
 		var cat = child.get_node("Cat")
 		map.visible = false
-		label.visible = false
+
 		unlock.visible = false
 		lock.visible = true
 		child.disabled = true
@@ -40,7 +53,7 @@ func _update_ui():
 			if key == child.name:
 				unlock.visible = false
 				map.visible = true
-				label.visible = true
+
 		if child.pressed and unlock.visible:
 			nv[child.name] = true
 			child.pressed = false
@@ -54,6 +67,7 @@ func _update_ui():
 		if child.selected:
 			cat.visible = true
 			rect.visible = true
+			label.text = _get_label_name(child.name)
 		else:
 			cat.visible = false
 			rect.visible = false

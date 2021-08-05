@@ -1,8 +1,8 @@
 extends Feline
 
 # feline map
-onready var feline_map = get_tree().get_current_scene().get_node("Default/CanvasLayer/FelineMap")
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var feline_map = get_parent().get_node("FelineMap")
+onready var player =  get_parent().get_parent().get_node("Player")
 onready var device = $Base/Icons
 onready var base = $Base
 onready var eyes = $Base/Eyes
