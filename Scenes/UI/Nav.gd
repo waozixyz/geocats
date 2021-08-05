@@ -17,6 +17,10 @@ func _ready():
 func _action(child):
 	if child.name == "Exit":
 		active = false
+	if child.name == "Return":
+		active = false
+		Data.saveit()
+		get_tree().quit()
 	if child.name == "Map":
 		feline_map.visible = true
 		active = false
