@@ -17,6 +17,9 @@ func _ready():
 func _action(child):
 	if child.name == "Exit":
 		active = false
+	if child.name == "Location":
+		visible = false
+		SceneChanger.change_scene("TitleScreen", 0, "", 1)
 	if child.name == "Return":
 		active = false
 		Data.saveit()

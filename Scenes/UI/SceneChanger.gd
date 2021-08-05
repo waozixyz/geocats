@@ -18,6 +18,8 @@ func _get_scene():
 	var pos = null
 	var dir = 1
 	match scene:
+		"TitleScreen":
+			return ["res://Scenes/0_TitleScreen/TitleScreen.tscn", pos, dir]
 		"CatCradle":
 			match location:
 				1: 
@@ -104,11 +106,11 @@ func _input(event):
 func _new_scene():
 	Sprite.visible = false
 	Container.visible = false
-	global.data.scene = scene
-	global.data.location = location
+	if scene != "TitleScreen":
+		global.data.scene = scene
+		global.data.location = location
+		global.data.nav_unlocked[scene] = true
 	var scene_data = _get_scene()
-	global.data.nav_unlocked[scene] = true
-
 
 	get_tree().change_scene(scene_data[0])
 

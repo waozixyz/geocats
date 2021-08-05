@@ -28,6 +28,13 @@ func _ready():
 	play_button.connect("pressed", self, "_login_pressed")
 	http_request.connect("request_completed", self, "_on_request_completed")
 
+func _input(event):
+	if event.is_action_pressed("enter"):
+		_login_pressed()
+	
+	if event.is_action_pressed("escape"):
+		get_tree().quit()
+	
 func _login_pressed():
 	var body = { "Email": email.text, "Password": password.text}
 	# Convert data to json string:
