@@ -1,0 +1,12 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "move_in",
+    "position": "left",
+    "type": "question",
+    "text": "Danger! Emergency teleport!",
+    "options": ["accept"],
+    "next": [""]
+  },
+}

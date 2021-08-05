@@ -1,10 +1,10 @@
 extends CanvasLayer
 
-
+onready var chat_with = $ChatWith
 onready var Sprite = $ViewportContainer/Viewport/AnimatedSprite
 onready var Container = $Container
 onready var MusicPlayer = $AudioStreamPlayer
-onready var respawn = $Respawn
+
 
 var location : int
 var scene : String 
@@ -93,13 +93,16 @@ func _physics_process(delta):
 		if timer  > load_time:
 			_new_scene()
 	if global.data.player_hp < 1:
-		respawn.visible = true
+		chat_with.start("feline_emergency_teleport")
+		chat_with.visible = true
 		get_tree().paused = true
+	else:
+		chat_with.visible = false
 
 func _input(event):
-	if respawn.visible:
+	if chat_with.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
-			respawn.visible = false
+			chat_with.visible = false
 			global.data.player_hp = 100.0
 			change_scene(get_tree().get_current_scene().name, 0, "", 1)
 	
