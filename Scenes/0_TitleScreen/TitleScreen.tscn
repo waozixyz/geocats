@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/0_TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/0_TitleScreen/Slideshow.png" type="Texture" id=2]
@@ -29,7 +29,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Control" type="Control"]
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 10
+font_data = SubResource( 6 )
+
+[node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -39,7 +46,7 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_top = 360.0
-margin_right = 639.0
+margin_right = 641.0
 margin_bottom = 480.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -56,7 +63,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Username" type="LineEdit" parent="."]
+[node name="Email" type="LineEdit" parent="."]
 margin_left = 45.0
 margin_top = 382.0
 margin_right = 267.0
@@ -79,9 +86,9 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 9.53674e-07, 0 )
-scale = Vector2( 2.36667, 2.4 )
+scale = Vector2( 2.37407, 2.4 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 speed_scale = 0.1
 playing = true
 centered = false
@@ -90,13 +97,41 @@ centered = false
 stream = ExtResource( 3 )
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Version" type="Label" parent="."]
 margin_left = 9.0
 margin_top = 450.0
 margin_right = 246.0
 margin_bottom = 475.0
 custom_fonts/font = ExtResource( 4 )
 text = "V1 - Primary Survey"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mistake" type="Label" parent="."]
+visible = false
+margin_left = 46.0
+margin_top = 365.0
+margin_right = 611.0
+margin_bottom = 377.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.768627, 0.105882, 0.67451, 1 )
+text = "Email or Password Incorrect"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoKey" type="Label" parent="."]
+visible = false
+margin_left = 46.0
+margin_top = 365.0
+margin_right = 611.0
+margin_bottom = 377.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.768627, 0.105882, 0.67451, 1 )
+text = "GeoKey Missing"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
