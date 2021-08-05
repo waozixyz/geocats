@@ -8,8 +8,8 @@ var disabled : bool
 var parent_name : String
 var convo_file : String
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	assert(connect("body_entered", self, "_on_body_entered") == 0)
+	assert(connect("body_exited", self, "_on_body_exited") == 0)
 
 func _get_complex_convo():
 	var scene_name = get_tree().get_current_scene().name
@@ -41,7 +41,7 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		hide_chat()
 
-func _process(delta):
+func _process(_delta):
 	if disabled and active:
 		hide_chat()
 	if active and "idle" in get_parent():
@@ -50,7 +50,7 @@ func _process(delta):
 		else:
 			get_parent().idle = false
 
-func _input(event):
+func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
 			chat_with.start(convo_file)

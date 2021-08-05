@@ -83,7 +83,7 @@ func change_scene(new_scene, new_location, sound, volume):
 	Sprite.visible = true
 	Container.visible = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if change:
 		timer += 1
 		if timer  > load_time:
@@ -112,7 +112,7 @@ func _new_scene():
 		global.data.nav_unlocked[scene] = true
 	var scene_data = _get_scene()
 
-	get_tree().change_scene(scene_data[0])
+	assert(get_tree().change_scene(scene_data[0]) == 0)
 
 	global.player_position = scene_data[1]
 	global.player_direction = scene_data[2]

@@ -74,7 +74,7 @@ func _update_ui():
 	global.data.nav_visible = nv
 
 var last_visible = false
-func _process(delta):
+func _process(_delta):
 	if last_visible != visible:
 		if visible:
 			if player:

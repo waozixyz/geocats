@@ -117,15 +117,14 @@ var shaking : bool = false
 
 func _ready():
 	set_physics_process(true)
-	timer.connect('timeout', self, '_on_Timer_timeout')
-	sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout')
+	assert(timer.connect('timeout', self, '_on_Timer_timeout') == 0)
+	assert(sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout') == 0)
 	set_frame()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if shaking:
 		sprite.offset = Vector2(rand_range(-1.0, 1.0) * shake_amount, rand_range(-1.0, 1.0) * shake_amount)
-	pass
 
 
 func set_frame(): # Mostly aligment operations.
@@ -374,7 +373,6 @@ func check_newlines(string):
 func clean_bbcode(string):
 	phrase = string
 	var pause_search = 0
-	var line_search = 0
 	
 	pause_search = phrase.find('%s' % pause_char, pause_search)
 	
@@ -646,20 +644,21 @@ func animate_sprite(direction, image, animation):
 			on_animation = true
 
 
-func load_image(sprite, image):
-	sprite.texture = load('%s/%s' % [characters_folder, image])
-	var w = sprite.texture.get_width()
+func load_image(spr, image):
+	spr.texture = load('%s/%s' % [characters_folder, image])
+	var w = spr.texture.get_width()
 	if w > 100:
-		sprite.scale = Vector2(.5,.5)
+		spr.scale = Vector2(.5,.5)
 	elif w > 20:
-		sprite.scale = Vector2(2.8, 2.8)
+		spr.scale = Vector2(2.8, 2.8)
 	elif w > 14:
-		sprite.scale = Vector2(5,5)
+		spr.scale = Vector2(5,5)
 	elif w > 9:
-		sprite.scale = Vector2(7,7)
+		spr.scale = Vector2(7,7)
 	else:
-		sprite.scale = Vector2(10,10)
-func question(text, options, next):
+		spr.scale = Vector2(10,10)
+
+func question(_text, options, _next):
 	check_pauses(label.get_text())
 	var n = 0 # Just a looping var.
 	var choice_node_align_x = 0

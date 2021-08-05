@@ -8,7 +8,7 @@ onready var crt = $ColorRect
 var org_noise = 0.05
 
 # Called when the node enters the scene tree for the first time.
-func _process(delta):
+func _process(_delta):
 	var hp = global.data.player_hp / 100
 	var noise = (1 - hp) * .5 + org_noise
 	if global.crt_noise != noise:

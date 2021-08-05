@@ -27,7 +27,7 @@ func check_child_collision(child):
 		return false
 
 
-func apply_gravity (delta: float):
+func apply_gravity (_delta: float):
 	velocity.y += gravity
 
 func _ready():

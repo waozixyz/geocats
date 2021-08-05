@@ -24,7 +24,7 @@ var lastDiff = 0
 var diff = 0
 var climbing = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var scene_name = get_tree().get_current_scene().name
 	var donut_open = PROGRESS.variables.get("donut_open")
 	var follow = PROGRESS.variables.get("follow")

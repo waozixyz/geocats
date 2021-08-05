@@ -20,7 +20,7 @@ func stop():
 		visible = false
 
 	#get_parent().idle = false
-func _process(delta):
+func _process(_delta):
 	if dialogue.frame.visible:
 		panel.visible = false
 		started = true

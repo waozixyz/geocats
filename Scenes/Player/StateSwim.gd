@@ -7,7 +7,7 @@ var water_friction : float = 150
 func enter_logic(player: KinematicBody2D):
 	player.velocity *= 0.5
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	if player.on_ladder and player.vertical != 0:
 		return "climb"
 

@@ -48,7 +48,7 @@ func _check(child):
 
 var ticks = 0
 var last_visible = false
-func _process(delta):
+func _process(_delta):
 	if last_visible != base.visible:
 		if base.visible:
 			if player:

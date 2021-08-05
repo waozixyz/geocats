@@ -10,12 +10,12 @@ func _ready():
 #################################################
 # Player State Base
 #################################################
-func enter_logic(player: KinematicBody2D):
+func enter_logic(_player: KinematicBody2D):
 	pass
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(_player: KinematicBody2D, _delta: float):
 	return null
 
-func exit_logic(player: KinematicBody2D):
+func exit_logic(_player: KinematicBody2D):
 	pass
 #################################################

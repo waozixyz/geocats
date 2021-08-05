@@ -10,7 +10,7 @@ func enter_logic(player: KinematicBody2D):
 	player.play("climb")
 	player.vx = 0
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	if player.ladder_rot != 0:
 		var diff_y = player.position.y / player.ladder_y
 		player.position.x = player.ladder_x - 25 *  (diff_y - 1) * player.ladder_rot

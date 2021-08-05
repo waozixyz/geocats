@@ -5,7 +5,7 @@ func _unselect_others(device):
 	for child in device.get_children():
 		child.selected = false
 
-func _action(child):
+func _action(_child):
 	return
 
 func _get_id(device, id, diff):
@@ -35,7 +35,6 @@ func _get_ids(device):
 		if child.selected and not child.disabled:
 			current_id = id
 			
-			var num = -1
 			prev_id = _get_id(device, id, -1)
 			next_id = _get_id(device, id, +1)
 			return

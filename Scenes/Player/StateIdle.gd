@@ -10,7 +10,7 @@ func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
 	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	if player.currentSpeed > 0:
 		player.currentSpeed -= player.decceleration
 		if player.currentSpeed < 0:

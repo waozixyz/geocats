@@ -1,7 +1,7 @@
 extends BasePlayerState
 
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	player.play("walk")
 	player.move_horizontally(0)
 

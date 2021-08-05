@@ -6,7 +6,7 @@ func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
 	player.jump(jump_height)
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	player.default_anim()
 	player.move_horizontally(player.airFriction) #move horizontally
 	

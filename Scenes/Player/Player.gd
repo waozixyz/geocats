@@ -1,8 +1,8 @@
 extends Entity
 class_name Player
 
-var horizontal : int = 0
-var vertical : int = 0
+var horizontal : float = 0.0
+var vertical : float = 0.0
 var up : bool = false 
 
 var vx: float = 0 setget _set_vx, _get_vx
@@ -113,6 +113,7 @@ func _physics_process(delta):
 	if hp < 100:
 		hp += 0.1
 	global.data.player_hp = hp
+
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -152,8 +153,9 @@ func tween_to_ladder():
 		new_x = ladder_x - 25 *  (diff_y - 1) * ladder_rot
 
 	var target = Vector2(new_x, position.y)
-	tween.interpolate_property(self, "position", position, target,
-		0.05, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	# warning-ignore:return_value_discarded
+	tween.interpolate_property(self, "position", position, target, 0.05, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	   # warning-ignore:return_value_discarded
 	tween.start()
 
 func can_climb():

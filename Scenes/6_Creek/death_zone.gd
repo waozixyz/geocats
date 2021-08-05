@@ -5,13 +5,14 @@ onready var crt =  get_tree().get_current_scene().get_node("Default/CRT_Effect/C
 
 var inside = false
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	assert(connect("body_entered", self, "_on_body_entered") == 0)
+	assert(connect("body_exited", self, "_on_body_exited") == 0)
+
 func _on_body_entered(body):
 	if body.name == "Player":
 		inside = true
 
-func _process(delta):
+func _process(_delta):
 	if inside:
 		global.data.player_hp -= 2
 		

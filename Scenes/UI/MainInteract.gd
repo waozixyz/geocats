@@ -7,8 +7,9 @@ onready var chat_with =  get_tree().get_current_scene().get_node("Default/Canvas
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	assert(connect("body_entered", self, "_on_body_entered") == 0)
+	assert(connect("body_exited", self, "_on_body_exited") == 0)
+
 
 func _on_body_entered(body):
 	if body.name == "Player":

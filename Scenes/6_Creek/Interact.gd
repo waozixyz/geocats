@@ -1,7 +1,7 @@
 extends MainInteract
 
 
-func _input(event):
+func _input(_event):
 	if _can_interact():
 		if name == "CaveToDown":
 			player.position.x = 4420

@@ -5,8 +5,8 @@ signal splash
 #onready var splash : Particles2D = $Splash
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	assert(connect("body_entered", self, "_on_body_entered") == 0)
+	assert(connect("body_exited", self, "_on_body_exited") == 0)
 #	material.set_shader_param("sprite_scale", scale)
 	pass
 func _on_body_entered(body):

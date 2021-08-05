@@ -5,12 +5,12 @@ var hovered: bool = false
 var selected: bool = false
 var disabled: bool = false
 func _ready():
-	connect("input_event", self, "_on_input_event")
-	connect("mouse_entered", self, "_on_mouse_entered")
-	connect("mouse_exited", self, "_on_mouse_exited")
+	assert(connect("input_event", self, "_on_input_event") == 0)
+	assert(connect("mouse_entered", self, "_on_mouse_entered") == 0)
+	assert(connect("mouse_exited", self, "_on_mouse_exited") == 0)
 	set_process_input(true)
 
-func _on_input_event( viewport, event, shape_idx ):
+func _on_input_event(_viewport, event, _shape_idx ):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			pressed = true

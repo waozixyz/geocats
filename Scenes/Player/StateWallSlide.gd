@@ -9,7 +9,7 @@ func enter_logic(player: KinematicBody2D):
 	player.coll_slide.disabled = false
 	player.velocity = Vector2.ZERO #reset velocity to stop all momentum
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	player.vy = wall_slide_speed #override apply_gravity and apply a constant slide speed
 	if player.jumping and not player.is_on_ceiling():
 		if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):

@@ -7,7 +7,7 @@ func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
 	jumpBufferStartTime = OS.get_ticks_msec()	
 
-func logic(player: KinematicBody2D, delta: float):
+func logic(player: KinematicBody2D, _delta: float):
 	if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
 		return "wall_slide"
 
@@ -37,5 +37,5 @@ func logic(player: KinematicBody2D, delta: float):
 	if not player.is_on_wall():
 		player.move_horizontally(player.airFriction) #move horizontally
 	
-func exit_logic(player: KinematicBody2D):
+func exit_logic(_player: KinematicBody2D):
 	jumpBufferStartTime = 0 #reset jump buffer start time
