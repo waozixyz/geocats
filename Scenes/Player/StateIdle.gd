@@ -8,23 +8,36 @@ var elapsedIdleTime = 0 #how many milisecconds elapsed since you started being i
 
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
-	player.vx = 0
 	idleStartTime = OS.get_ticks_msec() #set dash start time to total ticks since the game started
-		
+
 func logic(player: KinematicBody2D, delta: float):
+	if player.currentSpeed > 0:
+		player.currentSpeed -= player.decceleration
+		if player.currentSpeed < 0:
+			player.currentSpeed = 0
 	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
-	if elapsedIdleTime > idleDurration:
-		player.play("blink")
-		if elapsedIdleTime - idleDurration > blinkDurration:
-			idleStartTime = OS.get_ticks_msec()
-	else:
-		player.play("idle")
+	player.move_horizontally()
 	if player.vertical > 0:
 		player.play("crouch")
 		if player.jumping and player.current_platforms:
 			player.fall_through()
 			return "fall"
+	elif player.vertical < 0:
+		if player.sprite.animation != "slide_wall":
+			player.position.y -= 5
+			player.coll_default.disabled = true
+			player.coll_slide.disabled = false
+		player.play("slide_wall")
+	else:
 		
+		player.coll_default.disabled = false
+		player.coll_slide.disabled = true
+		if elapsedIdleTime > idleDurration:
+			player.play("blink")
+			if elapsedIdleTime - idleDurration > blinkDurration:
+				idleStartTime = OS.get_ticks_msec()
+		else:
+			player.play("idle")
 
 	if player.vy > 0:
 		player.vy = 0

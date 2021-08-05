@@ -46,9 +46,9 @@ var previous_state : String setget ,_get_previous_state_tag
 var airFriction = 20 #how much you subtract velocity when you start moving horizontally in the air
 
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
-var maxSpeed = 500 #maximum current speed can reach when moving horizontally
-var acceleration = 60 #by how much does current speed approach max speed when moving
-var decceleration = 120 #by how much does velocity approach when you stop moving horizontally
+var maxSpeed = 300 #maximum current speed can reach when moving horizontally
+var acceleration = 10 #by how much does current speed approach max speed when moving
+var decceleration = 35 #by how much does velocity approach when you stop moving horizontally
 var disabled = false
 
 
@@ -77,7 +77,7 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
 						return true
 
-func move_horizontally(subtractor):
+func move_horizontally(subtractor = 0):
 	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 

@@ -1,6 +1,6 @@
 extends BasePlayerState
 
-export var climb_speed : float = 400
+export var climb_speed : float = 200
 
 func enter_logic(player: KinematicBody2D):
 	player.coll_default.disabled = true
@@ -8,6 +8,7 @@ func enter_logic(player: KinematicBody2D):
 	player.tween_to_ladder()
 	.enter_logic(player)
 	player.play("climb")
+	player.vx = 0
 
 func logic(player: KinematicBody2D, delta: float):
 	if player.ladder_rot != 0:

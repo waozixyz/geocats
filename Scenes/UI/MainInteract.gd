@@ -2,7 +2,7 @@ extends Area2D
 class_name MainInteract
 
 onready var button = $Button
-onready var sound = $Sound
+
 onready var chat_with =  get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 

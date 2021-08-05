@@ -83,6 +83,7 @@ singletons=[ "res://git_api.gdnlib" ]
 [global]
 
 gravity=true
+vsyng=false
 
 [importer_defaults]
 

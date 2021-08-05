@@ -32,7 +32,6 @@ func _action(child):
 
 func _check(child):
 	var rect = child.get_node("ColorRect")
-	var area = child.get_node("Area2D")
 
 	if child.pressed:
 		child.pressed = false

@@ -10,7 +10,7 @@ var location : int
 var scene : String 
 var prev_scene : String
 var timer : int
-var load_time : int 
+var load_time : int = 40
 var change : bool
 
 
@@ -67,8 +67,6 @@ func _get_scene():
 		"Mountain":	
 			return ["res://Scenes/7_Mountain/7_Mountain.tscn", pos, dir]
 
-func _ready():
-	timer = OS.get_ticks_msec() * 0.01
 	
 func change_scene(new_scene, new_location, sound, volume):
 	if not sound == "":
@@ -81,15 +79,13 @@ func change_scene(new_scene, new_location, sound, volume):
 	scene = new_scene
 	location = new_location
 	
-	load_time = timer + 5
 	change = true
 	Sprite.visible = true
 	Container.visible = true
 
 func _physics_process(delta):
-
-	timer = OS.get_ticks_msec() * 0.01
 	if change:
+		timer += 1
 		if timer  > load_time:
 			_new_scene()
 	if global.data.player_hp < 1:
@@ -107,6 +103,7 @@ func _input(event):
 			change_scene(get_tree().get_current_scene().name, 0, "", 1)
 	
 func _new_scene():
+	timer = 0
 	Sprite.visible = false
 	Container.visible = false
 	if scene != "TitleScreen":
