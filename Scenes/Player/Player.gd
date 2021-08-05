@@ -103,6 +103,7 @@ func _physics_process(delta):
 
 	if disabled:
 		velocity.x = 0
+		play("idle")
 	else:
 		update_inputs()
 		state_machine.logic(delta)

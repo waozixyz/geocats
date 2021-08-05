@@ -1,0 +1,44 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "move_in",
+    "position": "left",
+    "type": "text",
+    "content": "Here, let me read you this encyclopedia page",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "I just looked up for GroundCat Creek.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "GroundCat Creek is the second studio album...",
+    "next": "4"
+  },
+  "4": {
+    "name": "Feline",
+    "avatar": "feline_unimpressed.png",
+    "animation_in": "move_in",
+    "position": "left",
+    "type": "text",
+    "content": "by GeoCity rock band Jose and the Humanoids...",
+    "next": "5"
+  },
+  "5": {
+    "name": "Feline",
+    "avatar": "feline_sleep.png",
+    "animation_in": "move_in",
+    "position": "left",
+    "type": "text",
+    "content": "...Huh? That wasn't very helpful.",
+    "next": ""
+  }
+}

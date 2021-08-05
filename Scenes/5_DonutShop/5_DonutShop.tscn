@@ -173,7 +173,6 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 70, 49 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -181,7 +180,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 68, 59 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -199,9 +197,6 @@ position = Vector2( 819, 415 )
 [node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
 render_target_update_mode = 3
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 0
-
 [node name="CollisionShape2D" parent="Default/Affogato" index="2"]
 position = Vector2( 0, -2 )
 
@@ -213,7 +208,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 22
+frame = 2
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0

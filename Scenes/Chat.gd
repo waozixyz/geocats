@@ -7,6 +7,7 @@ var active : bool
 var disabled : bool
 var parent_name : String
 var convo_file : String
+
 func _ready():
 	assert(connect("body_entered", self, "_on_body_entered") == 0)
 	assert(connect("body_exited", self, "_on_body_exited") == 0)
@@ -26,7 +27,7 @@ func show_chat():
 		chat_with.hide_after = false
 		chat_with.visible = true
 		chat_with.name_label.text = parent_name
-	
+
 func hide_chat():
 	if chat_with:
 		chat_with.visible = false

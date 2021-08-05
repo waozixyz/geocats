@@ -7,6 +7,7 @@ var started : bool = false
 var hide_after: bool = false
 func start(name, hide = false):
 	hide_after = hide
+	visible = true
 
 	if not started:
 		dialogue.exit()
