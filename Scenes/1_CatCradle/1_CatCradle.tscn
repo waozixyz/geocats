@@ -1269,8 +1269,11 @@ autoplay = true
 
 [node name="Default" parent="." instance=ExtResource( 28 )]
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 2
+
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1283, 194 )
+position = Vector2( 1297, 194 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2150
