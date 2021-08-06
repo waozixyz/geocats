@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_sixeight_loopable.ogg" type="AudioStream" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -212,7 +213,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 27
+frame = 33
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
@@ -235,14 +236,14 @@ render_target_update_mode = 3
 position = Vector2( 120, 275 )
 z_index = 4
 frames = SubResource( 27 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="CatnipCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 279 )
 z_index = 4
 frames = SubResource( 28 )
-frame = 13
+frame = 1
 playing = true
 
 [node name="ThinkingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
@@ -256,6 +257,7 @@ playing = true
 position = Vector2( 420, 476 )
 z_index = 4
 frames = SubResource( 31 )
+frame = 1
 playing = true
 
 [node name="clouds" type="Sprite" parent="AbovePlayer/Viewport"]
@@ -537,6 +539,10 @@ script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="catnip_cat/Area2D"]
 shape = SubResource( 24 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

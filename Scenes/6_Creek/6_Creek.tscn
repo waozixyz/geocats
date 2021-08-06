@@ -277,7 +277,6 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 9
 speed_scale = 2.0
 playing = true
 centered = false
@@ -285,7 +284,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 9
+frame = 4
 speed_scale = 1.5
 playing = true
 centered = false
@@ -293,7 +292,7 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 5
+frame = 2
 speed_scale = 2.2
 playing = true
 centered = false
@@ -301,7 +300,7 @@ centered = false
 [node name="HangingCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 1
+frame = 6
 playing = true
 centered = false
 
@@ -516,6 +515,9 @@ polygon = PoolVector2Array( 6991, 2155, 6617, 2154, 6449, 2213, 6387, 2213, 6289
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
+[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
+frame = 2
+
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 58, 3870 )
 scale = Vector2( 1.3, 1.3 )
@@ -526,7 +528,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 31
+frame = 10
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
