@@ -21,7 +21,7 @@ func _ready():
 var start_jump_time = 20
 var end_jump_time = 30
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not idle:
 		elapsed_time = OS.get_ticks_msec() * f - start_time
 

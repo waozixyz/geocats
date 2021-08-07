@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kitchen_background.png-b29a48e9be79cc63ed4428939ae379f6.stex"
+path="res://.import/Cats_Cradle.png-62fe62845045a5b38f2279eb7913c9b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat_cradle/kitchen_background.png"
-dest_files=[ "res://.import/kitchen_background.png-b29a48e9be79cc63ed4428939ae379f6.stex" ]
+source_file="res://Assets/Levels/1_CatCradle/Cats_Cradle.png"
+dest_files=[ "res://.import/Cats_Cradle.png-62fe62845045a5b38f2279eb7913c9b8.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

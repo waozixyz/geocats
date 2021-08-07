@@ -4,7 +4,7 @@ extends MainInteract
 onready var affogato =  get_tree().get_current_scene().get_node("Default/Affogato")
 
 
-func _input(event):
+func _input(_event):
 	if _can_interact():
 		if name == "UpElevator":
 			player.position.x = 1600
