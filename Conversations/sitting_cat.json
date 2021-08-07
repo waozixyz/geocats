@@ -1,0 +1,20 @@
+{
+  "first": {
+    "avatar": "sitting_cat.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "Were you at Nonafest last year?",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "What a party!",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "Lucky me, I've got nine lives...",
+    "next": ""
+  }
+}

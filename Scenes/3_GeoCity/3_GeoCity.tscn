@@ -599,7 +599,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Longcat/ViewportContainer/Viewport"]
 frames = SubResource( 38 )
 animation = "walk"
-frame = 1
 playing = true
 centered = false
 
@@ -644,7 +643,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Nonacat/ViewportContainer/Viewport"]
 frames = SubResource( 43 )
 animation = "walk"
-frame = 1
 playing = true
 centered = false
 
@@ -688,7 +686,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lasagne/ViewportContainer/Viewport"]
 frames = SubResource( 47 )
 animation = "walk"
-frame = 1
 playing = true
 centered = false
 flip_h = true
@@ -747,7 +744,7 @@ shape = SubResource( 39 )
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
 [node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 0
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 4601, 945 )
@@ -757,7 +754,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 14
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )

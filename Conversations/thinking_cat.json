@@ -1,0 +1,25 @@
+{
+  "first": {
+    "avatar": "thinking_cat.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "Ears that hear, but do not listen — ",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "are no better than eyes that see, but do not appreciate.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "...Now I'm wondering if there's anything I've missed.",
+    "next": ""
+  }
+}

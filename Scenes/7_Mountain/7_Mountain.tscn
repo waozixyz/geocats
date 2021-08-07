@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -8,11 +8,15 @@
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidcliff.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/7_Mountain/ring.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/7_Mountain/Interact.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Chat.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_sixeight_loopable.ogg" type="AudioStream" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -36,6 +40,78 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 47, 27 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 9 )
+region = Rect2( 47, 0, 47, 27 )
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 26 ), SubResource( 25 ), SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 49, 49 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 15 )
+region = Rect2( 49, 0, 49, 49 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 15 )
+region = Rect2( 98, 0, 49, 49 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 15 )
+region = Rect2( 147, 0, 49, 49 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 35 ), SubResource( 34 ), SubResource( 34 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.3
+} ]
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 40, 52 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 16 )
+region = Rect2( 40, 0, 40, 52 )
+
+[sub_resource type="SpriteFrames" id=39]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 36 ), SubResource( 37 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.3
+} ]
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 16, 19 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 14 )
+region = Rect2( 16, 0, 16, 19 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -72,73 +148,13 @@ extents = Vector2( 94.5837, 127.792 )
 extents = Vector2( 10, 3000 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 108, 60 )
+extents = Vector2( 54.9967, 49.9998 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="GDScript" id=19]
-script/source = "extends Entity
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $ViewportContainer/Viewport/AnimatedSprite
-	to_rotate = $ViewportContainer
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 32, 43 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 16, 19 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 9 )
-region = Rect2( 16, 0, 16, 19 )
-
-[sub_resource type="SpriteFrames" id=23]
-animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
-"loop": true,
-"name": "idle",
-"speed": 0.3
-} ]
-
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 80, 49 )
+extents = Vector2( 149, 97 )
 
 [node name="Mountain" type="Node2D"]
 
@@ -149,8 +165,6 @@ mouse_filter = 2
 stretch = true
 stretch_shrink = 5
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -178,7 +192,6 @@ centered = false
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 2
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -191,9 +204,6 @@ visible = true
 [node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
 render_target_update_mode = 3
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 0
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 74, 4870.94 )
 
@@ -203,7 +213,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 33
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
@@ -221,6 +231,34 @@ size = Vector2( 1000, 1000 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
+
+[node name="SleepingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 120, 275 )
+z_index = 4
+frames = SubResource( 27 )
+frame = 2
+playing = true
+
+[node name="CatnipCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 45, 279 )
+z_index = 4
+frames = SubResource( 28 )
+frame = 1
+playing = true
+
+[node name="ThinkingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 189, 270 )
+z_index = 4
+frames = SubResource( 39 )
+frame = 1
+playing = true
+
+[node name="SittingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 420, 476 )
+z_index = 4
+frames = SubResource( 31 )
+frame = 1
+playing = true
 
 [node name="clouds" type="Sprite" parent="AbovePlayer/Viewport"]
 texture = ExtResource( 5 )
@@ -290,7 +328,7 @@ shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="Walls" type="StaticBody2D" parent="Node2D"]
-position = Vector2( 2048.93, 4438.25 )
+position = Vector2( 2050.42, 4438.18 )
 collision_layer = 7
 collision_mask = 7
 
@@ -309,6 +347,10 @@ shape = SubResource( 14 )
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Node2D/Walls"]
 position = Vector2( -2048.93, -4438.25 )
 polygon = PoolVector2Array( 1859.96, 2076.94, 1874.12, 2013.7, 1900.55, 1980.67, 1973.23, 1971.23, 2100.18, 1976.42, 2214.39, 1997.66, 2338.98, 1990.58, 2399.76, 1962.79, 2432.42, 1959.9, 2495.8, 1944.78, 2549.82, 1944.78, 2569.03, 1962.79, 2599.04, 1962.79, 2599.04, 2075.63 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Node2D/Walls"]
+position = Vector2( -3740.7, -4600.24 )
+polygon = PoolVector2Array( 1689.08, 1968.79, 1722.69, 1954.38, 1776.71, 1937.58, 1828.33, 1942.38, 1879.95, 1936.37, 1989.2, 1926.77, 2111.64, 1924.37, 2265.31, 1878.75, 2352.94, 1867.95, 2462.19, 1839.14, 2517.41, 1833.13, 2559.42, 1829.53, 2573.83, 1822.33, 2679.47, 1821.13, 2962.79, 1835.53, 3015.61, 1876.35, 3024.01, 1955.58, 3030.01, 2036.01, 3009.6, 2087.64, 2990.4, 2104.44, 2981.99, 2171.67, 2936.37, 2229.29, 2909.96, 2337.34, 2867.95, 2444.18, 2733.49, 2541.42, 2654.26, 2643.46, 2588.24, 2752.7, 2584.63, 2793.52, 2531.81, 2912.37, 2491, 2979.59, 2423.77, 3108.04, 2374.55, 3303.72, 2333.73, 3517.41, 2336.13, 3692.68, 2308.52, 3756.3, 2234.09, 3829.53, 2163.27, 3943.58, 2124.85, 4008.4, 2142.86, 4121.25, 2176.47, 4204.08, 2180.07, 4303.72, 2174.07, 4343.34, 2154.86, 4356.54, 2116.45, 4430.97, 2091.24, 4447.78, 2009.6, 4645.86, 1915.97, 4774.31, 1697.48, 4991.6 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 418.053, -1408.24 )
@@ -339,11 +381,11 @@ rotation = 1.5708
 shape = SubResource( 16 )
 
 [node name="GoUp" type="Area2D" parent="."]
-position = Vector2( 1523.67, 4085.24 )
+position = Vector2( 1548, 4089 )
 script = ExtResource( 12 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoUp"]
-position = Vector2( 10.0032, 0 )
+position = Vector2( 2.9999, 4.00024 )
 shape = SubResource( 17 )
 
 [node name="Button" type="Sprite" parent="GoUp"]
@@ -386,21 +428,14 @@ position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
-[node name="NonafestCat" type="KinematicBody2D" parent="."]
-position = Vector2( 2101, 2381 )
-collision_layer = 2
-collision_mask = 2
-script = SubResource( 19 )
+[node name="sitting_cat" type="Node2D" parent="."]
+position = Vector2( 2106, 2372 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NonafestCat"]
-position = Vector2( 0, -8 )
-shape = SubResource( 20 )
-
-[node name="ViewportContainer" type="ViewportContainer" parent="NonafestCat"]
-margin_left = -34.0
-margin_top = -32.0
-margin_right = 33.0
-margin_bottom = 47.0
+[node name="ViewportContainer" type="ViewportContainer" parent="sitting_cat"]
+margin_left = -40.0
+margin_top = -23.0
+margin_right = 27.0
+margin_bottom = 56.0
 rect_pivot_offset = Vector2( 22.5, 12.5 )
 mouse_filter = 2
 stretch = true
@@ -409,24 +444,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="NonafestCat/ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="sitting_cat/ViewportContainer"]
 size = Vector2( 16, 19 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NonafestCat/ViewportContainer/Viewport"]
-frames = SubResource( 23 )
-animation = "idle"
-playing = true
-centered = false
-
-[node name="Area2D" type="Area2D" parent="NonafestCat"]
+[node name="Area2D" type="Area2D" parent="sitting_cat"]
 script = ExtResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NonafestCat/Area2D"]
-position = Vector2( -4, -9 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sitting_cat/Area2D"]
 shape = SubResource( 24 )
+
+[node name="thinking_cat" type="Node2D" parent="."]
+position = Vector2( 918, 1322 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="thinking_cat"]
+margin_left = -40.0
+margin_top = -23.0
+margin_right = 27.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="thinking_cat/ViewportContainer"]
+size = Vector2( 16, 19 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Area2D" type="Area2D" parent="thinking_cat"]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thinking_cat/Area2D"]
+shape = SubResource( 24 )
+
+[node name="sleeping_cat" type="Node2D" parent="."]
+position = Vector2( 597, 1362 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="sleeping_cat"]
+margin_left = -40.0
+margin_top = -23.0
+margin_right = 27.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="sleeping_cat/ViewportContainer"]
+size = Vector2( 16, 19 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Area2D" type="Area2D" parent="sleeping_cat"]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sleeping_cat/Area2D"]
+shape = SubResource( 24 )
+
+[node name="catnip_cat" type="Node2D" parent="."]
+position = Vector2( 253, 1367 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="catnip_cat"]
+margin_left = -40.0
+margin_top = -23.0
+margin_right = 27.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="catnip_cat/ViewportContainer"]
+size = Vector2( 16, 19 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Area2D" type="Area2D" parent="catnip_cat"]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="catnip_cat/Area2D"]
+shape = SubResource( 24 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

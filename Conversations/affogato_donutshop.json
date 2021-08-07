@@ -10,12 +10,12 @@
   },
   "1": {
     "type": "text",
-    "content": "Here, let me show you how to use the mapz function",
+    "content": "Here, let me show you how to use the mapz function to travel somewhere new and exciting!",
     "next": "2"
   },
   "2": {
     "type": "text",
-    "content": "To travel somewhere new and exciting!",
+    "content": "...",
     "next": "3"
   },
   "3": {
@@ -25,7 +25,7 @@
   },
   "4": {
     "name": "Feline",
-    "avatar": "feline.png",
+    "avatar": "feline_unimpressed.png",
     "animation_in": "move_in",
     "position": "left",
     "type": "text",
@@ -38,7 +38,7 @@
     "animation_in": "move_in",
     "position": "left",
     "type": "question",
-    "text": "Would you like to go to Canopy Creek?",
+    "text": "Would you like me to teleport you to Canopy Creek?",
     "options": ["yes", "no"],
     "next": ["yes_option", ""]
   },
@@ -54,7 +54,7 @@
     "avatar": "affogato.png",
     "position": "left",
     "type": "question",
-    "text": "Would you like to go to Canopy Creek?",
+    "text": "Are you ready to go to Canopy Creek?",
     "animation_in": "move_in",
     "options": ["yes", "no"],
     "next": ["yes_option", ""]

@@ -1,0 +1,15 @@
+{
+  "first": {
+    "avatar": "catnip_cat.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "...",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "I like catnip.",
+    "next": ""
+  }
+}
