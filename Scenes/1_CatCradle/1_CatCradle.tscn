@@ -339,7 +339,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 13
+frame = 21
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0

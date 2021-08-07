@@ -42,118 +42,118 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 47, 27 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 9 )
 region = Rect2( 47, 0, 47, 27 )
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 26 ), SubResource( 25 ), SubResource( 25 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 6 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 49, 49 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 15 )
 region = Rect2( 49, 0, 49, 49 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 15 )
 region = Rect2( 98, 0, 49, 49 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 15 )
 region = Rect2( 147, 0, 49, 49 )
 
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 35 ), SubResource( 34 ), SubResource( 34 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 11 ), SubResource( 11 ), SubResource( 10 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.3
 } ]
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 40, 52 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 16 )
 region = Rect2( 40, 0, 40, 52 )
 
-[sub_resource type="SpriteFrames" id=39]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 36 ), SubResource( 36 ), SubResource( 37 ), SubResource( 37 ) ],
+"frames": [ SubResource( 14 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.3
 } ]
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 16, 19 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 14 )
 region = Rect2( 16, 0, 16, 19 )
 
-[sub_resource type="SpriteFrames" id=31]
+[sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 29 ), SubResource( 30 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 263.429, 31.8784 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 363.695, 11.3206 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 417.327, 10.4514 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 143.323, 9.84888 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 259.303, 9.84888 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 264.105, 18.8103 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 333.22, 75.1597 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 14.0625, 259.238 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 549.106, 81.9512 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 94.5837, 127.792 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 10, 3000 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 54.9967, 49.9998 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 149, 97 )
 
 [node name="Mountain" type="Node2D"]
@@ -192,6 +192,7 @@ centered = false
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 2
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -205,7 +206,7 @@ visible = true
 render_target_update_mode = 3
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 74, 4870.94 )
+position = Vector2( 72, 4871 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -235,29 +236,28 @@ render_target_update_mode = 3
 [node name="SleepingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 120, 275 )
 z_index = 4
-frames = SubResource( 27 )
+frames = SubResource( 8 )
 frame = 2
 playing = true
 
 [node name="CatnipCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 279 )
 z_index = 4
-frames = SubResource( 28 )
-frame = 1
+frames = SubResource( 13 )
+frame = 9
 playing = true
 
 [node name="ThinkingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 189, 270 )
 z_index = 4
-frames = SubResource( 39 )
+frames = SubResource( 16 )
 frame = 1
 playing = true
 
 [node name="SittingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 420, 476 )
 z_index = 4
-frames = SubResource( 31 )
-frame = 1
+frames = SubResource( 19 )
 playing = true
 
 [node name="clouds" type="Sprite" parent="AbovePlayer/Viewport"]
@@ -290,41 +290,41 @@ polygon = PoolVector2Array( 5945.85, 2997.91, 5933.5, 2945, 5892.64, 2857.73, 57
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 1902.76, 3087.64 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2008.4, 3066.03 )
-shape = SubResource( 7 )
+shape = SubResource( 21 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2008.4, 3001.2 )
-shape = SubResource( 7 )
+shape = SubResource( 21 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2056.42, 2665.07 )
-shape = SubResource( 8 )
+shape = SubResource( 22 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2056.42, 2599.04 )
-shape = SubResource( 8 )
+shape = SubResource( 22 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2454.98, 2312.12 )
-shape = SubResource( 9 )
+shape = SubResource( 23 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 2050.42, 2387.76 )
-shape = SubResource( 10 )
+shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2( 1902.76, 2583.43 )
-shape = SubResource( 11 )
+shape = SubResource( 25 )
 one_way_collision = true
 
 [node name="Walls" type="StaticBody2D" parent="Node2D"]
@@ -334,15 +334,15 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( -118.468, 615.335 )
-shape = SubResource( 12 )
+shape = SubResource( 26 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 415.331, -1877.98 )
-shape = SubResource( 13 )
+shape = SubResource( 27 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 1.48633, -2279.79 )
-shape = SubResource( 14 )
+shape = SubResource( 28 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Node2D/Walls"]
 position = Vector2( -2048.93, -4438.25 )
@@ -354,7 +354,7 @@ polygon = PoolVector2Array( 1689.08, 1968.79, 1722.69, 1954.38, 1776.71, 1937.58
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 418.053, -1408.24 )
-shape = SubResource( 15 )
+shape = SubResource( 29 )
 
 [node name="EndWalls" type="StaticBody2D" parent="Node2D" groups=[
 "end",
@@ -364,21 +364,21 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( -10, 3000 )
-shape = SubResource( 16 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 6010, 3000 )
-shape = SubResource( 16 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 3000, 6010 )
 rotation = 1.5708
-shape = SubResource( 16 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 3000, -10 )
 rotation = 1.5708
-shape = SubResource( 16 )
+shape = SubResource( 30 )
 
 [node name="GoUp" type="Area2D" parent="."]
 position = Vector2( 1548, 4089 )
@@ -386,7 +386,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoUp"]
 position = Vector2( 2.9999, 4.00024 )
-shape = SubResource( 17 )
+shape = SubResource( 31 )
 
 [node name="Button" type="Sprite" parent="GoUp"]
 visible = false
@@ -403,7 +403,7 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoDown"]
 position = Vector2( 108.749, 148 )
-shape = SubResource( 17 )
+shape = SubResource( 31 )
 
 [node name="Button" type="Sprite" parent="GoDown"]
 visible = false
@@ -420,7 +420,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToCreek"]
 position = Vector2( 108, 148 )
-shape = SubResource( 18 )
+shape = SubResource( 32 )
 
 [node name="Button" type="Sprite" parent="ToCreek"]
 visible = false
@@ -428,10 +428,10 @@ position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
-[node name="sitting_cat" type="Node2D" parent="."]
+[node name="Sitting Cat" type="Node2D" parent="."]
 position = Vector2( 2106, 2372 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="sitting_cat"]
+[node name="ViewportContainer" type="ViewportContainer" parent="Sitting Cat"]
 margin_left = -40.0
 margin_top = -23.0
 margin_right = 27.0
@@ -444,22 +444,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="sitting_cat/ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="Sitting Cat/ViewportContainer"]
 size = Vector2( 16, 19 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Area2D" type="Area2D" parent="sitting_cat"]
+[node name="Area2D" type="Area2D" parent="Sitting Cat"]
 script = ExtResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sitting_cat/Area2D"]
-shape = SubResource( 24 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sitting Cat/Area2D"]
+shape = SubResource( 33 )
 
-[node name="thinking_cat" type="Node2D" parent="."]
+[node name="Thinking Cat" type="Node2D" parent="."]
 position = Vector2( 918, 1322 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="thinking_cat"]
+[node name="ViewportContainer" type="ViewportContainer" parent="Thinking Cat"]
 margin_left = -40.0
 margin_top = -23.0
 margin_right = 27.0
@@ -472,22 +472,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="thinking_cat/ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="Thinking Cat/ViewportContainer"]
 size = Vector2( 16, 19 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Area2D" type="Area2D" parent="thinking_cat"]
+[node name="Area2D" type="Area2D" parent="Thinking Cat"]
 script = ExtResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="thinking_cat/Area2D"]
-shape = SubResource( 24 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Thinking Cat/Area2D"]
+shape = SubResource( 33 )
 
-[node name="sleeping_cat" type="Node2D" parent="."]
+[node name="Sleeping Cat" type="Node2D" parent="."]
 position = Vector2( 597, 1362 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="sleeping_cat"]
+[node name="ViewportContainer" type="ViewportContainer" parent="Sleeping Cat"]
 margin_left = -40.0
 margin_top = -23.0
 margin_right = 27.0
@@ -500,22 +500,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="sleeping_cat/ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="Sleeping Cat/ViewportContainer"]
 size = Vector2( 16, 19 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Area2D" type="Area2D" parent="sleeping_cat"]
+[node name="Area2D" type="Area2D" parent="Sleeping Cat"]
 script = ExtResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sleeping_cat/Area2D"]
-shape = SubResource( 24 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sleeping Cat/Area2D"]
+shape = SubResource( 33 )
 
-[node name="catnip_cat" type="Node2D" parent="."]
+[node name="Catnip Cat" type="Node2D" parent="."]
 position = Vector2( 253, 1367 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="catnip_cat"]
+[node name="ViewportContainer" type="ViewportContainer" parent="Catnip Cat"]
 margin_left = -40.0
 margin_top = -23.0
 margin_right = 27.0
@@ -528,17 +528,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="catnip_cat/ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="Catnip Cat/ViewportContainer"]
 size = Vector2( 16, 19 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Area2D" type="Area2D" parent="catnip_cat"]
+[node name="Area2D" type="Area2D" parent="Catnip Cat"]
 script = ExtResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="catnip_cat/Area2D"]
-shape = SubResource( 24 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Catnip Cat/Area2D"]
+shape = SubResource( 33 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
