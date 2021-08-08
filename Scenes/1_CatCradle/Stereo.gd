@@ -2,7 +2,6 @@ extends Area2D
 
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 var disabled: bool = false
-var available = []
 func _ready():
 	assert(connect("body_entered", self, "_on_body_entered") == 0)
 	assert(connect("body_exited", self, "_on_body_exited") == 0)
