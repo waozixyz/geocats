@@ -35,5 +35,6 @@ func _process(delta):
 
 	if not queue.empty() and not available.empty():
 		available[0].stream = load(queue.pop_front())
+		available[0].stream.loop = false
 		available[0].play()
 		available.pop_front()
