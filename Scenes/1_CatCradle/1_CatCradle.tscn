@@ -88,14 +88,14 @@ extents = Vector2( 36, 5 )
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="DynamicFontData" id=30]
+[sub_resource type="DynamicFontData" id=26]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=31]
+[sub_resource type="DynamicFont" id=27]
 size = 12
-font_data = SubResource( 30 )
+font_data = SubResource( 26 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 46, 54 )
 
 [node name="CatCradle" type="Node2D"]
@@ -297,6 +297,7 @@ visible = false
 mouse_filter = 2
 
 [node name="Letter" type="ViewportContainer" parent="CanvasLayer"]
+visible = false
 anchor_left = -1.0
 anchor_top = -1.0
 anchor_right = 1.0
@@ -315,7 +316,7 @@ __meta__ = {
 size = Vector2( 213, 160 )
 transparent_bg = true
 handle_input_locally = false
-render_target_update_mode = 3
+render_target_update_mode = 0
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Letter/Viewport"]
 texture = ExtResource( 32 )
@@ -326,7 +327,7 @@ margin_left = 30.0
 margin_top = 25.0
 margin_right = 620.0
 margin_bottom = 480.0
-custom_fonts/normal_font = SubResource( 31 )
+custom_fonts/normal_font = SubResource( 27 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 31 )
@@ -349,7 +350,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 18
+frame = 22
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0
@@ -388,7 +389,7 @@ script = ExtResource( 29 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2( 47, 50 )
-shape = SubResource( 29 )
+shape = SubResource( 28 )
 
 [node name="Button" type="Sprite" parent="Teleport"]
 visible = false
