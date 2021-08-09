@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AffoGato.ogg-7d855647da359b9a57190663b889d1fa.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/AffoGato.ogg"
+dest_files=[ "res://.import/AffoGato.ogg-7d855647da359b9a57190663b889d1fa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

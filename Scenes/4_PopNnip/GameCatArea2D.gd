@@ -7,6 +7,7 @@ var active : bool
 var disabled : bool
 var parent_name : String
 var convo_file : String
+var touching = false
 
 func _ready():
 	assert(connect("body_entered", self, "_on_body_entered") == 0)
@@ -36,10 +37,12 @@ func hide_chat():
 
 func _on_body_entered(body):
 	if body.name == "Player" and not disabled:
+		touching = true
 		show_chat()
 
 func _on_body_exited(body):
 	if body.name == "Player":
+		touching = false
 		hide_chat()
 
 func _process(_delta):
@@ -54,4 +57,6 @@ func _process(_delta):
 func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
-			chat_with.start(convo_file)
+			if touching:
+				AudioStreamManager.play("res://Assets/Sfx/SFX/Nonaco_Training_Video_Intro.ogg")
+				chat_with.start(convo_file)

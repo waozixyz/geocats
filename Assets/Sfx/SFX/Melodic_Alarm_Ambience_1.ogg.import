@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Melodic_Alarm_Ambience_1.ogg-c3de16995212a4fda8a6b78a9b2f1104.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/Melodic_Alarm_Ambience_1.ogg"
+dest_files=[ "res://.import/Melodic_Alarm_Ambience_1.ogg-c3de16995212a4fda8a6b78a9b2f1104.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

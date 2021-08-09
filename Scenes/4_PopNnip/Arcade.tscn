@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
@@ -19,9 +19,15 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/spaceship_screen.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/npc.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/fg_sing_cords.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/Chat.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/4_PopNnip/GameCat2Area2d.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/fg_wall.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/4_PopNnip/npc.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/UI/InteractWith.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/4_PopNnip/CatsylvaniaArea2d.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/4_PopNnip/HairballArea2d.gd" type="Script" id=25]
+[ext_resource path="res://Assets/Sfx/SFX/Melodic_Alarm_Ambience_1.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Scenes/4_PopNnip/GameCatArea2D.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/4_PopNnip/AffoGatoArea2D.gd" type="Script" id=28]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 12 )
@@ -324,6 +330,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 48, 47 )
 
+[sub_resource type="RectangleShape2D" id=70]
+extents = Vector2( 56, 30 )
+
 [node name="Arcade" type="Node2D"]
 
 [node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
@@ -356,7 +365,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -364,7 +373,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 10
+frame = 14
 playing = true
 centered = false
 
@@ -378,7 +387,6 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 48, 89 )
 frames = SubResource( 30 )
-frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -408,7 +416,6 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
-frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -511,6 +518,12 @@ polygon = PoolVector2Array( -1714, -646, -1584, -758, -1452, -758, -1452, -853, 
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = -12.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -7.647
 autoplay = true
 
 [node name="Ladder2" type="Area2D" parent="." groups=[
@@ -529,9 +542,6 @@ shape = SubResource( 63 )
 [node name="Area2D" type="Area2D" parent="Gamecat2"]
 position = Vector2( 41, 232 )
 script = ExtResource( 20 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gamecat2/Area2D"]
 position = Vector2( 41, 15 )
@@ -541,7 +551,7 @@ shape = SubResource( 64 )
 
 [node name="Area2D" type="Area2D" parent="Gamecat"]
 position = Vector2( 47, 374 )
-script = ExtResource( 20 )
+script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -556,6 +566,9 @@ shape = SubResource( 64 )
 visible = true
 position = Vector2( 652, 409 )
 
+[node name="Area2D" parent="Default/Affogato" index="0"]
+script = ExtResource( 28 )
+
 [node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
 render_target_update_mode = 3
 
@@ -567,7 +580,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 32
+frame = 26
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -622,6 +635,33 @@ visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractWith" parent="CanvasLayer" instance=ExtResource( 23 )]
+visible = false
+mouse_filter = 2
+
+[node name="HyperPoliticsSFX" type="Area2D" parent="."]
+position = Vector2( 282, 239 )
+script = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HyperPoliticsSFX"]
+shape = SubResource( 70 )
+
+[node name="CatsylvaniaSFX" type="Area2D" parent="."]
+position = Vector2( 447, 241 )
+script = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatsylvaniaSFX"]
+shape = SubResource( 70 )
+
+[node name="HairballSFX" type="Area2D" parent="."]
+position = Vector2( 233, 368 )
+script = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HairballSFX"]
+shape = SubResource( 70 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
