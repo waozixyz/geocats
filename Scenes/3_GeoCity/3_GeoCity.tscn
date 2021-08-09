@@ -1,7 +1,7 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Right.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Chat.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/3_GeoCity/NonacatArea2D.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_BG.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/3_GeoCity/city_brick.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Left.png" type="Texture" id=5]
@@ -20,8 +20,10 @@
 [ext_resource path="res://Assets/Agents/NPC/nonacat.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/3_GeoCity/fg_entrance_city.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Agents/NPC/garbitage.png" type="Texture" id=20]
-[ext_resource path="res://Scenes/3_GeoCity/Garbitage.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/3_GeoCity/Area2DGarbitage.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Sfx/SFX/BirdsGeoCity.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/3_GeoCity/LasagneArea2D.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/3_GeoCity/LongCatArea2D.gd" type="Script" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 43, 0, 43, 43, 0, 43 )
@@ -601,13 +603,14 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Longcat/ViewportContainer/Viewport"]
 frames = SubResource( 38 )
 animation = "walk"
+frame = 1
 playing = true
 centered = false
 
-[node name="Area2D" type="Area2D" parent="Longcat"]
-script = ExtResource( 2 )
+[node name="LongCatArea2D" type="Area2D" parent="Longcat"]
+script = ExtResource( 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Longcat/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Longcat/LongCatArea2D"]
 position = Vector2( 24, 13 )
 shape = SubResource( 39 )
 
@@ -645,13 +648,14 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Nonacat/ViewportContainer/Viewport"]
 frames = SubResource( 43 )
 animation = "walk"
+frame = 1
 playing = true
 centered = false
 
-[node name="Area2D" type="Area2D" parent="Nonacat"]
+[node name="NonacatArea2D" type="Area2D" parent="Nonacat"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat/NonacatArea2D"]
 position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 39 )
 
@@ -688,14 +692,15 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lasagne/ViewportContainer/Viewport"]
 frames = SubResource( 47 )
 animation = "walk"
+frame = 1
 playing = true
 centered = false
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="Lasagne"]
-script = ExtResource( 2 )
+[node name="LasagneArea2D" type="Area2D" parent="Lasagne"]
+script = ExtResource( 23 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lasagne/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lasagne/LasagneArea2D"]
 position = Vector2( 24, 13 )
 shape = SubResource( 39 )
 
@@ -728,7 +733,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 50 )
 animation = "idle"
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -751,7 +755,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 8
+frame = 29
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )

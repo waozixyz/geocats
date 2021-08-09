@@ -58,5 +58,5 @@ func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
 			if touching:
-				AudioStreamManager.play("res://Assets/Sfx/SFX/AffoGato.ogg")
+				AudioStreamManager.play("res://Assets/Sfx/SFX/Lasagne.ogg")
 				chat_with.start(convo_file)

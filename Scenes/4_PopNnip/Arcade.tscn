@@ -365,7 +365,6 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -373,7 +372,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 14
+frame = 7
 playing = true
 centered = false
 
@@ -394,7 +393,6 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -416,6 +414,7 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -580,7 +579,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 26
+frame = 3
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
