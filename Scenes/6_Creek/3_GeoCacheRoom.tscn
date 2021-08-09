@@ -74,14 +74,12 @@ centered = false
 [node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 1
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
 [node name="Default" parent="." instance=ExtResource( 1 )]
 position = Vector2( 402, 304 )
-
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 0
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( -284, 125 )
@@ -91,7 +89,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 14
+frame = 10
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0

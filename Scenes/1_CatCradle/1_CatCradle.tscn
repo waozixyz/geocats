@@ -82,23 +82,23 @@ extents = Vector2( 27, 4 )
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 22, 4 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 36, 5 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="DynamicFontData" id=27]
+[sub_resource type="DynamicFontData" id=26]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=27]
 size = 12
-font_data = SubResource( 27 )
+font_data = SubResource( 26 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 46, 54 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 42.8818, 22.4911 )
 
 [sub_resource type="RectangleShape2D" id=30]
@@ -283,12 +283,12 @@ position = Vector2( 900, 570 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statue"]
 position = Vector2( 314, -31 )
-shape = SubResource( 25 )
+shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Statue"]
 position = Vector2( 263, 42 )
-shape = SubResource( 26 )
+shape = SubResource( 25 )
 one_way_collision = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -328,7 +328,7 @@ margin_left = 30.0
 margin_top = 25.0
 margin_right = 620.0
 margin_bottom = 480.0
-custom_fonts/normal_font = SubResource( 28 )
+custom_fonts/normal_font = SubResource( 27 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 31 )
@@ -351,7 +351,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 27
+frame = 16
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0
@@ -390,7 +390,7 @@ script = ExtResource( 29 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2( 47, 50 )
-shape = SubResource( 29 )
+shape = SubResource( 28 )
 
 [node name="Button" type="Sprite" parent="Teleport"]
 visible = false
@@ -404,7 +404,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StereoSFX"]
 position = Vector2( -6.53906, 8.40741 )
-shape = SubResource( 24 )
+shape = SubResource( 29 )
 
 [node name="LitterBoxSFX" type="Area2D" parent="."]
 position = Vector2( 809.231, 356.84 )
