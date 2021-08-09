@@ -268,7 +268,7 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 2
+frame = 6
 speed_scale = 2.0
 playing = true
 centered = false
@@ -276,7 +276,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 6
+frame = 1
 speed_scale = 1.5
 playing = true
 centered = false
@@ -284,7 +284,6 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 12
 speed_scale = 2.2
 playing = true
 centered = false
@@ -292,14 +291,14 @@ centered = false
 [node name="HangingCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 5
+frame = 2
 playing = true
 centered = false
 
 [node name="TreeCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 43, 104 )
 frames = SubResource( 33 )
-frame = 5
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false
@@ -530,7 +529,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 29
+frame = 28
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )

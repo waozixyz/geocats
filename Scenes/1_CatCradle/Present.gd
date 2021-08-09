@@ -33,6 +33,7 @@ func _input(_event):
 			letter.visible = false
 		# if im touching the present and the present is visible
 		if touching and sprite.visible:
+			AudioStreamManager.play("res://Assets/Sfx/SFX/Wood_Door_Latch_Open_2.ogg")
 			letter.visible = true
 			visible = false
 			global.data.present = false

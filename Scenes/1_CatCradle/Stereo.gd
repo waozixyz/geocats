@@ -10,4 +10,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player" and not disabled:
-		AudioStreamManager.play("res://Assets/Sfx/Transition/WayoWayo.ogg")
+		AudioStreamManager.play("res://Assets/Sfx/SFX/Effect__Gramophone.ogg")

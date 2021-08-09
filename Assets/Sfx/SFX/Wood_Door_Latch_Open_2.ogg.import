@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Wood_Door_Latch_Open_2.ogg-db721838028efd0d1926dec5ca5c589c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/Wood_Door_Latch_Open_2.ogg"
+dest_files=[ "res://.import/Wood_Door_Latch_Open_2.ogg-db721838028efd0d1926dec5ca5c589c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

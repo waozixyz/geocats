@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Regge_groove.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=2]
@@ -653,6 +653,25 @@ extents = Vector2( 31.748, 1946.04 )
 [sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 690.476, 23.832 )
 
+[sub_resource type="GDScript" id=86]
+script/source = "extends Area2D
+
+onready var player =  get_tree().get_current_scene().get_node(\"Default/Player\")
+var disabled: bool = false
+
+func _ready():
+	assert(connect(\"body_entered\", self, \"_on_body_entered\") == 0)
+	assert(connect(\"body_exited\", self, \"_on_body_exited\") == 0)
+
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		AudioStreamManager.play(\"res://Assets/Sfx/SFX/Apartment Pig 1.ogg\")
+"
+
+[sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 30.6774, 45.7139 )
+
 [node name="Complex" type="Node2D"]
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
@@ -1139,7 +1158,7 @@ position = Vector2( 728, 216 )
 script = ExtResource( 39 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/UpElevator"]
-position = Vector2( 2, 0 )
+position = Vector2( 2, -0.205048 )
 shape = SubResource( 66 )
 
 [node name="Button" type="Sprite" parent="Interactive/UpElevator"]
@@ -1250,7 +1269,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 81 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 centered = false
 
@@ -1302,7 +1321,15 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 33
+
+[node name="DoorbellSFX" type="Area2D" parent="."]
+position = Vector2( 498.666, 989.967 )
+script = SubResource( 86 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorbellSFX"]
+position = Vector2( -1.02264, 3.40894 )
+shape = SubResource( 87 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

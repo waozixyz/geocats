@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Apartment Pig 1.ogg-3b35610c1628f701992431e887c2898a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/Apartment Pig 1.ogg"
+dest_files=[ "res://.import/Apartment Pig 1.ogg-3b35610c1628f701992431e887c2898a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

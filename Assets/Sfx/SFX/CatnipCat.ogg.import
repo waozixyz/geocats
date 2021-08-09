@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CatnipCat.ogg-085ec078b9562c21b78572cbc0947fdf.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/CatnipCat.ogg"
+dest_files=[ "res://.import/CatnipCat.ogg-085ec078b9562c21b78572cbc0947fdf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
