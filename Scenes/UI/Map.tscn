@@ -13,15 +13,15 @@
 [ext_resource path="res://Scenes/UI/Map.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=18]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.9674, 40.625 )
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=3]
-size = 22
-font_data = SubResource( 1 )
+size = 12
+font_data = SubResource( 2 )
 
 [node name="Control" type="Control"]
 rect_scale = Vector2( 1.6, 1.6 )
@@ -65,7 +65,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/CatCradle"]
 visible = false
 position = Vector2( 83.7827, 78.75 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Device/CatCradle"]
 margin_left = 40.0
@@ -111,7 +111,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Complex"]
 visible = false
 position = Vector2( 188.893, 78.75 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Device/Complex"]
 margin_left = 139.0
@@ -157,7 +157,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/GeoCity"]
 visible = false
 position = Vector2( 310.658, 78.75 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Device/GeoCity"]
 margin_left = 268.0
@@ -200,7 +200,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Creek"]
 visible = false
 position = Vector2( 97.5327, 194.209 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Device/Creek"]
 margin_left = 40.0
@@ -246,7 +246,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Litterbox"]
 visible = false
 position = Vector2( 205.5, 194.209 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Device/Litterbox"]
 margin_left = 145.0
@@ -292,7 +292,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Lodge"]
 visible = false
 position = Vector2( 310.658, 194.209 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Device/Lodge"]
 margin_left = 278.0
@@ -312,10 +312,12 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="Label" type="Label" parent="."]
-margin_left = 47.0
+margin_left = 30.0
 margin_top = 221.0
-margin_right = 362.0
+margin_right = 369.0
 margin_bottom = 269.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_fonts/font = SubResource( 3 )
 align = 1
 valign = 1

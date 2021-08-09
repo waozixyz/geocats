@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/Levels/1_CatCradle/Cats_Cradle.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/1_CatCradle/stereo.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/1_CatCradle/Stereo.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/1_CatCradle/Litterbox.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Levels/1_CatCradle/present.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=28]
@@ -351,7 +351,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 16
+frame = 29
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0
