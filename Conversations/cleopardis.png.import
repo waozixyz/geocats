@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cleopartis.png-6cccc569bffdb206f8808fea835c2dcc.stex"
+path="res://.import/cleopardis.png-0bfdbd897a75b30fc33095c07e8855f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Conversations/cleopartis.png"
-dest_files=[ "res://.import/cleopartis.png-6cccc569bffdb206f8808fea835c2dcc.stex" ]
+source_file="res://Conversations/cleopardis.png"
+dest_files=[ "res://.import/cleopardis.png-0bfdbd897a75b30fc33095c07e8855f8.stex" ]
 
 [params]
 

@@ -297,10 +297,6 @@ one_way_collision = true
 visible = false
 mouse_filter = 2
 
-[node name="InteractWithLitterbox" parent="CanvasLayer" instance=ExtResource( 33 )]
-visible = false
-mouse_filter = 2
-
 [node name="Letter" type="ViewportContainer" parent="CanvasLayer"]
 visible = false
 anchor_left = -1.0
@@ -355,7 +351,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 14
+frame = 26
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0
