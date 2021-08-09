@@ -3,7 +3,6 @@ extends Node
 var player_position
 var player_direction
 var crt_noise = 0.0
-var debug = true
 
 var data =  {
 	"scene": "CatCradle",

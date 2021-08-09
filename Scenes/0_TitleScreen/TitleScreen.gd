@@ -76,6 +76,9 @@ func _on_request_completed( result, response_code, headers, body):
 				var ndata = parse_json(nft.ipfs_data_json)
 				if ndata.Title == "GeoKey":
 					has_key = true
+					if global.data.scene == "TitleScreen":
+						global.data.scene = "CatCradle"
+						global.data.location = 0
 					SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
 
 			checked_key = true

@@ -18,9 +18,7 @@ func _ready():
 	# load dialogue system data
 	PROGRESS.variables = global.data.prog_var
 	PROGRESS.dialogues = global.data.prog_dia
-	if not global.debug:
-		SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
-
+	
 func saveit():
 	global.data.prog_var = PROGRESS.variables
 	global.data.prog_dia = PROGRESS.dialogues
