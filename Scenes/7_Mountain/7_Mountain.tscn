@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -12,11 +12,14 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/7_Mountain/Interact.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/Chat.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/7_Mountain/CatnipCat.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_sixeight_loopable.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/7_Mountain/SleepingCat.gd" type="Script" id=18]
+[ext_resource path="res://SittingCat.gd" type="Script" id=19]
+[ext_resource path="res://ThinkingCat.gd" type="Script" id=20]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -144,99 +147,29 @@ extents = Vector2( 549.106, 81.9512 )
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 94.5837, 127.792 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 48.0193, 3.60144 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 7.20288, 6.00256 )
 
-[sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 10, 3000 )
-
-[sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 54.9967, 49.9998 )
-
 [sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 50, 50 )
-
-[sub_resource type="GDScript" id=40]
-script/source = "extends Area2D
-
-onready var player =  get_tree().get_current_scene().get_node(\"Default/Player\")
-var disabled: bool = false
-
-func _ready():
-	assert(connect(\"body_entered\", self, \"_on_body_entered\") == 0)
-	assert(connect(\"body_exited\", self, \"_on_body_exited\") == 0)
-
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		AudioStreamManager.play(\"res://Assets/Sfx/SFX/SittingCat.ogg\")
-"
-
-[sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 20, 26 )
+extents = Vector2( 7.20288, 6.00256 )
 
 [sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 6.00244, 6.00244 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 10, 3000 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 54.9967, 49.9998 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 50, 50 )
+
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 149, 97 )
-
-[sub_resource type="GDScript" id=42]
-script/source = "extends Area2D
-
-onready var player =  get_tree().get_current_scene().get_node(\"Default/Player\")
-var disabled: bool = false
-
-func _ready():
-	assert(connect(\"body_entered\", self, \"_on_body_entered\") == 0)
-	assert(connect(\"body_exited\", self, \"_on_body_exited\") == 0)
-
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		AudioStreamManager.play(\"res://Assets/Sfx/SFX/ThinkingCat.ogg\")
-"
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 39, 44 )
-
-[sub_resource type="GDScript" id=39]
-script/source = "extends Area2D
-
-onready var player =  get_tree().get_current_scene().get_node(\"Default/Player\")
-var disabled: bool = false
-
-func _ready():
-	assert(connect(\"body_entered\", self, \"_on_body_entered\") == 0)
-	assert(connect(\"body_exited\", self, \"_on_body_exited\") == 0)
-
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		AudioStreamManager.play(\"res://Assets/Sfx/SFX/SleepingCat.ogg\")
-"
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 45, 28 )
-
-[sub_resource type="GDScript" id=45]
-script/source = "extends Area2D
-
-onready var player =  get_tree().get_current_scene().get_node(\"Default/Player\")
-var disabled: bool = false
-
-func _ready():
-	assert(connect(\"body_entered\", self, \"_on_body_entered\") == 0)
-	assert(connect(\"body_exited\", self, \"_on_body_exited\") == 0)
-
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		AudioStreamManager.play(\"res://Assets/Sfx/SFX/CatnipCat.ogg\")
-"
-
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 38, 39 )
 
 [node name="Mountain" type="Node2D"]
 
@@ -274,7 +207,6 @@ centered = false
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 2
 frames = SubResource( 5 )
-frame = 3
 speed_scale = 0.2
 playing = true
 centered = false
@@ -294,9 +226,6 @@ position = Vector2( 72, 4871 )
 zoom = Vector2( 1.5, 1.5 )
 limit_right = 5000
 limit_bottom = 5000
-
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 3
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
@@ -319,26 +248,27 @@ render_target_update_mode = 3
 position = Vector2( 120, 275 )
 z_index = 4
 frames = SubResource( 8 )
-frame = 3
 playing = true
 
 [node name="CatnipCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 279 )
 z_index = 4
 frames = SubResource( 13 )
-frame = 10
+frame = 11
 playing = true
 
 [node name="ThinkingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 189, 270 )
 z_index = 4
 frames = SubResource( 16 )
+frame = 3
 playing = true
 
 [node name="SittingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 420, 476 )
 z_index = 4
 frames = SubResource( 19 )
+frame = 1
 playing = true
 
 [node name="clouds" type="Sprite" parent="AbovePlayer/Viewport"]
@@ -433,18 +363,37 @@ polygon = PoolVector2Array( 1859.96, 2076.94, 1874.12, 2013.7, 1900.55, 1980.67,
 position = Vector2( -3740.7, -4600.24 )
 polygon = PoolVector2Array( 1689.08, 1968.79, 1722.69, 1954.38, 1776.71, 1937.58, 1828.33, 1942.38, 1879.95, 1936.37, 1989.2, 1926.77, 2111.64, 1924.37, 2265.31, 1878.75, 2352.94, 1867.95, 2462.19, 1839.14, 2517.41, 1833.13, 2559.42, 1829.53, 2573.83, 1822.33, 2679.47, 1821.13, 2943.58, 1834.33, 2983.2, 1873.94, 3012.01, 1929.17, 3031.22, 2024.01, 3009.6, 2087.64, 2990.4, 2104.44, 2981.99, 2171.67, 2936.37, 2229.29, 2909.96, 2337.34, 2867.95, 2444.18, 2733.49, 2541.42, 2654.26, 2643.46, 2588.24, 2752.7, 2584.63, 2793.52, 2531.81, 2912.37, 2491, 2979.59, 2423.77, 3108.04, 2374.55, 3303.72, 2333.73, 3517.41, 2336.13, 3692.68, 2308.52, 3756.3, 2234.09, 3829.53, 2163.27, 3943.58, 2124.85, 4008.4, 2142.86, 4121.25, 2176.47, 4204.08, 2180.07, 4303.72, 2174.07, 4343.34, 2154.86, 4356.54, 2116.45, 4430.97, 2091.24, 4447.78, 2009.6, 4645.86, 1915.97, 4774.31, 1697.48, 4991.6 )
 
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Node2D/Walls"]
+position = Vector2( -908.763, -4582.24 )
+polygon = PoolVector2Array( 1811.52, 2199.28, 1819.93, 2032.41, 1829.53, 1957.98, 1842.74, 1873.95, 1853.54, 1873.95, 1829.53, 2073.23, 1828.33, 2253.3, 1819.93, 2267.71, 1816.33, 2295.32, 1769.51, 2403.36, 1786.31, 2666.27, 1785.11, 2721.49, 1831.93, 2819.93, 1857.14, 2967.59, 1845.14, 3259.3, 1803.12, 3122.45, 1807.92, 2879.95, 1788.72, 2822.33, 1759.24, 2768.29, 1762.3, 2657.86, 1753.9, 2397.36, 1759.9, 2362.54, 1771.91, 2321.73, 1805.52, 2276.11, 1811.52, 2243.7 )
+
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 418.053, -1408.24 )
 shape = SubResource( 29 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( 92.4373, -2573.83 )
-shape = SubResource( 34 )
+shape = SubResource( 30 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Node2D/Walls"]
 position = Vector2( -385.354, -2444.18 )
-shape = SubResource( 35 )
+shape = SubResource( 31 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Node2D/Walls"]
+position = Vector2( 735.895, -1791.12 )
+shape = SubResource( 32 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Node2D/Walls"]
+position = Vector2( 1265.31, -1503.01 )
+shape = SubResource( 33 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Node2D/Walls"]
+position = Vector2( 1249.7, -248.505 )
+shape = SubResource( 33 )
 one_way_collision = true
 
 [node name="EndWalls" type="StaticBody2D" parent="Node2D" groups=[
@@ -455,21 +404,21 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( -10, 3000 )
-shape = SubResource( 30 )
+shape = SubResource( 34 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 6010, 3000 )
-shape = SubResource( 30 )
+shape = SubResource( 34 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 3000, 6010 )
 rotation = 1.5708
-shape = SubResource( 30 )
+shape = SubResource( 34 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/EndWalls"]
 position = Vector2( 3000, -10 )
 rotation = 1.5708
-shape = SubResource( 30 )
+shape = SubResource( 34 )
 
 [node name="GoUp" type="Area2D" parent="."]
 position = Vector2( 1548, 4089 )
@@ -477,7 +426,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoUp"]
 position = Vector2( 2.9999, 4.00024 )
-shape = SubResource( 31 )
+shape = SubResource( 35 )
 
 [node name="Button" type="Sprite" parent="GoUp"]
 visible = false
@@ -494,7 +443,7 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoDown"]
 position = Vector2( 108.749, 148 )
-shape = SubResource( 31 )
+shape = SubResource( 35 )
 
 [node name="Button" type="Sprite" parent="GoDown"]
 visible = false
@@ -511,7 +460,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToCreek"]
 position = Vector2( 108, 148 )
-shape = SubResource( 32 )
+shape = SubResource( 36 )
 
 [node name="Button" type="Sprite" parent="ToCreek"]
 visible = false
@@ -521,14 +470,6 @@ texture = ExtResource( 10 )
 
 [node name="Sitting Cat" type="Node2D" parent="."]
 position = Vector2( 2106, 2372 )
-
-[node name="SittingCatSFX" type="Area2D" parent="Sitting Cat"]
-position = Vector2( -2106, -2372 )
-script = SubResource( 40 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sitting Cat/SittingCatSFX"]
-position = Vector2( 2111, 2389 )
-shape = SubResource( 41 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Sitting Cat"]
 margin_left = -40.0
@@ -550,21 +491,13 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Area2D" type="Area2D" parent="Sitting Cat"]
-script = ExtResource( 13 )
+script = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sitting Cat/Area2D"]
-shape = SubResource( 33 )
+shape = SubResource( 39 )
 
 [node name="Thinking Cat" type="Node2D" parent="."]
 position = Vector2( 918, 1322 )
-
-[node name="ThinkingCatSFX2" type="Area2D" parent="Thinking Cat"]
-position = Vector2( -2068, -2387 )
-script = SubResource( 42 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Thinking Cat/ThinkingCatSFX2"]
-position = Vector2( 2069, 2395 )
-shape = SubResource( 43 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Thinking Cat"]
 margin_left = -40.0
@@ -585,22 +518,14 @@ transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Area2D" type="Area2D" parent="Thinking Cat"]
-script = ExtResource( 13 )
+[node name="Area2DThinkingCat" type="Area2D" parent="Thinking Cat"]
+script = ExtResource( 20 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Thinking Cat/Area2D"]
-shape = SubResource( 33 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Thinking Cat/Area2DThinkingCat"]
+shape = SubResource( 39 )
 
 [node name="Sleeping Cat" type="Node2D" parent="."]
 position = Vector2( 597, 1362 )
-
-[node name="SleepingCatSFX3" type="Area2D" parent="Sleeping Cat"]
-position = Vector2( -2066, -2384 )
-script = SubResource( 39 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sleeping Cat/SleepingCatSFX3"]
-position = Vector2( 2095, 2396 )
-shape = SubResource( 44 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Sleeping Cat"]
 margin_left = -40.0
@@ -621,22 +546,14 @@ transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Area2D" type="Area2D" parent="Sleeping Cat"]
-script = ExtResource( 13 )
+[node name="Area2DSleepingCat" type="Area2D" parent="Sleeping Cat"]
+script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sleeping Cat/Area2D"]
-shape = SubResource( 33 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sleeping Cat/Area2DSleepingCat"]
+shape = SubResource( 39 )
 
 [node name="Catnip Cat" type="Node2D" parent="."]
 position = Vector2( 253, 1367 )
-
-[node name="CatnipCatSFX" type="Area2D" parent="Catnip Cat"]
-position = Vector2( -2064, -2380 )
-script = SubResource( 45 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Catnip Cat/CatnipCatSFX"]
-position = Vector2( 2069, 2424 )
-shape = SubResource( 46 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Catnip Cat"]
 margin_left = -40.0
@@ -661,7 +578,7 @@ render_target_update_mode = 3
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catnip Cat/Area2D"]
-shape = SubResource( 33 )
+shape = SubResource( 39 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )

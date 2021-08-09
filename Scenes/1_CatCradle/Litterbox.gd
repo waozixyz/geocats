@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var interact_with = get_tree().get_current_scene().get_node("CanvasLayer/InteractWith")
+onready var sprite = $Sprite
 var touching = false
 
 func _ready():
@@ -23,5 +24,6 @@ func _input(_event):
 	# when i press the interact key (e)
 	if Input.is_action_just_pressed("interact"):
 		if touching:
-			AudioStreamManager.play("res://Assets/Sfx/SFX/PopNNipRave.ogg")
 			interact_with.visible = false
+			AudioStreamManager.play("res://Assets/Sfx/SFX/Crunch2.ogg")
+

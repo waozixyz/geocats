@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PopNNipIntenseSynth.ogg-cd3741cccaba8bcda67e04cd7ba3c77d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/PopNNipIntenseSynth.ogg"
+dest_files=[ "res://.import/PopNNipIntenseSynth.ogg-cd3741cccaba8bcda67e04cd7ba3c77d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

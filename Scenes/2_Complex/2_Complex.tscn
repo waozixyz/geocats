@@ -670,7 +670,7 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="RectangleShape2D" id=87]
-extents = Vector2( 30.6774, 45.7139 )
+extents = Vector2( 12.9395, 35.1383 )
 
 [node name="Complex" type="Node2D"]
 
@@ -1269,7 +1269,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopartis/ViewportContainer/Viewport"]
 frames = SubResource( 81 )
 animation = "idle"
-frame = 4
+frame = 1
 playing = true
 centered = false
 
@@ -1321,14 +1321,13 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 33
+frame = 6
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )
 script = SubResource( 86 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorbellSFX"]
-position = Vector2( -1.02264, 3.40894 )
 shape = SubResource( 87 )
 
 [editable path="Default"]
