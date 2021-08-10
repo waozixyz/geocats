@@ -106,7 +106,7 @@ func _new_scene():
 	timer = 0
 	Sprite.visible = false
 	Container.visible = false
-	if scene != "TitleScreen":
+	if scene != "TitleScreen" and scene != "Splash":
 		global.data.scene = scene
 		global.data.location = location
 		global.data.nav_unlocked[scene] = true

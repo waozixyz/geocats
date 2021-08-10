@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Geocats"
-run/main_scene="res://Scenes/0_TitleScreen/TitleScreen.tscn"
+run/main_scene="res://Scenes/0_TitleScreen/Splash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
