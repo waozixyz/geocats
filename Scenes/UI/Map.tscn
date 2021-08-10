@@ -17,10 +17,10 @@
 extents = Vector2( 39.9674, 40.625 )
 
 [sub_resource type="DynamicFontData" id=2]
-font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=3]
-size = 12
+size = 24
 font_data = SubResource( 2 )
 
 [node name="Control" type="Control"]
