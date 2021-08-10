@@ -5,9 +5,9 @@ var hovered: bool = false
 var selected: bool = false
 var disabled: bool = false
 func _ready():
-	assert(connect("input_event", self, "_on_input_event") == 0)
-	assert(connect("mouse_entered", self, "_on_mouse_entered") == 0)
-	assert(connect("mouse_exited", self, "_on_mouse_exited") == 0)
+	connect("input_event", self, "_on_input_event")
+	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_exited", self, "_on_mouse_exited")
 	set_process_input(true)
 
 func _on_input_event(_viewport, event, _shape_idx ):

@@ -14,6 +14,7 @@ func _ready():
 
 func _proceed():
 	SceneChanger.change_scene("TitleScreen", 0, "", 1)
+	#get_tree().change_scene("res://Scenes/0_TitleScreen/TitleScreen.tscn")
 
 func _process(delta):
 	if splash.frame == 77:

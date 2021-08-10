@@ -9,8 +9,8 @@ var parent_name : String
 var convo_file : String
 
 func _ready():
-	assert(connect("body_entered", self, "_on_body_entered") == 0)
-	assert(connect("body_exited", self, "_on_body_exited") == 0)
+	connect("body_entered", self, "_on_body_entered")
+	connect("body_exited", self, "_on_body_exited")
 
 func _get_complex_convo():
 	var scene_name = get_tree().get_current_scene().name

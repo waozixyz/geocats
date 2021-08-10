@@ -28,14 +28,17 @@ func _physics_process(_delta):
 	var scene_name = get_tree().get_current_scene().name
 	var donut_open = PROGRESS.variables.get("donut_open")
 	var follow = PROGRESS.variables.get("follow")
-	if not follow && donut_open && scene_name != "DonutShop":
+	if scene_name == "Arcade" and not follow:
+		visible = true
+		chat.disabled = false
+	elif not follow && scene_name != "DonutShop":
 		visible = false
 		chat.disabled = true
 		return
-
-	if scene_name == "DonutShop":
+	elif scene_name == "DonutShop":
 		visible = true
 		jump_height = 0
+		chat.disabled = false
 	
 	velocity.x = 0
 

@@ -87,14 +87,14 @@ extents = Vector2( 36, 5 )
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="DynamicFontData" id=40]
+[sub_resource type="DynamicFontData" id=26]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=27]
 size = 22
 extra_spacing_top = -5
 extra_spacing_bottom = -3
-font_data = SubResource( 40 )
+font_data = SubResource( 26 )
 
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 46, 54 )
@@ -309,7 +309,7 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
-custom_fonts/normal_font = SubResource( 32 )
+custom_fonts/normal_font = SubResource( 27 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 31 )
@@ -331,7 +331,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 22
+frame = 32
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0

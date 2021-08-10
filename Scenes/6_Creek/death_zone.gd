@@ -5,8 +5,8 @@ onready var crt =  get_tree().get_current_scene().get_node("Default/CRT_Effect/C
 
 var inside = false
 func _ready():
-	assert(connect("body_entered", self, "_on_body_entered") == 0)
-	assert(connect("body_exited", self, "_on_body_exited") == 0)
+	connect("body_entered", self, "_on_body_entered")
+	connect("body_exited", self, "_on_body_exited")
 
 func _on_body_entered(body):
 	if body.name == "Player":

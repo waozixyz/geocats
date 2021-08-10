@@ -112,7 +112,7 @@ func _new_scene():
 		global.data.nav_unlocked[scene] = true
 	var scene_data = _get_scene()
 
-	assert(get_tree().change_scene(scene_data[0]) == 0)
+	get_tree().change_scene(scene_data[0])
 
 	global.player_position = scene_data[1]
 	global.player_direction = scene_data[2]

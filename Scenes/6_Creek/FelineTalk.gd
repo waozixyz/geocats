@@ -5,7 +5,7 @@ onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 
 
 func _ready():
-	assert(connect("body_entered", self, "_on_body_entered") == 0)
+	connect("body_entered", self, "_on_body_entered")
 
 var started : bool = false
 
