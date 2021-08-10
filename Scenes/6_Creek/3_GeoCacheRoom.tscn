@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/FG_Frame.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/Water1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/sparkles2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/GeoChest.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Water/Water.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/6_Creek/Treasure.gd" type="Script" id=11]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/BG.png-98d1cb3b0536e7eaf6c93e43c9e78034.stex"
@@ -46,6 +48,12 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 358.888, 60.6786 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 33.9119, 32.5012 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -89,7 +97,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 10
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -153,6 +161,23 @@ texture = ExtResource( 5 )
 position = Vector2( 1106, 421 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
+
+[node name="waterarea" type="Area2D" parent="."]
+position = Vector2( 457.652, 519.2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
+shape = SubResource( 8 )
+
+[node name="Treasure" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
+position = Vector2( 1106.51, 424.419 )
+shape = SubResource( 9 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

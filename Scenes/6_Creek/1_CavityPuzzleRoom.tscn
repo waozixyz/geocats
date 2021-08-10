@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/pocket.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/6_Creek/Interact.gd" type="Script" id=2]
@@ -30,7 +30,6 @@
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/buttons.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/ticketlarge.png" type="Texture" id=29]
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=30]
-[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=31]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 15 )
@@ -448,6 +447,14 @@ extents = Vector2( 24, 14 )
 [sub_resource type="RectangleShape2D" id=94]
 extents = Vector2( 24, 14 )
 
+[sub_resource type="DynamicFontData" id=97]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=98]
+size = 24
+extra_spacing_top = -10
+font_data = SubResource( 97 )
+
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 43, 14 )
 
@@ -525,7 +532,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 32
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -548,14 +555,13 @@ render_target_update_mode = 3
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 25, 102 )
 frames = SubResource( 20 )
-frame = 13
+frame = 2
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 234, 104 )
 frames = SubResource( 26 )
-frame = 2
 speed_scale = 0.7
 playing = true
 centered = false
@@ -563,7 +569,7 @@ centered = false
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 0 )
 frames = SubResource( 32 )
-frame = 6
+frame = 1
 speed_scale = 0.7
 playing = true
 centered = false
@@ -571,14 +577,14 @@ centered = false
 [node name="gc5" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 165, 0 )
 frames = SubResource( 37 )
-frame = 5
+frame = 4
 playing = true
 centered = false
 
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 127, 118 )
 frames = SubResource( 44 )
-frame = 2
+frame = 5
 speed_scale = 1.2
 playing = true
 centered = false
@@ -594,7 +600,7 @@ centered = false
 [node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 235, 75 )
 frames = SubResource( 59 )
-frame = 13
+frame = 11
 speed_scale = 0.7
 playing = true
 centered = false
@@ -602,7 +608,7 @@ centered = false
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 35 )
 frames = SubResource( 66 )
-frame = 3
+frame = 5
 speed_scale = 0.7
 playing = true
 centered = false
@@ -610,7 +616,7 @@ centered = false
 [node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 69, 8 )
 frames = SubResource( 71 )
-frame = 1
+frame = 2
 speed_scale = 1.1
 playing = true
 centered = false
@@ -732,7 +738,7 @@ margin_left = 310.0
 margin_top = 439.0
 margin_right = 624.0
 margin_bottom = 477.0
-custom_fonts/font = ExtResource( 31 )
+custom_fonts/font = SubResource( 98 )
 text = "Click here for more information!"
 align = 1
 autowrap = true
