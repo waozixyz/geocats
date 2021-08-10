@@ -2,7 +2,7 @@ extends BasePlayerState
 
 var jumpBufferStartTime  = 0 #ticks when you ran of the platform
 var elapsedJumpBuffer = 0 #how many seconds passed in the jump nuffer
-var jumpBuffer = 100 #how many miliseconds allowance you give jumps after you run of an edge
+var jumpBuffer = 50 #how many miliseconds allowance you give jumps after you run of an edge
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
 	jumpBufferStartTime = OS.get_ticks_msec()	
@@ -25,13 +25,8 @@ func logic(player: KinematicBody2D, _delta: float):
 		
 	if player.isJumpPressed:
 		#if you press jump
-		if !player.isDoubleJumped && elapsedJumpBuffer > jumpBuffer:
+		if !player.isDoubleJumped:
 			return "double_jump"
-
-		if elapsedJumpBuffer < jumpBuffer:
-			#if your in the jump buffer window
-			if player.previous_state == "run":
-				return "jump" #set state to jump
 	
 	player.default_anim()
 	if not player.is_on_wall():

@@ -65,26 +65,19 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 	if raycast.is_colliding() && horizontal == direction:
 		var shape_id = raycast.get_collider_shape()
 		var collider = raycast.get_collider()
+		var owner_id = collider.shape_find_owner(shape_id)
+
 		if collider:
-			if collider is TileMap:
-				for child in collider.get_children():
-					if check_child_collision(child) and child.is_in_group("end"):
-						return false
-				return true
-			else:
-				var hit_node = collider.shape_owner_get_owner(shape_id)
-				if hit_node:
-					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
-						return true
+			var hit_node = collider.shape_owner_get_owner(owner_id)
+
+			if hit_node:
+				if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
+					return true
 
 func move_horizontally(subtractor = 0):
 	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 
-func move_vertically():
-	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
-	_set_vy(currentSpeed * vertical)#apply curent speed to velocity and multiply by direction
-	_set_vx(0)
 
 func _get_previous_state_tag():
 	return state_machine.previous_state_tag
@@ -97,17 +90,17 @@ func _ready():
 	if global.player_position:
 		position = global.player_position
 		sprite.flip_h  = global.player_direction * -1
-		
+
 
 func _physics_process(delta):
-
 	if disabled:
 		velocity.x = 0
 		play("idle")
 	else:
+		._physics_process(delta)
 		update_inputs()
 		state_machine.logic(delta)
-		._physics_process(delta)
+
 
 	move()
 	var hp = global.data.player_hp 
