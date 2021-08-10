@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var interact_with = get_tree().get_current_scene().get_node("CanvasLayer/InteractWith")
+onready var interact_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/SimpleInteract")
 var touching = false
 
 func _ready():

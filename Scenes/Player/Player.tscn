@@ -157,7 +157,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
 frames = SubResource( 17 )
 animation = "idle"
-frame = 10
+frame = 30
 playing = true
 centered = false
 

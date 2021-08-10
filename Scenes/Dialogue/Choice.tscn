@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Assets/Fonts/GeoType17.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
 
 [node name="Choice" type="RichTextLabel"]
 margin_right = 100.0

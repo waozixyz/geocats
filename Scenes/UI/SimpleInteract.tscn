@@ -9,13 +9,14 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=3]
-font_data = SubResource( 4 )
+font_data = SubResource( 2 )
 
-[node name="InteractWith" type="Control"]
+[node name="SimpleInteract" type="Control"]
+rect_pivot_offset = Vector2( 221.059, -255.355 )
 mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false

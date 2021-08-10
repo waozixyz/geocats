@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Conversations/hogwash.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Dialogue/dialogue_system.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Fonts/GeoType17.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=3]
 
 [sub_resource type="Animation" id=1]
 loop = true

@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var letter = get_tree().get_current_scene().get_node("CanvasLayer/Letter")
-onready var interact_with = get_tree().get_current_scene().get_node("CanvasLayer/InteractWith")
+onready var interact_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/SimpleInteract")
 onready var sprite = $Sprite
 var touching = false
 
@@ -34,5 +34,5 @@ func _input(_event):
 		# if im touching the present and the present is visible
 		if touching and sprite.visible:
 			letter.visible = true
-			visible = false
+			sprite.visible = false
 			global.data.present = false

@@ -13,7 +13,7 @@ func _correct_data(dat):
 
 
 func _ready():
-	loadit()
+	#loadit()
 
 	# load dialogue system data
 	PROGRESS.variables = global.data.prog_var

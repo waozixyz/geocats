@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Levels/1_CatCradle/Cats_Cradle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/1_CatCradle/Stereo.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=32]
-[ext_resource path="res://Scenes/UI/InteractWith.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Jazz_2.ogg" type="AudioStream" id=34]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=35]
 
@@ -88,12 +87,14 @@ extents = Vector2( 36, 5 )
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="DynamicFontData" id=26]
-font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
+[sub_resource type="DynamicFontData" id=40]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=27]
-size = 12
-font_data = SubResource( 26 )
+[sub_resource type="DynamicFont" id=32]
+size = 22
+extra_spacing_top = -5
+extra_spacing_bottom = -3
+font_data = SubResource( 40 )
 
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 46, 54 )
@@ -293,42 +294,22 @@ one_way_collision = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractWith" parent="CanvasLayer" instance=ExtResource( 33 )]
+[node name="Letter" type="Node2D" parent="CanvasLayer"]
 visible = false
-mouse_filter = 2
+position = Vector2( 5, 0 )
 
-[node name="Letter" type="ViewportContainer" parent="CanvasLayer"]
-visible = false
-anchor_left = -1.0
-anchor_top = -1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 640.0
-margin_top = 530.0
-margin_bottom = 50.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="CanvasLayer/Letter"]
-size = Vector2( 213, 160 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Letter/Viewport"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Letter"]
+position = Vector2( 0, 68 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 32 )
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Letter"]
 margin_left = 30.0
-margin_top = 25.0
+margin_top = 90.0
 margin_right = 620.0
-margin_bottom = 480.0
-custom_fonts/normal_font = SubResource( 27 )
+margin_bottom = 530.0
+custom_fonts/normal_font = SubResource( 32 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 31 )
@@ -346,12 +327,11 @@ autoplay = true
 position = Vector2( 1297, 194 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
-limit_left = 25
 limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 24
+frame = 22
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0
