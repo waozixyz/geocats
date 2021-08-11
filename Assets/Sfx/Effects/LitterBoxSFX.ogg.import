@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LitterBoxSFX.ogg-65815b85603d6a487a07b5ae05b4f4ec.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effects/LitterBoxSFX.ogg"
+dest_files=[ "res://.import/LitterBoxSFX.ogg-65815b85603d6a487a07b5ae05b4f4ec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

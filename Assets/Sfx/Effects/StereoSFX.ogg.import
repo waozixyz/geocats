@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/StereoSFX.ogg-bbed1de918191324185aa4aebdef607a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effects/StereoSFX.ogg"
+dest_files=[ "res://.import/StereoSFX.ogg-bbed1de918191324185aa4aebdef607a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

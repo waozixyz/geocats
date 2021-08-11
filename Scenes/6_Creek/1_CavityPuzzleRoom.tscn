@@ -447,18 +447,18 @@ extents = Vector2( 24, 14 )
 [sub_resource type="RectangleShape2D" id=94]
 extents = Vector2( 24, 14 )
 
-[sub_resource type="DynamicFontData" id=97]
+[sub_resource type="DynamicFontData" id=95]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=98]
+[sub_resource type="DynamicFont" id=96]
 size = 24
 extra_spacing_top = -10
-font_data = SubResource( 97 )
+font_data = SubResource( 95 )
 
-[sub_resource type="RectangleShape2D" id=95]
+[sub_resource type="RectangleShape2D" id=97]
 extents = Vector2( 43, 14 )
 
-[sub_resource type="RectangleShape2D" id=96]
+[sub_resource type="RectangleShape2D" id=98]
 extents = Vector2( 160, 88 )
 
 [node name="CavityPuzzleRoom" type="Node2D"]
@@ -532,7 +532,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 32
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -555,13 +555,14 @@ render_target_update_mode = 3
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 25, 102 )
 frames = SubResource( 20 )
-frame = 2
+frame = 5
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 234, 104 )
 frames = SubResource( 26 )
+frame = 2
 speed_scale = 0.7
 playing = true
 centered = false
@@ -569,7 +570,7 @@ centered = false
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 100, 0 )
 frames = SubResource( 32 )
-frame = 1
+frame = 3
 speed_scale = 0.7
 playing = true
 centered = false
@@ -577,14 +578,14 @@ centered = false
 [node name="gc5" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 165, 0 )
 frames = SubResource( 37 )
-frame = 4
+frame = 7
 playing = true
 centered = false
 
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 127, 118 )
 frames = SubResource( 44 )
-frame = 5
+frame = 9
 speed_scale = 1.2
 playing = true
 centered = false
@@ -592,7 +593,7 @@ centered = false
 [node name="gc7" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 191, 5 )
 frames = SubResource( 51 )
-frame = 12
+frame = 2
 speed_scale = 0.9
 playing = true
 centered = false
@@ -600,7 +601,7 @@ centered = false
 [node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 235, 75 )
 frames = SubResource( 59 )
-frame = 11
+frame = 13
 speed_scale = 0.7
 playing = true
 centered = false
@@ -608,7 +609,7 @@ centered = false
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 35 )
 frames = SubResource( 66 )
-frame = 5
+frame = 7
 speed_scale = 0.7
 playing = true
 centered = false
@@ -616,7 +617,7 @@ centered = false
 [node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 69, 8 )
 frames = SubResource( 71 )
-frame = 2
+frame = 5
 speed_scale = 1.1
 playing = true
 centered = false
@@ -738,7 +739,7 @@ margin_left = 310.0
 margin_top = 439.0
 margin_right = 624.0
 margin_bottom = 477.0
-custom_fonts/font = SubResource( 98 )
+custom_fonts/font = SubResource( 96 )
 text = "Click here for more information!"
 align = 1
 autowrap = true
@@ -748,14 +749,14 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Ticket"]
 position = Vector2( 571, 263 )
-shape = SubResource( 95 )
+shape = SubResource( 97 )
 
 [node name="GoToSite" type="Area2D" parent="CanvasLayer/HUD"]
 script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/GoToSite"]
 position = Vector2( 467, 390 )
-shape = SubResource( 96 )
+shape = SubResource( 98 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

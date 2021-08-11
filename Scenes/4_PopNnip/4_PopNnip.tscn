@@ -316,7 +316,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+frame = 22
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

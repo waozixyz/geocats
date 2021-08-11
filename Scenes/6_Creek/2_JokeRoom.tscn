@@ -70,7 +70,6 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 207, 75 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 centered = false
 
@@ -88,7 +87,7 @@ limit_right = 1560
 limit_bottom = 840
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 12
+frame = 6
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1560.0

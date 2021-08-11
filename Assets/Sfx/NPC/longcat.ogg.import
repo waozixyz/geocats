@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/longcat.ogg-f966aba5e0617bb024da5ca1826e0dd1.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/NPC/longcat.ogg"
+dest_files=[ "res://.import/longcat.ogg-f966aba5e0617bb024da5ca1826e0dd1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

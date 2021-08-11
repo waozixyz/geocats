@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/garbitage.ogg-1218b98e3cae7a76e4210b9cbe737bc6.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/NPC/garbitage.ogg"
+dest_files=[ "res://.import/garbitage.ogg-1218b98e3cae7a76e4210b9cbe737bc6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

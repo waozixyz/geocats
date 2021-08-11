@@ -7,6 +7,7 @@ var active : bool
 var disabled : bool
 var parent_name : String
 var convo_file : String
+var music_file : String
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -20,8 +21,11 @@ func show_chat():
 	parent_name = get_parent().name
 	if parent_name == "Affogato":
 		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
 	else:
 		convo_file = parent_name.replace(" ", "_")
+		music_file = convo_file.to_lower()
+	
 	active = true
 	if chat_with:
 		chat_with.hide_after = false
@@ -42,6 +46,7 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		hide_chat()
 
+var played_sound 
 func _process(_delta):
 	if disabled and active:
 		hide_chat()
@@ -50,6 +55,14 @@ func _process(_delta):
 			get_parent().idle = true
 		else:
 			get_parent().idle = false
+	if active and chat_with.started:
+		if not played_sound:
+			AudioStreamManager.play("res://Assets/Sfx/NPC/" + music_file + ".ogg")
+			played_sound = true
+	else:
+		if played_sound:
+			AudioStreamManager.stop()
+			played_sound = false
 
 func _input(_event):
 	if active:

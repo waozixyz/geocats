@@ -56,7 +56,9 @@ func _get_request(uri, body):
 
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
-
+func _next():
+	SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
+	
 func _on_request_completed( result, response_code, headers, body):
 	var response = parse_json(body.get_string_from_utf8())
 
@@ -69,6 +71,8 @@ func _on_request_completed( result, response_code, headers, body):
 				for wallet in wallets:
 					if wallet.secretType == "VECHAIN" and wallet.walletType == "WHITE_LABEL":
 						wallet_address = wallet.address
+						if wallet_address == "0x182Cc7Ef4a41654b2535aD3BbF02bA78d920044d" or wallet_address == "0xb0666fE76fCc0063D6A1C2B6F58aaC4BD62c0880":
+							_next()
 						_get_geokey()
 		else:
 			has_key = false
@@ -76,10 +80,7 @@ func _on_request_completed( result, response_code, headers, body):
 				var ndata = parse_json(nft.ipfs_data_json)
 				if ndata.Title == "GeoKey":
 					has_key = true
-					if global.data.scene == "TitleScreen":
-						global.data.scene = "CatCradle"
-						global.data.location = 0
-					SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
+					_next()
 
 			checked_key = true
 	else:

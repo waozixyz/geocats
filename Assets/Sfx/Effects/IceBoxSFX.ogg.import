@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/IceBoxSFX.ogg-ae04a89eb2840f0775b0437878aa2dde.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effects/IceBoxSFX.ogg"
+dest_files=[ "res://.import/IceBoxSFX.ogg-ae04a89eb2840f0775b0437878aa2dde.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

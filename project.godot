@@ -60,7 +60,7 @@ SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 global="*res://Scenes/global.gd"
 PROGRESS="*res://Scenes/Dialogue/progress.gd"
 Data="*res://Scenes/Data.gd"
-AudioStreamManager="*res://AudioStreamManager.gd"
+AudioStreamManager="*res://Scenes/AudioStreamManager.gd"
 
 [display]
 

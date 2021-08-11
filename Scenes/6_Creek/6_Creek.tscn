@@ -267,7 +267,7 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 8
+frame = 7
 speed_scale = 2.0
 playing = true
 centered = false
@@ -275,7 +275,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 9
+frame = 3
 speed_scale = 1.5
 playing = true
 centered = false
@@ -283,7 +283,7 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 4
+frame = 1
 speed_scale = 2.2
 playing = true
 centered = false
@@ -291,14 +291,14 @@ centered = false
 [node name="HangingCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 1122, 475 )
 frames = SubResource( 29 )
-frame = 7
+frame = 3
 playing = true
 centered = false
 
 [node name="TreeCat" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 43, 104 )
 frames = SubResource( 33 )
-frame = 9
+frame = 10
 speed_scale = 0.5
 playing = true
 centered = false
@@ -407,7 +407,7 @@ polygon = PoolVector2Array( 6449, 4417, 6385, 4433, 6248, 4475, 6033, 4578, 5865
 polygon = PoolVector2Array( 6505, 4446, 6580, 4505, 6735, 4602, 6893, 4741, 7081, 4840, 7293, 4902, 7536, 4941, 7776, 4966, 8254, 4987, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7736, 4998, 7518, 4998, 7266, 4963, 7018, 4880, 6862, 4782, 6608, 4608, 6478, 4504, 6387, 4446, 6384, 4433, 6431, 4416, 6455, 4414, 6480, 4424 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4674, 3264, 5190, 3186, 5579, 3113, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4314, 3380, 3952, 3392 )
+polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4435.2, 3307.77, 4674, 3264, 5190, 3186, 5579, 3113, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4484.82, 3354.86, 4314.95, 3371.68, 4119.03, 3377.57, 4302.34, 3428.02, 4226.66, 3431.39, 3952, 3392 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="Ground"]
@@ -529,7 +529,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 7
+frame = 5
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )

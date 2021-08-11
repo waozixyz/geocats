@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cleopardis.ogg-80004e2600cdd849828f66838479ad55.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/NPC/Cleopardis.ogg"
+dest_files=[ "res://.import/Cleopardis.ogg-80004e2600cdd849828f66838479ad55.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

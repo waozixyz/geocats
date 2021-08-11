@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PopNNipRave.ogg-1e171688fb7ec2c8b05d953c4e01f8cf.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effects/PopNNipRave.ogg"
+dest_files=[ "res://.import/PopNNipRave.ogg-1e171688fb7ec2c8b05d953c4e01f8cf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

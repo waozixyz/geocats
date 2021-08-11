@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -12,14 +12,11 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/7_Mountain/Interact.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/7_Mountain/CatnipCat.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_sixeight_loopable.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Scenes/7_Mountain/SleepingCat.gd" type="Script" id=18]
-[ext_resource path="res://SittingCat.gd" type="Script" id=19]
-[ext_resource path="res://ThinkingCat.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Chat.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/7_Mountain/Telescope.gd" type="Script" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -173,7 +170,7 @@ extents = Vector2( 54.9967, 49.9998 )
 extents = Vector2( 50, 50 )
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 149, 97 )
+extents = Vector2( 84, 53 )
 
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 73, 78 )
@@ -221,7 +218,7 @@ centered = false
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 2
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -229,7 +226,7 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 69, 4847 )
+position = Vector2( 89, 4863 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -237,7 +234,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 29
+frame = 32
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 5000.0
@@ -260,14 +257,13 @@ render_target_update_mode = 3
 position = Vector2( 120, 275 )
 z_index = 4
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="CatnipCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 45, 279 )
 z_index = 4
 frames = SubResource( 13 )
-frame = 12
+frame = 6
 playing = true
 
 [node name="ThinkingCat" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
@@ -488,113 +484,38 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
 [node name="Sitting Cat" type="Node2D" parent="."]
-position = Vector2( 2106, 2372 )
-
-[node name="ViewportContainer" type="ViewportContainer" parent="Sitting Cat"]
-margin_left = -40.0
-margin_top = -23.0
-margin_right = 27.0
-margin_bottom = 56.0
-rect_pivot_offset = Vector2( 22.5, 12.5 )
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="Sitting Cat/ViewportContainer"]
-size = Vector2( 16, 19 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
 
 [node name="Area2D" type="Area2D" parent="Sitting Cat"]
-script = ExtResource( 19 )
+position = Vector2( 2106, 2372 )
+script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sitting Cat/Area2D"]
+position = Vector2( -10, -4 )
 shape = SubResource( 38 )
 
 [node name="Thinking Cat" type="Node2D" parent="."]
 position = Vector2( 918, 1322 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="Thinking Cat"]
-margin_left = -40.0
-margin_top = -23.0
-margin_right = 27.0
-margin_bottom = 56.0
-rect_pivot_offset = Vector2( 22.5, 12.5 )
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="Thinking Cat/ViewportContainer"]
-size = Vector2( 16, 19 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="Area2DThinkingCat" type="Area2D" parent="Thinking Cat"]
+[node name="Area2D" type="Area2D" parent="Thinking Cat"]
 script = ExtResource( 20 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Thinking Cat/Area2DThinkingCat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Thinking Cat/Area2D"]
 shape = SubResource( 38 )
 
 [node name="Sleeping Cat" type="Node2D" parent="."]
 position = Vector2( 597, 1362 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="Sleeping Cat"]
-margin_left = -40.0
-margin_top = -23.0
-margin_right = 27.0
-margin_bottom = 56.0
-rect_pivot_offset = Vector2( 22.5, 12.5 )
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Area2D" type="Area2D" parent="Sleeping Cat"]
+script = ExtResource( 20 )
 
-[node name="Viewport" type="Viewport" parent="Sleeping Cat/ViewportContainer"]
-size = Vector2( 16, 19 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="Area2DSleepingCat" type="Area2D" parent="Sleeping Cat"]
-script = ExtResource( 18 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sleeping Cat/Area2DSleepingCat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sleeping Cat/Area2D"]
 shape = SubResource( 38 )
 
 [node name="Catnip Cat" type="Node2D" parent="."]
 position = Vector2( 253, 1367 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="Catnip Cat"]
-margin_left = -40.0
-margin_top = -23.0
-margin_right = 27.0
-margin_bottom = 56.0
-rect_pivot_offset = Vector2( 22.5, 12.5 )
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="Catnip Cat/ViewportContainer"]
-size = Vector2( 16, 19 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
 [node name="Area2D" type="Area2D" parent="Catnip Cat"]
-script = ExtResource( 13 )
+script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catnip Cat/Area2D"]
 shape = SubResource( 38 )

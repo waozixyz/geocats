@@ -1,11 +1,8 @@
 extends BasePlayerState
 
-var jumpBufferStartTime  = 0 #ticks when you ran of the platform
-var elapsedJumpBuffer = 0 #how many seconds passed in the jump nuffer
-var jumpBuffer = 50 #how many miliseconds allowance you give jumps after you run of an edge
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
-	jumpBufferStartTime = OS.get_ticks_msec()	
+
 
 func logic(player: KinematicBody2D, _delta: float):
 	if player.check_wall_slide(player.left_raycast, -1) or player.check_wall_slide(player.right_raycast, 1):
@@ -21,8 +18,6 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.grounded and player.jumping and not player.sprite.animation == "crouch":
 		return "jump"
 
-	elapsedJumpBuffer = OS.get_ticks_msec() - jumpBufferStartTime #set elapsed time for jump buffer
-		
 	if player.isJumpPressed:
 		#if you press jump
 		if !player.isDoubleJumped:
@@ -32,5 +27,3 @@ func logic(player: KinematicBody2D, _delta: float):
 	if not player.is_on_wall():
 		player.move_horizontally(player.airFriction) #move horizontally
 	
-func exit_logic(_player: KinematicBody2D):
-	jumpBufferStartTime = 0 #reset jump buffer start time

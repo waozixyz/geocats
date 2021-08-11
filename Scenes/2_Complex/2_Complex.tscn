@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Regge_groove.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/Levels/2_Complex/elevator_button.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/2_Complex/bckg_deko_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/3.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/2_Complex/buzzer.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/SimpleSfx.gd" type="Script" id=17]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/4.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/5.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Agents/NPC/Cleopartis/6.png" type="Texture" id=20]
@@ -41,9 +41,7 @@
 [ext_resource path="res://Scenes/2_Complex/Interact.gd" type="Script" id=39]
 [ext_resource path="res://Scenes/2_Complex/Cleopardis.gd" type="Script" id=40]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=41]
-[ext_resource path="res://Scenes/2_Complex/CleopardisArea2D.gd" type="Script" id=42]
-[ext_resource path="res://Scenes/2_Complex/HogwashArea2D.gd" type="Script" id=43]
-[ext_resource path="res://Scenes/2_Complex/IceboxArea2d.gd" type="Script" id=44]
+[ext_resource path="res://Scenes/Chat.gd" type="Script" id=42]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
@@ -658,7 +656,7 @@ extents = Vector2( 31.748, 1946.04 )
 extents = Vector2( 690.476, 23.832 )
 
 [sub_resource type="RectangleShape2D" id=86]
-extents = Vector2( 12.9395, 35.1383 )
+extents = Vector2( 45.128, 93.1666 )
 
 [sub_resource type="RectangleShape2D" id=87]
 extents = Vector2( 82.6183, 38.2424 )
@@ -1260,7 +1258,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopardis/ViewportContainer/Viewport"]
 frames = SubResource( 81 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 centered = false
 
@@ -1275,7 +1273,7 @@ shape = SubResource( 82 )
 position = Vector2( 1056, 480 )
 
 [node name="HogwashArea2D" type="Area2D" parent="Node2D/Hogwash"]
-script = ExtResource( 43 )
+script = ExtResource( 42 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Hogwash/HogwashArea2D"]
 position = Vector2( 42, 6 )
@@ -1312,18 +1310,19 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 10
+frame = 28
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )
 script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorbellSFX"]
+position = Vector2( 1.41425, 14.1421 )
 shape = SubResource( 86 )
 
 [node name="IceBoxSFX" type="Area2D" parent="."]
 position = Vector2( 561.491, 177.263 )
-script = ExtResource( 44 )
+script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceBoxSFX"]
 position = Vector2( -20.9362, 52.563 )

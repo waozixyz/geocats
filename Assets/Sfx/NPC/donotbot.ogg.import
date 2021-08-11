@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/donotbot.ogg-64714a44e0f45eb72712caaf7fe86858.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/NPC/donotbot.ogg"
+dest_files=[ "res://.import/donotbot.ogg-64714a44e0f45eb72712caaf7fe86858.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

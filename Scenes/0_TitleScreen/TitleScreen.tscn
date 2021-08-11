@@ -29,12 +29,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFontData" id=6]
-font_path = "res://Assets/Fonts/GeoType17-Regular.ttf"
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=7]
-size = 10
-font_data = SubResource( 6 )
+size = 20
+font_data = SubResource( 8 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0

@@ -10,7 +10,7 @@ func _ready():
 var started : bool = false
 
 func _on_body_entered(body):
-	if body.name  == "Player" and (PROGRESS.dialogues.empty() or not PROGRESS.dialogues.feline_creek):
+	if body.name  == "Player" and not "feline_creek" in PROGRESS.dialogues:
 		started = true
 		chat_with.start("feline_creek", true)
 		player.disabled = true
