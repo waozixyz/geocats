@@ -57,6 +57,7 @@ func _process(_delta):
 			get_parent().idle = false
 	if active and chat_with.started:
 		if not played_sound:
+			
 			AudioStreamManager.play("res://Assets/Sfx/NPC/" + music_file + ".ogg")
 			played_sound = true
 	else:

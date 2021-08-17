@@ -34,7 +34,9 @@ func stop():
 func _process(_delta):
 # Play a queued sound if any players are available.
 	if not queue.empty() and not available.empty():
-		available[0].stream = load(queue.pop_front())
-		available[0].stream.loop = false
-		available[0].play()
-		available.pop_front()
+		var file = load(queue.pop_front())
+		if file:
+			available[0].stream = file
+			available[0].stream.loop = false
+			available[0].play()
+			available.pop_front()

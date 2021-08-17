@@ -131,7 +131,6 @@ centered = false
 [node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -316,7 +315,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 22
+frame = 26
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
