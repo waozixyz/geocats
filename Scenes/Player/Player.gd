@@ -51,6 +51,8 @@ var acceleration = 10 #by how much does current speed approach max speed when mo
 var decceleration = 35 #by how much does velocity approach when you stop moving horizontally
 var disabled = false
 
+var jump_height = 300
+var dbl_jump_height = 300
 
 func default_anim():
 	if vertical > 0:

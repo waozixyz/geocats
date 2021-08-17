@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Levels/1_CatCradle/Cats_Cradle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/SimpleSfx.gd" type="Script" id=2]
@@ -67,6 +67,9 @@ extents = Vector2( 129, 12 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 203, 36 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 27, 5 )
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 114, 12 )
@@ -175,6 +178,8 @@ position = Vector2( 1.57141, -47.4286 )
 texture = ExtResource( 23 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" groups=[
 "end",
@@ -223,6 +228,8 @@ position = Vector2( 730, 700 )
 shape = SubResource( 13 )
 
 [node name="Platforms" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 396, 132 )
@@ -251,6 +258,11 @@ shape = SubResource( 18 )
 position = Vector2( 549, 570 )
 shape = SubResource( 19 )
 
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 161, 665 )
+shape = SubResource( 31 )
+one_way_collision = true
+
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 227, 378 )
 shape = SubResource( 18 )
@@ -267,6 +279,8 @@ one_way_collision = true
 
 [node name="Stereo" type="StaticBody2D" parent="."]
 position = Vector2( 549, 570 )
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stereo"]
 position = Vector2( 266, 58 )
@@ -280,6 +294,8 @@ one_way_collision = true
 
 [node name="Statue" type="StaticBody2D" parent="."]
 position = Vector2( 900, 570 )
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statue"]
 position = Vector2( 314, -31 )
@@ -330,7 +346,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 21
+frame = 25
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0
@@ -355,6 +371,8 @@ __meta__ = {
 }
 
 [node name="Stairs" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs"]
 polygon = PoolVector2Array( 1064, 288, 728, 120, 712, 120, 712, 136, 1024, 288 )

@@ -17,14 +17,18 @@ var f = 0.002
 var elapsed = 0
 var ticks = 0
 var margin = 50
-var mov_speed = 8
+var mov_speed = 350
 var jump_height = 15
 var init = false
 var lastDiff = 0
 var diff = 0
 var climbing = false
 
-func _physics_process(_delta):
+var add_x = 0
+var add_y = 0
+
+var next_jump_height = 0
+func _physics_process(delta):
 	var scene_name = get_tree().get_current_scene().name
 	var donut_open = PROGRESS.variables.get("donut_open")
 	var follow = PROGRESS.variables.get("follow")
@@ -48,23 +52,33 @@ func _physics_process(_delta):
 			position = player.position
 			init = true
 		chat.disabled = true
-
+		
+		
+		if position.y > player.position.y + margin and ticks == 20:
+			next_jump_height = 400
+		
 		if position.x < player.position.x - margin:
-			position.x += mov_speed
-		elif position.x > player.position.x + margin:
-			position.x -= mov_speed
-		if position.y > player.position.y + margin * 2:
-			jump_height = 600 
-		elif position.y > player.position.y + margin:
-			jump_height = 400
-		elif position.y < player.position.y - margin:
+			add_x += mov_speed
+		if position.x > player.position.x + margin:
+			add_x -= mov_speed
+
+		#if player.isDoubleJumped:
+		#	jump(player.dbl_jump_height)
+		if player.isJumpPressed:
+			next_jump_height = player.jump_height
+
+		if add_x != 0:
+			velocity.x += add_x * .1
+			add_x -= add_x * .1
+
+		if position.y < player.position.y - margin:
 			fall_through()
 		else:
 			if ticks > 100:
 				jump_height = 300
 				ticks = 0
 			else:
-				jump_height = 15
+				jump_height = 15 + next_jump_height
 		if player.state_machine.active_state.tag == "climb":
 			if position != player.position:
 				position += (player.position - position) * .05
@@ -79,8 +93,11 @@ func _physics_process(_delta):
 		anim = "blink"
 	else:
 		anim = "idle"
+
 	if is_on_floor():
 		jump(jump_height)
+		next_jump_height = 0
+
 	if not climbing:
 		velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 	sprite.play(anim)
