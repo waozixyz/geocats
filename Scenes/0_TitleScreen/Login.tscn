@@ -119,6 +119,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NoServer" type="Label" parent="."]
+visible = false
+margin_left = 45.0
+margin_top = 378.0
+margin_right = 610.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.933333, 0.141176, 0.0117647, 1 )
+text = "Unable to Connect to the Server"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="NoKey" type="Label" parent="."]
 visible = false
 margin_left = 45.0

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
 
@@ -17,6 +17,13 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
 [sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.207843, 0.101961, 0, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.207843, 0.101961, 0, 1 )
 corner_radius_top_left = 9
 corner_radius_top_right = 9
@@ -66,7 +73,7 @@ Button/styles/disabled = null
 Button/styles/focus = SubResource( 1 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = null
+Button/styles/pressed = SubResource( 10 )
 Dialogs/constants/button_margin = 32
 Dialogs/constants/margin = 8
 FileDialog/colors/files_disabled = Color( 0, 0, 0, 0.7 )

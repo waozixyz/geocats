@@ -6,6 +6,7 @@ onready var email = $Email
 onready var password = $Password
 onready var mistake = $Mistake
 onready var nokey = $NoKey
+onready var noserver = $NoServer
 
 var http_request
 var is_mistake = false
@@ -61,13 +62,17 @@ func _login_request(uri, body):
 	
 func _on_request_completed( result, response_code, headers, body):
 	var response = parse_json(body.get_string_from_utf8())
-	if response.status:
-		is_mistake = false
-		if response.jwt:
-			global.jwt = response.jwt
-		if response.vechain:
-			global.vechain = response.vechain
-		global.check_nft(key_name)
-
+	if not response:
+		noserver.visible = true
 	else:
-		is_mistake = true
+		noserver.visible = false
+		if response.status:
+			is_mistake = false
+			if response.jwt:
+				global.jwt = response.jwt
+			if response.vechain:
+				global.vechain = response.vechain
+			global.check_nft(key_name)
+
+		else:
+			is_mistake = true
