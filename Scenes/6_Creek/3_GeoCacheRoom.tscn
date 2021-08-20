@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/FG_Frame.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/GeoChest.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Water/Water.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/6_Creek/Treasure.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/0_TitleScreen/Login.tscn" type="PackedScene" id=12]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/BG.png-98d1cb3b0536e7eaf6c93e43c9e78034.stex"
@@ -23,19 +24,19 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 50 )
+
+[sub_resource type="StreamTexture" id=4]
 load_path = "res://.import/Floor.png-5fb18ebcb7081666838e5b13cb24e8bf.stex"
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 0.6
 } ]
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 50, 50 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 9 )
@@ -54,6 +55,14 @@ extents = Vector2( 358.888, 60.6786 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 33.9119, 32.5012 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 
@@ -82,22 +91,48 @@ centered = false
 [node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 1
 frames = SubResource( 2 )
-frame = 1
 playing = true
 centered = false
+
+[node name="ExitGeoCache" type="Area2D" parent="."]
+position = Vector2( 33, 354.813 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
+position = Vector2( 94, 62.187 )
+shape = SubResource( 3 )
+
+[node name="Button" type="Sprite" parent="ExitGeoCache"]
+visible = false
+position = Vector2( 88, -5.81299 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 5 )
+
+[node name="Colliders" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders"]
+position = Vector2( 0, 2 )
+polygon = PoolVector2Array( 73, 462, 835, 464, 980, 434, 1234, 434, 1233, 459, 983, 460, 822, 483, 73, 486 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 74, 810, 71, 1097, 99, 1173, 202, 1217, 394, 1228, 434, 1248, 434, 1207, 273, 1187, 192, 1107, 77, 838, 47, 540, 58, 331, 58, 254, 97, 195, 210, 60, 285, 55, 467 )
 
 [node name="Default" parent="." instance=ExtResource( 1 )]
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( -284, 125 )
+position = Vector2( 658.421, 116.181 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 7
+frame = 31
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -118,7 +153,7 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Floor" type="Sprite" parent="AbovePlayer/Viewport"]
-texture = SubResource( 3 )
+texture = SubResource( 4 )
 centered = false
 
 [node name="FG_Frame" type="Sprite" parent="AbovePlayer/Viewport/Floor"]
@@ -127,37 +162,11 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Viewport/Floor"]
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 playing = true
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
-"end",
-]]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( 0, 2 )
-polygon = PoolVector2Array( 73, 462, 835, 464, 980, 434, 1234, 434, 1233, 459, 983, 460, 822, 483, 73, 486 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 74, 810, 71, 1097, 99, 1173, 202, 1217, 394, 1228, 434, 1248, 434, 1207, 273, 1187, 192, 1107, 77, 838, 47, 540, 58, 331, 58, 254, 97, 195, 210, 60, 285, 55, 467 )
-
-[node name="ExitGeoCache" type="Area2D" parent="."]
-position = Vector2( 33, 354.813 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
-position = Vector2( 94, 62.187 )
-shape = SubResource( 5 )
-
-[node name="Button" type="Sprite" parent="ExitGeoCache"]
-position = Vector2( 88, -5.81299 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 5 )
-
-[node name="GeocacheChest" type="Node" parent="."]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="GeocacheChest"]
+[node name="GeoCacheTreasure" type="AnimatedSprite" parent="."]
 position = Vector2( 1106, 421 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
@@ -178,6 +187,14 @@ script = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )
 shape = SubResource( 9 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Login" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
+
+[node name="GeoCache" type="AnimatedSprite" parent="CanvasLayer"]
+frames = SubResource( 10 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

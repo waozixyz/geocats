@@ -1,16 +1,14 @@
-extends MainInteract
+extends InteractButton
 
 
 func _input(_event):
 	if _can_interact():
 		if name == "CaveToDown":
-			AudioStreamManager.play("res://Assets/Sfx/SFX/GroundCatJokeRoom.ogg")
-			player.position.x = 4420
-			player.position.y = 4950
+			_add_audio("Effects", "GroundCatJokeRoom", false)
+			_teleport(4420, 4950)
 		elif name == "CaveToUp":
-			AudioStreamManager.play("res://Assets/Sfx/SFX/GroundCatJokeRoom.ogg")
-			player.position.x = 4350
-			player.position.y = 3240
+			_add_audio("Effects", "GroundCatJokeRoom", false)
+			_teleport(4350, 3240)
 		elif name == "JokeRoom":
 			SceneChanger.change_scene("JokeRoom", 0, "OrganicSmashLilCave", 1)
 		elif name == "CavityPuzzleRoom":

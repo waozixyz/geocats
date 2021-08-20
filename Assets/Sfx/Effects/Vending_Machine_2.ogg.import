@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Vending_Machine_2.ogg-11b951c0c34f914837978ea97e6c3fcb.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effects/Vending_Machine_2.ogg"
+dest_files=[ "res://.import/Vending_Machine_2.ogg-11b951c0c34f914837978ea97e6c3fcb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

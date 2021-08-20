@@ -19,11 +19,11 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/spaceship_screen.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/npc.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/fg_sing_cords.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/Chat.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/UI/InteractChat.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/fg_wall.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/4_PopNnip/npc.gd" type="Script" id=22]
-[ext_resource path="res://Scenes/UI/SimpleInteract.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/SimpleSfx.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/UI/InteractSimple.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/UI/InteractSimple.gd" type="Script" id=24]
 [ext_resource path="res://Assets/Sfx/SFX/Melodic_Alarm_Ambience_1.ogg" type="AudioStream" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -362,7 +362,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -377,6 +377,7 @@ centered = false
 [node name="spaceship" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 29, 86 )
 frames = SubResource( 27 )
+frame = 1
 speed_scale = 0.05
 playing = true
 centered = false
@@ -392,7 +393,6 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -416,7 +416,6 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
-frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -578,7 +577,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 7
+frame = 3
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -613,6 +612,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 67 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

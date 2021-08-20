@@ -1,9 +1,9 @@
-extends MainInteract
+extends InteractButton
 
 
 func _input(event):
 	if _can_interact():
-		button.visible = false
+		object.visible = false
 		if name == "GoToComplex":
 			SceneChanger.change_scene("Complex", 1, "FootstepsOnGravelFast", 1.5)
 		if name == "PopNnip":
@@ -17,6 +17,6 @@ func _input(event):
 			else:
 				chat_with.visible = true
 				chat_with.start("door_closed", true)
-				button.visible = true
+				object.visible = true
 			
 

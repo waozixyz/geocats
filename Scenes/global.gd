@@ -5,6 +5,7 @@ var player_direction
 var crt_noise = 0.0
 
 var data =  {
+	"jwt": "",
 	"scene": "CatCradle",
 	"location": 0,
 	"present": true,
@@ -27,9 +28,6 @@ func _notification(what):
 var url = "http://127.0.0.1:5000"
 var http_request
 
-var jwt : String = ""
-var vechain: String = ""
-
 var nfts = {}
 var updating = false
 
@@ -40,10 +38,16 @@ func _ready():
 
 func check_nft(nft):
 	updating = true
-	var uri = url + "/nft"
+	var uri = url + "/check-nft"
 	var body = { "NFT": nft }
 	_get_request(uri, body)
 
+
+func get_nft(nft):
+	updating = true
+	var uri = url + "/get-nft"
+	var body = { "NFT": nft }
+	_get_request(uri, body)
 
 func _get_request(uri, body):
 	# Convert data to json string:
@@ -51,13 +55,17 @@ func _get_request(uri, body):
 	var headers = PoolStringArray()
 	# Add 'Content-Type' header:
 	headers.append("Content-Type: application/json")
-	headers.append("Authorization: Bearer " + jwt)
+	headers.append("Authorization: Bearer " + data.jwt)
 	var error = http_request.request(uri, headers, true, HTTPClient.METHOD_POST, query)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
-func _on_request_completed( result, response_code, headers, body):
-	var response = parse_json(body.get_string_from_utf8())
-	if response.status == true:
+var response_code
+var response
+func _on_request_completed( result, new_response_code, headers, body):
+	response_code = new_response_code
+	response = parse_json(body.get_string_from_utf8())
+	if response and response.has("status") and response.status and response.has("name"):
 		nfts[response.name] = response.val
+
 	updating = false

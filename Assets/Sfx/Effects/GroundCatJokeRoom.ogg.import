@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GroundCatJokeRoom.ogg-472fb6db132825348c63d8202c398f8f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Effects/GroundCatJokeRoom.ogg"
+dest_files=[ "res://.import/GroundCatJokeRoom.ogg-472fb6db132825348c63d8202c398f8f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

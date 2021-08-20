@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Levels/5_DonutShop/donutbot/leg_bg.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/5_DonutShop/donutbot/head_fg.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_twelveeight.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Scenes/Chat.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/UI/InteractChat.gd" type="Script" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/5_DonutShop/interactions.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/5_DonutShop/5_DonutShop.gd" type="Script" id=16]
@@ -173,7 +173,6 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 70, 49 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -181,7 +180,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 68, 59 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -210,7 +208,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 11
+frame = 22
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -237,6 +235,7 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 143, 73 )
 frames = SubResource( 9 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false

@@ -5,7 +5,8 @@ onready var name_label = $Panel/NameLabel
 
 var started : bool = false
 var hide_after: bool = false
-func start(name, hide = false):
+func start(name, hide = false, panel_visible = true):
+	panel.visible = panel_visible
 	hide_after = hide
 	visible = true
 

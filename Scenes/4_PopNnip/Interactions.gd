@@ -1,9 +1,9 @@
-extends MainInteract
+extends InteractButton
 
 
 func _input(event):
 	if _can_interact():
-		button.visible = false
+		object.visible = false
 		if name == "GeoCity":
 			SceneChanger.change_scene("GeoCity", 1, "WayoWayo", .5)
 		elif name == "Arcade":

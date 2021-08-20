@@ -4,25 +4,25 @@
 [ext_resource path="res://Assets/Levels/0_TitleScreen/Slideshow.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Menu_Music.ogg" type="AudioStream" id=3]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
 region = Rect2( 270, 0, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 150, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
 region = Rect2( 270, 150, 270, 150 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -259,7 +259,7 @@ void fragment()
 	COLOR = text;
 }"
 
-[sub_resource type="ShaderMaterial" id=9]
+[sub_resource type="ShaderMaterial" id=14]
 shader = SubResource( 8 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.0
@@ -290,16 +290,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Login" parent="." instance=ExtResource( 1 )]
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -1.90735e-06 )
 scale = Vector2( 2.37037, 2.52 )
-frames = SubResource( 7 )
+frames = SubResource( 13 )
+frame = 3
 speed_scale = 0.1
 playing = true
 centered = false
 
 [node name="CRT" type="ColorRect" parent="."]
-material = SubResource( 9 )
+material = SubResource( 14 )
 margin_right = 640.0
 margin_bottom = 378.0
 mouse_filter = 2
@@ -310,5 +313,3 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
-
-[node name="Login" parent="." instance=ExtResource( 1 )]

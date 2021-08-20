@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/0_TitleScreen/Login.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Menu_Music.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Theme.tres" type="Theme" id=5]
 
@@ -44,7 +43,7 @@ __meta__ = {
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource( 2 )
-margin_top = 342.0
+margin_top = 315.0
 margin_right = 641.0
 margin_bottom = 480.0
 mouse_filter = 1
@@ -89,10 +88,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
-
 [node name="Version" type="Label" parent="."]
 margin_left = 9.0
 margin_top = 450.0
@@ -100,7 +95,7 @@ margin_right = 246.0
 margin_bottom = 475.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.972549, 0.619608, 0.203922, 1 )
-text = "V1 - Primary Survey"
+text = "V1.2 - Primary Survey"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -114,6 +109,20 @@ margin_bottom = 399.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.933333, 0.141176, 0.0117647, 1 )
 text = "Email or Password Incorrect"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connecting" type="Label" parent="."]
+visible = false
+margin_left = 45.0
+margin_top = 378.0
+margin_right = 610.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.933333, 0.141176, 0.0117647, 1 )
+text = "Connecting..."
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

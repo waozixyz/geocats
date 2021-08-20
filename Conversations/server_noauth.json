@@ -1,0 +1,7 @@
+{
+  "first": {
+    "type": "text",
+    "content": "Authentication token expired, press 'e' to proceed to login...",
+    "next": ""
+  },
+}

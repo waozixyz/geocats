@@ -1,7 +1,5 @@
-extends Area2D
-
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
+extends InteractMain
+class_name InteractChat
 
 var active : bool
 var disabled : bool
@@ -46,7 +44,7 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		hide_chat()
 
-var played_sound 
+
 func _process(_delta):
 	if disabled and active:
 		hide_chat()
@@ -55,17 +53,10 @@ func _process(_delta):
 			get_parent().idle = true
 		else:
 			get_parent().idle = false
-	if active and chat_with.started:
-		if not played_sound:
-			
-			AudioStreamManager.play("res://Assets/Sfx/NPC/" + music_file + ".ogg")
-			played_sound = true
-	else:
-		if played_sound:
-			AudioStreamManager.stop()
-			played_sound = false
+
 
 func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
 			chat_with.start(convo_file)
+			_add_audio("NPC", music_file)

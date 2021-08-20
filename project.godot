@@ -24,10 +24,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/UI/Feline.gd"
 }, {
-"base": "Area2D",
-"class": "MainInteract",
+"base": "InteractMain",
+"class": "InteractButton",
 "language": "GDScript",
-"path": "res://Scenes/UI/MainInteract.gd"
+"path": "res://Scenes/UI/InteractButton.gd"
+}, {
+"base": "InteractMain",
+"class": "InteractChat",
+"language": "GDScript",
+"path": "res://Scenes/UI/InteractChat.gd"
+}, {
+"base": "Area2D",
+"class": "InteractMain",
+"language": "GDScript",
+"path": "res://Scenes/UI/InteractMain.gd"
+}, {
+"base": "InteractMain",
+"class": "InteractSimple",
+"language": "GDScript",
+"path": "res://Scenes/UI/InteractSimple.gd"
 }, {
 "base": "Entity",
 "class": "Player",
@@ -43,7 +58,10 @@ _global_script_class_icons={
 "BasePlayerState": "",
 "Entity": "",
 "Feline": "",
-"MainInteract": "",
+"InteractButton": "",
+"InteractChat": "",
+"InteractMain": "",
+"InteractSimple": "",
 "Player": "",
 "PlayerFSM": ""
 }
@@ -60,7 +78,6 @@ SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 global="*res://Scenes/global.gd"
 PROGRESS="*res://Scenes/Dialogue/progress.gd"
 Data="*res://Scenes/Data.gd"
-AudioStreamManager="*res://Scenes/AudioStreamManager.gd"
 
 [display]
 

@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_sixeight_loopable.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Scenes/Chat.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/UI/InteractChat.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/7_Mountain/Telescope.gd" type="Script" id=21]
 
 [sub_resource type="AtlasTexture" id=1]

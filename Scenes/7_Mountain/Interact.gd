@@ -1,4 +1,4 @@
-extends MainInteract
+extends InteractButton
 
 
 func _input(event):
