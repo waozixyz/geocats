@@ -19,33 +19,33 @@ func _get_scene():
 	var dir = 1
 	match scene:
 		"TitleScreen":
-			return ["res://Scenes/0_TitleScreen/TitleScreen.tscn", pos, dir]
+			return ["res://Scenes/Levels/0_TitleScreen/TitleScreen.tscn", pos, dir]
 		"CatCradle":
 			match location:
 				1: 
 					pos = Vector2(25, 950 * 0.7)
-			return ["res://Scenes/1_CatCradle/1_CatCradle.tscn", pos, dir]
+			return ["res://Scenes/Levels/1_CatCradle/1_CatCradle.tscn", pos, dir]
 		"Complex":
 			match location:
 				1: 
 					pos = Vector2(400, 1077)
-			return ["res://Scenes/2_Complex/2_Complex.tscn", pos, dir]
+			return ["res://Scenes/Levels/2_Complex/2_Complex.tscn", pos, dir]
 		"GeoCity":
 			match location:
 				1: 
 					pos = Vector2(2630, 1010)
 				2:
 					pos = Vector2(1023, 1010)
-			return ["res://Scenes/3_GeoCity/3_GeoCity.tscn", pos, dir]
+			return ["res://Scenes/Levels/3_GeoCity/3_GeoCity.tscn", pos, dir]
 		"PopNnip":
 			match location:
 				1: 
 					pos = Vector2(720, 423)
-			return ["res://Scenes/4_PopNnip/4_PopNnip.tscn", pos, dir]
+			return ["res://Scenes/Levels/4_PopNnip/4_PopNnip.tscn", pos, dir]
 		"Arcade":
-			return ["res://Scenes/4_PopNnip/Arcade.tscn", pos, dir]
+			return ["res://Scenes/Levels/4_PopNnip/Arcade.tscn", pos, dir]
 		"DonutShop":
-			return ["res://Scenes/5_DonutShop/5_DonutShop.tscn", pos, dir]
+			return ["res://Scenes/Levels/5_DonutShop/5_DonutShop.tscn", pos, dir]
 		"Creek":
 			match location:
 				1: 
@@ -57,15 +57,15 @@ func _get_scene():
 				4:
 					dir = -1
 					pos = Vector2(8900, 950)
-			return ["res://Scenes/6_Creek/6_Creek.tscn", pos, dir]
+			return ["res://Scenes/Levels/6_Creek/6_Creek.tscn", pos, dir]
 		"CavityPuzzleRoom":	
-			return ["res://Scenes/6_Creek/1_CavityPuzzleRoom.tscn", pos, dir]
+			return ["res://Scenes/Levels/6_Creek/1_CavityPuzzleRoom.tscn", pos, dir]
 		"JokeRoom":	
-			return ["res://Scenes/6_Creek/2_JokeRoom.tscn", pos, dir]
+			return ["res://Scenes/Levels/6_Creek/2_JokeRoom.tscn", pos, dir]
 		"GeoCacheRoom":	
-			return ["res://Scenes/6_Creek/3_GeoCacheRoom.tscn", pos, dir]
+			return ["res://Scenes/Levels/6_Creek/3_GeoCacheRoom.tscn", pos, dir]
 		"Mountain":	
-			return ["res://Scenes/7_Mountain/7_Mountain.tscn", pos, dir]
+			return ["res://Scenes/Levels/7_Mountain/7_Mountain.tscn", pos, dir]
 
 	
 func change_scene(new_scene, new_location, sound, volume):

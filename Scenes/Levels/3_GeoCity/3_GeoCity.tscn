@@ -1,0 +1,800 @@
+[gd_scene load_steps=72 format=2]
+
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Right.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_BG.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/3_GeoCity/city_brick.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Left.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_BG_Buildings.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_Buildings.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_Ground.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_Guard_Rail.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Levels/3_GeoCity/Interactions.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Salty_Swing.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Agents/NPC/lasagna.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Levels/3_GeoCity/npc.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Levels/3_GeoCity/City_tree.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Agents/NPC/longcat.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Agents/NPC/nonacat.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/3_GeoCity/fg_entrance_city.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Agents/NPC/garbitage.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sfx/SFX/BirdsGeoCity.ogg" type="AudioStream" id=22]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 43, 0, 43, 43, 0, 43 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "City_Ground.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 43, 43 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9, 465 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9, 319 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 14 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 301, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 290, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 242, 6 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 32, 6 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 21, 6 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 34, 6 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 209, 6 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 176, 6 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 182, 6 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 101, 6 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 154, 6 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 29, 6 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 325, 6 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 182, 6 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 91, 6 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 14, 2 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 41, 14 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 59, 10 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 98, 10 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 52, 6 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 52, 6 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 35, 5 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 123, 6 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 6, 51 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 2409, 85 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 8, 605 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 2499, 10 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 75, 96 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 75, 47 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 24, 16 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 17 )
+region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 36 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 36 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 51, 49 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 18 )
+region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 18 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 41 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 13 )
+region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 13 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=47]
+animations = [ {
+"frames": [ SubResource( 44 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 45 ), SubResource( 46 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 20 )
+region = Rect2( 60, 0, 15, 12 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 20 )
+region = Rect2( 75, 0, 15, 12 )
+
+[sub_resource type="SpriteFrames" id=50]
+animations = [ {
+"frames": [ SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="GeoCity" type="Node2D"]
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 4800.0
+margin_bottom = 1200.0
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 1200, 300 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="City_BG" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="City_BG_Buildings" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="City_Buildings" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="City_Ladder_Left" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 181, 137 )
+texture = ExtResource( 5 )
+
+[node name="City_Ladder_Right" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 1094, 176 )
+texture = ExtResource( 1 )
+
+[node name="city_brick" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 796.533, 137 )
+scale = Vector2( 1.06667, 1 )
+texture = ExtResource( 4 )
+
+[node name="city_brick2" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 758, 136 )
+scale = Vector2( 1.06667, 1 )
+texture = ExtResource( 4 )
+
+[node name="city_brick3" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 723, 136 )
+scale = Vector2( 1.06667, 1 )
+texture = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="BelowPlayer/Viewport"]
+position = Vector2( 0, -1 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 43, 43 )
+collision_layer = 3
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0 )
+
+[node name="City_Guard_Rail" type="Sprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 75, 73 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 9 )
+
+[node name="LadderColl" type="Node2D" parent="."]
+
+[node name="Ladder" type="Area2D" parent="LadderColl" groups=[
+"ladder",
+]]
+position = Vector2( 721, 545 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderColl/Ladder"]
+shape = SubResource( 3 )
+
+[node name="Ladder2" type="Area2D" parent="LadderColl" groups=[
+"ladder",
+]]
+position = Vector2( 4374, 694 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderColl/Ladder2"]
+shape = SubResource( 4 )
+
+[node name="Bricks" type="StaticBody2D" parent="."]
+position = Vector2( 2800, 500 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks"]
+position = Vector2( 88, 42 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bricks"]
+position = Vector2( 228, 42 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bricks"]
+position = Vector2( 384, 46 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="Houses" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 291, 314 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 978, 90 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1156, 751 )
+shape = SubResource( 8 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1406, 871.2 )
+shape = SubResource( 9 )
+one_way_collision = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1469, 830 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1468, 894 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1467, 839 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1482, 379 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 2644, 486 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 2645, 916 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 2644, 839 )
+shape = SubResource( 15 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 3420, 899 )
+shape = SubResource( 15 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 3006, 827 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 2415, 842 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 3578, 531 )
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4234, 410 )
+shape = SubResource( 19 )
+one_way_collision = true
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4194, 728 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4558, 978 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 3172, 1019 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 2975, 1018 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1808, 862 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 297, 805 )
+shape = SubResource( 24 )
+one_way_collision = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 109, 695 )
+shape = SubResource( 25 )
+one_way_collision = true
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 483, 694 )
+shape = SubResource( 26 )
+one_way_collision = true
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 1725, 797 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4677, 106 )
+shape = SubResource( 28 )
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4554, 151 )
+shape = SubResource( 29 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Houses"]
+polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 205, 4799, 201, 4801, 1032 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 2410, 1113 )
+shape = SubResource( 30 )
+
+[node name="EndWalls" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 2408, 1117 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -2416, -532 )
+shape = SubResource( 31 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( 2400, -518 )
+shape = SubResource( 31 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -47, -1127 )
+shape = SubResource( 32 )
+
+[node name="GoToComplex" type="Area2D" parent="."]
+position = Vector2( 4667, 942 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToComplex"]
+shape = SubResource( 33 )
+
+[node name="Button" type="Sprite" parent="GoToComplex"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 10 )
+
+[node name="PopNnip" type="Area2D" parent="."]
+position = Vector2( 2647, 974 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PopNnip"]
+shape = SubResource( 34 )
+
+[node name="Button" type="Sprite" parent="PopNnip"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 10 )
+
+[node name="DonutShop" type="Area2D" parent="."]
+position = Vector2( 1023, 977 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DonutShop"]
+shape = SubResource( 34 )
+
+[node name="Button" type="Sprite" parent="DonutShop"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 10 )
+
+[node name="Longcat" type="KinematicBody2D" parent="."]
+position = Vector2( 3328, 848 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Longcat"]
+position = Vector2( 20.8, 14 )
+shape = SubResource( 35 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Longcat"]
+margin_right = 44.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Longcat/ViewportContainer"]
+size = Vector2( 11, 7 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Longcat/ViewportContainer/Viewport"]
+frames = SubResource( 38 )
+animation = "walk"
+frame = 1
+playing = true
+centered = false
+
+[node name="LongCatArea2D" type="Area2D" parent="Longcat"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Longcat/LongCatArea2D"]
+position = Vector2( 24, 13 )
+shape = SubResource( 39 )
+
+[node name="Nonacat" type="KinematicBody2D" parent="."]
+position = Vector2( 4124, 689 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat"]
+shape = SubResource( 35 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Nonacat"]
+margin_left = -22.0
+margin_top = -15.0
+margin_right = 22.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Nonacat/ViewportContainer"]
+size = Vector2( 11, 7 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Nonacat/ViewportContainer/Viewport"]
+frames = SubResource( 43 )
+animation = "walk"
+frame = 1
+playing = true
+centered = false
+
+[node name="NonacatArea2D" type="Area2D" parent="Nonacat"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat/NonacatArea2D"]
+position = Vector2( -1.00005, 1.00002 )
+shape = SubResource( 39 )
+
+[node name="Lasagne" type="KinematicBody2D" parent="."]
+position = Vector2( 2034, 986 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lasagne"]
+position = Vector2( 20.8, 14 )
+shape = SubResource( 35 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Lasagne"]
+margin_right = 44.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Lasagne/ViewportContainer"]
+size = Vector2( 11, 7 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Lasagne/ViewportContainer/Viewport"]
+frames = SubResource( 47 )
+animation = "walk"
+frame = 1
+playing = true
+centered = false
+flip_h = true
+
+[node name="LasagneArea2D" type="Area2D" parent="Lasagne"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lasagne/LasagneArea2D"]
+position = Vector2( 24, 13 )
+shape = SubResource( 39 )
+
+[node name="Garbitage" type="KinematicBody2D" parent="."]
+position = Vector2( 1600, 311 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garbitage"]
+position = Vector2( 27, 33 )
+shape = SubResource( 35 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Garbitage"]
+margin_right = 75.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 22.5, 12.5 )
+mouse_filter = 2
+stretch = true
+stretch_shrink = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Garbitage/ViewportContainer"]
+size = Vector2( 15, 12 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
+frames = SubResource( 50 )
+animation = "idle"
+speed_scale = 0.1
+playing = true
+centered = false
+flip_h = true
+
+[node name="Area2DGarbitage" type="Area2D" parent="Garbitage"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garbitage/Area2DGarbitage"]
+position = Vector2( 39, 33 )
+shape = SubResource( 39 )
+
+[node name="Default" parent="." instance=ExtResource( 14 )]
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 4601, 945 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 4800
+limit_bottom = 1200
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 30
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -3.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+autoplay = true
+
+[node name="AbovePlayer" type="ViewportContainer" parent="."]
+margin_right = 4800.0
+margin_bottom = 1200.0
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="AbovePlayer"]
+size = Vector2( 1200, 300 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="City_Guard_Rail" type="Sprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 75, 73 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 9 )
+
+[node name="City_tree" type="Sprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 953, 240 )
+texture = ExtResource( 16 )
+
+[node name="fg_entrance_city" type="Sprite" parent="AbovePlayer/Viewport"]
+position = Vector2( 1187, 234 )
+texture = ExtResource( 19 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]

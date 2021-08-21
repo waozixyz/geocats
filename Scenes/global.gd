@@ -6,6 +6,7 @@ var crt_noise = 0.0
 
 var data =  {
 	"jwt": "",
+	"vechain": "",
 	"scene": "CatCradle",
 	"location": 0,
 	"present": true,
@@ -36,17 +37,10 @@ func _ready():
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed")
 
-func check_nft(nft):
+func nft_api(path, nft_id):
 	updating = true
-	var uri = url + "/check-nft"
-	var body = { "NFT": nft }
-	_get_request(uri, body)
-
-
-func get_nft(nft):
-	updating = true
-	var uri = url + "/get-nft"
-	var body = { "NFT": nft }
+	var uri = url + path + "-nft"
+	var body = { "NFT": nft_id, "vechain": data.vechain }
 	_get_request(uri, body)
 
 func _get_request(uri, body):

@@ -1,0 +1,326 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/feline_map/City_Feline_Map.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/feline_map/Creek_Feline_Map.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/feline_map/Background_Feline_Map.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/feline_map/Apartment_Feline_Map.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI/Feline/Map.gd" type="Script" id=6]
+[ext_resource path="res://Assets/UI/feline_map/Lock_Closed_Feline_Map.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/feline_map/Litterbox_Feline_Map.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/feline_map/Lock_Open_Feline_Map.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/feline_map/Lodge_Feline_Map.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/feline_map/Cat_Feline_Map.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/feline_map/Cats_Cradle_Feline_Map.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.9674, 40.625 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = SubResource( 2 )
+
+[node name="Control" type="Control"]
+rect_scale = Vector2( 1.6, 1.6 )
+mouse_filter = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Device" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CatCradle" type="Area2D" parent="Device"]
+position = Vector2( 0, -11.25 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lock" type="Sprite" parent="Device/CatCradle"]
+visible = false
+position = Vector2( 63.1577, 70 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="Device/CatCradle"]
+visible = false
+position = Vector2( 63.1577, 70 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Map" type="Sprite" parent="Device/CatCradle"]
+position = Vector2( 53.1577, 71.8543 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/CatCradle"]
+visible = false
+position = Vector2( 83.7827, 78.75 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/CatCradle"]
+margin_left = 40.0
+margin_top = 57.0
+margin_right = 125.0
+margin_bottom = 139.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/CatCradle"]
+position = Vector2( 73.5996, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Complex" type="Area2D" parent="Device"]
+position = Vector2( 0, -6.875 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lock" type="Sprite" parent="Device/Complex"]
+visible = false
+position = Vector2( 171, 70 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="Device/Complex"]
+visible = false
+position = Vector2( 171, 70 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Map" type="Sprite" parent="Device/Complex"]
+position = Vector2( 151, 65.955 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Complex"]
+visible = false
+position = Vector2( 188.893, 78.75 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Complex"]
+margin_left = 139.0
+margin_top = 53.0
+margin_right = 257.0
+margin_bottom = 134.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Complex"]
+position = Vector2( 181.794, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="GeoCity" type="Area2D" parent="Device"]
+position = Vector2( 0, -6.875 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lock" type="Sprite" parent="Device/GeoCity"]
+visible = false
+position = Vector2( 287.507, 70 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="Device/GeoCity"]
+visible = false
+position = Vector2( 287.507, 70 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Map" type="Sprite" parent="Device/GeoCity"]
+position = Vector2( 277.507, 65.9553 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/GeoCity"]
+visible = false
+position = Vector2( 310.658, 78.75 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/GeoCity"]
+margin_left = 268.0
+margin_top = 53.0
+margin_right = 362.0
+margin_bottom = 134.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/GeoCity"]
+position = Vector2( 302.673, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Creek" type="Area2D" parent="Device"]
+position = Vector2( 0, -32.5 )
+script = ExtResource( 1 )
+
+[node name="Lock" type="Sprite" parent="Device/Creek"]
+visible = false
+position = Vector2( 77.3496, 190 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="Device/Creek"]
+visible = false
+position = Vector2( 77.3496, 190 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Map" type="Sprite" parent="Device/Creek"]
+position = Vector2( 47.3496, 189.902 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Creek"]
+visible = false
+position = Vector2( 97.5327, 194.209 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Creek"]
+margin_left = 40.0
+margin_top = 170.0
+margin_right = 145.0
+margin_bottom = 252.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Creek"]
+position = Vector2( 83.7827, 238 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Litterbox" type="Area2D" parent="Device"]
+position = Vector2( 4.375, -32.5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Map" type="Sprite" parent="Device/Litterbox"]
+position = Vector2( 168.893, 186.902 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Lock" type="Sprite" parent="Device/Litterbox"]
+visible = false
+position = Vector2( 188.893, 190 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="Device/Litterbox"]
+visible = false
+position = Vector2( 188.893, 190 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Litterbox"]
+visible = false
+position = Vector2( 205.5, 194.209 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Litterbox"]
+margin_left = 145.0
+margin_top = 170.0
+margin_right = 268.0
+margin_bottom = 252.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Litterbox"]
+position = Vector2( 199.138, 238 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Lodge" type="Area2D" parent="Device"]
+position = Vector2( 0, -31.875 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Map" type="Sprite" parent="Device/Lodge"]
+position = Vector2( 281.507, 177.902 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Lock" type="Sprite" parent="Device/Lodge"]
+visible = false
+position = Vector2( 291.507, 190 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="Device/Lodge"]
+visible = false
+position = Vector2( 291.507, 190 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/Lodge"]
+visible = false
+position = Vector2( 310.658, 194.209 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Device/Lodge"]
+margin_left = 278.0
+margin_top = 170.0
+margin_right = 355.0
+margin_bottom = 252.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="Sprite" parent="Device/Lodge"]
+position = Vector2( 302.673, 238 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 221.0
+margin_right = 369.0
+margin_bottom = 269.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

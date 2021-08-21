@@ -17,32 +17,32 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Entity",
 "language": "GDScript",
-"path": "res://Scenes/Entity/Entity.gd"
+"path": "res://Scenes/Entity.gd"
 }, {
 "base": "Control",
 "class": "Feline",
 "language": "GDScript",
-"path": "res://Scenes/UI/Feline.gd"
+"path": "res://Scenes/UI/Feline/Feline.gd"
 }, {
 "base": "InteractMain",
 "class": "InteractButton",
 "language": "GDScript",
-"path": "res://Scenes/UI/InteractButton.gd"
+"path": "res://Scenes/UI/Interact/InteractButton.gd"
 }, {
 "base": "InteractMain",
 "class": "InteractChat",
 "language": "GDScript",
-"path": "res://Scenes/UI/InteractChat.gd"
+"path": "res://Scenes/UI/Interact/InteractChat.gd"
 }, {
 "base": "Area2D",
 "class": "InteractMain",
 "language": "GDScript",
-"path": "res://Scenes/UI/InteractMain.gd"
+"path": "res://Scenes/UI/Interact/InteractMain.gd"
 }, {
 "base": "InteractMain",
 "class": "InteractSimple",
 "language": "GDScript",
-"path": "res://Scenes/UI/InteractSimple.gd"
+"path": "res://Scenes/UI/Interact/InteractSimple.gd"
 }, {
 "base": "Entity",
 "class": "Player",
@@ -69,14 +69,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Geocats"
-run/main_scene="res://Scenes/0_TitleScreen/Splash.tscn"
+run/main_scene="res://Scenes/Levels/0_TitleScreen/Splash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 global="*res://Scenes/global.gd"
-PROGRESS="*res://Scenes/Dialogue/progress.gd"
+PROGRESS="*res://Scenes/UI/Dialogue/progress.gd"
 Data="*res://Scenes/Data.gd"
 
 [display]
