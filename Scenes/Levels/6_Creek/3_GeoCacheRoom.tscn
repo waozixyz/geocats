@@ -82,6 +82,7 @@ centered = false
 [node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 1
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
@@ -116,14 +117,14 @@ polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 658.421, 116.181 )
+position = Vector2( -265.06, 130.323 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 9
+frame = 32
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
@@ -154,7 +155,6 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Viewport/Floor"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 

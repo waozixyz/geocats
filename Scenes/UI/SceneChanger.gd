@@ -103,6 +103,7 @@ func _input(event):
 			change_scene(get_tree().get_current_scene().name, 0, "", 1)
 	
 func _new_scene():
+
 	timer = 0
 	Sprite.visible = false
 	Container.visible = false
@@ -119,6 +120,6 @@ func _new_scene():
 
 	get_tree().paused = false
 	change = false
-
+	Data.saveit()
 
 
