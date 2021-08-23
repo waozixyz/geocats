@@ -10,7 +10,6 @@ onready var nokey = $NoKey
 onready var noserver = $NoServer
 onready var connecting = $Connecting
 
-
 var http_request
 
 var key_name = "GeoKey"

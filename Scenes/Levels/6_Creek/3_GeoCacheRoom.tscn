@@ -123,9 +123,6 @@ position = Vector2( -265.06, 130.323 )
 limit_right = 1300
 limit_bottom = 700
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 32
-
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1300.0
 margin_bottom = 700.0
