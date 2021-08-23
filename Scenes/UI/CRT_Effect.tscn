@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/UI/CRT_Effect.gd" type="Script" id=1]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=1]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/VHS-and-CRT-monitor-effect
@@ -234,7 +234,7 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 3 )
+shader = SubResource( 1 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.0
 shader_param/scanlines_width = 0.0

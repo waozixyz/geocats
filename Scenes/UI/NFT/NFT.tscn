@@ -12,28 +12,28 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.09375, 0.0461771, 0.000366211, 1 )
 corner_radius_top_left = 9
 corner_radius_top_right = 9
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=10]
 size = 26
-font_data = SubResource( 2 )
+font_data = SubResource( 9 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=6]
 size = 32
-font_data = SubResource( 4 )
+font_data = SubResource( 5 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 20
-font_data = SubResource( 4 )
+font_data = SubResource( 5 )
 
 [node name="NFT" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -55,7 +55,7 @@ margin_right = 513.0
 margin_bottom = 45.0
 rect_pivot_offset = Vector2( 423, 81 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,7 +78,7 @@ margin_top = 9.0
 margin_right = 425.0
 margin_bottom = 36.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.996078, 1, 0.576471, 1 )
 text = "Congratulations! You just won an NFT!"
 __meta__ = {
@@ -104,31 +104,8 @@ margin_top = 270.0
 margin_right = 495.0
 margin_bottom = 405.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Test Description"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Warning" type="Panel" parent="Main"]
-margin_top = 414.0
-margin_right = 513.0
-margin_bottom = 459.0
-rect_pivot_offset = Vector2( 423, 81 )
-mouse_filter = 2
-custom_styles/panel = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Main/Warning"]
-margin_left = 27.0
-margin_top = 9.0
-margin_right = 495.0
-margin_bottom = 36.0
-text = "WARNING: This process has yet to be automated, check you wallet in a few days and you should have the NFT"
-align = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,3 +114,16 @@ __meta__ = {
 [node name="Login" parent="." instance=ExtResource( 1 )]
 visible = false
 mouse_filter = 2
+
+[node name="Loading" type="Label" parent="."]
+visible = false
+margin_left = 9.0
+margin_right = 639.0
+margin_bottom = 480.0
+custom_fonts/font = ExtResource( 4 )
+text = "Loading"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

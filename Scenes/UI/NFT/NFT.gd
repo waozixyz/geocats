@@ -10,6 +10,8 @@ onready var nft_name = $Main/Name
 onready var description = $Main/Description
 onready var exit_button = $Main/Taskbar/Exit
 
+onready var loading = $Loading
+
 var waiting
 var show_login
 var reward_available: bool = false
@@ -33,8 +35,10 @@ func show_nft(nft_id,  edition, nft_title, nft_description, new = false):
 	
 func update(touching, nft_id):
 	if global.updating:
+		loading.visible = true
 		waiting = true
 	elif waiting and touching:
+		loading.visible = false
 		var res_code = global.response_code
 		var res = global.response
 		if res_code == 0:
