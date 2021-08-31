@@ -43,9 +43,11 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+			chat_with.visible = false
 
-
-func _process(_delta):
+func _process(delta):
 	if disabled and active:
 		hide_chat()
 	if active and "idle" in get_parent():
@@ -54,9 +56,14 @@ func _process(_delta):
 		else:
 			get_parent().idle = false
 
+	if nft_possible:
+		nft.update(chat_with.started, nft_id)
+	._process(delta)
 
 func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
 			chat_with.start(convo_file)
 			_add_audio("NPC", music_file)
+			if nft_possible:
+				nft.reward(nft_id)

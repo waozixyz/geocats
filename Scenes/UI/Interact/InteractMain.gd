@@ -28,12 +28,6 @@ func _on_body_exited(body):
 			nft.main.visible = false
 			chat_with.visible = false
 func _process(_delta):
-	if nft_possible:
-		nft.update(touching, nft_id)
-		if nft.main.visible or chat_with.visible or nft.login.visible or global.updating:
-			object.visible = false
-		elif touching:
-			object.visible = true
 	if play_audio:
 		if playing.has(name) and touching and playing[name].directional:
 			object.visible = false
