@@ -748,6 +748,9 @@ position = Vector2( 4601, 945 )
 limit_right = 4800
 limit_bottom = 1200
 
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 31
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -3.0
