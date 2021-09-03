@@ -10,6 +10,7 @@ func _ready():
 var ticks = 0
 var jump_tick = 100
 var walk_tick = 10
+var jump_height = 260
 var direction = 1
 var idle = false
 func _physics_process(delta):
@@ -17,7 +18,7 @@ func _physics_process(delta):
 		ticks += 1
 		
 		if ticks % jump_tick == 0:
-			jump(20)
+			jump(jump_height)
 			jump_tick = int(rand_range(200, 400))
 		if (ticks / 10) % walk_tick == 0:
 			velocity.x = 100 * direction
