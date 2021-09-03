@@ -1284,7 +1284,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/Cleopardis/ViewportContainer/Viewport"]
 frames = SubResource( 81 )
 animation = "idle"
-frame = 5
+frame = 3
 playing = true
 centered = false
 
@@ -1368,7 +1368,7 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 32
+frame = 30
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )
@@ -1383,7 +1383,7 @@ position = Vector2( 561.491, 177.263 )
 script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceBoxSFX"]
-position = Vector2( -20.9362, 52.563 )
+position = Vector2( -20.9362, 51.9664 )
 shape = SubResource( 89 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

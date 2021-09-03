@@ -1,0 +1,355 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://Assets/Levels/9_Caves/FG_Caves.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/9_Caves/Cat_Head.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/9_Caves/cat_cave_spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/9_Caves/BG_Caves.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Dark_Cave.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Agents/NPC/NornaWyrd/norna_wyrd.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Levels/5_DonutShop/interactions.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Levels/5_DonutShop/5_DonutShop.gd" type="Script" id=16]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/BG_Far.png-82566d216e179a18abbaa3b6493c64c2.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/BG_Cave_Decor.png-983eceb0b64aa6fb756c9099f48e5b35.stex"
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 14, 15 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 14, 0, 14, 15 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 0, 14, 15 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 7 )
+region = Rect2( 65, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 45, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 65, 45, 65, 45 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 36.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 196, 7 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 96, 2 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 20, 6 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 23.2126, 6 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 36, 4 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 56, 3 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 25, 5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 18, 5 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 15, 4 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 477, 11 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 10, 244 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 21, 37 )
+
+[node name="Caves" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 1250.0
+margin_bottom = 1900.0
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 312, 475 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = SubResource( 1 )
+centered = false
+
+[node name="decor" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = SubResource( 2 )
+centered = false
+
+[node name="cathead" type="Sprite" parent="BelowPlayer/Viewport"]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="caves" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 41, 364 )
+frames = SubResource( 6 )
+frame = 8
+speed_scale = 0.1
+playing = true
+centered = false
+
+[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 60, 390 )
+frames = SubResource( 11 )
+frame = 1
+speed_scale = 0.1
+playing = true
+centered = false
+
+[node name="Default" parent="." instance=ExtResource( 5 )]
+
+[node name="Affogato" parent="Default" index="0"]
+visible = true
+position = Vector2( 510, 1236 )
+
+[node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
+render_target_update_mode = 3
+
+[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
+position = Vector2( 0, -2 )
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 45, 292 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 1252
+limit_bottom = 1908
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 26
+
+[node name="AbovePlayer" type="ViewportContainer" parent="."]
+margin_right = 1250.0
+margin_bottom = 1900.0
+mouse_filter = 2
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="AbovePlayer"]
+size = Vector2( 312, 475 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="fg_base" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 215, -134 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 784, 242 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1182, 406 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1139, 838 )
+shape = SubResource( 15 )
+one_way_collision = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1177, 938 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 872, 1572 )
+rotation = -0.507891
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1201, 902 )
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1114, 982 )
+shape = SubResource( 19 )
+one_way_collision = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1205, 1014 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1145, 1714 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1207, 1742 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 601, 288 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 601, 341 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 622, 220 )
+shape = SubResource( 24 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 328, 1670 )
+shape = SubResource( 25 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 439, 1709 )
+shape = SubResource( 26 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 256, 1552 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 339, 1568 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 479, 25 )
+shape = SubResource( 28 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( -1703, -1591 )
+polygon = PoolVector2Array( 1703, 1951, 1722.69, 1954.38, 1778, 1946, 1828.33, 1942.38, 1886, 1948, 1937, 1947, 1994, 1933, 2090, 1937, 2138, 1936, 2219, 1959, 2269, 1974, 2309, 2188, 2284, 2218, 2233, 2286, 2113, 2294, 2026, 2274, 1973, 2237, 1904, 2245, 1872, 2266, 1848, 2269, 1823, 2286, 1799, 2263, 1743, 2261, 1742, 2318, 1775, 2454, 1819, 2546, 1858, 2572, 1865, 2590, 1849, 2615, 1860, 2726, 1899, 2754, 1924, 2769, 1988, 2781, 2119, 2860, 2161, 2869, 2198, 2859, 2225, 2856, 2263, 2831, 2316, 2777, 2326, 2764, 2378, 2715, 2379, 2700, 2396, 2673, 2413, 2652, 2434, 2637, 2462, 2613, 2466, 2589, 2491, 2561, 2513, 2566, 2528, 2590, 2528, 2666, 2548, 2755, 2560, 2767, 2566, 2797, 2583, 2837, 2458, 2952, 2403, 2956, 2306, 3019, 2191, 3068, 2114, 3059, 2040, 3025, 2008, 3011, 1979, 3013, 1959, 3014, 1952, 3021, 1928, 3022, 1919, 3013, 1920, 2994, 1946, 2987, 1946, 2959, 1974, 2959, 1974, 2983, 1987, 2983, 2002, 2973, 2027, 2944, 2027, 2919, 1995, 2880, 1941, 2846, 1890, 2825, 1841, 2807, 1786, 2861, 1793, 2974, 1816, 2992, 1816, 3046, 1830, 3066, 1855, 3082, 1872, 3089, 1872, 3100, 1900, 3100, 1900, 3110, 1912, 3113, 1907, 3131, 1826, 3131, 1817, 3146, 1818, 3209, 1866, 3312, 1896, 3330, 1897, 3391, 2036, 3392, 2057, 3382, 2401, 3381, 2483, 3368, 2665, 3366, 2757, 3381, 2842, 3386, 2901, 3386, 2925, 3347, 2922, 3135, 2911, 2868, 2907, 2813, 2910, 2614, 2904, 2518, 2909, 2152, 2903, 2095, 2884, 2076, 2881, 1957, 2907, 1956, 2906, 1783, 2929, 1780, 2930, 1757, 2943, 1734, 2957, 1727, 2984, 1727, 2951, 3393, 2952, 3489, 1707, 3490 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( -1554, -1545 )
+polygon = PoolVector2Array( 1699, 2407, 1729, 2299, 1751, 2299, 1809, 2364, 1852, 2373, 1908, 2379, 1982, 2377, 2019, 2391, 2056, 2392, 2120, 2422, 2147, 2433, 2209, 2434, 2267, 2419, 2310, 2391, 2327, 2371, 2361, 2355, 2362, 2298, 2237, 2117, 2186, 1922, 2288, 1896, 2287, 1818, 2263, 1760, 2327, 1735, 2410, 1673, 2431, 1652, 2480, 1661, 2567, 1743, 2680, 1754, 2679, 1922, 2683, 2106, 2681, 2245, 2672, 2312, 2674.51, 2554.73, 2710, 2555, 2709, 2600, 2681, 2650, 2672, 2694, 2672, 2729, 2679, 2754, 2685, 2786, 2678, 3041, 2679, 3079, 2682, 3278, 2656, 3296, 2550, 3288, 2522, 3276, 2290, 3286, 2221, 3238, 2193, 3216, 2193, 3192, 2215, 3171, 2236, 3170, 2250, 3157, 2327, 3159, 2346, 3174, 2432, 3163, 2503, 3153, 2548, 3124, 2499, 3005, 2460, 2987, 2459, 2944, 2526, 2875, 2526, 2794, 2451, 2494, 2391, 2432, 2352, 2421, 2229, 2513, 2057, 2566, 2002, 2566, 1883, 2588, 1837, 2582 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 22, 83 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -26, 98 )
+shape = SubResource( 29 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="GoToCity" type="Area2D" parent="."]
+position = Vector2( 88, 164 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToCity"]
+shape = SubResource( 30 )
+
+[node name="Button" type="Sprite" parent="GoToCity"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 14 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]

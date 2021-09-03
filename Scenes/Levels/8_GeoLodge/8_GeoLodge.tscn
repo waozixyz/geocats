@@ -1,0 +1,398 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Levels/8_GeoLodge/8_GeoLodge.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=4]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sfx/Bckg/GeoCats_twelveeight.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Levels/5_DonutShop/interactions.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Agents/NPC/palmerston.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Levels/8_GeoLodge/Palmerston.gd" type="Script" id=10]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/mountian.png-02de661e2e6da50960b55772e7e214bd.stex"
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 189, 99 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 189, 0, 189, 99 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 99, 189, 99 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 189, 99, 189, 99 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/behind.png-8e120ef808de3f3ce719eb7815cc4f25.stex"
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 0, 20, 14 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 40, 0, 20, 14 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 9 ), SubResource( 10 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="StreamTexture" id=12]
+load_path = "res://.import/geolodge_FG.png-257982040e3fd00f4106be383d324047.stex"
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 325.706, 27 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 26.1443, 12.6981 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 79.5099, 12.6981 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 64, 6 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 64, 6 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 116.864, 6 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 58, 6 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 49, 6 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 125, 6 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 90, 6 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 66, 6 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 6, 96 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 300.176, 6 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 68, 8.97875 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 8, 203.977 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 10, 315 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 10, 315 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 19.0542, 145.776 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 21, 37 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 29.9071, 18.5032 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 13, 8 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 8 )
+region = Rect2( 39, 0, 13, 8 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 8 )
+region = Rect2( 13, 0, 13, 8 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 8 )
+region = Rect2( 26, 0, 13, 8 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 33 ), SubResource( 36 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 28.0518, 14.259 )
+
+[node name="GeoLodge" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BelowPlayer" type="ViewportContainer" parent="."]
+margin_right = 1140.0
+margin_bottom = 600.0
+mouse_filter = 2
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="BelowPlayer"]
+size = Vector2( 190, 100 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+texture = SubResource( 1 )
+centered = false
+
+[node name="mountain" type="Sprite" parent="BelowPlayer/Viewport"]
+z_index = 1
+texture = SubResource( 2 )
+centered = false
+
+[node name="rain" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+z_index = 3
+frames = SubResource( 7 )
+frame = 3
+speed_scale = 0.2
+playing = true
+centered = false
+
+[node name="lodge_bg" type="Sprite" parent="BelowPlayer/Viewport"]
+z_index = 3
+texture = SubResource( 8 )
+centered = false
+
+[node name="fire" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 77, 76 )
+z_index = 4
+frames = SubResource( 11 )
+speed_scale = 0.2
+playing = true
+centered = false
+
+[node name="Default" parent="." instance=ExtResource( 9 )]
+
+[node name="Affogato" parent="Default" index="0"]
+position = Vector2( 364.806, 221.089 )
+
+[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
+position = Vector2( 0, -2 )
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 169.593, 339.608 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+zoom = Vector2( 0.7, 0.7 )
+limit_right = 1140
+limit_bottom = 600
+editor_draw_limits = true
+
+[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
+frame = 29
+
+[node name="AbovePlayer" type="ViewportContainer" parent="."]
+margin_right = 1140.0
+margin_bottom = 600.0
+mouse_filter = 2
+stretch = true
+stretch_shrink = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="AbovePlayer"]
+size = Vector2( 190, 100 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="fg_base" type="Sprite" parent="AbovePlayer/Viewport"]
+texture = SubResource( 12 )
+centered = false
+
+[node name="Walls" type="StaticBody2D" parent="."]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 410, 393 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 73, 393 )
+rotation = -0.731293
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 19, 394 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 344, 246 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 664, 302 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 608.326, 162.414 )
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 623, 143 )
+shape = SubResource( 19 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 622, 59 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 375, 107 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 170, 172.928 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 173, 263 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 75.7594, 227 )
+shape = SubResource( 24 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 357, 54.2141 )
+rotation = -0.280998
+shape = SubResource( 25 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 656, -10 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 712, -26 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 732.237, 204.411 )
+shape = SubResource( 27 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+scale = Vector2( 1.5, 1.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -50, 93 )
+shape = SubResource( 28 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 733, 52 )
+shape = SubResource( 29 )
+
+[node name="Ladder2" type="Area2D" parent="." groups=[
+"ladder",
+]]
+position = Vector2( 785.469, 393.873 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
+shape = SubResource( 30 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="GoToCaves" type="Area2D" parent="."]
+position = Vector2( 25, 341.608 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToCaves"]
+shape = SubResource( 31 )
+
+[node name="Button" type="Sprite" parent="GoToCaves"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 5 )
+
+[node name="Palmerston" type="KinematicBody2D" parent="."]
+position = Vector2( 970.98, 403.846 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+
+[node name="Area2DPalmerston" type="Area2D" parent="Palmerston"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/Area2DPalmerston"]
+position = Vector2( 23.1036, 17.0176 )
+shape = SubResource( 38 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Palmerston"]
+position = Vector2( -1.33636, -6.2363 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 37 )
+animation = "idle"
+frame = 2
+speed_scale = 0.1
+playing = true
+centered = false
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston"]
+position = Vector2( 29.4134, 20.1588 )
+shape = SubResource( 32 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]
