@@ -66,6 +66,10 @@ func _get_scene():
 			return ["res://Scenes/Levels/6_Creek/3_GeoCacheRoom.tscn", pos, dir]
 		"Mountain":	
 			return ["res://Scenes/Levels/7_Mountain/7_Mountain.tscn", pos, dir]
+		"GeoLodge":
+			return ["res://Scenes/Levels/8_GeoLodge/8_GeoLodge.tscn", pos, dir]
+		"Caves":
+			return ["res://Scenes/Levels/9_Caves/9_Caves.tscn", pos, dir]
 
 	
 func change_scene(new_scene, new_location, sound, volume):

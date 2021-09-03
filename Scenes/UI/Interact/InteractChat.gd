@@ -2,7 +2,7 @@ extends InteractMain
 class_name InteractChat
 
 var active : bool
-var disabled : bool
+
 var parent_name : String
 var convo_file : String
 var music_file : String

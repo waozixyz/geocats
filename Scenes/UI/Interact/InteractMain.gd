@@ -10,13 +10,15 @@ var nft_possible: bool = false
 var nft_id : String = ""
 var object
 var play_audio : bool = false
+var disabled = false
+
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 
 
 func _on_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and not disabled:
 		object.visible = true
 		touching = true
 
