@@ -221,7 +221,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 4
+frame = 31
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )

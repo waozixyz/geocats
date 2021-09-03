@@ -1,0 +1,111 @@
+{
+  "first": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "Hey, my name is Palmerston. Nice to meet you.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "I’d love to hang out, but I’m up to my ears in a dangerous and intriguing plot.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "...A plot which you have no business getting your pixels wrapped up in.",
+    "next": ""
+  },
+  "repeat": {
+
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "fire",
+    "true": "fire_on",
+    "false": "fire_off"
+  },
+  "fire_off": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "move_in",
+
+    "type": "text",
+    "content": "Curse these cold nights...",
+    "next": ""
+  },
+  "fire_on": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "move_in",
+
+    "type": "text",
+    "content": "…What? You’re still here? Thanks for getting that fire started.",
+    "next": "4"
+  },
+  "4": {
+    "type": "text",
+    "content": "Alright, I get it now. You’re interested in adventure. Would you like to help me with my research?",
+    "next": "5"
+  },
+  "5": {
+    "type": "text",
+    "content": "There are some mysterious limestone caves nearby. I haven't explored them yet, but I have a hunch there are some ancient ruins down there.",
+    "next": "6"
+  },
+  "6": {
+    "type": "text",
+    "content": "Here, I’ve got a hot-fix for your Mapz system.  It won’t fix the other issues with FeLine, but at least you’ll be able to get to new places.",
+    "next": "7"
+  },
+  "7": {
+    "name": "Feline",
+    "avatar": "feline_unimpressed.png",
+    "animation_in": "move_in",
+    "position": "left",
+    "type": "text",
+    "content": "...",
+    "next": "8"
+  },
+  "8": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "...Ok, you might experience some discomfort for a moment.",
+    "next": "9"
+  },
+  "9": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "move_in",
+    "position": "left",
+    "type": "text",
+    "content": "MEOWCH!!!",
+    "next": "10"
+  },
+  "10": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "type": "text",
+    "content": "If you find anything interesting on your trip spelunking, please let me know.",
+    "next": "11"
+  },
+  "11": {
+    "type": "text",
+    "content": "Have fun, and please try to avoid annihilation",
+    "next": ""
+  },
+}

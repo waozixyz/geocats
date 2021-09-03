@@ -15,3 +15,4 @@ func _process(delta):
 		do_something = false
 		sprite.visible = true
 		disabled = true
+		PROGRESS.variables["fire"] = true
