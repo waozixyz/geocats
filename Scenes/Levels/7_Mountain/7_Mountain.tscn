@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/7_Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Levels/7_Mountain/Interact.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Levels/7_Mountain/7_Mountain.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Agents/NPC/MountainCats/mountaincat_1.png" type="Texture" id=16]
@@ -179,6 +180,7 @@ extents = Vector2( 50, 50 )
 extents = Vector2( 73, 78 )
 
 [node name="Mountain" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -197,7 +199,7 @@ centered = false
 
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -213,7 +215,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 3
 
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
@@ -385,7 +387,6 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 2100, 2380 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 24 )
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Sitting Cat"]
@@ -404,7 +405,6 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 27.0001, 28 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 28 )
-frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Thinking Cat"]
@@ -421,7 +421,6 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 3, 13 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 31 )
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Sleeping Cat"]
@@ -438,7 +437,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( -28, 28 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 36 )
-frame = 3
+frame = 10
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Catnip Cat"]

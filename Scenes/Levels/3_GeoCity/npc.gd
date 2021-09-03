@@ -3,8 +3,7 @@ extends Entity
 var anim = "idle"
 
 func _ready():
-	sprite = $ViewportContainer/Viewport/AnimatedSprite
-	to_rotate = $ViewportContainer
+	sprite = $AnimatedSprite
 	._ready()
 
 var ticks = 0
