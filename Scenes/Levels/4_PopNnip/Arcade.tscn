@@ -362,7 +362,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -370,7 +370,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 2
+frame = 4
 playing = true
 centered = false
 
@@ -391,6 +391,7 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -398,6 +399,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -405,6 +407,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -573,7 +576,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 6
+frame = 24
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -608,6 +611,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 67 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

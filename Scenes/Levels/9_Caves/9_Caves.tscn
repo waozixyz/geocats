@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/Levels/9_Caves/FG_Caves.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Cat_Head.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Levels/9_Caves/BG_Caves.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Dark_Cave.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Agents/NPC/NornaWyrd/norna_wyrd.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Levels/5_DonutShop/interactions.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Levels/5_DonutShop/5_DonutShop.gd" type="Script" id=16]
@@ -28,12 +29,36 @@ region = Rect2( 14, 0, 14, 15 )
 atlas = ExtResource( 3 )
 region = Rect2( 28, 0, 14, 15 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=47]
 animations = [ {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 32 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ) ],
 "loop": true,
 "name": "default",
 "speed": 24.0
+} ]
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 7 )
+region = Rect2( 65, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 45, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 7 )
+region = Rect2( 65, 45, 65, 45 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 48 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 50 ), SubResource( 51 ) ],
+"loop": true,
+"name": "default",
+"speed": 36.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=10]
@@ -48,11 +73,20 @@ extents = Vector2( 20, 6 )
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 27, 6 )
 
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 23.2126, 6 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 27, 6 )
+
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 17, 6 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 25, 6 )
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 17, 6 )
@@ -112,6 +146,7 @@ texture = SubResource( 35 )
 centered = false
 
 [node name="cathead" type="Sprite" parent="BelowPlayer/Viewport"]
+visible = false
 texture = ExtResource( 2 )
 centered = false
 
@@ -121,7 +156,16 @@ centered = false
 
 [node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 41, 364 )
+frames = SubResource( 47 )
+frame = 6
+speed_scale = 0.1
+playing = true
+centered = false
+
+[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 60, 390 )
 frames = SubResource( 3 )
+frame = 7
 speed_scale = 0.1
 playing = true
 centered = false
@@ -146,7 +190,7 @@ limit_right = 1252
 limit_bottom = 1908
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 31
+frame = 8
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1250.0
@@ -194,14 +238,30 @@ position = Vector2( 1139, 838 )
 shape = SubResource( 36 )
 one_way_collision = true
 
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1177, 938 )
+shape = SubResource( 43 )
+one_way_collision = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 872, 1572 )
+rotation = -0.507891
+shape = SubResource( 46 )
+one_way_collision = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1201, 902 )
+shape = SubResource( 44 )
+one_way_collision = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1114, 982 )
+shape = SubResource( 45 )
+one_way_collision = true
+
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1205, 1014 )
 shape = SubResource( 37 )
-one_way_collision = true
-
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 1132, 1015 )
-shape = SubResource( 43 )
 one_way_collision = true
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Walls"]
@@ -254,12 +314,12 @@ position = Vector2( 479, 25 )
 shape = SubResource( 25 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
-position = Vector2( -1702, -1591 )
-polygon = PoolVector2Array( 1703, 1951, 1722.69, 1954.38, 1778, 1946, 1828.33, 1942.38, 1886, 1948, 1937, 1947, 1994, 1933, 2090, 1937, 2138, 1936, 2219, 1959, 2269, 1974, 2309, 2188, 2284, 2218, 2233, 2286, 2113, 2294, 2026, 2274, 1973, 2237, 1904, 2245, 1872, 2266, 1848, 2269, 1823, 2286, 1799, 2263, 1743, 2261, 1743, 2338, 1775, 2454, 1819, 2546, 1858, 2572, 1865, 2590, 1853, 2599, 1851, 2667, 1858, 2690, 1860, 2726, 1899, 2754, 1924, 2769, 1988, 2781, 2119, 2860, 2161, 2869, 2198, 2859, 2225, 2856, 2263, 2831, 2316, 2777, 2326, 2764, 2378, 2715, 2379, 2700, 2396, 2673, 2413, 2652, 2434, 2637, 2434, 2613, 2462, 2613, 2466, 2589, 2491, 2561, 2513, 2566, 2528, 2590, 2528, 2666, 2548, 2755, 2560, 2767, 2566, 2797, 2592, 2816, 2562, 2874, 2458, 2952, 2403, 2956, 2306, 3019, 2191, 3068, 2114, 3059, 2040, 3025, 2008, 3011, 1979, 3013, 1959, 3014, 1952, 3021, 1928, 3022, 1919, 3013, 1920, 2994, 1946, 2987, 1946, 2959, 1974, 2959, 1974, 2983, 1987, 2983, 2002, 2973, 2027, 2944, 2027, 2919, 1995, 2880, 1941, 2846, 1890, 2825, 1841, 2807, 1786, 2861, 1793, 2974, 1816, 2992, 1816, 3046, 1830, 3066, 1855, 3082, 1872, 3089, 1872, 3100, 1900, 3100, 1900, 3110, 1912, 3113, 1907, 3131, 1826, 3131, 1817, 3146, 1818, 3209, 1866, 3312, 1896, 3330, 1897, 3391, 2036, 3392, 2057, 3382, 2401, 3381, 2483, 3368, 2665, 3366, 2757, 3381, 2842, 3386, 2901, 3386, 2925, 3347, 2922, 3135, 2916, 2922, 2910, 2614, 2906, 2572, 2862, 2547, 2862, 2525, 2904, 2518, 2909, 2152, 2903, 2095, 2884, 2076, 2881, 1957, 2907, 1956, 2906, 1783, 2929, 1780, 2930, 1757, 2943, 1734, 2957, 1727, 2984, 1727, 2951, 3393, 2952, 3489, 1707, 3490 )
+position = Vector2( -1703, -1591 )
+polygon = PoolVector2Array( 1703, 1951, 1722.69, 1954.38, 1778, 1946, 1828.33, 1942.38, 1886, 1948, 1937, 1947, 1994, 1933, 2090, 1937, 2138, 1936, 2219, 1959, 2269, 1974, 2309, 2188, 2284, 2218, 2233, 2286, 2113, 2294, 2026, 2274, 1973, 2237, 1904, 2245, 1872, 2266, 1848, 2269, 1823, 2286, 1799, 2263, 1743, 2261, 1742, 2318, 1775, 2454, 1819, 2546, 1858, 2572, 1865, 2590, 1849, 2615, 1860, 2726, 1899, 2754, 1924, 2769, 1988, 2781, 2119, 2860, 2161, 2869, 2198, 2859, 2225, 2856, 2263, 2831, 2316, 2777, 2326, 2764, 2378, 2715, 2379, 2700, 2396, 2673, 2413, 2652, 2434, 2637, 2462, 2613, 2466, 2589, 2491, 2561, 2513, 2566, 2528, 2590, 2528, 2666, 2548, 2755, 2560, 2767, 2566, 2797, 2583, 2837, 2458, 2952, 2403, 2956, 2306, 3019, 2191, 3068, 2114, 3059, 2040, 3025, 2008, 3011, 1979, 3013, 1959, 3014, 1952, 3021, 1928, 3022, 1919, 3013, 1920, 2994, 1946, 2987, 1946, 2959, 1974, 2959, 1974, 2983, 1987, 2983, 2002, 2973, 2027, 2944, 2027, 2919, 1995, 2880, 1941, 2846, 1890, 2825, 1841, 2807, 1786, 2861, 1793, 2974, 1816, 2992, 1816, 3046, 1830, 3066, 1855, 3082, 1872, 3089, 1872, 3100, 1900, 3100, 1900, 3110, 1912, 3113, 1907, 3131, 1826, 3131, 1817, 3146, 1818, 3209, 1866, 3312, 1896, 3330, 1897, 3391, 2036, 3392, 2057, 3382, 2401, 3381, 2483, 3368, 2665, 3366, 2757, 3381, 2842, 3386, 2901, 3386, 2925, 3347, 2922, 3135, 2911, 2868, 2907, 2813, 2910, 2614, 2904, 2518, 2909, 2152, 2903, 2095, 2884, 2076, 2881, 1957, 2907, 1956, 2906, 1783, 2929, 1780, 2930, 1757, 2943, 1734, 2957, 1727, 2984, 1727, 2951, 3393, 2952, 3489, 1707, 3490 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( -1554, -1545 )
-polygon = PoolVector2Array( 1699, 2407, 1729, 2299, 1751, 2299, 1809, 2364, 1852, 2373, 1908, 2379, 1982, 2377, 2019, 2391, 2056, 2392, 2120, 2422, 2147, 2433, 2209, 2434, 2267, 2419, 2310, 2391, 2327, 2371, 2361, 2355, 2362, 2298, 2237, 2117, 2186, 1922, 2288, 1896, 2287, 1818, 2263, 1760, 2327, 1735, 2410, 1673, 2431, 1652, 2480, 1661, 2567, 1743, 2680, 1754, 2670, 1922, 2679, 2232, 2669, 2311, 2682, 3278, 2656, 3296, 2550, 3288, 2522, 3276, 2290, 3286, 2221, 3238, 2193, 3216, 2193, 3192, 2215, 3171, 2236, 3170, 2250, 3157, 2327, 3159, 2346, 3174, 2432, 3163, 2503, 3153, 2548, 3124, 2499, 3005, 2460, 2987, 2459, 2944, 2545, 2856, 2451, 2494, 2391, 2432, 2352, 2421, 2229, 2513, 2057, 2566, 2002, 2566, 1883, 2588, 1837, 2582 )
+polygon = PoolVector2Array( 1699, 2407, 1729, 2299, 1751, 2299, 1809, 2364, 1852, 2373, 1908, 2379, 1982, 2377, 2019, 2391, 2056, 2392, 2120, 2422, 2147, 2433, 2209, 2434, 2267, 2419, 2310, 2391, 2327, 2371, 2361, 2355, 2362, 2298, 2237, 2117, 2186, 1922, 2288, 1896, 2287, 1818, 2263, 1760, 2327, 1735, 2410, 1673, 2431, 1652, 2480, 1661, 2567, 1743, 2680, 1754, 2679, 1922, 2683, 2106, 2681, 2245, 2672, 2312, 2674.51, 2554.73, 2710, 2555, 2709, 2600, 2681, 2650, 2672, 2694, 2672, 2729, 2679, 2754, 2685, 2786, 2678, 3041, 2679, 3079, 2682, 3278, 2656, 3296, 2550, 3288, 2522, 3276, 2290, 3286, 2221, 3238, 2193, 3216, 2193, 3192, 2215, 3171, 2236, 3170, 2250, 3157, 2327, 3159, 2346, 3174, 2432, 3163, 2503, 3153, 2548, 3124, 2499, 3005, 2460, 2987, 2459, 2944, 2526, 2875, 2526, 2794, 2451, 2494, 2391, 2432, 2352, 2421, 2229, 2513, 2057, 2566, 2002, 2566, 1883, 2588, 1837, 2582 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
 "end",
