@@ -11,108 +11,108 @@
 [ext_resource path="res://Scenes/Levels/5_DonutShop/interactions.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Levels/5_DonutShop/5_DonutShop.gd" type="Script" id=16]
 
-[sub_resource type="StreamTexture" id=34]
+[sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/BG_Far.png-82566d216e179a18abbaa3b6493c64c2.stex"
 
-[sub_resource type="StreamTexture" id=35]
+[sub_resource type="StreamTexture" id=2]
 load_path = "res://.import/BG_Cave_Decor.png-983eceb0b64aa6fb756c9099f48e5b35.stex"
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 14, 15 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 14, 0, 14, 15 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 28, 0, 14, 15 )
 
-[sub_resource type="SpriteFrames" id=47]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 32 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 24.0
 } ]
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 65, 45 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 7 )
 region = Rect2( 65, 0, 65, 45 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 45, 65, 45 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 7 )
 region = Rect2( 65, 45, 65, 45 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 48 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 50 ), SubResource( 51 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 36.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 196, 7 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 96, 2 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 20, 6 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 27, 6 )
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 27, 6 )
-
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 23.2126, 6 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 27, 6 )
-
-[sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 27, 6 )
-
-[sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 17, 6 )
-
-[sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 17, 6 )
-
-[sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 17, 6 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 36, 4 )
+extents = Vector2( 23.2126, 6 )
 
 [sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 27, 6 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 36, 4 )
+
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 56, 3 )
 
-[sub_resource type="RectangleShape2D" id=40]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 25, 5 )
 
-[sub_resource type="RectangleShape2D" id=41]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 18, 5 )
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 15, 4 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 477, 11 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 10, 244 )
 
 [sub_resource type="RectangleShape2D" id=30]
@@ -138,11 +138,11 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
-texture = SubResource( 34 )
+texture = SubResource( 1 )
 centered = false
 
 [node name="decor" type="Sprite" parent="BelowPlayer/Viewport"]
-texture = SubResource( 35 )
+texture = SubResource( 2 )
 centered = false
 
 [node name="cathead" type="Sprite" parent="BelowPlayer/Viewport"]
@@ -156,16 +156,16 @@ centered = false
 
 [node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 41, 364 )
-frames = SubResource( 47 )
-frame = 3
+frames = SubResource( 6 )
+frame = 8
 speed_scale = 0.1
 playing = true
 centered = false
 
 [node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 position = Vector2( 60, 390 )
-frames = SubResource( 3 )
-frame = 2
+frames = SubResource( 11 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -190,7 +190,7 @@ limit_right = 1252
 limit_bottom = 1908
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 28
+frame = 26
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1250.0
@@ -220,98 +220,98 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 215, -134 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 784, 242 )
-shape = SubResource( 15 )
+shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1182, 406 )
-shape = SubResource( 16 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1139, 838 )
-shape = SubResource( 36 )
+shape = SubResource( 15 )
 one_way_collision = true
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1177, 938 )
-shape = SubResource( 43 )
+shape = SubResource( 16 )
 one_way_collision = true
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 872, 1572 )
 rotation = -0.507891
-shape = SubResource( 46 )
+shape = SubResource( 17 )
 one_way_collision = true
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1201, 902 )
-shape = SubResource( 44 )
+shape = SubResource( 18 )
 one_way_collision = true
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1114, 982 )
-shape = SubResource( 45 )
+shape = SubResource( 19 )
 one_way_collision = true
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1205, 1014 )
-shape = SubResource( 37 )
+shape = SubResource( 20 )
 one_way_collision = true
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1145, 1714 )
-shape = SubResource( 38 )
+shape = SubResource( 21 )
 one_way_collision = true
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 1207, 1742 )
-shape = SubResource( 39 )
+shape = SubResource( 22 )
 one_way_collision = true
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 601, 288 )
-shape = SubResource( 17 )
+shape = SubResource( 23 )
 one_way_collision = true
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 601, 341 )
-shape = SubResource( 17 )
+shape = SubResource( 23 )
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 622, 220 )
-shape = SubResource( 18 )
+shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 328, 1670 )
-shape = SubResource( 40 )
+shape = SubResource( 25 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 439, 1709 )
-shape = SubResource( 41 )
+shape = SubResource( 26 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 256, 1552 )
-shape = SubResource( 42 )
+shape = SubResource( 27 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 339, 1568 )
-shape = SubResource( 42 )
+shape = SubResource( 27 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 479, 25 )
-shape = SubResource( 25 )
+shape = SubResource( 28 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( -1703, -1591 )
@@ -328,7 +328,7 @@ position = Vector2( 22, 83 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -26, 98 )
-shape = SubResource( 27 )
+shape = SubResource( 29 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
