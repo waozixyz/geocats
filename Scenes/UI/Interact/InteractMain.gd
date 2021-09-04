@@ -29,6 +29,7 @@ func _on_body_exited(body):
 		if nft_possible:
 			nft.main.visible = false
 			chat_with.visible = false
+
 func _process(_delta):
 	if play_audio:
 		if playing.has(name) and touching and playing[name].directional:
@@ -64,6 +65,7 @@ func _add_audio(path, file_name, directional = true):
 		else:
 			play_audio = false
 			remove_child(audio)
+
 var playing = {}
 func _stop_playing(stream):
 	playing.erase(name)

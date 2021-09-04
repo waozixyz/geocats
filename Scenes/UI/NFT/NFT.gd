@@ -89,25 +89,6 @@ func update(touching, nft_id):
 		player.disabled = true
 	else:
 		player.disabled = false
-#			
-#
-#			elif res_code == 200:
-#				if res.has("val"):
-#					if res.val > -1:
-#						if res.val == 0:
-#							chat_with.start("geochache_rewarded", true, false)
-#						else:
-#							#geocache.visible = true
-#							if res.status:
-#								received_nft.visible = true
-#							#else:
-#							#	current_nft.visible = true
-#					else:
-#						chat_with.visible = true
-#						chat_with.start("geochache_noreward", true, false)
-
-	#	reward(nft_id)
-
 
 func reward(nft_id):
 	global.nft_api("/available", nft_id)

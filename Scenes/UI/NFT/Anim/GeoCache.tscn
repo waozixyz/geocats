@@ -67,6 +67,5 @@ position = Vector2( 128, 64 )
 scale = Vector2( 15, 15 )
 frames = SubResource( 14 )
 animation = "MushroomCat"
-frame = 21
 playing = true
 centered = false

@@ -115,10 +115,10 @@ animations = [ {
 } ]
 
 [node name="GroundCat" type="AnimatedSprite"]
-position = Vector2( 64.336, 58.3933 )
-scale = Vector2( 19.4, 19.4 )
+position = Vector2( 120, 55 )
+scale = Vector2( 16, 16 )
 frames = SubResource( 27 )
 animation = "GroundCat"
-frame = 5
+frame = 14
 playing = true
 centered = false
