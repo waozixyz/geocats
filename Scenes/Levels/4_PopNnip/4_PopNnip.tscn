@@ -97,40 +97,26 @@ extents = Vector2( 60.1039, 35 )
 
 [node name="PopNnip" type="Node2D"]
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_right = 960.0
-margin_bottom = 480.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 240, 120 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="potentialBG_popnnip" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="potentialBG_popnnip" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 3 )
 centered = false
 
-[node name="popnnip_FG" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="popnnip_FG" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 4 )
 centered = false
 
-[node name="keep" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="keep" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 110, 90 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -304,9 +290,6 @@ shape = SubResource( 26 )
 
 [node name="Default" parent="." instance=ExtResource( 2 )]
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 2
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 42, 410 )
 
@@ -314,8 +297,8 @@ position = Vector2( 42, 410 )
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 24
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 21
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

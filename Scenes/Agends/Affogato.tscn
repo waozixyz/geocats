@@ -53,31 +53,12 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_left = -19.0
-margin_top = -14.0
-margin_right = 19.0
-margin_bottom = 14.0
-rect_scale = Vector2( 1, 1.1 )
-rect_pivot_offset = Vector2( 45, 25 )
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 9, 7 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ViewportContainer/Viewport"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -5, -1 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "idle"
 speed_scale = 2.0
-centered = false
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

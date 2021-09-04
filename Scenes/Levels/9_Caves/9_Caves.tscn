@@ -119,52 +119,38 @@ extents = Vector2( 21, 37 )
 
 [node name="Caves" type="Node2D"]
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_left = 7.13524
-margin_top = 14.2705
-margin_right = 1257.14
-margin_bottom = 1914.27
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 312, 475 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="bg" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 1 )
 centered = false
 
-[node name="decor" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="decor" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 2 )
 centered = false
 
-[node name="cathead" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="cathead" type="Sprite" parent="BelowPlayer"]
 visible = false
 texture = ExtResource( 2 )
 centered = false
 
-[node name="caves" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="caves" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 4 )
 centered = false
 
-[node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 41, 364 )
 frames = SubResource( 6 )
+frame = 8
 speed_scale = 0.1
 playing = true
 centered = false
 
-[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 60, 390 )
 frames = SubResource( 11 )
-frame = 9
+frame = 4
 speed_scale = 0.1
 playing = true
 centered = false
@@ -174,9 +160,6 @@ centered = false
 [node name="Affogato" parent="Default" index="0"]
 visible = true
 position = Vector2( 510, 1236 )
-
-[node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
-render_target_update_mode = 3
 
 [node name="CollisionShape2D" parent="Default/Affogato" index="2"]
 position = Vector2( 0, -2 )
@@ -188,25 +171,17 @@ position = Vector2( 49.4949, 334.702 )
 limit_right = 1252
 limit_bottom = 1908
 
-[node name="AbovePlayer" type="ViewportContainer" parent="."]
-margin_right = 1250.0
-margin_bottom = 1900.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 2
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Viewport" type="Viewport" parent="AbovePlayer"]
-size = Vector2( 312, 475 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="fg_base" type="Sprite" parent="AbovePlayer/Viewport"]
+[node name="fg_base" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 1 )
 centered = false
 

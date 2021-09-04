@@ -4,7 +4,7 @@ onready var hud = get_tree().get_current_scene().get_node("CanvasLayer/HUD")
 
 
 onready var machine_ui = hud.get_node("Machine")
-onready var machine_gm = get_tree().get_current_scene().get_node("BelowPlayer/Viewport/Machine")
+onready var machine_gm = $Machine
 
 onready var plus_button = hud.get_node("Plus")
 onready var minus_button = hud.get_node("Minus")

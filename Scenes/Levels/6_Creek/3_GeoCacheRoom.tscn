@@ -57,29 +57,19 @@ extents = Vector2( 33.9119, 32.5012 )
 
 [node name="GeoCacheRoom" type="Node2D"]
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_right = 1300.0
-margin_bottom = 700.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 5
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 260, 140 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="BG" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="BG" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 1 )
 centered = false
 
-[node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer"]
+scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 2 )
 playing = true
@@ -122,37 +112,26 @@ position = Vector2( -271.528, 127.945 )
 limit_right = 1300
 limit_bottom = 700
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 25
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 17
 
-[node name="AbovePlayer" type="ViewportContainer" parent="."]
-margin_right = 1300.0
-margin_bottom = 700.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 5
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Viewport" type="Viewport" parent="AbovePlayer"]
-size = Vector2( 260, 140 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="Floor" type="Sprite" parent="AbovePlayer/Viewport"]
+[node name="Floor" type="Sprite" parent="AbovePlayer"]
 texture = SubResource( 4 )
 centered = false
 
-[node name="FG_Frame" type="Sprite" parent="AbovePlayer/Viewport/Floor"]
+[node name="FG_Frame" type="Sprite" parent="AbovePlayer/Floor"]
 z_index = 1
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Viewport/Floor"]
+[node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 5 )
 frame = 1
 playing = true

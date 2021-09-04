@@ -14,9 +14,6 @@
 [node name="Affogato" parent="." instance=ExtResource( 2 )]
 visible = false
 
-[node name="Viewport" parent="Affogato/ViewportContainer" index="0"]
-render_target_update_mode = 0
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="CRT_Effect" parent="." instance=ExtResource( 1 )]

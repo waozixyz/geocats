@@ -67,14 +67,14 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 	if raycast.is_colliding() && horizontal == direction:
 		var shape_id = raycast.get_collider_shape()
 		var collider = raycast.get_collider()
-		var owner_id = collider.shape_find_owner(shape_id)
+		if not collider is TileMap:
+			var owner_id = collider.shape_find_owner(shape_id)
+			if collider:
+				var hit_node = collider.shape_owner_get_owner(owner_id)
 
-		if collider:
-			var hit_node = collider.shape_owner_get_owner(owner_id)
-
-			if hit_node:
-				if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
-					return true
+				if hit_node:
+					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
+						return true
 
 func move_horizontally(subtractor = 0):
 	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
@@ -85,8 +85,6 @@ func _get_previous_state_tag():
 	return state_machine.previous_state_tag
 
 func _ready():
-	sprite = $ViewportContainer/Viewport/AnimatedSprite
-	to_rotate = $ViewportContainer
 	state_machine.enter_logic(self) 
 	._ready()
 	if global.player_position:

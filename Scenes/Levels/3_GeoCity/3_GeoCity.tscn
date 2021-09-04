@@ -570,7 +570,6 @@ shape = SubResource( 79 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 82 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="Longcat"]
@@ -596,7 +595,6 @@ shape = SubResource( 79 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 87 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="Nonacat"]
@@ -619,7 +617,6 @@ shape = SubResource( 79 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 90 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
@@ -659,7 +656,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 93 )
 animation = "idle"
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -675,14 +671,15 @@ shape = SubResource( 83 )
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1630.22, 284.521 )
+position = Vector2( 4572.59, 998.135 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
 limit_bottom = 1200
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 4
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 30
+flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )

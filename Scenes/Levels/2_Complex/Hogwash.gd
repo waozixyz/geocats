@@ -12,8 +12,6 @@ var idle = false
 var f = 0.01
 
 func _ready():
-	sprite = $ViewportContainer/Viewport/AnimatedSprite
-	to_rotate = $ViewportContainer
 	._ready()
 	start_time = OS.get_ticks_msec() * f #start timer
 

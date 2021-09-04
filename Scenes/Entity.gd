@@ -3,8 +3,8 @@ class_name Entity
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var sprite
-var to_rotate
+onready var sprite = $AnimatedSprite
+
 var no_rotate = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
@@ -32,13 +32,9 @@ func apply_gravity (_delta: float):
 
 func _ready():
 	randomize()
-	if not to_rotate:
-		to_rotate = sprite
+
 func _get_rotation():
-	if to_rotate is ViewportContainer:
-		return deg2rad(to_rotate.rect_rotation)
-	else:
-		return to_rotate.rotation
+	return sprite.rotation
 
 func jump(jumpHeight):
 	velocity.y = 0 #reset velocity
@@ -46,10 +42,7 @@ func jump(jumpHeight):
 	
 func _set_rotation(rot):
 	if no_rotate == false:
-		if to_rotate is ViewportContainer:
-			to_rotate.rect_rotation = rad2deg(rot)
-		else:
-			to_rotate.rotation = rot
+		sprite.rotation = rot
 
 var new_rot : float
 func _physics_process(delta):

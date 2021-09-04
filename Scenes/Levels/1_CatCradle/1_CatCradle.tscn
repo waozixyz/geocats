@@ -345,8 +345,8 @@ position = Vector2( 1299, 197 )
 limit_right = 1490
 limit_bottom = 720
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 0
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 28
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0

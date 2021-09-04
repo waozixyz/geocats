@@ -3,8 +3,6 @@ extends Entity
 onready var player =  get_parent().get_node("Player")
 
 func _ready():
-	sprite = $ViewportContainer/Viewport/AnimatedSprite
-	to_rotate = $ViewportContainer
 	no_rotate = true
 	._ready()
 	init = false

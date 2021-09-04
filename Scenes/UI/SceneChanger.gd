@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 onready var chat_with = $ChatWith
-onready var Sprite = $ViewportContainer/Viewport/AnimatedSprite
+onready var Sprite = $AnimatedSprite
 onready var Container = $Container
 onready var MusicPlayer = $AudioStreamPlayer
 
