@@ -70,7 +70,8 @@ func _get_scene():
 			return ["res://Scenes/Levels/8_GeoLodge/8_GeoLodge.tscn", pos, dir]
 		"Caves":
 			return ["res://Scenes/Levels/9_Caves/9_Caves.tscn", pos, dir]
-
+		"CaveBattle":
+			return ["res://Scenes/Levels/9_Caves/Battle.tscn", pos, dir]
 	
 func change_scene(new_scene, new_location, sound, volume):
 	if not sound == "":

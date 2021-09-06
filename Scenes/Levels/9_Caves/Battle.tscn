@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Agents/NPC/NornaWyrd/norna_wyrd.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 65, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 45, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 65, 45, 65, 45 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 1 ), SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 36.0
+} ]
+
+[node name="Battle" type="Node2D"]
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="Background" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer"]
+position = Vector2( 231.508, 36.8652 )
+scale = Vector2( 1, 1 )
+frames = SubResource( 5 )
+frame = 1
+speed_scale = 0.1
+playing = true
+centered = false
+
+[node name="Default" parent="." instance=ExtResource( 1 )]
+position = Vector2( 246.229, 15.2313 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
