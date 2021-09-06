@@ -154,6 +154,7 @@ centered = false
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
 z_index = 3
 frames = SubResource( 7 )
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -167,7 +168,6 @@ centered = false
 position = Vector2( 77, 76 )
 z_index = 4
 frames = SubResource( 11 )
-frame = 3
 speed_scale = 0.2
 playing = true
 centered = false
@@ -190,7 +190,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 1
+frame = 17
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1140.0
