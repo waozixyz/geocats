@@ -43,19 +43,24 @@ animations = [ {
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 87, 70 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 9 )
 region = Rect2( 87, 0, 87, 70 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 9 )
 region = Rect2( 174, 0, 87, 70 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"frames": [ SubResource( 31 ) ],
 "loop": true,
 "name": "default",
+"speed": 36.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 44 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": false,
+"name": "open",
 "speed": 36.0
 } ]
 
@@ -205,21 +210,22 @@ centered = false
 visible = false
 position = Vector2( 41, 364 )
 frames = SubResource( 6 )
-frame = 2
+frame = 7
 speed_scale = 0.1
 playing = true
 centered = false
 
 [node name="cat_head" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
-visible = false
 position = Vector2( 50, 380 )
 frames = SubResource( 11 )
-frame = 1
+animation = "open"
+frame = 3
 speed_scale = 0.1
 playing = true
 centered = false
 
 [node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+visible = false
 position = Vector2( 60, 390 )
 frames = SubResource( 43 )
 animation = "teleport"
@@ -248,7 +254,7 @@ limit_right = 1252
 limit_bottom = 1908
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 2
+frame = 12
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1250.0
