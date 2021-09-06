@@ -341,7 +341,7 @@ shape = SubResource( 64 )
 [node name="Ladder2" type="Area2D" parent="." groups=[
 "ladder",
 ]]
-position = Vector2( 785.469, 393.873 )
+position = Vector2( 786, 397 )
 __meta__ = {
 "_edit_group_": true
 }
