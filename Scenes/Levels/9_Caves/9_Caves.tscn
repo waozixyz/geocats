@@ -1,12 +1,14 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Assets/Levels/9_Caves/FG_Caves.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Levels/9_Caves/Cat_Head.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/9_Caves/wyrd_teleport_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/9_Caves/cat_cave_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/9_Caves/BG_Caves.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Dark_Cave.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Levels/9_Caves/cat_rock_spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Agents/NPC/NornaWyrd/norna_wyrd.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Agents/NPC/NornaWyrd/norna_wyrd_damage.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/9_Caves/cat_rock_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Levels/5_DonutShop/interactions.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Levels/5_DonutShop/5_DonutShop.gd" type="Script" id=16]
@@ -38,22 +40,76 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 87, 70 )
 
 [sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 9 )
 region = Rect2( 87, 0, 87, 70 )
 
 [sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 9 )
 region = Rect2( 174, 0, 87, 70 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
 "loop": true,
 "name": "default",
+"speed": 36.0
+} ]
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 65, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 45, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 2 )
+region = Rect2( 65, 45, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 7 )
+region = Rect2( 65, 0, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 45, 65, 45 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 7 )
+region = Rect2( 65, 45, 65, 45 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), null ],
+"loop": false,
+"name": "teleport",
+"speed": 36.0
+}, {
+"frames": [ SubResource( 38 ), ExtResource( 8 ), SubResource( 38 ), ExtResource( 8 ), SubResource( 38 ), SubResource( 38 ) ],
+"loop": true,
+"name": "damage",
+"speed": 36.0
+}, {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "idle",
 "speed": 36.0
 } ]
 
@@ -141,35 +197,33 @@ centered = false
 texture = SubResource( 2 )
 centered = false
 
-[node name="old_cathead" type="Sprite" parent="BelowPlayer/Viewport"]
-visible = false
-texture = ExtResource( 2 )
-centered = false
-
 [node name="caves" type="Sprite" parent="BelowPlayer/Viewport"]
 texture = ExtResource( 4 )
 centered = false
 
 [node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+visible = false
 position = Vector2( 41, 364 )
 frames = SubResource( 6 )
-speed_scale = 0.1
-playing = true
-centered = false
-
-[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
-visible = false
-position = Vector2( 60, 390 )
-frames = SubResource( 11 )
-frame = 20
+frame = 2
 speed_scale = 0.1
 playing = true
 centered = false
 
 [node name="cat_head" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+visible = false
 position = Vector2( 50, 380 )
 frames = SubResource( 11 )
-frame = 20
+frame = 1
+speed_scale = 0.1
+playing = true
+centered = false
+
+[node name="wyrd_norna" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+position = Vector2( 60, 390 )
+frames = SubResource( 43 )
+animation = "teleport"
+frame = 4
 speed_scale = 0.1
 playing = true
 centered = false
@@ -194,7 +248,7 @@ limit_right = 1252
 limit_bottom = 1908
 
 [node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 24
+frame = 2
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 1250.0
