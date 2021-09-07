@@ -69,6 +69,9 @@ func _get_scene():
 		"GeoLodge":
 			return ["res://Scenes/Levels/8_GeoLodge/8_GeoLodge.tscn", pos, dir]
 		"Caves":
+			match location:
+				1: 
+					pos = Vector2(500, 2120)
 			return ["res://Scenes/Levels/9_Caves/9_Caves.tscn", pos, dir]
 		"CaveBattle":
 			return ["res://Scenes/Levels/9_Caves/Battle.tscn", pos, dir]
