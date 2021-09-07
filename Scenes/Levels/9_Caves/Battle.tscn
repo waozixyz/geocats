@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -222,6 +222,30 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 13, 130 )
 
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 334, 26 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 26, 334, 26 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 52, 334, 26 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 78, 334, 26 )
+
+[sub_resource type="SpriteFrames" id=45]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Battle" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -444,16 +468,18 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 33
+frame = 9
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
-[node name="one" type="Sprite" parent="AbovePlayer"]
-position = Vector2( 5.99999, 223 )
-texture = ExtResource( 7 )
+[node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
+position = Vector2( 6, 221 )
+frames = SubResource( 45 )
+frame = 1
+speed_scale = 0.5
+playing = true
 centered = false
-vframes = 2
 
 [node name="Foreground" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 12 )
