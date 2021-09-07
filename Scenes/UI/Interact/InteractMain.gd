@@ -19,12 +19,14 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player" and not disabled:
-		object.visible = true
+		if object:
+			object.visible = true
 		touching = true
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		object.visible = false
+		if object:
+			object.visible = false
 		touching = false
 		if nft_possible:
 			nft.main.visible = false
@@ -33,10 +35,11 @@ func _on_body_exited(body):
 func _process(_delta):
 	if play_audio:
 		if playing.has(name) and touching and playing[name].directional:
-			object.visible = false
+			if object:
+				object.visible = false
 			if playing[name].audio.volume_db < 0:
 				playing[name].audio.volume_db += .1
-		elif touching:
+		elif touching and object:
 			object.visible = true
 		elif playing.has(name) and playing[name].directional:
 			playing[name].audio.volume_db -= 0.1
@@ -70,7 +73,7 @@ var playing = {}
 func _stop_playing(stream):
 	playing.erase(name)
 	remove_child(stream)
-	if touching:
+	if touching and object:
 		object.visible = true
 		
 	

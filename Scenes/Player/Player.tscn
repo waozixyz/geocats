@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Water/Waves.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Water/Waves.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player/StateJump.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Player/StateWalk.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Player/StateDoubleJump.gd" type="Script" id=9]
