@@ -12,6 +12,7 @@ var current_platforms = []
 var disabled_platforms = []
 var fall_through_timer = 0
 var fall_through_time = 30
+var jump_height = 100
 
 func fall_through():
 	for platform in current_platforms:
@@ -45,7 +46,13 @@ func _set_rotation(rot):
 		sprite.rotation = rot
 
 var new_rot : float
+
+var mushroom_ticker = 0
+var mushroom
 func _physics_process(delta):
+	if mushroom and mushroom.touching:
+		mushroom.touching = false
+
 	var rot = _get_rotation()
 	if fall_through_timer >  OS.get_ticks_msec() * 0.001:
 		fall_through_timer -= 1
@@ -63,6 +70,11 @@ func _physics_process(delta):
 				for child in collision.collider.get_children():
 					if check_child_collision(child):
 						current_platforms.insert(current_platforms.size(), child)
+					if child.get_parent().is_in_group("mushroom"):
+						mushroom = child.get_parent()
+						mushroom.touching = true
+						jump(jump_height * mushroom.jump_multiplier)
+
 			var normal = collision.normal
 
 			if normal.x > -.7 && normal.x < .7 and normal.y < .7:

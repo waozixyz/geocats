@@ -95,7 +95,7 @@ margin_right = 246.0
 margin_bottom = 475.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.972549, 0.619608, 0.203922, 1 )
-text = "V1.2 - Primary Survey"
+text = "V1.3 - Primary Survey"
 __meta__ = {
 "_edit_use_anchors_": false
 }

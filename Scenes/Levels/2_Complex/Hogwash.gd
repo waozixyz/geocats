@@ -6,13 +6,13 @@ var start_time : int
 var elapsed_time : int
 
 var direction = 1
-var jump_height = 100
 var move_speed = 150
 var idle = false
 var f = 0.01
 
 func _ready():
 	._ready()
+	jump_height = 100
 	start_time = OS.get_ticks_msec() * f #start timer
 
 

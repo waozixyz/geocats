@@ -51,7 +51,6 @@ var acceleration = 10 #by how much does current speed approach max speed when mo
 var decceleration = 35 #by how much does velocity approach when you stop moving horizontally
 var disabled = false
 
-var jump_height = 400
 var dbl_jump_height = 350
 
 func default_anim():
@@ -85,6 +84,7 @@ func _get_previous_state_tag():
 	return state_machine.previous_state_tag
 
 func _ready():
+	jump_height = 400
 	state_machine.enter_logic(self) 
 	._ready()
 	if global.player_position:

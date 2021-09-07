@@ -4,13 +4,12 @@ var anim = "idle"
 
 func _ready():
 	sprite = $AnimatedSprite
-
+	jump_height = 260
 	._ready()
 
 var ticks = 0
 var jump_tick = 100
 var walk_tick = 10
-var jump_height = 260
 var direction = 1
 var idle = false
 func _physics_process(delta):
