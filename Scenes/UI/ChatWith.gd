@@ -5,6 +5,7 @@ onready var name_label = $Panel/NameLabel
 
 var started : bool = false
 var hide_after: bool = false
+
 func start(name, hide = false, panel_visible = true):
 	panel.visible = panel_visible
 	hide_after = hide
@@ -17,6 +18,7 @@ func start(name, hide = false, panel_visible = true):
 
 func stop():
 	started = false
+
 	dialogue.exit()
 	if hide_after:
 		visible = false
@@ -29,7 +31,6 @@ func _process(_delta):
 	else:
 		panel.visible = true
 		started = false
-
 		if hide_after:
 			visible = false
 

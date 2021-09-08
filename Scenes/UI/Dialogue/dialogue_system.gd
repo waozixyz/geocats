@@ -187,7 +187,7 @@ func initiate(file_id, block = 'first'): # Load the whole dialogue into a variab
 
 func clean(): # Resets some variables to prevent errors.
 	name_left.rect_position.x = 0
-	name_right.rect_position.x = 0	
+	name_right.rect_position.x = 560
 	continue_indicator.hide()
 	animations.stop()
 	paused = false
@@ -650,6 +650,8 @@ func load_image(spr, image):
 	var w = spr.texture.get_width()
 	if w > 100:
 		spr.scale = Vector2(.5,.5)
+	elif w > 40:
+		spr.scale = Vector2(1.5, 1.5)
 	elif w > 20:
 		spr.scale = Vector2(2.8, 2.8)
 	elif w > 14:

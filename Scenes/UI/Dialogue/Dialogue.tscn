@@ -48,7 +48,7 @@ anims/Continue_Indicator = SubResource( 1 )
 one_shot = true
 
 [node name="Frame" type="ColorRect" parent="."]
-margin_right = 600.0
+margin_right = 639.0
 margin_bottom = 200.0
 color = Color( 0.175781, 0.175781, 0.175781, 1 )
 __meta__ = {
@@ -56,13 +56,13 @@ __meta__ = {
 }
 
 [node name="SpriteLeft" type="Sprite" parent="Frame"]
-position = Vector2( -1.19209e-06, -83 )
+position = Vector2( 0, -90 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="SpriteRight" type="Sprite" parent="Frame"]
-position = Vector2( 503, -83 )
+position = Vector2( 540, -90 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 3 )
 centered = false
@@ -95,8 +95,9 @@ __meta__ = {
 [node name="NameRight" type="Label" parent="Frame"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -75.0
-margin_bottom = 25.0
+margin_left = -79.0
+margin_right = 1.0
+margin_bottom = 29.0
 grow_horizontal = 0
 size_flags_horizontal = 9
 size_flags_vertical = 8

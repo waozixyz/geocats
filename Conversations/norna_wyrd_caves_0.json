@@ -1,0 +1,34 @@
+{
+  "first": {
+    "name": "Norna",
+    "avatar": "norna.png",
+    "position": "left",
+    "type": "text",
+    "content": "…So anyways, I said to her, There’s no way I’m jumping into that river! It’s like 15 degrees outside and I don’t even have a towel!",
+    "animation_in": "move_in",
+    "next": "1"
+  },
+  "1": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "animation_in": "move_in",
+    "position": "right",
+    "type": "text",
+    "content": "Haha, I totally remember that!",
+    "next": "2"
+  },
+  "2": {
+    "name": "Norna",
+    "position": "left",
+    "type": "text",
+    "content": "...Wait. Who's that‽",
+    "next": "3"
+  },
+  "3": {
+    "name": "Wyrd",
+    "position": "right",
+    "type": "text",
+    "content": "Intruder alert!",
+    "next": ""
+  }
+}
