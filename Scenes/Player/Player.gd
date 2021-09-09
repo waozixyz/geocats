@@ -91,16 +91,19 @@ func _ready():
 		position = global.player_position
 		sprite.flip_h  = global.player_direction * -1
 
+func disable():
+	play("idle")
+	disabled = true
+	velocity.x = 0
+
+func enable():
+	disabled = false
 
 func _physics_process(delta):
-	if disabled:
-		velocity.x = 0
-		play("idle")
-	else:
-		._physics_process(delta)
+	._physics_process(delta)
+	if not disabled:
 		update_inputs()
 		state_machine.logic(delta)
-
 
 	move()
 	var hp = global.data.player_hp 

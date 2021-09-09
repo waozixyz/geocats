@@ -28,7 +28,7 @@ func _action(child):
 		feline_map.visible = true
 		active = false
 		base.visible = false
-		player.disabled = true
+		player.disable()
 
 func _check(child):
 	var rect = child.get_node("ColorRect")
@@ -52,10 +52,10 @@ func _process(_delta):
 	if last_visible != base.visible:
 		if base.visible:
 			if player:
-				player.disabled = true
+				player.disable()
 		else:
 			if player:
-				player.disabled = false
+				player.enable()
 	
 		last_visible = base.visible
 	

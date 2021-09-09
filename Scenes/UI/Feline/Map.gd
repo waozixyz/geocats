@@ -78,12 +78,12 @@ func _process(_delta):
 	if last_visible != visible:
 		if visible:
 			if player:
-				player.disabled = true
+				player.disable()
 			_update_ui()
 
 		else:
 			if player:
-				player.disabled = false
+				player.enable()
 		last_visible = visible
 
 func _input(event):

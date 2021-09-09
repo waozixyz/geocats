@@ -7,10 +7,6 @@ var parent_name : String
 var convo_file : String
 var music_file : String
 
-func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
-
 func _get_complex_convo():
 	var scene_name = get_tree().get_current_scene().name
 	return parent_name + "_" + scene_name

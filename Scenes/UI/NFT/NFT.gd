@@ -86,9 +86,9 @@ func update(touching, nft_id):
 	else:
 		loading.visible = false
 	if login.visible:
-		player.disabled = true
+		player.disable()
 	else:
-		player.disabled = false
+		player.enable()
 
 func reward(nft_id):
 	global.nft_api("/available", nft_id)

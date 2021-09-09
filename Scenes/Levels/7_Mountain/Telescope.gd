@@ -23,7 +23,7 @@ func _process(delta):
 			do_something = false
 					
 		if zoom_out:
-			player.disabled = true
+			player.disable()
 
 			if camera.zoom.x < 6.6:
 				object.visible = false
@@ -35,6 +35,6 @@ func _process(delta):
 				_zoomi(-1)
 			else:
 				object.visible = true
-				player.disabled = false
+				player.enable()
 
 
