@@ -12,7 +12,7 @@ var player
 func _ready():
 	var default = get_parent().get_parent()
 	if default and default.has_node("Player"):
-		player = default.get_node("Player") or {}
+		player = default.get_node("Player")
 	_unselect_others(device)
 	device.get_node("Map").selected = true
 
