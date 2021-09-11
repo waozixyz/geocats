@@ -587,12 +587,12 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 27
+frame = 19
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
 ]]
-position = Vector2( 397, -115 )
+position = Vector2( 397, -120 )
 scale = Vector2( 4, 4 )
 collision_layer = 7
 collision_mask = 7
@@ -743,7 +743,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 65 )
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false

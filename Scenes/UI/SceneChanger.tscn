@@ -1,8 +1,9 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Scenes/UI/SceneChanger.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/loading_loop.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -314,7 +315,19 @@ visible = false
 position = Vector2( 120, 0 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 67 )
-frame = 31
+frame = 17
 speed_scale = 2.0
 playing = true
 centered = false
+
+[node name="Pause" type="Label" parent="."]
+visible = false
+margin_left = 266.985
+margin_top = 192.822
+margin_right = 376.985
+margin_bottom = 217.822
+custom_fonts/font = ExtResource( 4 )
+text = "Game Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}

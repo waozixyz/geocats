@@ -4,7 +4,7 @@ onready var chat_with = $ChatWith
 onready var Sprite = $AnimatedSprite
 onready var Container = $Container
 onready var MusicPlayer = $AudioStreamPlayer
-
+onready var pause = $Pause
 
 var location : int
 var scene : String 
@@ -92,6 +92,12 @@ func change_scene(new_scene, new_location, sound, volume):
 	Container.visible = true
 
 func _physics_process(_delta):
+	if get_tree().paused and not global.pause_msg.empty():
+		pause.visible = true
+		pause.text = global.pause_msg
+	else:
+		pause.visible = false
+		
 	if change:
 		timer += 1
 		if timer  > load_time:
@@ -109,7 +115,10 @@ func _input(event):
 			chat_with.visible = false
 			global.data.player_hp = 100.0
 			change_scene(get_tree().get_current_scene().name, 0, "", 1)
-	
+	if pause.visible:
+		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
+			get_tree().paused = false
+			global.pause_msg = ""
 func _new_scene():
 
 	timer = 0

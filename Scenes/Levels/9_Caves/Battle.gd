@@ -52,22 +52,26 @@ func _phase_one():
 	if ceiling.hp < 100:
 		phase = 2
 	
-
+var start_count = 30
 func _phase_two():
 
 	if ceiling.hp <= 0:
 		boulder.visible = true
-		if boulder.position.y > -70:
+		if boulder.position.y > -20:
 			if not dodging:
-				player.velocity.x += 250
-				player.jump(100)
+				player.velocity.x += 200
+				player.jump(120)
 			dodging = true
+
 		if boulder.position.y < 66.5:
 			boulder.get_node("Sprite").rotation_degrees += 2
 			boulder.position.y += 1
 		else:
 			boulder_fall = false
+			global.pause_msg = "Press 'e' to Start!"
+			get_tree().paused = true
 			player.enable()
+			phase = 3
 			
 
 func _process(delta):
