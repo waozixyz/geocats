@@ -15,7 +15,7 @@ var nyrn_chat = 0
 
 func _ready():
 	if not defeated:
-		phase = 1
+		phase = 3
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
@@ -54,7 +54,6 @@ func _phase_one():
 	
 var start_count = 30
 func _phase_two():
-
 	if ceiling.hp <= 0:
 		boulder.visible = true
 		if boulder.position.y > -30:
@@ -72,7 +71,10 @@ func _phase_two():
 			get_tree().paused = true
 			player.enable()
 			phase = 3
-			
+
+func _phase_three():
+	if enemy.moves.size() <= 0 and enemy.mode == "ready":
+		enemy.move("swing")
 
 func _process(delta):
 	if start_ticker > 5:
@@ -85,3 +87,5 @@ func _process(delta):
 			_phase_one()
 		elif phase == 2:
 			_phase_two()
+		elif phase == 3:
+			_phase_three()

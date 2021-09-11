@@ -7,6 +7,7 @@ onready var round_bullet = $RoundBullet
 onready var laser_explosion = $LaserExplosion
 var bullets = []
 var tweens = []
+var mode = "ready"
 
 func _eyes(side, active):
 	var eye = eyes.get_node(side)
@@ -32,8 +33,26 @@ func _shoot_target(attack):
 var attacks = []
 
 
+var moves = []
+func move(type):
+	mode = type
+	var tween = Tween.new()
+	add_child(tween)
+	tween.interpolate_property(self, "position", self.position, Vector2(250, 550), 3, Tween.TRANS_QUART)
+	tween.start()
+	moves.append(tween)
 
 func _process(_delta):
+	for i in range(moves.size()):
+		if range(moves.size()).has(i):
+			var move = moves[i]
+			sprite.playing = move.is_active()
+			print(sprite.playing)
+			if not move.is_active():
+				remove_child(move)
+				moves.remove(i)
+				mode = "attack"
+
 	for i in range(bullets.size()):
 		if range(bullets.size()).has(i):
 			var bullet = bullets[i]
