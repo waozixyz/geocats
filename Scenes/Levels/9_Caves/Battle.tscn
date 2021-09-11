@@ -24,8 +24,8 @@
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/ceiling.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Levels/9_Caves/Ceiling.gd" type="Script" id=23]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/CaveCeilingPieces.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Agents/NornaWyrd/ball_lazer.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/Levels/9_Caves/Bullet.gd" type="Script" id=26]
+[ext_resource path="res://Assets/Agents/NornaWyrd/ball_laser.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -587,13 +587,13 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
+frame = 32
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
 ]]
-position = Vector2( 397, -120 )
-scale = Vector2( 4, 4 )
+position = Vector2( 385, -138 )
+scale = Vector2( 4.5, 4.5 )
 collision_layer = 7
 collision_mask = 7
 __meta__ = {
@@ -617,7 +617,6 @@ script = ExtResource( 23 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ceiling"]
 scale = Vector2( 4.05769, 4 )
 frames = SubResource( 8 )
-frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
 position = Vector2( -8, -55 )
@@ -714,6 +713,7 @@ centered = false
 visible = false
 position = Vector2( 1.12248, 3.92862 )
 shape = SubResource( 60 )
+one_way_collision = true
 
 [node name="RoundBullet" type="Area2D" parent="Enemy"]
 visible = false
@@ -725,7 +725,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Enemy/RoundBullet"]
-texture = ExtResource( 25 )
+texture = ExtResource( 27 )
 hframes = 4
 frame = 3
 
@@ -743,7 +743,6 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 65 )
-frame = 3
 speed_scale = 0.5
 playing = true
 centered = false

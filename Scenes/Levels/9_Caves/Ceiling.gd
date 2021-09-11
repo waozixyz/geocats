@@ -5,11 +5,29 @@ onready var sprite = $AnimatedSprite
 onready var particles = $Particles
 var hp = 100
 
+func damage(dmg):
+	hp -= dmg
+	sprite.modulate = Color(2, 0, 0)
+
+func _ready():
+	particles.visible = false
+
 var shot_particles
 func _process(delta):
+	var color = sprite.modulate
+	if color.r > 1:
+		color.r -= .1
+	if color.g < 1:
+		color.g += .1
+	if color.b <1:
+		color.b += .1
+	sprite.modulate = color
+	if sprite.modulate.b < 1:
+		sprite.modulate.b += .1
 	var total = sprite.get_sprite_frames().get_frame_count("default")
 	if hp <= 0:
 		if not shot_particles:
+			particles.visible = true
 			for particle in particles.get_children():
 				var target = Vector2(rand_range(-50, 50), 100)
 				var tween = Tween.new()

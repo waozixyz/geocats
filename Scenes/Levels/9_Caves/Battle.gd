@@ -57,13 +57,13 @@ func _phase_two():
 
 	if ceiling.hp <= 0:
 		boulder.visible = true
-		if boulder.position.y > -20:
+		if boulder.position.y > -30:
 			if not dodging:
-				player.velocity.x += 200
+				player.velocity.x += 250
 				player.jump(120)
 			dodging = true
 
-		if boulder.position.y < 66.5:
+		if boulder.position.y < 43:
 			boulder.get_node("Sprite").rotation_degrees += 2
 			boulder.position.y += 1
 		else:

@@ -4,7 +4,7 @@ onready var sprite = $Body
 onready var eyes = $Eyes
 onready var boulder = get_parent().get_node("Boulder")
 onready var round_bullet = $RoundBullet
-
+onready var laser_explosion = $LaserExplosion
 var bullets = []
 var tweens = []
 
@@ -38,11 +38,12 @@ func _process(_delta):
 		if range(bullets.size()).has(i):
 			var bullet = bullets[i]
 			bullet.rotation_degrees -= 5
-			if not tweens[i].is_active():
+			
+			if not tweens[i].is_active() or bullet.dead:				
 				get_parent().remove_child(bullet)
 				bullets.remove(i)
 				get_parent().remove_child(tweens[i])
-				tweens.remove(i)
+				tweens.remove(i)		
 
 	for i in range(attacks.size()):
 		if range(attacks.size()).has(i):
