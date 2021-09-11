@@ -13,7 +13,6 @@ var timer : int
 var load_time : int = 40
 var change : bool
 
-
 func _get_scene():
 	var pos = null
 	var dir = 1

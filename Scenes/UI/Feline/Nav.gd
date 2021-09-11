@@ -2,15 +2,17 @@ extends Feline
 
 # feline map
 onready var feline_map = get_parent().get_node("FelineMap")
-onready var player =  get_parent().get_parent().get_node("Player")
 onready var device = $Base/Icons
 onready var base = $Base
 onready var eyes = $Base/Eyes
 
 var active : bool = false
 
+var player
 func _ready():
-
+	var default = get_parent().get_parent()
+	if default and default.has_node("Player"):
+		player = default.get_node("Player") or {}
 	_unselect_others(device)
 	device.get_node("Map").selected = true
 
