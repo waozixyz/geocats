@@ -5,6 +5,7 @@ onready var feline_map = get_parent().get_node("FelineMap")
 onready var device = $Base/Icons
 onready var base = $Base
 onready var eyes = $Base/Eyes
+onready var sprite = $Base/Icons/Mute/Sprite
 
 var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
@@ -34,8 +35,10 @@ func _action(child):
 		player.disable()
 	if child.name == "Mute":
 		AudioServer.set_bus_mute(master_sound, true)
+		sprite.frame = 1
+	if child.name == "Music":
+		AudioServer.set_bus_mute(master_sound, true)
 		
-
 
 func _check(child):
 	var rect = child.get_node("ColorRect")
