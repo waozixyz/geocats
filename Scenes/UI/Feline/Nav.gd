@@ -6,6 +6,7 @@ onready var device = $Base/Icons
 onready var base = $Base
 onready var eyes = $Base/Eyes
 
+var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
 
 var player
@@ -31,6 +32,10 @@ func _action(child):
 		active = false
 		base.visible = false
 		player.disable()
+	if child.name == "Mute":
+		AudioServer.set_bus_mute(master_sound, true)
+		
+
 
 func _check(child):
 	var rect = child.get_node("ColorRect")

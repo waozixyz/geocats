@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/feline_nav/feline_icons.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/feline_nav/feline_base.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/Feline/Nav.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/feline_nav/feline_expressions.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/feline_nav/feline_music.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -19,6 +20,32 @@ extents = Vector2( 364.184, 68.0394 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 42.8969, 43.563 )
 
+[sub_resource type="GDScript" id=5]
+script/source = "extends Area2D
+
+var pressed : bool = false
+var hovered: bool = false
+var selected: bool = false
+var disabled: bool = false
+func _ready():
+	connect(\"input_event\", self, \"_on_input_event\")
+	connect(\"mouse_entered\", self, \"_on_mouse_entered\")
+	connect(\"mouse_exited\", self, \"_on_mouse_exited\")
+	set_process_input(true)
+
+func _on_input_event(_viewport, event, _shape_idx ):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			pressed = true
+
+func _on_mouse_entered():
+	hovered = true
+			
+func _on_mouse_exited():
+	hovered = false
+	
+"
+
 [node name="FelineNav" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -29,7 +56,6 @@ __meta__ = {
 }
 
 [node name="Base" type="Sprite" parent="."]
-visible = false
 position = Vector2( 165.036, 71.6721 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
@@ -156,3 +182,27 @@ color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Mute" type="Area2D" parent="Base/Icons"]
+visible = false
+position = Vector2( 0, 100 )
+script = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Mute"]
+position = Vector2( 917.867, 298.678 )
+shape = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="Base/Icons/Mute"]
+margin_left = 873.0
+margin_top = 257.0
+margin_right = 960.0
+margin_bottom = 347.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Base/Icons/Mute"]
+position = Vector2( 915, 300 )
+texture = ExtResource( 6 )
