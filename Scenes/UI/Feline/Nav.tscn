@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/feline_nav/feline_icons.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/feline_nav/feline_base.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/Feline/Nav.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/feline_nav/feline_expressions.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UI/feline_nav/feline_music.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/feline_nav/music_spritesheet.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/feline_nav/exit_spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/feline_nav/sfx_spritesheet.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -165,7 +167,7 @@ __meta__ = {
 }
 
 [node name="Exit" type="Area2D" parent="Base/Icons"]
-position = Vector2( -6.10352e-05, -3.05176e-05 )
+position = Vector2( 0, 37.7597 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Exit"]
@@ -183,9 +185,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Base/Icons/Exit"]
+position = Vector2( 917.867, 303.333 )
+texture = ExtResource( 7 )
+hframes = 2
+
 [node name="Mute" type="Area2D" parent="Base/Icons"]
-visible = false
-position = Vector2( 0, 100 )
+position = Vector2( -0.119995, 141.093 )
 script = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Mute"]
@@ -205,4 +211,29 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Base/Icons/Mute"]
 position = Vector2( 915, 300 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Music" type="Area2D" parent="Base/Icons"]
+position = Vector2( -0.119995, 247.76 )
+script = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Music"]
+position = Vector2( 917.867, 298.678 )
+shape = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="Base/Icons/Music"]
+margin_left = 873.0
+margin_top = 257.0
+margin_right = 960.0
+margin_bottom = 347.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Base/Icons/Music"]
+position = Vector2( 915, 300 )
 texture = ExtResource( 6 )
+hframes = 2
