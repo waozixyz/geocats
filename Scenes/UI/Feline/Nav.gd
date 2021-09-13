@@ -5,7 +5,9 @@ onready var feline_map = get_parent().get_node("FelineMap")
 onready var device = $Base/Icons
 onready var base = $Base
 onready var eyes = $Base/Eyes
-onready var sprite = $Base/Icons/Mute/Sprite
+onready var mute_sprite = $Base/Icons/Mute/Sprite
+onready var music_sprite = $Base/Icons/Music/Sprite
+onready var exit_sprite = $Base/Icons/Exit/Sprite
 
 var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
@@ -20,6 +22,7 @@ func _ready():
 
 func _action(child):
 	if child.name == "Exit":
+		exit_sprite.frame = 1
 		active = false
 	if child.name == "Location":
 		visible = false
@@ -34,10 +37,15 @@ func _action(child):
 		base.visible = false
 		player.disable()
 	if child.name == "Mute":
-		AudioServer.set_bus_mute(master_sound, true)
-		sprite.frame = 1
+		if mute_sprite.frame == 0:
+			AudioServer.set_bus_mute(master_sound, true)
+			mute_sprite.frame = 1
+	else:
+		AudioServer.set_bus_mute(master_sound, false)
+		mute_sprite.frame = 0
 	if child.name == "Music":
 		AudioServer.set_bus_mute(master_sound, true)
+		music_sprite.frame = 1
 		
 
 func _check(child):
