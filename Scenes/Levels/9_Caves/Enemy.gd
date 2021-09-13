@@ -29,16 +29,20 @@ func _shoot_target(attack):
 	bullets.append(bullet)
 	tweens.append(tween)
 
-	
+func _face():
+	if mode == "left":
+		return (sprite.frame == 2 or sprite.frame == 7 or sprite.frame == 8)	
+
 var attacks = []
-
-
 var moves = []
-func move(type):
-	mode = type
+func move(dir):
+	var dest
+	mode = dir
+	if mode == "left":
+		dest = Vector2(250, 550)
 	var tween = Tween.new()
 	add_child(tween)
-	tween.interpolate_property(self, "position", self.position, Vector2(250, 550), 3, Tween.TRANS_QUART)
+	tween.interpolate_property(self, "position", self.position, dest, 3, Tween.TRANS_QUART)
 	tween.start()
 	moves.append(tween)
 
@@ -46,9 +50,9 @@ func _process(_delta):
 	for i in range(moves.size()):
 		if range(moves.size()).has(i):
 			var move = moves[i]
-			sprite.playing = move.is_active()
-			print(sprite.playing)
-			if not move.is_active():
+			sprite.playing = true
+			if not move.is_active() and _face():
+				sprite.playing = false
 				remove_child(move)
 				moves.remove(i)
 				mode = "attack"

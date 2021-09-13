@@ -74,7 +74,7 @@ func _phase_two():
 
 func _phase_three():
 	if enemy.moves.size() <= 0 and enemy.mode == "ready":
-		enemy.move("swing")
+		enemy.move("left")
 
 func _process(delta):
 	if start_ticker > 5:
