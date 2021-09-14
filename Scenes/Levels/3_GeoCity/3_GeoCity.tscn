@@ -150,22 +150,22 @@ extents = Vector2( 24, 16 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 17 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 36 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 37 ), SubResource( 36 ) ],
+"frames": [ SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -174,7 +174,7 @@ extents = Vector2( 33.2397, 28.051 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 18 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 18 )
@@ -182,43 +182,43 @@ region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 18 )
-region = Rect2( 22, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=43]
 animations = [ {
 "frames": [ SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
-"name": "idle",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 42 ), SubResource( 41 ) ],
 "loop": true,
-"name": "walk",
+"name": "idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 13 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 13 )
-region = Rect2( 22, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=47]
 animations = [ {
-"frames": [ SubResource( 44 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 45 ), SubResource( 46 ) ],
+"frames": [ SubResource( 44 ), SubResource( 45 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 46 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -656,7 +656,6 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 50 )
 animation = "idle"
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -679,7 +678,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
+frame = 24
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
