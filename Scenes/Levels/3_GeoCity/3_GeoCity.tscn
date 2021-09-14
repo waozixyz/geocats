@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Right.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/garbitage.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/3_GeoCity.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Sfx/SFX/BirdsGeoCity.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 43, 0, 43, 43, 0, 43 )
@@ -150,22 +151,22 @@ extents = Vector2( 24, 16 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 17 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 36 ), SubResource( 37 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 37 ) ],
+"frames": [ SubResource( 36 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 36 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -174,7 +175,7 @@ extents = Vector2( 33.2397, 28.051 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 18 )
-region = Rect2( 22, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 18 )
@@ -182,43 +183,43 @@ region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 18 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=43]
 animations = [ {
 "frames": [ SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
-"name": "walk",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 42 ), SubResource( 41 ) ],
 "loop": true,
-"name": "idle",
+"name": "walk",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 13 )
-region = Rect2( 22, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 13 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=47]
 animations = [ {
-"frames": [ SubResource( 44 ), SubResource( 45 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 46 ) ],
+"frames": [ SubResource( 44 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 45 ), SubResource( 46 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -241,48 +242,25 @@ animations = [ {
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
 
-[node name="BelowPlayer" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="City_BG" type="Sprite" parent="BelowPlayer"]
+[node name="City_BG" type="Sprite" parent="Background"]
 texture = ExtResource( 3 )
 centered = false
 
-[node name="City_BG_Buildings" type="Sprite" parent="BelowPlayer"]
+[node name="City_BG_Buildings" type="Sprite" parent="Background"]
 texture = ExtResource( 6 )
 centered = false
 
-[node name="City_Buildings" type="Sprite" parent="BelowPlayer"]
+[node name="City_Buildings" type="Sprite" parent="Background"]
 texture = ExtResource( 7 )
 centered = false
 
-[node name="City_Ladder_Left" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 181, 137 )
-texture = ExtResource( 5 )
-
-[node name="City_Ladder_Right" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 1094, 176 )
-texture = ExtResource( 1 )
-
-[node name="city_brick" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 796.533, 137 )
-scale = Vector2( 1.06667, 1 )
-texture = ExtResource( 4 )
-
-[node name="city_brick2" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 758, 136 )
-scale = Vector2( 1.06667, 1 )
-texture = ExtResource( 4 )
-
-[node name="city_brick3" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 723, 136 )
-scale = Vector2( 1.06667, 1 )
-texture = ExtResource( 4 )
-
-[node name="TileMap" type="TileMap" parent="BelowPlayer"]
+[node name="TileMap" type="TileMap" parent="Background"]
 position = Vector2( 0, -1 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 43, 43 )
@@ -291,48 +269,71 @@ collision_mask = 3
 format = 1
 tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0 )
 
-[node name="City_Guard_Rail" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 75, 73 )
-z_index = 1
-z_as_relative = false
-texture = ExtResource( 9 )
+[node name="Ladders" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="LadderColl" type="Node2D" parent="."]
-
-[node name="Ladder" type="Area2D" parent="LadderColl" groups=[
-"ladder",
-]]
+[node name="Ladder" type="Area2D" parent="Ladders"]
 position = Vector2( 721, 545 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderColl/Ladder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
 shape = SubResource( 3 )
 
-[node name="Ladder2" type="Area2D" parent="LadderColl" groups=[
-"ladder",
-]]
+[node name="Sprite" type="Sprite" parent="Ladders/Ladder"]
+position = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 4337.46, 677.621 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderColl/Ladder2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Ladders/Ladder2"]
+position = Vector2( 38.54, 26.379 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
 
 [node name="Bricks" type="StaticBody2D" parent="."]
 position = Vector2( 2800, 500 )
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="city_brick" type="Sprite" parent="Bricks"]
+position = Vector2( 386.132, 48 )
+scale = Vector2( 4.26668, 4 )
+texture = ExtResource( 4 )
+
+[node name="city_brick2" type="Sprite" parent="Bricks"]
+position = Vector2( 232, 44 )
+scale = Vector2( 4.26668, 4 )
+texture = ExtResource( 4 )
+
+[node name="city_brick3" type="Sprite" parent="Bricks"]
+position = Vector2( 92, 44 )
+scale = Vector2( 4.26668, 4 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks"]
-position = Vector2( 88, 42 )
+position = Vector2( 89.6838, 42 )
 shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bricks"]
-position = Vector2( 228, 42 )
+position = Vector2( 229.964, 41.7194 )
 shape = SubResource( 5 )
 one_way_collision = true
 
@@ -557,29 +558,31 @@ position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 10 )
 
-[node name="Longcat" type="KinematicBody2D" parent="."]
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Longcat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3328, 848 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Longcat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat"]
 shape = SubResource( 35 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Longcat"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 38 )
 animation = "walk"
 playing = true
 
-[node name="LongCatArea2D" type="Area2D" parent="Longcat"]
+[node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Longcat/LongCatArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat/LongCatArea2D"]
 position = Vector2( 2.29077, 0.729614 )
 shape = SubResource( 39 )
 
-[node name="Nonacat" type="KinematicBody2D" parent="."]
+[node name="Nonacat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4124, 689 )
 collision_layer = 2
 collision_mask = 2
@@ -588,55 +591,55 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat"]
 shape = SubResource( 35 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Nonacat"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonacat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "walk"
 playing = true
 
-[node name="NonacatArea2D" type="Area2D" parent="Nonacat"]
+[node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nonacat/NonacatArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat/NonacatArea2D"]
 position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 39 )
 
-[node name="Lasagne" type="KinematicBody2D" parent="."]
+[node name="Lasagne" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 2029.28, 986.472 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lasagne"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne"]
 shape = SubResource( 35 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Lasagne"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 47 )
 animation = "walk"
 playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="Lasagne"]
+[node name="LasagneArea2D" type="Area2D" parent="NPC/Lasagne"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lasagne/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 39 )
 
-[node name="Garbitage" type="KinematicBody2D" parent="."]
+[node name="Garbitage" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 1600, 311 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garbitage"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage"]
 position = Vector2( 27, 33 )
 shape = SubResource( 35 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="Garbitage"]
+[node name="ViewportContainer" type="ViewportContainer" parent="NPC/Garbitage"]
 margin_right = 75.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( 22.5, 12.5 )
@@ -647,13 +650,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="Garbitage/ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="NPC/Garbitage/ViewportContainer"]
 size = Vector2( 15, 12 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 50 )
 animation = "idle"
 speed_scale = 0.1
@@ -661,10 +664,10 @@ playing = true
 centered = false
 flip_h = true
 
-[node name="Area2DGarbitage" type="Area2D" parent="Garbitage"]
+[node name="Area2DGarbitage" type="Area2D" parent="NPC/Garbitage"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garbitage/Area2DGarbitage"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage/Area2DGarbitage"]
 position = Vector2( 39, 33 )
 shape = SubResource( 39 )
 
@@ -678,7 +681,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 24
+frame = 0
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -690,20 +693,20 @@ autoplay = true
 stream = ExtResource( 22 )
 autoplay = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
-[node name="City_Guard_Rail" type="Sprite" parent="Node2D"]
+[node name="City_Guard_Rail" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 75, 73 )
 z_index = 1
 z_as_relative = false
 texture = ExtResource( 9 )
 
-[node name="City_tree" type="Sprite" parent="Node2D"]
+[node name="City_tree" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 953, 240 )
 texture = ExtResource( 16 )
 
-[node name="fg_entrance_city" type="Sprite" parent="Node2D"]
+[node name="fg_entrance_city" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
 

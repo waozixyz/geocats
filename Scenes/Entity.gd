@@ -34,26 +34,17 @@ func apply_gravity (_delta: float):
 func _ready():
 	randomize()
 
-func _get_rotation():
-	return sprite.rotation
-
 func jump(jumpHeight):
 	velocity.y = 0 #reset velocity
 	velocity.y = -sqrt(50 * gravity * jumpHeight) 
 	
-func _set_rotation(rot):
-	if no_rotate == false:
-		sprite.rotation = rot
-
 var new_rot : float
-
-var mushroom_ticker = 0
 var mushroom
 func _physics_process(delta):
 	if mushroom and mushroom.touching:
 		mushroom.touching = false
 
-	var rot = _get_rotation()
+	var rot = sprite.rotation
 	if fall_through_timer >  OS.get_ticks_msec() * 0.001:
 		fall_through_timer -= 1
 	else:
@@ -91,6 +82,6 @@ func _physics_process(delta):
 		new_rot = rot * .5
 	if rot != new_rot:
 		rot = (new_rot / slide_count + rot * 3) / 4
-
-	_set_rotation(rot)
+	if not no_rotate:
+		sprite.rotation = rot
 	apply_gravity(delta)

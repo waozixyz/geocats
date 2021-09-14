@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Scenes/Levels/9_Caves/Bullet.gd" type="Script" id=26]
 [ext_resource path="res://Assets/Agents/NornaWyrd/ball_laser.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Levels/9_Caves/Ears.gd" type="Script" id=28]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -289,63 +290,63 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=54]
+[sub_resource type="CircleShape2D" id=53]
 radius = 2.5
 
-[sub_resource type="CircleShape2D" id=55]
+[sub_resource type="CircleShape2D" id=54]
 radius = 22.1312
 
-[sub_resource type="AtlasTexture" id=56]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 52, 38 )
 
-[sub_resource type="AtlasTexture" id=57]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 22 )
 region = Rect2( 52, 0, 52, 38 )
 
-[sub_resource type="AtlasTexture" id=58]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 38, 52, 38 )
 
-[sub_resource type="AtlasTexture" id=59]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 22 )
 region = Rect2( 52, 38, 52, 38 )
 
-[sub_resource type="AtlasTexture" id=60]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 76, 52, 38 )
 
-[sub_resource type="SpriteFrames" id=61]
+[sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": false,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=62]
+[sub_resource type="CapsuleShape2D" id=61]
 radius = 45.0
 height = 60.0
 
-[sub_resource type="AtlasTexture" id=63]
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 334, 26 )
 
-[sub_resource type="AtlasTexture" id=64]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 26, 334, 26 )
 
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 52, 334, 26 )
 
-[sub_resource type="AtlasTexture" id=66]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 78, 334, 26 )
 
-[sub_resource type="SpriteFrames" id=67]
+[sub_resource type="SpriteFrames" id=66]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ) ],
+"frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -561,10 +562,9 @@ flip_h = true
 polygon = PoolVector2Array( 6.5, 8.8, 10.25, 5.8, 15.5, 7.3, 16.75, 8.8, 11.75, 6.8 )
 one_way_collision = true
 
-[node name="Ladder" type="Area2D" parent="." groups=[
-"ladder",
-]]
+[node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 197, 67 )
+script = ExtResource( 29 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -623,7 +623,7 @@ frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/RoundBullet"]
 position = Vector2( -0.499985, -0.499992 )
-shape = SubResource( 54 )
+shape = SubResource( 53 )
 
 [node name="Ears" type="Node2D" parent="."]
 visible = false
@@ -701,7 +701,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 2
+frame = 11
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
@@ -720,7 +720,7 @@ texture = ExtResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boulder"]
 position = Vector2( 22.1311, 22.1311 )
-shape = SubResource( 55 )
+shape = SubResource( 54 )
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
@@ -730,12 +730,12 @@ script = ExtResource( 23 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ceiling"]
 scale = Vector2( 4.05769, 4 )
-frames = SubResource( 61 )
+frames = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
 position = Vector2( -8, -55 )
 rotation = 1.5708
-shape = SubResource( 62 )
+shape = SubResource( 61 )
 
 [node name="Particles" type="Node2D" parent="Ceiling"]
 scale = Vector2( 4, 4 )
@@ -804,8 +804,7 @@ __meta__ = {
 
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
-frames = SubResource( 67 )
-frame = 1
+frames = SubResource( 66 )
 speed_scale = 0.5
 playing = true
 centered = false

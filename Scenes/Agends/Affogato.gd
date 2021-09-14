@@ -46,10 +46,11 @@ func _physics_process(delta):
 	
 	velocity.x = 0
 
-	if follow:
+	if player and follow:
 		if not init:
 			visible = true
-			position = player.position
+			if player:
+				position = player.position
 			init = true
 		chat.disabled = true
 		

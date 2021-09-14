@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Levels/9_Caves/FG_Caves.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Levels/9_Caves/CatHead.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Levels/9_Caves/interactions.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Levels/9_Caves/cat_rock_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Levels/9_Caves/GoInside.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=11]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 
 [sub_resource type="StreamTexture" id=1]
@@ -184,7 +185,7 @@ centered = false
 [node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 41, 364 )
 frames = SubResource( 13 )
-frame = 3
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -202,7 +203,7 @@ limit_right = 1565
 limit_bottom = 2385
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 21
+frame = 12
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -324,10 +325,9 @@ texture = ExtResource( 14 )
 
 [node name="Ladders" type="Node2D" parent="."]
 
-[node name="Ladder2" type="Area2D" parent="Ladders" groups=[
-"ladder",
-]]
+[node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 1469.51, 351.633 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -335,10 +335,9 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 shape = SubResource( 26 )
 
-[node name="Ladder3" type="Area2D" parent="Ladders" groups=[
-"ladder",
-]]
+[node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 1433.1, 771.804 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -346,10 +345,9 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
 shape = SubResource( 27 )
 
-[node name="Ladder4" type="Area2D" parent="Ladders" groups=[
-"ladder",
-]]
+[node name="Ladder4" type="Area2D" parent="Ladders"]
 position = Vector2( 1464.52, 1658.43 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }

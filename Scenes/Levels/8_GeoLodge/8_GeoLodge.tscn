@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Levels/8_GeoLodge/palmerston.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/Palmerston.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=11]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"
@@ -177,7 +178,6 @@ centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 7 )
-frame = 2
 speed_scale = 0.2
 playing = true
 centered = false
@@ -198,7 +198,7 @@ shape = SubResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 12 )
-frame = 1
+frame = 3
 speed_scale = 0.2
 playing = true
 centered = false
@@ -221,7 +221,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 2
+frame = 11
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -338,15 +338,14 @@ shape = SubResource( 32 )
 position = Vector2( 750, -127.333 )
 shape = SubResource( 33 )
 
-[node name="Ladder2" type="Area2D" parent="." groups=[
-"ladder",
-]]
+[node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 786, 397 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
 shape = SubResource( 34 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

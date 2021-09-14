@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/GeoCats_Regge_groove.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=2]
@@ -47,6 +47,7 @@
 [ext_resource path="res://Assets/Levels/2_Complex/Cats/Hogwash/pig_cat_walk_2.png" type="Texture" id=45]
 [ext_resource path="res://Scenes/Levels/2_Complex/Hogwash.gd" type="Script" id=46]
 [ext_resource path="res://Scenes/Levels/2_Complex/CleopardisInteract.gd" type="Script" id=47]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=48]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
@@ -658,14 +659,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 38 ), ExtResource( 45 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 44 ) ],
 "loop": true,
 "name": "mad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -1116,10 +1117,9 @@ one_way_collision = true
 
 [node name="Interactive" type="Node2D" parent="."]
 
-[node name="Ladder" type="Area2D" parent="Interactive" groups=[
-"ladder",
-]]
+[node name="Ladder" type="Area2D" parent="Interactive"]
 position = Vector2( 1756, 896 )
+script = ExtResource( 48 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1236,9 +1236,9 @@ shape = SubResource( 78 )
 position = Vector2( 424, 624 )
 shape = SubResource( 79 )
 
-[node name="Agends" type="Node2D" parent="."]
+[node name="Agents" type="Node2D" parent="."]
 
-[node name="Cleopardis" type="KinematicBody2D" parent="Agends"]
+[node name="Cleopardis" type="KinematicBody2D" parent="Agents"]
 position = Vector2( 70, 199 )
 collision_layer = 2
 collision_mask = 2
@@ -1247,7 +1247,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Agends/Cleopardis"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Agents/Cleopardis"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
@@ -1255,35 +1255,35 @@ frame = 4
 playing = true
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Agends/Cleopardis"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Cleopardis"]
 position = Vector2( 20.8, 42.5306 )
 shape = SubResource( 81 )
 
-[node name="CleopardisArea2D" type="Area2D" parent="Agends/Cleopardis"]
+[node name="CleopardisArea2D" type="Area2D" parent="Agents/Cleopardis"]
 script = ExtResource( 47 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Agends/Cleopardis/CleopardisArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Cleopardis/CleopardisArea2D"]
 position = Vector2( 20.8, 33.5306 )
 shape = SubResource( 82 )
 
-[node name="Hogwash" type="KinematicBody2D" parent="Agends"]
+[node name="Hogwash" type="KinematicBody2D" parent="Agents"]
 position = Vector2( 1056, 480 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 46 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Agends/Hogwash"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Agents/Hogwash"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 83 )
 animation = "idle"
 
-[node name="HogwashArea2D" type="Area2D" parent="Agends/Hogwash"]
+[node name="HogwashArea2D" type="Area2D" parent="Agents/Hogwash"]
 script = ExtResource( 42 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Agends/Hogwash/HogwashArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/HogwashArea2D"]
 shape = SubResource( 84 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Agends/Hogwash"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash"]
 position = Vector2( 6, 4 )
 shape = SubResource( 85 )
 
@@ -1318,7 +1318,7 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 3
+frame = 19
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )

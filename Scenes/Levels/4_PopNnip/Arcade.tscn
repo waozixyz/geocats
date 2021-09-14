@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Scenes/Levels/4_PopNnip/npc.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/UI/Interact/InteractSimple.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=25]
 [ext_resource path="res://Assets/Sfx/SFX/Melodic_Alarm_Ambience_1.ogg" type="AudioStream" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -334,61 +335,49 @@ extents = Vector2( 56, 30 )
 
 [node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_right = 960.0
-margin_bottom = 480.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 240, 120 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="bg" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 8 )
 centered = false
 
-[node name="staircase" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="staircase" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 180, 85 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="sparks" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="sparks" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 speed_scale = 0.11
 playing = true
 centered = false
 
-[node name="snake" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="snake" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
 frame = 4
 playing = true
 centered = false
 
-[node name="spaceship" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="spaceship" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 29, 86 )
 frames = SubResource( 27 )
+frame = 1
 speed_scale = 0.05
 playing = true
 centered = false
 
-[node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 48, 89 )
 frames = SubResource( 30 )
 speed_scale = 0.2
 playing = true
 centered = false
 
-[node name="pinball" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="pinball" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
 frame = 1
@@ -396,37 +385,36 @@ speed_scale = 0.3
 playing = true
 centered = false
 
-[node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
 
-[node name="poutine" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="poutine" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
 
-[node name="hyper" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="hyper" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
 
-[node name="npc" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="npc" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 13, 57 )
 frames = SubResource( 46 )
 speed_scale = 0.23
 centered = false
 script = ExtResource( 22 )
 
-[node name="npc2" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="npc2" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 13, 89 )
 frames = SubResource( 50 )
 speed_scale = 0.23
@@ -525,15 +513,14 @@ stream = ExtResource( 26 )
 volume_db = -7.647
 autoplay = true
 
-[node name="Ladder2" type="Area2D" parent="." groups=[
-"ladder",
-]]
+[node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 569, 370 )
+script = ExtResource( 25 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
 shape = SubResource( 63 )
 
 [node name="Gamecat2" type="Node2D" parent="."]
@@ -565,9 +552,6 @@ shape = SubResource( 64 )
 visible = true
 position = Vector2( 652, 409 )
 
-[node name="Viewport" parent="Default/Affogato/ViewportContainer" index="0"]
-render_target_update_mode = 3
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 864, 298 )
 
@@ -575,8 +559,8 @@ position = Vector2( 864, 298 )
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 24
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 1
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -611,7 +595,6 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 67 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
