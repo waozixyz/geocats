@@ -5,13 +5,16 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 onready var sprite = $AnimatedSprite
 
+# variables for all entities
 var no_rotate = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
 var current_platforms = []
 var disabled_platforms = []
+# fall through platform
 var fall_through_timer = 0
 var fall_through_time = 30
+# jump height
 var jump_height = 100
 
 func fall_through():
@@ -31,7 +34,31 @@ func check_child_collision(child):
 func apply_gravity (_delta: float):
 	velocity.y += gravity
 
+
+# ladder variables
+var on_ladder : bool = false
+var ladder_x : float
+var ladder_y : float
+var ladder_rot : float
+var ladder_tween : Tween
+# tween to ladder function
+func tween_to_ladder():
+	var new_x = ladder_x
+	if ladder_rot != 0:
+		var diff_y = position.y / ladder_y
+		new_x = ladder_x - 25 *  (diff_y - 1) * ladder_rot
+
+	var target = Vector2(new_x, position.y)
+	
+	# warning-ignore:return_value_discarded
+	ladder_tween.interpolate_property(self, "position", position, target, 0.05, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	# warning-ignore:return_value_discarded
+	ladder_tween.start()
+
 func _ready():
+	# add ladder tween
+	ladder_tween = Tween.new()
+	add_child(ladder_tween)
 	randomize()
 
 func jump(jumpHeight):

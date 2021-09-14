@@ -350,7 +350,6 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 2
 speed_scale = 0.11
 playing = true
 centered = false
@@ -358,7 +357,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 4
+frame = 5
 playing = true
 centered = false
 
@@ -373,6 +372,7 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 48, 89 )
 frames = SubResource( 30 )
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -388,6 +388,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -395,6 +396,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -515,6 +517,8 @@ autoplay = true
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 569, 370 )
+collision_layer = 7
+collision_mask = 7
 script = ExtResource( 25 )
 __meta__ = {
 "_edit_group_": true
@@ -560,7 +564,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 1
+frame = 22
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -595,6 +599,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 67 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

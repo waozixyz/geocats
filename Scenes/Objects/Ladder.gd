@@ -3,9 +3,10 @@ extends Area2D
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
+	collision_layer = 7
 
 func _is_valid(body):
-	return body is Entity and not body.get('on_ladder') == null
+	return body is Entity
 	
 func _on_body_entered(body):
 	if _is_valid(body):

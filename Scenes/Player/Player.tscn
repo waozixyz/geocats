@@ -131,7 +131,7 @@ limit_top = 0
 scale = Vector2( 4, 4 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 9
+frame = 24
 playing = true
 
 [node name="Timers" type="Node2D" parent="."]
@@ -200,8 +200,6 @@ cast_to = Vector2( 23, 0 )
 [node name="LeftRaycast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -23, 0 )
-
-[node name="Tween" type="Tween" parent="."]
 
 [node name="Waves" parent="." instance=ExtResource( 3 )]
 z_index = 1

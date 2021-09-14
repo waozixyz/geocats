@@ -198,7 +198,7 @@ shape = SubResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 12 )
-frame = 3
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -221,7 +221,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 11
+frame = 19
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -340,6 +340,8 @@ shape = SubResource( 33 )
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 786, 397 )
+collision_layer = 7
+collision_mask = 7
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -386,7 +388,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 41 )
 animation = "idle"
-frame = 4
+frame = 2
 speed_scale = 0.1
 playing = true
 centered = false

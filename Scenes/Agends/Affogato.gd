@@ -80,9 +80,11 @@ func _physics_process(delta):
 				ticks = 0
 			else:
 				jump_height = 15 + next_jump_height
-		if player.state_machine.active_state.tag == "climb":
+		if on_ladder and player.vx == 0:
+			
 			if position != player.position:
 				position += (player.position - position) * .05
+			tween_to_ladder()
 			climbing = true
 		else:
 			if climbing:

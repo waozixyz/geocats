@@ -12,15 +12,11 @@ var underwater : bool = false
 var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 
-var ladder_x : float
-var ladder_y : float
-var ladder_rot : float
 
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
 onready var state_machine: PlayerFSM = $PlayerStates
-onready var tween : Tween = $Tween
 onready var waves : Particles2D = $Waves
 
 onready var right_raycast = $RightRaycast #path to the right raycast
@@ -40,7 +36,6 @@ var isJumpPressed : bool = false
 var isJumpReleased : bool = false
 var jumpInput : int = 0
 
-var on_ladder : bool = false
 var previous_state : String setget ,_get_previous_state_tag
 
 var airFriction = 20 #how much you subtract velocity when you start moving horizontally in the air
@@ -143,18 +138,6 @@ func play(animation:String):
 	if sprite.animation == animation:
 		return
 	sprite.play(animation)
-
-func tween_to_ladder():
-	var new_x = ladder_x
-	if ladder_rot != 0:
-		var diff_y = position.y / ladder_y
-		new_x = ladder_x - 25 *  (diff_y - 1) * ladder_rot
-
-	var target = Vector2(new_x, position.y)
-	# warning-ignore:return_value_discarded
-	tween.interpolate_property(self, "position", position, target, 0.05, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-	   # warning-ignore:return_value_discarded
-	tween.start()
 
 func can_climb():
 	return on_ladder and ladder_timer.is_stopped()
