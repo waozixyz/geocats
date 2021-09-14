@@ -1,12 +1,15 @@
-extends StaticBody2D
+extends Node2D
 
-onready var sprite = $Body
+onready var sprite = $Body/AnimatedSprite
 onready var eyes = $Eyes
 onready var boulder = get_parent().get_node("Boulder")
 onready var round_bullet = $RoundBullet
 onready var laser_explosion = $LaserExplosion
+onready var collider = $Body/CollisionPolygon2D
+onready var ears = get_parent().get_node("Ears")
 var bullets = []
 var tweens = []
+var face = "norna"
 var mode = "ready"
 
 func _eyes(side, active):
@@ -29,16 +32,19 @@ func _shoot_target(attack):
 	bullets.append(bullet)
 	tweens.append(tween)
 
-func _face():
-	if mode == "left":
-		return (sprite.frame == 2 or sprite.frame == 7 or sprite.frame == 8)	
-
+func _is_face():
+	if face == "wyrd" and (sprite.frame == 2 or sprite.frame == 7 or sprite.frame == 8):
+		return true
+	elif face == "norna" and (sprite.frame == 0 or sprite.frame == 4 or sprite.frame == 5):
+		return true
+	else:
+		return false
 var attacks = []
 var moves = []
-func move(dir):
+func move(end_face):
 	var dest
-	mode = dir
-	if mode == "left":
+	face = end_face
+	if end_face == "wyrd":
 		dest = Vector2(250, 550)
 	var tween = Tween.new()
 	add_child(tween)
@@ -47,15 +53,31 @@ func move(dir):
 	moves.append(tween)
 
 func _process(_delta):
-	for i in range(moves.size()):
-		if range(moves.size()).has(i):
-			var move = moves[i]
-			sprite.playing = true
-			if not move.is_active() and _face():
-				sprite.playing = false
-				remove_child(move)
-				moves.remove(i)
-				mode = "attack"
+	# fix ears
+	ears.position = position + Vector2(0, -52)
+
+	if _is_face() and moves.size() == 0:
+		ears.visible = true
+		for child in ears.get_children():
+			if child.name == face:
+				child.visible = true
+				
+			else:
+				child.visible = false
+	else:
+		ears.visible = false
+	if moves:
+		for i in range(moves.size()):
+			if range(moves.size()).has(i):
+				var move = moves[i]
+				sprite.playing = true
+				collider.disabled = true
+				if not move.is_active() and _is_face():
+					collider.disabled = false
+					sprite.playing = false
+					remove_child(move)
+					moves.remove(i)
+					mode = "attack"
 
 	for i in range(bullets.size()):
 		if range(bullets.size()).has(i):

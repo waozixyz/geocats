@@ -22,8 +22,6 @@ func _process(delta):
 	if color.b <1:
 		color.b += .1
 	sprite.modulate = color
-	if sprite.modulate.b < 1:
-		sprite.modulate.b += .1
 	var total = sprite.get_sprite_frames().get_frame_count("default")
 	if hp <= 0:
 		if not shot_particles:

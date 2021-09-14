@@ -15,7 +15,7 @@ var nyrn_chat = 0
 
 func _ready():
 	if not defeated:
-		phase = 3
+		phase = 1
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
@@ -74,14 +74,13 @@ func _phase_two():
 
 func _phase_three():
 	if enemy.moves.size() <= 0 and enemy.mode == "ready":
-		enemy.move("left")
-
+		enemy.move("wyrd")
+		
 func _process(delta):
-	if start_ticker > 5:
-	#	player.state_machine.change_state("climb")
-		pass
-	else:
-		start_ticker += 1
+
+	if start_ticker == 5:
+		player.state_machine.change_state("climb")
+	start_ticker += 1
 	if not defeated:
 		if phase == 1:
 			_phase_one()
