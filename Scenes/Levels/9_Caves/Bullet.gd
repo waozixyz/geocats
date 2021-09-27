@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var sprite = $Sprite
-var dmg = 4
+export var dmg = 4
 var dead
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -9,7 +9,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Ceiling":
-		body.damage(dmg * 7)
+		body.damage(dmg)
 		dead = true
 
 func _on_body_exited(body):

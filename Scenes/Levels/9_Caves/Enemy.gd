@@ -3,10 +3,12 @@ extends Node2D
 onready var sprite = $Body/AnimatedSprite
 onready var eyes = $Eyes
 onready var boulder = get_parent().get_node("Boulder")
-onready var round_bullet = $RoundBullet
+onready var bullet = $Bullet
 onready var laser_explosion = $LaserExplosion
 onready var collider = $Body/CollisionPolygon2D
 onready var ears = get_parent().get_node("Ears")
+onready var beam = $Beam
+
 var bullets = []
 var tweens = []
 var face = "norna"
@@ -19,7 +21,7 @@ func _eyes(side, active):
 	eye.playing = active
 
 func _shoot_target(attack):
-	var bullet = round_bullet.duplicate()
+	var bullet = bullet.duplicate()
 	bullet.position = attack.pos
 	bullet.scale = Vector2(4, 4)
 	bullet.visible = true 
@@ -53,7 +55,7 @@ func move(end_face):
 	moves.append(tween)
 
 func _process(_delta):
-	# fix ears
+	# ears follow enemy position
 	ears.position = position + Vector2(0, -52)
 
 	if _is_face() and moves.size() == 0:
@@ -98,14 +100,16 @@ func _process(_delta):
 				_eyes(attack.eye, true)
 			elif attack.ticker == 160:
 				_shoot_target(attack)
-				making_beam = true
 			elif attack.ticker == 200:
 				if i <= attacks.size() - 2:
 					_eyes(attack.eye, false)
 				attacks.remove(i)
-var making_beam = false
-var beam_ticker = 0
-func attack_target(target_pos):
+func beam_attack():
+	beam.visible =true
+	beam.sprite.frame = 0
+	beam.sprite.playing = true
+
+func bullet_attack(target_pos):
 	var attack = {}
 	attack.target = target_pos
 	attack.frame = sprite.frame
@@ -120,9 +124,3 @@ func attack_target(target_pos):
 	attack.target.x += 53
 	attack.eye = "right"
 	attacks.append(attack)
-
-#	if making_beam and not tween.is_active():
-#		making_beam = false
-#		beam_ticker = 0
-#		return true
-#

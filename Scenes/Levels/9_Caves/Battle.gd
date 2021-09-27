@@ -27,6 +27,7 @@ var dodging
 var attack_ticker = 0
 
 var phase
+var attacking
 func _phase_one():
 	if trigger_battle.touching:
 		affogato.visible = false
@@ -42,10 +43,11 @@ func _phase_one():
 				chat_with.start("norna_wyrd_caves_" + str(nyrn_chat), true, false)
 				nyrn_chat += 1
 				shoot_rock = true
-			elif shoot_rock and (enemy.sprite.frame == 1 or enemy.sprite.frame == 6) and attack_ticker % 20 == 0 and enemy.attacks.size() < 4 and not enemy.bullets.size() > 3: 
+			elif shoot_rock and (enemy.sprite.frame == 1 or enemy.sprite.frame == 6) and attack_ticker % 20 == 0 and enemy.attacks.size() < 4 and not enemy.bullets.size() > 3 and not attacking: 
 				enemy.sprite.playing = false
-				enemy.attack_target(boulder.position - Vector2(-30, -140))
-			elif enemy.bullets.size() > 0:
+				enemy.beam_attack()
+				attacking = true
+			elif attacking and camera.zoom.x > 1:
 				camera.position.x -= 1.6
 				camera.position.y -= .1
 				camera.zoom *= .998
@@ -77,11 +79,10 @@ func _phase_three():
 		enemy.move("wyrd")
 		
 func _process(delta):
-
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
-	start_ticker += 1
+#	start_ticker += 1
 	if not defeated:
 		if phase == 1:
 			_phase_one()

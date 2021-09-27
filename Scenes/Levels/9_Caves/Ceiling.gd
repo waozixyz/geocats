@@ -23,6 +23,7 @@ func _process(delta):
 		color.b += .1
 	sprite.modulate = color
 	var total = sprite.get_sprite_frames().get_frame_count("default")
+
 	if hp <= 0:
 		if not shot_particles:
 			particles.visible = true
@@ -35,7 +36,7 @@ func _process(delta):
 				tween.start()
 			shot_particles = true
 	else:
-		var frame = total / (hp * 0.01) - total
+		var frame = 5 - (hp * 0.01 * total) / total * total
 		sprite.frame = floor(frame)
 	if particles.get_node("0").modulate.a <= 0:
 		remove_child(self)
