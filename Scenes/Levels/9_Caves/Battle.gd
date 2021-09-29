@@ -79,6 +79,7 @@ func _phase_three():
 		enemy.move("wyrd")
 		
 func _process(delta):
+	phase = 4
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true

@@ -5,13 +5,18 @@ onready var eyes = $Eyes
 onready var boulder = get_parent().get_node("Boulder")
 onready var bullet = $Bullet
 onready var laser_explosion = $LaserExplosion
-onready var collider = $Body/CollisionPolygon2D
+
 onready var ears = get_parent().get_node("Ears")
 onready var beam = $Beam
-
+onready var collider_wyrd = $Body/Wyrd
+onready var collider_norna = $Body/Norna
+# lists
+var attacks = []
 var bullets = []
+var moves = []
 var tweens = []
-var face = "norna"
+
+var face = "wyrd"
 var mode = "ready"
 
 func _eyes(side, active):
@@ -34,6 +39,7 @@ func _shoot_target(attack):
 	bullets.append(bullet)
 	tweens.append(tween)
 
+# check if facing screen
 func _is_face():
 	if face == "wyrd" and (sprite.frame == 2 or sprite.frame == 7 or sprite.frame == 8):
 		return true
@@ -41,8 +47,8 @@ func _is_face():
 		return true
 	else:
 		return false
-var attacks = []
-var moves = []
+
+# move enemy function
 func move(end_face):
 	var dest
 	face = end_face
@@ -54,10 +60,25 @@ func move(end_face):
 	tween.start()
 	moves.append(tween)
 
+func _disable_colliders():
+	collider_wyrd.disabled = true
+	collider_norna.disabled = true
+
+func _enable_collider():
+	if face == "wyrd":
+		collider_wyrd.disabled = false
+	if face == "norna":
+		collider_norna.disabled = false
+	
 func _process(_delta):
 	# ears follow enemy position
 	ears.position = position + Vector2(0, -52)
-
+	if _is_face():
+		sprite.playing = false
+		_enable_collider()
+	
+	# when facing the screen and not moving
+	# enable ears and damage
 	if _is_face() and moves.size() == 0:
 		ears.visible = true
 		for child in ears.get_children():
@@ -68,19 +89,22 @@ func _process(_delta):
 				child.visible = false
 	else:
 		ears.visible = false
+		
+	# if moving do this
 	if moves:
 		for i in range(moves.size()):
 			if range(moves.size()).has(i):
 				var move = moves[i]
 				sprite.playing = true
-				collider.disabled = true
+				_disable_colliders()
 				if not move.is_active() and _is_face():
-					collider.disabled = false
+					_enable_collider()
 					sprite.playing = false
 					remove_child(move)
 					moves.remove(i)
 					mode = "attack"
 
+	# if there are bullets do this
 	for i in range(bullets.size()):
 		if range(bullets.size()).has(i):
 			var bullet = bullets[i]
@@ -92,6 +116,7 @@ func _process(_delta):
 				get_parent().remove_child(tweens[i])
 				tweens.remove(i)		
 
+	# if there is an attack do this
 	for i in range(attacks.size()):
 		if range(attacks.size()).has(i):
 			var attack = attacks[i]
@@ -104,11 +129,14 @@ func _process(_delta):
 				if i <= attacks.size() - 2:
 					_eyes(attack.eye, false)
 				attacks.remove(i)
+				
+# special beam attack				
 func beam_attack():
 	beam.visible =true
 	beam.sprite.frame = 0
 	beam.sprite.playing = true
 
+# bullet attack with target
 func bullet_attack(target_pos):
 	var attack = {}
 	attack.target = target_pos
