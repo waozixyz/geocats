@@ -1,5 +1,6 @@
 extends Area2D
 
+onready var enemy = get_tree().get_current_scene().get_node("Enemy")
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
@@ -24,11 +25,15 @@ func _fix_color():
 func _process(delta):
 	if touching and get_parent().visible:
 		var r
+		var f
 		if get_parent().name == "wyrd":
 			r = 20
+			f = .05
 		else:
 			r = 5
-		sprite.modulate = Color(r, 1, 1)
+			f = .1
+		enemy.hp -= (r - sprite.modulate.r) * f
+		sprite.modulate.r = r 
 
-	
+
 	_fix_color()

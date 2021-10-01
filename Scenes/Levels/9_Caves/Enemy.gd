@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var hp_bar = get_parent().get_node("HUD/Hp")
+
 onready var sprite = $Body/AnimatedSprite
 onready var eyes = $Eyes
 onready var boulder = get_parent().get_node("Boulder")
@@ -18,6 +20,8 @@ var tweens = []
 
 var face = "wyrd"
 var mode = "ready"
+
+var hp = 100
 
 func _eyes(side, active):
 	var eye = eyes.get_node(side)
@@ -71,6 +75,8 @@ func _enable_collider():
 		collider_norna.disabled = false
 	
 func _process(_delta):
+	# update hp_bar
+	hp_bar.rect_scale.x = hp / 100
 	# ears follow enemy position
 	ears.position = position + Vector2(0, -52)
 	if _is_face():

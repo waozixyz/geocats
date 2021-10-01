@@ -89,6 +89,7 @@ Data="*res://Scenes/Data.gd"
 
 window/size/width=640
 window/size/height=480
+window/size/fullscreen=true
 window/dpi/allow_hidpi=true
 mouse_cursor/custom_image="res://Assets/UI/feline_map/Cat_Feline_Map.png"
 window/stretch/mode="2d"
