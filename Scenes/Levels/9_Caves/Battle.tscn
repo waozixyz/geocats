@@ -667,9 +667,12 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 4 )
 
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 254.018, 493.795 )
+position = Vector2( 1039, 231 )
 scale = Vector2( 4, 4 )
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Body" type="StaticBody2D" parent="Enemy"]
 
@@ -808,14 +811,14 @@ frame = 2
 [node name="Default" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 87.9432, 517.931 )
+position = Vector2( 416, 199 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 29
+frame = 14
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
@@ -919,7 +922,6 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 86 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false

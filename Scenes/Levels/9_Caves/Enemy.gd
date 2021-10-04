@@ -79,10 +79,7 @@ func _process(_delta):
 	hp_bar.rect_scale.x = hp / 100
 	# ears follow enemy position
 	ears.position = position + Vector2(0, -52)
-	if _is_face():
-		sprite.playing = false
-		_enable_collider()
-	
+
 	# when facing the screen and not moving
 	# enable ears and damage
 	if _is_face() and moves.size() == 0:
@@ -156,5 +153,20 @@ func bullet_attack(target_pos):
 	attack.ticker = -5
 	attack.pos.x -= 53
 	attack.target.x += 53
+	attack.eye = "right"
+	attacks.append(attack)
+
+# make spiral attack
+func spiral_attack():
+	var attack = {}
+	attack.frame = sprite.frame
+	attack.pos = position + Vector2(-55, 10)
+	attack.shape = "ball_lazer"
+	attack.ticker = 0
+	attack.eye = "left"
+	attacks.append(attack)
+	attack = attack.duplicate()
+	attack.ticker = 0
+	attack.pos.x -= 53
 	attack.eye = "right"
 	attacks.append(attack)

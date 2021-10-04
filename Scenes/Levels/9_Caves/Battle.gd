@@ -60,6 +60,7 @@ func _phase_two():
 		boulder.visible = true
 		if boulder.position.y > -30:
 			if not dodging:
+				player.enable()
 				player.velocity.x += 250
 				player.jump(120)
 			dodging = true
@@ -69,9 +70,6 @@ func _phase_two():
 			boulder.position.y += 1
 		else:
 			boulder_fall = false
-			global.pause_msg = "Press 'e' to Start!"
-			get_tree().paused = true
-			player.enable()
 			phase = 3
 
 func _phase_three():
@@ -79,7 +77,7 @@ func _phase_three():
 		enemy.move("wyrd")
 		
 func _process(delta):
-	phase = 4
+
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
