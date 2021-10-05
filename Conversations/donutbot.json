@@ -14,22 +14,22 @@
     "position": "left",
     "animation_in": "move_in",
     "type": "text",
-    "content": "Memories of music and food.",
+    "content": "When I was a wee robot -",
     "next": "1"
   },
   "1": {
     "type": "text",
-    "content": "Memories, encoded by our senses.",
+    "content": "My circuits compiled a thought.",
     "next": "2",
   },
   "2": {
     "type": "text",
-    "content": "They run deep in our spirits,",
+    "content": "Alike we are, among the stars",
     "next": "3",
   },
   "3": {
     "type": "text",
-    "content": "like unconcioous underground rivers.",
+    "content": "Whether mum, or motherboard one's got.",
     "next": "",
   },
   "after_repeat": {

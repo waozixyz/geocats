@@ -822,6 +822,7 @@ shape = SubResource( 53 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy/Beam"]
 frames = SubResource( 100 )
 animation = ""
+frame = 16
 playing = true
 
 [node name="Ladder" type="Area2D" parent="." groups=[
@@ -850,7 +851,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 27
+frame = 4
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
