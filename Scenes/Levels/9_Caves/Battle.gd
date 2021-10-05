@@ -9,17 +9,20 @@ onready var enemy = $Enemy
 onready var boulder = $Boulder
 onready var ceiling = $Ceiling
 
+onready var hp_bar = $HUD/Hp
+
 var defeated = false
 var start_ticker = 0
 var nyrn_chat = 0
 
 func _ready():
 	if not defeated:
-		phase = 1
+		phase = 3
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
+	hp_bar.visible = false
 
 var shoot_rock
 var boulder_fall
@@ -60,24 +63,24 @@ func _phase_two():
 		boulder.visible = true
 		if boulder.position.y > -30:
 			if not dodging:
-				player.enable()
 				player.velocity.x += 250
 				player.jump(120)
 			dodging = true
 
-		if boulder.position.y < 43:
+		if boulder.position.y < 44:
 			boulder.get_node("Sprite").rotation_degrees += 2
 			boulder.position.y += 1
 		else:
+			player.enable()
 			boulder_fall = false
 			phase = 3
+			hp_bar.visible = true
 
 func _phase_three():
-	if enemy.moves.size() <= 0 and enemy.mode == "ready":
+	if enemy.moves.size() <= 0 and enemy.mode == 0:
 		enemy.move("wyrd")
 		
 func _process(delta):
-
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true

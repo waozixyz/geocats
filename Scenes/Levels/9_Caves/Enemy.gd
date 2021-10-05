@@ -16,10 +16,12 @@ onready var collider_norna = $Body/Norna
 var attacks = []
 var bullets = []
 var moves = []
-var tweens = []
 
 var face = "wyrd"
-var mode = "ready"
+var mode = 0
+var shoot_sequence = 0
+var to_shoot = 0
+var move_speed = 200
 
 var hp = 100
 
@@ -30,20 +32,17 @@ func _eyes(side, active):
 	eye.playing = active
 
 func _shoot_target(attack):
-	var bullet = bullet.duplicate()
-	bullet.position = attack.pos
-	bullet.scale = Vector2(4, 4)
-	bullet.visible = true 
+	var b = bullet.duplicate()
+	b.position = attack.pos
+	b.scale = Vector2(4, 4)
+	b.visible = true 
+	b.mode = "tween"
+	b.tween.interpolate_property(b, "position", attack.pos, attack.target, 3, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	b.tween.start()
+	get_parent().add_child(b)
+	bullets.append(b)
 
-	var tween = Tween.new()
-	get_parent().add_child(tween)
-	tween.interpolate_property(bullet, "position", attack.pos, attack.target, 3, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	tween.start()
-	get_parent().add_child(bullet)
-	bullets.append(bullet)
-	tweens.append(tween)
-
-# check if facing screen
+# check if facing screen with the appropriate enemy face
 func _is_face():
 	if face == "wyrd" and (sprite.frame == 2 or sprite.frame == 7 or sprite.frame == 8):
 		return true
@@ -60,9 +59,23 @@ func move(end_face):
 		dest = Vector2(250, 550)
 	var tween = Tween.new()
 	add_child(tween)
-	tween.interpolate_property(self, "position", self.position, dest, 3, Tween.TRANS_QUART)
+	tween.interpolate_property(self, "position", self.position, dest, 3 / move_speed, Tween.TRANS_QUART)
 	tween.start()
 	moves.append(tween)
+
+# simple shoot
+func _shoot(eye):
+	var b = bullet.duplicate()
+	var offset = Vector2(0, 10)
+	offset.x += 25 * eye
+
+	b.position = position + offset
+	b.scale = Vector2(4, 4)
+	b.visible = true 
+	b.mode = "spiral"
+	b.deg = int(rand_range(0, 360))
+	bullets.append(b)
+	get_parent().add_child(b)
 
 func _disable_colliders():
 	collider_wyrd.disabled = true
@@ -92,7 +105,12 @@ func _process(_delta):
 				child.visible = false
 	else:
 		ears.visible = false
-		
+	
+	if shoot_sequence == 1:
+		if to_shoot > 0:
+			_shoot(-1)
+			_shoot(1)
+			to_shoot -= 1
 	# if moving do this
 	if moves:
 		for i in range(moves.size()):
@@ -105,19 +123,19 @@ func _process(_delta):
 					sprite.playing = false
 					remove_child(move)
 					moves.remove(i)
-					mode = "attack"
+					to_shoot = 10
+					shoot_sequence = 1
+					mode += 1
+				
 
 	# if there are bullets do this
 	for i in range(bullets.size()):
 		if range(bullets.size()).has(i):
 			var bullet = bullets[i]
 			bullet.rotation_degrees -= 5
-			
-			if not tweens[i].is_active() or bullet.dead:				
+			if (bullet.mode == "tween" and not bullet.tween.is_active()) or bullet.dead:
 				get_parent().remove_child(bullet)
 				bullets.remove(i)
-				get_parent().remove_child(tweens[i])
-				tweens.remove(i)		
 
 	# if there is an attack do this
 	for i in range(attacks.size()):
@@ -160,13 +178,8 @@ func bullet_attack(target_pos):
 func spiral_attack():
 	var attack = {}
 	attack.frame = sprite.frame
-	attack.pos = position + Vector2(-55, 10)
+	attack.pos = position + Vector2(-20, 10)
 	attack.shape = "ball_lazer"
 	attack.ticker = 0
 	attack.eye = "left"
-	attacks.append(attack)
-	attack = attack.duplicate()
-	attack.ticker = 0
-	attack.pos.x -= 53
-	attack.eye = "right"
 	attacks.append(attack)
