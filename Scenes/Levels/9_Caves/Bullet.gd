@@ -12,7 +12,7 @@ func _ready():
 	connect("body_exited", self, "_on_body_exited")
 
 func _on_body_entered(body):
-	if body.name == "Ceiling":
+	if body.has_method("damage"):
 		body.damage(dmg)
 		dead = true
 
