@@ -44,14 +44,15 @@ var choice_node_alignment : String = 'right' # Alignment of the 'Choice' node. C
 var previous_command : String = 'ui_up' # Input commmand for the navigating through question choices 
 var next_command : String = 'ui_down' # Input commmand for the navigating through question choices
 var continue_command : String = "interact"
-var frame_height : int = 150 # Dialog frame height (in pixels)
-var frame_width : int = 640 # Dialog frame width (in pixels)
-var frame_position : String = 'bottom' # Use to 'top' or 'bottom' to change the dialogue frame vertical alignment 
+var frame_height : int = 100 # Dialog frame height (in pixels)
+var frame_width : int = 520 # Dialog frame width (in pixels)
+var frame_position : String = 'top' # Use to 'top' or 'bottom' to change the dialogue frame vertical alignment 
 var frame_margin_vertical : int = 10 # Vertical space (in pixels) between the dialogue box and the window border
+#var frame_margin_horizontal : int = 300 # Horizontal space (in pixels) between the dialogue box and the window border
 var label_margin : int = 20 # Space (in pixels) between the dialogue frame border and the text
 var enable_continue_indicator : bool = true # Enable or disable the 'continue_indicator' animation when the text is completely displayed. If typewritter effect is disabled it will always be visible on every dialogue block.
-var sprite_offset : Vector2 = Vector2(30, 0) # Used for polishing avatars' position. Can use negative values.
-var name_offset : Vector2 = Vector2(0, -15) # Offsets the name labels relative to the frame borders.
+var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' position. Can use negative values.
+var name_offset : Vector2 = Vector2(0, 0) # Offsets the name labels relative to the frame borders.
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
 
@@ -134,7 +135,7 @@ func set_frame(): # Mostly aligment operations.
 			self.anchor_top = 0
 			self.anchor_right = 0.5
 			self.anchor_bottom = 0
-			self.rect_position = Vector2(0, frame_margin_vertical)
+			self.rect_position = Vector2(400, frame_margin_vertical)
 		'bottom':
 			self.anchor_left = 0.5
 			self.anchor_top = 1
@@ -150,11 +151,11 @@ func set_frame(): # Mostly aligment operations.
 			frame_height - continue_indicator.get_rect().size.y - label_margin)
 	
 	frame.rect_size = Vector2(frame_width, frame_height)
-	frame.rect_position = Vector2(0, 480)
+	frame.rect_position = Vector2(-frame_width/1.75, 0)
 
-	
 	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 2) )
 	label.rect_position = Vector2(label_margin, label_margin)
+
 	
 	frame.hide() # Hide the dialogue frame
 
@@ -186,8 +187,8 @@ func initiate(file_id, block = 'first'): # Load the whole dialogue into a variab
 #func start_from(file_id, block): # Similar to 
 
 func clean(): # Resets some variables to prevent errors.
-	name_left.rect_position.x = 0
-	name_right.rect_position.x = 560
+	#name_left.rect_position.x = -40
+	#name_right.rect_position.x = 560
 	continue_indicator.hide()
 	animations.stop()
 	paused = false

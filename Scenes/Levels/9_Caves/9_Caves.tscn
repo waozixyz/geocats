@@ -24,26 +24,26 @@ region = Rect2( 0, 0, 87, 70 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 9 )
-region = Rect2( 87, 0, 87, 70 )
+region = Rect2( 0, 0, 87, 70 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 9 )
-region = Rect2( 174, 0, 87, 70 )
+region = Rect2( 87, 0, 87, 70 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 87, 70 )
+region = Rect2( 174, 0, 87, 70 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": false,
-"name": "open",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": false,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": false,
+"name": "open",
 "speed": 5.0
 } ]
 
@@ -184,6 +184,7 @@ centered = false
 [node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 41, 364 )
 frames = SubResource( 13 )
+frame = 3
 speed_scale = 0.1
 playing = true
 centered = false
@@ -199,9 +200,6 @@ position = Vector2( 74, 407 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1565
 limit_bottom = 2385
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )

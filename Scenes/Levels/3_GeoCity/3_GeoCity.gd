@@ -10,4 +10,3 @@ func _physics_process(delta):
 		chat_with.stop()
 		PROGRESS.variables["teleport_geolodge"] = false
 		SceneChanger.change_scene("GeoLodge", 0, "WayoWayo", 1)
-

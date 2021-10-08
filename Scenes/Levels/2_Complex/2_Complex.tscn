@@ -658,14 +658,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 38 ), ExtResource( 45 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 44 ) ],
 "loop": true,
 "name": "mad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -1251,7 +1251,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
-frame = 4
+frame = 6
 playing = true
 centered = false
 
@@ -1318,7 +1318,7 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 3
+frame = 8
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )

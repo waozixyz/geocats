@@ -822,7 +822,7 @@ shape = SubResource( 53 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy/Beam"]
 frames = SubResource( 100 )
 animation = ""
-frame = 16
+frame = 49
 playing = true
 
 [node name="Ladder" type="Area2D" parent="." groups=[
@@ -851,7 +851,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 4
+frame = 20
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
@@ -955,6 +955,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 114 )
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false
