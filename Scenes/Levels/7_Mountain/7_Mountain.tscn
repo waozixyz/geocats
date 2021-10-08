@@ -215,7 +215,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 24
+frame = 20
 
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
@@ -419,7 +419,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 3, 13 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 31 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Sleeping Cat"]
@@ -436,7 +436,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( -28, 28 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 36 )
-frame = 4
+frame = 8
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Catnip Cat"]

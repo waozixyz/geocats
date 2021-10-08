@@ -37,22 +37,22 @@ var active_choice : Color = Color(1.0, 1.0, 1.0, 1.0)
 var inactive_choice : Color = Color(1.0, 1.0, 1.0, 0.4)
 var choice_height : int = 20 # Choice label's height
 var choice_width : int = 250 # Choice label's width
-var choice_margin_vertical : int = 10 # Vertical space (in pixels) between the bottom border of the dialogue frame and the last question (affectd by the 'label_margin')
+var choice_margin_vertical : int = -10 # Vertical space (in pixels) between the bottom border of the dialogue frame and the last question (affectd by the 'label_margin')
 var choice_margin_horizontal : int = 10 # Horizontal space (in pixels) between the border (set in 'choice_node_alignment') of the dialogue frame and the questions (affectd by the 'label_margin')
 var choice_text_alignment : String = 'right' # Alignment of the choice's text. Can be 'left' or 'right'
 var choice_node_alignment : String = 'right' # Alignment of the 'Choice' node. Can be 'left' or 'right'
 var previous_command : String = 'ui_up' # Input commmand for the navigating through question choices 
 var next_command : String = 'ui_down' # Input commmand for the navigating through question choices
 var continue_command : String = "interact"
-var frame_height : int = 100 # Dialog frame height (in pixels)
-var frame_width : int = 520 # Dialog frame width (in pixels)
+var frame_height : int = 95 # Dialog frame height (in pixels)
+var frame_width : int = 545 # Dialog frame width (in pixels)
 var frame_position : String = 'top' # Use to 'top' or 'bottom' to change the dialogue frame vertical alignment 
-var frame_margin_vertical : int = 10 # Vertical space (in pixels) between the dialogue box and the window border
+var frame_margin_vertical : int = 5 # Vertical space (in pixels) between the dialogue box and the window border
 #var frame_margin_horizontal : int = 300 # Horizontal space (in pixels) between the dialogue box and the window border
-var label_margin : int = 20 # Space (in pixels) between the dialogue frame border and the text
-var enable_continue_indicator : bool = true # Enable or disable the 'continue_indicator' animation when the text is completely displayed. If typewritter effect is disabled it will always be visible on every dialogue block.
+var label_margin : int = 17 # Space (in pixels) between the dialogue frame border and the text
+var enable_continue_indicator : bool = false # Enable or disable the 'continue_indicator' animation when the text is completely displayed. If typewritter effect is disabled it will always be visible on every dialogue block.
 var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' position. Can use negative values.
-var name_offset : Vector2 = Vector2(0, 0) # Offsets the name labels relative to the frame borders.
+#var name_offset : Vector2 = Vector2(0, 0) # Offsets the name labels relative to the frame borders.
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
 
@@ -147,19 +147,16 @@ func set_frame(): # Mostly aligment operations.
 	continue_indicator.anchor_top = 1
 	continue_indicator.anchor_right = 0.5
 	continue_indicator.anchor_bottom = 1
-	continue_indicator.rect_position = Vector2(-(continue_indicator.get_rect().size.x / 2) - label_margin,
-			frame_height - continue_indicator.get_rect().size.y - label_margin)
+	continue_indicator.rect_position = Vector2(-(continue_indicator.get_rect().size.x / 2),
+			frame_height - continue_indicator.get_rect().size.y - (label_margin * 2))
 	
 	frame.rect_size = Vector2(frame_width, frame_height)
 	frame.rect_position = Vector2(-frame_width/1.75, 0)
 
-	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 2) )
+	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 2))
 	label.rect_position = Vector2(label_margin, label_margin)
-
 	
 	frame.hide() # Hide the dialogue frame
-
-
 	continue_indicator.hide()
 	
 	sprite_left.modulate = white_transparent
@@ -168,11 +165,11 @@ func set_frame(): # Mostly aligment operations.
 	
 	name_left.hide()
 #	name_left.position = 'left'
-	name_left.rect_position.y = name_offset.y
+	#name_left.rect_position.y = name_offset.y
 	
 	name_right.hide()
 #	name_right.position = 'right'
-	name_right.rect_position.y = name_offset.y
+	#name_right.rect_position.y = name_offset.y
 
 
 func initiate(file_id, block = 'first'): # Load the whole dialogue into a variable
@@ -451,7 +448,7 @@ func check_names(block):
 			name_left.text = block['name']
 			yield(get_tree(), 'idle_frame')
 			name_left.rect_size.x = 0
-			name_left.rect_position.x += name_offset.x
+			#name_left.rect_position.x += name_offset.x
 			name_left.set_process(true)
 			name_left.show()
 			name_right.hide()
@@ -460,7 +457,7 @@ func check_names(block):
 			
 			yield(get_tree(), 'idle_frame')
 			name_right.rect_size.x = 0
-			name_right.rect_position.x = frame_width - name_right.rect_size.x - name_offset.x
+			#name_right.rect_position.x = frame_width - name_right.rect_size.x - name_offset.x
 			name_right.set_process(true)
 			name_right.show()
 			name_left.hide()

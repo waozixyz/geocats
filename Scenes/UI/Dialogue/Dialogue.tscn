@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/UI/Dialogue/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Conversations/hogwash.png" type="Texture" id=3]
+[ext_resource path="res://Conversations/nonacat.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/chat_elements/textbox.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/chat_elements/portrait_box.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/chat_elements/portrait_box_right.png" type="Texture" id=6]
@@ -72,10 +72,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Frame"]
-margin_left = -80.0
-margin_right = -59.0
+margin_left = -84.0
+margin_right = -63.0
 margin_bottom = 26.0
-rect_scale = Vector2( 3.8093, 3.84877 )
+rect_scale = Vector2( 4, 3.66 )
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -83,11 +83,12 @@ __meta__ = {
 }
 
 [node name="NameLeft" type="Label" parent="Frame"]
-margin_left = -70.0
-margin_top = -13.0
-margin_right = 10.0
-margin_bottom = 87.0
-rect_scale = Vector2( 0.812834, 0.992911 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -81.1155
+margin_top = -43.0
+margin_right = -0.115494
+margin_bottom = -7.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
 custom_fonts/font = SubResource( 8 )
@@ -99,9 +100,10 @@ __meta__ = {
 }
 
 [node name="SpriteLeft" type="Sprite" parent="Frame"]
-position = Vector2( -40, 40 )
+position = Vector2( -46.1744, 38.113 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
+offset = Vector2( 0.614565, 0.211254 )
 
 [node name="NameRight" type="Label" parent="Frame"]
 anchor_left = -0.000782473
@@ -153,8 +155,8 @@ __meta__ = {
 
 [node name="ContinueIndicator" type="ColorRect" parent="."]
 self_modulate = Color( 1, 1, 1, 0.270671 )
-margin_right = 10.0
-margin_bottom = 10.0
+margin_right = 6.0
+margin_bottom = 6.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

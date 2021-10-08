@@ -1,15 +1,15 @@
 {
   "first": {
-    "name": "Shopkeeper",
+    "name": "Shopkeep",
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
     "content": "Welcome to POPNNIP!!",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "next": "0"
   },
   "0": {
-    "name": "Shopkeeper",
+    "name": "Shopkeep",
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
@@ -17,7 +17,7 @@
     "next": "1"
   },
   "1": {
-    "name": "Shopkeeper",
+    "name": "Shopkeep",
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
@@ -25,7 +25,7 @@
     "next": "2"
   },
   "2": {
-    "name": "Shopkeeper",
+    "name": "Shopkeep",
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
@@ -34,7 +34,7 @@
     "next": "3"
   },
  "3": {
-    "name": "Shopkeeper",
+    "name": "Shopkeep",
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
