@@ -653,7 +653,7 @@ func load_image(spr, image):
 		spr.scale = Vector2(.5,.5)
 	elif w > 40:
 		spr.scale = Vector2(1.5, 1.5)
-	elif w > 20:
+	elif w > 16: # 20 was original, 18 could work too
 		spr.scale = Vector2(2.8, 2.8)
 	elif w > 14:
 		spr.scale = Vector2(5,5)
