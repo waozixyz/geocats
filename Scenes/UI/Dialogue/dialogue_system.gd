@@ -153,8 +153,8 @@ func set_frame(): # Mostly aligment operations.
 	frame.rect_size = Vector2(frame_width, frame_height)
 	frame.rect_position = Vector2(-frame_width/1.75, 0)
 
-	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 2))
-	label.rect_position = Vector2(label_margin, label_margin)
+	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 1.5))
+	label.rect_position = Vector2(label_margin, label_margin - 7)
 	
 	frame.hide() # Hide the dialogue frame
 	continue_indicator.hide()

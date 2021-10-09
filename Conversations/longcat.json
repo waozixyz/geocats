@@ -4,35 +4,30 @@
     "avatar": "longcat.png",
     "position": "left",
     "type": "text",
-    "content": "I recently bought a game",
-    "animation_in": "move_in",
+    "content": "I recently bought a game |@that has been in development for over 30 years!",
+    "animation_in": "fade_in",
     "next": "1",
   },
   "1": {
-    "type": "text",
-    "content": "that has been in development for over 30 years!",
-    "next": "2",
-  },
-  "2": {
     "type": "question",
     "text": "…I sure feel sorry for those early backers.",
     "options": ["...", "leave"],
-    "next": ["3", ""]
+    "next": ["2", ""]
   },
-  "3": {
+  "2": {
     "type": "question",
     "text": "Do you want some advice?",
     "options": ["yes", "no"],
-    "next": ["4", ""]
+    "next": ["3", ""]
+  },
+  "3": {
+    "type": "text",
+    "content": "If you're in a jam, with no escape in sight - ",
+    "next": "4",
   },
   "4": {
     "type": "text",
-    "content": "If you're in a jam, with no escape in sight - ",
-    "next": "5",
-  },
-  "5": {
-    "type": "text",
-    "content": "...Press 'Space Bar' and 'Down Key' at the same time. You might fall to safety!",
+    "content": "...Press Space and Down at the same time. @You might fall to safety!",
     "next": "",
   },
 }
