@@ -19,14 +19,16 @@ var moves = []
 
 var face = "wyrd"
 var mode = 0
+var shooting
+var moving
 var shoot_sequence = 0
+var move_sequence = 0
 var to_shoot_left = 0
 var to_shoot_right = 0
-var move_speed = 200
+var move_speed = .5
 
 var hp = 100
-func _ready():
-	eyes.get_node("left").playing = true
+
 func _eyes(side, active):
 	var eye = eyes.get_node(side)
 	eye.frame = 0
@@ -57,8 +59,10 @@ func _is_face():
 func move(end_face):
 	var dest
 	face = end_face
-	if end_face == "wyrd":
+	if move_sequence % 2 == 0:
 		dest = Vector2(250, 550)
+	else:
+		dest = Vector2(1060, 260)
 	var tween = Tween.new()
 	add_child(tween)
 	tween.interpolate_property(self, "position", self.position, dest, 3 / move_speed, Tween.TRANS_QUART)
@@ -81,17 +85,19 @@ func _shoot(eye):
 
 # prepare eyes
 func _prep_eyes(side):
-	# find which eye is in question
-
+	# get the eye node
 	var eye = eyes.get_node(side)
-
+	
+	# if eye not playing already start it
 	if not eye.playing:
 		eye.frame = 0
 		eye.visible = true
 		eye.playing = true
 
+	# find last frame of eye animation
 	var end = eye.get_sprite_frames().get_frame_count(eye.animation) - 1
-
+	
+	# if eye animation fineshs hide the eye and return true
 	if eye.frame == end:
 		eye.playing = false
 		eye.visible = false
@@ -103,6 +109,7 @@ func _prep_eyes(side):
 func _disable_colliders():
 	collider_wyrd.disabled = true
 	collider_norna.disabled = true
+
 # enable collision depending on the face in the front
 func _enable_collider():
 	if face == "wyrd":
@@ -129,17 +136,23 @@ func _process(_delta):
 	else:
 		ears.visible = false
 	
-	if shoot_sequence == 1:
-		if to_shoot_left >= 0:
-			var eye = -1
-			if _prep_eyes("left"):
-				_shoot(eye)
-				to_shoot_left -= 1
-		if to_shoot_right >= 1:
-			var eye = 1
-			if _prep_eyes("right"):
-				_shoot(eye)
-				to_shoot_right -= 1
+	if shooting:
+		if shoot_sequence < 5:
+			if to_shoot_left >= 1:
+				var eye = -1
+				if _prep_eyes("left"):
+					_shoot(eye)
+					to_shoot_left -= 1
+			if to_shoot_right >= 1:
+				var eye = 1
+				if _prep_eyes("right"):
+					_shoot(eye)
+					to_shoot_right -= 1
+			if to_shoot_left == 0 and to_shoot_right == 0:
+				move_sequence += 1
+				move("norna")
+				shooting = false
+
 
 	# if moving do this
 	if moves:
@@ -148,16 +161,18 @@ func _process(_delta):
 				var move = moves[i]
 				sprite.playing = true
 				_disable_colliders()
+
 				if not move.is_active() and _is_face():
 					_enable_collider()
 					sprite.playing = false
 					remove_child(move)
 					moves.remove(i)
-					to_shoot_left = 3
-					to_shoot_right = 4
-					shoot_sequence = 1
+					var shots = int(rand_range(2, 5))
+					to_shoot_left = shots
+					to_shoot_right = shots
+					shoot_sequence += 1
+					shooting = true
 					mode += 1
-				
 
 	# if there are bullets do this
 	for i in range(bullets.size()):

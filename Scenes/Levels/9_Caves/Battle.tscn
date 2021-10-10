@@ -671,6 +671,9 @@ texture = ExtResource( 4 )
 position = Vector2( 1060, 231 )
 scale = Vector2( 4, 4 )
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Body" type="StaticBody2D" parent="Enemy"]
 
@@ -821,7 +824,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 20
+frame = 15
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
