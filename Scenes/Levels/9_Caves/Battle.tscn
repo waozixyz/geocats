@@ -683,12 +683,12 @@ speed_scale = 0.1
 
 [node name="Wyrd" type="CollisionPolygon2D" parent="Enemy/Body"]
 polygon = PoolVector2Array( -6.7625, -11.988, 6.9875, -11.988, 16.9875, -5.988, 16.9875, -3.988, 6.9875, -10.238, -6.7625, -10.238, -16.7625, -4.238, -17.0125, -5.988 )
-disabled = true
+one_way_collision = true
 
 [node name="Norna" type="CollisionPolygon2D" parent="Enemy/Body"]
 position = Vector2( -0.00450134, -0.948753 )
 polygon = PoolVector2Array( -6.7625, -11.988, 6.9875, -11.988, 19.75, -4.25, 18.75, -3.25, 6.9875, -10.238, -6.7625, -10.238, -18, -3.5, -19.75, -4.5 )
-disabled = true
+one_way_collision = true
 
 [node name="Eyes" type="Node2D" parent="Enemy"]
 
@@ -824,7 +824,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 15
+frame = 29
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
@@ -928,6 +928,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 86 )
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false

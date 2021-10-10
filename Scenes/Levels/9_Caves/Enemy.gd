@@ -56,9 +56,11 @@ func _is_face():
 		return false
 
 # move enemy function
-func move(end_face):
+func move():
 	var dest
-	face = end_face
+	var faces = ["wyrd", "norna"]
+	face = faces[round(rand_range(0, 1))]
+
 	if move_sequence % 2 == 0:
 		dest = Vector2(250, 550)
 	else:
@@ -136,22 +138,22 @@ func _process(_delta):
 	else:
 		ears.visible = false
 	
+	
 	if shooting:
-		if shoot_sequence < 5:
-			if to_shoot_left >= 1:
-				var eye = -1
-				if _prep_eyes("left"):
-					_shoot(eye)
-					to_shoot_left -= 1
-			if to_shoot_right >= 1:
-				var eye = 1
-				if _prep_eyes("right"):
-					_shoot(eye)
-					to_shoot_right -= 1
-			if to_shoot_left == 0 and to_shoot_right == 0:
-				move_sequence += 1
-				move("norna")
-				shooting = false
+		if to_shoot_left >= 1:
+			var eye = -1
+			if _prep_eyes("left"):
+				_shoot(eye)
+				to_shoot_left -= 1
+		if to_shoot_right >= 1:
+			var eye = 1
+			if _prep_eyes("right"):
+				_shoot(eye)
+				to_shoot_right -= 1
+		if to_shoot_left == 0 and to_shoot_right == 0:
+			move_sequence += 1
+			move()
+			shooting = false
 
 
 	# if moving do this

@@ -78,7 +78,7 @@ func _phase_two():
 
 func _phase_three():
 	if enemy.moves.size() <= 0 and enemy.mode == 0:
-		enemy.move("wyrd")
+		enemy.move()
 		
 func _process(delta):
 	if start_ticker > 2 and start_ticker < 6:
