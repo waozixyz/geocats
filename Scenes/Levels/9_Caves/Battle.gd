@@ -22,7 +22,7 @@ func _ready():
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
-	hp_bar.visible = false
+	hp_bar.visible = true
 
 var shoot_rock
 var boulder_fall

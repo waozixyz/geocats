@@ -20,11 +20,13 @@ var moves = []
 var face = "wyrd"
 var mode = 0
 var shoot_sequence = 0
-var to_shoot = 0
+var to_shoot_left = 0
+var to_shoot_right = 0
 var move_speed = 200
 
 var hp = 100
-
+func _ready():
+	eyes.get_node("left").playing = true
 func _eyes(side, active):
 	var eye = eyes.get_node(side)
 	eye.frame = 0
@@ -77,16 +79,37 @@ func _shoot(eye):
 	bullets.append(b)
 	get_parent().add_child(b)
 
+# prepare eyes
+func _prep_eyes(side):
+	# find which eye is in question
+
+	var eye = eyes.get_node(side)
+
+	if not eye.playing:
+		eye.frame = 0
+		eye.visible = true
+		eye.playing = true
+
+	var end = eye.get_sprite_frames().get_frame_count(eye.animation) - 1
+
+	if eye.frame == end:
+		eye.playing = false
+		eye.visible = false
+		return true
+	else:
+		return false
+	
+# disable collisions so player can't attack
 func _disable_colliders():
 	collider_wyrd.disabled = true
 	collider_norna.disabled = true
-
+# enable collision depending on the face in the front
 func _enable_collider():
 	if face == "wyrd":
 		collider_wyrd.disabled = false
 	if face == "norna":
 		collider_norna.disabled = false
-	
+
 func _process(_delta):
 	# update hp_bar
 	hp_bar.rect_scale.x = hp / 100
@@ -107,10 +130,17 @@ func _process(_delta):
 		ears.visible = false
 	
 	if shoot_sequence == 1:
-		if to_shoot > 0:
-			_shoot(-1)
-			_shoot(1)
-			to_shoot -= 1
+		if to_shoot_left >= 0:
+			var eye = -1
+			if _prep_eyes("left"):
+				_shoot(eye)
+				to_shoot_left -= 1
+		if to_shoot_right >= 1:
+			var eye = 1
+			if _prep_eyes("right"):
+				_shoot(eye)
+				to_shoot_right -= 1
+
 	# if moving do this
 	if moves:
 		for i in range(moves.size()):
@@ -123,7 +153,8 @@ func _process(_delta):
 					sprite.playing = false
 					remove_child(move)
 					moves.remove(i)
-					to_shoot = 10
+					to_shoot_left = 3
+					to_shoot_right = 4
 					shoot_sequence = 1
 					mode += 1
 				
@@ -132,7 +163,6 @@ func _process(_delta):
 	for i in range(bullets.size()):
 		if range(bullets.size()).has(i):
 			var bullet = bullets[i]
-			bullet.rotation_degrees -= 5
 			if (bullet.mode == "tween" and not bullet.tween.is_active()) or bullet.dead:
 				get_parent().remove_child(bullet)
 				bullets.remove(i)
@@ -165,13 +195,13 @@ func bullet_attack(target_pos):
 	attack.pos = position + Vector2(-55, 10)
 	attack.shape = "ball_lazer"
 	attack.ticker = 0
-	attack.eye = "left"
+	attack.eye = -1
 	attacks.append(attack)
 	attack = attack.duplicate()
 	attack.ticker = -5
 	attack.pos.x -= 53
 	attack.target.x += 53
-	attack.eye = "right"
+	attack.eye = 1
 	attacks.append(attack)
 
 # make spiral attack
@@ -181,5 +211,5 @@ func spiral_attack():
 	attack.pos = position + Vector2(-20, 10)
 	attack.shape = "ball_lazer"
 	attack.ticker = 0
-	attack.eye = "left"
+	attack.eye = -1
 	attacks.append(attack)
