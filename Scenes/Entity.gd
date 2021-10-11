@@ -5,6 +5,8 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 onready var sprite = $AnimatedSprite
 
+# path for jump sound effect if present
+var jump_sfx
 # variables for all entities
 var no_rotate = false
 var velocity : Vector2 = Vector2.ZERO
@@ -60,11 +62,26 @@ func _ready():
 	ladder_tween = Tween.new()
 	add_child(ladder_tween)
 	randomize()
+	
+func _stop_playing(stream):
+	remove_child(stream)
 
+	
 func jump(jumpHeight):
 	velocity.y = 0 #reset velocity
 	velocity.y = -sqrt(50 * gravity * jumpHeight) 
-	
+	if jump_sfx:
+		var sfx = AudioStreamPlayer.new()
+		if mushroom:
+			sfx.stream = load('res://Assets/Sfx/Effects/jump_shroom.ogg')
+		else:
+			sfx.stream = load('res://Assets/Sfx/Effects/jump.ogg')
+		sfx.stream.loop = false
+		sfx.play()
+		sfx.connect("finished", self, "_stop_playing", [sfx])
+		sfx.volume_db = 1
+
+		add_child(sfx)
 var new_rot : float
 var mushroom
 func _physics_process(delta):

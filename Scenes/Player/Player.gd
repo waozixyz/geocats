@@ -80,6 +80,7 @@ func _get_previous_state_tag():
 	return state_machine.previous_state_tag
 
 func _ready():
+	jump_sfx = true
 	sprite.playing = true
 	jump_height = 400
 	state_machine.enter_logic(self) 
@@ -127,7 +128,6 @@ func update_inputs():
 		#if you press jump and your not already in coyote time
 		jumpInput = int(isJumpPressed) #set jump to 1
 		coyoteStartTime = OS.get_ticks_msec() #start timer
-
 	elapsedCoyoteTime = OS.get_ticks_msec() - coyoteStartTime
 
 	if jumpInput != 0 && elapsedCoyoteTime > coyoteDuration:
