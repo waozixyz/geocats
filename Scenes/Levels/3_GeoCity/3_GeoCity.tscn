@@ -430,6 +430,11 @@ position = Vector2( 4194, 728 )
 shape = SubResource( 20 )
 one_way_collision = true
 
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4195.75, 994.686 )
+shape = SubResource( 20 )
+one_way_collision = true
+
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Houses"]
 position = Vector2( 4558, 978 )
 shape = SubResource( 21 )
@@ -656,6 +661,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 50 )
 animation = "idle"
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -678,7 +684,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 32
+frame = 28
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -22,25 +22,25 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=3]
 size = 18
-font_data = SubResource( 7 )
+font_data = SubResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 21, 26 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 24
-font_data = SubResource( 4 )
+font_data = SubResource( 5 )
 
-[sub_resource type="StreamTexture" id=6]
+[sub_resource type="StreamTexture" id=7]
 load_path = "res://.import/hogwash.png-f90118894ab46fd4f95f22ceca2c23ec.stex"
 
 [node name="Dialogue" type="Control"]
@@ -82,6 +82,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SpriteLeft" type="Sprite" parent="Frame"]
+position = Vector2( -46.1744, 38.113 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.614565, 0.211254 )
+
 [node name="NameLeft" type="Label" parent="Frame"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -91,19 +97,13 @@ margin_right = -0.115494
 margin_bottom = -7.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 3 )
 text = "Name 1"
 align = 1
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="SpriteLeft" type="Sprite" parent="Frame"]
-position = Vector2( -46.1744, 38.113 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 3 )
-offset = Vector2( 0.614565, 0.211254 )
 
 [node name="NameRight" type="Label" parent="Frame"]
 anchor_left = -0.000782473
@@ -113,8 +113,8 @@ margin_right = 640.12
 margin_bottom = 85.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "Name 1"
 align = 1
 valign = 2
@@ -125,7 +125,7 @@ __meta__ = {
 [node name="SpriteRight" type="Sprite" parent="Frame"]
 position = Vector2( 580.927, 16 )
 scale = Vector2( 5, 5 )
-texture = SubResource( 6 )
+texture = SubResource( 7 )
 centered = false
 flip_h = true
 
@@ -154,7 +154,6 @@ __meta__ = {
 }
 
 [node name="ContinueIndicator" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.270671 )
 margin_right = 6.0
 margin_bottom = 6.0
 __meta__ = {

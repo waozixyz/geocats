@@ -334,6 +334,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 34 )
+volume_db = -3.493
 autoplay = true
 
 [node name="Default" parent="." instance=ExtResource( 28 )]
@@ -346,7 +347,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 1
+frame = 33
 
 [node name="Bath" type="ColorRect" parent="."]
 margin_left = 860.0

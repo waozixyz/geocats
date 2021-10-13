@@ -5,8 +5,8 @@
     "position": "left",
     "type": "text",
     "content": "Hey",
-    "animation_in": "move_in",
-    "next": ""
+    "animation_in": "fade_in",
+    "next": "1"
   },
   "1": {
     "type": "text",
@@ -15,7 +15,7 @@
   },
   "2": {
     "type": "text",
-    "content": "They told me that our powergrid can't handle all the catnip I'm growing...",
+    "content": "They told me that our powergrid can't handle all the catnip I'm growing| ...",
     "next": ""
   },
   "repeat": {
@@ -24,8 +24,8 @@
     "position": "left",
     "animation_in": "move_in",
     "type": "text",
-    "content": "...",
-    "next": "r1"
+    "content": "|...",
+    "next": ""
   }
 }
 

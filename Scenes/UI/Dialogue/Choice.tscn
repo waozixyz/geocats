@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=2]
 
 [node name="Choice" type="RichTextLabel"]
 margin_right = 100.0
@@ -15,6 +16,17 @@ bbcode_enabled = true
 bbcode_text = "Choice Text"
 text = "Choice Text"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChoiceContainer" type="TextureRect" parent="."]
+visible = false
+show_behind_parent = true
+margin_right = 30.0
+margin_bottom = 20.0
+texture = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

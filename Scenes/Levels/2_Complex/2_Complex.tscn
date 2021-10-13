@@ -578,7 +578,7 @@ extents = Vector2( 7, 6 )
 extents = Vector2( 30.7477, 3 )
 
 [sub_resource type="RectangleShape2D" id=60]
-extents = Vector2( 18.25, 1.25 )
+extents = Vector2( 5.97483, 1.00473 )
 
 [sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 15, 1 )
@@ -653,14 +653,14 @@ extents = Vector2( 40.75, 29.2 )
 
 [sub_resource type="SpriteFrames" id=83]
 animations = [ {
-"frames": [ ExtResource( 43 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 44 ) ],
 "loop": true,
 "name": "mad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 38 ), ExtResource( 45 ) ],
@@ -1100,7 +1100,7 @@ shape = SubResource( 59 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ScaledColldiers/Houses"]
-position = Vector2( 75, 55.6375 )
+position = Vector2( 43.9253, 100.126 )
 shape = SubResource( 60 )
 one_way_collision = true
 
@@ -1251,7 +1251,6 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
-frame = 6
 playing = true
 centered = false
 
@@ -1306,6 +1305,7 @@ shape = SubResource( 87 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = -3.0
 autoplay = true
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
@@ -1318,7 +1318,7 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 8
+frame = 33
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )

@@ -32,12 +32,12 @@ var newline_char : String = '@' # The character used in the JSON file to break l
 ## Other customization options ##
 onready var progress = PROGRESS # The AutoLoad script where the interaction log, quest variables, inventory and other useful data should be acessible.
 var dialogues_dict = 'dialogues' # The dictionary on 'progress' used to keep track of interactions.
-var choice_plus_y : int = 2 # How much space (in pixels) should be added between the choices (affected by 'choice_height').
+var choice_plus_y : int = 9 # How much space (in pixels) should be added between the choices (affected by 'choice_height').
 var active_choice : Color = Color(1.0, 1.0, 1.0, 1.0)
 var inactive_choice : Color = Color(1.0, 1.0, 1.0, 0.4)
 var choice_height : int = 20 # Choice label's height
 var choice_width : int = 250 # Choice label's width
-var choice_margin_vertical : int = -10 # Vertical space (in pixels) between the bottom border of the dialogue frame and the last question (affectd by the 'label_margin')
+var choice_margin_vertical : int = -90 # Vertical space (in pixels) between the bottom border of the dialogue frame and the last question (affectd by the 'label_margin')
 var choice_margin_horizontal : int = 10 # Horizontal space (in pixels) between the border (set in 'choice_node_alignment') of the dialogue frame and the questions (affectd by the 'label_margin')
 var choice_text_alignment : String = 'right' # Alignment of the choice's text. Can be 'left' or 'right'
 var choice_node_alignment : String = 'right' # Alignment of the 'Choice' node. Can be 'left' or 'right'
@@ -55,6 +55,9 @@ var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' positi
 #var name_offset : Vector2 = Vector2(0, 0) # Offsets the name labels relative to the frame borders.
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
+
+# Extras #
+#onready var multi_choice_panel = $MultiChoicePanel
 
 
 # Default values. Don't change them unless you really know what you're doing.
@@ -147,8 +150,8 @@ func set_frame(): # Mostly aligment operations.
 	continue_indicator.anchor_top = 1
 	continue_indicator.anchor_right = 0.5
 	continue_indicator.anchor_bottom = 1
-	continue_indicator.rect_position = Vector2(-(continue_indicator.get_rect().size.x / 2),
-			frame_height - continue_indicator.get_rect().size.y - (label_margin * 2))
+	continue_indicator.rect_position = Vector2(-(continue_indicator.get_rect().size.x / 2) - label_margin,
+			frame_height - continue_indicator.get_rect().size.y - label_margin)
 	
 	frame.rect_size = Vector2(frame_width, frame_height)
 	frame.rect_position = Vector2(-frame_width/1.75, 0)
@@ -171,7 +174,6 @@ func set_frame(): # Mostly aligment operations.
 #	name_right.position = 'right'
 	#name_right.rect_position.y = name_offset.y
 
-
 func initiate(file_id, block = 'first'): # Load the whole dialogue into a variable
 	id = file_id
 	var file = File.new()
@@ -184,8 +186,6 @@ func initiate(file_id, block = 'first'): # Load the whole dialogue into a variab
 #func start_from(file_id, block): # Similar to 
 
 func clean(): # Resets some variables to prevent errors.
-	#name_left.rect_position.x = -40
-	#name_right.rect_position.x = 560
 	continue_indicator.hide()
 	animations.stop()
 	paused = false
@@ -194,26 +194,24 @@ func clean(): # Resets some variables to prevent errors.
 	current_choice = 0
 	timer.wait_time = wait_time # Resets the typewriter effect delay
 
-
 func not_question():
 	is_question = false
 
-
 func first(block):
 	frame.show()
-
+	
 	if block == 'first': # Check if we are going to use the default 'first' block
 		if dialogue.has('repeat'):
 			if progress.get(dialogues_dict).has(id): # Checks if it's the first interaction.
-				if dialogue.has('after_repeat'):					
+				if dialogue.has('after_repeat'):
 					if progress.get(dialogues_dict).has("r_" + id): # Checks if it's the first interaction.
 						update_dialogue(dialogue['after_repeat']) # It's not. Use the 'repeat' block.
 					else:
 						progress.get(dialogues_dict)["r_" + id] = true # Updates the singleton containing the interactions log.
+						
 						update_dialogue(dialogue['repeat']) # It is. Use the 'first' block.
 				else:
 					update_dialogue(dialogue['repeat']) # It's not. Use the 'repeat' block.
-
 			else:
 				progress.get(dialogues_dict)[id] = true # Updates the singleton containing the interactions log.
 				update_dialogue(dialogue['first']) # It is. Use the 'first' block.
@@ -221,7 +219,6 @@ func first(block):
 				update_dialogue(dialogue['first'])
 	else: # We are going to use a custom first block
 		update_dialogue(dialogue[block])
-
 
 func update_dialogue(step): # step == whole dialogue block
 	clean()
@@ -332,7 +329,6 @@ func update_dialogue(step): # step == whole dialogue block
 		continue_indicator.show()
 		animations.play('Continue_Indicator')
 
-
 func check_pauses(string):
 	var next_search = 0
 	phrase_raw = string
@@ -343,7 +339,6 @@ func check_pauses(string):
 			pause_array.append(next_search)
 			phrase_raw.erase(next_search, 1)
 			next_search = phrase_raw.find('%s' % pause_char, next_search)
-
 
 func check_newlines(string):
 	var line_search = 0
@@ -367,10 +362,10 @@ func check_newlines(string):
 				
 		pause_array = new_pause_array
 
-
 func clean_bbcode(string):
 	phrase = string
 	var pause_search = 0
+	var line_search = 0 #just added this to test -K
 	
 	pause_search = phrase.find('%s' % pause_char, pause_search)
 	
@@ -436,7 +431,6 @@ func next():
 		if current.has('animation_out'):
 			animate_sprite(current['position'], current['avatar'], current['animation_out'])
 			yield(tween, "tween_completed")
-		
 		update_dialogue(dialogue[next_step])
 
 
