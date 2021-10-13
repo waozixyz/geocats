@@ -3,7 +3,7 @@
     "name": "Garbitage",
     "avatar": "garbitage.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "type": "text",
     "content": "...",
     "next": "second"
@@ -18,18 +18,17 @@
   },
   "a": {
     "type": "text",
-    "content": "Affogato told me you took a trip to Canopy Creek! Very cool.",
+    "content": "Affogato told me you took a trip to Canopy Creek!@Very cool.",
     "next": "b"
   },
   "b": {
     "type": "text",
-    "content": "I haven’t traveled much lately because my left wheel is busted.",
+    "content": "I haven’t traveled much lately,| my left wheel is busted.",
     "next": "c"
   },
   "c": {
     "type": "question",
-    "text": "...Anyways, I have an adventurous friend who collects maps.
-If you’re looking for something to do today, maybe he can show you a fun place to hike. Would you like me to send you his way?",
+    "text": "|...Anyways, I have an adventurous friend who collects maps.@If you’re looking for something to do today, maybe he can show you a fun place to hike.@Would you like me to send you his way?",
     "options": ["yes", "no"],
     "next": ["yes_option", ""]
   },
@@ -48,19 +47,19 @@ If you’re looking for something to do today, maybe he can show you a fun place
   "2": {
     "name": "Feline",
     "avatar": "feline.png",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "True",
+    "content": "|True",
     "next": "3"
   },
   "3": {
     "name": "Garbitage",
     "avatar": "garbitage.png",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "...Have you ever been to the other side?",
+    "content": "|...Have you ever been to the other side?",
     "next": ""
   },
 }

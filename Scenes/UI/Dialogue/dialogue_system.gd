@@ -25,7 +25,7 @@ onready var sprite_right : Node = $Frame/SpriteRight
 onready var name_left : Node = $Frame/NameLeft
 onready var name_right : Node = $Frame/NameRight
 ## Typewriter effect ##
-var wait_time : float = 0.02 # Time interval (in seconds) for the typewriter effect. Set to 0 to disable it. 
+var wait_time : float = 0 # Time interval (in seconds) for the typewriter effect. Set to 0 to disable it. 
 var pause_time : float = 2.0 # Duration of each pause when the typewriter effect is active.
 var pause_char : String = '|' # The character used in the JSON file to define where pauses should be. If you change this you'll need to edit all your dialogue files.
 var newline_char : String = '@' # The character used in the JSON file to break lines. If you change this you'll need to edit all your dialogue files.
@@ -56,9 +56,10 @@ var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' positi
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
 
+
 # Extras #
 #onready var multi_choice_panel = $MultiChoicePanel
-
+onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 
 # Default values. Don't change them unless you really know what you're doing.
 var id
@@ -175,6 +176,7 @@ func set_frame(): # Mostly aligment operations.
 	#name_right.rect_position.y = name_offset.y
 
 func initiate(file_id, block = 'first'): # Load the whole dialogue into a variable
+	player.disable()
 	id = file_id
 	var file = File.new()
 	file.open('%s/%s.json' % [dialogues_folder, id], file.READ)
@@ -398,7 +400,10 @@ func exit():
 		choices.remove_child(child)
 		child.propagate_call("queue_free", [])
 func next():
+	print(next_step)
+	print(wait_time)
 	if not dialogue or on_animation: # Check if is in the middle of a dialogue 
+		print("Hi")
 		return
 	clean() # Be sure all the variables used before are restored to their default values.
 	if wait_time > 0: # Check if the typewriter effect is active.
@@ -409,6 +414,7 @@ func next():
 		label.visible_characters = -1 # -1 tells the RichTextLabel to show all the characters.
 	
 	if next_step == '': # Doesn't have a 'next' block.
+		player.enable()
 		if current.has('animation_out'):
 			animate_sprite(current['position'], current['avatar'], current['animation_out'])
 			yield(tween, "tween_completed")
@@ -782,3 +788,4 @@ func _on_Sprite_Timer_timeout():
 	set_physics_process(false)
 	on_animation = false
 	shaking = false
+	print("Animation Finished")

@@ -63,7 +63,7 @@
   },
   "6": {
     "type": "text",
-    "content": "Here, I’ve got a hot-fix for your Mapz system.|@It won’t fix the other issues with FeLine,@but at least you’ll be able to get to new places.",
+    "content": "Here, I’ve got a hot-fix for your Mapz system.|@It won’t fix the| other issues with FeLine,@but at least you’ll be able to get to new places.",
     "next": "7"
   },
   "7": {

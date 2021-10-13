@@ -2,7 +2,7 @@
   "first": {
     "avatar": "hanging_cat.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fadee_in",
     "type": "text",
     "content": "Don't be alarmed...",
     "next": "1"

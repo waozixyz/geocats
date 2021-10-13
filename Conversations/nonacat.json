@@ -6,6 +6,14 @@
     "type": "text",
     "content": "Hey,|@I'm happy to see you again!",
     "animation_in": "fade_in",
+    "next": "2"
+  },
+   "2": {
+    "name": "Nonacat",
+    "avatar": "nonacat.png",
+    "position": "left",
+    "type": "text",
+    "content": "It's been kinda creepy here lately...",
     "next": ""
   }
 }

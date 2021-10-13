@@ -2,7 +2,7 @@
   "first": {
     "avatar": "tree_cat.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "type": "text",
     "content": "No idea how I got up here.",
     "next": "1"
@@ -14,7 +14,7 @@
   },
   "2": {
     "type": "text",
-    "content": "At least the view is nice.",
+    "content": "|At least the view is nice.",
     "next": ""
   }
 }

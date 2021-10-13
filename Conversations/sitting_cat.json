@@ -2,7 +2,7 @@
   "first": {
     "avatar": "sitting_cat.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "type": "text",
     "content": "Were you at Nonafest last year?",
     "next": "1"

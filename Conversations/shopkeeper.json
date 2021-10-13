@@ -29,7 +29,7 @@
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
-    "content": "Only kidding, I'm contractually obligated to greet you in a friendly way.",
+    "content": "Only kidding,@I'm contractually obligated to greet you in a friendly way.",
 
     "next": "3"
   },

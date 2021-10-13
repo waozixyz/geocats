@@ -4,18 +4,18 @@
     "position": "left",
     "type": "question",
     "text": "Can you hear the whistling of the Aurora Borealis?",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "options": ["yes", "no"],
     "next": ["yes_option", "no_option"]
   },
   "yes_option": {
     "type": "text",
-    "content": "...Electrically charged solar ions, surfing on solar winds —",
+    "content": "...Electrically charged solar ions,@surfing on solar winds —",
     "next": "1",
   },
   "no_option": {
     "avatar": "sleeping_cat_annoyed.png",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "position": "left",
     "type": "text",
     "content": "...",
