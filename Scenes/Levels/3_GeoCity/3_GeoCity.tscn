@@ -575,7 +575,6 @@ shape = SubResource( 35 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 38 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="Longcat"]
@@ -601,7 +600,6 @@ shape = SubResource( 35 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="Nonacat"]
@@ -624,7 +622,6 @@ shape = SubResource( 35 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 47 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
@@ -664,6 +661,7 @@ render_target_update_mode = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
 frames = SubResource( 50 )
 animation = "idle"
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -686,7 +684,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 23
+frame = 26
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
