@@ -242,6 +242,7 @@ centered = false
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 240, 80 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -252,7 +253,7 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 9
+frame = 10
 speed_scale = 2.0
 playing = true
 centered = false
@@ -268,7 +269,7 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 7
+frame = 3
 speed_scale = 2.2
 playing = true
 centered = false
@@ -308,7 +309,7 @@ shape = SubResource( 26 )
 position = Vector2( -76, -1 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 34 )
-frame = 3
+frame = 7
 speed_scale = 0.5
 playing = true
 centered = false
@@ -539,7 +540,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 15
+frame = 31
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )

@@ -183,6 +183,7 @@ centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 7 )
+frame = 2
 speed_scale = 0.2
 playing = true
 centered = false
@@ -203,7 +204,7 @@ shape = SubResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 12 )
-frame = 3
+frame = 5
 speed_scale = 0.2
 playing = true
 centered = false
@@ -226,7 +227,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 31
+frame = 24
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
