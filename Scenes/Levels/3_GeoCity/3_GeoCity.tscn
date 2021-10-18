@@ -1,9 +1,8 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_BG.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/fog.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/cloud.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/stars.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/3_GeoCity/city_updated.png" type="Texture" id=7]
@@ -60,7 +59,7 @@ region = Rect2( 28, 0, 14, 17 )
 
 [sub_resource type="SpriteFrames" id=63]
 animations = [ {
-"frames": [ SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 61 ) ],
+"frames": [ SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 61 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ) ],
 "loop": true,
 "name": "default",
 "speed": 9.0
@@ -209,27 +208,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 33.2397, 28.051 )
 
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 23 )
-region = Rect2( 0, 54, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 23 )
-region = Rect2( 50, 54, 50, 54 )
-
-[sub_resource type="SpriteFrames" id=42]
-animations = [ {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ) ],
-"loop": true,
-"name": "default",
-"speed": 9.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 61.5852, 58.9592 )
-
-[sub_resource type="RectangleShape2D" id=44]
-
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 18 )
 region = Rect2( 11, 0, 11, 7 )
@@ -296,60 +274,99 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 61.5852, 58.9592 )
+
+[sub_resource type="RectangleShape2D" id=44]
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 23 )
+region = Rect2( 50, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 23 )
+region = Rect2( 50, 0, 50, 54 )
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
+}, {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
+} ]
+
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
 
-[node name="BelowPlayer" type="Node2D" parent="."]
+[node name="BehindPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="City_BG" type="Sprite" parent="BelowPlayer"]
-visible = false
+[node name="City_BG" type="Sprite" parent="BehindPlayer"]
 texture = ExtResource( 3 )
 centered = false
 
-[node name="moon" type="Sprite" parent="BelowPlayer"]
+[node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
+visible = false
+frames = SubResource( 59 )
+frame = 18
+playing = true
+
+[node name="Moon" type="Sprite" parent="BehindPlayer"]
+visible = false
 position = Vector2( 434.764, 87.4239 )
 scale = Vector2( 1.06667, 1 )
 texture = ExtResource( 24 )
 
-[node name="clouds" type="Sprite" parent="BelowPlayer"]
+[node name="Clouds" type="Sprite" parent="BehindPlayer"]
+visible = false
 position = Vector2( -3.05176e-05, 0 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="City_Buildings" type="Sprite" parent="BelowPlayer"]
+[node name="City_Buildings" type="Sprite" parent="BehindPlayer"]
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Pumpkin_Small" type="Sprite" parent="BelowPlayer"]
+[node name="Pumpkin_Small" type="Sprite" parent="BehindPlayer"]
+visible = false
 position = Vector2( 632.545, 114.332 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="City_Guard_Rail" type="Sprite" parent="BelowPlayer"]
+[node name="City_Guard_Rail" type="Sprite" parent="BehindPlayer"]
 position = Vector2( 75, 73 )
 z_index = 1
 z_as_relative = false
 texture = ExtResource( 9 )
 
-[node name="Stars" type="AnimatedSprite" parent="BelowPlayer"]
-frames = SubResource( 59 )
-frame = 1
-playing = true
-
-[node name="Medium_Pumpkin" type="AnimatedSprite" parent="BelowPlayer"]
+[node name="Pumpkin_Medium" type="AnimatedSprite" parent="BehindPlayer"]
+visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 63 )
-frame = 15
+frame = 26
 playing = true
 
-[node name="Creepy_Cat" type="AnimatedSprite" parent="BelowPlayer"]
+[node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
+visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 67 )
-frame = 8
+frame = 38
 playing = true
 
 [node name="LadderColl" type="Node2D" parent="."]
@@ -650,25 +667,6 @@ script = ExtResource( 2 )
 position = Vector2( 2.29077, 0.729614 )
 shape = SubResource( 39 )
 
-[node name="SadPumpkin" type="Area2D" parent="."]
-position = Vector2( 3373.95, 431.678 )
-scale = Vector2( 2, 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="SadPumpkin"]
-scale = Vector2( 2, 2 )
-frames = SubResource( 42 )
-frame = 13
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SadPumpkin"]
-shape = SubResource( 43 )
-
-[node name="SwitchTheme" type="Area2D" parent="SadPumpkin"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SadPumpkin/SwitchTheme"]
-position = Vector2( 53.4, 49.8 )
-shape = SubResource( 44 )
-
 [node name="Nonacat" type="KinematicBody2D" parent="."]
 position = Vector2( 4124, 689 )
 collision_layer = 2
@@ -770,7 +768,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 25
+frame = 15
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -783,27 +781,42 @@ autoplay = true
 stream = ExtResource( 22 )
 stream_paused = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="FrontPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
-[node name="City_Guard_Rail" type="Sprite" parent="Node2D"]
+[node name="Giant_Pumpkin_body" type="Area2D" parent="FrontPlayer"]
+position = Vector2( 843.487, 107.92 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontPlayer/Giant_Pumpkin_body"]
+shape = SubResource( 43 )
+
+[node name="SwitchTheme" type="Area2D" parent="FrontPlayer/Giant_Pumpkin_body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontPlayer/Giant_Pumpkin_body/SwitchTheme"]
+position = Vector2( 53.4, 49.8 )
+shape = SubResource( 44 )
+
+[node name="Giant_Pumpkin" type="AnimatedSprite" parent="FrontPlayer"]
+position = Vector2( 843.487, 107.92 )
+frames = SubResource( 42 )
+animation = "Sad"
+frame = 5
+playing = true
+
+[node name="City_Guard_Rail" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 75, 73 )
 z_index = 1
 z_as_relative = false
 texture = ExtResource( 9 )
 
-[node name="City_tree" type="Sprite" parent="Node2D"]
+[node name="City_tree" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 953, 240 )
 texture = ExtResource( 16 )
 
-[node name="fg_entrance_city" type="Sprite" parent="Node2D"]
+[node name="fg_entrance_city" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
-
-[node name="fog" type="Sprite" parent="Node2D"]
-position = Vector2( 723, 136 )
-scale = Vector2( 1.06667, 1 )
-texture = ExtResource( 4 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
