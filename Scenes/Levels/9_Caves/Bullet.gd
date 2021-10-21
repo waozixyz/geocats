@@ -17,7 +17,7 @@ func _ready():
 	deg = rand_range(dest_deg - 360, dest_deg)
 
 func _on_body_entered(body):
-	if body.has_method("damage"):
+	if body.has_method("damage") and visible:
 		body.damage(dmg)
 		dead = true
 

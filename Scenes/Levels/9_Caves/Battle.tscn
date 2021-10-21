@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=124 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Scenes/Levels/9_Caves/Beam.gd" type="Script" id=32]
 [ext_resource path="res://Assets/Sfx/Bckg/BossBattle_FleshedOut.ogg" type="AudioStream" id=33]
 [ext_resource path="res://Assets/Agents/NornaWyrd/medium_laser.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=35]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -440,6 +441,30 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="StyleBoxFlat" id=87]
+bg_color = Color( 0.403922, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.00784314, 0.00784314, 0 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id=88]
+bg_color = Color( 0.403922, 0, 0, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.00784314, 0.00784314, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
 [node name="CaveBattle" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -824,7 +849,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 6
+frame = 4
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
@@ -954,12 +979,40 @@ autoplay = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Hp" type="ColorRect" parent="HUD"]
-margin_left = 64.0
-margin_top = 20.0
-margin_right = 576.0
+[node name="HpBar" type="Control" parent="HUD"]
+margin_right = 40.0
 margin_bottom = 40.0
-color = Color( 0.403922, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/HpBar"]
+margin_left = 251.0
+margin_top = 11.0
+margin_right = 371.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 35 )
+text = "Norna & Wyrd"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Red" type="Panel" parent="HUD/HpBar"]
+margin_left = 122.0
+margin_top = 40.0
+margin_right = 514.0
+margin_bottom = 52.0
+custom_styles/panel = SubResource( 87 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="Panel" parent="HUD/HpBar"]
+margin_left = 122.0
+margin_top = 40.0
+margin_right = 514.0
+margin_bottom = 52.0
+custom_styles/panel = SubResource( 88 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

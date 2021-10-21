@@ -9,7 +9,7 @@ onready var enemy = $Enemy
 onready var boulder = $Boulder
 onready var ceiling = $Ceiling
 
-onready var hp_bar = $HUD/Hp
+onready var hp_bar = $HUD/HpBar
 
 var defeated = false
 var start_ticker = 0
