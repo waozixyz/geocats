@@ -94,7 +94,7 @@ func _shoot(eye):
 		b.dmg = 20
 	elif rage == 1:
 		b.speed = 7
-		b.dmg = 40
+		b.dmg = 20
 	bullets.append(b)
 	get_parent().add_child(b)
 
@@ -121,7 +121,7 @@ func _prep_eyes(side):
 		return false
 	
 # disable collisions so player can't attack
-func _disable_colliders():
+func disable_colliders():
 	collider_wyrd.disabled = true
 	collider_norna.disabled = true
 
@@ -134,7 +134,8 @@ func _enable_collider():
 
 func _process(_delta):
 	# update hp_bar
-	hp_bar.rect_scale.x = hp / 100
+	if hp >= 0:
+		hp_bar.rect_scale.x = hp / 100
 
 	# hp_bar color
 	if hp <= 10:
@@ -187,7 +188,7 @@ func _process(_delta):
 			if range(moves.size()).has(i):
 				var move = moves[i]
 				sprite.playing = true
-				_disable_colliders()
+				disable_colliders()
 
 				if not move.is_active() and _is_face():
 					_enable_collider()

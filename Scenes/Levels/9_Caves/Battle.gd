@@ -78,19 +78,21 @@ func _phase_two():
 			phase = 3
 			hp_bar.visible = true
 
+func _pre_chat():
+	if not player.disabled:
+		player.disable()
+	enemy.shooting = false
+	enemy.ears.visible = false
+	enemy.vulnerable = false
+	chat_with.visible = true
 func _phase_three():
 	if enemy.moves.size() <= 0 and enemy.mode == 0:
 		enemy.move()
 	if enemy.hp <= 40:
-		if not player.disabled:
-			player.disable()
-		enemy.shooting = false
-		enemy.ears.visible = false
-		enemy.vulnerable = false
-
-		chat_with.visible = true
+		_pre_chat()
 		chat_with.start("norna_wyrd_caves_1", true, false)
 		phase = 4
+
 func _phase_four():
 	if not chat_with.started and player.disabled:
 		player.enable()
@@ -100,6 +102,25 @@ func _phase_four():
 		enemy.move_speed *= 2
 		enemy.def = 2
 		enemy.move()
+	if enemy.hp <= 0:
+		_pre_chat()
+		chat_with.start("norna_wyrd_caves_2", true, false)
+		phase = 5
+
+func _phase_five():
+	if not chat_with.started and player.disabled:
+		enemy.sprite.frame = 0
+		enemy.sprite.animation = "die"
+		enemy.sprite.playing = true
+		phase = 6
+func _phase_six():
+	if enemy.sprite.frame == 3:
+		enemy.visible = false
+		enemy.disable_colliders()
+		defeated = true
+		hp_bar.visible = false
+		player.enable()
+		
 func _process(delta):
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
@@ -115,4 +136,8 @@ func _process(delta):
 			_phase_three()
 		elif phase == 4:
 			_phase_four()
+		elif phase == 5:
+			_phase_five()
+		elif phase == 6:
+			_phase_six()
 		
