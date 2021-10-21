@@ -61,10 +61,12 @@ func move():
 	var faces = ["wyrd", "norna"]
 	face = faces[round(rand_range(0, 1))]
 
-	if move_sequence % 2 == 0:
+	if move_sequence % 3 == 0:
 		dest = Vector2(250, 550)
-	else:
+	elif move_sequence % 3 == 1:
 		dest = Vector2(1060, 260)
+	else:
+		dest = Vector2(970, 620)
 	var tween = Tween.new()
 	add_child(tween)
 	tween.interpolate_property(self, "position", self.position, dest, 3 / move_speed, Tween.TRANS_QUART)
@@ -151,7 +153,7 @@ func _process(_delta):
 				_shoot(eye)
 				to_shoot_right -= 1
 		if to_shoot_left == 0 and to_shoot_right == 0:
-			move_sequence += 1
+			move_sequence +=  int(rand_range(1,3))
 			move()
 			shooting = false
 

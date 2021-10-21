@@ -23,6 +23,7 @@ func _ready():
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
 	hp_bar.visible = true
+	affogato.visible = false
 
 var shoot_rock
 var boulder_fall
@@ -85,6 +86,7 @@ func _process(delta):
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
 #	start_ticker += 1
+	affogato.visible = false
 	if not defeated:
 		if phase == 1:
 			_phase_one()
