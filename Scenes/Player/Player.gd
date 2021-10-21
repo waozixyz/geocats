@@ -48,7 +48,6 @@ var disabled = false
 
 var dbl_jump_height = 350
 
-var hp
 func default_anim():
 	if vertical > 0:
 		play("crouch")
@@ -88,8 +87,7 @@ func _ready():
 	if global.player_position:
 		position = global.player_position
 		sprite.flip_h  = global.player_direction * -1
-	if global.data.player_hp:
-		hp = global.data.player_hp
+
 func disable():
 	play("idle")
 	disabled = true
@@ -106,7 +104,7 @@ func _physics_process(delta):
 		state_machine.logic(delta)
 
 	move()
-
+	var hp = global.data.player_hp
 	if hp < 100:
 		hp += 0.1
 	global.data.player_hp = hp
@@ -115,6 +113,7 @@ func _physics_process(delta):
 		if dmg_blink >= 15:
 			sprite.material.set_shader_param("dmg", false)
 			dmg_blink = 0
+
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -139,7 +138,7 @@ func update_inputs():
 		floor_timer.start()
 
 func damage(dmg):
-	hp -= dmg
+	global.data.player_hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
 func move():
 	velocity = move_and_slide(velocity, Vector2.UP, true)

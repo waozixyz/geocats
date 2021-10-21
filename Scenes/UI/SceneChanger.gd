@@ -73,6 +73,9 @@ func _get_scene():
 					pos = Vector2(500, 2120)
 			return ["res://Scenes/Levels/9_Caves/9_Caves.tscn", pos, dir]
 		"CaveBattle":
+			match location:
+				1: 
+					pos = Vector2(426, 220)
 			return ["res://Scenes/Levels/9_Caves/Battle.tscn", pos, dir]
 	
 func change_scene(new_scene, new_location, sound, volume):
@@ -85,7 +88,6 @@ func change_scene(new_scene, new_location, sound, volume):
 	prev_scene = scene
 	scene = new_scene
 	location = new_location
-	
 	change = true
 	Sprite.visible = true
 	Container.visible = true
@@ -113,7 +115,8 @@ func _input(event):
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			chat_with.visible = false
 			global.data.player_hp = 100.0
-			change_scene(get_tree().get_current_scene().name, 0, "", 1)
+			var current_scene = get_tree().get_current_scene()
+			change_scene(current_scene.name, current_scene.death_location, "", 1)
 	if pause.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			get_tree().paused = false

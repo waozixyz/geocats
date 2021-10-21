@@ -14,6 +14,7 @@ onready var hp_bar = $HUD/Hp
 var defeated = false
 var start_ticker = 0
 var nyrn_chat = 0
+var death_location = 1
 
 func _ready():
 	if not defeated:
