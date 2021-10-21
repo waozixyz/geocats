@@ -18,12 +18,12 @@ var death_location = 1
 
 func _ready():
 	if not defeated:
-		phase = 1
+		phase = 3
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
-	hp_bar.visible = false
+	hp_bar.visible = true
 	affogato.visible = false
 
 var shoot_rock
@@ -81,7 +81,25 @@ func _phase_two():
 func _phase_three():
 	if enemy.moves.size() <= 0 and enemy.mode == 0:
 		enemy.move()
-		
+	if enemy.hp <= 40:
+		if not player.disabled:
+			player.disable()
+		enemy.shooting = false
+		enemy.ears.visible = false
+		enemy.vulnerable = false
+
+		chat_with.visible = true
+		chat_with.start("norna_wyrd_caves_1", true, false)
+		phase = 4
+func _phase_four():
+	if not chat_with.started and player.disabled:
+		player.enable()
+		chat_with.visible = false
+		enemy.vulnerable = true
+		enemy.rage = 1
+		enemy.move_speed *= 2
+		enemy.def = 2
+		enemy.move()
 func _process(delta):
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
@@ -95,3 +113,6 @@ func _process(delta):
 			_phase_two()
 		elif phase == 3:
 			_phase_three()
+		elif phase == 4:
+			_phase_four()
+		

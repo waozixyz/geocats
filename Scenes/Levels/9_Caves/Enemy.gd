@@ -26,9 +26,10 @@ var move_sequence = 0
 var to_shoot_left = 0
 var to_shoot_right = 0
 var move_speed = .5
-
+var vulnerable = true
 var hp = 100
-
+var rage = 0
+var def = 1
 func _eyes(side, active):
 	var eye = eyes.get_node(side)
 	eye.frame = 0
@@ -60,13 +61,17 @@ func move():
 	var dest
 	var faces = ["wyrd", "norna"]
 	face = faces[round(rand_range(0, 1))]
-
-	if move_sequence % 3 == 0:
-		dest = Vector2(250, 550)
-	elif move_sequence % 3 == 1:
-		dest = Vector2(1060, 260)
-	else:
-		dest = Vector2(970, 620)
+	if rage == 0:
+		if move_sequence % 3 == 0:
+			dest = Vector2(250, 550)
+		elif move_sequence % 3 == 1:
+			dest = Vector2(1060, 260)
+		else:
+			dest = Vector2(970, 620)
+	elif rage == 1:
+		dest = Vector2(rand_range(250, 1060), rand_range(260, 505))
+		if dest.x < 600 and dest.y < 500:
+			dest.y += 200
 	var tween = Tween.new()
 	add_child(tween)
 	tween.interpolate_property(self, "position", self.position, dest, 3 / move_speed, Tween.TRANS_QUART)
@@ -125,12 +130,19 @@ func _process(_delta):
 	# update hp_bar
 	hp_bar.rect_scale.x = hp / 100
 
+	# hp_bar color
+	if hp <= 10:
+		hp_bar.get_stylebox("panel", "").bg_color = Color(0.6, 0.1, 0, 1)
+	elif hp <= 40:
+		hp_bar.get_stylebox("panel", "").bg_color = Color(0.6, 0.3, 0, 1)
+	else:
+		hp_bar.get_stylebox("panel", "").bg_color = Color(0.6, 0, 0.3, 1)
 	# ears follow enemy position
 	ears.position = position + Vector2(0, -52)
 
 	# when facing the screen and not moving
 	# enable ears and damage
-	if _is_face() and moves.size() == 0:
+	if _is_face() and moves.size() == 0 and vulnerable:
 		ears.visible = true
 		for child in ears.get_children():
 			if child.name == face:
@@ -203,7 +215,7 @@ func _process(_delta):
 				
 # special beam attack				
 func beam_attack():
-	beam.visible =true
+	beam.visible = true
 	beam.sprite.frame = 0
 	beam.sprite.playing = true
 

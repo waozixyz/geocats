@@ -19,11 +19,11 @@ func _on_body_exited(body):
 func _fix_color():
 	var color = sprite.modulate
 	if color.r > 1:
-		color.r -= .5
+		color.r -= .3
 	sprite.modulate = color
 
 func _process(delta):
-	if touching and get_parent().visible:
+	if touching and get_parent().visible and get_parent().get_parent().visible:
 		var r
 		var f
 		if get_parent().name == "wyrd":
@@ -32,7 +32,7 @@ func _process(delta):
 		else:
 			r = 5
 			f = .1
-		enemy.hp -= (r - sprite.modulate.r) * f
+		enemy.hp -= ((r - sprite.modulate.r) * f * 10) / enemy.def
 		sprite.modulate.r = r 
 
 
