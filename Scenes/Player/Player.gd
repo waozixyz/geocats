@@ -99,6 +99,8 @@ func enable():
 
 var dmg_blink = 0
 func _physics_process(delta):
+	# make sure wave particles have the right substance
+	waves.substance = water_sub
 	._physics_process(delta)
 	if not disabled:
 		update_inputs()

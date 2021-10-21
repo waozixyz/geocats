@@ -16,10 +16,8 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.jumping:
 		return "jump"
 	if player.underwater:
-		if player.horizontal != 0:
+		if player.horizontal != 0 or not player.grounded:
 			player.waves.emitting = true
-			player.waves.substance = player.water_sub
-
 		else:
 			player.waves.emitting = false
 			player.play("idle")

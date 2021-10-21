@@ -4,7 +4,10 @@ extends BasePlayerState
 
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
-	player.jump(player.jump_height)
+	var jump_height = player.jump_height
+	if player.underwater:
+		jump_height *= .8
+	player.jump(jump_height)
 
 func logic(player: KinematicBody2D, _delta: float):
 	player.default_anim()
