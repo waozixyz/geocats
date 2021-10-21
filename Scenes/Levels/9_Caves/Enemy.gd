@@ -89,6 +89,12 @@ func _shoot(eye):
 	b.visible = true 
 	b.mode = "spiral"
 	b.deg = int(rand_range(0, 360))
+	if rage == 0:
+		b.speed = 4
+		b.dmg = 20
+	elif rage == 1:
+		b.speed = 7
+		b.dmg = 40
 	bullets.append(b)
 	get_parent().add_child(b)
 
@@ -147,23 +153,27 @@ func _process(_delta):
 		for child in ears.get_children():
 			if child.name == face:
 				child.visible = true
-				
 			else:
 				child.visible = false
 	else:
 		ears.visible = false
 	
-	
+
 	if shooting:
 		if to_shoot_left >= 1:
 			var eye = -1
 			if _prep_eyes("left"):
 				_shoot(eye)
+				if rage == 1 and int(rand_range(1, 3)) > 1:
+					_shoot(eye)
+		
 				to_shoot_left -= 1
 		if to_shoot_right >= 1:
 			var eye = 1
 			if _prep_eyes("right"):
 				_shoot(eye)
+				if rage == 1 and int(rand_range(1, 3)) > 1:
+					_shoot(eye)
 				to_shoot_right -= 1
 		if to_shoot_left == 0 and to_shoot_right == 0:
 			move_sequence +=  int(rand_range(1,3))
@@ -184,7 +194,12 @@ func _process(_delta):
 					sprite.playing = false
 					remove_child(move)
 					moves.remove(i)
-					var shots = int(rand_range(2, 5))
+					
+					var shots
+					if rage == 0:
+						shots = int(rand_range(2, 5))
+					elif rage == 1:
+						shots = int(rand_range(4, 8))
 					to_shoot_left = shots
 					to_shoot_right = shots
 					shoot_sequence += 1
