@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/beam_spritesheet_bg.png-2117fad75087fd35da64ff067e9bf49e.stex"
+path="res://.import/laser_explosion.png-1126601fcfabae138824d71bfa44ab4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/NornaWyrd/beam_spritesheet_bg.png"
-dest_files=[ "res://.import/beam_spritesheet_bg.png-2117fad75087fd35da64ff067e9bf49e.stex" ]
+source_file="res://Assets/Attacks/laser_explosion.png"
+dest_files=[ "res://.import/laser_explosion.png-1126601fcfabae138824d71bfa44ab4d.stex" ]
 
 [params]
 

@@ -111,7 +111,7 @@ func _physics_process(delta):
 	if hp < 100:
 		hp += 0.1
 	if underwater and water_sub == "slime":
-		hp -= 1
+		hp -= .6
 	global.data.player_hp = hp
 	if sprite.material.get_shader_param("dmg"):
 		dmg_blink += 1

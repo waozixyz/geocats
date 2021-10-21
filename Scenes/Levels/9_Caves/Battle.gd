@@ -18,12 +18,12 @@ var death_location = 1
 
 func _ready():
 	if not defeated:
-		phase = 3
+		phase = 1
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
-	hp_bar.visible = true
+	hp_bar.visible = false
 	affogato.visible = false
 
 var shoot_rock
@@ -48,7 +48,7 @@ func _phase_one():
 				chat_with.start("norna_wyrd_caves_" + str(nyrn_chat), true, false)
 				nyrn_chat += 1
 				shoot_rock = true
-			elif shoot_rock and (enemy.sprite.frame == 1 or enemy.sprite.frame == 6) and attack_ticker % 20 == 0 and enemy.attacks.size() < 4 and not enemy.bullets.size() > 3 and not attacking: 
+			elif shoot_rock and (enemy.sprite.frame == 3 or enemy.sprite.frame == 9) and attack_ticker % 20 == 0 and not attacking: 
 				enemy.sprite.playing = false
 				enemy.beam_attack()
 				attacking = true
