@@ -18,6 +18,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.underwater:
 		if player.horizontal != 0:
 			player.waves.emitting = true
+			player.waves.substance = player.water_sub
 
 		else:
 			player.waves.emitting = false

@@ -8,6 +8,8 @@ var speed = 4
 var dead
 var deg = 1
 var dest_deg
+var max_life = 2000
+var life_timer = 0
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -25,6 +27,9 @@ func _on_body_exited(body):
 	pass
 
 func _process(_delta):
+	life_timer += 1
+	if life_timer >= max_life:
+		dead = true
 	rotation_degrees = deg
 	if mode == "spiral":
 		if deg < dest_deg:

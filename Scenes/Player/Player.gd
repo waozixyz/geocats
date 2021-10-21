@@ -9,6 +9,7 @@ var vx: float = 0 setget _set_vx, _get_vx
 var vy: float = 0 setget _set_vy, _get_vy
 
 var underwater : bool = false
+var water_sub : String = "water"
 var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 

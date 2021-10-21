@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Particles/round-soft.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Objects/Water/Waves.gd" type="Script" id=2]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 1 ), 0.0, 0.054651, 0, 0, Vector2( 1, 0.1876 ), -1.66113, 0.0, 0, 0 ]
@@ -30,3 +31,4 @@ explosiveness = 0.2
 local_coords = false
 process_material = SubResource( 3 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
