@@ -15,6 +15,7 @@ func start(name, hide = false, panel_visible = true):
 		dialogue.exit()
 		dialogue.initiate(name.to_lower())
 		started = true
+		
 
 func stop():
 	started = false

@@ -41,7 +41,7 @@
 extents = Vector2( 35.9695, 36.4577 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 103.875 )
+extents = Vector2( 10, 118.098 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 6 )
@@ -883,7 +883,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 24
+frame = 14
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
