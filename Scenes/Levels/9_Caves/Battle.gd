@@ -17,6 +17,7 @@ var nyrn_chat = 0
 var death_location = 1
 
 func _ready():
+	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
 		phase = 1
 		enemy.sprite.visible = true
@@ -118,6 +119,7 @@ func _phase_six():
 		enemy.visible = false
 		enemy.disable_colliders()
 		defeated = true
+		PROGRESS.variable["CavesBattleDefeated"] = true
 		hp_bar.visible = false
 		player.enable()
 		
