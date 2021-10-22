@@ -152,38 +152,38 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 40, 100 )
+region = Rect2( 0, 100, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 15 )
-region = Rect2( 40, 0, 40, 100 )
+region = Rect2( 40, 100, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 15 )
-region = Rect2( 80, 0, 40, 100 )
+region = Rect2( 80, 100, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 15 )
-region = Rect2( 0, 100, 40, 100 )
+region = Rect2( 0, 0, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 15 )
-region = Rect2( 40, 100, 40, 100 )
+region = Rect2( 40, 0, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 15 )
-region = Rect2( 80, 100, 40, 100 )
+region = Rect2( 80, 0, 40, 100 )
 
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": false,
-"name": "glow",
+"name": "default",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": false,
-"name": "default",
+"name": "glow",
 "speed": 5.0
 } ]
 
@@ -201,14 +201,14 @@ region = Rect2( 64, 0, 32, 148 )
 
 [sub_resource type="SpriteFrames" id=36]
 animations = [ {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
-"loop": false,
-"name": "glow",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": false,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": false,
+"name": "glow",
 "speed": 5.0
 } ]
 
@@ -822,7 +822,7 @@ shape = SubResource( 53 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy/Beam"]
 frames = SubResource( 100 )
 animation = ""
-frame = 40
+frame = 7
 playing = true
 
 [node name="Ladder" type="Area2D" parent="." groups=[
@@ -851,7 +851,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 31
+frame = 18
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
@@ -955,7 +955,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 114 )
-frame = 3
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false

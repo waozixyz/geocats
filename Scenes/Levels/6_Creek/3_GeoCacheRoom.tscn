@@ -113,7 +113,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 5
+frame = 15
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -133,7 +133,6 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
