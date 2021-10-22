@@ -56,6 +56,8 @@ func _get_scene():
 				4:
 					dir = -1
 					pos = Vector2(8900, 950)
+				5:
+					pos = Vector2(4420, 4950)
 			return ["res://Scenes/Levels/6_Creek/6_Creek.tscn", pos, dir]
 		"CavityPuzzleRoom":	
 			return ["res://Scenes/Levels/6_Creek/1_CavityPuzzleRoom.tscn", pos, dir]

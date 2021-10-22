@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_fg.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/Levels/6_Creek/tree_cat.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/Levels/6_Creek/death_zone.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/6_Creek/water_4.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Levels/6_Creek/6_Creek.gd" type="Script" id=24]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -232,6 +233,7 @@ extents = Vector2( 1175, 162 )
 extents = Vector2( 29, 209 )
 
 [node name="Creek" type="Node2D"]
+script = ExtResource( 24 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -243,7 +245,6 @@ centered = false
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 240, 80 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -254,7 +255,6 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 4
 speed_scale = 2.0
 playing = true
 centered = false
@@ -262,7 +262,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 6
+frame = 4
 speed_scale = 1.5
 playing = true
 centered = false
@@ -270,7 +270,7 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 17
+frame = 7
 speed_scale = 2.2
 playing = true
 centered = false
@@ -292,7 +292,6 @@ shape = SubResource( 26 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 30 )
-frame = 2
 playing = true
 centered = false
 
@@ -310,7 +309,7 @@ shape = SubResource( 26 )
 position = Vector2( -76, -1 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 34 )
-frame = 7
+frame = 6
 speed_scale = 0.5
 playing = true
 centered = false
@@ -541,7 +540,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 8
+frame = 20
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
