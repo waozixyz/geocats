@@ -298,7 +298,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 3
+frame = 9
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

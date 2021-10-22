@@ -52,9 +52,9 @@ func _process(delta):
 		if chat_with.started:
 			get_parent().idle = true
 		else:
-			player.enable()
 			get_parent().idle = false
-
+	if not chat_with.started:
+		player.enable()
 	if nft_possible:
 		nft.update(chat_with.started, nft_id)
 	._process(delta)
