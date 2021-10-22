@@ -661,7 +661,7 @@ script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
-jump_multiplier = 2.5
+jump_multiplier = 1.5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom7"]
 frames = SubResource( 32 )
@@ -883,12 +883,12 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 14
+frame = 26
 
 [node name="Boulder" type="StaticBody2D" parent="." groups=[
 "end",
 ]]
-position = Vector2( 385, -138 )
+position = Vector2( 385, -142 )
 scale = Vector2( 4.5, 4.5 )
 collision_layer = 7
 collision_mask = 7

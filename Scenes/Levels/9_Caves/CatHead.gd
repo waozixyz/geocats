@@ -8,12 +8,14 @@ onready var go_inside_area = $GoInside
 var open_mouth
 func _ready():
 	open_mouth = PROGRESS.variables.get("CavesCatHeadOpen")
+	print(open_mouth)
 	if open_mouth:
 		sprite.animation = "open"
 		disabled = true
 		sprite.frame = 2
 		open_it()
 	else:
+		sprite.animation = "idle"
 		platform_idle.disabled = false
 		platform_open.disabled = true
 		platform_open2.disabled = true

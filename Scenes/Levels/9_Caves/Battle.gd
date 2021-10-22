@@ -122,7 +122,7 @@ func _phase_six():
 		player.enable()
 		
 func _process(delta):
-	if start_ticker > 2 and start_ticker < 6:
+	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
 	start_ticker += 1
