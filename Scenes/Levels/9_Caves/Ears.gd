@@ -32,7 +32,7 @@ func _process(delta):
 		else:
 			r = 5
 			f = .1
-		enemy.hp -= ((r - sprite.modulate.r) * f * 60) / enemy.def
+		enemy.hp -= ((r - sprite.modulate.r) * f) / enemy.def
 		sprite.modulate.r = r 
 
 

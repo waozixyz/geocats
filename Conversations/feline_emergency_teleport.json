@@ -2,7 +2,7 @@
   "first": {
     "name": "Feline",
     "avatar": "feline.png",
-    "animation_in": "move_in",
+    "animation_in": "shake_regular_medium",
     "position": "left",
     "type": "question",
     "text": "Danger! Emergency teleport!",

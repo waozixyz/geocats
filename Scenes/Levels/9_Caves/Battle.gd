@@ -125,7 +125,7 @@ func _process(delta):
 	if start_ticker > 2 and start_ticker < 6:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
-#	start_ticker += 1
+	start_ticker += 1
 	affogato.visible = false
 	if not defeated:
 		if phase == 1:

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/UI/Dialogue/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Conversations/hogwash.png" type="Texture" id=3]
+[ext_resource path="res://Conversations/nonacat.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/chat_elements/textbox.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/chat_elements/portrait_box.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 loop = true
@@ -19,19 +21,26 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 4.0
-bg_color = Color( 0.768627, 0, 0.258824, 1 )
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+region_rect = Rect2( 0, 0, 21, 26 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = SubResource( 5 )
+
+[sub_resource type="StreamTexture" id=7]
 
 [node name="Dialogue" type="Control"]
-margin_top = 10.0
-margin_bottom = 10.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,24 +56,73 @@ anims/Continue_Indicator = SubResource( 1 )
 [node name="SpriteTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Frame" type="ColorRect" parent="."]
-margin_right = 639.0
-margin_bottom = 200.0
-color = Color( 0.175781, 0.175781, 0.175781, 1 )
+[node name="Frame" type="TextureRect" parent="."]
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choices" type="Control" parent="Frame"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Frame"]
+margin_left = -84.0
+margin_right = -63.0
+margin_bottom = 26.0
+rect_scale = Vector2( 4, 3.66 )
+texture = ExtResource( 5 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpriteLeft" type="Sprite" parent="Frame"]
-position = Vector2( 0, -90 )
-scale = Vector2( 10, 10 )
+position = Vector2( -46.1744, 38.113 )
+scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
-centered = false
+offset = Vector2( 0.614565, 0.211254 )
+
+[node name="NameLeft" type="Label" parent="Frame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -81.1155
+margin_top = -43.0
+margin_right = -0.115494
+margin_bottom = -7.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_fonts/font = SubResource( 3 )
+text = "Name 1"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameRight" type="Label" parent="Frame"]
+anchor_left = -0.000782473
+anchor_right = -0.000782473
+margin_left = 575.12
+margin_right = 640.12
+margin_bottom = 85.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
+text = "Name 1"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SpriteRight" type="Sprite" parent="Frame"]
-position = Vector2( 540, -90 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 3 )
+position = Vector2( 580.927, 16 )
+scale = Vector2( 5, 5 )
+texture = SubResource( 7 )
 centered = false
 flip_h = true
 
@@ -73,10 +131,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -300.0
-margin_top = -50.0
-margin_right = 300.0
-margin_bottom = 50.0
+margin_left = 20.5
+margin_top = -13.0
+margin_right = 553.5
+margin_bottom = 75.0
+focus_mode = 2
 custom_fonts/mono_font = ExtResource( 2 )
 custom_fonts/bold_italics_font = ExtResource( 2 )
 custom_fonts/italics_font = ExtResource( 2 )
@@ -86,47 +145,14 @@ bbcode_enabled = true
 bbcode_text = "Empty text"
 text = "Empty text"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Choices" type="Control" parent="Frame"]
-
-[node name="NameRight" type="Label" parent="Frame"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -79.0
-margin_right = 1.0
-margin_bottom = 29.0
-grow_horizontal = 0
-size_flags_horizontal = 9
-size_flags_vertical = 8
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 2 )
-text = "Name 2"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NameLeft" type="Label" parent="Frame"]
-margin_right = 74.0
-margin_bottom = 25.0
-size_flags_horizontal = 15
-size_flags_vertical = 15
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 2 )
-text = "Name 1"
-valign = 1
+selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ContinueIndicator" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.270671 )
-margin_right = 10.0
-margin_bottom = 10.0
+margin_right = 6.0
+margin_bottom = 6.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

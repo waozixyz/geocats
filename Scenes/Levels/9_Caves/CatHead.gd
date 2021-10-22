@@ -13,13 +13,19 @@ func _ready():
 		disabled = true
 		sprite.frame = 2
 		open_it()
+	else:
+		platform_idle.disabled = false
+		platform_open.disabled = true
+		platform_open2.disabled = true
 		
 func open_it():
 	PROGRESS.variables["CavesCatHeadOpen"] = true
 	open_mouth = true
-	platform_idle.visible = false
-	platform_open.visible = true
-	platform_open2.visible = true
+	
+	platform_idle.disabled = true
+	platform_open.disabled = false
+	platform_open2.disabled = false
+	
 	go_inside_area.disabled = false
 	
 func _process(delta):

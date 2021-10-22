@@ -3,47 +3,48 @@
     "name": "Donutbot",
     "avatar": "donutbot.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
+    "type": "question",
+    "text": "Greetings. Would you like to hear a poem I'm building?",
+    "options": ["Yes", "No",]
+    "next": ["1","repeat"]
+  },
+  "1": {
+    "name": "Donutbot",
+    "avatar": "donutbot.png",
+    "position": "left",
+    "animation_in": "fade_in",
     "type": "text",
-    "content": "Greetings.",
-    "next": ""
+    "content": "When I was a wee robot -",
+    "next": "1"
+  },
+  "2": {
+    "type": "text",
+    "content": "My circuits compiled a thought.|",
+    "next": "2",
+  },
+  "3": {
+    "type": "text",
+    "content": "Alike we are,|@ throughout the stars",
+    "next": "3",
+  },
+  "4": {
+    "type": "text",
+    "content": "Whether mum,|@or motherboard one's got.",
+    "next": "",
   },
   "repeat": {
     "name": "Donutbot",
     "avatar": "donutbot.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "type": "text",
-    "content": "Memories of music and food.",
-    "next": "1"
-  },
-  "1": {
-    "type": "text",
-    "content": "Memories, encoded by our senses.",
-    "next": "2",
-  },
-  "2": {
-    "type": "text",
-    "content": "They run deep in our spirits,",
-    "next": "3",
-  },
-  "3": {
-    "type": "text",
-    "content": "like unconcioous underground rivers.",
-    "next": "",
-  },
-  "after_repeat": {
-    "name": "Donutbot",
-    "avatar": "donutbot.png",
-    "position": "left",
-    "animation_in": "move_in",
-    "type": "text",
-    "content": "Donut-Bot requires coffee...",
+    "content": "...|@Donut-Bot requires coffee...",
     "next": "r1"
   },
   "r1": {
     "type": "text",
-    "content": "Refill please.",
+    "content": "|Refill please.",
     "next": ""
   }
 }

@@ -102,6 +102,7 @@ singletons=[  ]
 
 gravity=true
 vsyng=false
+fullscreen=false
 
 [importer_defaults]
 

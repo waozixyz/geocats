@@ -5,7 +5,27 @@
     "position": "left",
     "type": "text",
     "content": "Hey",
+    "animation_in": "fade_in",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "Did you hear that Nonaco's trying to increase my utility bill?",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "They told me that our powergrid can't handle all the catnip I'm growing| ...",
+    "next": ""
+  },
+  "repeat": {
+    "name": "Hogwash",
+    "avatar": "hogwash_unimpressed.png",
+    "position": "left",
     "animation_in": "move_in",
+    "type": "text",
+    "content": "|...",
     "next": ""
   }
 }
+

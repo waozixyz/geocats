@@ -4,8 +4,8 @@
     "avatar": "affogato.png",
     "position": "left",
     "type": "text",
-    "content": "Hey, nice to meet you. I'm AffoGato.",
-    "animation_in": "move_in",
+    "content": "Hey, nice to meet you.|@ I'm AffoGato.",
+    "animation_in": "fade_in",
     "next": "1"
   },
   "1": {
@@ -21,13 +21,13 @@
   },
   "no_option": {
     "type": "text",
-    "content": "Huh, ok. I'll stay here and play GeoCats.",
+    "content": "Huh, ok.|@ I'll stay here and play GeoCats.",
   },
   "yes_option": {
     "type": "action",
     "operation": "variable",
     "dictionary": "variables",
-    "text": "Ok, I'll meet you at Donut-Shack!",
+    "text": "Ok, I'll meet you at Donut-Shop!",
     "value": [["follow", true]]
   },
   "repeat": {
@@ -35,8 +35,8 @@
     "avatar": "affogato.png",
     "position": "left",
     "type": "question",
-    "text": "Hey. Have you changed your mind?",
-    "animation_in": "move_in",
+    "text": "Hey.|@ Have you changed your mind?",
+    "animation_in": "fade_in",
     "options": ["yes", "no"],
     "next": ["yes_option_2", "no_option_2"]
   },

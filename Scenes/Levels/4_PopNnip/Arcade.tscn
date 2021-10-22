@@ -357,7 +357,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 5
+frame = 14
 playing = true
 centered = false
 
@@ -388,7 +388,6 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -396,7 +395,6 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -564,7 +562,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 22
+frame = 7
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0

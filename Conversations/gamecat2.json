@@ -4,8 +4,8 @@
     "avatar": "gamecat2.png",
     "position": "left",
     "type": "text",
-    "content": "...",
-    "animation_in": "move_in",
+    "content": "|...",
+    "animation_in": "fade_in",
     "next": "0"
   },
   "0": {
@@ -13,7 +13,8 @@
     "avatar": "gamecat2.png",
     "position": "left",
     "type": "text",
-    "content": "Please don't talk to me right now.",
+    "content": "|||Please don't talk to me right now.",
+    "animation_out": "shake_weak_short",
     "next": ""
   }
 }

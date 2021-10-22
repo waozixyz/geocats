@@ -1,13 +1,13 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=91 format=2]
 
-[ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Right.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_BG.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Levels/3_GeoCity/city_brick.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Levels/3_GeoCity/City_Ladder_Left.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Levels/3_GeoCity/City_BG_Buildings.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Levels/3_GeoCity/City_Buildings.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/3_GeoCity/City_Ground.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/UI/Interact/InteractSimple.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/cloud.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/stars.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/3_GeoCity/city_updated.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/creepycat_spritesheet.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/3_GeoCity/City_Guard_Rail.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/Interactions.gd" type="Script" id=11]
@@ -21,34 +21,69 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/fg_entrance_city.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/garbitage.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/3_GeoCity.gd" type="Script" id=21]
-[ext_resource path="res://Assets/Sfx/SFX/BirdsGeoCity.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/big_pumpkin_spritesheet.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/moon.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/medium_pumpkin_sptritesheet.png" type="Texture" id=25]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 43, 0, 43, 43, 0, 43 )
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 1200, 300 )
 
-[sub_resource type="TileSet" id=2]
-0/name = "City_Ground.png 0"
-0/texture = ExtResource( 8 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 43, 43 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 300, 1200, 300 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 600, 1200, 300 )
+
+[sub_resource type="SpriteFrames" id=59]
+animations = [ {
+"frames": [ SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 56 ), SubResource( 56 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 58 ), SubResource( 58 ), SubResource( 57 ), SubResource( 56 ), SubResource( 57 ), SubResource( 56 ), SubResource( 56 ), SubResource( 58 ), SubResource( 58 ), SubResource( 56 ), SubResource( 56 ), SubResource( 58 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
 } ]
-0/z_index = 0
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 14, 17 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 25 )
+region = Rect2( 14, 0, 14, 17 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 25 )
+region = Rect2( 28, 0, 14, 17 )
+
+[sub_resource type="SpriteFrames" id=63]
+animations = [ {
+"frames": [ SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 61 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ), SubResource( 60 ) ],
+"loop": true,
+"name": "default",
+"speed": 9.0
+} ]
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 8 )
+region = Rect2( 11, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 8 )
+region = Rect2( 22, 0, 11, 15 )
+
+[sub_resource type="SpriteFrames" id=67]
+animations = [ {
+"frames": [ SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 9, 465 )
@@ -173,106 +208,166 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 33.2397, 28.051 )
 
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 18 )
-region = Rect2( 11, 0, 11, 7 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 18 )
-region = Rect2( 22, 0, 11, 7 )
-
-[sub_resource type="SpriteFrames" id=43]
-animations = [ {
-"frames": [ SubResource( 40 ), SubResource( 41 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 42 ), SubResource( 41 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 13 )
-region = Rect2( 11, 0, 11, 7 )
-
 [sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 13 )
-region = Rect2( 22, 0, 11, 7 )
+atlas = ExtResource( 18 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 11, 7 )
 
-[sub_resource type="SpriteFrames" id=47]
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 18 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=48]
 animations = [ {
-"frames": [ SubResource( 44 ) ],
+"frames": [ SubResource( 45 ), SubResource( 46 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 45 ), SubResource( 46 ) ],
+"frames": [ SubResource( 47 ), SubResource( 46 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 13 )
+region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 13 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=52]
+animations = [ {
+"frames": [ SubResource( 49 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 50 ), SubResource( 51 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 20 )
 region = Rect2( 60, 0, 15, 12 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 20 )
 region = Rect2( 75, 0, 15, 12 )
 
-[sub_resource type="SpriteFrames" id=50]
+[sub_resource type="SpriteFrames" id=55]
 animations = [ {
-"frames": [ SubResource( 48 ), SubResource( 49 ) ],
+"frames": [ SubResource( 53 ), SubResource( 54 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 61.5852, 58.9592 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 23 )
+region = Rect2( 50, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 23 )
+region = Rect2( 50, 0, 50, 54 )
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
+}, {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
 
-[node name="Background" type="Node2D" parent="."]
+[node name="BehindPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="City_BG" type="Sprite" parent="Background"]
+[node name="City_BG" type="Sprite" parent="BehindPlayer"]
 texture = ExtResource( 3 )
 centered = false
 
-[node name="City_BG_Buildings" type="Sprite" parent="Background"]
-texture = ExtResource( 6 )
+[node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
+visible = false
+frames = SubResource( 59 )
+frame = 7
+playing = true
+
+[node name="Moon" type="Sprite" parent="BehindPlayer"]
+visible = false
+position = Vector2( 434.764, 87.4239 )
+scale = Vector2( 1.06667, 1 )
+texture = ExtResource( 24 )
+
+[node name="Clouds" type="Sprite" parent="BehindPlayer"]
+visible = false
+position = Vector2( -3.05176e-05, 0 )
+texture = ExtResource( 5 )
 centered = false
 
-[node name="City_Buildings" type="Sprite" parent="Background"]
+[node name="City_Buildings" type="Sprite" parent="BehindPlayer"]
 texture = ExtResource( 7 )
 centered = false
 
-[node name="TileMap" type="TileMap" parent="Background"]
-position = Vector2( 0, -1 )
-tile_set = SubResource( 2 )
-cell_size = Vector2( 43, 43 )
-collision_layer = 3
-collision_mask = 3
-format = 1
-tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0 )
+[node name="Pumpkin_Small" type="Sprite" parent="BehindPlayer"]
+visible = false
+position = Vector2( 632.545, 114.332 )
+texture = ExtResource( 1 )
+centered = false
 
-[node name="Ladders" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="City_Guard_Rail" type="Sprite" parent="BehindPlayer"]
+position = Vector2( 75, 73 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 9 )
+
+[node name="Pumpkin_Medium" type="AnimatedSprite" parent="BehindPlayer"]
+visible = false
+position = Vector2( 233.633, 12.7828 )
+frames = SubResource( 63 )
+frame = 23
+playing = true
+
+[node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
+visible = false
+position = Vector2( 1158.99, 179.007 )
+frames = SubResource( 67 )
+frame = 27
+playing = true
+
+[node name="LadderColl" type="Node2D" parent="."]
 
 [node name="Ladder" type="Area2D" parent="Ladders"]
 position = Vector2( 721, 545 )
@@ -284,14 +379,10 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
 shape = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Ladders/Ladder"]
-position = Vector2( 3, 3 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 5 )
-
-[node name="Ladder2" type="Area2D" parent="Ladders"]
-position = Vector2( 4337.46, 677.621 )
-script = ExtResource( 23 )
+[node name="Ladder2" type="Area2D" parent="LadderColl" groups=[
+"ladder",
+]]
+position = Vector2( 4337.13, 710.159 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -334,6 +425,11 @@ one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bricks"]
 position = Vector2( 229.964, 41.7194 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bricks"]
+position = Vector2( 414.976, 282.932 )
 shape = SubResource( 5 )
 one_way_collision = true
 
@@ -407,7 +503,12 @@ shape = SubResource( 15 )
 one_way_collision = true
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Houses"]
-position = Vector2( 3006, 827 )
+position = Vector2( 3006, 826.482 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 3006, 682.482 )
 shape = SubResource( 16 )
 one_way_collision = true
 
@@ -428,6 +529,11 @@ one_way_collision = true
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Houses"]
 position = Vector2( 4194, 728 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Houses"]
+position = Vector2( 4195.75, 994.686 )
 shape = SubResource( 20 )
 one_way_collision = true
 
@@ -573,6 +679,7 @@ shape = SubResource( 35 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 38 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -596,8 +703,9 @@ shape = SubResource( 35 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonacat"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 43 )
+frames = SubResource( 48 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -618,8 +726,9 @@ shape = SubResource( 35 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 47 )
+frames = SubResource( 52 )
 animation = "walk"
+frame = 1
 playing = true
 flip_h = true
 
@@ -656,9 +765,10 @@ transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Garbitage/ViewportContainer/Viewport"]
-frames = SubResource( 50 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Garbitage/ViewportContainer/Viewport"]
+frames = SubResource( 55 )
 animation = "idle"
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -681,32 +791,48 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
+frame = 25
 flip_h = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -3.0
+pitch_scale = 0.36
+
+[node name="Salty_Swing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 22 )
-autoplay = true
-
-[node name="AbovePlayer" type="Node2D" parent="."]
+[node name="FrontPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
-[node name="City_Guard_Rail" type="Sprite" parent="AbovePlayer"]
+[node name="Giant_Pumpkin_Body" type="Area2D" parent="FrontPlayer"]
+position = Vector2( 843.487, 107.92 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontPlayer/Giant_Pumpkin_Body"]
+shape = SubResource( 43 )
+
+[node name="Giant_Pumpkin" type="AnimatedSprite" parent="FrontPlayer"]
+position = Vector2( 843.487, 107.92 )
+frames = SubResource( 42 )
+animation = "Sad"
+frame = 11
+playing = true
+
+[node name="City_Guard_Rail" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 75, 73 )
 z_index = 1
 z_as_relative = false
 texture = ExtResource( 9 )
 
-[node name="City_tree" type="Sprite" parent="AbovePlayer"]
+[node name="City_tree" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 953, 240 )
 texture = ExtResource( 16 )
 
-[node name="fg_entrance_city" type="Sprite" parent="AbovePlayer"]
+[node name="fg_entrance_city" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
 

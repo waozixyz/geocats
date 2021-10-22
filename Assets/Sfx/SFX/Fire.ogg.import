@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fire.ogg-ed0171fafff3d1eea69de7f246fd4c6c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/Fire.ogg"
+dest_files=[ "res://.import/Fire.ogg-ed0171fafff3d1eea69de7f246fd4c6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
