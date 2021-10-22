@@ -18,13 +18,13 @@ var death_location = 1
 
 func _ready():
 	if not defeated:
-		phase = 3
+		phase = 1
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
-	hp_bar.visible = true
-	affogato.visible = false
+	hp_bar.visible = false
+
 
 var shoot_rock
 var boulder_fall
