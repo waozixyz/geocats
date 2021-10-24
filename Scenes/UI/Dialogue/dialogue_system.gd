@@ -528,6 +528,14 @@ func animate_sprite(direction, image, animation):
 			set_physics_process(true)
 			
 		'shake_regular_medium':
+			load_image(sprite, image)
+			tween.interpolate_property(sprite, 'modulate',
+					white_transparent, white_opaque, ease_in_speed/1.25,
+					Tween.TRANS_QUAD, Tween.EASE_IN)
+					
+			sprite_timer.wait_time = ease_in_speed/1.25
+			tween.start()
+			on_animation = true
 			shake_amount = shake_regular
 			sprite_timer.wait_time = shake_medium
 			sprite_timer.start()
