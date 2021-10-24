@@ -20,10 +20,16 @@ onready var choices : Node = $Frame/Choices # The container node for the choices
 onready var timer : Node = $Timer # Timer node.
 onready var continue_indicator : Node = $ContinueIndicator # Blinking square displayed when the text is all printed.
 onready var animations : Node = $AnimationPlayer
-onready var sprite_left : Node = $Frame/SpriteLeft
-onready var sprite_right : Node = $Frame/SpriteRight
-onready var name_left : Node = $Frame/NameLeft
-onready var name_right : Node = $Frame/NameRight
+
+# left 
+onready var sprite_left : Node = $Frame/Left/Sprite
+onready var name_left : Node = $Frame/Left/Label
+
+# Right
+onready var sprite_right : Node = $Frame/Right/Sprite
+onready var name_right : Node = $Frame/Right/Label
+onready var bckg_right : Node = $Frame/Right/Background
+
 ## Typewriter effect ##
 var wait_time : float = 0 # Time interval (in seconds) for the typewriter effect. Set to 0 to disable it. 
 var pause_time : float = 2.0 # Duration of each pause when the typewriter effect is active.
@@ -56,8 +62,8 @@ var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' positi
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
 
-var img_size : float = 70
-
+var img_size : float = 50
+var font_size : float = 18
 # Extras #
 #onready var multi_choice_panel = $MultiChoicePanel
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
@@ -127,54 +133,18 @@ func _ready():
 	sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout')
 	set_frame()
 
-
 func _physics_process(_delta):
 	if shaking:
 		sprite.offset = Vector2(rand_range(-1.0, 1.0) * shake_amount, rand_range(-1.0, 1.0) * shake_amount)
 
 
 func set_frame(): # Mostly aligment operations.
-	match frame_position:
-		'top':
-			self.anchor_left = 0.5
-			self.anchor_top = 0
-			self.anchor_right = 0.5
-			self.anchor_bottom = 0
-			self.rect_position = Vector2(400, frame_margin_vertical)
-		'bottom':
-			self.anchor_left = 0.5
-			self.anchor_top = 1
-			self.anchor_right = 0.5
-			self.anchor_bottom = 1
-			self.rect_position = Vector2(0, -(frame_height + frame_margin_vertical))
-	
-	continue_indicator.anchor_left = 0.5
-	continue_indicator.anchor_top = 1
-	continue_indicator.anchor_right = 0.5
-	continue_indicator.anchor_bottom = 1
-	continue_indicator.rect_position = Vector2(-(continue_indicator.get_rect().size.x / 2) - label_margin,
-			frame_height - continue_indicator.get_rect().size.y - label_margin)
-	
-	frame.rect_size = Vector2(frame_width, frame_height)
-	frame.rect_position = Vector2(-frame_width/1.75, 0)
-
-	label.rect_size = Vector2(frame_width - (label_margin * 2), frame_height - (label_margin * 1.5))
-	label.rect_position = Vector2(label_margin, label_margin - 7)
-	
 	frame.hide() # Hide the dialogue frame
 	continue_indicator.hide()
-	
 	sprite_left.modulate = white_transparent
 	sprite_right.modulate = white_transparent
-	
-	
 	name_left.hide()
-#	name_left.position = 'left'
-	#name_left.rect_position.y = name_offset.y
-	
 	name_right.hide()
-#	name_right.position = 'right'
-	#name_right.rect_position.y = name_offset.y
 
 func initiate(file_id, block = 'first'): # Load the whole dialogue into a variable
 	id = file_id
@@ -184,7 +154,6 @@ func initiate(file_id, block = 'first'): # Load the whole dialogue into a variab
 	dialogue = JSON.parse(json).result
 	file.close()
 	first(block) # Call the first dialogue block
-
 #func start_from(file_id, block): # Similar to 
 
 func clean(): # Resets some variables to prevent errors.
@@ -444,19 +413,15 @@ func check_names(block):
 		if block['position'] == 'left':
 			name_left.text = block['name']
 			yield(get_tree(), 'idle_frame')
-			name_left.rect_size.x = 0
-			#name_left.rect_position.x += name_offset.x
 			name_left.set_process(true)
 			name_left.show()
 			name_right.hide()
 		else:
 			name_right.text = block['name']
-			
 			yield(get_tree(), 'idle_frame')
-			name_right.rect_size.x = 0
-			#name_right.rect_position.x = frame_width - name_right.rect_size.x - name_offset.x
 			name_right.set_process(true)
 			name_right.show()
+			bckg_right.show()
 			name_left.hide()
 	else:
 		pass
@@ -497,14 +462,25 @@ func animate_sprite(direction, image, animation):
 	match animation:
 		
 		'shake_weak_short':
+			load_image(sprite, image)
+			tween.interpolate_property(sprite, 'modulate',
+					white_transparent, white_opaque, shake_short*1.25,
+					Tween.TRANS_QUAD, Tween.EASE_IN)
+					
+			tween.start()
 			shake_amount = shake_weak
 			sprite_timer.wait_time = shake_short
 			sprite_timer.start()
 			on_animation = true
 			shaking = true
 			set_physics_process(true)
-			
 		'shake_weak_medium':
+			load_image(sprite, image)
+			tween.interpolate_property(sprite, 'modulate',
+					white_transparent, white_opaque, shake_medium,
+					Tween.TRANS_QUAD, Tween.EASE_IN)
+					
+			tween.start()
 			shake_amount = shake_weak
 			sprite_timer.wait_time = shake_medium
 			sprite_timer.start()
@@ -654,6 +630,7 @@ func load_image(spr, image):
 	var h = spr.texture.get_height()
 	var scl_x = img_size / w
 	var scl_y = img_size / h
+
 	if scl_x > scl_y:
 		spr.scale = Vector2(scl_y, scl_y)
 	else:

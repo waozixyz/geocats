@@ -62,7 +62,6 @@ func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
 			if not chat_with.started:
-				player.disable()
 				_add_audio("NPC", music_file)
 				chat_with.start(convo_file)
 			if nft_possible:

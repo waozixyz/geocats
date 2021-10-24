@@ -24,7 +24,6 @@ func _ready():
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
-	hp_bar.visible = false
 
 
 var shoot_rock
@@ -78,7 +77,6 @@ func _phase_two():
 			player.enable()
 			boulder_fall = false
 			phase = 3
-			hp_bar.visible = true
 	
 func _pre_chat():
 	if not player.disabled:
@@ -95,13 +93,11 @@ func _phase_three():
 	if enemy.hp <= 40:
 		_pre_chat()
 		chat_with.start("norna_wyrd_caves_1", true, false)
-		hp_bar.visible = false
 		phase = 4
 		# bug notproceeding
 
 func _phase_four():
 	if not chat_with.started and player.disabled:
-		hp_bar.visible = true
 		player.enable()
 		chat_with.visible = false
 		enemy.vulnerable = true
@@ -112,7 +108,6 @@ func _phase_four():
 	if enemy.hp <= 0:
 		_pre_chat()
 		chat_with.start("norna_wyrd_caves_2", true, false)
-		hp_bar.visible = false
 		phase = 5
 
 func _phase_five():
@@ -129,7 +124,6 @@ func _phase_six():
 		enemy.disable_colliders()
 		defeated = true
 		PROGRESS.variable["CavesBattleDefeated"] = true
-		hp_bar.visible = false
 		player.enable()
 		
 func _process(delta):
@@ -138,7 +132,7 @@ func _process(delta):
 		player.on_ladder = true
 	start_ticker += 1
 	affogato.visible = false
-	if not defeated:
+	if not defeated and global.data.player_hp > 0:
 		if phase == 1:
 			_phase_one()
 		elif phase == 2:
@@ -151,4 +145,10 @@ func _process(delta):
 			_phase_five()
 		elif phase == 6:
 			_phase_six()
-		
+		if not chat_with.started and phase > 2:
+			hp_bar.visible = true
+		else:
+			hp_bar.visible = false
+	else:
+		hp_bar.visible = false
+

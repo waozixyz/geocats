@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/UI/Dialogue/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=2]
@@ -31,15 +31,6 @@ font_data = SubResource( 2 )
 [sub_resource type="StyleBoxTexture" id=4]
 region_rect = Rect2( 0, 0, 21, 26 )
 
-[sub_resource type="DynamicFontData" id=5]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = SubResource( 5 )
-
-[sub_resource type="StreamTexture" id=7]
-
 [node name="Dialogue" type="Control"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -56,9 +47,59 @@ anims/Continue_Indicator = SubResource( 1 )
 [node name="SpriteTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Frame" type="TextureRect" parent="."]
+[node name="Frame" type="Control" parent="."]
+margin_left = 6.0
+margin_top = 12.0
+margin_right = 628.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Frame"]
+margin_left = 84.0
+margin_right = 626.0
+margin_bottom = 95.0
 texture = ExtResource( 4 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Control" parent="Frame"]
+margin_right = 80.0
+margin_bottom = 93.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Frame/Left"]
+margin_right = 21.0
+margin_bottom = 26.0
+rect_scale = Vector2( 4, 3.66 )
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Frame/Left"]
+position = Vector2( 40, 40 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.614565, 0.211254 )
+
+[node name="Label" type="Label" parent="Frame/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_fonts/font = SubResource( 3 )
+text = "Name 1"
+align = 1
+valign = 2
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -68,32 +109,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Frame"]
-margin_left = -84.0
-margin_right = -63.0
-margin_bottom = 26.0
-rect_scale = Vector2( 4, 3.66 )
-texture = ExtResource( 5 )
-expand = true
+[node name="Right" type="Control" parent="Frame"]
+margin_left = 542.0
+margin_right = 582.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpriteLeft" type="Sprite" parent="Frame"]
-position = Vector2( -46.1744, 38.113 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 3 )
-offset = Vector2( 0.614565, 0.211254 )
+[node name="Background" type="TextureRect" parent="Frame/Right"]
+visible = false
+margin_right = 21.0
+margin_bottom = 26.0
+rect_scale = Vector2( 4, 3.66 )
+texture = ExtResource( 5 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="NameLeft" type="Label" parent="Frame"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -81.1155
-margin_top = -43.0
-margin_right = -0.115494
-margin_bottom = -7.0
+[node name="Label" type="Label" parent="Frame/Right"]
+anchor_left = -0.000782473
+anchor_right = -0.000782473
+margin_left = 0.625903
+margin_top = -0.594604
+margin_right = 84.6259
+margin_bottom = 94.4054
 size_flags_horizontal = 15
 size_flags_vertical = 15
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 3 )
 text = "Name 1"
 align = 1
@@ -102,27 +147,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NameRight" type="Label" parent="Frame"]
-anchor_left = -0.000782473
-anchor_right = -0.000782473
-margin_left = 575.12
-margin_right = 640.12
-margin_bottom = 85.0
-size_flags_horizontal = 15
-size_flags_vertical = 15
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 6 )
-text = "Name 1"
-align = 1
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SpriteRight" type="Sprite" parent="Frame"]
-position = Vector2( 580.927, 16 )
+[node name="Sprite" type="Sprite" parent="Frame/Right"]
+position = Vector2( 5.91998, 16 )
 scale = Vector2( 5, 5 )
-texture = SubResource( 7 )
+texture = ExtResource( 3 )
 centered = false
 flip_h = true
 
@@ -131,10 +159,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 20.5
-margin_top = -13.0
-margin_right = 553.5
-margin_bottom = 75.0
+margin_left = -216.0
+margin_top = -36.0
+margin_right = 222.0
+margin_bottom = 44.0
 focus_mode = 2
 custom_fonts/mono_font = ExtResource( 2 )
 custom_fonts/bold_italics_font = ExtResource( 2 )
@@ -151,8 +179,10 @@ __meta__ = {
 }
 
 [node name="ContinueIndicator" type="ColorRect" parent="."]
-margin_right = 6.0
-margin_bottom = 6.0
+margin_left = 536.448
+margin_top = 92.6732
+margin_right = 542.448
+margin_bottom = 98.6732
 __meta__ = {
 "_edit_use_anchors_": false
 }
