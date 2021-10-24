@@ -151,7 +151,7 @@ material = SubResource( 2 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 2
+frame = 33
 playing = true
 
 [node name="Timers" type="Node2D" parent="."]

@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
+
 onready var sprite = $Sprite
 onready var particles = $Particles
 
@@ -10,7 +12,7 @@ export var breakable = true
 func damage(dmg):
 	hp -= dmg
 	sprite.modulate = Color(2, 0, 0)
-
+	camera.shake = 10
 func _ready():
 	particles.visible = false
 
@@ -37,8 +39,10 @@ func _process(delta):
 				tween.start()
 			shot_particles = true
 	else:
-		var frame = total_frames - hp * 0.01 * total_frames
-		sprite.frame = int(frame) 
+		var frame = int(total_frames - hp * 0.01 * total_frames)
+		if frame == total_frames and not breakable:
+			frame -= 1
+		sprite.frame = frame
 
 	if particles.get_node("0").modulate.a <= 0:
 		remove_child(self)

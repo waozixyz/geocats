@@ -74,6 +74,7 @@ func _phase_two():
 			boulder.get_node("Sprite").rotation_degrees += 2
 			boulder.position.y += 1
 		else:
+			camera.shake = 6
 			player.enable()
 			boulder_fall = false
 			phase = 3

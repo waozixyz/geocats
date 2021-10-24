@@ -5,11 +5,10 @@ extends Camera2D
 # var a = 2
 # var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
+var shake : int = 0
+var shake_direction : int = 1
 func _process(delta):
-	pass
+	if shake > 0:
+		shake_direction *= -1
+		offset.x += 5 * shake_direction
+		shake -= delta
