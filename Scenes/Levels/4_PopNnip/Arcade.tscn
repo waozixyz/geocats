@@ -357,7 +357,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 5
+frame = 6
 playing = true
 centered = false
 
@@ -560,7 +560,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 32
+frame = 33
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0

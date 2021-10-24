@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/fg_entrance_city.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/3_GeoCity.gd" type="Script" id=21]
+[ext_resource path="res://Assets/Levels/3_GeoCity/Cats/garbitage.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/big_pumpkin_spritesheet.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/moon.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/medium_pumpkin_sptritesheet.png" type="Texture" id=25]
@@ -203,12 +204,12 @@ extents = Vector2( 33.2397, 28.051 )
 extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 18 )
-region = Rect2( 11, 0, 11, 7 )
+atlas = ExtResource( 22 )
+region = Rect2( 60, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
+atlas = ExtResource( 22 )
+region = Rect2( 75, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 18 )
@@ -255,39 +256,59 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 24, 16 )
 
-[sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 9, 460.003 )
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 22 )
+region = Rect2( 45, 0, 15, 12 )
 
-[sub_resource type="RectangleShape2D" id=58]
-extents = Vector2( 61.5852, 58.9592 )
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 22 )
+region = Rect2( 60, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 23 )
-region = Rect2( 0, 54, 50, 54 )
+atlas = ExtResource( 22 )
+region = Rect2( 75, 0, 15, 12 )
 
-[sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 23 )
-region = Rect2( 50, 54, 50, 54 )
+[sub_resource type="SpriteFrames" id=60]
+animations = [ {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
-[sub_resource type="AtlasTexture" id=61]
+[sub_resource type="RectangleShape2D" id=61]
+extents = Vector2( 9, 460.003 )
+
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 61.5852, 58.9592 )
+
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 0, 50, 54 )
 
-[sub_resource type="AtlasTexture" id=62]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 23 )
 region = Rect2( 50, 0, 50, 54 )
 
-[sub_resource type="SpriteFrames" id=63]
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 23 )
+region = Rect2( 50, 54, 50, 54 )
+
+[sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 60 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 60 ), SubResource( 59 ), SubResource( 59 ), SubResource( 60 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
-"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 61 ), SubResource( 62 ), SubResource( 62 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ), SubResource( 62 ), SubResource( 62 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ), SubResource( 61 ) ],
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [node name="GeoCity" type="Node2D"]
@@ -306,7 +327,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 12
+frame = 7
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -341,14 +362,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 20
+frame = 26
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 32
+frame = 18
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -701,29 +722,17 @@ collision_mask = 2
 position = Vector2( 27, 33 )
 shape = SubResource( 56 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="NPC/Garbitage"]
-margin_right = 75.0
-margin_bottom = 60.0
-rect_pivot_offset = Vector2( 22.5, 12.5 )
-mouse_filter = 2
-stretch = true
-stretch_shrink = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="NPC/Garbitage/ViewportContainer"]
-size = Vector2( 15, 12 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="Area2DGarbitage" type="Area2D" parent="NPC/Garbitage"]
+[node name="Area2D" type="Area2D" parent="NPC/Garbitage"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage/Area2DGarbitage"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage/Area2D"]
 position = Vector2( 39, 33 )
 shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Garbitage"]
+position = Vector2( 30, 31 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 60 )
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 4337.13, 710.159 )
@@ -733,7 +742,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-shape = SubResource( 57 )
+shape = SubResource( 61 )
 
 [node name="Ladder2" type="Area2D" parent="."]
 position = Vector2( 721.176, 540.31 )
@@ -743,7 +752,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
-shape = SubResource( 57 )
+shape = SubResource( 61 )
 
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
@@ -755,7 +764,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 32
+frame = 0
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -774,13 +783,13 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiantPumpkin"]
-shape = SubResource( 58 )
+shape = SubResource( 62 )
 
 [node name="Giant_Pumpkin" type="AnimatedSprite" parent="GiantPumpkin"]
 scale = Vector2( 2, 2 )
-frames = SubResource( 63 )
+frames = SubResource( 67 )
 animation = "Sad"
-frame = 10
+frame = 2
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]

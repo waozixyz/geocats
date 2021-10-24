@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/Player/StateAir.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Player/StateWallSlide.gd" type="Script" id=18]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=22]
 code = "shader_type canvas_item;
 
 uniform bool dmg;
@@ -27,8 +27,8 @@ void fragment() {
     COLOR = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=23]
+shader = SubResource( 22 )
 shader_param/dmg = false
 
 [sub_resource type="AtlasTexture" id=3]
@@ -147,7 +147,7 @@ limit_top = 0
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 23 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
