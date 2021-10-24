@@ -6,7 +6,6 @@ onready var sprite = $Body/AnimatedSprite
 onready var eyes = $Eyes
 onready var boulder = get_parent().get_node("Boulder")
 onready var bullet = $Bullet
-onready var laser_explosion = $LaserExplosion
 
 onready var ears = get_parent().get_node("Ears")
 onready var beam = $Beam

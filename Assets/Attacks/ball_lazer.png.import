@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CaveBoulder.png-d5f13db0896e9217491420aba0ec1d24.stex"
+path="res://.import/ball_lazer.png-946998588e91b4e8397e1fb5098a430f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/9_Caves/Battle/CaveBoulder.png"
-dest_files=[ "res://.import/CaveBoulder.png-d5f13db0896e9217491420aba0ec1d24.stex" ]
+source_file="res://Assets/Attacks/ball_lazer.png"
+dest_files=[ "res://.import/ball_lazer.png-946998588e91b4e8397e1fb5098a430f.stex" ]
 
 [params]
 

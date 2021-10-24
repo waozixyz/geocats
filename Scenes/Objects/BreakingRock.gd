@@ -1,9 +1,11 @@
 extends StaticBody2D
 
-onready var boulder = get_parent().get_node("Boulder")
-onready var sprite = $AnimatedSprite
+onready var sprite = $Sprite
 onready var particles = $Particles
-var hp = 100
+
+export var hp = 100
+export var total_frames = 5
+export var breakable = true
 
 func damage(dmg):
 	hp -= dmg
@@ -22,9 +24,8 @@ func _process(delta):
 	if color.b <1:
 		color.b += .1
 	sprite.modulate = color
-	var total = sprite.get_sprite_frames().get_frame_count("default")
 
-	if hp <= 0:
+	if hp <= 0 and breakable:
 		if not shot_particles:
 			particles.visible = true
 			for particle in particles.get_children():
@@ -36,7 +37,9 @@ func _process(delta):
 				tween.start()
 			shot_particles = true
 	else:
-		var frame = 5 - (hp * 0.01 * total) / total * total
-		sprite.frame = floor(frame)
+		var frame = total_frames - hp * 0.01 * total_frames
+		sprite.frame = int(frame) 
+
 	if particles.get_node("0").modulate.a <= 0:
 		remove_child(self)
+

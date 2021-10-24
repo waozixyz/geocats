@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ball_laser.png-055e26707ab3c092dc834363dba10b07.stex"
+path="res://.import/long_lazer.png-b50ce985e2b2286d3829f8ac87a1e913.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Attacks/ball_laser.png"
-dest_files=[ "res://.import/ball_laser.png-055e26707ab3c092dc834363dba10b07.stex" ]
+source_file="res://Assets/Attacks/long_lazer.png"
+dest_files=[ "res://.import/long_lazer.png-b50ce985e2b2286d3829f8ac87a1e913.stex" ]
 
 [params]
 

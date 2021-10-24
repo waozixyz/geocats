@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laser_explosion.png-1126601fcfabae138824d71bfa44ab4d.stex"
+path="res://.import/BoulderCrackSpriteSheet.png-5b9316f7e4e30c37eca8d6366453f988.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Attacks/laser_explosion.png"
-dest_files=[ "res://.import/laser_explosion.png-1126601fcfabae138824d71bfa44ab4d.stex" ]
+source_file="res://Assets/Levels/9_Caves/Battle/BoulderCrackSpriteSheet.png"
+dest_files=[ "res://.import/BoulderCrackSpriteSheet.png-5b9316f7e4e30c37eca8d6366453f988.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -20,28 +20,32 @@
 [ext_resource path="res://Scenes/UI/Interact/InteractMain.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Levels/9_Caves/Enemy.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Agents/NornaWyrd/eyes.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Levels/9_Caves/Battle/CaveBoulder.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/9_Caves/Battle/BoulderCrackSpriteSheet.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Slime.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/Levels/9_Caves/Ceiling.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/Objects/BreakingRock.gd" type="Script" id=23]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/CaveCeilingPieces.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Agents/NornaWyrd/ears.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/Levels/9_Caves/Bullet.gd" type="Script" id=26]
-[ext_resource path="res://Assets/Attacks/ball_laser.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Attacks/ball_lazer.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Levels/9_Caves/Ears.gd" type="Script" id=28]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=29]
 [ext_resource path="res://Assets/Attacks/beam_spritesheet.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/ceiling.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/Levels/9_Caves/Beam.gd" type="Script" id=32]
 [ext_resource path="res://Assets/Sfx/Bckg/BossBattle_FleshedOut.ogg" type="AudioStream" id=33]
-[ext_resource path="res://Assets/Attacks/medium_laser.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Attacks/medium_lazer.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=35]
 [ext_resource path="res://Scenes/Objects/Water/Water.gd" type="Script" id=36]
+[ext_resource path="res://Assets/Levels/9_Caves/Battle/BoulderPieceSpriteSheet.png" type="Texture" id=38]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 118.098 )
+
+[sub_resource type="CircleShape2D" id=79]
+radius = 22.1312
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 6 )
@@ -407,75 +411,44 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 65.5238, 3.97182 )
 
-[sub_resource type="CircleShape2D" id=79]
-radius = 22.1312
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 31 )
-region = Rect2( 0, 0, 52, 38 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 31 )
-region = Rect2( 52, 0, 52, 38 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 31 )
-region = Rect2( 0, 38, 52, 38 )
-
-[sub_resource type="AtlasTexture" id=83]
-atlas = ExtResource( 31 )
-region = Rect2( 52, 38, 52, 38 )
-
-[sub_resource type="AtlasTexture" id=84]
-atlas = ExtResource( 31 )
-region = Rect2( 0, 76, 52, 38 )
-
-[sub_resource type="SpriteFrames" id=85]
-animations = [ {
-"frames": [ SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
-"loop": false,
-"name": "default",
-"speed": 1.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=86]
+[sub_resource type="CapsuleShape2D" id=80]
 radius = 45.0
 height = 60.0
 
-[sub_resource type="AtlasTexture" id=87]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 334, 26 )
 
-[sub_resource type="AtlasTexture" id=88]
+[sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 26, 334, 26 )
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 52, 334, 26 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 78, 334, 26 )
 
-[sub_resource type="SpriteFrames" id=91]
+[sub_resource type="SpriteFrames" id=85]
 animations = [ {
-"frames": [ SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ) ],
+"frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=92]
+[sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 683.474, 29.2025 )
 
-[sub_resource type="RectangleShape2D" id=93]
+[sub_resource type="RectangleShape2D" id=87]
 extents = Vector2( 63.9928, 29.2025 )
 
-[sub_resource type="RectangleShape2D" id=94]
+[sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 18.0491, 29.2025 )
 
-[sub_resource type="StyleBoxFlat" id=95]
+[sub_resource type="StyleBoxFlat" id=89]
 bg_color = Color( 0.403922, 0, 0, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -487,7 +460,7 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="StyleBoxFlat" id=96]
+[sub_resource type="StyleBoxFlat" id=90]
 bg_color = Color( 0.403922, 0, 0, 0 )
 border_width_left = 1
 border_width_top = 1
@@ -531,31 +504,95 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBattle"]
 shape = SubResource( 2 )
 
-[node name="BelowPlayer" type="Node2D" parent="."]
+[node name="Background" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
-
-[node name="Background" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Mushrooms" type="Node2D" parent="BelowPlayer"]
+[node name="Boulder" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 385, -142 )
+scale = Vector2( 4.3, 4.3 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 23 )
+breakable = false
 
-[node name="Mushroom1" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Sprite" type="Sprite" parent="Boulder"]
+position = Vector2( 23, 22 )
+texture = ExtResource( 21 )
+hframes = 3
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boulder"]
+visible = false
+position = Vector2( 22.1311, 22.1311 )
+shape = SubResource( 79 )
+
+[node name="Particles" type="Node2D" parent="Boulder"]
+visible = false
+
+[node name="0" type="Sprite" parent="Boulder/Particles"]
+position = Vector2( 23.7778, 34.6667 )
+texture = ExtResource( 38 )
+hframes = 3
+vframes = 2
+
+[node name="1" type="Sprite" parent="Boulder/Particles"]
+position = Vector2( 10.7991, 31.5556 )
+texture = ExtResource( 38 )
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="2" type="Sprite" parent="Boulder/Particles"]
+position = Vector2( 9.82217, 17.507 )
+texture = ExtResource( 38 )
+hframes = 3
+vframes = 2
+frame = 2
+
+[node name="3" type="Sprite" parent="Boulder/Particles"]
+position = Vector2( 23.9089, 11.5707 )
+texture = ExtResource( 38 )
+hframes = 3
+vframes = 2
+frame = 3
+
+[node name="4" type="Sprite" parent="Boulder/Particles"]
+position = Vector2( 33.8571, 23.5563 )
+texture = ExtResource( 38 )
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="5" type="Sprite" parent="Boulder/Particles"]
+position = Vector2( 90.715, -7.21262 )
+texture = ExtResource( 38 )
+hframes = 3
+vframes = 2
+frame = 5
+
+[node name="Mushrooms" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
+
+[node name="Mushroom1" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 9, 193 )
 script = ExtResource( 16 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom1"]
 frames = SubResource( 6 )
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom1"]
 position = Vector2( 6, -4.25 )
 polygon = PoolVector2Array( 15.5, 5.25, 21.75, 6, 29, 8.25, 39, 15.25, 42.75, 22, 45.25, 30.75, 41.75, 34.5, 42, 28.75, 38.5, 23.25, 34.75, 20.25, 30, 12.5, 21.5, 9, 13.75, 7.5 )
 one_way_collision = true
 
-[node name="Mushroom2" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom2" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 5, 140 )
@@ -564,15 +601,15 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom2"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom2"]
 frames = SubResource( 10 )
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom2"]
 polygon = PoolVector2Array( 12.25, 3.25, 17, 0.25, 19.25, 0.5, 22.5, 3.5 )
 one_way_collision = true
 
-[node name="Mushroom3" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom3" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 5, 151 )
@@ -581,15 +618,15 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom3"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom3"]
 frames = SubResource( 13 )
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom3"]
 polygon = PoolVector2Array( 14.5, 1, 18.75, 1, 18.75, 3.75 )
 one_way_collision = true
 
-[node name="Mushroom4" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom4" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 313, 155.2 )
@@ -601,16 +638,16 @@ regen_time = 30
 speed = 0.8
 jump_multiplier = 3.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom4"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom4"]
 frames = SubResource( 17 )
 frame = 2
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom4"]
 polygon = PoolVector2Array( 2, 8.8, 4, 5.3, 10.25, 3.8, 17.75, 2.05, 21.25, 3.55, 21.75, 4.8, 17.5, 2.8, 4.75, 6.05 )
 one_way_collision = true
 
-[node name="Mushroom5" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom5" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 170.6, 193.4 )
@@ -622,17 +659,17 @@ __meta__ = {
 }
 jump_multiplier = 2.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom5"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom5"]
 frames = SubResource( 21 )
 frame = 2
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom5"]
 position = Vector2( 0, 1.25 )
 polygon = PoolVector2Array( 1.52588e-05, 8.8, 12.2, 0.200012, 23, 0, 34.9, 5.59999, 23.4, 0.849991, 12.65, 1.34999 )
 one_way_collision = true
 
-[node name="Mushroom6" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom6" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 275.8, 216.4 )
@@ -643,17 +680,17 @@ __meta__ = {
 regen_time = 10
 jump_multiplier = 2.5
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom6"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom6"]
 frames = SubResource( 25 )
 frame = 2
 playing = true
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom6"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom6"]
 polygon = PoolVector2Array( 2.20001, 4.60001, 7.70001, 1.60001, 10.45, 1.85001, 11.2, 3.60001, 10.2, 2.35001, 7.95001, 1.85001 )
 one_way_collision = true
 
-[node name="Mushroom7" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom7" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 104.8, 140.8 )
@@ -663,15 +700,15 @@ __meta__ = {
 }
 jump_multiplier = 1.5
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom7"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom7"]
 frames = SubResource( 32 )
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom7"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom7"]
 polygon = PoolVector2Array( 6.7, 2.45, 19.45, 0.199997, 35.2, 3.7, 39.7, 7.7, 33.2, 4.2, 19.7, 1.95 )
 one_way_collision = true
 
-[node name="Mushroom8" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom8" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 219.75, 93 )
@@ -680,15 +717,15 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom8"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom8"]
 frames = SubResource( 36 )
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom8"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom8"]
 polygon = PoolVector2Array( 0.75, 8.25, 11.25, 1, 22.75, 0.75, 31.5, 7.25, 21.75, 2, 11.5, 2 )
 one_way_collision = true
 
-[node name="Mushroom9" type="StaticBody2D" parent="BelowPlayer/Mushrooms" groups=[
+[node name="Mushroom9" type="StaticBody2D" parent="Mushrooms" groups=[
 "mushroom",
 ]]
 position = Vector2( 146, 212.2 )
@@ -698,14 +735,14 @@ __meta__ = {
 }
 jump_multiplier = 1.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Mushrooms/Mushroom9"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mushrooms/Mushroom9"]
 position = Vector2( 6.56001, 6.10287 )
 scale = Vector2( 0.745714, 0.745714 )
 frames = SubResource( 25 )
 centered = false
 flip_h = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BelowPlayer/Mushrooms/Mushroom9"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mushrooms/Mushroom9"]
 polygon = PoolVector2Array( 6.5, 8.8, 10.25, 5.8, 15.5, 7.3, 16.75, 8.8, 11.75, 6.8 )
 one_way_collision = true
 
@@ -882,42 +919,24 @@ position = Vector2( 194.031, -11 )
 limit_right = 1400
 limit_bottom = 1000
 
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 5
-
-[node name="Boulder" type="StaticBody2D" parent="." groups=[
-"end",
-]]
-position = Vector2( 385, -142 )
-scale = Vector2( 4.5, 4.5 )
-collision_layer = 7
-collision_mask = 7
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Boulder"]
-position = Vector2( 22.8688, 23.6066 )
-texture = ExtResource( 21 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boulder"]
-position = Vector2( 22.1311, 22.1311 )
-shape = SubResource( 79 )
-
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
 collision_layer = 7
 collision_mask = 7
 script = ExtResource( 23 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Ceiling"]
+[node name="Sprite" type="Sprite" parent="Ceiling"]
+position = Vector2( 0, 1 )
 scale = Vector2( 4.05769, 4 )
-frames = SubResource( 85 )
+texture = ExtResource( 31 )
+hframes = 2
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+visible = false
 position = Vector2( -8, -55 )
 rotation = 1.5708
-shape = SubResource( 86 )
+shape = SubResource( 80 )
 
 [node name="Particles" type="Node2D" parent="Ceiling"]
 scale = Vector2( 4, 4 )
@@ -986,7 +1005,8 @@ __meta__ = {
 
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
-frames = SubResource( 91 )
+frames = SubResource( 85 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1012,23 +1032,23 @@ slime = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SilmeArea"]
 position = Vector2( 697.86, 964 )
-shape = SubResource( 92 )
+shape = SubResource( 86 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SilmeArea"]
 position = Vector2( 1335.91, 928.1 )
-shape = SubResource( 93 )
+shape = SubResource( 87 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="SilmeArea"]
 position = Vector2( 951.15, 944.8 )
-shape = SubResource( 93 )
+shape = SubResource( 87 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="SilmeArea"]
 position = Vector2( 1168.75, 944.8 )
-shape = SubResource( 93 )
+shape = SubResource( 87 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="SilmeArea"]
 position = Vector2( 48, 944.8 )
-shape = SubResource( 94 )
+shape = SubResource( 88 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
@@ -1060,7 +1080,7 @@ margin_top = 40.0
 margin_right = 514.0
 margin_bottom = 52.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 95 )
+custom_styles/panel = SubResource( 89 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1071,7 +1091,7 @@ margin_top = 40.0
 margin_right = 514.0
 margin_bottom = 52.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 96 )
+custom_styles/panel = SubResource( 90 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

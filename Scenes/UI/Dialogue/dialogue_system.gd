@@ -56,6 +56,7 @@ var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' positi
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
 
+var img_size : float = 70
 
 # Extras #
 #onready var multi_choice_panel = $MultiChoicePanel
@@ -410,7 +411,6 @@ func next():
 		label.visible_characters = -1 # -1 tells the RichTextLabel to show all the characters.
 	
 	if next_step == '': # Doesn't have a 'next' block.
-		player.enable()
 		if current.has('animation_out'):
 			animate_sprite(current['position'], current['avatar'], current['animation_out'])
 			yield(tween, "tween_completed")
@@ -423,6 +423,7 @@ func next():
 		frame.hide() 
 		avatar_left = ''
 		avatar_right = ''
+		exit()
 	else:
 		label.bbcode_text = ''
 		if choices.get_child_count() > 0: # If has choices, remove them.
@@ -648,21 +649,16 @@ func animate_sprite(direction, image, animation):
 
 func load_image(spr, image):
 	spr.texture = load('%s%s' % [characters_folder, image])
-	
-	var w = spr.texture.get_width()
-	if w > 100:
-		spr.scale = Vector2(.5,.5)
-	elif w > 40:
-		spr.scale = Vector2(1.5, 1.5)
-	elif w > 16: # 20 was original, 18 could work too
-		spr.scale = Vector2(2.8, 2.8)
-	elif w > 14:
-		spr.scale = Vector2(5,5)
-	elif w > 9:
-		spr.scale = Vector2(7,7)
-	else:
-		spr.scale = Vector2(10,10)
 
+	var w = spr.texture.get_width()
+	var h = spr.texture.get_height()
+	var scl_x = img_size / w
+	var scl_y = img_size / h
+	if scl_x > scl_y:
+		spr.scale = Vector2(scl_y, scl_y)
+	else:
+		spr.scale = Vector2(scl_x, scl_x)
+	
 func question(_text, options, _next):
 	check_pauses(label.get_text())
 	var n = 0 # Just a looping var.

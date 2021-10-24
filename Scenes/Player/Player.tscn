@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Objects/Water/Waves.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Player/StateJump.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Player/StateWalk.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Player/StateDoubleJump.gd" type="Script" id=9]
@@ -48,47 +49,47 @@ region = Rect2( 15, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 30, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 30, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 30, 15, 15 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 30, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 30, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 45, 15, 15, 15 )
+region = Rect2( 15, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 30, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 0, 15, 15 )
+region = Rect2( 15, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 0, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 0, 30, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -97,30 +98,30 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 7 ), SubResource( 8 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ), SubResource( 8 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "slide_wall",
-"speed": 12.0
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
 "loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ) ],
-"loop": true,
-"name": "crouch",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
+"name": "slide_wall",
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
@@ -143,13 +144,14 @@ __meta__ = {
 current = true
 limit_left = 0
 limit_top = 0
+script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 2 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 12
+frame = 2
 playing = true
 
 [node name="Timers" type="Node2D" parent="."]

@@ -13,7 +13,6 @@ var water_sub : String = "water"
 var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 
-
 onready var floor_timer : Timer = $Timers/FloorTimer
 onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
@@ -109,12 +108,13 @@ func _physics_process(delta):
 	move()
 	var hp = global.data.player_hp
 	if hp < 100:
-		hp += 0.1
+		hp += 0.06 * (delta * 60)
+
 	if underwater and water_sub == "slime":
-		hp -= .6
+		hp -= .6 * (delta * 60)
 	global.data.player_hp = hp
 	if sprite.material.get_shader_param("dmg"):
-		dmg_blink += 1
+		dmg_blink += 1 * (delta * 60)
 		if dmg_blink >= 15:
 			sprite.material.set_shader_param("dmg", false)
 			dmg_blink = 0
