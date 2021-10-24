@@ -625,11 +625,13 @@ func animate_sprite(direction, image, animation):
 
 func load_image(spr, image):
 	spr.texture = load('%s%s' % [characters_folder, image])
-
+	var size = img_size
 	var w = spr.texture.get_width()
 	var h = spr.texture.get_height()
-	var scl_x = img_size / w
-	var scl_y = img_size / h
+	if w > 60:
+		size += 20
+	var scl_x = size / w
+	var scl_y = size / h
 
 	if scl_x > scl_y:
 		spr.scale = Vector2(scl_y, scl_y)
