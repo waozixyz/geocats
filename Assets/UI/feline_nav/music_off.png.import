@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fe_line.png-1f73349ba4b96b5cf4f270e4f4867f33.stex"
+path="res://.import/music_off.png-ddc632608a4d94864d73276f27459bd3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/feline_nav/fe_line.png"
-dest_files=[ "res://.import/fe_line.png-1f73349ba4b96b5cf4f270e4f4867f33.stex" ]
+source_file="res://Assets/UI/feline_nav/music_off.png"
+dest_files=[ "res://.import/music_off.png-ddc632608a4d94864d73276f27459bd3.stex" ]
 
 [params]
 

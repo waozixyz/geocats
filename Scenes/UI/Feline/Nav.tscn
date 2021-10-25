@@ -1,18 +1,21 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=1]
-[ext_resource path="res://Assets/UI/feline_nav/feline_icons.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/feline_nav/exit_hover.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/feline_nav/feline_base.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/Feline/Nav.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/feline_nav/feline_expressions.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UI/feline_nav/music_spritesheet.png" type="Texture" id=6]
-[ext_resource path="res://Assets/UI/feline_nav/exit_spritesheet.png" type="Texture" id=7]
-[ext_resource path="res://Assets/UI/feline_nav/sfx_spritesheet.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/feline_nav/sfx_on.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/feline_nav/sfx_off.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UI/feline_buttons.tres" type="Theme" id=9]
 [ext_resource path="res://Assets/UI/feline_nav/maps.png" type="Texture" id=10]
 [ext_resource path="res://Assets/UI/feline_nav/ribbon.png" type="Texture" id=11]
 [ext_resource path="res://Assets/UI/feline_nav/home.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/feline_nav/return.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/feline_nav/exit_off.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UI/feline_nav/exit_on.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UI/feline_nav/music_off.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UI/feline_nav/music_on.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -76,7 +79,7 @@ __meta__ = {
 margin_left = 129.0
 margin_top = 115.0
 margin_right = 511.0
-margin_bottom = 134.0
+margin_bottom = 151.0
 color = Color( 0.392157, 0.666667, 0.380392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -84,9 +87,9 @@ __meta__ = {
 
 [node name="Background3" type="ColorRect" parent="."]
 margin_left = 129.0
-margin_top = 133.0
+margin_top = 151.0
 margin_right = 511.0
-margin_bottom = 136.0
+margin_bottom = 154.0
 color = Color( 0.156863, 0.333333, 0.164706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,11 +104,11 @@ vframes = 3
 frame = 1
 
 [node name="Icons" type="TextureRect" parent="."]
+visible = false
 margin_left = -270.0
 margin_top = 48.0
 margin_right = 370.0
 margin_bottom = 528.0
-texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -222,8 +225,14 @@ shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Icons/Exit"]
 position = Vector2( -0.119995, 0 )
-texture = ExtResource( 7 )
 hframes = 2
+
+[node name="TextureButton" type="TextureButton" parent="Icons/Exit/Sprite"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Mute" type="Area2D" parent="Icons"]
 position = Vector2( 920, 450 )
@@ -245,7 +254,6 @@ shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Icons/Mute"]
 scale = Vector2( 1.11111, 1.11111 )
-texture = ExtResource( 8 )
 hframes = 2
 
 [node name="Music" type="Area2D" parent="Icons"]
@@ -267,12 +275,11 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Icons/Music"]
-texture = ExtResource( 6 )
 hframes = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 margin_left = 191.0
-margin_top = 136.0
+margin_top = 154.0
 margin_right = 231.0
 margin_bottom = 352.0
 texture = ExtResource( 11 )
@@ -284,9 +291,9 @@ __meta__ = {
 
 [node name="Map" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 136.0
+margin_top = 154.0
 margin_right = 512.0
-margin_bottom = 208.0
+margin_bottom = 220.0
 theme = ExtResource( 9 )
 text = "Map"
 icon = ExtResource( 10 )
@@ -298,9 +305,9 @@ __meta__ = {
 
 [node name="Home" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 208.0
+margin_top = 220.0
 margin_right = 512.0
-margin_bottom = 280.0
+margin_bottom = 286.0
 theme = ExtResource( 9 )
 text = "Home"
 icon = ExtResource( 12 )
@@ -312,7 +319,7 @@ __meta__ = {
 
 [node name="Return" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 280.0
+margin_top = 286.0
 margin_right = 512.0
 margin_bottom = 352.0
 theme = ExtResource( 9 )
@@ -333,5 +340,54 @@ expand = true
 stretch_mode = 6
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 470.0
+margin_top = 120.0
+margin_right = 495.0
+margin_bottom = 145.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="TextureButton" parent="."]
+margin_left = 443.608
+margin_top = 120.0
+margin_right = 468.608
+margin_bottom = 145.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="TextureButton" parent="."]
+margin_left = 418.0
+margin_top = 120.0
+margin_right = 443.0
+margin_bottom = 145.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="News" type="Label" parent="."]
+margin_left = 137.0
+margin_top = 121.0
+margin_right = 577.0
+margin_bottom = 147.0
+theme = ExtResource( 9 )
+text = "Breaking news: green cat..s ate all the catnip"
+percent_visible = 0.589744
+__meta__ = {
 "_edit_use_anchors_": false
 }
