@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/feline_nav/feline_icons.png" type="Texture" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://Assets/UI/feline_nav/music_spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/feline_nav/exit_spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/feline_nav/sfx_spritesheet.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/UI/feline_buttons.tres" type="Theme" id=9]
+[ext_resource path="res://Assets/UI/feline_nav/maps.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/feline_nav/ribbon.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/feline_nav/home.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/feline_nav/return.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -17,10 +22,10 @@ size = 102
 font_data = SubResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 364.184, 68.0394 )
+extents = Vector2( 363.333, 63.3333 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 42.8969, 43.563 )
+extents = Vector2( 43.2133, 43.563 )
 
 [sub_resource type="GDScript" id=5]
 script/source = "extends Area2D
@@ -57,35 +62,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Base" type="Sprite" parent="."]
-visible = false
-position = Vector2( 165.036, 71.6721 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 3 )
-centered = false
+[node name="Background" type="ColorRect" parent="."]
+margin_left = 129.0
+margin_top = 115.0
+margin_right = 511.0
+margin_bottom = 352.0
+color = Color( 0.517647, 0.788235, 0.533333, 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
-[node name="Eyes" type="Sprite" parent="Base"]
+[node name="Background2" type="ColorRect" parent="."]
+margin_left = 129.0
+margin_top = 115.0
+margin_right = 511.0
+margin_bottom = 134.0
+color = Color( 0.392157, 0.666667, 0.380392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background3" type="ColorRect" parent="."]
+margin_left = 129.0
+margin_top = 133.0
+margin_right = 511.0
+margin_bottom = 136.0
+color = Color( 0.156863, 0.333333, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyes" type="Sprite" parent="."]
 visible = false
-position = Vector2( 288, 630 )
+position = Vector2( 453.036, 701.672 )
 texture = ExtResource( 5 )
 centered = false
 vframes = 3
 frame = 1
 
-[node name="Icons" type="Sprite" parent="Base"]
+[node name="Icons" type="TextureRect" parent="."]
+margin_left = -270.0
+margin_top = 48.0
+margin_right = 370.0
+margin_bottom = 528.0
 texture = ExtResource( 2 )
-centered = false
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Map" type="Area2D" parent="Base/Icons"]
+[node name="Map" type="Area2D" parent="Icons"]
 position = Vector2( 385, 318 )
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="Base/Icons/Map"]
-margin_right = 583.0
-margin_bottom = 100.0
+[node name="Label" type="Label" parent="Icons/Map"]
+margin_left = 1.54663
+margin_top = 3.09302
+margin_right = 584.547
+margin_bottom = 106.093
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.333333, 0.164706, 1 )
 text = "Map"
@@ -94,14 +129,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Map"]
-position = Vector2( 112.478, 43.362 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icons/Map"]
+position = Vector2( 112.478, 55.9755 )
 shape = SubResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="Base/Icons/Map"]
-margin_left = -255.0
-margin_top = -19.0
-margin_right = 478.0
+[node name="ColorRect" type="ColorRect" parent="Icons/Map"]
+margin_left = -252.0
+margin_top = -7.0
+margin_right = 475.0
 margin_bottom = 120.0
 mouse_filter = 2
 color = Color( 0, 0.195312, 0.00765929, 0.196078 )
@@ -109,15 +144,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Location" type="Area2D" parent="Base/Icons"]
+[node name="Location" type="Area2D" parent="Icons"]
 position = Vector2( 385, 503.209 )
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Location"]
-position = Vector2( 112.478, 43.362 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icons/Location"]
+position = Vector2( 112.478, 54.5507 )
 shape = SubResource( 3 )
 
-[node name="Label" type="Label" parent="Base/Icons/Location"]
+[node name="Label" type="Label" parent="Icons/Location"]
 margin_right = 583.0
 margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
@@ -127,26 +162,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Base/Icons/Location"]
-margin_left = -255.0
-margin_top = -19.0
-margin_right = 478.0
-margin_bottom = 120.0
+[node name="ColorRect" type="ColorRect" parent="Icons/Location"]
+margin_left = -252.0
+margin_top = -9.0
+margin_right = 475.0
+margin_bottom = 118.0
 mouse_filter = 2
 color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Return" type="Area2D" parent="Base/Icons"]
+[node name="Return" type="Area2D" parent="Icons"]
 position = Vector2( 385, 678.407 )
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Return"]
-position = Vector2( 112.478, 32.5932 )
-shape = SubResource( 3 )
-
-[node name="Label" type="Label" parent="Base/Icons/Return"]
+[node name="Label" type="Label" parent="Icons/Return"]
 margin_right = 583.0
 margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
@@ -156,85 +187,151 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Base/Icons/Return"]
-margin_left = -255.0
-margin_top = -30.0
-margin_right = 478.0
-margin_bottom = 100.0
+[node name="ColorRect" type="ColorRect" parent="Icons/Return"]
+margin_left = -251.787
+margin_top = -30.6475
+margin_right = 475.213
+margin_bottom = 96.3525
 mouse_filter = 2
 color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Exit" type="Area2D" parent="Base/Icons"]
-position = Vector2( 0, 37.7597 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icons/Return"]
+position = Vector2( 112.478, 32.5929 )
+shape = SubResource( 3 )
+
+[node name="Exit" type="Area2D" parent="Icons"]
+position = Vector2( 920, 341.093 )
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Exit"]
-position = Vector2( 917.867, 298.678 )
-shape = SubResource( 4 )
-
-[node name="ColorRect" type="ColorRect" parent="Base/Icons/Exit"]
-margin_left = 873.0
-margin_top = 257.0
-margin_right = 960.0
-margin_bottom = 347.0
+[node name="ColorRect" type="ColorRect" parent="Icons/Exit"]
+margin_left = -43.0
+margin_top = -43.0
+margin_right = 43.0
+margin_bottom = 45.0
 mouse_filter = 2
-color = Color( 0, 0.195312, 0.00765929, 0.196078 )
+color = Color( 0, 0.196078, 0.00784314, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Base/Icons/Exit"]
-position = Vector2( 917.867, 303.333 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icons/Exit"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Icons/Exit"]
+position = Vector2( -0.119995, 0 )
 texture = ExtResource( 7 )
 hframes = 2
 
-[node name="Mute" type="Area2D" parent="Base/Icons"]
-position = Vector2( -0.119995, 141.093 )
+[node name="Mute" type="Area2D" parent="Icons"]
+position = Vector2( 920, 450 )
 script = SubResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Mute"]
-position = Vector2( 917.867, 298.678 )
-shape = SubResource( 4 )
-
-[node name="ColorRect" type="ColorRect" parent="Base/Icons/Mute"]
-margin_left = 873.0
-margin_top = 257.0
-margin_right = 960.0
-margin_bottom = 347.0
+[node name="ColorRect" type="ColorRect" parent="Icons/Mute"]
+margin_left = -43.0
+margin_top = -42.0
+margin_right = 43.0
+margin_bottom = 44.0
 mouse_filter = 2
 color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Base/Icons/Mute"]
-position = Vector2( 915, 300 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icons/Mute"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Icons/Mute"]
+scale = Vector2( 1.11111, 1.11111 )
 texture = ExtResource( 8 )
 hframes = 2
 
-[node name="Music" type="Area2D" parent="Base/Icons"]
-position = Vector2( -0.119995, 247.76 )
+[node name="Music" type="Area2D" parent="Icons"]
+position = Vector2( 920, 560 )
 script = SubResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Icons/Music"]
-position = Vector2( 917.867, 298.678 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icons/Music"]
 shape = SubResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="Base/Icons/Music"]
-margin_left = 873.0
-margin_top = 257.0
-margin_right = 960.0
-margin_bottom = 347.0
+[node name="ColorRect" type="ColorRect" parent="Icons/Music"]
+margin_left = -43.0
+margin_top = -43.0
+margin_right = 43.0
+margin_bottom = 43.0
 mouse_filter = 2
 color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Base/Icons/Music"]
-position = Vector2( 915, 300 )
+[node name="Sprite" type="Sprite" parent="Icons/Music"]
 texture = ExtResource( 6 )
 hframes = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 191.0
+margin_top = 136.0
+margin_right = 231.0
+margin_bottom = 352.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 136.0
+margin_right = 512.0
+margin_bottom = 208.0
+theme = ExtResource( 9 )
+text = "Map"
+icon = ExtResource( 10 )
+align = 0
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Home" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 208.0
+margin_right = 512.0
+margin_bottom = 280.0
+theme = ExtResource( 9 )
+text = "Home"
+icon = ExtResource( 12 )
+align = 0
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 280.0
+margin_right = 512.0
+margin_bottom = 352.0
+theme = ExtResource( 9 )
+text = "Return"
+icon = ExtResource( 13 )
+align = 0
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="TextureRect" parent="."]
+margin_right = 640.0
+margin_bottom = 480.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

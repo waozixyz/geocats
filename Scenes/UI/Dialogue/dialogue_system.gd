@@ -63,9 +63,6 @@ var show_names : bool = true # Turn on and off the character name labels
 
 var img_size : float = 50
 var font_size : float = 18
-# Extras #
-#onready var multi_choice_panel = $MultiChoicePanel
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 
 # Default values. Don't change them unless you really know what you're doing.
 var id

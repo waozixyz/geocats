@@ -2,12 +2,11 @@ extends Feline
 
 # feline map
 onready var feline_map = get_parent().get_node("FelineMap")
-onready var device = $Base/Icons
-onready var base = $Base
-onready var eyes = $Base/Eyes
-onready var mute_sprite = $Base/Icons/Mute/Sprite
-onready var music_sprite = $Base/Icons/Music/Sprite
-onready var exit_sprite = $Base/Icons/Exit/Sprite
+onready var device = $Icons
+onready var eyes = $Eyes
+onready var mute_sprite = $Icons/Mute/Sprite
+onready var music_sprite = $Icons/Music/Sprite
+onready var exit_sprite = $Icons/Exit/Sprite
 
 var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
@@ -32,10 +31,12 @@ func _action(child):
 		Data.saveit()
 		get_tree().quit()
 	if child.name == "Map":
-		feline_map.visible = true
+		if feline_map:
+			feline_map.visible = true
 		active = false
-		base.visible = false
-		player.disable()
+		visible = false
+		if player:
+			player.disable()
 	if child.name == "Mute":
 		if mute_sprite.frame == 0:
 			AudioServer.set_bus_mute(master_sound, true)
@@ -67,15 +68,15 @@ func _check(child):
 var ticks = 0
 var last_visible = false
 func _process(_delta):
-	if last_visible != base.visible:
-		if base.visible:
+	if last_visible != visible:
+		if visible:
 			if player:
 				player.disable()
 		else:
 			if player:
 				player.enable()
 	
-		last_visible = base.visible
+		last_visible = visible
 	
 	if active:
 		if ticks < 10 :
@@ -97,10 +98,10 @@ func _process(_delta):
 
 		if ticks < 30:
 			ticks += .5
-		base.visible = true
+		visible = true
 	else:
 		# start shutdown and hide feline
-		base.visible = false
+		visible = false
 		if ticks > 0:
 			if ticks == 14:
 				ticks = 5
