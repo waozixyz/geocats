@@ -327,7 +327,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -362,14 +362,13 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 26
+frame = 14
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 18
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -650,7 +649,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 45 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -674,7 +672,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 51 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -698,7 +695,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 55 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
@@ -764,7 +760,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
+frame = 1
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]

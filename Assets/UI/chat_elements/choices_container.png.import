@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/portrait_box_right.png-d9b4f4ca450096984db2337c945a77db.stex"
+path="res://.import/choices_container.png-c96d155c75932c148d047e416b4c7276.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/chat_elements/portrait_box_right.png"
-dest_files=[ "res://.import/portrait_box_right.png-d9b4f4ca450096984db2337c945a77db.stex" ]
+source_file="res://Assets/UI/chat_elements/choices_container.png"
+dest_files=[ "res://.import/choices_container.png-c96d155c75932c148d047e416b4c7276.stex" ]
 
 [params]
 

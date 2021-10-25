@@ -28,8 +28,6 @@ func logic(player: KinematicBody2D, _delta: float):
 	elif player.vertical < 0:
 		if player.sprite.animation != "slide_wall":
 			player.position.y -= 5
-			player.coll_default.disabled = true
-			player.coll_slide.disabled = false
 		player.play("slide_wall")
 	else:
 		

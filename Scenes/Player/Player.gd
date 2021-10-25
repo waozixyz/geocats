@@ -3,7 +3,6 @@ class_name Player
 
 var horizontal : float = 0.0
 var vertical : float = 0.0
-var up : bool = false 
 
 var vx: float = 0 setget _set_vx, _get_vx
 var vy: float = 0 setget _set_vy, _get_vy
@@ -122,8 +121,8 @@ func _physics_process(delta):
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	up = Input.is_action_pressed("ui_up")
-	
+
+
 	isJumpPressed = Input.is_action_just_pressed("jump")
 	isJumpReleased = Input.is_action_just_released("jump")
 	

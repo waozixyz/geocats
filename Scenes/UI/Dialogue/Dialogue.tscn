@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/UI/Dialogue/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Conversations/nonacat.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/chat_elements/textbox.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/chat_elements/portrait_box.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/chat_elements/choices_container.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 loop = true
@@ -104,7 +105,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Choices" type="Control" parent="Frame"]
+[node name="Choices" type="TextureRect" parent="Frame"]
+show_behind_parent = true
+margin_top = -2.0
+margin_bottom = -2.0
+texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

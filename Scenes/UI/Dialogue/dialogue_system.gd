@@ -38,7 +38,6 @@ var newline_char : String = '@' # The character used in the JSON file to break l
 ## Other customization options ##
 onready var progress = PROGRESS # The AutoLoad script where the interaction log, quest variables, inventory and other useful data should be acessible.
 var dialogues_dict = 'dialogues' # The dictionary on 'progress' used to keep track of interactions.
-var choice_plus_y : int = 9 # How much space (in pixels) should be added between the choices (affected by 'choice_height').
 var active_choice : Color = Color(1.0, 1.0, 1.0, 1.0)
 var inactive_choice : Color = Color(1.0, 1.0, 1.0, 0.4)
 var choice_height : int = 20 # Choice label's height
@@ -152,8 +151,13 @@ func initiate(file_id, block = 'first'): # Load the whole dialogue into a variab
 	file.open('%s/%s.json' % [dialogues_folder, id], file.READ)
 	var json = file.get_as_text()
 	dialogue = JSON.parse(json).result
+
 	file.close()
-	first(block) # Call the first dialogue block
+	if dialogue:
+		first(block) # Call the first dialogue block
+	else:
+		printerr("error with dialogue: ", file_id, ".json")
+		return
 #func start_from(file_id, block): # Similar to 
 
 func clean(): # Resets some variables to prevent errors.
@@ -167,7 +171,7 @@ func clean(): # Resets some variables to prevent errors.
 
 func not_question():
 	is_question = false
-
+	choices.rect_size = Vector2(0,0)
 func first(block):
 	frame.show()
 	
@@ -641,26 +645,20 @@ func load_image(spr, image):
 func question(_text, options, _next):
 	check_pauses(label.get_text())
 	var n = 0 # Just a looping var.
-	var choice_node_align_x = 0
 	
-	if choice_node_alignment == 'right':
-		choice_node_align_x = frame_width - (choice_width + label_margin + choice_margin_horizontal)
-	else:
-		choice_node_align_x = label_margin + choice_margin_horizontal
-	
-	choices.rect_position = Vector2(choice_node_align_x,
-			frame_height - ((choice_height + choice_plus_y) * options.size() + label_margin + choice_margin_vertical))
 
+	choices.rect_position = Vector2(490, 20 + frame_height * .5 - (choice_height * options.size() + label_margin + choice_margin_vertical))
+	choices.rect_size = Vector2(0,0)
 	for a in options:
 		var choice = choice_scene.instance()
-		
-		if choice_text_alignment == 'right':
-			choice.bbcode_text = '[right]' + a + '[/right]'
-		else:
-			choice.bbcode_text = a
-		choice.rect_size = Vector2(choice_width, choice_height)
+		choice.get_node("Bckg").visible = true if n == 0 else false
+		choice.text = a
+
+		#choice.rect_size = Vector2(choice_width, choice_height)
 		choices.add_child(choice)
-		choices.get_child(n).rect_position.y = (choice_height + choice_plus_y) * n
+		choices.get_child(n).rect_position.y = choice_height * n
+		choices.rect_size.y += choice_height
+		choices.rect_size.x = choice.rect_size.x if choice.rect_size.x > choices.rect_size.x else choices.rect_size.x
 		if wait_time > 0:
 			choices.get_child(n).self_modulate = inactive_choice
 		else:
@@ -674,19 +672,17 @@ func question(_text, options, _next):
 
 func change_choice(dir):
 	if is_question:
-		if label.visible_characters >= number_characters: # Make sure the whole question is displayed before the player can answer.
-			match dir: # If you want to stop the 'loop' effect on the choices, invert the commented sections.
-		
-				# LOOPING
-				'previous': # Looping
-					choices.get_child(current_choice).self_modulate = inactive_choice
-					current_choice = current_choice - 1 if current_choice > 0 else number_choices
-					choices.get_child(current_choice).self_modulate = active_choice
-				'next':
-					choices.get_child(current_choice).self_modulate = inactive_choice
-					current_choice = current_choice + 1 if current_choice < number_choices else 0
-					choices.get_child(current_choice).self_modulate = active_choice
-		
+		if dir: # before match
+			var in_active = choices.get_child(current_choice)
+			in_active.self_modulate = inactive_choice
+			in_active.get_node("Bckg").visible = false
+		match dir: # If you want to stop the 'loop' effect on the choices, invert the commented sections.
+			# LOOPING
+			'previous': # Looping
+				current_choice = current_choice - 1 if current_choice > 0 else number_choices
+			'next':
+				current_choice = current_choice + 1 if current_choice < number_choices else 0
+
 #				# NOT LOOPING
 #				'previous': # Not looping
 #					if current_choice == 0:
@@ -702,8 +698,11 @@ func change_choice(dir):
 #						choices.get_child(current_choice).self_modulate = inactive_choice
 #						current_choice = current_choice + 1
 #						choices.get_child(current_choice).self_modulate = active_choice
-		
-			next_step = current['next'][current_choice]
+		if dir: # after match
+			var active = choices.get_child(current_choice)
+			active.self_modulate = active_choice
+			active.get_node("Bckg").visible = true
+		next_step = current['next'][current_choice]
 		return true
 	else:
 		return false

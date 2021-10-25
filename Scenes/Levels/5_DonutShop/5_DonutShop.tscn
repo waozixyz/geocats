@@ -81,6 +81,9 @@ extents = Vector2( 16, 7 )
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 15, 8 )
 
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 80, 77.1629 )
+
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 196, 7 )
 
@@ -138,60 +141,48 @@ extents = Vector2( 10, 244 )
 [sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 12, 176 )
 
-[sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 80, 98 )
-
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 21, 37 )
 
 [node name="DonutShop" type="Node2D"]
 script = ExtResource( 16 )
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_right = 960.0
-margin_bottom = 480.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 240, 120 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="bg" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="bg" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 1 )
 centered = false
 
-[node name="window_bg" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="window_bg" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 2 )
 centered = false
 
-[node name="shadows" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="shadows" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 4 )
 centered = false
 
-[node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
 
-[node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
 
-[node name="leg_bg" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="leg_bg" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 10 )
 centered = false
 
@@ -212,53 +203,46 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
+frame = 3
 
-[node name="AbovePlayer" type="ViewportContainer" parent="."]
-margin_right = 4800.0
-margin_bottom = 1200.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Viewport" type="Viewport" parent="AbovePlayer"]
-size = Vector2( 1200, 300 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="fg_base" type="Sprite" parent="AbovePlayer/Viewport"]
+[node name="fg_base" type="Sprite" parent="AbovePlayer"]
 texture = SubResource( 9 )
 centered = false
 
-[node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
+[node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 12 )
 speed_scale = 0.3
 playing = true
 centered = false
 
-[node name="ColorRect" type="ColorRect" parent="AbovePlayer/Viewport"]
+[node name="ColorRect" type="ColorRect" parent="AbovePlayer"]
 margin_top = 90.0
 margin_right = 10.0
 margin_bottom = 110.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="body_fg" type="Sprite" parent="AbovePlayer/Viewport"]
+[node name="body_fg" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 7 )
 centered = false
 
-[node name="leg_fg" type="Sprite" parent="AbovePlayer/Viewport"]
+[node name="leg_fg" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 9 )
 centered = false
 
 [node name="DonutBot" type="StaticBody2D" parent="."]
 position = Vector2( 248, 333 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DonutBot"]
 position = Vector2( 89, 58 )
@@ -276,6 +260,14 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonutBot"]
 polygon = PoolVector2Array( 92, 11, 106, 5, 120, -9, 151, -9, 151, 10 )
+
+[node name="Area2D" type="Area2D" parent="DonutBot"]
+position = Vector2( 28, -42 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DonutBot/Area2D"]
+position = Vector2( 47.6071, -7.65298 )
+shape = SubResource( 35 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 7
@@ -389,11 +381,11 @@ shape = SubResource( 31 )
 position = Vector2( 953, 227 )
 shape = SubResource( 32 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+[node name="End" type="StaticBody2D" parent="." groups=[
 "end",
 ]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
 shape = SubResource( 33 )
 
@@ -413,23 +405,6 @@ shape = SubResource( 34 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
-
-[node name="Donutbot" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="Donutbot"]
-position = Vector2( 276, 291 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Donutbot/Area2D"]
-position = Vector2( 41, 15 )
-shape = SubResource( 35 )
 
 [node name="GoToCity" type="Area2D" parent="."]
 position = Vector2( 21, 401 )
