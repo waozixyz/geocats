@@ -3,10 +3,11 @@ extends Control
 onready var eyes = $Eyes
 onready var system = $System
 onready var status_bar = $System/StatusBar
+onready var background = $Background
 
 onready var tween = $Tween
 onready var news = $System/StatusBar/News
-
+onready var red_button = $RedButton
 
 var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
@@ -39,8 +40,9 @@ func _scroll_news():
 
 # exit logic
 func _exit():
-	active = false
-	_tween(self, 1, 0)
+	if active:
+		active = false
+		_tween(self, 1, 0)
 
 # button press functions
 func _button_action(label):
@@ -59,27 +61,42 @@ func _button_action(label):
 			pass
 
 
+func _change_color(reset = false):
+
+	var color = Color(1, 1, 1)
+	if press_timer < 29:
+		color = Color(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1))
+	system.modulate = color
+	background.modulate = color
+
 ## update logic
 var ticks = 0
 var last_visible = false
 var news_tick = 0
+var press_timer = 0
+var red_pressed
 func _process(delta):
-	if system.visible :
+	# red button press logic
+	if visible:
+		if red_button.pressed:
+			red_pressed = true
+			press_timer += delta * global.fps
+			if press_timer >= 30:
+				_change_color(true)
+				red_button.pressed = false
+		if not red_button.pressed and red_pressed:
+			_change_color()
+			press_timer = 0
+			red_pressed = false
+	
+	# if system visible
+	if system.visible:
 		# top bar news scrolling
-		news_tick += 1 * delta * global.fps
 		if int(news_tick) % 10 == 0:
 			_scroll_news()
-		
-		# main system buttons
-		for button in system.get_children():
-			if button is Button and button.pressed:
-				_button_action(button.name)
-		
-		# status bar buttons
-		for button in status_bar.get_children():
-			if button is TextureButton and button.pressed:
-				_button_action(button.name)
-		
+		news_tick += delta * global.fps
+	
+	# check if visible and disable/ enable player
 	if last_visible != visible:
 		if visible:
 			if player:
@@ -90,6 +107,7 @@ func _process(delta):
 	
 		last_visible = visible
 	
+	# eye animations
 	if ticks < 16:
 		eyes.visible = true
 		if ticks < 10 :
@@ -122,6 +140,7 @@ func _process(delta):
 			ticks -= .5 * delta * global.fps
 			system.modulate.a -= .1 * delta * global.fps
 
+
 func _input(event):
 	if event.is_action_pressed("escape"):
 		if active:
@@ -129,4 +148,22 @@ func _input(event):
 		else:
 			active = true
 			_tween(self, 0, 1, 1)
+
+	if visible and event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if event.pressed:
+				pass
+			else:
+				# release
+
+				if system.visible :
+					# main system buttons
+					for button in system.get_children():
+						if button is Button and button.pressed:
+							_button_action(button.name)
+					
+					# status bar buttons
+					for button in status_bar.get_children():
+						if button is TextureButton and button.pressed:
+							_button_action(button.name)
 
