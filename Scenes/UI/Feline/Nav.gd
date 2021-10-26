@@ -1,12 +1,12 @@
-extends Feline
+extends Control
 
-# feline map
-onready var feline_map = get_parent().get_node("FelineMap")
-onready var device = $Icons
 onready var eyes = $Eyes
-onready var mute_sprite = $Icons/Mute/Sprite
-onready var music_sprite = $Icons/Music/Sprite
-onready var exit_sprite = $Icons/Exit/Sprite
+onready var system = $System
+onready var status_bar = $System/StatusBar
+
+onready var tween = $Tween
+onready var news = $System/StatusBar/News
+
 
 var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
@@ -16,58 +16,70 @@ func _ready():
 	var default = get_parent().get_parent()
 	if default and default.has_node("Player"):
 		player = default.get_node("Player")
-	_unselect_others(device)
-	device.get_node("Map").selected = true
+	news.text += "  " # make sure there is enough space for scrolling text
 
-func _action(child):
-	if child.name == "Exit":
-		exit_sprite.frame = 1
-		active = false
-	if child.name == "Location":
-		visible = false
-		SceneChanger.change_scene("TitleScreen", 0, "", 1)
-	if child.name == "Return":
-		active = false
-		Data.saveit()
-		get_tree().quit()
-	if child.name == "Map":
-		if feline_map:
-			feline_map.visible = true
-		active = false
-		visible = false
-		if player:
-			player.disable()
-	if child.name == "Mute":
-		if mute_sprite.frame == 0:
-			AudioServer.set_bus_mute(master_sound, true)
-			mute_sprite.frame = 1
-	else:
-		AudioServer.set_bus_mute(master_sound, false)
-		mute_sprite.frame = 0
-	if child.name == "Music":
-		AudioServer.set_bus_mute(master_sound, true)
-		music_sprite.frame = 1
-		
+# fading effect
+func _tween(obj, start, end, time = .5):
+	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	tween.start()
 
-func _check(child):
-	var rect = child.get_node("ColorRect")
+# scrolling text function
+func _scroll_news():
+	var i = 0
+	while i < news.text.length():
+		var j = i + 1
+		if j == news.text.length():
+			j = 0
 
-	if child.pressed:
-		child.pressed = false
-		_action(child)
+		var next = news.text[j]
+		if i == 0:
+			news.text[news.text.length() - 1] = news.text[0]
+		news.text[i] = next
+		i += 1
 
-	if child.hovered:
-		_unselect_others(device)
-		child.selected = true
-		
-	if child.selected:
-		rect.visible = true
-	else:
-		rect.visible = false
+# exit logic
+func _exit():
+	active = false
+	_tween(self, 1, 0)
 
+# button press functions
+func _button_action(label):
+	match label:
+		"Map":
+			pass
+		"Home":
+			pass
+		"Return":
+			SceneChanger.change_scene("TitleScreen")
+		"Exit":
+			_exit()
+		"Music":
+			pass
+		"Sound":
+			pass
+
+
+## update logic
 var ticks = 0
 var last_visible = false
-func _process(_delta):
+var news_tick = 0
+func _process(delta):
+	if system.visible :
+		# top bar news scrolling
+		news_tick += 1 * delta * global.fps
+		if int(news_tick) % 10 == 0:
+			_scroll_news()
+		
+		# main system buttons
+		for button in system.get_children():
+			if button is Button and button.pressed:
+				_button_action(button.name)
+		
+		# status bar buttons
+		for button in status_bar.get_children():
+			if button is TextureButton and button.pressed:
+				_button_action(button.name)
+		
 	if last_visible != visible:
 		if visible:
 			if player:
@@ -78,41 +90,43 @@ func _process(_delta):
 	
 		last_visible = visible
 	
-	if active:
+	if ticks < 16:
+		eyes.visible = true
 		if ticks < 10 :
 			eyes.frame = 2
-		if ticks == 10:
+		elif ticks < 13:
 			eyes.frame = 1
+	else:
+		eyes.visible = false
+		
+	if active:
 		## make device visible
-		if ticks > 15:
-			eyes.visible = false
-			device.visible = true
-			
-			# exit button
-			for child in device.get_children():
-				_check(child)
-
+		if ticks >= 15:
+			if not system.visible:
+				system.modulate.a = 0
+				_tween(system, 0, 1)
+			system.visible = true
 		else:
-			device.visible = false
-			eyes.visible = true
+			system.visible = false
 
-		if ticks < 30:
-			ticks += .5
+
+		if ticks < 16:
+			ticks += .3 * delta * global.fps
 		visible = true
 	else:
 		# start shutdown and hide feline
-		visible = false
+		if not tween.is_active() and ticks <= 0:
+			visible = false
+
 		if ticks > 0:
-			if ticks == 14:
-				ticks = 5
-			ticks -= .5
+			ticks -= .5 * delta * global.fps
+			system.modulate.a -= .1 * delta * global.fps
 
 func _input(event):
-	if active:
-		input(device, event)
-
 	if event.is_action_pressed("escape"):
 		if active:
-			active = false
+			_exit()
 		else:
 			active = true
+			_tween(self, 0, 1, 1)
+

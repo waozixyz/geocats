@@ -80,7 +80,7 @@ func _get_scene():
 					pos = Vector2(426, 220)
 			return ["res://Scenes/Levels/9_Caves/Battle.tscn", pos, dir]
 	
-func change_scene(new_scene, new_location, sound, volume):
+func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
 	if not sound == "":
 		MusicPlayer.stream = load("res://Assets/Sfx/Transition/" + sound + ".ogg")
 		MusicPlayer.stream.set_loop(false)

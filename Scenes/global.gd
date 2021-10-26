@@ -1,5 +1,6 @@
 extends Node
 
+const fps = 60
 var player_position
 var player_direction
 var crt_noise = 0.0
