@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Creek_Feline_Map.png-37d9a92884a90c3379c219a6107e4b12.stex"
+path="res://.import/BackgroundDark.png-f2612e95a9e090bfe34a57e4aa7b852e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/MapView/Creek_Feline_Map.png"
-dest_files=[ "res://.import/Creek_Feline_Map.png-37d9a92884a90c3379c219a6107e4b12.stex" ]
+source_file="res://Assets/UI/Feline/Body/BackgroundDark.png"
+dest_files=[ "res://.import/BackgroundDark.png-f2612e95a9e090bfe34a57e4aa7b852e.stex" ]
 
 [params]
 

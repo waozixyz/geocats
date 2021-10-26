@@ -16,8 +16,10 @@ onready var map_view = $System/MapView
 var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
 
-var view
+var old_view
+onready var view : Control = map_view
 var player
+var change_to = ""
 func _ready():
 	var default = get_parent().get_parent()
 	if default and default.has_node("Player"):
@@ -63,9 +65,10 @@ func _button_action(label):
 		"Home":
 			pass
 		"Return":
-			SceneChanger.change_scene("TitleScreen")
+			_exit()
+			change_to = "TitleScreen"
 		"Exit":
-			if view is main_view:
+			if view.name == "MainView":
 				_exit()
 			else:
 				_change_view(main_view)
@@ -77,9 +80,15 @@ func _button_action(label):
 
 # change view in system
 func _change_view(new_view):
-	view.visible = false
+	# hide current view
+	_tween(view, 1, 0, .2)
+	# update old view
+	old_view = view
+	# change current view
 	view = new_view
 	view.visible = true
+	# show current view
+	_tween(view, 0, 1, .2)
 
 # change system theme
 func _change_color():
@@ -96,6 +105,8 @@ var news_tick = 0
 var press_timer = 0
 var red_pressed
 func _process(delta):
+	if old_view is Control and old_view.modulate.a == 0:
+		old_view.visible = false
 	# red button press logic
 	if visible:
 		if red_button.pressed:
@@ -155,6 +166,8 @@ func _process(delta):
 		# start shutdown and hide feline
 		if not tween.is_active() and ticks <= 0:
 			visible = false
+			if change_to:
+				SceneChanger.change_scene(change_to)
 
 		if ticks > 0:
 			ticks -= .5 * delta * global.fps
