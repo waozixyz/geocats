@@ -1,4 +1,4 @@
-extends Feline
+extends Control
 
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
 onready var device = $Device

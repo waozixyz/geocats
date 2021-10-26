@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/UI/CRT_Effect.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Agends/Affogato.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/UI/Feline/Nav.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/UI/Feline/Map.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/Feline/Feline.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/NFT/NFT.tscn" type="PackedScene" id=8]
 
@@ -26,10 +25,7 @@ visible = false
 [node name="ChatWith" parent="CanvasLayer" instance=ExtResource( 4 )]
 visible = false
 
-[node name="FelineNav" parent="CanvasLayer" instance=ExtResource( 5 )]
-
-[node name="FelineMap" parent="CanvasLayer" instance=ExtResource( 6 )]
-visible = false
+[node name="Feline" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="NFT" parent="." instance=ExtResource( 8 )]
 
