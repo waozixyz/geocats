@@ -1,10 +1,10 @@
 extends CanvasLayer
 
 onready var chat_with = $ChatWith
-onready var Sprite = $ViewportContainer/Viewport/AnimatedSprite
+onready var Sprite = $AnimatedSprite
 onready var Container = $Container
 onready var MusicPlayer = $AudioStreamPlayer
-
+onready var pause = $Pause
 
 var location : int
 var scene : String 
@@ -12,7 +12,6 @@ var prev_scene : String
 var timer : int
 var load_time : int = 40
 var change : bool
-
 
 func _get_scene():
 	var pos = null
@@ -57,6 +56,8 @@ func _get_scene():
 				4:
 					dir = -1
 					pos = Vector2(8900, 950)
+				5:
+					pos = Vector2(4420, 4950)
 			return ["res://Scenes/Levels/6_Creek/6_Creek.tscn", pos, dir]
 		"CavityPuzzleRoom":	
 			return ["res://Scenes/Levels/6_Creek/1_CavityPuzzleRoom.tscn", pos, dir]
@@ -66,9 +67,20 @@ func _get_scene():
 			return ["res://Scenes/Levels/6_Creek/3_GeoCacheRoom.tscn", pos, dir]
 		"Mountain":	
 			return ["res://Scenes/Levels/7_Mountain/7_Mountain.tscn", pos, dir]
-
+		"GeoLodge":
+			return ["res://Scenes/Levels/8_GeoLodge/8_GeoLodge.tscn", pos, dir]
+		"Caves":
+			match location:
+				1: 
+					pos = Vector2(500, 2120)
+			return ["res://Scenes/Levels/9_Caves/9_Caves.tscn", pos, dir]
+		"CaveBattle":
+			match location:
+				1: 
+					pos = Vector2(426, 220)
+			return ["res://Scenes/Levels/9_Caves/Battle.tscn", pos, dir]
 	
-func change_scene(new_scene, new_location, sound, volume):
+func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
 	if not sound == "":
 		MusicPlayer.stream = load("res://Assets/Sfx/Transition/" + sound + ".ogg")
 		MusicPlayer.stream.set_loop(false)
@@ -78,17 +90,22 @@ func change_scene(new_scene, new_location, sound, volume):
 	prev_scene = scene
 	scene = new_scene
 	location = new_location
-	
 	change = true
 	Sprite.visible = true
 	Container.visible = true
 
 func _physics_process(_delta):
+	if get_tree().paused and not global.pause_msg.empty():
+		pause.visible = true
+		pause.text = global.pause_msg
+	else:
+		pause.visible = false
+		
 	if change:
 		timer += 1
 		if timer  > load_time:
 			_new_scene()
-	if global.data.player_hp < 1:
+	if global.data.player_hp <= 0:
 		chat_with.start("feline_emergency_teleport")
 		chat_with.visible = true
 		get_tree().paused = true
@@ -100,8 +117,12 @@ func _input(event):
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			chat_with.visible = false
 			global.data.player_hp = 100.0
-			change_scene(get_tree().get_current_scene().name, 0, "", 1)
-	
+			var current_scene = get_tree().get_current_scene()
+			change_scene(current_scene.name, current_scene.death_location, "", 1)
+	if pause.visible:
+		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
+			get_tree().paused = false
+			global.pause_msg = ""
 func _new_scene():
 
 	timer = 0
@@ -113,7 +134,7 @@ func _new_scene():
 		global.data.nav_unlocked[scene] = true
 	var scene_data = _get_scene()
 
-	get_tree().change_scene(scene_data[0])
+	var _null = get_tree().change_scene(scene_data[0])
 
 	global.player_position = scene_data[1]
 	global.player_direction = scene_data[2]

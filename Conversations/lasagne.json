@@ -5,7 +5,7 @@
     "position": "left",
     "type": "question",
     "text": "Have you seen any of those creepy green cats?",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "options": ["yes", "no"],
     "next": ["yes_option", "no_option"]
   },

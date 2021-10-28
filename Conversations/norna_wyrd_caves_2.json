@@ -1,0 +1,47 @@
+{
+  "first": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "position": "left",
+    "type": "text",
+    "content": "Ok,|@let’s get out of here.",
+    "animation_in": "fade_in",
+    "next": "1"
+  },
+  "1": {
+    "name": "Norna",
+    "avatar": "norna.png",
+    "animation_in": "fade_in",
+    "position": "right",
+    "type": "text",
+    "content": "Yeah,|@we don’t get paid enough for jobs like this.",
+    "next": "2"
+  },
+  "2": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "You never saw us,|@we never saw you.|@Understood?",
+    "next": "3"
+  },
+  "3": {
+    "name": "Norna",
+    "avatar": "norna.png",
+    "animation_in": "fade_in",
+    "position": "right",
+    "type": "text",
+    "content": "Also, whatever you do,@stay away from the Great Litterbox.@There’s nothing weird going on out there, either.",
+    "next": "4"
+  },
+ "4": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "…If we meet again,@we’ll be obligated to attack you.|@Plan your next moves carefully.",
+    "next": ""
+  },
+}

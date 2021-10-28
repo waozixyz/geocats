@@ -4,8 +4,8 @@
     "avatar": "gamecat.png",
     "position": "left",
     "type": "text",
-    "content": "...",
-    "animation_in": "move_in",
+    "content": "|...",
+    "animation_in": "fade_in",
     "next": "0"
   },
   "0": {
@@ -13,7 +13,8 @@
     "avatar": "gamecat.png",
     "position": "left",
     "type": "text",
-    "content": "...This game is terrible, yet I can't stop playing...",
+    "content": "...This game is terrible,||@yet I can't stop playing...",
+    "animation_out": "shake_weak_medium",
     "next": ""
   }
 }

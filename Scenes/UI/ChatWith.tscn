@@ -20,8 +20,6 @@ __meta__ = {
 }
 
 [node name="Dialogue" parent="." instance=ExtResource( 3 )]
-margin_top = 0.0
-margin_bottom = 0.0
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 15.0

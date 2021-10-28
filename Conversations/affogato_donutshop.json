@@ -4,41 +4,41 @@
     "avatar": "affogato.png",
     "position": "left",
     "type": "text",
-    "content": "Oh wow! A retro FeLine system... How rare!",
-    "animation_in": "move_in",
+    "content": "Oh wow!| @You have a retro FeLine system...| How rare!",
+    "animation_in": "fade_in",
     "next": "1"
   },
   "1": {
     "type": "text",
-    "content": "Here, let me show you how to use the mapz function to travel somewhere new and exciting!",
+    "content": "Here,@ let me show you how to use the mapz function to travel somewhere new and exciting!",
     "next": "2"
   },
   "2": {
     "type": "text",
-    "content": "...",
+    "content": "||...",
     "next": "3"
   },
   "3": {
     "type": "text",
-    "content": "...Oh... Sorry, your operating system is broken.",
+    "content": "|...Oh... |Sorry,@ your operating system is broken.",
     "next": "4"
   },
   "4": {
     "name": "Feline",
     "avatar": "feline_unimpressed.png",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "Typical Nonaco...",
+    "content": "|Typical Nonaco...",
     "next": "5"
   },
   "5": {
     "name": "Affogato",
     "avatar": "affogato.png",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "position": "left",
     "type": "question",
-    "text": "Would you like me to teleport you to Canopy Creek?",
+    "text": "Would you like me to teleport you to Canopy Creek with my machine?",
     "options": ["yes", "no"],
     "next": ["yes_option", ""]
   },
@@ -55,7 +55,7 @@
     "position": "left",
     "type": "question",
     "text": "Are you ready to go to Canopy Creek?",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "options": ["yes", "no"],
     "next": ["yes_option", ""]
   },

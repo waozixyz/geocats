@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Entity.gd"
 }, {
-"base": "Control",
-"class": "Feline",
-"language": "GDScript",
-"path": "res://Scenes/UI/Feline/Feline.gd"
-}, {
 "base": "InteractMain",
 "class": "InteractButton",
 "language": "GDScript",
@@ -44,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/UI/Interact/InteractSimple.gd"
 }, {
+"base": "Node2D",
+"class": "Mushroom",
+"language": "GDScript",
+"path": "res://Scenes/Objects/Mushroom.gd"
+}, {
 "base": "Entity",
 "class": "Player",
 "language": "GDScript",
@@ -57,11 +57,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BasePlayerState": "",
 "Entity": "",
-"Feline": "",
 "InteractButton": "",
 "InteractChat": "",
 "InteractMain": "",
 "InteractSimple": "",
+"Mushroom": "",
 "Player": "",
 "PlayerFSM": ""
 }
@@ -84,9 +84,13 @@ Data="*res://Scenes/Data.gd"
 window/size/width=640
 window/size/height=480
 window/dpi/allow_hidpi=true
-mouse_cursor/custom_image="res://Assets/UI/feline_map/Cat_Feline_Map.png"
+mouse_cursor/custom_image="res://Assets/UI/Feline/MapView/Cat_Feline_Map.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/orphan_import_file_cleaner/plugin.cfg" )
 
 [gdnative]
 
@@ -96,6 +100,7 @@ singletons=[  ]
 
 gravity=true
 vsyng=false
+fullscreen=false
 
 [importer_defaults]
 

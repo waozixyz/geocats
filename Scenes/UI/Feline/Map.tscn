@@ -1,27 +1,25 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=1]
-[ext_resource path="res://Assets/UI/feline_map/City_Feline_Map.png" type="Texture" id=2]
-[ext_resource path="res://Assets/UI/feline_map/Creek_Feline_Map.png" type="Texture" id=3]
-[ext_resource path="res://Assets/UI/feline_map/Background_Feline_Map.png" type="Texture" id=4]
-[ext_resource path="res://Assets/UI/feline_map/Apartment_Feline_Map.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Feline/MapView/City_Feline_Map.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Feline/MapView/Creek_Feline_Map.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/Feline/MapView/Apartment_Feline_Map.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UI/Feline/Map.gd" type="Script" id=6]
-[ext_resource path="res://Assets/UI/feline_map/Lock_Closed_Feline_Map.png" type="Texture" id=7]
-[ext_resource path="res://Assets/UI/feline_map/Litterbox_Feline_Map.png" type="Texture" id=8]
-[ext_resource path="res://Assets/UI/feline_map/Lock_Open_Feline_Map.png" type="Texture" id=9]
-[ext_resource path="res://Assets/UI/feline_map/Lodge_Feline_Map.png" type="Texture" id=10]
-[ext_resource path="res://Assets/UI/feline_map/Cat_Feline_Map.png" type="Texture" id=11]
-[ext_resource path="res://Assets/UI/feline_map/Cats_Cradle_Feline_Map.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/Feline/MapView/Lock_Closed_Feline_Map.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Feline/MapView/Litterbox_Feline_Map.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Feline/MapView/Lock_Open_Feline_Map.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/Feline/MapView/Lodge_Feline_Map.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/Feline/MapView/Cat_Feline_Map.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/Feline/MapView/Cats_Cradle_Feline_Map.png" type="Texture" id=12]
+
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/Background_Feline_Map.png-633b8bfc9700da25d62a433d89ac8427.stex"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.9674, 40.625 )
 
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-size = 24
-font_data = SubResource( 2 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 39.9674, 40.625 )
 
 [node name="Control" type="Control"]
 rect_scale = Vector2( 1.6, 1.6 )
@@ -32,7 +30,7 @@ __meta__ = {
 }
 
 [node name="Device" type="Sprite" parent="."]
-texture = ExtResource( 4 )
+texture = SubResource( 5 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -126,52 +124,6 @@ __meta__ = {
 
 [node name="Cat" type="Sprite" parent="Device/Complex"]
 position = Vector2( 181.794, 120 )
-scale = Vector2( 1.6, 1.6 )
-texture = ExtResource( 11 )
-centered = false
-
-[node name="GeoCity" type="Area2D" parent="Device"]
-position = Vector2( 0, -6.875 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Lock" type="Sprite" parent="Device/GeoCity"]
-visible = false
-position = Vector2( 287.507, 70 )
-texture = ExtResource( 7 )
-centered = false
-
-[node name="Unlock" type="Sprite" parent="Device/GeoCity"]
-visible = false
-position = Vector2( 287.507, 70 )
-texture = ExtResource( 9 )
-centered = false
-
-[node name="Map" type="Sprite" parent="Device/GeoCity"]
-position = Vector2( 277.507, 65.9553 )
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/GeoCity"]
-visible = false
-position = Vector2( 310.658, 78.75 )
-shape = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="Device/GeoCity"]
-margin_left = 268.0
-margin_top = 53.0
-margin_right = 362.0
-margin_bottom = 134.0
-mouse_filter = 2
-color = Color( 0, 0.195312, 0.00765929, 0.196078 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Cat" type="Sprite" parent="Device/GeoCity"]
-position = Vector2( 302.673, 120 )
 scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 11 )
 centered = false
@@ -311,16 +263,48 @@ scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 11 )
 centered = false
 
-[node name="Label" type="Label" parent="."]
-margin_left = 30.0
-margin_top = 221.0
-margin_right = 369.0
-margin_bottom = 269.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
-align = 1
-valign = 1
+[node name="GeoCity" type="Area2D" parent="."]
+position = Vector2( 0, -6.875 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lock" type="Sprite" parent="GeoCity"]
+visible = false
+position = Vector2( 287.507, 70 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Unlock" type="Sprite" parent="GeoCity"]
+visible = false
+position = Vector2( 287.507, 70 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Map" type="Sprite" parent="GeoCity"]
+position = Vector2( 277.507, 65.9553 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GeoCity"]
+visible = false
+position = Vector2( 310.658, 78.75 )
+shape = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="GeoCity"]
+margin_left = 268.0
+margin_top = 53.0
+margin_right = 362.0
+margin_bottom = 134.0
+mouse_filter = 2
+color = Color( 0, 0.195312, 0.00765929, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Cat" type="Sprite" parent="GeoCity"]
+position = Vector2( 302.673, 120 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 11 )
+centered = false

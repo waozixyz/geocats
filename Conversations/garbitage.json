@@ -3,27 +3,63 @@
     "name": "Garbitage",
     "avatar": "garbitage.png",
     "position": "left",
+    "animation_in": "fade_in",
     "type": "text",
-    "content": "It’s sure strange to live on a giant ring.",
-    "animation_in": "move_in",
-    "next": "1"
+    "content": "...",
+    "next": "second"
+  },
+  "second": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "GeoLodgeUnlocked",
+    "true": "a",
+    "false": "1"
+  },
+  "a": {
+    "type": "text",
+    "content": "Affogato told me you took a trip to Canopy Creek!@Very cool.",
+    "next": "b"
+  },
+  "b": {
+    "type": "text",
+    "content": "I haven’t traveled much lately,| my left wheel is busted.",
+    "next": "c"
+  },
+  "c": {
+    "type": "question",
+    "text": "|...Anyways, I have an adventurous friend who collects maps.@If you’re looking for something to do today, maybe he can show you a fun place to hike.@Would you like me to send you his way?",
+    "options": ["yes", "no"],
+    "next": ["yes_option", ""]
+  },
+  "yes_option": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "...",
+    "value": [["teleport_geolodge", true]]
   },
   "1": {
-    "name": "Feline",
-    "avatar": "feline.png",
-    "animation_in": "move_in",
-    "position": "left",
     "type": "text",
-    "content": "True",
+    "content": "It’s sure strange to live on a giant ring.",
     "next": "2"
   },
   "2": {
-    "name": "Garbitage",
-    "avatar": "garbitage.png",
-    "animation_in": "move_in",
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "...Have you ever been to the other side?",
+    "content": "|True",
+    "next": "3"
+  },
+  "3": {
+    "name": "Garbitage",
+    "avatar": "garbitage.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "|...Have you ever been to the other side?",
     "next": ""
   },
 }

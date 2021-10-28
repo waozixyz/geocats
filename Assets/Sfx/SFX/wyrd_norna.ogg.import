@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wyrd_norna.ogg-c2c9eab4e5d795110c9598222dfe2642.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/SFX/wyrd_norna.ogg"
+dest_files=[ "res://.import/wyrd_norna.ogg-c2c9eab4e5d795110c9598222dfe2642.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

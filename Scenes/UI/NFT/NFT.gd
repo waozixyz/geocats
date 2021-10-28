@@ -23,14 +23,14 @@ func _ready():
 func _exit_pressed():
 	main.visible = false
 	login.visible = false
-func show_nft(nft_id,  edition, nft_title, nft_description, new = false):
+func show_nft(nft_id,  nft_val, nft_title, nft_description, new = false):
 	main.visible = true
 	received_nft.visible = new
 	nft_name.text = nft_title
 	description.text = nft_description
 	var new_anim = load("res://Scenes/UI/NFT/Anim/" + nft_id + ".tscn")
 	anim = new_anim.instance()
-	anim.play(str(edition))
+	anim.play(nft_val)
 	main.add_child(anim)
 	
 func update(touching, nft_id):
@@ -41,6 +41,7 @@ func update(touching, nft_id):
 		loading.visible = false
 		var res_code = global.response_code
 		var res = global.response
+
 		if res_code == 0:
 			chat_with.visible = true
 			chat_with.start("server_noconnect", true, false)
@@ -70,7 +71,9 @@ func update(touching, nft_id):
 
 						global.nft_api("/check-wallet", nft_id)
 				elif res.process == "get-nft":
-					if res.val > 0:
+					if res.val:
+						if not res.has("title"):
+							res['title'] = nft_id
 						if res.status:
 							show_nft(nft_id, res.val, res.title, res.description, true)
 						else:
@@ -80,29 +83,12 @@ func update(touching, nft_id):
 				else:
 					print("something wrong")
 		waiting = false
-	if login.visible:
-		player.disabled = true
 	else:
-		player.disabled = false
-#			
-#
-#			elif res_code == 200:
-#				if res.has("val"):
-#					if res.val > -1:
-#						if res.val == 0:
-#							chat_with.start("geochache_rewarded", true, false)
-#						else:
-#							#geocache.visible = true
-#							if res.status:
-#								received_nft.visible = true
-#							#else:
-#							#	current_nft.visible = true
-#					else:
-#						chat_with.visible = true
-#						chat_with.start("geochache_noreward", true, false)
-
-	#	reward(nft_id)
-
+		loading.visible = false
+	if login.visible:
+		player.disable()
+	else:
+		player.enable()
 
 func reward(nft_id):
 	global.nft_api("/available", nft_id)

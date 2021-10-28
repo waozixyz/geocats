@@ -3,12 +3,10 @@ extends Entity
 onready var player =  get_parent().get_node("Player")
 
 func _ready():
-	sprite = $ViewportContainer/Viewport/AnimatedSprite
-	to_rotate = $ViewportContainer
 	no_rotate = true
 	._ready()
 	init = false
-
+	jump_height = 15
 
 onready var chat = $Area2D
 
@@ -18,7 +16,7 @@ var elapsed = 0
 var ticks = 0
 var margin = 50
 var mov_speed = 350
-var jump_height = 15
+
 var init = false
 var lastDiff = 0
 var diff = 0
@@ -28,6 +26,8 @@ var add_x = 0
 var add_y = 0
 
 var next_jump_height = 0
+
+
 func _physics_process(delta):
 	var scene_name = get_tree().get_current_scene().name
 	var donut_open = PROGRESS.variables.get("donut_open")
@@ -46,10 +46,11 @@ func _physics_process(delta):
 	
 	velocity.x = 0
 
-	if follow:
+	if player and follow:
 		if not init:
 			visible = true
-			position = player.position
+			if player:
+				position = player.position
 			init = true
 		chat.disabled = true
 		
@@ -79,27 +80,29 @@ func _physics_process(delta):
 				ticks = 0
 			else:
 				jump_height = 15 + next_jump_height
-		if player.state_machine.active_state.tag == "climb":
+		if on_ladder and player.vx == 0:
+			
 			if position != player.position:
 				position += (player.position - position) * .05
+			tween_to_ladder()
 			climbing = true
 		else:
 			if climbing:
 				position.y = player.position.y 
 				climbing = false
+	if visible:
+		ticks += 1
+		if int(ticks* .1) % 40 == 0 and velocity.x == 0:
+			anim = "blink"
+		else:
+			anim = "idle"
 
-	ticks += 1
-	if int(ticks* .1) % 40 == 0 and velocity.x == 0:
-		anim = "blink"
-	else:
-		anim = "idle"
+		if is_on_floor():
+			jump(jump_height)
+			next_jump_height = 0
 
-	if is_on_floor():
-		jump(jump_height)
-		next_jump_height = 0
-
-	if not climbing:
-		velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-		
+		if not climbing:
+			velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+		sprite.play(anim)
+		sprite.animation = anim
+			

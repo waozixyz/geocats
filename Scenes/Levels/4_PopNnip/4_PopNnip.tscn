@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scenes/Levels/4_PopNnip/Interactions.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/4_PopNnip/keep.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -97,38 +98,23 @@ extents = Vector2( 60.1039, 35 )
 
 [node name="PopNnip" type="Node2D"]
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_right = 960.0
-margin_bottom = 480.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 4
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 4, 4 )
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 240, 120 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="potentialBG_popnnip" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="potentialBG_popnnip" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 3 )
 centered = false
 
-[node name="popnnip_FG" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="popnnip_FG" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 4 )
 centered = false
 
-[node name="keep" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="keep" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 110, 90 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
 speed_scale = 0.2
@@ -281,15 +267,14 @@ texture = ExtResource( 10 )
 stream = ExtResource( 6 )
 autoplay = true
 
-[node name="Ladder2" type="Area2D" parent="." groups=[
-"ladder",
-]]
+[node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 606, 271 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
 shape = SubResource( 25 )
 
 [node name="Shopkeeper" type="Node2D" parent="."]
@@ -304,9 +289,6 @@ shape = SubResource( 26 )
 
 [node name="Default" parent="." instance=ExtResource( 2 )]
 
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 2
-
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 42, 410 )
 
@@ -314,8 +296,8 @@ position = Vector2( 42, 410 )
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 24
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 30
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

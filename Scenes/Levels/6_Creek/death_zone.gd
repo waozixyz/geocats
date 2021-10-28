@@ -12,9 +12,9 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		inside = true
 
-func _process(_delta):
+func _process(delta):
 	if inside:
-		global.data.player_hp -= 2
+		global.data.player_hp -= .8 * (delta * 60)
 		
 func _on_body_exited(body):
 	if body.name == "Player":

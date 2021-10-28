@@ -10,36 +10,35 @@ var nft_possible: bool = false
 var nft_id : String = ""
 var object
 var play_audio : bool = false
+var disabled = false
+
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 
-
 func _on_body_entered(body):
-	if body.name == "Player":
-		object.visible = true
+	if body.name == "Player" and not disabled:
+		if object:
+			object.visible = true
 		touching = true
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		object.visible = false
+		if object:
+			object.visible = false
 		touching = false
 		if nft_possible:
 			nft.main.visible = false
 			chat_with.visible = false
+
 func _process(_delta):
-	if nft_possible:
-		nft.update(touching, nft_id)
-		if nft.main.visible or chat_with.visible or nft.login.visible or global.updating:
-			object.visible = false
-		elif touching:
-			object.visible = true
 	if play_audio:
 		if playing.has(name) and touching and playing[name].directional:
-			object.visible = false
+			if object:
+				object.visible = false
 			if playing[name].audio.volume_db < 0:
 				playing[name].audio.volume_db += .1
-		elif touching:
+		elif touching and object:
 			object.visible = true
 		elif playing.has(name) and playing[name].directional:
 			playing[name].audio.volume_db -= 0.1
@@ -68,11 +67,12 @@ func _add_audio(path, file_name, directional = true):
 		else:
 			play_audio = false
 			remove_child(audio)
+
 var playing = {}
 func _stop_playing(stream):
 	playing.erase(name)
 	remove_child(stream)
-	if touching:
+	if touching and object:
 		object.visible = true
 		
 	

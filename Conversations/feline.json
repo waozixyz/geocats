@@ -1,0 +1,26 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "This looks like a strange sort of button mechanism.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "You don't seem heavy enough to press it down though...",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "Let's keep exploring?",
+    "next": ""
+  }
+}

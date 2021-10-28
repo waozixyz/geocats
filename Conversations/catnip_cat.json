@@ -2,7 +2,7 @@
   "first": {
     "avatar": "catnip_cat.png",
     "position": "left",
-    "animation_in": "move_in",
+    "animation_in": "fade_in",
     "type": "text",
     "content": "...",
     "next": "1"

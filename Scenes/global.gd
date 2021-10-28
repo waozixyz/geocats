@@ -1,9 +1,10 @@
 extends Node
 
+const fps = 60
 var player_position
 var player_direction
 var crt_noise = 0.0
-
+var pause_msg = ""
 var data =  {
 	"jwt": "",
 	"vechain": "",

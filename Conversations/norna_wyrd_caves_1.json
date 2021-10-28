@@ -1,0 +1,47 @@
+{
+  "first": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "position": "left",
+    "type": "text",
+    "content": "You're putting up quite a fight!",
+    "animation_in": "fade_in",
+    "next": "1"
+  },
+  "1": {
+    "name": "Norna",
+    "avatar": "norna.png",
+    "animation_in": "fade_in",
+    "position": "right",
+    "type": "text",
+    "content": "I’m Norna,@this is my counterpart Wyrd.",
+    "next": "2"
+  },
+  "2": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "Quit volunteering information you halfwit!",
+    "next": "3"
+  },
+  "3": {
+    "name": "Norna",
+    "avatar": "norna.png",
+    "animation_in": "fade_in",
+    "position": "right",
+    "type": "text",
+    "content": "We’re hiding out here, taking samples of this slime mold.@Our employer uses it for freaky experiments.",
+    "next": "4"
+  },
+ "4": {
+    "name": "Wyrd",
+    "avatar": "wyrd.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "You’re going to get us fired!@Shut your trap Norna!",
+    "next": ""
+  },
+}

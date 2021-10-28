@@ -1,44 +1,40 @@
-extends Area2D
+extends InteractSimple
 
-onready var interact_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/SimpleInteract")
-onready var player = get_tree().get_current_scene().get_node("Default/Player")
 onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
 
-onready var thank_you = get_tree().get_current_scene().get_node("CanvasLayer/ThankYou")
-
-var touching = false
-var game_finished = false
+var zoom_out : bool = false
+var zoom_org : float = 0.0
 
 func _ready():
-	set_process_input(true)
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
-
-func _on_body_entered(body):
-
-	if body.name == "Player":
-		touching = true
-		interact_with.visible = true
+	zoom_org = camera.zoom.x
 	
-func _on_body_exited(body):
-	if body.name == "Player":
-		touching = false
-		interact_with.visible = false
-
+func _zoomi(dir = 1):
+	camera.zoom.x += 0.03 * dir
+	camera.zoom.y += 0.03 * dir 
+	camera.position.x += 7 * dir
 func _process(delta):
-	if game_finished:	
-		player.disabled = true
-		interact_with.visible = false
-		if camera.zoom.x < 7:
-			camera.zoom.x += 0.01
-			camera.zoom.y += 0.01
-			camera.position.x += 1
-		else:
-			thank_you.visible = true
-			
+	._process(delta)
+	if touching:
+		if do_something:
+			if camera.zoom.x <= zoom_org:
+				zoom_out = true
+			if camera.zoom.x > zoom_org:
+				zoom_out = false
+			do_something = false
+					
+		if zoom_out:
+			player.disable()
 
-func _input(_event):
-	# when i press the interact key (e)
-	if Input.is_action_just_pressed("interact"):
-		if touching:
-			game_finished = true
+			if camera.zoom.x < 6.6:
+				object.visible = false
+				_zoomi()
+			else:
+				object.visible = true
+		else:
+			if camera.zoom.x > zoom_org:
+				_zoomi(-1)
+			else:
+				object.visible = true
+				player.enable()
+
+

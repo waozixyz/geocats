@@ -45,38 +45,21 @@ extents = Vector2( 50, 50 )
 
 [node name="JokeRoom" type="Node2D"]
 
-[node name="BelowPlayer" type="ViewportContainer" parent="."]
-margin_right = 1560.0
-margin_bottom = 840.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 6
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 6, 6 )
 
-[node name="Viewport" type="Viewport" parent="BelowPlayer"]
-size = Vector2( 260, 140 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="BG" type="Sprite" parent="BelowPlayer/Viewport"]
+[node name="BG" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 5 )
 centered = false
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Viewport"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 207, 75 )
 frames = SubResource( 6 )
+frame = 4
 playing = true
 centered = false
 
 [node name="Default" parent="." instance=ExtResource( 1 )]
-
-[node name="AnimatedSprite" parent="Default/Affogato/ViewportContainer/Viewport" index="0"]
-frame = 2
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 132, 528.083 )
@@ -86,34 +69,21 @@ zoom = Vector2( 1.5, 1.5 )
 limit_right = 1560
 limit_bottom = 840
 
-[node name="AnimatedSprite" parent="Default/Player/ViewportContainer/Viewport" index="0"]
-frame = 6
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 3
 
-[node name="AbovePlayer" type="ViewportContainer" parent="."]
-margin_right = 1560.0
-margin_bottom = 840.0
-mouse_filter = 2
-stretch = true
-stretch_shrink = 6
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 6, 6 )
 
-[node name="Viewport" type="Viewport" parent="AbovePlayer"]
-size = Vector2( 260, 140 )
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="FG" type="Sprite" parent="AbovePlayer/Viewport"]
+[node name="FG" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 6 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
 "end",
 ]]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 148.531, 553.231, 270.08, 552.546, 380.997, 540.518, 444.696, 542.3, 616.194, 594.863, 751.611, 595.754, 987.699, 559.227, 1155.63, 524.928, 1339.16, 529.382, 1472.96, 534.378, 1476.17, 624.411, 84.2158, 627.502, 83.8817, 552.1 )

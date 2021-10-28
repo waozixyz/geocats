@@ -2,14 +2,10 @@ extends InteractMain
 class_name InteractChat
 
 var active : bool
-var disabled : bool
+
 var parent_name : String
 var convo_file : String
 var music_file : String
-
-func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
 
 func _get_complex_convo():
 	var scene_name = get_tree().get_current_scene().name
@@ -44,19 +40,29 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		hide_chat()
 
+		if nft_possible:
+			nft.main.visible = false
+			chat_with.visible = false
 
-func _process(_delta):
+func _process(delta):
 	if disabled and active:
 		hide_chat()
+
 	if active and "idle" in get_parent():
 		if chat_with.started:
 			get_parent().idle = true
 		else:
 			get_parent().idle = false
 
+	if nft_possible:
+		nft.update(chat_with.started, nft_id)
+	._process(delta)
 
 func _input(_event):
 	if active:
 		if Input.is_action_just_pressed("interact"):
-			chat_with.start(convo_file)
-			_add_audio("NPC", music_file)
+			if not chat_with.started:
+				_add_audio("NPC", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id)

@@ -58,7 +58,7 @@ region = Rect2( 16, 0, 16, 10 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 10 ), SubResource( 9 ), SubResource( 8 ), SubResource( 7 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 12 ), SubResource( 13 ), SubResource( 1 ), SubResource( 1 ) ],
 "loop": true,
-"name": "1",
+"name": "MushroomCat",
 "speed": 5.0
 } ]
 
@@ -66,7 +66,6 @@ animations = [ {
 position = Vector2( 128, 64 )
 scale = Vector2( 15, 15 )
 frames = SubResource( 14 )
-animation = "1"
-frame = 2
+animation = "MushroomCat"
 playing = true
 centered = false
