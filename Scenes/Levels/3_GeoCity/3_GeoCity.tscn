@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/big_pumpkin_spritesheet.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/moon.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/medium_pumpkin_sptritesheet.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=26]
+[ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=27]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -311,6 +313,33 @@ animations = [ {
 "speed": 9.0
 } ]
 
+[sub_resource type="SpriteFrames" id=68]
+animations = [ {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 2, 3.66666 )
+
+[sub_resource type="RectangleShape2D" id=70]
+extents = Vector2( 31, 5.5 )
+
+[sub_resource type="DynamicFontData" id=71]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=72]
+size = 24
+extra_spacing_top = -10
+font_data = SubResource( 71 )
+
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
 
@@ -327,7 +356,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 6
+frame = 17
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -362,14 +391,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 23
+frame = 20
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 37
+frame = 30
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -761,7 +790,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 33
+frame = 23
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -786,7 +815,7 @@ shape = SubResource( 62 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 67 )
 animation = "Sad"
-frame = 11
+frame = 4
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -805,6 +834,97 @@ texture = ExtResource( 16 )
 [node name="fg_entrance_city" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PUMPKIN" type="Node2D" parent="CanvasLayer"]
+
+[node name="Giant_Pumpkin_UI" type="AnimatedSprite" parent="CanvasLayer/PUMPKIN"]
+visible = false
+position = Vector2( 319, 235 )
+scale = Vector2( 6, 6 )
+frames = SubResource( 68 )
+animation = "Sad"
+frame = 9
+playing = true
+
+[node name="Note_1" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -14.1667, 16 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_1"]
+shape = SubResource( 69 )
+
+[node name="Note_2" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -10, 15 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_2"]
+position = Vector2( -0.166668, 0 )
+shape = SubResource( 69 )
+
+[node name="Note_3" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -5.16667, 13.3333 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_3"]
+shape = SubResource( 69 )
+
+[node name="Note_4" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -0.166672, 13 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_4"]
+shape = SubResource( 69 )
+
+[node name="Note_5" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( 5.16667, 13.3333 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_5"]
+shape = SubResource( 69 )
+
+[node name="Note_6" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( 10.1667, 15 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_6"]
+shape = SubResource( 69 )
+
+[node name="Note_7" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( 14.6667, 15.8333 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_7"]
+shape = SubResource( 69 )
+
+[node name="Congratulations" type="Area2D" parent="CanvasLayer/PUMPKIN"]
+position = Vector2( 319, 235 )
+scale = Vector2( 6, 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Congratulations"]
+position = Vector2( 0, 33.6667 )
+shape = SubResource( 70 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/PUMPKIN/Congratulations"]
+visible = false
+position = Vector2( -0.166672, 34.3333 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 27 )
+
+[node name="Label" type="Label" parent="CanvasLayer/PUMPKIN/Congratulations"]
+visible = false
+margin_left = -127.333
+margin_top = 14.8333
+margin_right = 186.667
+margin_bottom = 65.8333
+custom_fonts/font = SubResource( 72 )
+text = "Congratulations! This Giant Pumpkin NFT will let you toggle spooky mode any time you like!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
