@@ -17,7 +17,7 @@ var master_sound = AudioServer.get_bus_index("Master")
 var active : bool = false
 
 var old_view
-onready var view : Control = map_view
+onready var view : Control
 var player
 var change_to = ""
 func _ready():
@@ -28,7 +28,7 @@ func _ready():
 
 	for child in system.get_children():
 		child.visible = false
-	view = main_view
+	view = map_view
 	view.visible = true
 	status_bar.visible = true
 
@@ -53,10 +53,13 @@ func _scroll_news():
 
 # exit logic
 func _exit():
-	if active:
-		active = false
-		_tween(self, 1, 0)
-
+	if view.name == "MainView":
+		if active:
+			active = false
+			_tween(self, 1, 0)
+	else:
+		_change_view(main_view)
+	
 # button press functions
 func _button_action(label):
 	match label:
@@ -68,10 +71,7 @@ func _button_action(label):
 			_exit()
 			change_to = "TitleScreen"
 		"Exit":
-			if view.name == "MainView":
-				_exit()
-			else:
-				_change_view(main_view)
+			_exit()
 		"Music":
 			pass
 		"Sound":
@@ -188,7 +188,6 @@ func _input(event):
 				pass
 			else:
 				# release
-
 				if system.visible :
 					# main view system buttons
 					for button in view.get_children():

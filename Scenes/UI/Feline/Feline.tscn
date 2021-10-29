@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/UI/Feline/RedButton/red_button.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Feline/Body/feline_topbar.png" type="Texture" id=2]
@@ -19,7 +19,13 @@
 [ext_resource path="res://Assets/UI/Feline/StatusBar/Exit/exit_on.png" type="Texture" id=17]
 [ext_resource path="res://Assets/UI/Feline/StatusBar/Sound/sfx_on.png" type="Texture" id=18]
 [ext_resource path="res://Assets/UI/Feline/StatusBar/Exit/exit_off.png" type="Texture" id=19]
+[ext_resource path="res://Assets/UI/Feline/MapView/CatsCradle.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/UI/Feline/MapView.gd" type="Script" id=21]
+[ext_resource path="res://Assets/UI/Feline/arrow.png" type="Texture" id=22]
+[ext_resource path="res://Assets/UI/Feline/arrow_clicked.png" type="Texture" id=23]
+[ext_resource path="res://Assets/UI/Feline/MapView/CatsCradle_hovered.png" type="Texture" id=24]
+[ext_resource path="res://Assets/UI/Feline/MapView/CatsCradle_clicked.png" type="Texture" id=25]
+[ext_resource path="res://Assets/UI/Feline/arrow_hovered.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -58,6 +64,7 @@ __meta__ = {
 }
 
 [node name="MainView" type="Control" parent="System"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 1
@@ -134,6 +141,9 @@ margin_top = 189.0
 margin_right = 383.0
 margin_bottom = 285.0
 mouse_filter = 1
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 24 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -149,6 +159,28 @@ size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="System/MapView"]
+margin_left = 189.0
+margin_top = 198.0
+margin_right = 234.0
+margin_bottom = 272.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 26 )
+
+[node name="Forth" type="TextureButton" parent="System/MapView"]
+margin_left = 450.0
+margin_top = 198.0
+margin_right = 514.0
+margin_bottom = 282.0
+rect_scale = Vector2( -1, 1 )
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
