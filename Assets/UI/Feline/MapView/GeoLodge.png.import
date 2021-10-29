@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lodge_hovered.png-64f9fa92df4ae37c36ed82d5b00435e0.stex"
+path="res://.import/GeoLodge.png-138663c377c0be2a5560031b93990a07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/MapView/Lodge_hovered.png"
-dest_files=[ "res://.import/Lodge_hovered.png-64f9fa92df4ae37c36ed82d5b00435e0.stex" ]
+source_file="res://Assets/UI/Feline/MapView/GeoLodge.png"
+dest_files=[ "res://.import/GeoLodge.png-138663c377c0be2a5560031b93990a07.stex" ]
 
 [params]
 

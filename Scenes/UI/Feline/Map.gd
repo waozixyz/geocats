@@ -5,7 +5,7 @@ onready var device = $Device
 onready var label = $Label
 
 func _ready():
-	var first_child = device.get_node("CatCradle")
+	var first_child = device.get_node("CatsCradle")
 	_unselect_others(device)
 	if first_child.disabled == false:
 		first_child.selected = false

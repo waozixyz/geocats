@@ -19,7 +19,7 @@ func _get_scene():
 	match scene:
 		"TitleScreen":
 			return ["res://Scenes/Levels/0_TitleScreen/TitleScreen.tscn", pos, dir]
-		"CatCradle":
+		"CatsCradle":
 			match location:
 				1: 
 					pos = Vector2(25, 950 * 0.7)
@@ -133,7 +133,7 @@ func _new_scene():
 		global.data.location = location
 		global.data.nav_unlocked[scene] = true
 	var scene_data = _get_scene()
-
+	print(scene_data)
 	var _null = get_tree().change_scene(scene_data[0])
 
 	global.player_position = scene_data[1]

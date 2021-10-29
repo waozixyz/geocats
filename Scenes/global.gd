@@ -8,14 +8,14 @@ var pause_msg = ""
 var data =  {
 	"jwt": "",
 	"vechain": "",
-	"scene": "CatCradle",
+	"scene": "CatsCradle",
 	"location": 0,
 	"present": true,
 	"prog_var": {},
 	"prog_dia": {},
 	"player_hp": 100.0,
 	"nav_visible": {},
-	"nav_unlocked": {"CatCradle": true},
+	"nav_unlocked": {"CatsCradle": true},
 }
 
 func _enter_tree():
