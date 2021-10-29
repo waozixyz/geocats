@@ -21,11 +21,11 @@
 [ext_resource path="res://Assets/UI/Feline/StatusBar/Exit/exit_off.png" type="Texture" id=19]
 [ext_resource path="res://Assets/UI/Feline/MapView/CatsCradle.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/UI/Feline/MapView.gd" type="Script" id=21]
-[ext_resource path="res://Assets/UI/Feline/arrow.png" type="Texture" id=22]
-[ext_resource path="res://Assets/UI/Feline/arrow_clicked.png" type="Texture" id=23]
+[ext_resource path="res://Assets/UI/Feline/MapView/arrow.png" type="Texture" id=22]
+[ext_resource path="res://Assets/UI/Feline/MapView/arrow_clicked.png" type="Texture" id=23]
 [ext_resource path="res://Assets/UI/Feline/MapView/CatsCradle_hovered.png" type="Texture" id=24]
 [ext_resource path="res://Assets/UI/Feline/MapView/CatsCradle_clicked.png" type="Texture" id=25]
-[ext_resource path="res://Assets/UI/Feline/arrow_hovered.png" type="Texture" id=26]
+[ext_resource path="res://Assets/UI/Feline/MapView/arrow_hovered.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
