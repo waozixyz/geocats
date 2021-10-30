@@ -164,20 +164,21 @@ __meta__ = {
 }
 
 [node name="Back" type="TextureButton" parent="System/MapView"]
-margin_left = 189.0
-margin_top = 198.0
-margin_right = 234.0
-margin_bottom = 272.0
+margin_left = 195.0
+margin_top = 207.0
+margin_right = 259.0
+margin_bottom = 291.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 23 )
 texture_hover = ExtResource( 26 )
 
 [node name="Forth" type="TextureButton" parent="System/MapView"]
-margin_left = 450.0
-margin_top = 198.0
-margin_right = 514.0
-margin_bottom = 282.0
-rect_scale = Vector2( -1, 1 )
+margin_left = 439.0
+margin_top = 207.0
+margin_right = 503.0
+margin_bottom = 291.0
+rect_scale = Vector2( -0.8, 0.8 )
 texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 23 )
 texture_hover = ExtResource( 26 )

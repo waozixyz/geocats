@@ -81,7 +81,7 @@ func update(touching, nft_id):
 					else:
 						global.nft_api("/available", nft_id)
 				else:
-					print("something wrong")
+					printerr("something wrong with nft logic")
 		waiting = false
 	else:
 		loading.visible = false

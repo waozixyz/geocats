@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lock_Closed_Feline_Map.png-86d8f7199a11ed90fcccb9868e51eb87.stex"
+path="res://.import/locked_hovered.png-bfb66e1c33f92805c6e35567d2846671.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/MapView/Lock_Closed_Feline_Map.png"
-dest_files=[ "res://.import/Lock_Closed_Feline_Map.png-86d8f7199a11ed90fcccb9868e51eb87.stex" ]
+source_file="res://Assets/UI/Feline/MapView/locked_hovered.png"
+dest_files=[ "res://.import/locked_hovered.png-bfb66e1c33f92805c6e35567d2846671.stex" ]
 
 [params]
 

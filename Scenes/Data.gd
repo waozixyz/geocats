@@ -16,9 +16,9 @@ func _ready():
 	loadit()
 
 	# load dialogue system data
-	#PROGRESS.variables = global.data.prog_var
-	#PROGRESS.dialogues = global.data.prog_dia
-	
+	PROGRESS.variables = global.data.prog_var
+	PROGRESS.dialogues = global.data.prog_dia
+
 func saveit():
 	global.data.prog_var = PROGRESS.variables
 	global.data.prog_dia = PROGRESS.dialogues
