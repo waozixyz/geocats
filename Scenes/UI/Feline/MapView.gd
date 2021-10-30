@@ -63,15 +63,20 @@ func _input(event):
 			if event.pressed:
 				pass
 			else:
-				if back.pressed:
+				if back.visible and back.pressed:
 					current -= 1
-					if current < 0:
-						current = list.size() - 1
 					_change_button()
-				elif forth.pressed:
+				elif forth.visible and forth.pressed:
 					current += 1
-					if current > list.size() - 1:
-						current = 0
 					_change_button()
 				if btn.pressed:
 					_press_button()
+
+				if current == 0:
+					back.visible = false
+				else:
+					back.visible = true
+				if current == list.size() -1:
+					forth.visible = false
+				else:
+					forth.visible = true
