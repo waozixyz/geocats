@@ -5,13 +5,10 @@ onready var pumpkin = get_tree().get_current_scene().get_node("CanvasLayer/PUMPK
 
 onready var pumpkin_ui = pumpkin.get_node("Giant_Pumpkin_UI")
 
-onready var one_button = pumpkin_ui.get_node("Note_1")
-onready var two_button = pumpkin_ui.get_node("Note_2")
-onready var three_button = pumpkin_ui.get_node("Note_3")
-onready var four_button = pumpkin_ui.get_node("Note_4")
-onready var five_button = pumpkin_ui.get_node("Note_5")
-onready var six_button = pumpkin_ui.get_node("Note_6")
-onready var seven_button = pumpkin_ui.get_node("Note_7")
+
+#For Loop
+var btns = []
+
 onready var congratulations = pumpkin.get_node("Congratulations")
 
 var success : bool = false
@@ -19,6 +16,10 @@ var failed : bool = false
 var correct_guess : bool = false
 var correct_guess_done : bool = false
 var nft_id_pumpkin : String = "GiantPumpkin"
+
+func _ready():
+	for child in pumpkin_ui.get_children():
+		print(child.name)
 
 func open_keyboard():
 	connect("body_entered", self, "_on_body_entered")
@@ -36,7 +37,7 @@ func _on_body_exited(body):
 # Here we can log the order of buttons pressed? 
 var array = []
 func keyboard_1_action():
-	print("Play note 1 and add number 1 to array")
+	print("Play note 1 and add number 1 to array") #pass in child
 func keyboard_2_action():
 	print("Play note 2 and add number 2 to array")
 func keyboard_3_action():
@@ -95,14 +96,8 @@ func _process(delta):
 		open_keyboard()
 		disabled = true
 		nft.update(pumpkin.visible, nft_id_pumpkin)
-		if pumpkin.visible:
-			check_button(one_button)
-			check_button(two_button)
-			check_button(three_button)
-			check_button(four_button)
-			check_button(five_button)
-			check_button(six_button)
-			check_button(seven_button)
+	#	if pumpkin.visible:
+	#		check_button(one_button)
 		if not failed and not success and not correct_guess:
 			if array.length > 7:
 				 array.clear
@@ -119,7 +114,7 @@ func _process(delta):
 
 func _pumpkin_code(event):
 	if pumpkin.visible:
-		if array == 7 and array == 7: #geolodge_array:
+		if array == 7 and array == geolodge_array():
 			guessed_correctly()
 
 		elif not correct_guess:

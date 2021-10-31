@@ -180,22 +180,22 @@ extents = Vector2( 75, 47 )
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 17 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=45]
 animations = [ {
-"frames": [ SubResource( 43 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 44 ), SubResource( 43 ) ],
+"frames": [ SubResource( 43 ), SubResource( 44 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 44 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -206,52 +206,52 @@ extents = Vector2( 33.2397, 28.051 )
 extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 22 )
-region = Rect2( 60, 0, 15, 12 )
+atlas = ExtResource( 18 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 22 )
 region = Rect2( 75, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 18 )
-region = Rect2( 22, 0, 11, 7 )
+atlas = ExtResource( 22 )
+region = Rect2( 60, 0, 15, 12 )
 
 [sub_resource type="SpriteFrames" id=51]
 animations = [ {
 "frames": [ SubResource( 48 ), SubResource( 49 ) ],
 "loop": true,
-"name": "idle",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 50 ), SubResource( 49 ) ],
 "loop": true,
-"name": "walk",
+"name": "idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 13 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 13 )
-region = Rect2( 22, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=55]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 53 ), SubResource( 54 ) ],
+"frames": [ SubResource( 52 ), SubResource( 53 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 54 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -332,13 +332,13 @@ extents = Vector2( 2, 3.66666 )
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 31, 5.5 )
 
-[sub_resource type="DynamicFontData" id=71]
+[sub_resource type="DynamicFontData" id=73]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=72]
 size = 24
 extra_spacing_top = -10
-font_data = SubResource( 71 )
+font_data = SubResource( 73 )
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
@@ -356,7 +356,6 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 17
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -391,14 +390,13 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 20
+frame = 25
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 30
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -679,6 +677,7 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 45 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -702,6 +701,7 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 51 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -725,6 +725,7 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 55 )
 animation = "walk"
+frame = 1
 playing = true
 flip_h = true
 
@@ -790,7 +791,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 23
+frame = 4
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -815,7 +816,7 @@ shape = SubResource( 62 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 67 )
 animation = "Sad"
-frame = 4
+frame = 5
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -840,7 +841,6 @@ texture = ExtResource( 19 )
 [node name="PUMPKIN" type="Node2D" parent="CanvasLayer"]
 
 [node name="Giant_Pumpkin_UI" type="AnimatedSprite" parent="CanvasLayer/PUMPKIN"]
-visible = false
 position = Vector2( 319, 235 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 68 )
