@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Navigator.png-2f6ffcce298c349654ecf3ebab2d04b4.stex"
+path="res://.import/exit_pressed.png-aed10b02c7215a60adf7857afbd887cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/MapView/Navigator.png"
-dest_files=[ "res://.import/Navigator.png-2f6ffcce298c349654ecf3ebab2d04b4.stex" ]
+source_file="res://Assets/UI/Feline/StatusBar/exit_pressed.png"
+dest_files=[ "res://.import/exit_pressed.png-aed10b02c7215a60adf7857afbd887cf.stex" ]
 
 [params]
 

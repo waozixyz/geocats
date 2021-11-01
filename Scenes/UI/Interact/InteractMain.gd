@@ -56,6 +56,7 @@ func _add_audio(path, file_name, directional = true):
 		audio.stream = load("res://Assets/Sfx/" + path + "/" + file_name + ".ogg")
 		if audio.stream != null:
 			play_audio = true
+			audio.bus = "Sound"
 			audio.connect("finished", self, "_stop_playing", [audio])
 			audio.stream.loop = false
 			audio.play()

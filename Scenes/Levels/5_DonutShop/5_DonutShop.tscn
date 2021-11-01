@@ -169,7 +169,6 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -177,7 +176,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -203,7 +201,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 11
+frame = 13
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -405,6 +403,7 @@ shape = SubResource( 35 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
+bus = "Music"
 
 [node name="GoToCity" type="Area2D" parent="."]
 position = Vector2( 21, 401 )

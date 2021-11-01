@@ -85,28 +85,28 @@ extents = Vector2( 27, 4 )
 extents = Vector2( 22, 4 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 36, 5 )
+extents = Vector2( 42.8818, 22.4911 )
 
 [sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 36, 5 )
+
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="DynamicFontData" id=27]
+[sub_resource type="DynamicFontData" id=28]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=29]
 size = 22
 extra_spacing_top = -5
 extra_spacing_bottom = -3
-font_data = SubResource( 27 )
-
-[sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 46, 54 )
+font_data = SubResource( 28 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 42.8818, 22.4911 )
+extents = Vector2( 36.2031, 15.5309 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 36.2031, 15.5309 )
+extents = Vector2( 46, 54 )
 
 [node name="CatCradle" type="Node2D"]
 
@@ -299,6 +299,14 @@ position = Vector2( 323, 70 )
 shape = SubResource( 24 )
 one_way_collision = true
 
+[node name="StereoSFX" type="Area2D" parent="Stereo"]
+position = Vector2( 300.27, 83.255 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stereo/StereoSFX"]
+position = Vector2( -6.53906, 8.40741 )
+shape = SubResource( 25 )
+
 [node name="Statue" type="StaticBody2D" parent="."]
 position = Vector2( 900, 570 )
 collision_layer = 7
@@ -309,12 +317,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statue"]
 position = Vector2( 314, -31 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Statue"]
 position = Vector2( 263, 42 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 one_way_collision = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -334,7 +342,7 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
-custom_fonts/normal_font = SubResource( 28 )
+custom_fonts/normal_font = SubResource( 29 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 31 )
@@ -346,6 +354,7 @@ __meta__ = {
 stream = ExtResource( 34 )
 volume_db = -3.493
 autoplay = true
+bus = "Music"
 
 [node name="Default" parent="." instance=ExtResource( 28 )]
 
@@ -357,9 +366,17 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 30
+frame = 5
 
-[node name="Bath" type="ColorRect" parent="."]
+[node name="LitterBoxSFX" type="Area2D" parent="."]
+position = Vector2( 809.231, 356.84 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LitterBoxSFX"]
+position = Vector2( -7.5437, 7.4028 )
+shape = SubResource( 30 )
+
+[node name="LitterBox" type="ColorRect" parent="."]
 margin_left = 860.0
 margin_top = 288.0
 margin_right = 926.0
@@ -398,29 +415,13 @@ script = ExtResource( 29 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2( 47, 50 )
-shape = SubResource( 29 )
+shape = SubResource( 31 )
 
 [node name="Button" type="Sprite" parent="Teleport"]
 visible = false
 position = Vector2( 58, 17.3 )
 scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 35 )
-
-[node name="StereoSFX" type="Area2D" parent="."]
-position = Vector2( 849.27, 653.255 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StereoSFX"]
-position = Vector2( -6.53906, 8.40741 )
-shape = SubResource( 30 )
-
-[node name="LitterBoxSFX" type="Area2D" parent="."]
-position = Vector2( 809.231, 356.84 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LitterBoxSFX"]
-position = Vector2( -7.5437, 7.4028 )
-shape = SubResource( 31 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

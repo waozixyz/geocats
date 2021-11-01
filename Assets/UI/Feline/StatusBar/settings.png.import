@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sfx_on.png-182887b2e39456c0b61b61fb2db13b5f.stex"
+path="res://.import/settings.png-e87f39d32914bcc1b9e9ea5ffa6d2f06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/StatusBar/Sound/sfx_on.png"
-dest_files=[ "res://.import/sfx_on.png-182887b2e39456c0b61b61fb2db13b5f.stex" ]
+source_file="res://Assets/UI/Feline/StatusBar/settings.png"
+dest_files=[ "res://.import/settings.png-e87f39d32914bcc1b9e9ea5ffa6d2f06.stex" ]
 
 [params]
 

@@ -70,7 +70,7 @@ limit_right = 1560
 limit_bottom = 840
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 3
+frame = 28
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -115,6 +115,7 @@ texture = ExtResource( 3 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+bus = "Music"
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

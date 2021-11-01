@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/music_on.png-d5ed9a87ff48dd8d432bfabf7e0e515e.stex"
+path="res://.import/settings_hover.png-9da0e5bd69b1b62745c2499d36210f79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/StatusBar/Music/music_on.png"
-dest_files=[ "res://.import/music_on.png-d5ed9a87ff48dd8d432bfabf7e0e515e.stex" ]
+source_file="res://Assets/UI/Feline/StatusBar/settings_hover.png"
+dest_files=[ "res://.import/settings_hover.png-9da0e5bd69b1b62745c2499d36210f79.stex" ]
 
 [params]
 

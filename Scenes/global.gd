@@ -5,6 +5,7 @@ var player_position
 var player_direction
 var crt_noise = 0.0
 var pause_msg = ""
+
 var data =  {
 	"jwt": "",
 	"vechain": "",
@@ -16,6 +17,10 @@ var data =  {
 	"player_hp": 100.0,
 	"nav_visible": {},
 	"nav_unlocked": {"CatsCradle": true},
+	"sound": -6,
+	"music": -6,
+	"nosound": false,
+	"nomusic": false,
 }
 
 func _enter_tree():

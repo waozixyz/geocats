@@ -12,8 +12,9 @@ onready var red_button = $RedButton
 # different views
 onready var main_view = $System/MainView
 onready var map_view = $System/MapView
+onready var settings_view = $System/SettingsView
 
-var master_sound = AudioServer.get_bus_index("Master")
+
 var active : bool = false
 
 var old_view
@@ -36,7 +37,8 @@ func _tween(obj, start, end, time = .5):
 	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
 
-
+func settings():
+	_change_view(settings_view)
 
 # exit logic
 func exit():

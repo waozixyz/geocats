@@ -255,6 +255,7 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
+frame = 5
 speed_scale = 2.0
 playing = true
 centered = false
@@ -262,7 +263,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 4
+frame = 6
 speed_scale = 1.5
 playing = true
 centered = false
@@ -270,7 +271,7 @@ centered = false
 [node name="Hole3" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 1020, 527 )
 frames = SubResource( 25 )
-frame = 7
+frame = 8
 speed_scale = 2.2
 playing = true
 centered = false
@@ -292,6 +293,7 @@ shape = SubResource( 26 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 30 )
+frame = 1
 playing = true
 centered = false
 
@@ -309,7 +311,6 @@ shape = SubResource( 26 )
 position = Vector2( -76, -1 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 34 )
-frame = 6
 speed_scale = 0.5
 playing = true
 centered = false
@@ -540,7 +541,7 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 20
+frame = 27
 
 [node name="waterarea" type="Area2D" parent="."]
 script = ExtResource( 4 )
@@ -602,6 +603,7 @@ centered = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
+bus = "Music"
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 2319, 2090 )

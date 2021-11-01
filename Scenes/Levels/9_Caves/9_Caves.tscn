@@ -191,7 +191,7 @@ centered = false
 [node name="cat_statue" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 41, 364 )
 frames = SubResource( 13 )
-frame = 5
+frame = 4
 speed_scale = 0.1
 playing = true
 centered = false
@@ -209,7 +209,7 @@ limit_right = 1565
 limit_bottom = 2385
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 33
+frame = 2
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -317,6 +317,7 @@ shape = SubResource( 25 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+bus = "Music"
 
 [node name="GoToGeoLodge" type="Area2D" parent="."]
 position = Vector2( 28.5323, 404.255 )

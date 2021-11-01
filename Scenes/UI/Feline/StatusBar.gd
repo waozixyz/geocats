@@ -33,10 +33,8 @@ func _button_action(label):
 	match label:
 		"Exit":
 			get_parent().get_parent().exit()
-		"Music":
-			pass
-		"Sound":
-			pass
+		"Settings":
+			get_parent().get_parent().settings()
 
 
 func _input(event):

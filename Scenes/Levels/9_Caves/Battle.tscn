@@ -229,48 +229,48 @@ animations = [ {
 extents = Vector2( 13, 130 )
 
 [sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 3 )
 region = Rect2( 65, 0, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 45, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 3 )
 region = Rect2( 65, 45, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 7 )
 region = Rect2( 65, 0, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 7 )
 region = Rect2( 0, 45, 65, 45 )
 
 [sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 7 )
 region = Rect2( 65, 45, 65, 45 )
 
 [sub_resource type="SpriteFrames" id=47]
 animations = [ {
-"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
-"loop": false,
-"name": "die",
-"speed": 30.0
-}, {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 43 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 45 ), SubResource( 46 ) ],
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 39 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "default",
 "speed": 36.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
+"loop": false,
+"name": "die",
+"speed": 30.0
 } ]
 
 [sub_resource type="AtlasTexture" id=48]
@@ -920,7 +920,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
+frame = 15
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
@@ -1009,6 +1009,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1055,6 +1056,7 @@ shape = SubResource( 88 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
 autoplay = true
+bus = "Music"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

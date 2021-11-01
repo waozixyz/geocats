@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exit_off.png-36a4f4e307e003a70110b4de5fa3dc9a.stex"
+path="res://.import/settings_pressed.png-c75145c52663d152bc27ed5f1a52df41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/StatusBar/Exit/exit_off.png"
-dest_files=[ "res://.import/exit_off.png-36a4f4e307e003a70110b4de5fa3dc9a.stex" ]
+source_file="res://Assets/UI/Feline/StatusBar/settings_pressed.png"
+dest_files=[ "res://.import/settings_pressed.png-c75145c52663d152bc27ed5f1a52df41.stex" ]
 
 [params]
 

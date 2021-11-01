@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exit_hover.png-d208076bbb375ba3280b552a884ed394.stex"
+path="res://.import/sfx_off.png-e51acbb8a3ce5e7c5f342308c7d5bd47.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Feline/StatusBar/Exit/exit_hover.png"
-dest_files=[ "res://.import/exit_hover.png-d208076bbb375ba3280b552a884ed394.stex" ]
+source_file="res://Assets/UI/Feline/SettingsView/sfx_off.png"
+dest_files=[ "res://.import/sfx_off.png-e51acbb8a3ce5e7c5f342308c7d5bd47.stex" ]
 
 [params]
 

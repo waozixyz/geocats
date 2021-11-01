@@ -344,3 +344,4 @@ centered = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+bus = "Music"

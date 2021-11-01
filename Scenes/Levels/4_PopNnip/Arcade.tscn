@@ -350,6 +350,7 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -357,7 +358,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 6
+frame = 2
 playing = true
 centered = false
 
@@ -378,6 +379,7 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -385,7 +387,6 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -393,7 +394,6 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -401,6 +401,7 @@ centered = false
 [node name="hyper" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 59, 56 )
 frames = SubResource( 42 )
+frame = 1
 speed_scale = 0.23
 playing = true
 centered = false
@@ -505,11 +506,13 @@ polygon = PoolVector2Array( -1714, -646, -1584, -758, -1452, -758, -1452, -853, 
 stream = ExtResource( 1 )
 volume_db = -12.0
 autoplay = true
+bus = "Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )
 volume_db = -7.647
 autoplay = true
+bus = "Music"
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 569, 370 )
@@ -560,7 +563,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 33
+frame = 15
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
@@ -595,7 +598,6 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 67 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

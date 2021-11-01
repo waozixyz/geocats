@@ -26,7 +26,13 @@ func saveit():
 	file.open(FILE_NAME, File.WRITE)
 	file.store_string(to_json(global.data))
 	file.close()
+	
+func _load_audio_bus(bus_name):
+	var i = AudioServer.get_bus_index(bus_name)
+	AudioServer.set_bus_mute(i, global.data["no" + bus_name.to_lower()])
+	AudioServer.set_bus_volume_db(i, global.data[bus_name.to_lower()])
 
+	
 func loadit():
 	var file = File.new()
 	if file.file_exists(FILE_NAME):
@@ -35,6 +41,8 @@ func loadit():
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
 			global.data = _correct_data(data)
+			_load_audio_bus("Music")
+			_load_audio_bus("Sound")
 		else:
 			printerr("Corrupted data!")
 	else:

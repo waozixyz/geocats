@@ -284,31 +284,31 @@ extents = Vector2( 61.5852, 58.9592 )
 
 [sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 50, 54 )
+region = Rect2( 0, 54, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 23 )
-region = Rect2( 50, 0, 50, 54 )
+region = Rect2( 50, 54, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 23 )
-region = Rect2( 0, 54, 50, 54 )
+region = Rect2( 0, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 23 )
-region = Rect2( 50, 54, 50, 54 )
+region = Rect2( 50, 0, 50, 54 )
 
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [node name="GeoCity" type="Node2D"]
@@ -327,7 +327,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 6
+frame = 19
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -362,14 +362,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 23
+frame = 22
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 37
+frame = 38
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -761,18 +761,20 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 33
+frame = 1
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -3.0
 pitch_scale = 0.36
+bus = "Music"
 
 [node name="Salty_Swing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -10.0
 autoplay = true
+bus = "Music"
 
 [node name="GiantPumpkin" type="Area2D" parent="."]
 position = Vector2( 3373.95, 431.68 )
@@ -786,7 +788,7 @@ shape = SubResource( 62 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 67 )
 animation = "Sad"
-frame = 11
+frame = 12
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]

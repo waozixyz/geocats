@@ -76,6 +76,7 @@ func jump(jumpHeight):
 			sfx.stream = load('res://Assets/Sfx/Effects/jump_shroom.ogg')
 		else:
 			sfx.stream = load('res://Assets/Sfx/Effects/jump.ogg')
+		sfx.bus = "Sound"
 		sfx.stream.loop = false
 		sfx.play()
 		sfx.connect("finished", self, "_stop_playing", [sfx])
