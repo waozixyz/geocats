@@ -189,7 +189,7 @@ centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 78 )
-frame = 2
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -222,7 +222,7 @@ shape = SubResource( 80 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 83 )
-frame = 5
+frame = 2
 speed_scale = 0.2
 playing = true
 centered = false
@@ -245,7 +245,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 27
+frame = 28
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -398,14 +398,13 @@ texture = ExtResource( 5 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PumpkinCodeHint" type="Node2D" parent="CanvasLayer"]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/PumpkinCodeHint"]
-margin_left = 120.729
-margin_top = 198.0
-margin_right = 520.729
-margin_bottom = 285.0
-color = Color( 0.458824, 0.254902, 0.231373, 1 )
+margin_left = 125.0
+margin_top = 375.0
+margin_right = 525.0
+margin_bottom = 462.0
+color = Color( 0.435294, 0.105882, 0.0705882, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
