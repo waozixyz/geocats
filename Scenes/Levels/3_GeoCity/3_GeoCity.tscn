@@ -356,7 +356,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 19
+frame = 1
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -398,7 +398,7 @@ playing = true
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 17
+frame = 4
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -679,7 +679,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 45 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -703,7 +702,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 51 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -727,7 +725,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 55 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
@@ -793,7 +790,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 26
+frame = 17
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -818,7 +815,7 @@ shape = SubResource( 62 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 67 )
 animation = "Sad"
-frame = 11
+frame = 5
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -847,7 +844,7 @@ position = Vector2( 319, 235 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 68 )
 animation = "Sad"
-frame = 1
+frame = 9
 playing = true
 
 [node name="Note_1" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]

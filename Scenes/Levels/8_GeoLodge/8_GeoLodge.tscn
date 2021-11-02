@@ -222,7 +222,7 @@ shape = SubResource( 80 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 83 )
-frame = 2
+frame = 4
 speed_scale = 0.2
 playing = true
 centered = false
@@ -245,7 +245,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 28
+frame = 18
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -414,6 +414,9 @@ margin_left = 42.0
 margin_top = 16.0
 margin_right = 352.0
 margin_bottom = 75.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Palmerston" type="KinematicBody2D" parent="."]
 position = Vector2( 970.98, 403.846 )
