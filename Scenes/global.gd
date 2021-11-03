@@ -23,6 +23,8 @@ var data =  {
 	"nomusic": false,
 }
 
+var pumpkin_code = int(rand_range(1,7))
+
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)
 		

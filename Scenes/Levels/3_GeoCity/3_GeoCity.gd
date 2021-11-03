@@ -12,7 +12,7 @@ func _ready():
 	giant_pumpkin.visible = true
 
 
-func creppy_city(): #Change to Pumpkin function which is called by collision
+func creepy_city(): #Change to Pumpkin function which is called by collision
 	below_player.get_node("City_Buildings").texture = load(theme_path + "bg.png")
 	below_player.get_node("City_BG").texture = load(theme_path + "red_sky.png")
 	below_player.get_node("Moon").visible = true

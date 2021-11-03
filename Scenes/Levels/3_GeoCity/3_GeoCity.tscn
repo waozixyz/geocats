@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/big_pumpkin_spritesheet.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/moon.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/medium_pumpkin_sptritesheet.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=26]
+[ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=27]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -204,12 +206,12 @@ extents = Vector2( 33.2397, 28.051 )
 extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
+atlas = ExtResource( 22 )
+region = Rect2( 60, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 18 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 18 )
@@ -217,7 +219,7 @@ region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=52]
 animations = [ {
@@ -234,86 +236,96 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 13 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 13 )
 region = Rect2( 22, 0, 11, 7 )
 
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 11, 7 )
-
-[sub_resource type="SpriteFrames" id=56]
+[sub_resource type="SpriteFrames" id=55]
 animations = [ {
 "frames": [ SubResource( 53 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 54 ), SubResource( 55 ) ],
+"frames": [ null, SubResource( 54 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=57]
+[sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 24, 16 )
 
-[sub_resource type="AtlasTexture" id=58]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 22 )
 region = Rect2( 45, 0, 15, 12 )
 
-[sub_resource type="AtlasTexture" id=59]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 22 )
 region = Rect2( 60, 0, 15, 12 )
 
-[sub_resource type="AtlasTexture" id=60]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 22 )
 region = Rect2( 75, 0, 15, 12 )
 
-[sub_resource type="SpriteFrames" id=61]
+[sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 9, 460.003 )
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=64]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 54, 50, 54 )
 
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 23 )
 region = Rect2( 50, 54, 50, 54 )
 
-[sub_resource type="AtlasTexture" id=66]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 0, 50, 54 )
 
-[sub_resource type="AtlasTexture" id=67]
+[sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 23 )
 region = Rect2( 50, 0, 50, 54 )
 
-[sub_resource type="SpriteFrames" id=68]
+[sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 64 ), SubResource( 65 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 65 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 65 ), SubResource( 64 ), SubResource( 64 ), SubResource( 65 ) ],
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
 }, {
-"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 67 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 67 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ) ],
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 2, 3.66666 )
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 31, 5.5 )
+
+[sub_resource type="DynamicFontData" id=70]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=71]
+size = 24
+extra_spacing_top = -10
+font_data = SubResource( 70 )
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
@@ -331,7 +343,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 17
+frame = 15
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -366,14 +378,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 21
+frame = 27
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 32
+frame = 6
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -698,7 +710,7 @@ script = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 56 )
+frames = SubResource( 55 )
 animation = "walk"
 playing = true
 flip_h = true
@@ -721,7 +733,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage"]
 position = Vector2( 27, 33 )
-shape = SubResource( 57 )
+shape = SubResource( 56 )
 
 [node name="Area2D" type="Area2D" parent="NPC/Garbitage"]
 script = ExtResource( 2 )
@@ -733,7 +745,7 @@ shape = SubResource( 46 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Garbitage"]
 position = Vector2( 30, 31 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 61 )
+frames = SubResource( 60 )
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 4337.13, 710.159 )
@@ -743,7 +755,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-shape = SubResource( 62 )
+shape = SubResource( 61 )
 
 [node name="Ladder2" type="Area2D" parent="."]
 position = Vector2( 721.176, 540.31 )
@@ -753,7 +765,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
-shape = SubResource( 62 )
+shape = SubResource( 61 )
 
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
@@ -765,7 +777,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 17
+frame = 33
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -786,13 +798,13 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiantPumpkin"]
-shape = SubResource( 63 )
+shape = SubResource( 62 )
 
 [node name="Giant_Pumpkin" type="AnimatedSprite" parent="GiantPumpkin"]
 scale = Vector2( 2, 2 )
-frames = SubResource( 68 )
+frames = SubResource( 67 )
 animation = "Sad"
-frame = 1
+frame = 13
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -811,6 +823,96 @@ texture = ExtResource( 16 )
 [node name="fg_entrance_city" type="Sprite" parent="FrontPlayer"]
 position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PUMPKIN" type="Node2D" parent="CanvasLayer"]
+
+[node name="Giant_Pumpkin_UI" type="AnimatedSprite" parent="CanvasLayer/PUMPKIN"]
+position = Vector2( 319, 235 )
+scale = Vector2( 6, 6 )
+frames = SubResource( 67 )
+animation = "Sad"
+frame = 3
+playing = true
+
+[node name="Note_1" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -14.1667, 16 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_1"]
+shape = SubResource( 68 )
+
+[node name="Note_2" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -10, 15 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_2"]
+position = Vector2( -0.166668, 0 )
+shape = SubResource( 68 )
+
+[node name="Note_3" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -5.16667, 13.3333 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_3"]
+shape = SubResource( 68 )
+
+[node name="Note_4" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( -0.166672, 13 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_4"]
+shape = SubResource( 68 )
+
+[node name="Note_5" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( 5.16667, 13.3333 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_5"]
+shape = SubResource( 68 )
+
+[node name="Note_6" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( 10.1667, 15 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_6"]
+shape = SubResource( 68 )
+
+[node name="Note_7" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
+position = Vector2( 14.6667, 15.8333 )
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_7"]
+shape = SubResource( 68 )
+
+[node name="Congratulations" type="Area2D" parent="CanvasLayer/PUMPKIN"]
+position = Vector2( 319, 235 )
+scale = Vector2( 6, 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Congratulations"]
+position = Vector2( 0, 33.6667 )
+shape = SubResource( 69 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/PUMPKIN/Congratulations"]
+visible = false
+position = Vector2( -0.166672, 34.3333 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 27 )
+
+[node name="Label" type="Label" parent="CanvasLayer/PUMPKIN/Congratulations"]
+visible = false
+margin_left = -127.333
+margin_top = 14.8333
+margin_right = 186.667
+margin_bottom = 65.8333
+custom_fonts/font = SubResource( 71 )
+text = "Congratulations! This Giant Pumpkin NFT will let you toggle spooky mode any time you like!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

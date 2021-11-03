@@ -510,7 +510,6 @@ centered = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Node2D" parent="CanvasLayer"]
-visible = false
 
 [node name="Machine" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 310, 102 )
@@ -568,13 +567,11 @@ frame = 1
 script = ExtResource( 30 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/HUD/Ticket"]
-visible = false
 position = Vector2( 469, 374 )
 scale = Vector2( 3.25, 3.25 )
 texture = ExtResource( 29 )
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/Ticket"]
-visible = false
 margin_left = 310.0
 margin_top = 439.0
 margin_right = 624.0
@@ -608,7 +605,7 @@ limit_right = 1300
 limit_bottom = 700
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
+frame = 18
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -620,14 +617,14 @@ __meta__ = {
 [node name="gc1" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 25, 102 )
 frames = SubResource( 33 )
-frame = 10
+frame = 2
 playing = true
 centered = false
 
 [node name="gc3" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 234, 104 )
 frames = SubResource( 39 )
-frame = 7
+frame = 2
 speed_scale = 0.7
 playing = true
 centered = false
@@ -635,7 +632,7 @@ centered = false
 [node name="gc4" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 100, 0 )
 frames = SubResource( 45 )
-frame = 4
+frame = 1
 speed_scale = 0.7
 playing = true
 centered = false
@@ -650,6 +647,7 @@ centered = false
 [node name="gc2" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 127, 118 )
 frames = SubResource( 57 )
+frame = 2
 speed_scale = 1.2
 playing = true
 centered = false
@@ -657,7 +655,7 @@ centered = false
 [node name="gc7" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 191, 5 )
 frames = SubResource( 64 )
-frame = 12
+frame = 6
 speed_scale = 0.9
 playing = true
 centered = false
@@ -673,7 +671,7 @@ centered = false
 [node name="gc9" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 45, 35 )
 frames = SubResource( 79 )
-frame = 8
+frame = 5
 speed_scale = 0.7
 playing = true
 centered = false

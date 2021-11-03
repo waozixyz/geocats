@@ -656,11 +656,6 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 44 ) ],
-"loop": true,
-"name": "mad",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=84]
@@ -1244,6 +1239,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
+frame = 4
 playing = true
 centered = false
 
