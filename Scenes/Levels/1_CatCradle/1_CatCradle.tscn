@@ -16,7 +16,7 @@
 extents = Vector2( 13.5, 76.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9, 48 )
+extents = Vector2( 9, 58.1635 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 13.5, 92.25 )
@@ -141,7 +141,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="BedLadder" type="Area2D" parent="Ladders"]
-position = Vector2( 1320, 297.429 )
+position = Vector2( 1320, 288 )
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -366,7 +366,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 5
+frame = 4
 
 [node name="LitterBoxSFX" type="Area2D" parent="."]
 position = Vector2( 809.231, 356.84 )

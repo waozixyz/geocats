@@ -159,16 +159,15 @@ __meta__ = {
 }
 
 [node name="Music" type="TextureButton" parent="System/SettingsView"]
-margin_left = 207.776
-margin_top = 207.0
-margin_right = 227.776
-margin_bottom = 227.0
+margin_left = 196.776
+margin_top = 204.872
+margin_right = 216.776
+margin_bottom = 224.872
 toggle_mode = true
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 7 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -185,17 +184,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="System/SettingsView/Music"]
+margin_left = -8.776
+margin_top = -24.5244
+margin_right = 111.224
+margin_bottom = 0.475586
+text = "Music Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sound" type="TextureButton" parent="System/SettingsView"]
-margin_left = 207.776
-margin_top = 254.407
-margin_right = 227.776
-margin_bottom = 274.407
+margin_left = 196.776
+margin_top = 249.248
+margin_right = 216.776
+margin_bottom = 269.248
 toggle_mode = true
 texture_normal = ExtResource( 18 )
 texture_pressed = ExtResource( 16 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -208,6 +216,16 @@ custom_icons/grabber = ExtResource( 27 )
 custom_styles/slider = SubResource( 1 )
 custom_styles/grabber_area_highlight = SubResource( 2 )
 custom_styles/grabber_area = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="System/SettingsView/Sound"]
+margin_left = -8.776
+margin_top = -24.3755
+margin_right = 111.224
+margin_bottom = 0.624496
+text = "Sound Volume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
