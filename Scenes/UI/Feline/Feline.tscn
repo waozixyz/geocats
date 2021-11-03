@@ -87,7 +87,6 @@ __meta__ = {
 }
 
 [node name="MainView" type="Control" parent="System"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 1
@@ -135,13 +134,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Return" type="Button" parent="System/MainView"]
+[node name="Exit" type="Button" parent="System/MainView"]
 margin_left = 176.0
 margin_top = 273.0
 margin_right = 464.0
 margin_bottom = 325.0
 theme = ExtResource( 6 )
-text = "Return"
+text = "Exit"
 icon = ExtResource( 15 )
 align = 0
 expand_icon = true
@@ -150,6 +149,7 @@ __meta__ = {
 }
 
 [node name="SettingsView" type="Control" parent="System"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 1

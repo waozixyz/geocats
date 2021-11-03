@@ -141,5 +141,3 @@ func _new_scene():
 	get_tree().paused = false
 	change = false
 	Data.saveit()
-
-

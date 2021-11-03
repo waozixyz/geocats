@@ -19,7 +19,7 @@ func _process(delta):
 	if touching and body and visible and body.hp > 0 and sprite.frame > 4 and sprite.frame < 27:
 		elapsed += 1
 		if elapsed % 13 == 0:
-			body.damage(dmg)
+			body.damage(dmg * delta * global.fps)
 
 func _on_body_exited(body):
 	pass

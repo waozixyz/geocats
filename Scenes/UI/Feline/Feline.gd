@@ -28,7 +28,7 @@ func _ready():
 	
 	for child in system.get_children():
 		child.visible = false
-	view = map_view
+	view = main_view
 	view.visible = true
 	status_bar.visible = true
 
@@ -56,9 +56,14 @@ func _button_action(label):
 			_change_view(map_view)
 		"Home":
 			pass
-		"Return":
+		"Exit":
 			exit()
-			change_to = "TitleScreen"
+			if OS.get_name() == "HTML5":
+				change_to = "TitleScreen"
+			else:
+				Data.saveit()
+				get_tree().quit()
+
 
 # change view in system
 func _change_view(new_view):

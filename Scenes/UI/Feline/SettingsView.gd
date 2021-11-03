@@ -8,8 +8,6 @@ onready var sound_slider = $Sound/HSlider
 var music_bus = AudioServer.get_bus_index("Music")
 var sound_bus = AudioServer.get_bus_index("Sound")
 
-
-
 # connect functions
 func _music_slider_moved(value):
 	_change_volume("Music", value)

@@ -31,7 +31,7 @@ var boulder_fall
 var dodging 
 
 var phase
-func _phase_one():
+func _phase_one(dfps):
 	if trigger_battle.touching:
 		affogato.visible = false
 		if not player.disabled:
@@ -58,11 +58,11 @@ func _fix_cam():
 	if camera.zoom.x > 1:
 		camera.zoom *= .998
 var start_count = 30
-func _phase_two():
+func _phase_two(dfps):
 	if ceiling.hp <= 0:
 		boulder.visible = true
-		boulder.scale.x += 0.001
-		boulder.scale.y += 0.001
+		boulder.scale.x += 0.001 
+		boulder.scale.y += 0.001 
 		if boulder.position.y > -30:
 			if not dodging:
 				player.velocity.x += 250
@@ -71,7 +71,7 @@ func _phase_two():
 			_fix_cam()
 		if boulder.position.y < 50:
 			boulder.get_node("Sprite").rotation_degrees += 2
-			boulder.position.y += 1
+			boulder.position.y += 1 * dfps
 		else:
 			camera.shake = 6
 			player.enable()
@@ -96,7 +96,7 @@ func _phase_three():
 		phase = 4
 		# bug notproceeding
 
-func _phase_four():
+func _phase_four(dfps):
 	if not chat_with.started and player.disabled:
 		player.enable()
 		chat_with.visible = false
@@ -127,20 +127,21 @@ func _phase_six():
 		player.enable()
 		
 func _process(delta):
+	var dfps = delta * global.fps
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
-	start_ticker += 1
+	start_ticker += 1 * dfps
 	affogato.visible = false
 	if not defeated and global.data.player_hp > 0:
 		if phase == 1:
-			_phase_one()
+			_phase_one(dfps)
 		elif phase == 2:
-			_phase_two()
+			_phase_two(dfps)
 		elif phase == 3:
 			_phase_three()
 		elif phase == 4:
-			_phase_four()
+			_phase_four(dfps)
 		elif phase == 5:
 			_phase_five()
 		elif phase == 6:
