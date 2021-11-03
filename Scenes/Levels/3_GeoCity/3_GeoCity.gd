@@ -19,6 +19,7 @@ func creepy_city(): #Change to Pumpkin function which is called by collision
 	below_player.get_node("Clouds").visible = true
 	below_player.get_node("Stars").visible = true
 	below_player.get_node("Creepy_Cat").visible = true
+	below_player.get_node("Pumpkin_Cat_Neswulf").visible = true
 	below_player.get_node("Pumpkin_Small").visible = true
 	below_player.get_node("Pumpkin_Medium").visible = true
 	get_node("Salty_Swing").stop()
