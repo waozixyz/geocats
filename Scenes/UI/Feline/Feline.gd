@@ -14,6 +14,7 @@ onready var main_view = $System/MainView
 onready var map_view = $System/MapView
 onready var settings_view = $System/SettingsView
 
+var master_bus = AudioServer.get_bus_index("Master")
 
 var active : bool = false
 
@@ -91,13 +92,14 @@ var last_visible = false
 var press_timer = 0
 var red_pressed
 func _process(delta):
+	var dfps = delta * global.fps
 	if old_view is Control and old_view.modulate.a == 0:
 		old_view.visible = false
 	# red button press logic
 	if visible:
 		if red_button.pressed:
 			red_pressed = true
-			press_timer += delta * global.fps
+			press_timer += dfps
 			if press_timer >= 30:
 				_change_color()
 				red_button.pressed = false
@@ -139,7 +141,7 @@ func _process(delta):
 
 
 		if ticks < 16:
-			ticks += .3 * delta * global.fps
+			ticks += .3 * dfps
 		visible = true
 	else:
 		# start shutdown and hide feline
@@ -147,10 +149,10 @@ func _process(delta):
 			visible = false
 			if change_to:
 				SceneChanger.change_scene(change_to)
-
+			
 		if ticks > 0:
-			ticks -= .5 * delta * global.fps
-			system.modulate.a -= .1 * delta * global.fps
+			ticks -= .5 * dfps
+			system.modulate.a -= .1 * dfps
 
 
 func _input(event):

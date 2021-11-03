@@ -23,6 +23,7 @@ func _fix_color():
 	sprite.modulate = color
 
 func _process(delta):
+	var dfps = delta * global.fps
 	if touching and get_parent().visible and get_parent().get_parent().visible:
 		var r
 		var f
@@ -32,7 +33,7 @@ func _process(delta):
 		else:
 			r = 5
 			f = .1
-		enemy.hp -= ((r - sprite.modulate.r) * f * 1.2) / enemy.def
+		enemy.hp -= dfps * ((r - sprite.modulate.r) * f * 1.2) / enemy.def
 		sprite.modulate.r = r 
 
 

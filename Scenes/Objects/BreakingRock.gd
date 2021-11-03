@@ -18,6 +18,7 @@ func _ready():
 
 var shot_particles
 func _process(delta):
+	var dfps = delta * global.fps
 	var color = sprite.modulate
 	if color.r > 1:
 		color.r -= .1
@@ -39,7 +40,7 @@ func _process(delta):
 				tween.start()
 			shot_particles = true
 	else:
-		var frame = int(total_frames - hp * 0.01 * total_frames)
+		var frame = int(total_frames - hp * 0.01 * total_frames * dfps)
 		if frame == total_frames and not breakable:
 			frame -= 1
 		sprite.frame = frame

@@ -105,7 +105,7 @@ func _physics_process(_delta):
 		timer += 1
 		if timer  > load_time:
 			_new_scene()
-	if global.data.player_hp <= 0:
+	if floor(global.data.player_hp) <= 0.0:
 		chat_with.start("feline_emergency_teleport")
 		chat_with.visible = true
 		get_tree().paused = true

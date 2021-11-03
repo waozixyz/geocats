@@ -133,7 +133,7 @@ func _process(delta):
 		player.on_ladder = true
 	start_ticker += 1 * dfps
 	affogato.visible = false
-	if not defeated and global.data.player_hp > 0:
+	if not defeated and floor(global.data.player_hp) > 0:
 		if phase == 1:
 			_phase_one(dfps)
 		elif phase == 2:
@@ -152,4 +152,5 @@ func _process(delta):
 			hp_bar.visible = false
 	else:
 		hp_bar.visible = false
+
 
