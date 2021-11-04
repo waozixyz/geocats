@@ -920,13 +920,14 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 32
+frame = 26
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
 collision_layer = 7
 collision_mask = 7
 script = ExtResource( 23 )
+total_frames = 4
 
 [node name="Sprite" type="Sprite" parent="Ceiling"]
 position = Vector2( 0, 1 )
@@ -1009,7 +1010,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
-frame = 1
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1059,6 +1060,7 @@ autoplay = true
 bus = "Music"
 
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="HpBar" type="Control" parent="HUD"]
 margin_right = 40.0

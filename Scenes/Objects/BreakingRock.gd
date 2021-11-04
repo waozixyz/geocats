@@ -29,6 +29,7 @@ func _process(delta):
 	sprite.modulate = color
 
 	if hp <= 0 and breakable:
+		sprite.frame = total_frames
 		if not shot_particles:
 			particles.visible = true
 			for particle in particles.get_children():
@@ -40,9 +41,10 @@ func _process(delta):
 				tween.start()
 			shot_particles = true
 	else:
-		var frame = int(total_frames - hp * 0.01 * total_frames * dfps)
+		var frame = floor(total_frames - hp * 0.01 * total_frames * dfps)
 		if frame == total_frames and not breakable:
 			frame -= 1
+		print(frame, " ", total_frames - hp * 0.01 * total_frames * dfps, " ", hp)
 		sprite.frame = frame
 
 	if particles.get_node("0").modulate.a <= 0:
