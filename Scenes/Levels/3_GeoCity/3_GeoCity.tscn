@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -25,7 +25,6 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/big_pumpkin_spritesheet.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/moon.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/medium_pumpkin_sptritesheet.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=26]
 [ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/gotpumpkin_spritesheet.png" type="Texture" id=28]
 
@@ -354,9 +353,6 @@ animations = [ {
 "speed": 18.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 2, 3.66666 )
-
 [sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 31, 5.5 )
 
@@ -384,6 +380,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
+frame = 10
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -418,14 +415,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 12
+frame = 25
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 22
+frame = 13
 playing = true
 
 [node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="BehindPlayer"]
@@ -433,7 +430,7 @@ visible = false
 position = Vector2( 289.25, 175.25 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 21 )
-frame = 25
+frame = 29
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -828,7 +825,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 12
+frame = 14
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -855,6 +852,7 @@ shape = SubResource( 71 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 76 )
 animation = "Sad"
+frame = 3
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -878,70 +876,78 @@ texture = ExtResource( 19 )
 
 [node name="PUMPKIN" type="Node2D" parent="CanvasLayer"]
 
-[node name="Giant_Pumpkin_UI" type="AnimatedSprite" parent="CanvasLayer/PUMPKIN"]
+[node name="Note_List" type="AnimatedSprite" parent="CanvasLayer/PUMPKIN"]
 position = Vector2( 319, 235 )
-scale = Vector2( 6, 6 )
+scale = Vector2( 8.1, 8.1 )
 frames = SubResource( 76 )
 animation = "Sad"
-frame = 4
+frame = 7
 playing = true
 
-[node name="Note_1" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( -14.1667, 16 )
-script = ExtResource( 26 )
+[node name="1" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = -15.9259
+margin_top = 12.963
+margin_right = -12.9259
+margin_bottom = 18.963
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_1"]
-shape = SubResource( 77 )
+[node name="2" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = -11.9753
+margin_top = 10.3704
+margin_right = -7.97531
+margin_bottom = 19.3704
+action_mode = 0
 
-[node name="Note_2" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( -10, 15 )
-script = ExtResource( 26 )
+[node name="3" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = -7.03704
+margin_top = 9.50617
+margin_right = -3.03704
+margin_bottom = 17.5062
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_2"]
-position = Vector2( -0.166668, 0 )
-shape = SubResource( 77 )
+[node name="4" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = -1.97531
+margin_top = 9.50617
+margin_right = 2.02469
+margin_bottom = 16.5062
+action_mode = 0
 
-[node name="Note_3" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( -5.16667, 13.3333 )
-script = ExtResource( 26 )
+[node name="5" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = 2.96296
+margin_top = 10.0
+margin_right = 6.96296
+margin_bottom = 17.0
+action_mode = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_3"]
-shape = SubResource( 77 )
+[node name="6" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = 8.0
+margin_top = 11.0
+margin_right = 12.0
+margin_bottom = 19.0
+action_mode = 0
 
-[node name="Note_4" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( -0.166672, 13 )
-script = ExtResource( 26 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_4"]
-shape = SubResource( 77 )
-
-[node name="Note_5" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( 5.16667, 13.3333 )
-script = ExtResource( 26 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_5"]
-shape = SubResource( 77 )
-
-[node name="Note_6" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( 10.1667, 15 )
-script = ExtResource( 26 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_6"]
-shape = SubResource( 77 )
-
-[node name="Note_7" type="Area2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI"]
-position = Vector2( 14.6667, 15.8333 )
-script = ExtResource( 26 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Giant_Pumpkin_UI/Note_7"]
-shape = SubResource( 77 )
+[node name="7" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
+margin_left = 12.716
+margin_top = 10.9877
+margin_right = 16.716
+margin_bottom = 19.9877
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Congratulations" type="Area2D" parent="CanvasLayer/PUMPKIN"]
 position = Vector2( 319, 235 )
 scale = Vector2( 6, 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Congratulations"]
-position = Vector2( 0, 33.6667 )
+position = Vector2( 7.5, 43.1667 )
 shape = SubResource( 78 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/PUMPKIN/Congratulations"]

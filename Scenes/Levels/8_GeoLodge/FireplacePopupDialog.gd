@@ -1,6 +1,6 @@
 extends InteractSimple
 
-onready var see_pumpkin_code = get_tree().get_current_scene().get_node("CanvasLayer/PumpkinCodeHint")
+onready var see_pumpkin_code = get_tree().get_current_scene().get_node("PumpkinCode/ColorRect")
 onready var label = get_parent().get_node("PumpkinCode/ColorRect/Label")
 
 func show_code():
