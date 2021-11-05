@@ -2,6 +2,7 @@ extends StaticBody2D
 
 onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
 
+onready var collision_shape = $CollisionShape2D
 onready var sprite = $Sprite
 onready var particles = $Particles
 
@@ -40,11 +41,11 @@ func _process(delta):
 				tween.interpolate_property(particle, "modulate:a", particle.modulate.a, 0, 1, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 				tween.start()
 			shot_particles = true
+			collision_shape.disabled = true
 	else:
 		var frame = floor(total_frames - hp * 0.01 * total_frames * dfps)
 		if frame == total_frames and not breakable:
 			frame -= 1
-		print(frame, " ", total_frames - hp * 0.01 * total_frames * dfps, " ", hp)
 		sprite.frame = frame
 
 	if particles.get_node("0").modulate.a <= 0:

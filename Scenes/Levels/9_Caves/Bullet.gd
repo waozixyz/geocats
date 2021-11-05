@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var sprite = $Sprite
-export var dmg = 40
+export var dmg = 20
 var tween = Tween.new()
 var mode
 var speed = 4

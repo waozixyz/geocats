@@ -26,7 +26,7 @@ var to_shoot_left = 0
 var to_shoot_right = 0
 var move_speed = .5
 var vulnerable = true
-var hp = 100
+export var hp = 100
 var rage = 0
 var def = 1
 func _eyes(side, active):

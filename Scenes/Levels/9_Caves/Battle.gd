@@ -24,8 +24,8 @@ func _ready():
 		enemy.sprite.frame = 0
 		enemy.sprite.playing = true
 		ceiling.sprite.frame = 0
-
-
+	else:
+		enemy.sprite.visible = false
 var shoot_rock
 var boulder_fall
 var dodging 
@@ -123,7 +123,7 @@ func _phase_six():
 		enemy.visible = false
 		enemy.disable_colliders()
 		defeated = true
-		PROGRESS.variable["CavesBattleDefeated"] = true
+		PROGRESS.variables["CavesBattleDefeated"] = true
 		player.enable()
 		
 func _process(delta):
