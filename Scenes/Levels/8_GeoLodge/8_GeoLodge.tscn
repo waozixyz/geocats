@@ -223,7 +223,7 @@ shape = SubResource( 10 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 13 )
-frame = 3
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -246,7 +246,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 13
+frame = 5
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -437,6 +437,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 42 )
 animation = "walk"
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

@@ -380,7 +380,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -415,14 +415,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 25
+frame = 17
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 13
+frame = 29
 playing = true
 
 [node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="BehindPlayer"]
@@ -430,7 +430,7 @@ visible = false
 position = Vector2( 289.25, 175.25 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 21 )
-frame = 29
+frame = 10
 playing = true
 
 [node name="Bricks" type="StaticBody2D" parent="."]
@@ -711,7 +711,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 54 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -735,7 +734,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -759,7 +757,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 64 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
@@ -825,7 +822,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 14
+frame = 7
 flip_h = true
 
 [node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
@@ -852,7 +849,7 @@ shape = SubResource( 71 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 76 )
 animation = "Sad"
-frame = 3
+frame = 1
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -881,7 +878,7 @@ position = Vector2( 319, 235 )
 scale = Vector2( 8.1, 8.1 )
 frames = SubResource( 76 )
 animation = "Sad"
-frame = 7
+frame = 5
 playing = true
 
 [node name="1" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]

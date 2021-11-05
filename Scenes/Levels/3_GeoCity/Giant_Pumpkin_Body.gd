@@ -48,7 +48,7 @@ func _process(delta):
 func _input(event):
 	if pumpkin.visible:
 		if event is InputEventMouseButton:
-			if event.button_index == BUTTON_LEFT:
+			if event.pressed:
 				for note in note_list.get_children():
 					if note.pressed:
 						input_string += note.name 
