@@ -143,31 +143,31 @@ extents = Vector2( 29.9071, 18.5032 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 13, 8 )
+region = Rect2( 13, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 8 )
-region = Rect2( 39, 0, 13, 8 )
+region = Rect2( 26, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 8 )
-region = Rect2( 13, 0, 13, 8 )
+region = Rect2( 0, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 8 )
-region = Rect2( 26, 0, 13, 8 )
+region = Rect2( 39, 0, 13, 8 )
 
 [sub_resource type="SpriteFrames" id=42]
 animations = [ {
-"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 38 ), SubResource( 41 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 40 ), SubResource( 41 ) ],
+"frames": [ SubResource( 38 ), SubResource( 39 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=43]
@@ -189,6 +189,7 @@ centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 7 )
+frame = 2
 speed_scale = 0.2
 playing = true
 centered = false
@@ -222,7 +223,7 @@ shape = SubResource( 10 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 13 )
-frame = 5
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -243,6 +244,9 @@ zoom = Vector2( 0.7, 0.7 )
 limit_right = 1140
 limit_bottom = 600
 editor_draw_limits = true
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 5
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -396,6 +400,7 @@ texture = ExtResource( 5 )
 [node name="PumpkinCode" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="PumpkinCode"]
+visible = false
 margin_left = 125.0
 margin_top = 375.0
 margin_right = 525.0

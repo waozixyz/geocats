@@ -5,6 +5,7 @@ var player_position
 var player_direction
 var crt_noise = 0.0
 var pause_msg = ""
+var rng = RandomNumberGenerator.new()
 
 var data =  {
 	"jwt": "",
@@ -23,7 +24,7 @@ var data =  {
 	"nomusic": false,
 }
 
-var pumpkin_code = int(rand_range(1,7))
+var pumpkin_code = (rng.randi_range(1111111,7777777))
 
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)
