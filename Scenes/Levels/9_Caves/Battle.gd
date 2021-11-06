@@ -24,13 +24,17 @@ func _intro_done():
 	music_main.play()
 
 
+func _main_done():
+	music_outro.play()
+
 func _ready():
 
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
+		music_outro.stream.loop = false
 		music_intro.stream.loop = false
 		music_intro.connect("finished", self, "_intro_done")
-
+		music_main.connect("finished", self, "_main_done")
 		phase = 1
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
@@ -126,10 +130,12 @@ func _phase_four(dfps):
 
 func _phase_five():
 	if not chat_with.started and player.disabled:
+		music_main.stream.loop = false
 		enemy.sprite.frame = 0
 		enemy.sprite.animation = "die"
 		enemy.sprite.playing = true
 		phase = 6
+
 func _phase_six():
 	if enemy.sprite.frame == 3:
 		boulder.hp = 0
