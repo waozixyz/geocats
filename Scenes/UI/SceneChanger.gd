@@ -94,7 +94,9 @@ func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
 	Sprite.visible = true
 	Container.visible = true
 
-func _physics_process(_delta):
+
+func _physics_process(delta):
+	var dfps = delta * global.fps
 	if get_tree().paused and not global.pause_msg.empty():
 		pause.visible = true
 		pause.text = global.pause_msg
@@ -102,16 +104,24 @@ func _physics_process(_delta):
 		pause.visible = false
 		
 	if change:
-		timer += 1
+		timer += dfps
 		if timer  > load_time:
 			_new_scene()
+			
+	# check master volume
+	var i = AudioServer.get_bus_index("Master")
+	var volume = AudioServer.get_bus_volume_db(i)
 	if floor(global.data.player_hp) <= 0.0:
 		chat_with.start("feline_emergency_teleport")
 		chat_with.visible = true
 		get_tree().paused = true
+		# lower volume
+		if volume > -80:
+			AudioServer.set_bus_volume_db(i, volume - .5)
 	else:
 		chat_with.visible = false
-
+		if volume < 0:
+			AudioServer.set_bus_volume_db(i, volume + .5)
 func _input(event):
 	if chat_with.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
@@ -123,8 +133,8 @@ func _input(event):
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			get_tree().paused = false
 			global.pause_msg = ""
-func _new_scene():
 
+func _new_scene():
 	timer = 0
 	Sprite.visible = false
 	Container.visible = false

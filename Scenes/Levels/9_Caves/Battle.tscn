@@ -922,7 +922,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 18
+frame = 5
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
@@ -1012,7 +1012,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
-frame = 2
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1057,14 +1057,17 @@ position = Vector2( 48, 944.8 )
 shape = SubResource( 88 )
 
 [node name="MusicIntro" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 37 )
 bus = "Music"
 
 [node name="MusicMain" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 39 )
 bus = "Music"
 
 [node name="MusicOutro" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 33 )
 bus = "Music"
 
