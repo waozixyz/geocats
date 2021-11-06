@@ -1,5 +1,9 @@
 extends Node2D
 
+onready var music_intro = $MusicIntro
+onready var music_main = $MusicMain
+onready var music_outro = $MusicOutro
+
 onready var player = get_tree().get_current_scene().get_node("Default/Player")
 onready var affogato = get_tree().get_current_scene().get_node("Default/Affogato")
 onready var camera = player.get_node("Camera2D")
@@ -16,9 +20,17 @@ var start_ticker = 0
 var nyrn_chat = 0
 var death_location = 1
 
+func _intro_done():
+	music_main.play()
+
+
 func _ready():
+
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
+		music_intro.stream.loop = false
+		music_intro.connect("finished", self, "_intro_done")
+
 		phase = 1
 		enemy.sprite.visible = true
 		enemy.sprite.frame = 0
@@ -44,6 +56,8 @@ func _phase_one(dfps):
 				chat_with.visible = true
 				chat_with.start("norna_wyrd_caves_" + str(nyrn_chat), true, false)
 				nyrn_chat += 1
+				music_intro.play()
+
 				shoot_rock = true
 			elif shoot_rock and (enemy.sprite.frame == 3 or enemy.sprite.frame == 9) and enemy.sprite.playing: 
 				enemy.sprite.playing = false
