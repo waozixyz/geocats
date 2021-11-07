@@ -13,10 +13,11 @@ func _on_body_entered(body):
 	if body.name  == "Player" and not "feline_creek" in PROGRESS.dialogues:
 		started = true
 		chat_with.start("feline_creek", true)
-		player.disable()
+		player.disable(true)
 		chat_with.visible = true
 		PROGRESS.dialogues.feline_creek = true
 	
 func _process(_delta):
 	if started and not chat_with.started:
 		player.enable()
+

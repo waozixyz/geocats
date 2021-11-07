@@ -23,12 +23,10 @@ var death_location = 1
 func _intro_done():
 	music_main.play()
 
-
 func _main_done():
 	music_outro.play()
 
 func _ready():
-
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
 		music_outro.stream.loop = false
@@ -42,10 +40,10 @@ func _ready():
 		ceiling.sprite.frame = 0
 	else:
 		enemy.sprite.visible = false
+
 var shoot_rock
 var boulder_fall
-var dodging 
-
+var dodging
 var phase
 func _phase_one(dfps):
 	if trigger_battle.touching:
@@ -61,7 +59,6 @@ func _phase_one(dfps):
 				chat_with.start("norna_wyrd_caves_" + str(nyrn_chat), true, false)
 				nyrn_chat += 1
 				music_intro.play()
-
 				shoot_rock = true
 			elif shoot_rock and (enemy.sprite.frame == 3 or enemy.sprite.frame == 9) and enemy.sprite.playing: 
 				enemy.sprite.playing = false
@@ -151,7 +148,7 @@ func _process(delta):
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
-	start_ticker += 1 * dfps
+	start_ticker += 1 
 	affogato.visible = false
 	if not defeated and floor(global.data.player_hp) > 0:
 		if phase == 1:

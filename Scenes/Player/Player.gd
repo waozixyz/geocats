@@ -47,6 +47,8 @@ var disabled = false
 
 var dbl_jump_height = 350
 
+onready var hurt_sfx = $HurtSFX
+
 func default_anim():
 	if vertical > 0:
 		play("crouch")
@@ -87,13 +89,16 @@ func _ready():
 		position = global.player_position
 		sprite.flip_h  = global.player_direction * -1
 
-func disable():
+var no_vx = false
+func disable(disable_vx = false):
 	play("idle")
 	disabled = true
 	velocity.x = 0
+	no_vx = disable_vx
 
 func enable():
 	disabled = false
+	no_vx = false
 
 var dmg_blink = 0
 func _physics_process(delta):
@@ -113,8 +118,9 @@ func _physics_process(delta):
 		if underwater and water_sub == "slime":
 			hp -= .6 * dfps
 		global.data.player_hp = hp
-	else:
-		velocity.x = 0
+	elif no_vx:
+		 velocity.x = 0
+
 	
 	move()
 	if sprite.material.get_shader_param("dmg"):
@@ -149,6 +155,7 @@ func update_inputs():
 func damage(dmg):
 	global.data.player_hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
+	hurt_sfx.play()
 func move():
 	velocity = move_and_slide(velocity, Vector2.UP, true)
 	

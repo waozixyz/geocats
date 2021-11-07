@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Objects/Water/Waves.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Player/StateJump.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sfx/Effects/Feline_Owch.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Player/StateWalk.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Player/StateDoubleJump.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Player/StateSwim.gd" type="Script" id=12]
@@ -14,7 +15,7 @@
 [ext_resource path="res://Scenes/Player/StateAir.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Player/StateWallSlide.gd" type="Script" id=18]
 
-[sub_resource type="Shader" id=22]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 uniform bool dmg;
@@ -27,8 +28,8 @@ void fragment() {
     COLOR = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=23]
-shader = SubResource( 22 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/dmg = false
 
 [sub_resource type="AtlasTexture" id=3]
@@ -49,27 +50,27 @@ region = Rect2( 15, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 0, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 45, 15, 15, 15 )
+region = Rect2( 15, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 30, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
@@ -77,19 +78,19 @@ region = Rect2( 15, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 30, 15, 15 )
+region = Rect2( 0, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 30, 15, 15 )
+region = Rect2( 0, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 30, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 30, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -98,30 +99,30 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
-"name": "slide_wall",
-"speed": 12.0
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
@@ -147,7 +148,7 @@ limit_top = 0
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 23 )
+material = SubResource( 2 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
@@ -223,5 +224,8 @@ cast_to = Vector2( -23, 0 )
 
 [node name="Waves" parent="." instance=ExtResource( 3 )]
 z_index = 1
+
+[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="timeout" from="Timers/PlatformTimer" to="." method="_on_PlatformTimer_timeout"]
