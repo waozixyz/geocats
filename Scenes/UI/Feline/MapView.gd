@@ -38,6 +38,7 @@ func _press_button():
 		nav_visible[list[current]] = true
 		_change_button()
 	if is_visible:
+		get_parent().get_parent().exit()
 		SceneChanger.change_scene(list[current], 0, "WayoWayo")
 
 func _ready():

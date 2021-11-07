@@ -104,18 +104,19 @@ func _physics_process(delta):
 	if not disabled:
 		update_inputs()
 		state_machine.logic(delta)
+		
+		# update player hp
+		var hp = global.data.player_hp
+		if hp < 100:
+			hp += 0.06 * dfps
 
-	move()
+		if underwater and water_sub == "slime":
+			hp -= .6 * dfps
+		global.data.player_hp = hp
+	else:
+		velocity.x = 0
 	
-	# update player hp
-	var hp = global.data.player_hp
-	if hp < 100:
-		hp += 0.06 * dfps
-
-	if underwater and water_sub == "slime":
-		hp -= .6 * dfps
-	global.data.player_hp = hp
-
+	move()
 	if sprite.material.get_shader_param("dmg"):
 		dmg_blink += 1 * (delta * 60)
 		if dmg_blink >= 15:
