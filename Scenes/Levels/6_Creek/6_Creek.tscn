@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/6_Creek/creek_level_fg.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Scenes/Levels/6_Creek/death_zone.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/6_Creek/water_4.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Levels/6_Creek/6_Creek.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Sfx/Effects/Light_creek.ogg" type="AudioStream" id=25]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -199,6 +200,15 @@ extents = Vector2( 10, 4000 )
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 10, 492 )
 
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 974.91, 131.2 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 1057.91, 148.2 )
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 1175, 162 )
+
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 476.178, 148.2 )
 
@@ -211,23 +221,14 @@ extents = Vector2( 12, 355.324 )
 [sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 12, 100 )
 
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 50, 50 )
+
 [sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 98.6899, 155.642 )
 
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 130.769, 92.1748 )
-
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 50, 50 )
-
-[sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 974.91, 131.2 )
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 1057.91, 148.2 )
-
-[sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 1175, 162 )
 
 [sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 29, 209 )
@@ -245,6 +246,7 @@ centered = false
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 240, 80 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -255,7 +257,7 @@ centered = false
 [node name="Hole1" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 659, 613 )
 frames = SubResource( 10 )
-frame = 5
+frame = 4
 speed_scale = 2.0
 playing = true
 centered = false
@@ -263,7 +265,7 @@ centered = false
 [node name="Hole2" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 863, 760 )
 frames = SubResource( 17 )
-frame = 6
+frame = 3
 speed_scale = 1.5
 playing = true
 centered = false
@@ -293,7 +295,7 @@ shape = SubResource( 26 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 30 )
-frame = 1
+frame = 7
 playing = true
 centered = false
 
@@ -311,6 +313,7 @@ shape = SubResource( 26 )
 position = Vector2( -76, -1 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 34 )
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false
@@ -541,43 +544,115 @@ limit_right = 9000
 limit_bottom = 5400
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 27
+frame = 25
 
-[node name="waterarea" type="Area2D" parent="."]
+[node name="Creek" type="Node2D" parent="."]
+scale = Vector2( 6, 6 )
+
+[node name="water_2" type="Sprite" parent="Creek"]
+position = Vector2( 450, 844 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="water_1" type="Sprite" parent="Creek"]
+position = Vector2( 100, 695 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="water_3" type="Sprite" parent="Creek"]
+position = Vector2( 1094, 794 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="water_4" type="Sprite" parent="Creek"]
+texture = ExtResource( 23 )
+centered = false
+
+[node name="creek_level_fg" type="Sprite" parent="Creek"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="waterarea3" type="Area2D" parent="Creek"]
+position = Vector2( 1146.67, 142.5 )
+scale = Vector2( 0.166667, 0.166667 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea3"]
+position = Vector2( 1125, 4187 )
+shape = SubResource( 47 )
+
+[node name="waterarea2" type="Area2D" parent="Creek"]
+position = Vector2( 261.333, 191.333 )
+scale = Vector2( 0.166667, 0.166667 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea2"]
+position = Vector2( 1108.09, 4207.2 )
+shape = SubResource( 48 )
+
+[node name="DeathZone" type="Area2D" parent="Creek"]
+scale = Vector2( 0.166667, 0.166667 )
+script = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/DeathZone"]
+position = Vector2( 2641, 5374 )
+shape = SubResource( 49 )
+
+[node name="waterarea" type="Area2D" parent="Creek"]
+scale = Vector2( 0.166667, 0.166667 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea"]
 position = Vector2( 1108.09, 4207.2 )
 shape = SubResource( 40 )
 
-[node name="AbovePlayer" type="Node2D" parent="."]
-scale = Vector2( 6, 6 )
+[node name="WaterNoise" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 113.419, 699.342 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
 
-[node name="water_2" type="Sprite" parent="AbovePlayer"]
-position = Vector2( 450, 844 )
-texture = ExtResource( 9 )
-centered = false
+[node name="WaterNoise2" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 244.77, 696.845 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
 
-[node name="water_1" type="Sprite" parent="AbovePlayer"]
-position = Vector2( 100, 695 )
-texture = ExtResource( 3 )
-centered = false
+[node name="WaterNoise3" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 570.717, 864.051 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
 
-[node name="water_3" type="Sprite" parent="AbovePlayer"]
-position = Vector2( 1094, 794 )
-texture = ExtResource( 10 )
-centered = false
+[node name="WaterNoise4" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 387.636, 896.858 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
 
-[node name="water_4" type="Sprite" parent="AbovePlayer"]
-texture = ExtResource( 23 )
-centered = false
+[node name="WaterNoise5" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 1214.14, 819.604 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
 
-[node name="creek_level_fg" type="Sprite" parent="AbovePlayer"]
-texture = ExtResource( 2 )
-centered = false
+[node name="WaterNoise6" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 1419.45, 833.362 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
+
+[node name="WaterNoise7" type="AudioStreamPlayer2D" parent="Creek"]
+position = Vector2( 1336.9, 837.595 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
 
 [node name="AbovePlayer2" type="ViewportContainer" parent="."]
 margin_right = 9000.0
@@ -587,6 +662,7 @@ stretch = true
 stretch_shrink = 6
 __meta__ = {
 "_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -605,7 +681,9 @@ stream = ExtResource( 11 )
 autoplay = true
 bus = "Music"
 
-[node name="Ladder" type="Area2D" parent="."]
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder" type="Area2D" parent="Ladders"]
 position = Vector2( 2319, 2090 )
 rotation = 0.0226893
 collision_layer = 7
@@ -615,10 +693,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
 shape = SubResource( 41 )
 
-[node name="Ladder2" type="Area2D" parent="."]
+[node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 516, 1012 )
 collision_layer = 7
 collision_mask = 7
@@ -627,11 +705,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 position = Vector2( 0, -22 )
 shape = SubResource( 42 )
 
-[node name="Ladder3" type="Area2D" parent="."]
+[node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 7036, 1166 )
 collision_layer = 7
 collision_mask = 7
@@ -640,133 +718,109 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
 shape = SubResource( 43 )
 
-[node name="CaveToDown" type="Area2D" parent="."]
-position = Vector2( 4269.47, 3100.03 )
-script = ExtResource( 19 )
+[node name="Portals" type="Node2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="CaveToDown"]
-position = Vector2( 108, 148 )
-shape = SubResource( 44 )
-
-[node name="Button" type="Sprite" parent="CaveToDown"]
-visible = false
-position = Vector2( 108, 74.874 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 18 )
-
-[node name="JokeRoom" type="Area2D" parent="."]
-position = Vector2( 2856.3, 3303.9 )
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="JokeRoom"]
-position = Vector2( 108, 148 )
-shape = SubResource( 44 )
-
-[node name="Button" type="Sprite" parent="JokeRoom"]
-visible = false
-position = Vector2( 108, 74.874 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 18 )
-
-[node name="CavityPuzzleRoom" type="Area2D" parent="."]
-position = Vector2( 5418.25, 3966.81 )
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="CavityPuzzleRoom"]
-position = Vector2( 108, 148 )
-shape = SubResource( 44 )
-
-[node name="Button" type="Sprite" parent="CavityPuzzleRoom"]
-visible = false
-position = Vector2( 108, 74.874 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 18 )
-
-[node name="GeoCacheRoom" type="Area2D" parent="."]
-position = Vector2( 8737.83, 4711.48 )
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GeoCacheRoom"]
-position = Vector2( 108, 148 )
-shape = SubResource( 44 )
-
-[node name="Button" type="Sprite" parent="GeoCacheRoom"]
-visible = false
-position = Vector2( 108, 74.874 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 18 )
-
-[node name="CaveToUp" type="Area2D" parent="."]
-position = Vector2( 4301, 4828 )
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="CaveToUp"]
-position = Vector2( 108, 148 )
-shape = SubResource( 45 )
-
-[node name="Button" type="Sprite" parent="CaveToUp"]
-visible = false
-position = Vector2( 108, 74.874 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 18 )
-
-[node name="ToMountain" type="Area2D" parent="."]
+[node name="ToMountain" type="Area2D" parent="Portals"]
 position = Vector2( 8845.83, 794 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToMountain"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToMountain"]
 position = Vector2( 108, 148 )
 shape = SubResource( 46 )
 
-[node name="Button" type="Sprite" parent="ToMountain"]
+[node name="Button" type="Sprite" parent="Portals/ToMountain"]
 visible = false
 position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
-[node name="waterarea3" type="Area2D" parent="."]
-position = Vector2( 6880, 855 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea3"]
-position = Vector2( 1125, 4187 )
-shape = SubResource( 47 )
-
-[node name="waterarea2" type="Area2D" parent="."]
-position = Vector2( 1568, 1148 )
-script = ExtResource( 4 )
+[node name="GeoCacheRoom" type="Area2D" parent="Portals"]
+position = Vector2( 8737.83, 4711.48 )
+script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea2"]
-position = Vector2( 1108.09, 4207.2 )
-shape = SubResource( 48 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GeoCacheRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 44 )
 
-[node name="DeathZone" type="Area2D" parent="."]
-script = ExtResource( 22 )
+[node name="Button" type="Sprite" parent="Portals/GeoCacheRoom"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2( 2641, 5374 )
-shape = SubResource( 49 )
+[node name="CaveToUp" type="Area2D" parent="Portals"]
+position = Vector2( 4301, 4828 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
+position = Vector2( 108, 148 )
+shape = SubResource( 45 )
+
+[node name="Button" type="Sprite" parent="Portals/CaveToUp"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="CaveToDown" type="Area2D" parent="Portals"]
+position = Vector2( 4269.47, 3100.03 )
+script = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]
+position = Vector2( 108, 148 )
+shape = SubResource( 44 )
+
+[node name="Button" type="Sprite" parent="Portals/CaveToDown"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="JokeRoom" type="Area2D" parent="Portals"]
+position = Vector2( 2856.3, 3303.9 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/JokeRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 44 )
+
+[node name="Button" type="Sprite" parent="Portals/JokeRoom"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="CavityPuzzleRoom" type="Area2D" parent="Portals"]
+position = Vector2( 5418.25, 3966.81 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CavityPuzzleRoom"]
+position = Vector2( 108, 148 )
+shape = SubResource( 44 )
+
+[node name="Button" type="Sprite" parent="Portals/CavityPuzzleRoom"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
 
 [node name="FelineArea" type="Area2D" parent="."]
 script = ExtResource( 7 )
