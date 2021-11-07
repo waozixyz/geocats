@@ -14,15 +14,30 @@ onready var main_view = $System/MainView
 onready var map_view = $System/MapView
 onready var settings_view = $System/SettingsView
 
-var master_bus = AudioServer.get_bus_index("Master")
+# sound effects
+onready var open_sfx = $OpenSFX
+onready var close_sfx = $CloseSFX
+onready var hover_sfx = $HoverSFX
+onready var pressed_sfx = $PressedSFX
 
 var active : bool = false
 
 var old_view
-onready var view : Control
+var view : Control
 var player
 var change_to = ""
+
+#if mouse enters button play sound
+func _hover_sound():
+	hover_sfx.play()
+
+func _press_sound():
+	pressed_sfx.play()
+
+# initialize feline
 func _ready():
+	open_sfx.stream.loop = false
+	close_sfx.stream.loop = false
 	var default = get_parent().get_parent()
 	if default and default.has_node("Player"):
 		player = default.get_node("Player")
@@ -32,7 +47,11 @@ func _ready():
 	view = main_view
 	view.visible = true
 	status_bar.visible = true
-
+	for view in system.get_children():
+		for button in view.get_children():
+			if button is Button or button is TextureButton:
+				button.connect("mouse_entered", self, "_hover_sound")
+				button.connect("pressed", self, "_press_sound")
 # fading effect
 func _tween(obj, start, end, time = .5):
 	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
@@ -45,8 +64,10 @@ func settings():
 func exit():
 	if view.name == "MainView":
 		if active:
+			close_sfx.play()
 			active = false
-			_tween(self, 1, 0)
+			_tween(self, 1, 0, 1)
+
 	else:
 		_change_view(main_view)
 	
@@ -85,7 +106,7 @@ func _change_color():
 		color = Color(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1))
 	system.modulate = color
 	background.modulate = color
-
+	pressed_sfx.play()
 ## update logic
 var ticks = 0
 var last_visible = false
@@ -135,6 +156,7 @@ func _process(delta):
 			if not system.visible:
 				system.modulate.a = 0
 				_tween(system, 0, 1)
+			
 			system.visible = true
 		else:
 			system.visible = false
@@ -162,7 +184,7 @@ func _input(event):
 		else:
 			active = true
 			_tween(self, 0, 1, 1)
-
+			open_sfx.play()
 	if visible and event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/UI/Feline/RedButton/red_button.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Feline/Body/feline_topbar.png" type="Texture" id=2]
@@ -32,6 +32,10 @@
 [ext_resource path="res://Assets/UI/Feline/StatusBar/settings_pressed.png" type="Texture" id=30]
 [ext_resource path="res://Assets/UI/Feline/StatusBar/settings_hover.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/UI/Feline/SettingsView.gd" type="Script" id=32]
+[ext_resource path="res://Assets/Sfx/Effects/feline_open.ogg" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Sfx/Effects/feline_exit.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Assets/Sfx/Effects/feline_beep_lower.wav" type="AudioStream" id=35]
+[ext_resource path="res://Assets/Sfx/Effects/feline_beep.wav" type="AudioStream" id=36]
 
 [sub_resource type="StyleBoxFlat" id=1]
 border_width_top = 3
@@ -401,3 +405,22 @@ margin_right = 341.0
 margin_bottom = 380.0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+bus = "Sound"
+
+[node name="CloseSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+bus = "Sound"
+
+[node name="HoverSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+bus = "Sound"
+
+[node name="PressedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+bus = "Sound"

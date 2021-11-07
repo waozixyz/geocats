@@ -922,7 +922,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 15
+frame = 21
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
@@ -1012,7 +1012,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
