@@ -12,7 +12,7 @@ func _ready():
 	for note in notes.get_children():
 		var sound = note.get_node("Sound")
 
-		sound.set_volume_db(-30)
+		sound.set_volume_db(-10)
 	print(global.pumpkin_code)
 	
 	if complete:
