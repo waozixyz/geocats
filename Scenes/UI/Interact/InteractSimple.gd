@@ -4,6 +4,7 @@ class_name InteractSimple
 onready var interact_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/SimpleInteract")
 
 var do_something 
+var hide_interact = true
 
 func _ready():
 	._ready()
@@ -27,5 +28,6 @@ func _input(_event):
 			if nft_possible:
 				nft.reward(nft_id)
 			_add_audio("Effects",name)
-			object.visible = false
+			if hide_interact:
+				object.visible = false
 

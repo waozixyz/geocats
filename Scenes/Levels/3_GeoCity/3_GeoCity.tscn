@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/Creepy_City/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -319,50 +319,53 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=70]
-extents = Vector2( 9, 460.003 )
+extents = Vector2( 9, 322.855 )
 
 [sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 61.5852, 58.9592 )
+extents = Vector2( 9, 469.447 )
 
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 50, 54 )
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 61.5852, 58.9592 )
 
 [sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 23 )
-region = Rect2( 50, 0, 50, 54 )
+region = Rect2( 0, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 23 )
-region = Rect2( 0, 54, 50, 54 )
+region = Rect2( 50, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 23 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 23 )
 region = Rect2( 50, 54, 50, 54 )
 
-[sub_resource type="SpriteFrames" id=76]
+[sub_resource type="SpriteFrames" id=77]
 animations = [ {
-"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 72 ), SubResource( 73 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ) ],
+"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
 }, {
-"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 74 ), SubResource( 75 ) ],
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=77]
+[sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 31, 5.5 )
 
-[sub_resource type="DynamicFontData" id=78]
+[sub_resource type="DynamicFontData" id=79]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=79]
+[sub_resource type="DynamicFont" id=80]
 size = 24
 extra_spacing_top = -10
-font_data = SubResource( 78 )
+font_data = SubResource( 79 )
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
@@ -380,7 +383,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 12
+frame = 2
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -415,14 +418,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 2
+frame = 23
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 18
+frame = 30
 playing = true
 
 [node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="BehindPlayer"]
@@ -430,10 +433,12 @@ visible = false
 position = Vector2( 289.25, 175.25 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 21 )
-frame = 30
+frame = 23
 playing = true
 
-[node name="Bricks" type="StaticBody2D" parent="."]
+[node name="CollisionColliders" type="Node2D" parent="."]
+
+[node name="Bricks" type="StaticBody2D" parent="CollisionColliders"]
 position = Vector2( 2800, 500 )
 collision_layer = 7
 collision_mask = 7
@@ -441,259 +446,261 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="city_brick" type="Sprite" parent="Bricks"]
+[node name="city_brick" type="Sprite" parent="CollisionColliders/Bricks"]
 position = Vector2( 386.132, 48 )
 scale = Vector2( 4.26668, 4 )
 
-[node name="city_brick2" type="Sprite" parent="Bricks"]
+[node name="city_brick2" type="Sprite" parent="CollisionColliders/Bricks"]
 position = Vector2( 232, 44 )
 scale = Vector2( 4.26668, 4 )
 
-[node name="city_brick3" type="Sprite" parent="Bricks"]
+[node name="city_brick3" type="Sprite" parent="CollisionColliders/Bricks"]
 position = Vector2( 92, 44 )
 scale = Vector2( 4.26668, 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
 position = Vector2( 88, 42 )
 shape = SubResource( 22 )
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bricks"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
 position = Vector2( 228, 42 )
 shape = SubResource( 22 )
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bricks"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
 position = Vector2( 414.976, 282.932 )
 shape = SubResource( 22 )
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bricks"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
 position = Vector2( 384, 46 )
 shape = SubResource( 22 )
 one_way_collision = true
 
-[node name="Houses" type="StaticBody2D" parent="."]
+[node name="Houses" type="StaticBody2D" parent="CollisionColliders"]
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 291, 314 )
 shape = SubResource( 23 )
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 978, 90 )
 shape = SubResource( 24 )
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1156, 751 )
 shape = SubResource( 25 )
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1406, 871.2 )
 shape = SubResource( 26 )
 one_way_collision = true
 
-[node name="CollisionShape2D25" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1469, 830 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="CollisionShape2D27" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1468, 894 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="CollisionShape2D26" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1467, 839 )
 shape = SubResource( 28 )
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1482, 379 )
 shape = SubResource( 29 )
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 2644, 486 )
 shape = SubResource( 30 )
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 2645, 916 )
 shape = SubResource( 31 )
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 2644, 839 )
 shape = SubResource( 32 )
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 3420, 899 )
 shape = SubResource( 32 )
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 3006, 826.482 )
 shape = SubResource( 33 )
 one_way_collision = true
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 3006, 682.482 )
 shape = SubResource( 33 )
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 2415, 842 )
 shape = SubResource( 34 )
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 3578, 531 )
 shape = SubResource( 35 )
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 4234, 410 )
 shape = SubResource( 36 )
 one_way_collision = true
 
-[node name="CollisionShape2D24" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 4194, 728 )
 shape = SubResource( 37 )
 one_way_collision = true
 
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 4195.75, 994.686 )
 shape = SubResource( 37 )
 one_way_collision = true
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 4558, 978 )
 shape = SubResource( 38 )
 one_way_collision = true
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 3172, 1019 )
 shape = SubResource( 39 )
 one_way_collision = true
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 2975, 1018 )
 shape = SubResource( 39 )
 one_way_collision = true
 
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1808, 862 )
 shape = SubResource( 40 )
 one_way_collision = true
 
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 297, 805 )
 shape = SubResource( 41 )
 one_way_collision = true
 
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 109, 695 )
 shape = SubResource( 42 )
 one_way_collision = true
 
-[node name="CollisionShape2D23" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 483, 694 )
 shape = SubResource( 43 )
 one_way_collision = true
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 1725, 797 )
 shape = SubResource( 44 )
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 4677, 106 )
 shape = SubResource( 45 )
 one_way_collision = true
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Houses"]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 4554, 151 )
 shape = SubResource( 46 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Houses"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionColliders/Houses"]
 polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 205, 4799, 201, 4801, 1032 )
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="CollisionColliders"]
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Ground"]
 position = Vector2( 2410, 1113 )
 shape = SubResource( 47 )
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
+[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
 "end",
 ]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/EndWalls"]
 position = Vector2( -2416, -532 )
 shape = SubResource( 48 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/EndWalls"]
 position = Vector2( 2400, -518 )
 shape = SubResource( 48 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/EndWalls"]
 position = Vector2( -47, -1127 )
 shape = SubResource( 49 )
 
-[node name="GoToComplex" type="Area2D" parent="."]
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="GoToComplex" type="Area2D" parent="Portals"]
 position = Vector2( 4667, 942 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToComplex"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/GoToComplex"]
 shape = SubResource( 50 )
 
-[node name="Button" type="Sprite" parent="GoToComplex"]
+[node name="Button" type="Sprite" parent="Portals/GoToComplex"]
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 10 )
 
-[node name="PopNnip" type="Area2D" parent="."]
+[node name="PopNnip" type="Area2D" parent="Portals"]
 position = Vector2( 2647, 974 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopNnip"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/PopNnip"]
 shape = SubResource( 51 )
 
-[node name="Button" type="Sprite" parent="PopNnip"]
+[node name="Button" type="Sprite" parent="Portals/PopNnip"]
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 10 )
 
-[node name="DonutShop" type="Area2D" parent="."]
+[node name="DonutShop" type="Area2D" parent="Portals"]
 position = Vector2( 1023, 977 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DonutShop"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/DonutShop"]
 shape = SubResource( 51 )
 
-[node name="Button" type="Sprite" parent="DonutShop"]
+[node name="Button" type="Sprite" parent="Portals/DonutShop"]
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
@@ -711,6 +718,7 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 54 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -734,6 +742,7 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -757,6 +766,7 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 64 )
 animation = "walk"
+frame = 1
 playing = true
 flip_h = true
 
@@ -792,25 +802,29 @@ position = Vector2( 30, 31 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 69 )
 
-[node name="Ladder" type="Area2D" parent="."]
-position = Vector2( 4337.13, 710.159 )
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder" type="Area2D" parent="Ladders"]
+position = Vector2( 4338.21, 703.859 )
 script = ExtResource( 20 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
 shape = SubResource( 70 )
 
-[node name="Ladder2" type="Area2D" parent="."]
+[node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 721.176, 540.31 )
 script = ExtResource( 20 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
-shape = SubResource( 70 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+shape = SubResource( 71 )
 
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
@@ -822,16 +836,18 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 21
+frame = 2
 flip_h = true
 
-[node name="Creepy_Swing" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="Node2D" parent="."]
+
+[node name="Creepy_Swing" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 12 )
 volume_db = -3.0
 pitch_scale = 0.36
 bus = "Music"
 
-[node name="Salty_Swing" type="AudioStreamPlayer" parent="."]
+[node name="Salty_Swing" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 12 )
 volume_db = -10.0
 autoplay = true
@@ -843,12 +859,13 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiantPumpkin"]
-shape = SubResource( 71 )
+shape = SubResource( 72 )
 
 [node name="Giant_Pumpkin" type="AnimatedSprite" parent="GiantPumpkin"]
 scale = Vector2( 2, 2 )
-frames = SubResource( 76 )
+frames = SubResource( 77 )
 animation = "Sad"
+frame = 9
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -870,95 +887,39 @@ texture = ExtResource( 19 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PUMPKIN" type="Node2D" parent="CanvasLayer"]
+[node name="Pumpkin" type="Node2D" parent="CanvasLayer"]
 
-[node name="Note_List" type="AnimatedSprite" parent="CanvasLayer/PUMPKIN"]
+[node name="Note_List" type="AnimatedSprite" parent="CanvasLayer/Pumpkin"]
 position = Vector2( 319, 235 )
 scale = Vector2( 8.1, 8.1 )
-frames = SubResource( 76 )
+frames = SubResource( 77 )
 animation = "Sad"
-frame = 4
+frame = 13
 playing = true
 
-[node name="1" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = -15.9259
-margin_top = 12.963
-margin_right = -12.9259
-margin_bottom = 18.963
-action_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="2" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = -11.9753
-margin_top = 10.3704
-margin_right = -7.97531
-margin_bottom = 19.3704
-action_mode = 0
-
-[node name="3" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = -7.03704
-margin_top = 9.50617
-margin_right = -3.03704
-margin_bottom = 17.5062
-action_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="4" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = -1.97531
-margin_top = 9.50617
-margin_right = 2.02469
-margin_bottom = 16.5062
-action_mode = 0
-
-[node name="5" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = 2.96296
-margin_top = 10.0
-margin_right = 6.96296
-margin_bottom = 17.0
-action_mode = 0
-
-[node name="6" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = 8.0
-margin_top = 11.0
-margin_right = 12.0
-margin_bottom = 19.0
-action_mode = 0
-
-[node name="7" type="TextureButton" parent="CanvasLayer/PUMPKIN/Note_List"]
-margin_left = 12.716
-margin_top = 10.9877
-margin_right = 16.716
-margin_bottom = 19.9877
-action_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Congratulations" type="Area2D" parent="CanvasLayer/PUMPKIN"]
+[node name="Congratulations" type="Area2D" parent="CanvasLayer/Pumpkin"]
+visible = false
 position = Vector2( 319, 235 )
 scale = Vector2( 6, 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PUMPKIN/Congratulations"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Pumpkin/Congratulations"]
+visible = false
 position = Vector2( 7.5, 43.1667 )
-shape = SubResource( 77 )
+shape = SubResource( 78 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/PUMPKIN/Congratulations"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Congratulations"]
 visible = false
 position = Vector2( -0.166672, 34.3333 )
 scale = Vector2( 2, 0.5 )
 texture = ExtResource( 27 )
 
-[node name="Label" type="Label" parent="CanvasLayer/PUMPKIN/Congratulations"]
+[node name="Label" type="Label" parent="CanvasLayer/Pumpkin/Congratulations"]
 visible = false
 margin_left = -127.333
 margin_top = 14.8333
 margin_right = 186.667
 margin_bottom = 65.8333
-custom_fonts/font = SubResource( 79 )
+custom_fonts/font = SubResource( 80 )
 text = "Congratulations! This Giant Pumpkin NFT will let you toggle spooky mode any time you like!"
 align = 1
 autowrap = true
