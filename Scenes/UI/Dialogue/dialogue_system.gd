@@ -125,8 +125,8 @@ var shaking : bool = false
 
 func _ready():
 	set_physics_process(true)
-	timer.connect('timeout', self, '_on_Timer_timeout')
-	sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout')
+	var _tmsg = timer.connect('timeout', self, '_on_Timer_timeout')
+	var _smsg = sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout')
 	set_frame()
 
 func _physics_process(_delta):

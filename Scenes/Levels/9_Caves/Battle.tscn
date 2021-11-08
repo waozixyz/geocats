@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -39,6 +39,9 @@
 [ext_resource path="res://Assets/Music/9_CavesBattle_intro.ogg" type="AudioStream" id=37]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/BoulderPieceSpriteSheet.png" type="Texture" id=38]
 [ext_resource path="res://Assets/Music/9_CavesBattle_main.ogg" type="AudioStream" id=39]
+[ext_resource path="res://Assets/Sounds/Effects/nornabullet.wav" type="AudioStream" id=40]
+[ext_resource path="res://Assets/Sounds/Effects/OrganicSmashLilCave.wav" type="AudioStream" id=41]
+[ext_resource path="res://Assets/Sounds/Effects/OrganicTumbleCave2.wav" type="AudioStream" id=42]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -576,6 +579,12 @@ hframes = 3
 vframes = 2
 frame = 5
 
+[node name="SoundLanding" type="AudioStreamPlayer2D" parent="Boulder"]
+stream = ExtResource( 41 )
+
+[node name="SoundBreaking" type="AudioStreamPlayer2D" parent="Boulder"]
+stream = ExtResource( 42 )
+
 [node name="Mushrooms" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
@@ -827,6 +836,9 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Bullet"]
 shape = SubResource( 58 )
 
+[node name="Sound" type="AudioStreamPlayer2D" parent="Enemy/Bullet"]
+stream = ExtResource( 40 )
+
 [node name="Beam" type="Area2D" parent="Enemy"]
 visible = false
 position = Vector2( -83.5928, -27.5275 )
@@ -922,7 +934,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 28
+frame = 11
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
@@ -930,6 +942,9 @@ collision_layer = 7
 collision_mask = 7
 script = ExtResource( 23 )
 total_frames = 4
+
+[node name="SoundBreaking" type="AudioStreamPlayer2D" parent="Ceiling"]
+stream = ExtResource( 42 )
 
 [node name="Sprite" type="Sprite" parent="Ceiling"]
 position = Vector2( 0, 1 )
@@ -1015,7 +1030,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
-frame = 2
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false

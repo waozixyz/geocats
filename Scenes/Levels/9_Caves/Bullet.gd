@@ -10,6 +10,7 @@ var deg = 1
 var dest_deg
 var max_life = 2000
 var life_timer = 0
+onready var sound = $Sound
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -17,7 +18,8 @@ func _ready():
 	
 	dest_deg = rand_range(0, 360)
 	deg = rand_range(dest_deg - 360, dest_deg)
-
+	if visible:
+		sound.play()
 func _on_body_entered(body):
 	if body.has_method("damage") and visible:
 		body.damage(dmg)

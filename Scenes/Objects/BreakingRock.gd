@@ -5,6 +5,7 @@ onready var camera = get_tree().get_current_scene().get_node("Default/Player/Cam
 onready var collision_shape = $CollisionShape2D
 onready var sprite = $Sprite
 onready var particles = $Particles
+onready var sfx_breaking = $SoundBreaking
 
 export var hp = 100
 export var total_frames = 5
@@ -18,6 +19,7 @@ func _ready():
 	particles.visible = false
 
 var shot_particles
+var played_sound 
 func _process(delta):
 
 	var dfps = delta * global.fps
@@ -31,6 +33,9 @@ func _process(delta):
 	sprite.modulate = color
 
 	if hp <= 0 and breakable:
+		if sfx_breaking and not played_sound:
+			sfx_breaking.play()
+			played_sound = true
 		sprite.frame = total_frames
 		if not shot_particles:
 			particles.visible = true

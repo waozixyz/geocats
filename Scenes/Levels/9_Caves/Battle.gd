@@ -89,6 +89,7 @@ func _phase_two(dfps):
 			boulder.position.y += 1 * dfps
 		else:
 			camera.shake = 6
+			boulder.get_node("SoundLanding").play()
 			player.enable()
 			boulder_fall = false
 			phase = 3
@@ -148,7 +149,7 @@ func _process(delta):
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
-	start_ticker += 1 
+	start_ticker += 1
 	affogato.visible = false
 	if not defeated and floor(global.data.player_hp) > 0:
 		if phase == 1:
