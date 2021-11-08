@@ -383,7 +383,7 @@ centered = false
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 frames = SubResource( 4 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="Moon" type="Sprite" parent="BehindPlayer"]
@@ -418,14 +418,14 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( 233.633, 12.7828 )
 frames = SubResource( 8 )
-frame = 23
+frame = 20
 playing = true
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer"]
 visible = false
 position = Vector2( 1158.99, 179.007 )
 frames = SubResource( 12 )
-frame = 30
+frame = 37
 playing = true
 
 [node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="BehindPlayer"]
@@ -433,7 +433,7 @@ visible = false
 position = Vector2( 289.25, 175.25 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 21 )
-frame = 23
+frame = 12
 playing = true
 
 [node name="CollisionColliders" type="Node2D" parent="."]
@@ -718,7 +718,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 54 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
@@ -742,7 +741,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
@@ -766,7 +764,6 @@ script = ExtResource( 15 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 64 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
@@ -836,7 +833,7 @@ limit_right = 4800
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 2
+frame = 11
 flip_h = true
 
 [node name="Music" type="Node2D" parent="."]
@@ -865,7 +862,7 @@ shape = SubResource( 72 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 77 )
 animation = "Sad"
-frame = 9
+frame = 12
 playing = true
 
 [node name="FrontPlayer" type="Node2D" parent="."]
@@ -894,7 +891,7 @@ position = Vector2( 319, 235 )
 scale = Vector2( 8.1, 8.1 )
 frames = SubResource( 77 )
 animation = "Sad"
-frame = 13
+frame = 2
 playing = true
 
 [node name="Congratulations" type="Area2D" parent="CanvasLayer/Pumpkin"]

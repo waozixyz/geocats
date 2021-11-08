@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://Assets/Sounds/Effects/nornabullet.wav" type="AudioStream" id=40]
 [ext_resource path="res://Assets/Sounds/Effects/OrganicSmashLilCave.wav" type="AudioStream" id=41]
 [ext_resource path="res://Assets/Sounds/Effects/OrganicTumbleCave2.wav" type="AudioStream" id=42]
+[ext_resource path="res://Assets/Sounds/Effects/lazer.wav" type="AudioStream" id=43]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -778,9 +779,6 @@ texture = ExtResource( 4 )
 position = Vector2( 1060, 231 )
 scale = Vector2( 4, 4 )
 script = ExtResource( 19 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Body" type="StaticBody2D" parent="Enemy"]
 
@@ -844,19 +842,17 @@ visible = false
 position = Vector2( -83.5928, -27.5275 )
 rotation = 0.349066
 script = ExtResource( 32 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy/Beam"]
 scale = Vector2( 0.657161, 0.885558 )
 z_index = 1
 frames = SubResource( 78 )
-frame = 31
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Beam"]
 shape = SubResource( 79 )
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="Enemy/Beam"]
+stream = ExtResource( 43 )
 
 [node name="Ears" type="Node2D" parent="."]
 visible = false
@@ -934,7 +930,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 11
+frame = 30
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
@@ -1030,7 +1026,7 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
-frame = 3
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
