@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Levels/7_Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidplatform.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Music/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/7_Mountain/Telescope.gd" type="Script" id=21]
 
@@ -171,13 +172,13 @@ animations = [ {
 extents = Vector2( 84, 53 )
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 54.9967, 49.9998 )
+extents = Vector2( 73, 78 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 50, 50 )
+extents = Vector2( 54.9967, 49.9998 )
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 73, 78 )
+extents = Vector2( 50, 50 )
 
 [node name="Mountain" type="Node2D"]
 script = ExtResource( 13 )
@@ -200,8 +201,8 @@ centered = false
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 5 )
 speed_scale = 0.2
-playing = true
 centered = false
+script = ExtResource( 18 )
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
@@ -382,8 +383,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 2100, 2380 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 24 )
-frame = 1
-playing = true
+script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Sitting Cat"]
 position = Vector2( 2106, 2372 )
@@ -401,8 +401,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 27.0001, 28 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 28 )
-frame = 2
-playing = true
+script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Thinking Cat"]
 script = ExtResource( 20 )
@@ -418,8 +417,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 3, 13 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 31 )
-frame = 2
-playing = true
+script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Sleeping Cat"]
 script = ExtResource( 20 )
@@ -435,8 +433,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( -28, 28 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 36 )
-frame = 12
-playing = true
+script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Catnip Cat"]
 script = ExtResource( 20 )
@@ -444,54 +441,6 @@ script = ExtResource( 20 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Catnip Cat/Area2D"]
 position = Vector2( -11.8921, 47.5682 )
 shape = SubResource( 37 )
-
-[node name="GoUp" type="Area2D" parent="."]
-position = Vector2( 1548, 4089 )
-script = ExtResource( 12 )
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoUp"]
-position = Vector2( 2.9999, 4.00024 )
-shape = SubResource( 38 )
-
-[node name="Button" type="Sprite" parent="GoUp"]
-visible = false
-position = Vector2( -65.7659, 0 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 10 )
-
-[node name="GoDown" type="Area2D" parent="."]
-position = Vector2( 1472.91, 2335.62 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GoDown"]
-position = Vector2( 108.749, 148 )
-shape = SubResource( 38 )
-
-[node name="Button" type="Sprite" parent="GoDown"]
-visible = false
-position = Vector2( 25.0032, 148 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 10 )
-
-[node name="ToCreek" type="Area2D" parent="."]
-position = Vector2( -73, 4728 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToCreek"]
-position = Vector2( 108, 148 )
-shape = SubResource( 39 )
-
-[node name="Button" type="Sprite" parent="ToCreek"]
-visible = false
-position = Vector2( 108, 74.874 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 10 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
@@ -503,7 +452,57 @@ script = ExtResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
 position = Vector2( 1784, 1603 )
+shape = SubResource( 38 )
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="GoUp" type="Area2D" parent="Portals"]
+position = Vector2( 1548, 4089 )
+script = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoUp"]
+position = Vector2( 2.9999, 4.00024 )
+shape = SubResource( 39 )
+
+[node name="Button" type="Sprite" parent="Portals/GoUp"]
+visible = false
+position = Vector2( -65.7659, 0 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="GoDown" type="Area2D" parent="Portals"]
+position = Vector2( 1472.91, 2335.62 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoDown"]
+position = Vector2( 108.749, 148 )
+shape = SubResource( 39 )
+
+[node name="Button" type="Sprite" parent="Portals/GoDown"]
+visible = false
+position = Vector2( 25.0032, 148 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="ToCreek" type="Area2D" parent="Portals"]
+position = Vector2( -73, 4728 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCreek"]
+position = Vector2( 108, 148 )
 shape = SubResource( 40 )
+
+[node name="Button" type="Sprite" parent="Portals/ToCreek"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

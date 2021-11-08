@@ -80,6 +80,7 @@ func _get_previous_state_tag():
 	return state_machine.previous_state_tag
 
 func _ready():
+	sprite.play()
 	jump_sfx = true
 	sprite.playing = true
 	jump_height = 400

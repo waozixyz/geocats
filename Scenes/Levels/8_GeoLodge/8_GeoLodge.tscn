@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Sounds/Effects/Fire.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/FireplacePopupDialog.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=14]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"
@@ -189,10 +190,9 @@ centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 7 )
-frame = 2
 speed_scale = 0.2
-playing = true
 centered = false
+script = ExtResource( 14 )
 
 [node name="lodge_bg" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 8 )
@@ -223,10 +223,9 @@ shape = SubResource( 10 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 13 )
-frame = 3
 speed_scale = 0.2
-playing = true
 centered = false
+script = ExtResource( 14 )
 
 [node name="Default" parent="." instance=ExtResource( 9 )]
 
@@ -437,11 +436,10 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 42 )
 animation = "walk"
-frame = 1
 speed_scale = 0.1
-playing = true
 centered = false
 flip_h = true
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston"]
 position = Vector2( 28.4134, 21.1588 )

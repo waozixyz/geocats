@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://Assets/Sounds/Effects/OrganicTumbleCave2.wav" type="AudioStream" id=42]
 [ext_resource path="res://Assets/Sounds/Effects/lazer.wav" type="AudioStream" id=43]
 [ext_resource path="res://Assets/Sounds/Effects/norna_new_explosion.wav" type="AudioStream" id=44]
+[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=45]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -1031,10 +1032,9 @@ __meta__ = {
 [node name="Slime" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 6, 220.75 )
 frames = SubResource( 85 )
-frame = 2
 speed_scale = 0.5
-playing = true
 centered = false
+script = ExtResource( 45 )
 
 [node name="Foreground" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 12 )

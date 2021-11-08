@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Levels/4_PopNnip/Interactions.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -118,7 +119,7 @@ centered = false
 position = Vector2( 179, 91 )
 frames = SubResource( 3 )
 speed_scale = 0.2
-playing = true
+script = ExtResource( 11 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
@@ -298,7 +299,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 27
+frame = 22
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

@@ -4,6 +4,7 @@ var anim = "idle"
 
 func _ready():
 	sprite = $AnimatedSprite
+	sprite.play()
 	._ready()
 
 var ticks = 0

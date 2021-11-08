@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://Assets/Music/2_Complex.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://Assets/Levels/2_Complex/alley_house_ladder.png" type="Texture" id=35]
 [ext_resource path="res://Assets/Levels/2_Complex/stairs_2.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=38]
 [ext_resource path="res://Scenes/Levels/2_Complex/Interact.gd" type="Script" id=39]
 [ext_resource path="res://Scenes/Entity.gd" type="Script" id=40]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=41]
@@ -1238,9 +1239,9 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
-frame = 6
-playing = true
+frame = 1
 centered = false
+script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Cleopardis"]
 position = Vector2( 20.8, 42.5306 )
@@ -1263,6 +1264,7 @@ script = ExtResource( 46 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 83 )
 animation = "idle"
+script = ExtResource( 38 )
 
 [node name="HogwashArea2D" type="Area2D" parent="Agents/Hogwash"]
 script = ExtResource( 42 )
@@ -1307,7 +1309,7 @@ limit_right = 2300
 limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 10
+frame = 18
 
 [node name="Feline" parent="Default/CanvasLayer" index="2"]
 visible = false

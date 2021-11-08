@@ -2,6 +2,8 @@ extends AnimatedSprite
 var f = 0.002
 var elapsed = 0
 var ticks = 0
+func _ready():
+	play()
 func _physics_process(delta):
 
 	ticks = OS.get_ticks_msec() * f
