@@ -5,7 +5,7 @@ onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin
 
-var theme = "Creepy_City"
+var theme = "CreepyCity"
 var theme_path = "res://Assets/Levels/3_GeoCity/" + theme + "/"
 
 func _ready():
@@ -13,15 +13,10 @@ func _ready():
 
 
 func creepy_city(): #Change to Pumpkin function which is called by collision
+	if has_node(theme):
+		theme.visible = true
 	below_player.get_node("City_Buildings").texture = load(theme_path + "bg.png")
 	below_player.get_node("City_BG").texture = load(theme_path + "red_sky.png")
-	below_player.get_node("Moon").visible = true
-	below_player.get_node("Clouds").visible = true
-	below_player.get_node("Stars").visible = true
-	below_player.get_node("Creepy_Cat").visible = true
-	below_player.get_node("Pumpkin_Cat_Neswulf").visible = true
-	below_player.get_node("Pumpkin_Small").visible = true
-	below_player.get_node("Pumpkin_Medium").visible = true
 	get_node("Salty_Swing").stop()
 	get_node("Creepy_Swing").play()
 

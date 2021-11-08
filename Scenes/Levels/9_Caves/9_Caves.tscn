@@ -114,13 +114,13 @@ extents = Vector2( 10, 244 )
 extents = Vector2( 21, 37 )
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 12.157, 89.1761 )
+extents = Vector2( 12.157, 98.633 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 12.157, 271.35 )
+extents = Vector2( 12.157, 283.033 )
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 12.157, 390.453 )
+extents = Vector2( 12.157, 405.496 )
 
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 176, 29 )
@@ -342,11 +342,9 @@ position = Vector2( 1469.51, 351.633 )
 collision_layer = 7
 collision_mask = 7
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2( 0, -2.633 )
 shape = SubResource( 27 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]

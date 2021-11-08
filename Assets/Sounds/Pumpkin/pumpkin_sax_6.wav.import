@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pumpkin_sax_6.wav-eb17d326785d0b2ddd5b6b46860308f3.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav"
+dest_files=[ "res://.import/pumpkin_sax_6.wav-eb17d326785d0b2ddd5b6b46860308f3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

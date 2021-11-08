@@ -5,7 +5,6 @@ var player_position
 var player_direction
 var crt_noise = 0.0
 var pause_msg = ""
-var rng = RandomNumberGenerator.new()
 
 var data =  {
 	"jwt": "",
@@ -24,7 +23,8 @@ var data =  {
 	"nomusic": false,
 }
 
-var pumpkin_code = (rng.randi_range(1111111,7777777))
+var pumpkin_code = ""
+
 
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)
@@ -42,6 +42,9 @@ var nfts = {}
 var updating = false
 
 func _ready():
+	for i in range(0, 7):
+		pumpkin_code += str(int(rand_range(0, 7)))
+
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed")
