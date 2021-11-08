@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=135 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://Assets/Sounds/Effects/OrganicSmashLilCave.wav" type="AudioStream" id=41]
 [ext_resource path="res://Assets/Sounds/Effects/OrganicTumbleCave2.wav" type="AudioStream" id=42]
 [ext_resource path="res://Assets/Sounds/Effects/lazer.wav" type="AudioStream" id=43]
+[ext_resource path="res://Assets/Sounds/Effects/norna_new_explosion.wav" type="AudioStream" id=44]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -853,6 +854,10 @@ shape = SubResource( 79 )
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="Enemy/Beam"]
 stream = ExtResource( 43 )
+volume_db = -5.0
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="Enemy/Beam"]
+stream = ExtResource( 44 )
 
 [node name="Ears" type="Node2D" parent="."]
 visible = false
@@ -930,7 +935,7 @@ limit_right = 1400
 limit_bottom = 1000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 30
+frame = 32
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )

@@ -3,6 +3,7 @@ extends Area2D
 onready var sprite = $AnimatedSprite
 export var dmg = 7
 onready var sound = $Sound
+onready var explosion = $Explosion
 
 var touching
 func _ready():
@@ -32,6 +33,8 @@ func _process(delta):
 			elapsed += 1
 			if elapsed % 13 == 0:
 				body.damage(dmg * delta * global.fps)
+			if not explosion.is_playing():
+				explosion.play()
 
 func _on_body_exited(body):
 	pass
