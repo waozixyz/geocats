@@ -39,7 +39,6 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		hide_chat()
-
 		if nft_possible:
 			nft.main.visible = false
 			chat_with.visible = false
@@ -47,7 +46,6 @@ func _on_body_exited(body):
 func _process(delta):
 	if disabled and active:
 		hide_chat()
-
 	if active and "idle" in get_parent():
 		if chat_with.started:
 			get_parent().idle = true

@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Levels/4_PopNnip/potentialBG_popnnip.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_flashing_light.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Music/4_PopNnip.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/4_PopNnip/keep.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=9]
@@ -263,7 +263,7 @@ position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 10 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 bus = "Music"
@@ -298,7 +298,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 25
+frame = 27
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

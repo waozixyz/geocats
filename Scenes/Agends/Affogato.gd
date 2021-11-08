@@ -29,6 +29,7 @@ var next_jump_height = 0
 
 
 func _physics_process(delta):
+	var dfps = delta * global.fps
 	var scene_name = get_tree().get_current_scene().name
 	var donut_open = PROGRESS.variables.get("donut_open")
 	var follow = PROGRESS.variables.get("follow")
@@ -69,7 +70,7 @@ func _physics_process(delta):
 			next_jump_height = player.jump_height
 
 		if add_x != 0:
-			velocity.x += add_x * .1
+			velocity.x += add_x * .1 
 			add_x -= add_x * .1
 
 		if position.y < player.position.y - margin:
@@ -83,7 +84,7 @@ func _physics_process(delta):
 		if on_ladder and player.vx == 0:
 			
 			if position != player.position:
-				position += (player.position - position) * .05
+				position += (player.position - position) * .05 * dfps
 			tween_to_ladder()
 			climbing = true
 		else:
@@ -91,7 +92,7 @@ func _physics_process(delta):
 				position.y = player.position.y 
 				climbing = false
 	if visible:
-		ticks += 1
+		ticks += 1 
 		if int(ticks* .1) % 40 == 0 and velocity.x == 0:
 			anim = "blink"
 		else:

@@ -73,9 +73,9 @@ func jump(jumpHeight):
 	if jump_sfx:
 		var sfx = AudioStreamPlayer.new()
 		if mushroom:
-			sfx.stream = load('res://Assets/Sfx/Effects/jump_shroom.ogg')
+			sfx.stream = load('res://Assets/Sounds/Player/jump_shroom.ogg')
 		else:
-			sfx.stream = load('res://Assets/Sfx/Effects/jump.ogg')
+			sfx.stream = load('res://Assets/Sounds/Player/jump.ogg')
 		sfx.bus = "Sound"
 		sfx.stream.loop = false
 		sfx.play()

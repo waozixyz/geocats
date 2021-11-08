@@ -5,12 +5,12 @@
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/Fire.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sfx/SFX/Rain.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/Effects/Rain.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/interactions.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/palmerston.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/Palmerston.gd" type="Script" id=10]
-[ext_resource path="res://Assets/Sfx/SFX/Fire.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sounds/Effects/Fire.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/FireplacePopupDialog.gd" type="Script" id=13]
 
@@ -143,31 +143,31 @@ extents = Vector2( 29.9071, 18.5032 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 8 )
-region = Rect2( 13, 0, 13, 8 )
+region = Rect2( 0, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 8 )
-region = Rect2( 26, 0, 13, 8 )
+region = Rect2( 39, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 13, 8 )
+region = Rect2( 13, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 8 )
-region = Rect2( 39, 0, 13, 8 )
+region = Rect2( 26, 0, 13, 8 )
 
 [sub_resource type="SpriteFrames" id=42]
 animations = [ {
-"frames": [ SubResource( 38 ), SubResource( 39 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 39 ) ],
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 38 ), SubResource( 41 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=43]
@@ -223,7 +223,7 @@ shape = SubResource( 10 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fire"]
 visible = false
 frames = SubResource( 13 )
-frame = 1
+frame = 3
 speed_scale = 0.2
 playing = true
 centered = false
@@ -246,7 +246,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 5
+frame = 22
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -375,7 +375,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
 shape = SubResource( 35 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Rain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -3.104
 autoplay = true

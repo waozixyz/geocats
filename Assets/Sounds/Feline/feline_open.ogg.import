@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/feline_open.ogg-7115ed7cc58f49c1f7f0d081d03005eb.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Feline/feline_open.ogg"
+dest_files=[ "res://.import/feline_open.ogg-7115ed7cc58f49c1f7f0d081d03005eb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

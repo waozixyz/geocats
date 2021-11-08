@@ -65,7 +65,7 @@ func _get_request(uri, body):
 
 var response_code
 var response
-func _on_request_completed( result, new_response_code, headers, body):
+func _on_request_completed(_result, new_response_code, _headers, body):
 	response_code = new_response_code
 	response = parse_json(body.get_string_from_utf8())
 	if response and response.has("status") and response.status and response.has("name"):

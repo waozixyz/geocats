@@ -53,7 +53,7 @@ func _add_audio(path, file_name, directional = true):
 		else:
 			audio = AudioStreamPlayer.new()
 		add_child(audio)
-		audio.stream = load("res://Assets/Sfx/" + path + "/" + file_name + ".ogg")
+		audio.stream = load("res://Assets/Sounds/" + path + "/" + file_name + ".ogg")
 		if audio.stream != null:
 			play_audio = true
 			audio.bus = "Sound"

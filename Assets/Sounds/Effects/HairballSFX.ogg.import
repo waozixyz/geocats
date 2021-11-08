@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HairballSFX.ogg-7721457f77568dc2461b986cdc2dd7d0.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Effects/HairballSFX.ogg"
+dest_files=[ "res://.import/HairballSFX.ogg-7721457f77568dc2461b986cdc2dd7d0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

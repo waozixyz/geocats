@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Giant_Pumpkin_Body.ogg-a4d999b04a2ed68c213883600f0e1323.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Effects/Giant_Pumpkin_Body.ogg"
+dest_files=[ "res://.import/Giant_Pumpkin_Body.ogg-a4d999b04a2ed68c213883600f0e1323.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

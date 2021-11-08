@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/7_Mountain_sixeight.ogg-3ae7b5d894fe464ffd1ae800e1ad0891.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/7_Mountain_sixeight.ogg"
+dest_files=[ "res://.import/7_Mountain_sixeight.ogg-3ae7b5d894fe464ffd1ae800e1ad0891.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thinking_cat.ogg-9ea9f071e6023f8d1a493d8e01eef449.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/thinking_cat.ogg"
+dest_files=[ "res://.import/thinking_cat.ogg-9ea9f071e6023f8d1a493d8e01eef449.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

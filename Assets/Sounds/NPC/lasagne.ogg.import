@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lasagne.ogg-8cb61965c75755504620730f10c8284c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/lasagne.ogg"
+dest_files=[ "res://.import/lasagne.ogg-8cb61965c75755504620730f10c8284c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/9_CavesBattle_outro.ogg-ac9fe13263c2c3f1548e674ca520312d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/9_CavesBattle_outro.ogg"
+dest_files=[ "res://.import/9_CavesBattle_outro.ogg-ac9fe13263c2c3f1548e674ca520312d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

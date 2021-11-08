@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hogwash.ogg-054af22ddd959fb3f1355861ab3bf2d0.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/hogwash.ogg"
+dest_files=[ "res://.import/hogwash.ogg-054af22ddd959fb3f1355861ab3bf2d0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

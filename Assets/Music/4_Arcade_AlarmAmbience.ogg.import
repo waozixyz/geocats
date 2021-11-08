@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/4_Arcade_AlarmAmbience.ogg-aa5e2603821351a992cf21af3a414cf4.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/4_Arcade_AlarmAmbience.ogg"
+dest_files=[ "res://.import/4_Arcade_AlarmAmbience.ogg-aa5e2603821351a992cf21af3a414cf4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

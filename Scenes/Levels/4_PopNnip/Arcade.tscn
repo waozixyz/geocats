@@ -1,6 +1,6 @@
 [gd_scene load_steps=96 format=2]
 
-[ext_resource path="res://Assets/Sfx/Bckg/Centre_Laundry.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Music/4_PopNnip.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Levels/4_PopNnip/Interactions.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=4]
@@ -25,7 +25,7 @@
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/UI/Interact/InteractSimple.gd" type="Script" id=24]
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=25]
-[ext_resource path="res://Assets/Sfx/SFX/Melodic_Alarm_Ambience_1.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Music/4_Arcade_AlarmAmbience.ogg" type="AudioStream" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 12 )
@@ -350,7 +350,6 @@ centered = false
 [node name="sparks" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 163, 51 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.11
 playing = true
 centered = false
@@ -358,7 +357,7 @@ centered = false
 [node name="snake" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 100, 86 )
 frames = SubResource( 24 )
-frame = 6
+frame = 15
 playing = true
 centered = false
 
@@ -372,6 +371,7 @@ centered = false
 [node name="hairball_sim" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 48, 89 )
 frames = SubResource( 30 )
+frame = 1
 speed_scale = 0.2
 playing = true
 centered = false
@@ -379,6 +379,7 @@ centered = false
 [node name="pinball" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 81, 85 )
 frames = SubResource( 33 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -386,6 +387,7 @@ centered = false
 [node name="catsylvania" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 96, 56 )
 frames = SubResource( 36 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -393,6 +395,7 @@ centered = false
 [node name="poutine" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 31, 56 )
 frames = SubResource( 39 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -500,13 +503,13 @@ shape = SubResource( 62 )
 position = Vector2( 0, 1 )
 polygon = PoolVector2Array( -1714, -646, -1584, -758, -1452, -758, -1452, -853, -1637, -850, -1638, -796, -1680, -773, -1688, -773, -1689, -796, -1737, -796, -1747, -891, -1740, -905, -1700, -905, -1585, -905, -1585, -973, -1446, -972, -1441, -642, -1681, -642 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = -12.0
 autoplay = true
 bus = "Music"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )
 volume_db = -7.647
 autoplay = true
@@ -561,7 +564,7 @@ limit_right = 960
 limit_bottom = 480
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
+frame = 12
 
 [node name="AbovePlayer" type="ViewportContainer" parent="."]
 margin_right = 4800.0
