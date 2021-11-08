@@ -340,31 +340,31 @@ extents = Vector2( 61.5852, 58.9592 )
 
 [sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 23 )
-region = Rect2( 0, 54, 50, 54 )
+region = Rect2( 0, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 23 )
-region = Rect2( 50, 54, 50, 54 )
+region = Rect2( 50, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 50, 54 )
+region = Rect2( 0, 54, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=76]
 atlas = ExtResource( 23 )
-region = Rect2( 50, 0, 50, 54 )
+region = Rect2( 50, 54, 50, 54 )
 
 [sub_resource type="SpriteFrames" id=77]
 animations = [ {
-"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
-"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 76 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ) ],
+"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [node name="GeoCity" type="Node2D"]
@@ -912,6 +912,7 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/1"]
 stream = ExtResource( 33 )
+bus = "Sound"
 
 [node name="2" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 239, 355 )
@@ -934,6 +935,7 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/2"]
 stream = ExtResource( 34 )
+bus = "Sound"
 
 [node name="3" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 279, 355 )
@@ -956,6 +958,7 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/3"]
 stream = ExtResource( 35 )
+bus = "Sound"
 
 [node name="4" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 319, 355 )
@@ -978,6 +981,7 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/4"]
 stream = ExtResource( 36 )
+bus = "Sound"
 
 [node name="5" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 359, 355 )
@@ -1000,6 +1004,7 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/5"]
 stream = ExtResource( 32 )
+bus = "Sound"
 
 [node name="6" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 399, 355 )
@@ -1022,6 +1027,7 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/6"]
 stream = ExtResource( 31 )
+bus = "Sound"
 
 [node name="7" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 439, 355 )
@@ -1044,12 +1050,15 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/7"]
 stream = ExtResource( 27 )
+bus = "Sound"
 
 [node name="Laugh" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
 stream = ExtResource( 37 )
+bus = "Sound"
 
 [node name="Ouch" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
 stream = ExtResource( 38 )
+bus = "Sound"
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

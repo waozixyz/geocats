@@ -48,6 +48,14 @@ var disabled = false
 var dbl_jump_height = 350
 
 onready var hurt_sfx = $HurtSFX
+onready var jump_shroom_sfx = $JumpShroomSFX
+onready var jump_sfx = $JumpSFX
+func jump(jumpHeight):
+	.jump(jumpHeight)
+	if mushroom:
+		jump_shroom_sfx.play()
+	else:
+		jump_sfx.play()
 
 func default_anim():
 	if vertical > 0:
@@ -81,7 +89,6 @@ func _get_previous_state_tag():
 
 func _ready():
 	sprite.play()
-	jump_sfx = true
 	sprite.playing = true
 	jump_height = 400
 	state_machine.enter_logic(self) 

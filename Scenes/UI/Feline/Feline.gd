@@ -36,8 +36,6 @@ func _press_sound():
 
 # initialize feline
 func _ready():
-	open_sfx.stream.loop = false
-	close_sfx.stream.loop = false
 	var default = get_parent().get_parent()
 	if default and default.has_node("Player"):
 		player = default.get_node("Player")
