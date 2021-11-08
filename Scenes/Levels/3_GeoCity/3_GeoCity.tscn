@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -26,16 +26,18 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/moon.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/medium_pumpkin_sptritesheet.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/PumpkinUI.gd" type="Script" id=26]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_7.wav" type="AudioStream" id=27]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/gotpumpkin_spritesheet.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=29]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/pumpkin_teeth.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_5.wav" type="AudioStream" id=31]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_4.wav" type="AudioStream" id=32]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_0.wav" type="AudioStream" id=33]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_1.wav" type="AudioStream" id=34]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_2.wav" type="AudioStream" id=35]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_3.wav" type="AudioStream" id=36]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_5.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_1.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_2.wav" type="AudioStream" id=34]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_3.wav" type="AudioStream" id=35]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_4.wav" type="AudioStream" id=36]
+[ext_resource path="res://Assets/Sounds/Pumpkin/evilpumpkinlaugh.wav" type="AudioStream" id=37]
+[ext_resource path="res://Assets/Sounds/Feline/Feline_Owch.wav" type="AudioStream" id=38]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 25 )
@@ -890,15 +892,15 @@ animation = "Sad"
 
 [node name="Notes" type="Node2D" parent="CanvasLayer/Pumpkin"]
 
-[node name="0" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="1" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 199, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/0"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/1"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/0"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/1"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -8.0
 margin_top = -16.0
@@ -908,19 +910,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/0"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/1"]
 stream = ExtResource( 33 )
 
-[node name="1" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="2" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 239, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/1"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/2"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 frame = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/1"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/2"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -16.0
 margin_top = -32.0
@@ -930,19 +932,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/1"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/2"]
 stream = ExtResource( 34 )
 
-[node name="2" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="3" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 279, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/2"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/3"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 frame = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/2"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/3"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -16.0
 margin_top = -40.0
@@ -952,19 +954,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/2"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/3"]
 stream = ExtResource( 35 )
 
-[node name="3" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="4" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 319, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/3"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/4"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 frame = 3
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/3"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/4"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -16.0
 margin_top = -40.0
@@ -974,19 +976,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/3"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/4"]
 stream = ExtResource( 36 )
 
-[node name="4" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="5" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 359, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/4"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/5"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 frame = 4
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/4"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/5"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -16.0
 margin_top = -40.0
@@ -996,19 +998,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/4"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/5"]
 stream = ExtResource( 32 )
 
-[node name="5" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="6" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 399, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/5"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/6"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 frame = 5
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/5"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/6"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -16.0
 margin_top = -32.0
@@ -1018,19 +1020,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/5"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/6"]
 stream = ExtResource( 31 )
 
-[node name="6" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
+[node name="7" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
 position = Vector2( 439, 355 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/6"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/7"]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 30 )
 hframes = 14
 frame = 6
 
-[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/6"]
+[node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/7"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -16.0
 margin_top = -16.0
@@ -1040,8 +1042,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/6"]
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/7"]
 stream = ExtResource( 27 )
+
+[node name="Laugh" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
+stream = ExtResource( 37 )
+
+[node name="Ouch" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
+stream = ExtResource( 38 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

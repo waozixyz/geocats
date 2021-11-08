@@ -15,3 +15,4 @@ func _process(delta):
 	if do_something:
 		pumpkin_ui.visible = true if not pumpkin_ui.visible else false
 		do_something  = false
+	giant_pumpkin.animation = pumpkin_ui.get_node("AnimatedSprite").animation
