@@ -81,7 +81,7 @@ extents = Vector2( 63.2, 2 )
 extents = Vector2( 20.8, 6 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 27, 6 )
+extents = Vector2( 24, 8 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 14.4, 19.2 )
@@ -117,7 +117,7 @@ extents = Vector2( 21, 37 )
 extents = Vector2( 12.157, 98.633 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 12.157, 283.033 )
+extents = Vector2( 12.157, 265.804 )
 
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 12.157, 405.496 )
@@ -202,7 +202,7 @@ script = ExtResource( 12 )
 position = Vector2( 0, -2 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 74, 407 )
+position = Vector2( 47.3167, 411 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1565
@@ -224,6 +224,10 @@ centered = false
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( -3.2, 374.4, 68.8, 344.8, 114.4, 344.8, 167.2, 356, 233.6, 356, 297.6, 336, 427.2, 340.8, 473.6, 360, 536, 380, 599.2, 379.2, 598.4, 455.2, 609.6, 532, 603.2, 581.6, 566.4, 644, 548.8, 680.8, 524.8, 707.2, 397.6, 708.8, 320, 685.6, 258.4, 646.4, 207.2, 658.4, 166.4, 683.2, 146.4, 687.2, 126.4, 700, 100, 694.4, 83.2, 674.4, 64.8, 679.2, -0.8, 678.4 )
@@ -256,9 +260,8 @@ shape = SubResource( 15 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Platforms"]
-position = Vector2( 1136.8, 839.2 )
+position = Vector2( 1136, 841.6 )
 shape = SubResource( 16 )
-one_way_collision = true
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 258.4, 1387.2 )
@@ -348,7 +351,7 @@ position = Vector2( 0, -2.633 )
 shape = SubResource( 27 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
-position = Vector2( 1433.1, 771.804 )
+position = Vector2( 1433.1, 749.804 )
 collision_layer = 7
 collision_mask = 7
 script = ExtResource( 11 )
@@ -357,6 +360,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2( 0, 4 )
 shape = SubResource( 28 )
 
 [node name="Ladder4" type="Area2D" parent="Ladders"]

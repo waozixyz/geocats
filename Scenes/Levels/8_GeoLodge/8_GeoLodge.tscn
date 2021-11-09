@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/8_GeoLodge/FireplacePopupDialog.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=14]
+[ext_resource path="res://Assets/UI/ui_buttons.tres" type="Theme" id=15]
+[ext_resource path="res://Assets/Levels/8_GeoLodge/tinypumpkinicon.png" type="Texture" id=16]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"
@@ -134,10 +136,17 @@ extents = Vector2( 10, 315 )
 extents = Vector2( 10, 125.333 )
 
 [sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 19.0542, 145.776 )
+extents = Vector2( 19.0542, 158.671 )
 
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 21, 37 )
+
+[sub_resource type="StyleBoxFlat" id=44]
+bg_color = Color( 0.207843, 0.101961, 0, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
 
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 29.9071, 18.5032 )
@@ -206,6 +215,11 @@ script = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PumpkinArea"]
 position = Vector2( 512, 339 )
 shape = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="PumpkinArea"]
+modulate = Color( 1, 1, 1, 0.458824 )
+position = Vector2( 511, 340.001 )
+texture = ExtResource( 16 )
 
 [node name="Fire" type="Area2D" parent="."]
 position = Vector2( 462, 456 )
@@ -367,11 +381,9 @@ position = Vector2( 786, 397 )
 collision_layer = 7
 collision_mask = 7
 script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2( 0, -10.0138 )
 shape = SubResource( 35 )
 
 [node name="Rain" type="AudioStreamPlayer" parent="."]
@@ -398,25 +410,22 @@ texture = ExtResource( 5 )
 
 [node name="PumpkinCode" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="PumpkinCode"]
+[node name="Panel" type="Panel" parent="PumpkinCode"]
 visible = false
 margin_left = 125.0
 margin_top = 375.0
 margin_right = 525.0
 margin_bottom = 462.0
-color = Color( 0.435294, 0.105882, 0.0705882, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_styles/panel = SubResource( 44 )
 
-[node name="Label" type="RichTextLabel" parent="PumpkinCode/ColorRect"]
+[node name="Label" type="Label" parent="PumpkinCode/Panel"]
 margin_left = 42.0
 margin_top = 16.0
 margin_right = 352.0
 margin_bottom = 75.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme = ExtResource( 15 )
+align = 1
+valign = 1
 
 [node name="Palmerston" type="KinematicBody2D" parent="."]
 position = Vector2( 970.98, 403.846 )

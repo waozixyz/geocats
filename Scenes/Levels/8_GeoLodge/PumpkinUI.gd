@@ -5,13 +5,12 @@ onready var sprite = $AnimatedSprite
 onready var notes = $Notes
 onready var laugh = $Laugh
 onready var ouch = $Ouch
-
+onready var note_spr = $NoteSpr
 var complete = false
 func _ready():
 	sprite.play()
 	for note in notes.get_children():
 		var sound = note.get_node("Sound")
-
 		sound.set_volume_db(-10)
 	print(global.pumpkin_code)
 	
@@ -45,6 +44,11 @@ func _input(event):
 					pass
 				else:
 					if btn.pressed:
+						var ns = note_spr.duplicate()
+						ns.visible = true
+						ns.position = note.position
+						ns.position.y -= 50
+						add_child(ns)
 						spr.frame = int(note.name) - 1
 						sound.play()
 						input_code += note.name

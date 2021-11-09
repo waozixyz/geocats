@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -38,6 +38,8 @@
 [ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_4.wav" type="AudioStream" id=36]
 [ext_resource path="res://Assets/Sounds/Pumpkin/evilpumpkinlaugh.wav" type="AudioStream" id=37]
 [ext_resource path="res://Assets/Sounds/Feline/Feline_Owch.wav" type="AudioStream" id=38]
+[ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/note_single.png" type="Texture" id=39]
+[ext_resource path="res://Scenes/Levels/3_GeoCity/NoteSpr.gd" type="Script" id=40]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 25 )
@@ -1051,6 +1053,13 @@ __meta__ = {
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/7"]
 stream = ExtResource( 27 )
 bus = "Sound"
+
+[node name="NoteSpr" type="Sprite" parent="CanvasLayer/Pumpkin"]
+visible = false
+position = Vector2( 178.548, 318.496 )
+scale = Vector2( 5.98063, 5.98063 )
+texture = ExtResource( 39 )
+script = ExtResource( 40 )
 
 [node name="Laugh" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
 stream = ExtResource( 37 )
