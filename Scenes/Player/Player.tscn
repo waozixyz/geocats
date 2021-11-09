@@ -78,23 +78,23 @@ region = Rect2( 0, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 45, 15, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -108,24 +108,24 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ) ],
-"loop": true,
-"name": "blink",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 8 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 8 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "climb",
+"name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -156,7 +156,6 @@ material = SubResource( 2 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 27
 
 [node name="Timers" type="Node2D" parent="."]
 

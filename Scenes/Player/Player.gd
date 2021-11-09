@@ -184,6 +184,10 @@ func move():
 
 # animation helper function
 func play(animation:String):
+	if animation == "slide_wall":
+		sprite.position = Vector2(-4, -6)
+	else:
+		sprite.position = Vector2(0, 0)
 	if sprite.animation == animation:
 		return
 	sprite.play(animation)

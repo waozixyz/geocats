@@ -2,7 +2,7 @@ extends BasePlayerState
 
 
 func logic(player: KinematicBody2D, _delta: float):
-	player.play("walk")
+
 	player.move_horizontally(0)
 
 	if !player.grounded:
@@ -12,6 +12,10 @@ func logic(player: KinematicBody2D, _delta: float):
 		if player.jumping and player.current_platforms:
 			player.fall_through()
 			return "fall"
+	elif player.vertical < 0:
+		player.play("slide_wall")
+	else:
+		player.play("walk")
 		
 	if player.on_ladder and player.vertical != 0:
 		return "climb"

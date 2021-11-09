@@ -26,11 +26,8 @@ func logic(player: KinematicBody2D, _delta: float):
 			player.fall_through()
 			return "fall"
 	elif player.vertical < 0:
-		if player.sprite.animation != "slide_wall":
-			player.position.y -= 5
 		player.play("slide_wall")
 	else:
-		
 		player.coll_default.disabled = false
 		player.coll_slide.disabled = true
 		if elapsedIdleTime > idleDurration:

@@ -366,7 +366,7 @@ limit_right = 1490
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 28
+frame = 19
 
 [node name="LitterBoxSFX" type="Area2D" parent="."]
 position = Vector2( 809.231, 356.84 )
