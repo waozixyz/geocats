@@ -11,6 +11,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.on_ladder and player.vertical != 0:
 		return "climb"
 	if player.underwater:
+		player.land_water_sfx.play()
 		return "swim"
 	if player.is_on_floor():
 		player.isDoubleJumped = false #reset is double jumped

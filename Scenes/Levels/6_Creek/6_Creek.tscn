@@ -210,8 +210,8 @@ extents = Vector2( 1057.91, 148.2 )
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 1175, 162 )
 
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 476.178, 148.2 )
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 526.71, 72 )
 
 [sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 12, 1480 )
@@ -608,7 +608,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea"]
 position = Vector2( 1108.09, 4207.2 )
-shape = SubResource( 43 )
+shape = SubResource( 51 )
 
 [node name="WaterNoise" type="AudioStreamPlayer2D" parent="Creek"]
 position = Vector2( 113.419, 699.342 )

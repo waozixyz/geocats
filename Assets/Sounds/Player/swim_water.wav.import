@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/swim_water.wav-b30fe0f3236de80bb608ea0b3cee25ca.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Player/swim_water.wav"
+dest_files=[ "res://.import/swim_water.wav-b30fe0f3236de80bb608ea0b3cee25ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

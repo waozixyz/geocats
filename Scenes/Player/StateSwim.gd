@@ -18,6 +18,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.underwater:
 		if player.horizontal != 0 or not player.grounded:
 			player.waves.emitting = true
+
 		else:
 			player.waves.emitting = false
 			player.play("idle")

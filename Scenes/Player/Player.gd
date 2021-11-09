@@ -47,9 +47,13 @@ var disabled = false
 
 var dbl_jump_height = 350
 
+# sound effects assets
 onready var hurt_sfx = $HurtSFX
 onready var jump_shroom_sfx = $JumpShroomSFX
 onready var jump_sfx = $JumpSFX
+onready var land_water_sfx = $LandWaterSFX
+onready var swim_water_sfx = $SwimWaterSFX
+# play sounds on jump and run entity jump function
 func jump(jumpHeight):
 	.jump(jumpHeight)
 	if mushroom:
@@ -57,6 +61,7 @@ func jump(jumpHeight):
 	else:
 		jump_sfx.play()
 
+# play default sprite animations
 func default_anim():
 	if vertical > 0:
 		play("crouch")
@@ -66,6 +71,7 @@ func default_anim():
 		else:
 			play("walk")
 
+# check if player is donig a wall slide
 func check_wall_slide(raycast: RayCast2D, direction: int):
 	if raycast.is_colliding() && horizontal == direction:
 		var shape_id = raycast.get_collider_shape()
@@ -79,14 +85,16 @@ func check_wall_slide(raycast: RayCast2D, direction: int):
 					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
 						return true
 
+# move horizontal function
 func move_horizontally(subtractor = 0):
 	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 
-
+# check the previous state player was in
 func _get_previous_state_tag():
 	return state_machine.previous_state_tag
 
+# init player
 func _ready():
 	sprite.play()
 	sprite.playing = true
@@ -97,6 +105,7 @@ func _ready():
 		position = global.player_position
 		sprite.flip_h  = global.player_direction * -1
 
+# disable player movement
 var no_vx = false
 func disable(disable_vx = false):
 	play("idle")
@@ -104,10 +113,12 @@ func disable(disable_vx = false):
 	velocity.x = 0
 	no_vx = disable_vx
 
+# enable player movement
 func enable():
 	disabled = false
 	no_vx = false
 
+# main process loop
 var dmg_blink = 0
 func _physics_process(delta):
 	var dfps = delta * global.fps
@@ -137,6 +148,7 @@ func _physics_process(delta):
 			sprite.material.set_shader_param("dmg", false)
 			dmg_blink = 0
 
+# update keyboard inputs
 func update_inputs():
 	horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -160,18 +172,23 @@ func update_inputs():
 	if is_on_floor():
 		floor_timer.start()
 
+# player damage function
 func damage(dmg):
 	global.data.player_hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
 	hurt_sfx.play()
+	
+# main move function
 func move():
 	velocity = move_and_slide(velocity, Vector2.UP, true)
-	
+
+# animation helper function
 func play(animation:String):
 	if sprite.animation == animation:
 		return
 	sprite.play(animation)
 
+# check if on ladder and ready to climb
 func can_climb():
 	return on_ladder and ladder_timer.is_stopped()
 

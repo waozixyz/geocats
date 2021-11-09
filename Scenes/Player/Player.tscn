@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Player/PlayerFSM.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Player/StateIdle.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Player/StateLadder.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Sounds/Player/swim_water.wav" type="AudioStream" id=16]
 [ext_resource path="res://Scenes/Player/StateAir.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Player/StateWallSlide.gd" type="Script" id=18]
 
@@ -241,6 +242,10 @@ bus = "Sound"
 
 [node name="LandWaterSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+bus = "Sound"
+
+[node name="SwimWaterSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
 bus = "Sound"
 
 [connection signal="timeout" from="Timers/PlatformTimer" to="." method="_on_PlatformTimer_timeout"]
