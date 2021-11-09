@@ -29,10 +29,12 @@ var change_to = ""
 
 #if mouse enters button play sound
 func _hover_sound():
-	hover_sfx.play()
+	if system.visible and active:
+		hover_sfx.play()
 
 func _press_sound():
-	pressed_sfx.play()
+	if system.visible and active:
+		pressed_sfx.play()
 
 # initialize feline
 func _ready():
@@ -64,7 +66,7 @@ func exit():
 		if active:
 			close_sfx.play()
 			active = false
-			_tween(self, 1, 0, 1)
+			_tween(self, 1, 0, .4)
 
 	else:
 		_change_view(main_view)

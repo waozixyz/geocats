@@ -17,8 +17,8 @@ func _sound_slider_moved(value):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sound_slider.value = db2linear(global.data.sound)
-	music_slider.value = db2linear(global.data.music)
+	sound_slider.value = db2linear(global.data.sound) * 100
+	music_slider.value = db2linear(global.data.music) * 100
 	music_slider.connect("value_changed", self, "_music_slider_moved")
 	sound_slider.connect("value_changed", self, "_sound_slider_moved")
 

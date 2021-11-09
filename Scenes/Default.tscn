@@ -26,6 +26,7 @@ visible = false
 visible = false
 
 [node name="Feline" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
 
 [node name="NFT" parent="." instance=ExtResource( 8 )]
 
