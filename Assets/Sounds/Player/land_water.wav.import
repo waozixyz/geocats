@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/land_water.wav-d56cf8ae8a1858a627101106b8311084.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Player/land_water.wav"
+dest_files=[ "res://.import/land_water.wav-d56cf8ae8a1858a627101106b8311084.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

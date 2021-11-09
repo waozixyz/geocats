@@ -3,3 +3,4 @@ bin/
 git_api*
 *~
 .env
+*.xcf

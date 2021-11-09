@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=137 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/9_Caves/Battle/Background.png" type="Texture" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://Assets/Sounds/Effects/lazer.wav" type="AudioStream" id=43]
 [ext_resource path="res://Assets/Sounds/Effects/norna_new_explosion.wav" type="AudioStream" id=44]
 [ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=45]
+[ext_resource path="res://Assets/Music/Cave_Ambience.ogg" type="AudioStream" id=46]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -1088,6 +1089,12 @@ bus = "Music"
 [node name="MusicOutro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 33 )
+bus = "Music"
+
+[node name="Background2" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 46 )
+autoplay = true
 bus = "Music"
 
 [node name="HUD" type="CanvasLayer" parent="."]
