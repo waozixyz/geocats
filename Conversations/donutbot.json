@@ -13,7 +13,7 @@
     "position": "left",
     "animation_in": "fade_in",
     "type": "question",
-    "text": "Greetings. Would you like to hear a poem I'm building?",
+    "text": "Greetings. Would you like to hear@a poem I'm building?",
     "options": ["Yes", "No"],
     "next": ["1",""]
   },
@@ -33,7 +33,7 @@
   },
   "3": {
     "type": "text",
-    "content": "Alike we are,|@ throughout the stars",
+    "content": "Alike we are,|@throughout the stars",
     "next": "4",
   },
   "4": {

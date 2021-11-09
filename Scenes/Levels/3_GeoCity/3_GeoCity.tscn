@@ -884,6 +884,7 @@ texture = ExtResource( 19 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pumpkin" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource( 26 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Pumpkin"]

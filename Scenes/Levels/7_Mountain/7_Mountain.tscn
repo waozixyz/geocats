@@ -190,6 +190,13 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 4 )
 centered = false
 
+[node name="stars" type="AnimatedSprite" parent="BelowPlayer"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 5 )
+speed_scale = 0.2
+centered = false
+script = ExtResource( 18 )
+
 [node name="ring" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 8 )
 centered = false
@@ -197,12 +204,6 @@ centered = false
 [node name="telescope" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 1 )
 centered = false
-
-[node name="stars" type="AnimatedSprite" parent="BelowPlayer"]
-frames = SubResource( 5 )
-speed_scale = 0.2
-centered = false
-script = ExtResource( 18 )
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
 

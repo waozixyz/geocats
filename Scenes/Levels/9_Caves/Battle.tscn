@@ -174,38 +174,38 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 15 )
-region = Rect2( 0, 100, 40, 100 )
+region = Rect2( 0, 0, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 15 )
-region = Rect2( 40, 100, 40, 100 )
+region = Rect2( 40, 0, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 15 )
-region = Rect2( 80, 100, 40, 100 )
+region = Rect2( 80, 0, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 40, 100 )
+region = Rect2( 0, 100, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 15 )
-region = Rect2( 40, 0, 40, 100 )
+region = Rect2( 40, 100, 40, 100 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 15 )
-region = Rect2( 80, 0, 40, 100 )
+region = Rect2( 80, 100, 40, 100 )
 
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": false,
-"name": "default",
+"name": "glow",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": false,
-"name": "glow",
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -223,14 +223,14 @@ region = Rect2( 64, 0, 32, 148 )
 
 [sub_resource type="SpriteFrames" id=37]
 animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": false,
+"name": "glow",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
 "loop": false,
 "name": "default",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
-"loop": false,
-"name": "glow",
 "speed": 5.0
 } ]
 

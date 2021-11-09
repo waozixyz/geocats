@@ -210,7 +210,7 @@ extents = Vector2( 1057.91, 148.2 )
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 1175, 162 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 526.71, 72 )
 
 [sub_resource type="RectangleShape2D" id=44]
@@ -417,7 +417,7 @@ polygon = PoolVector2Array( 6449, 4417, 6385, 4433, 6248, 4475, 6033, 4578, 5865
 polygon = PoolVector2Array( 6505, 4446, 6580, 4505, 6735, 4602, 6893, 4741, 7081, 4840, 7293, 4902, 7536, 4941, 7776, 4966, 8254, 4987, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7736, 4998, 7518, 4998, 7266, 4963, 7018, 4880, 6862, 4782, 6608, 4608, 6478, 4504, 6387, 4446, 6384, 4433, 6431, 4416, 6455, 4414, 6480, 4424 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4435.2, 3307.77, 4674, 3264, 5190, 3186, 5579, 3113, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4484.82, 3354.86, 4314.95, 3371.68, 4119.03, 3377.57, 4302.34, 3428.02, 4226.66, 3431.39, 3952, 3392 )
+polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4435.2, 3307.77, 4674, 3264, 5190, 3186, 5383, 3162, 5579, 3113, 5782, 3036, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4484.82, 3354.86, 4314.95, 3371.68, 4119.03, 3377.57, 4302.34, 3428.02, 4226.66, 3431.39, 3952, 3392 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="Ground"]
@@ -608,7 +608,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea"]
 position = Vector2( 1108.09, 4207.2 )
-shape = SubResource( 51 )
+shape = SubResource( 43 )
 
 [node name="WaterNoise" type="AudioStreamPlayer2D" parent="Creek"]
 position = Vector2( 113.419, 699.342 )

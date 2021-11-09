@@ -14,16 +14,16 @@
     "animation_in": "fade_in",
     "position": "right",
     "type": "text",
-    "content": "I’m Norna,@this is my counterpart Wyrd.",
+    "content": "...I’m Norna,@this is my counterpart Wyrd.",
     "next": "2"
   },
   "2": {
     "name": "Wyrd",
     "avatar": "wyrd.png",
-    "animation_in": "fade_in",
+    "animation_in": "shake_regular_medium",
     "position": "left",
     "type": "text",
-    "content": "Quit volunteering information you halfwit!",
+    "content": "...Quit volunteering information you halfwit!",
     "next": "3"
   },
   "3": {
@@ -32,16 +32,16 @@
     "animation_in": "fade_in",
     "position": "right",
     "type": "text",
-    "content": "We’re hiding out here, taking samples of this slime mold.@Our employer uses it for freaky experiments.",
+    "content": "We’re taking samples of this slime mold.@Our employer uses it for freaky experiments.",
     "next": "4"
   },
  "4": {
     "name": "Wyrd",
     "avatar": "wyrd.png",
-    "animation_in": "fade_in",
+    "animation_in": "shake_regular_medium",
     "position": "left",
     "type": "text",
-    "content": "You’re going to get us fired!@Shut your trap Norna!",
+    "content": "...You’re going to get us fired!@Shut your trap Norna!",
     "next": ""
   },
 }

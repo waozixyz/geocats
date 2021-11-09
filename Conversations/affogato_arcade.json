@@ -4,7 +4,7 @@
     "avatar": "affogato.png",
     "position": "left",
     "type": "text",
-    "content": "Hey, nice to meet you.|@ I'm AffoGato.",
+    "content": "Hey, nice to meet you.|@I'm AffoGato.",
     "animation_in": "fade_in",
     "next": "1"
   },

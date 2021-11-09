@@ -27,8 +27,18 @@
     "next": "c"
   },
   "c": {
+    "type": "text",
+    "content": "|...Anyways, I have an adventurous friend who collects maps.",
+    "next": "d"
+  },
+  "d": {
+    "type": "text",
+    "content": "If you’re looking for something to do today,@maybe he can show you a fun place to hike.",
+    "next": "e"
+  },
+  "e": {
     "type": "question",
-    "text": "|...Anyways, I have an adventurous friend who collects maps.@If you’re looking for something to do today, maybe he can show you a fun place to hike.@Would you like me to send you his way?",
+    "text": "Would you like me to send you his way?",
     "options": ["yes", "no"],
     "next": ["yes_option", ""]
   },
