@@ -511,6 +511,7 @@ centered = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Node2D" parent="CanvasLayer"]
+visible = false
 
 [node name="Machine" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 310, 102 )
@@ -705,6 +706,9 @@ texture = ExtResource( 4 )
 scale = Vector2( 0.833, 1 )
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 615.846, 480, 659.064, 496, 749.1, 496, 783.914, 490, 920.768, 476, 989.196, 460, 1012, 451, 1139.26, 438, 1318.13, 439, 1436.97, 445, 1470.59, 445, 1470.59, 474, 1174.07, 468, 1081.63, 478, 963.986, 506, 795.918, 516, 614.646, 513, 540.216, 493, 464.586, 464, 68.4274, 469, 68.4274, 460, 255.702, 460, 296.519, 451, 465.786, 450, 545.018, 475 )
@@ -712,7 +716,7 @@ polygon = PoolVector2Array( 615.846, 480, 659.064, 496, 749.1, 496, 783.914, 490
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 1470.59, 446, 1464.59, 372, 1440.58, 318, 1418.97, 263, 1370.95, 140, 1271.31, 92, 1130.85, 82, 968.788, 62, 527.011, 62, 312.125, 90, 294.118, 195, 176.471, 270, 93.6375, 321, 72.0288, 341, 73.2293, 480, 46.8187, 483, 48.0192, 296, 267.707, 187, 296.519, 56, 545.018, 29, 1001.2, 35, 1354.14, 78, 1441.78, 161, 1505.4, 390, 1498.2, 448 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 autoplay = true
 bus = "Music"
