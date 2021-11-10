@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -295,6 +295,10 @@ region = Rect2( 0, 0, 11, 7 )
 atlas = ExtResource( 13 )
 region = Rect2( 22, 0, 11, 7 )
 
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 11, 7 )
+
 [sub_resource type="SpriteFrames" id=64]
 animations = [ {
 "frames": [ SubResource( 62 ) ],
@@ -302,7 +306,7 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ null, SubResource( 63 ) ],
+"frames": [ SubResource( 63 ), SubResource( 78 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
