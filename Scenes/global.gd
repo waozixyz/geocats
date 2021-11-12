@@ -35,7 +35,7 @@ func _notification(what):
 		get_tree().quit()
 
 #var url = "http://api.geocats.net"
-var url = "http://127.0.0.1:5000"
+var url = "http://127.0.0.1:8000"
 var http_request
 
 var nfts = {}
@@ -53,7 +53,7 @@ func _ready():
 func nft_api(path, nft_id):
 	updating = true
 	var uri = url + path + "-nft"
-	var body = { "NFT": nft_id, "vechain": data.vechain }
+	var body = { "nft_id": nft_id, "vechain": data.vechain }
 	_get_request(uri, body)
 
 func _get_request(uri, body):

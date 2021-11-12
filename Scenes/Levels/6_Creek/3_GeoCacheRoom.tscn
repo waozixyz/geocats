@@ -37,23 +37,23 @@ animations = [ {
 "speed": 0.6
 } ]
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 358.888, 60.6786 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 33.9119, 32.5012 )
+
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 13, 10 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 358.888, 60.6786 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 33.9119, 32.5012 )
 
 [node name="GeoCacheRoom" type="Node2D"]
 
@@ -107,7 +107,7 @@ polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( -271.528, 127.945 )
+position = Vector2( 673.539, 107.922 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
@@ -134,14 +134,8 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
-
-[node name="GeoCacheTreasure" type="AnimatedSprite" parent="."]
-position = Vector2( 1106, 421 )
-scale = Vector2( 3, 3 )
-frames = SubResource( 7 )
 
 [node name="waterarea" type="Area2D" parent="."]
 position = Vector2( 457.652, 519.2 )
@@ -151,14 +145,19 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Treasure" type="Area2D" parent="."]
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
+
+[node name="Sprit" type="AnimatedSprite" parent="Treasure"]
+position = Vector2( 1106, 421 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 9 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

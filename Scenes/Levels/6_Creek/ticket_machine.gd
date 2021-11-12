@@ -17,9 +17,10 @@ var success : bool = false
 var failed : bool = false
 var print_ticket : bool = false
 var ticket_print_done : bool = false
-var nft_id : String = "GroundCat"
+var nft_id : String = "Ground Cat"
 
 func _ready():
+	hud.visible = false
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 

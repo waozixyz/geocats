@@ -163,7 +163,7 @@ margin_right = 610.0
 margin_bottom = 399.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.933333, 0.141176, 0.0117647, 1 )
-text = "GeoKey Missing"
+text = "Required NFT Missing"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
