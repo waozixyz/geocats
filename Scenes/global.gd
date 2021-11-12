@@ -61,6 +61,7 @@ func nft_api(path, nft_id):
 	_get_request(uri, body)
 
 func _get_request(uri, body = null):
+
 	var error
 	var headers = PoolStringArray()
 	# Add 'Content-Type' header:

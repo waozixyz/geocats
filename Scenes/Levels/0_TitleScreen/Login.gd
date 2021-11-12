@@ -49,6 +49,9 @@ func _next():
 	if get_parent().name == "TitleScreen":
 		global.user_api('/get-location')
 	else:
+		global.response = {}
+		global.response_code = 200
+		global.response['process'] = 'logged_in'
 		visible = false
 
 func _login_request(uri, body):

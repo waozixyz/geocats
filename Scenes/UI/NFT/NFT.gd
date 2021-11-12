@@ -52,66 +52,51 @@ func show_nft(nft_id, nft, new = false):
 	edition_value.text = str(nft["edition"])
 	type_value.text = nft["Type"]
 
+func _nft_unavailable(nft_id, res):
+	if res.nft:
+		show_nft(nft_id, res.nft)
+	elif res.claimed:
+		chat_with.start("geochache_rewarded", true, false)
+	else:
+		chat_with.start("geochache_noreward", true, false)
+
 var loading_ticker = 0
 func update(delta, touching, nft_id):
+	var res = global.response
+	if res and res.has("process") and res['process'] == "logged_in":
+		waiting = true
+
 	if global.updating == "nft":
 		loading_ticker += delta
 		if loading_ticker > 20:
 			loading.visible = true
 		waiting = true
 	elif waiting and touching:
+
 		loading_ticker = 0
 		loading.visible = false
 		var res_code = global.response_code
-		var res = global.response
+
 
 		if res_code == 0:
 			chat_with.visible = true
 			chat_with.start("server_noconnect", true, false)
 		elif res_code == 422 or res_code == 401:
-				login.visible = true
+			login.visible = true
 		else:
 			if res and res.has("process"):
 				if res.process == "available":
 					if res.available:
 						global.nft_api("/claim", nft_id)
 					else:
-						if res.nft:
-							show_nft(nft_id, res.nft)
-						elif res.claimed:
-							chat_with.start("geochache_rewarded", true, false)
-						else:
-							chat_with.start("geochache_noreward", true, false)
-
-				elif res.process == "check-wallet":
-					if res.status:
-						if res.val > 0:
-							pass
-						#	show_nft(nft_id, res.title, res.description, false)
-						elif reward_available:
-							global.geoserver("/claim", nft_id)
-						else:
-							chat_with.start("geochache_noreward", true, false)
+						_nft_unavailable(nft_id, res)
+				elif res.process == "logged_in":
+					global.nft_api("/claim", nft_id)
+				elif res.process == "claiming_nft":
+					if res.available:
+						show_nft(nft_id, res.nft, true)
 					else:
-						login.visible = true
-				elif res.process == "check":
-					if res.name == "GeoKey":
-						login.visible = false
-
-						global.nft_api("/check-wallet", nft_id)
-				elif res.process == "get-nft":
-					if res.val:
-						if not res.has("title"):
-							res['title'] = nft_id
-
-						if res.status:
-							pass
-						#	show_nft(nft_id, res.title, res.description, true)
-						else:
-							pass
-						#	show_nft(nft_id, res.title, res.description, false)
-					else:
-						global.nft_api("/available", nft_id)
+						_nft_unavailable(nft_id, res)
 				else:
 					printerr("something wrong with nft logic")
 		waiting = false
