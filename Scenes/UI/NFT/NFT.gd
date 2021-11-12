@@ -52,11 +52,15 @@ func show_nft(nft_id, nft, new = false):
 	edition_value.text = str(nft["edition"])
 	type_value.text = nft["Type"]
 
-func update(touching, nft_id):
-	if global.updating:
-		loading.visible = true
+var loading_ticker = 0
+func update(delta, touching, nft_id):
+	if global.updating == "nft":
+		loading_ticker += delta
+		if loading_ticker > 20:
+			loading.visible = true
 		waiting = true
 	elif waiting and touching:
+		loading_ticker = 0
 		loading.visible = false
 		var res_code = global.response_code
 		var res = global.response
@@ -85,7 +89,7 @@ func update(touching, nft_id):
 							pass
 						#	show_nft(nft_id, res.title, res.description, false)
 						elif reward_available:
-							global.nft_api("/get", nft_id)
+							global.geoserver("/claim", nft_id)
 						else:
 							chat_with.start("geochache_noreward", true, false)
 					else:
@@ -99,7 +103,7 @@ func update(touching, nft_id):
 					if res.val:
 						if not res.has("title"):
 							res['title'] = nft_id
-							print("hi")
+
 						if res.status:
 							pass
 						#	show_nft(nft_id, res.title, res.description, true)

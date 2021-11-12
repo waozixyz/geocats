@@ -38,10 +38,16 @@ func _login_pressed():
 	mistake.visible = false
 	noserver.visible = false
 	_login_request(uri, body)
+func _process(_delta):
+	var res = global.response
+	if res and res.has('process'):
+		if res['process'] == "location":
+			if res.has('scene') and res.has('location'):
+				SceneChanger.change_scene(res.scene, res.location)
 
 func _next():
 	if get_parent().name == "TitleScreen":
-		SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
+		global.user_api('/get-location')
 	else:
 		visible = false
 
@@ -64,7 +70,6 @@ func _on_request_completed( result, response_code, headers, body):
 		noserver.visible = true
 	else:
 		noserver.visible = false
-
 		if response.has('status') and response.status:
 			if response.has("jwt"):
 				global.data.jwt = response.jwt

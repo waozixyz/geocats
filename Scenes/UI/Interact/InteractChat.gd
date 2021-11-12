@@ -53,7 +53,7 @@ func _process(delta):
 			get_parent().idle = false
 
 	if nft_possible:
-		nft.update(chat_with.started, nft_id)
+		nft.update(delta, chat_with.started, nft_id)
 	._process(delta)
 
 func _input(_event):

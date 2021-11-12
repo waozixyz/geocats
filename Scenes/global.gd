@@ -38,8 +38,7 @@ func _notification(what):
 var url = "http://127.0.0.1:8000"
 var http_request
 
-var nfts = {}
-var updating = false
+var updating : String = ""
 
 func _ready():
 	randomize()
@@ -50,20 +49,30 @@ func _ready():
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed")
 
+func user_api(path, body = null):
+	updating = "user"
+	var uri = url + path + '-user'
+	_get_request(uri, body)
+
 func nft_api(path, nft_id):
-	updating = true
-	var uri = url + path + "-nft"
+	updating = "nft"
+	var uri = url + path + '-nft'
 	var body = { "nft_id": nft_id, "vechain": data.vechain }
 	_get_request(uri, body)
 
-func _get_request(uri, body):
-	# Convert data to json string:
-	var query = JSON.print(body)
+func _get_request(uri, body = null):
+	var error
 	var headers = PoolStringArray()
 	# Add 'Content-Type' header:
 	headers.append("Content-Type: application/json")
 	headers.append("Authorization: Bearer " + data.jwt)
-	var error = http_request.request(uri, headers, true, HTTPClient.METHOD_POST, query)
+	if body:
+		# Convert data to json string:
+		var query = JSON.print(body)
+
+		error = http_request.request(uri, headers, true, HTTPClient.METHOD_POST, query)
+	else:
+		error = http_request.request(uri, headers)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
@@ -72,7 +81,5 @@ var response
 func _on_request_completed(_result, new_response_code, _headers, body):
 	response_code = new_response_code
 	response = parse_json(body.get_string_from_utf8())
-	if response and response.has("status") and response.status and response.has("name"):
-		nfts[response.name] = response.val
 
-	updating = false
+	updating = ""
