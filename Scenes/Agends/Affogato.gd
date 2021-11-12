@@ -31,7 +31,7 @@ var next_jump_height = 0
 func _physics_process(delta):
 	var dfps = delta * global.fps
 	var scene_name = get_tree().get_current_scene().name
-	var donut_open = PROGRESS.variables.get("donut_open")
+
 	var follow = PROGRESS.variables.get("follow")
 	if scene_name == "Arcade" and not follow:
 		visible = true

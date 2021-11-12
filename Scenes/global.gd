@@ -43,7 +43,7 @@ var updating = false
 
 func _ready():
 	randomize()
-	for i in range(0, 7):
+	for _i in range(0, 7):
 		pumpkin_code += str(int(rand_range(1, 8)))
 
 	http_request = HTTPRequest.new()

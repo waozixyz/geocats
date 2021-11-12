@@ -1302,7 +1302,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1084, 241.531 )
+position = Vector2( 153, 221 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
@@ -1310,9 +1310,6 @@ limit_bottom = 1200
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
 frame = 18
-
-[node name="Feline" parent="Default/CanvasLayer" index="2"]
-visible = false
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )

@@ -337,7 +337,7 @@ func check_newlines(string):
 func clean_bbcode(string):
 	phrase = string
 	var pause_search = 0
-	var line_search = 0 #just added this to test -K
+	var _line_search = 0 #just added this to test -K
 	
 	pause_search = phrase.find('%s' % pause_char, pause_search)
 	

@@ -42,6 +42,7 @@ corner_radius_bottom_left = 9
 script = ExtResource( 3 )
 
 [node name="Main" type="Panel" parent="."]
+visible = false
 margin_left = 54.0
 margin_top = 18.0
 margin_right = 567.0
@@ -113,9 +114,9 @@ __meta__ = {
 
 [node name="ImagePanel" type="Panel" parent="Main"]
 margin_left = 144.0
-margin_top = 54.0
+margin_top = 67.0
 margin_right = 378.0
-margin_bottom = 198.0
+margin_bottom = 211.0
 custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -193,6 +194,9 @@ margin_right = 70.0
 margin_bottom = 27.0
 text = "Location"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Value" type="Label" parent="Main/Location"]
 margin_left = 70.0

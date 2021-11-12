@@ -47,8 +47,8 @@ func _ready():
 	view = main_view
 	view.visible = true
 	status_bar.visible = true
-	for view in system.get_children():
-		for button in view.get_children():
+	for system_view in system.get_children():
+		for button in system_view.get_children():
 			if button is Button or button is TextureButton:
 				button.connect("mouse_entered", self, "_hover_sound")
 				button.connect("pressed", self, "_press_sound")

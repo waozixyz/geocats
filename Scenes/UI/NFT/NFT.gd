@@ -70,11 +70,14 @@ func update(touching, nft_id):
 			if res and res.has("process"):
 				if res.process == "available":
 					if res.available:
-						reward_available = true
+						global.nft_api("/claim", nft_id)
 					else:
-						reward_available = false
 						if res.nft:
 							show_nft(nft_id, res.nft)
+						elif res.claimed:
+							chat_with.start("geochache_rewarded", true, false)
+						else:
+							chat_with.start("geochache_noreward", true, false)
 
 				elif res.process == "check-wallet":
 					if res.status:
@@ -110,7 +113,7 @@ func update(touching, nft_id):
 		waiting = false
 	else:
 		loading.visible = false
-	if login.visible:
+	if login.visible or loading.visible:
 		player.disable()
 	else:
 		player.enable()
