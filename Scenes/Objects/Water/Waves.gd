@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _process(delta):
+func _process(_delta):
 	var mat = process_material
 	if substance == "water":
 		mat.color = Color(0.6, 0.823, 0.87, 1)

@@ -9,6 +9,11 @@ onready var received_nft = $Main/Taskbar/Received
 onready var nft_name = $Main/Name
 onready var description = $Main/Description
 onready var exit_button = $Main/Taskbar/Exit
+onready var image_panel = $Main/ImagePanel
+
+onready var type_value = $Main/Type/Value
+onready var edition_value = $Main/Edition/Value
+onready var location_panel = $Main/Location
 
 onready var loading = $Loading
 
@@ -23,75 +28,110 @@ func _ready():
 func _exit_pressed():
 	main.visible = false
 	login.visible = false
-func show_nft(nft_id,  nft_val, nft_title, nft_description, new = false):
+
+func _show_nft(nft_id, nft, new = false):
 	main.visible = true
 	received_nft.visible = new
-	nft_name.text = nft_title
-	description.text = nft_description
-	var new_anim = load("res://Scenes/UI/NFT/Anim/" + nft_id + ".tscn")
-	anim = new_anim.instance()
-	anim.play(nft_val)
-	main.add_child(anim)
+	nft_name.text = nft['Title']
+	description.text = nft['Description']
+	var file_name = nft_id.replace(" ", "") 
+	var new_anim = load("res://Scenes/UI/NFT/Anim/" + file_name + ".tscn")
+	if new_anim:
+		anim = new_anim.instance()
+		anim.play(nft['Title'])
+	else:
+		anim = Sprite.new()
+		anim.texture = load("res://Assets/NFT/" + file_name + ".png")
+		anim.scale = Vector2(10, 10)
+	image_panel.add_child(anim)
 	
-func update(touching, nft_id):
-	if global.updating:
-		loading.visible = true
+	# show location panel
+	if nft.has('Location'):
+		location_panel.visible = true
+		location_panel.get_node('Value').text = nft['Location']
+	elif nft.has('id'):
+		location_panel.visible = true
+		location_panel.get_node('Value').text = nft['id']
+	else:
+		location_panel.visible = false
+	
+	edition_value.text = str(nft["edition"])
+	type_value.text = nft["Type"]
+
+func _nft_unavailable(nft_id, res):
+
+	if res.nft:
+		_show_nft(nft_id, res.nft)
+	elif show_chat:
+		if res.claimed:
+			chat_with.start("geochache_rewarded", true, false)
+		else:
+			chat_with.start("geochache_noreward", true, false)
+	nft_ids.erase(nft_id)
+	active = false
+
+var loading_ticker = 0
+var show_chat = true
+var active = false
+var nft_ids = []
+func _process(delta):
+	if nft_ids.size() > 0 and not active:
+		global.nft_api("/available", nft_ids[0])
+		active = true
+
+	var res = global.response
+	if res and res.has("process") and res['process'] == "logged_in":
 		waiting = true
-	elif waiting and touching:
+
+	if global.updating == "nft":
+		loading_ticker += delta
+		if loading_ticker > 4:
+			loading.visible = true
+		waiting = true
+	elif waiting and active and nft_ids.size() > 0:
+		var nft_id = nft_ids[0]
+
+		loading_ticker = 0
 		loading.visible = false
 		var res_code = global.response_code
-		var res = global.response
-
 		if res_code == 0:
-			chat_with.visible = true
-			chat_with.start("server_noconnect", true, false)
+			if show_chat:
+				chat_with.visible = true
+				chat_with.start("server_noconnect", true, false)
 		elif res_code == 422 or res_code == 401:
-				login.visible = true
+			login.visible = true
 		else:
 			if res and res.has("process"):
 				if res.process == "available":
-					if res.count > 0:
-						reward_available = true
+					if res.available:
+						global.nft_api("/claim", nft_id)
 					else:
-						reward_available = false
-					global.nft_api("/check-wallet", nft_id)
-				elif res.process == "check-wallet":
-					if res.status:
-						if res.val > 0:
-							show_nft(nft_id, res.val, res.title, res.description, false)
-						elif reward_available:
-							global.nft_api("/get", nft_id)
-						else:
-							chat_with.start("geochache_noreward", true, false)
+						_nft_unavailable(nft_id, res)
+				elif res.process == "logged_in":
+					global.nft_api("/claim", nft_id)
+				elif res.process == "claiming_nft":
+					if res.available:
+						_show_nft(nft_id, res.nft, true)
+						nft_ids.erase(nft_id)
+						active = false
 					else:
-						login.visible = true
-				elif res.process == "check":
-					if res.name == "GeoKey":
-						login.visible = false
-
-						global.nft_api("/check-wallet", nft_id)
-				elif res.process == "get-nft":
-					if res.val:
-						if not res.has("title"):
-							res['title'] = nft_id
-						if res.status:
-							show_nft(nft_id, res.val, res.title, res.description, true)
-						else:
-							show_nft(nft_id, res.val, res.title, res.description, false)
-					else:
-						global.nft_api("/available", nft_id)
+						_nft_unavailable(nft_id, res)
 				else:
+					nft_ids.erase(nft_id)
 					printerr("something wrong with nft logic")
 		waiting = false
 	else:
 		loading.visible = false
-	if login.visible:
-		player.disable()
+		
+	if login.visible or loading.visible:
+		player.disable("nft")
 	else:
-		player.enable()
+		player.enable("nft")
 
-func reward(nft_id):
-	global.nft_api("/available", nft_id)
+func reward(nft_id, chat = true):
+	nft_ids.append(nft_id)
+	show_chat = chat
+
 	
 func _input(event):
 	if event.is_action_pressed("escape"):

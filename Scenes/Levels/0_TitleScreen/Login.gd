@@ -12,8 +12,6 @@ onready var connecting = $Connecting
 
 var http_request
 
-var key_name = "GeoKey"
-
 func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -34,33 +32,27 @@ func _input(event):
 	
 func _login_pressed():
 	var body = { "Email": email.text, "Password": password.text}
-	var uri = global.url + "/user"
+	var uri = global.url + "/login"
 	connecting.visible = true
 	nokey.visible = false
 	mistake.visible = false
 	noserver.visible = false
 	_login_request(uri, body)
+func _process(_delta):
+	var res = global.response
+	if res and res.has('process'):
+		if res['process'] == "location":
+			if res.has('scene') and res.has('location'):
+				SceneChanger.change_scene(res.scene, res.location)
 
 func _next():
 	if get_parent().name == "TitleScreen":
-		SceneChanger.change_scene(global.data.scene, global.data.location, "", 1)
+		global.user_api('/get-location')
 	else:
+		global.response = {}
+		global.response_code = 200
+		global.response['process'] = 'logged_in'
 		visible = false
-var waiting = false
-func _process(delta):
-	if visible:
-		if global.updating:
-			waiting = true
-		elif waiting and global.nfts.has(key_name) :
-
-			var val = global.nfts[key_name]
-
-			if val and val > 0:
-				nokey.visible = false
-				_next()
-			else:
-				nokey.visible = true
-			waiting = false
 
 func _login_request(uri, body):
 
@@ -81,11 +73,16 @@ func _on_request_completed( result, response_code, headers, body):
 		noserver.visible = true
 	else:
 		noserver.visible = false
-		if response.status:
+		if response.has('status') and response.status:
 			if response.has("jwt"):
 				global.data.jwt = response.jwt
 			if response.has("vechain"):
 				global.data.vechain = response.vechain
-			global.nft_api("/check", key_name)
+			if response.has("canLogin"):
+				if response["canLogin"]:
+					_next()
+				else:
+					nokey.visible = true
+					
 		else:
 			mistake.visible = true

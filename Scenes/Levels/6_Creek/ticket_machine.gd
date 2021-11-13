@@ -17,9 +17,10 @@ var success : bool = false
 var failed : bool = false
 var print_ticket : bool = false
 var ticket_print_done : bool = false
-var nft_id : String = "GroundCat"
+var nft_id : String = "Ground Cat"
 
 func _ready():
+	hud.visible = false
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 
@@ -70,7 +71,7 @@ func ticket_printed():
 	machine_ui.frame = 0
 	ticket_print_done = true
 func _process(delta):
-	nft.update(hud.visible, nft_id)
+	nft.update(delta, hud.visible, nft_id)
 	if hud.visible:
 		check_button(plus_button)
 		check_button(minus_button)

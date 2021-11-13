@@ -89,7 +89,7 @@ func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
 	get_tree().paused = true
 	prev_scene = scene
 	scene = new_scene
-	location = new_location
+	location = int(new_location)
 	change = true
 	Sprite.visible = true
 	Container.visible = true
@@ -138,10 +138,13 @@ func _new_scene():
 	timer = 0
 	Sprite.visible = false
 	Container.visible = false
+
 	if scene != "TitleScreen" and scene != "Splash":
 		global.data.scene = scene
 		global.data.location = location
 		global.data.nav_unlocked[scene] = true
+		if global.data.vechain and global.data.jwt:
+			global.user_api("/set-location", { "scene": scene, "location": location })
 	var scene_data = _get_scene()
 	var _null = get_tree().change_scene(scene_data[0])
 

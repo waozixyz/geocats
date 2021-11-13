@@ -43,8 +43,6 @@ func _press_button():
 
 func _ready():
 	_change_button()
-	var unlocked = global.data.nav_unlocked
-	var nv = global.data.nav_visible
 
 func _get_label_name():
 	var rtn = "\""

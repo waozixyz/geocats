@@ -1,20 +1,21 @@
 extends Node2D
 
-
 onready var sprite = $AnimatedSprite
 onready var notes = $Notes
 onready var laugh = $Laugh
 onready var ouch = $Ouch
 onready var note_spr = $NoteSpr
-var complete = false
+var completed
+
 func _ready():
+	completed = PROGRESS.variables.get("NonacoPumpkinPuzzle")
 	sprite.play()
 	for note in notes.get_children():
 		var sound = note.get_node("Sound")
 		sound.set_volume_db(-10)
-	print(global.pumpkin_code)
 	
-	if complete:
+	if completed:
+		notes.visible = false
 		sprite.animation = "Happy"
 
 var shake : int = 0
@@ -26,10 +27,10 @@ func _process(delta):
 		shake -= delta
 	else:
 		sprite.offset.x = 0
-
+	
 var input_code = ""
 func _input(event):
-	if visible and not complete and shake <= 0:
+	if visible and not completed and shake <= 0:
 		for note in notes.get_children():
 			var spr = note.get_node("Sprite")
 			var btn = note.get_node("Button")
@@ -56,7 +57,8 @@ func _input(event):
 							if input_code == global.pumpkin_code:
 								laugh.play()
 								sprite.animation = "Happy"
-								complete = true
+								completed = true
+								PROGRESS.variables["NonacoPumpkinPuzzle"] = true
 								spr.visible = false
 							else:
 								shake_direction = round(rand_range(0, 1))

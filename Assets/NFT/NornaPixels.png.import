@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GroundCat.png-857942a5b49139810451f1d75e8e7bd5.stex"
+path="res://.import/NornaPixels.png-cb2a49608408856d562debe6386132cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Nft/GroundCat.png"
-dest_files=[ "res://.import/GroundCat.png-857942a5b49139810451f1d75e8e7bd5.stex" ]
+source_file="res://Assets/NFT/NornaPixels.png"
+dest_files=[ "res://.import/NornaPixels.png-cb2a49608408856d562debe6386132cc.stex" ]
 
 [params]
 

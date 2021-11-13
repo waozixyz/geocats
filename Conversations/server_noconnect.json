@@ -1,7 +1,10 @@
 {
   "first": {
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
     "type": "text",
-    "content": "We are currently experiencing difficulty contacting the server, make sure you are connected to the internet or try again at a later time.",
+    "content": "Could not reach the Geoserver, make sure you are connected to the internet or try again at a later time.",
     "next": ""
   },
 }

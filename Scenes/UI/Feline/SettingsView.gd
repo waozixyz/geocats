@@ -47,6 +47,7 @@ func _check_mute(btn):
 	var i = AudioServer.get_bus_index(btn.name)
 	AudioServer.set_bus_mute(i, mute)
 	global.data["no" + btn.name.to_lower()] = mute
-func _process(delta):
+
+func _process(_delta):
 	_check_mute(music)
 	_check_mute(sound)

@@ -18,7 +18,7 @@ var dest_y
 
 func _teleport(x, y):
 	player.visible = false
-	player.disable()
+	player.disable("teleport")
 
 	teleport = true
 
@@ -36,7 +36,7 @@ func _process(delta):
 		chat_with.visible = false
 	if teleport and not tween.is_active():
 		player.visible = true
-		player.enable()
+		player.enable("teleport")
 		teleport = false
 		affogato.position = player.position
 		

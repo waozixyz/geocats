@@ -13,8 +13,6 @@ func _ready():
 func _process(delta):
 	._process(delta)
 	if nft_possible:
-		nft.update(touching, nft_id)
-
 		if nft.main.visible or chat_with.visible or nft.login.visible or global.updating:
 			object.visible = false
 		elif touching:
@@ -25,8 +23,6 @@ func _input(_event):
 	if not chat_with.started and Input.is_action_just_pressed("interact") and object.visible and not disabled:
 		if touching:
 			do_something = true
-			if nft_possible:
-				nft.reward(nft_id)
 			_add_audio("Effects",name)
 			if hide_interact:
 				object.visible = false

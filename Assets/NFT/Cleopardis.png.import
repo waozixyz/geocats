@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wyrd_pixels.png-63573c4b340b8b41eeabfa622ddc9099.stex"
+path="res://.import/Cleopardis.png-17043113034a85bc6a3d1ba1324cd3a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Nft/wyrd_pixels.png"
-dest_files=[ "res://.import/wyrd_pixels.png-63573c4b340b8b41eeabfa622ddc9099.stex" ]
+source_file="res://Assets/NFT/Cleopardis.png"
+dest_files=[ "res://.import/Cleopardis.png-17043113034a85bc6a3d1ba1324cd3a4.stex" ]
 
 [params]
 
