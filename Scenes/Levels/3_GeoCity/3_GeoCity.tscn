@@ -81,46 +81,6 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 28 )
-region = Rect2( 600, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 28 )
-region = Rect2( 1200, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 28 )
-region = Rect2( 1800, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 450, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 28 )
-region = Rect2( 600, 450, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 28 )
-region = Rect2( 1200, 450, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 28 )
-region = Rect2( 1800, 450, 600, 450 )
-
-[sub_resource type="SpriteFrames" id=17]
-animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ), SubResource( 12 ), SubResource( 11 ), SubResource( 10 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 1200, 300 )
@@ -295,14 +255,14 @@ region = Rect2( 0, 0, 11, 7 )
 atlas = ExtResource( 13 )
 region = Rect2( 22, 0, 11, 7 )
 
-[sub_resource type="SpriteFrames" id=64]
+[sub_resource type="SpriteFrames" id=78]
 animations = [ {
 "frames": [ SubResource( 62 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ null, SubResource( 63 ) ],
+"frames": [ SubResource( 63 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -369,6 +329,46 @@ animations = [ {
 "speed": 9.0
 } ]
 
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 28 )
+region = Rect2( 600, 0, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 28 )
+region = Rect2( 1200, 0, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 28 )
+region = Rect2( 1800, 0, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 450, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 28 )
+region = Rect2( 600, 450, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 28 )
+region = Rect2( 1200, 450, 600, 450 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 28 )
+region = Rect2( 1800, 450, 600, 450 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ), SubResource( 12 ), SubResource( 11 ), SubResource( 10 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 21 )
 
@@ -382,6 +382,47 @@ __meta__ = {
 texture = ExtResource( 3 )
 centered = false
 
+[node name="CreepyCity" type="Node2D" parent="BehindPlayer"]
+visible = false
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Pumpkin_Medium" type="AnimatedSprite" parent="BehindPlayer/CreepyCity"]
+position = Vector2( 934.532, 51.1312 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 4 )
+frame = 13
+script = ExtResource( 29 )
+
+[node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer/CreepyCity"]
+position = Vector2( 4635.96, 716.028 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 8 )
+frame = 28
+script = ExtResource( 29 )
+
+[node name="Stars" type="AnimatedSprite" parent="BehindPlayer/CreepyCity"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 21 )
+frame = 9
+script = ExtResource( 29 )
+
+[node name="Moon" type="Sprite" parent="BehindPlayer/CreepyCity"]
+position = Vector2( 1739.06, 349.696 )
+scale = Vector2( 4.26668, 4 )
+texture = ExtResource( 24 )
+
+[node name="Clouds" type="Sprite" parent="BehindPlayer/CreepyCity"]
+position = Vector2( -0.00012207, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Pumpkin_Small" type="Sprite" parent="BehindPlayer/CreepyCity"]
+position = Vector2( 2530.18, 457.328 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
 [node name="City_Buildings" type="Sprite" parent="BehindPlayer"]
 texture = ExtResource( 7 )
 centered = false
@@ -391,53 +432,6 @@ position = Vector2( 75, 73 )
 z_index = 1
 z_as_relative = false
 texture = ExtResource( 9 )
-
-[node name="CreepyCity" type="Node2D" parent="."]
-visible = false
-
-[node name="Pumpkin_Medium" type="AnimatedSprite" parent="CreepyCity"]
-position = Vector2( 934.532, 51.1312 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 4 )
-frame = 13
-script = ExtResource( 29 )
-
-[node name="Creepy_Cat" type="AnimatedSprite" parent="CreepyCity"]
-position = Vector2( 4635.96, 716.028 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 8 )
-frame = 28
-script = ExtResource( 29 )
-
-[node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="CreepyCity"]
-position = Vector2( 1157, 701 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 17 )
-frame = 15
-script = ExtResource( 29 )
-
-[node name="Stars" type="AnimatedSprite" parent="CreepyCity"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 21 )
-frame = 9
-script = ExtResource( 29 )
-
-[node name="Moon" type="Sprite" parent="CreepyCity"]
-position = Vector2( 1739.06, 349.696 )
-scale = Vector2( 4.26668, 4 )
-texture = ExtResource( 24 )
-
-[node name="Clouds" type="Sprite" parent="CreepyCity"]
-position = Vector2( -0.00012207, 0 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 5 )
-centered = false
-
-[node name="Pumpkin_Small" type="Sprite" parent="CreepyCity"]
-position = Vector2( 2530.18, 457.328 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
-centered = false
 
 [node name="CollisionColliders" type="Node2D" parent="."]
 
@@ -763,7 +757,7 @@ script = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 64 )
+frames = SubResource( 78 )
 animation = "walk"
 flip_h = true
 
@@ -827,7 +821,7 @@ shape = SubResource( 71 )
 [node name="Default" parent="." instance=ExtResource( 14 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 4572.59, 998.135 )
+position = Vector2( 3481.34, 476.879 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
@@ -864,26 +858,38 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 77 )
 animation = "Sad"
 
-[node name="FrontPlayer" type="Node2D" parent="."]
+[node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
-[node name="City_Guard_Rail" type="Sprite" parent="FrontPlayer"]
+[node name="City_Guard_Rail" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 75, 73 )
 z_index = 1
 z_as_relative = false
 texture = ExtResource( 9 )
 
-[node name="City_tree" type="Sprite" parent="FrontPlayer"]
+[node name="City_tree" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 953, 240 )
 texture = ExtResource( 16 )
 
-[node name="fg_entrance_city" type="Sprite" parent="FrontPlayer"]
+[node name="fg_entrance_city" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 1187, 234 )
 texture = ExtResource( 19 )
+
+[node name="CreepyCity" type="Node2D" parent="AbovePlayer"]
+visible = false
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="AbovePlayer/CreepyCity"]
+position = Vector2( 1157, 701 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 17 )
+frame = 15
+script = ExtResource( 29 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pumpkin" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource( 26 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Pumpkin"]

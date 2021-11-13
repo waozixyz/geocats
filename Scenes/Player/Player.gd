@@ -43,7 +43,7 @@ var currentSpeed = 0 #how much you add to x velocity when moving horizontally
 var maxSpeed = 300 #maximum current speed can reach when moving horizontally
 var acceleration = 10 #by how much does current speed approach max speed when moving
 var decceleration = 35 #by how much does velocity approach when you stop moving horizontally
-var disabled = false
+var disable_reasons = []
 
 var dbl_jump_height = 350
 
@@ -107,16 +107,17 @@ func _ready():
 
 # disable player movement
 var no_vx = false
-func disable(disable_vx = false):
+func disable(reason, disable_vx = false):
 	play("idle")
-	disabled = true
+	disable_reasons.append(reason)
 	velocity.x = 0
 	no_vx = disable_vx
 
 # enable player movement
-func enable():
-	disabled = false
-	no_vx = false
+func enable(reason):
+	disable_reasons.erase(reason)
+	if disable_reasons.size() == 0:
+		no_vx = false
 
 # main process loop
 var dmg_blink = 0
@@ -125,7 +126,7 @@ func _physics_process(delta):
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
 	._physics_process(delta)
-	if not disabled:
+	if disable_reasons.size() == 0:
 		update_inputs()
 		state_machine.logic(delta)
 		

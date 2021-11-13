@@ -12,7 +12,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		chat_with.visible = true
 		chat_with.start("joke_cat", true)
-		player.disable()
+		player.disable("jokecat")
 		player.vx = 0
 		player.sprite.play("idle")
 		in_contact = true
@@ -29,4 +29,4 @@ func _process(delta):
 			player.position.x -= 20
 			player.position.y -= 10
 			player.sprite.flip_h = -1
-			player.enable()
+			player.enable("jokecat")

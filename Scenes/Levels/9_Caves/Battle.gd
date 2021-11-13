@@ -49,7 +49,7 @@ func _phase_one(dfps):
 	if trigger_battle.touching:
 		affogato.visible = false
 		if not player.disabled:
-			player.disable()
+			player.disable("Battle")
 		if camera.offset.x < 350 and not shoot_rock:
 			camera.offset.x += 2
 			camera.zoom *= 1.001
@@ -90,13 +90,13 @@ func _phase_two(dfps):
 		else:
 			camera.shake = 6
 			boulder.get_node("SoundLanding").play()
-			player.enable()
+			player.enable("Battle")
 			boulder_fall = false
 			phase = 3
 	
 func _pre_chat():
 	if not player.disabled:
-		player.disable()
+		player.disable("Battle")
 	enemy.shooting = false
 	enemy.ears.visible = false
 	enemy.vulnerable = false
@@ -114,7 +114,7 @@ func _phase_three():
 
 func _phase_four(dfps):
 	if not chat_with.started and player.disabled:
-		player.enable()
+		player.enable("Battle")
 		chat_with.visible = false
 		enemy.vulnerable = true
 		enemy.rage = 1
@@ -142,7 +142,7 @@ func _phase_six():
 		enemy.disable_colliders()
 		defeated = true
 		PROGRESS.variables["CavesBattleDefeated"] = true
-		player.enable()
+		player.enable("Battle")
 		
 func _process(delta):
 	var dfps = delta * global.fps

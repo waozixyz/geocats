@@ -41,7 +41,6 @@ func _on_body_exited(body):
 		hide_chat()
 		if nft_possible:
 			nft.main.visible = false
-			chat_with.visible = false
 
 func _process(delta):
 	if disabled and active:

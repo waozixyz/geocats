@@ -133,10 +133,10 @@ func _process(delta):
 	if last_visible != visible:
 		if visible:
 			if player:
-				player.disable()
+				player.disable("feline")
 		else:
 			if player:
-				player.enable()
+				player.enable("feline")
 	
 		last_visible = visible
 	

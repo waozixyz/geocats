@@ -25,8 +25,6 @@ func _input(_event):
 	if not chat_with.started and Input.is_action_just_pressed("interact") and object.visible and not disabled:
 		if touching:
 			do_something = true
-			if nft_possible:
-				nft.reward(nft_id)
 			_add_audio("Effects",name)
 			if hide_interact:
 				object.visible = false

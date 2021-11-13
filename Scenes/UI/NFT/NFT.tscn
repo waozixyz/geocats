@@ -32,7 +32,7 @@ size = 32
 font_data = SubResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.0941176, 0.0431373, 0, 1 )
+bg_color = Color( 0.0941176, 0.0431373, 0, 0 )
 corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
@@ -113,11 +113,10 @@ __meta__ = {
 }
 
 [node name="ImagePanel" type="Panel" parent="Main"]
-margin_left = 144.0
-margin_top = 67.0
-margin_right = 378.0
-margin_bottom = 211.0
-custom_styles/panel = SubResource( 7 )
+margin_left = 250.0
+margin_top = 140.0
+margin_right = 250.0
+margin_bottom = 140.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -34,7 +34,7 @@ func show_nft(nft_id, nft, new = false):
 	received_nft.visible = new
 	nft_name.text = nft['Title']
 	description.text = nft['Description']
-	var new_anim = load("res://Scenes/UI/NFT/Anim/" + nft_id + ".tscn")
+	var new_anim = load("res://Scenes/UI/NFT/Anim/" + nft_id.replace(" ", "") + ".tscn")
 	anim = new_anim.instance()
 	anim.play(nft['Title'])
 	image_panel.add_child(anim)
@@ -47,7 +47,7 @@ func show_nft(nft_id, nft, new = false):
 		location_panel.visible = true
 		location_panel.get_node('Value').text = nft['id']
 	else:
-		location_panel.visibel = false
+		location_panel.visible = false
 	
 	edition_value.text = str(nft["edition"])
 	type_value.text = nft["Type"]
@@ -55,12 +55,15 @@ func show_nft(nft_id, nft, new = false):
 func _nft_unavailable(nft_id, res):
 	if res.nft:
 		show_nft(nft_id, res.nft)
-	elif res.claimed:
-		chat_with.start("geochache_rewarded", true, false)
-	else:
-		chat_with.start("geochache_noreward", true, false)
+	elif show_chat:
+		if res.claimed:
+			chat_with.start("geochache_rewarded", true, false)
+		else:
+			chat_with.start("geochache_noreward", true, false)
+
 
 var loading_ticker = 0
+var show_chat = true
 func update(delta, touching, nft_id):
 	var res = global.response
 	if res and res.has("process") and res['process'] == "logged_in":
@@ -68,7 +71,7 @@ func update(delta, touching, nft_id):
 
 	if global.updating == "nft":
 		loading_ticker += delta
-		if loading_ticker > 20:
+		if loading_ticker > 4:
 			loading.visible = true
 		waiting = true
 	elif waiting and touching:
@@ -79,8 +82,9 @@ func update(delta, touching, nft_id):
 
 
 		if res_code == 0:
-			chat_with.visible = true
-			chat_with.start("server_noconnect", true, false)
+			if show_chat:
+				chat_with.visible = true
+				chat_with.start("server_noconnect", true, false)
 		elif res_code == 422 or res_code == 401:
 			login.visible = true
 		else:
@@ -102,12 +106,14 @@ func update(delta, touching, nft_id):
 		waiting = false
 	else:
 		loading.visible = false
+		
 	if login.visible or loading.visible:
-		player.disable()
+		player.disable("nft")
 	else:
-		player.enable()
+		player.enable("nft")
 
-func reward(nft_id):
+func reward(nft_id, chat = true):
+	show_chat = chat
 	global.nft_api("/available", nft_id)
 	
 func _input(event):

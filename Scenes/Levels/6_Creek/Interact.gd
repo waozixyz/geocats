@@ -12,7 +12,8 @@ func _input(_event):
 		elif name == "JokeRoom":
 			SceneChanger.change_scene("JokeRoom", 0, "OrganicSmashLilCave", 1)
 		elif name == "CavityPuzzleRoom":
-			SceneChanger.change_scene("CavityPuzzleRoom", 0, "OrganicTumbleCave2", 1)
+			#SceneChanger.change_scene("CavityPuzzleRoom", 0, "OrganicTumbleCave2", 1)
+			chat_with.start("rubble_block", true, false)
 		elif name == "GeoCacheRoom":
 			SceneChanger.change_scene("GeoCacheRoom", 0, "OrganicSmashLilCave", 1)
 		elif name == "ExitJokeRoom":

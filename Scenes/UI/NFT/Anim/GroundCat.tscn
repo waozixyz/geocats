@@ -118,6 +118,5 @@ animations = [ {
 scale = Vector2( 16, 16 )
 frames = SubResource( 27 )
 animation = " Ground Cat"
-frame = 9
+frame = 20
 playing = true
-centered = false

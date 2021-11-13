@@ -66,6 +66,5 @@ animations = [ {
 scale = Vector2( 15, 15 )
 frames = SubResource( 14 )
 animation = "Mushroom Cat"
-frame = 20
+frame = 4
 playing = true
-centered = false

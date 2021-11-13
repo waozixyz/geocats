@@ -71,7 +71,7 @@ func ticket_printed():
 	machine_ui.frame = 0
 	ticket_print_done = true
 func _process(delta):
-	nft.update(hud.visible, nft_id)
+	nft.update(delta, hud.visible, nft_id)
 	if hud.visible:
 		check_button(plus_button)
 		check_button(minus_button)

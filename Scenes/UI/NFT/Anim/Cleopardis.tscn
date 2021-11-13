@@ -27,11 +27,9 @@ animations = [ {
 } ]
 
 [node name="Cleopardis" type="AnimatedSprite"]
-position = Vector2( 140, 58.393 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 5 )
 animation = "Clopardis"
-frame = 1
+frame = 3
 speed_scale = 0.8
 playing = true
-centered = false
