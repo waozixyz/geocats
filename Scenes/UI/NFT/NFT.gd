@@ -29,14 +29,20 @@ func _exit_pressed():
 	main.visible = false
 	login.visible = false
 
-func show_nft(nft_id, nft, new = false):
+func _show_nft(nft_id, nft, new = false):
 	main.visible = true
 	received_nft.visible = new
 	nft_name.text = nft['Title']
 	description.text = nft['Description']
-	var new_anim = load("res://Scenes/UI/NFT/Anim/" + nft_id.replace(" ", "") + ".tscn")
-	anim = new_anim.instance()
-	anim.play(nft['Title'])
+	var file_name = nft_id.replace(" ", "") 
+	var new_anim = load("res://Scenes/UI/NFT/Anim/" + file_name + ".tscn")
+	if new_anim:
+		anim = new_anim.instance()
+		anim.play(nft['Title'])
+	else:
+		anim = Sprite.new()
+		anim.texture = load("res://Assets/NFT/" + file_name + ".png")
+		anim.scale = Vector2(10, 10)
 	image_panel.add_child(anim)
 	
 	# show location panel
@@ -53,18 +59,26 @@ func show_nft(nft_id, nft, new = false):
 	type_value.text = nft["Type"]
 
 func _nft_unavailable(nft_id, res):
+
 	if res.nft:
-		show_nft(nft_id, res.nft)
+		_show_nft(nft_id, res.nft)
 	elif show_chat:
 		if res.claimed:
 			chat_with.start("geochache_rewarded", true, false)
 		else:
 			chat_with.start("geochache_noreward", true, false)
-
+	nft_ids.erase(nft_id)
+	active = false
 
 var loading_ticker = 0
 var show_chat = true
-func update(delta, touching, nft_id):
+var active = false
+var nft_ids = []
+func _process(delta):
+	if nft_ids.size() > 0 and not active:
+		global.nft_api("/available", nft_ids[0])
+		active = true
+
 	var res = global.response
 	if res and res.has("process") and res['process'] == "logged_in":
 		waiting = true
@@ -74,13 +88,12 @@ func update(delta, touching, nft_id):
 		if loading_ticker > 4:
 			loading.visible = true
 		waiting = true
-	elif waiting and touching:
+	elif waiting and active and nft_ids.size() > 0:
+		var nft_id = nft_ids[0]
 
 		loading_ticker = 0
 		loading.visible = false
 		var res_code = global.response_code
-
-
 		if res_code == 0:
 			if show_chat:
 				chat_with.visible = true
@@ -98,10 +111,13 @@ func update(delta, touching, nft_id):
 					global.nft_api("/claim", nft_id)
 				elif res.process == "claiming_nft":
 					if res.available:
-						show_nft(nft_id, res.nft, true)
+						_show_nft(nft_id, res.nft, true)
+						nft_ids.erase(nft_id)
+						active = false
 					else:
 						_nft_unavailable(nft_id, res)
 				else:
+					nft_ids.erase(nft_id)
 					printerr("something wrong with nft logic")
 		waiting = false
 	else:
@@ -113,8 +129,9 @@ func update(delta, touching, nft_id):
 		player.enable("nft")
 
 func reward(nft_id, chat = true):
+	nft_ids.append(nft_id)
 	show_chat = chat
-	global.nft_api("/available", nft_id)
+
 	
 func _input(event):
 	if event.is_action_pressed("escape"):

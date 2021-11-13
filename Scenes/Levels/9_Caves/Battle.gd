@@ -4,11 +4,14 @@ onready var music_intro = $MusicIntro
 onready var music_main = $MusicMain
 onready var music_outro = $MusicOutro
 
+onready var nft = get_tree().get_current_scene().get_node("Default/NFT")
 onready var player = get_tree().get_current_scene().get_node("Default/Player")
 onready var affogato = get_tree().get_current_scene().get_node("Default/Affogato")
+onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
+
 onready var camera = player.get_node("Camera2D")
 onready var trigger_battle = $TriggerBattle
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
+
 onready var enemy = $Enemy
 onready var boulder = $Boulder
 onready var ceiling = $Ceiling
@@ -26,6 +29,9 @@ func _intro_done():
 func _main_done():
 	music_outro.play()
 
+var norna_nft = "Norna Pixels"
+var wyrd_nft = "Wyrd Pixels"
+	
 func _ready():
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
@@ -132,6 +138,8 @@ func _phase_five():
 		enemy.sprite.frame = 0
 		enemy.sprite.animation = "die"
 		enemy.sprite.playing = true
+		nft.reward(norna_nft, false)
+		nft.reward(wyrd_nft, false)
 		phase = 6
 
 func _phase_six():
@@ -151,6 +159,7 @@ func _process(delta):
 		player.on_ladder = true
 	start_ticker += 1
 	affogato.visible = false
+	phase == 6
 	if not defeated and floor(global.data.player_hp) > 0:
 		if phase == 1:
 			_phase_one(dfps)

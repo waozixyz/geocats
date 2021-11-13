@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pumpkin.png-7f8b4338b81cefd9da1c2a77d3400db4.stex"
+path="res://.import/GeoCache_1.png-bbddd2cc6f824ba9bcda3968d3b295b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Nft/Pumpkin.png"
-dest_files=[ "res://.import/Pumpkin.png-7f8b4338b81cefd9da1c2a77d3400db4.stex" ]
+source_file="res://Assets/NFT/GeoCache_1.png"
+dest_files=[ "res://.import/GeoCache_1.png-bbddd2cc6f824ba9bcda3968d3b295b6.stex" ]
 
 [params]
 

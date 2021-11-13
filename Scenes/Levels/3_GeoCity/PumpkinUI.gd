@@ -1,8 +1,5 @@
 extends Node2D
 
-
-onready var nft = get_tree().get_current_scene().get_node("Default/NFT")
-
 onready var sprite = $AnimatedSprite
 onready var notes = $Notes
 onready var laugh = $Laugh
@@ -16,7 +13,6 @@ func _ready():
 	for note in notes.get_children():
 		var sound = note.get_node("Sound")
 		sound.set_volume_db(-10)
-	print(global.pumpkin_code)
 	
 	if completed:
 		notes.visible = false

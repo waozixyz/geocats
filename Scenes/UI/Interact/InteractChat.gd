@@ -50,9 +50,6 @@ func _process(delta):
 			get_parent().idle = true
 		else:
 			get_parent().idle = false
-
-	if nft_possible:
-		nft.update(delta, chat_with.started, nft_id)
 	._process(delta)
 
 func _input(_event):
@@ -62,4 +59,4 @@ func _input(_event):
 				_add_audio("NPC", music_file)
 				chat_with.start(convo_file)
 			if nft_possible:
-				nft.reward(nft_id)
+				nft.reward(nft_id, false)

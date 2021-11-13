@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/entriesspooky.png-c799fe0e97846207e052695ecb1329cd.stex"
+path="res://.import/GroundCat.png-3bb1d47d67e8e7bf8c7178079265f66f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Nft/entriesspooky.png"
-dest_files=[ "res://.import/entriesspooky.png-c799fe0e97846207e052695ecb1329cd.stex" ]
+source_file="res://Assets/NFT/GroundCat.png"
+dest_files=[ "res://.import/GroundCat.png-3bb1d47d67e8e7bf8c7178079265f66f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/norna_pixels.png-2b849e8bae8193929671c9075eada9b3.stex"
+path="res://.import/WyrdPixels.png-5206429af2033e9b63523d5a5ac61a52.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Nft/norna_pixels.png"
-dest_files=[ "res://.import/norna_pixels.png-2b849e8bae8193929671c9075eada9b3.stex" ]
+source_file="res://Assets/NFT/WyrdPixels.png"
+dest_files=[ "res://.import/WyrdPixels.png-5206429af2033e9b63523d5a5ac61a52.stex" ]
 
 [params]
 
