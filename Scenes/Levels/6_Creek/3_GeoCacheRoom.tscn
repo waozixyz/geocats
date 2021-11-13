@@ -106,7 +106,7 @@ polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( -263.026, 129.111 )
+position = Vector2( -254.55, 133.349 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
@@ -133,6 +133,7 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 5 )
+frame = 1
 playing = true
 centered = false
 

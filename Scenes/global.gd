@@ -34,8 +34,8 @@ func _notification(what):
 		Data.saveit()
 		get_tree().quit()
 
-#var url = "http://api.geocats.net"
-var url = "http://127.0.0.1:8000"
+var url = "https://geoapi.deta.dev"
+#var url = "http://127.0.0.1:8000"
 var http_request
 
 var updating : String = ""
@@ -52,6 +52,7 @@ func _ready():
 func user_api(path, body = null):
 	updating = "user"
 	var uri = url + path + '-user'
+
 	_get_request(uri, body)
 
 func nft_api(path, nft_id):
@@ -61,19 +62,19 @@ func nft_api(path, nft_id):
 	_get_request(uri, body)
 
 func _get_request(uri, body = null):
-
 	var error
 	var headers = PoolStringArray()
 	# Add 'Content-Type' header:
 	headers.append("Content-Type: application/json")
 	headers.append("Authorization: Bearer " + data.jwt)
 	if body:
+
 		# Convert data to json string:
 		var query = JSON.print(body)
+		error = http_request.request(uri, headers, false, HTTPClient.METHOD_POST, query)
 
-		error = http_request.request(uri, headers, true, HTTPClient.METHOD_POST, query)
 	else:
-		error = http_request.request(uri, headers)
+		error = http_request.request(uri, headers, false)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
@@ -82,5 +83,4 @@ var response
 func _on_request_completed(_result, new_response_code, _headers, body):
 	response_code = new_response_code
 	response = parse_json(body.get_string_from_utf8())
-
 	updating = ""

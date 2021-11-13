@@ -55,20 +55,20 @@ func _next():
 		visible = false
 
 func _login_request(uri, body):
-
 	# Convert data to json string:
 	var query = JSON.print(body)
 	var headers = PoolStringArray()
 	# Add 'Content-Type' header:
 	headers.append("Content-Type: application/json")
-	var error = http_request.request(uri, headers, true, HTTPClient.METHOD_POST, query)
+
+
+	var error = http_request.request(uri, headers, false, HTTPClient.METHOD_POST, query)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 	
 func _on_request_completed( result, response_code, headers, body):
 	connecting.visible = false
 	var response = parse_json(body.get_string_from_utf8())
-
 	if not response:
 		noserver.visible = true
 	else:
