@@ -33,6 +33,7 @@ var norna_nft = "Norna Pixels"
 var wyrd_nft = "Wyrd Pixels"
 	
 func _ready():
+	nft.reward(norna_nft, false)
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
 		music_outro.stream.loop = false

@@ -24,6 +24,8 @@ func set_theme(): #Change to Pumpkin function which is called by collision
 	get_node("Music/Creepy_Swing").play()
 
 func _physics_process(delta):
+	if PROGRESS.variables.get("NonacoPumpkinPuzzle"):
+		theme = "CreepyCity"
 	if theme != "GeoCity" and last_theme != theme:
 		set_theme()
 		last_theme = theme

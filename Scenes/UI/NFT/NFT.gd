@@ -98,7 +98,7 @@ func _process(delta):
 			if show_chat:
 				chat_with.visible = true
 				chat_with.start("server_noconnect", true, false)
-		elif res_code == 422 or res_code == 401:
+		elif res_code == 422 or res_code == 401 or res and res.has('loggin_please'):
 			login.visible = true
 		else:
 			if res and res.has("process"):

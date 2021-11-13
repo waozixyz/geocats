@@ -108,10 +108,11 @@ func _ready():
 # disable player movement
 var no_vx = false
 func disable(reason, disable_vx = false):
-	play("idle")
-	disable_reasons.append(reason)
-	velocity.x = 0
-	no_vx = disable_vx
+	if not disable_reasons.has(reason):
+		play("idle")
+		disable_reasons.append(reason)
+		velocity.x = 0
+		no_vx = disable_vx
 
 # enable player movement
 func enable(reason):

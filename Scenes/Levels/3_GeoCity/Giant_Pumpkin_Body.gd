@@ -16,15 +16,17 @@ func _ready():
 func _process(delta):
 	if do_something:
 		pumpkin_ui.visible = true if not pumpkin_ui.visible else false
+		complete = PROGRESS.variables.get("NonacoPumpkinPuzzle")
 		if complete and pumpkin_ui.visible == false:
 			nft.reward(nft_id, false)
 		do_something  = false
+		if pumpkin_ui.visible:
+			player.disable("pumpkin")
+		else:
+			player.enable("pumpkin")
 	giant_pumpkin.animation = pumpkin_ui.get_node("AnimatedSprite").animation
 
-	if pumpkin_ui.visible:
-		player.disable("pumpkin")
-	else:
-		player.enable("pumpkin")
+
 	
 	if complete:
 		get_tree().get_current_scene().theme = "CreepyCity"
