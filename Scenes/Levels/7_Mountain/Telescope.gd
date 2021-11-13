@@ -16,6 +16,7 @@ func _process(delta):
 	._process(delta)
 	if touching:
 		if do_something:
+			player.disable("telescope")
 			if camera.zoom.x <= zoom_org:
 				zoom_out = true
 			if camera.zoom.x > zoom_org:
@@ -23,8 +24,6 @@ func _process(delta):
 			do_something = false
 					
 		if zoom_out:
-			player.disable("telescope")
-
 			if camera.zoom.x < 6.6:
 				object.visible = false
 				_zoomi()
@@ -36,5 +35,4 @@ func _process(delta):
 			else:
 				object.visible = true
 				player.enable("telescope")
-
 

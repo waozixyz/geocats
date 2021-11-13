@@ -42,7 +42,7 @@ func _process(delta):
 		
 
 func _can_interact():
-	if Input.is_action_just_pressed("ui_down") && object.visible == true && not chat_with.started && not player.disabled:
+	if Input.is_action_just_pressed("ui_down") && object.visible == true && not chat_with.started && player.disable_reasons.size() == 0:
 		return true
 	else:
 		return false

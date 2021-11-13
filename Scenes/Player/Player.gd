@@ -126,6 +126,7 @@ func _physics_process(delta):
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
 	._physics_process(delta)
+
 	if disable_reasons.size() == 0:
 		update_inputs()
 		state_machine.logic(delta)

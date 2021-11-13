@@ -54,7 +54,7 @@ var phase
 func _phase_one(dfps):
 	if trigger_battle.touching:
 		affogato.visible = false
-		if not player.disabled:
+		if player.disable_reasons.size() == 0:
 			player.disable("Battle")
 		if camera.offset.x < 350 and not shoot_rock:
 			camera.offset.x += 2
@@ -101,7 +101,7 @@ func _phase_two(dfps):
 			phase = 3
 	
 func _pre_chat():
-	if not player.disabled:
+	if player.disable_reasons.size() == 0:
 		player.disable("Battle")
 	enemy.shooting = false
 	enemy.ears.visible = false
@@ -119,7 +119,7 @@ func _phase_three():
 		# bug notproceeding
 
 func _phase_four(dfps):
-	if not chat_with.started and player.disabled:
+	if not chat_with.started and player.disable_reasons.size() != 0:
 		player.enable("Battle")
 		chat_with.visible = false
 		enemy.vulnerable = true
@@ -133,7 +133,7 @@ func _phase_four(dfps):
 		phase = 5
 
 func _phase_five():
-	if not chat_with.started and player.disabled:
+	if not chat_with.started and player.disable_reasons.size() != 0:
 		music_main.stream.loop = false
 		enemy.sprite.frame = 0
 		enemy.sprite.animation = "die"

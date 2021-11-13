@@ -65,7 +65,7 @@ bg_color = Color( 0.207843, 0.101961, 0, 1 )
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=12]
-size = 20
+size = 50
 font_data = SubResource( 11 )
 
 [resource]
