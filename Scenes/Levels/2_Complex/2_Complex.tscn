@@ -1302,7 +1302,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1089, 234 )
+position = Vector2( 1089, 241.531 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300

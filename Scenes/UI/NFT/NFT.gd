@@ -129,7 +129,8 @@ func _process(delta):
 		player.enable("nft")
 
 func reward(nft_id, chat = true):
-	nft_ids.append(nft_id)
+	if not nft_ids.has(nft_id):
+		nft_ids.append(nft_id)
 	show_chat = chat
 
 	
