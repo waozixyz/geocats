@@ -7,9 +7,11 @@ var touching = false
 
 func _ready():
 	set_process_input(true)
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
-	if not global.data.present:
+	var err = connect("body_entered", self, "_on_body_entered")
+	assert(err == OK)
+	err = connect("body_exited", self, "_on_body_exited")
+	assert(err == OK)
+	if PROGRESS.variables.get("cradle_present_open"):
 		sprite.visible = false
 	
 func _on_body_entered(body):
@@ -35,4 +37,5 @@ func _input(_event):
 		if touching and sprite.visible:
 			letter.visible = true
 			sprite.visible = false
-			global.data.present = false
+			PROGRESS.variables["cradle_present_open"] = true
+

@@ -34,6 +34,7 @@ var wyrd_nft = "Wyrd Pixels"
 	
 func _ready():
 	nft.reward(norna_nft, false)
+	nft.reward(wyrd_nft, false)
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 	if not defeated:
 		music_outro.stream.loop = false
@@ -154,14 +155,14 @@ func _phase_six():
 		player.enable("Battle")
 		
 func _process(delta):
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
 	start_ticker += 1
 	affogato.visible = false
 	phase == 6
-	if not defeated and floor(global.data.player_hp) > 0:
+	if not defeated and floor(Global.data.player_hp) > 0:
 		if phase == 1:
 			_phase_one(dfps)
 		elif phase == 2:

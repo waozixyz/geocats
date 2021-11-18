@@ -5,7 +5,7 @@ onready var splash = $AnimatedSprite
 func _proceed():
 	SceneChanger.change_scene("TitleScreen", 0, "", 1)
 
-func _process(delta):
+func _process(_delta):
 	if splash.frame == 77:
 		_proceed()
 

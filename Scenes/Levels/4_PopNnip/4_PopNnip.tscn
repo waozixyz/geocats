@@ -1,16 +1,16 @@
 [gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Levels/4_PopNnip/Interactions.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Levels/4_PopNnip/potentialBG_popnnip.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_FG.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/4_PopNnip/popnnip_flashing_light.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Music/4_PopNnip.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/4_PopNnip/keep.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )

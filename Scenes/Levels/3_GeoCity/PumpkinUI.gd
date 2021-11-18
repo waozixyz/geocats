@@ -53,8 +53,8 @@ func _input(event):
 						spr.frame = int(note.name) - 1
 						sound.play()
 						input_code += note.name
-						if input_code.length() == global.pumpkin_code.length():
-							if input_code == global.pumpkin_code:
+						if input_code.length() == Global.pumpkin_code.length():
+							if input_code == Global.pumpkin_code:
 								laugh.play()
 								sprite.animation = "Happy"
 								completed = true

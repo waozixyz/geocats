@@ -1,8 +1,10 @@
 extends Area2D
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	var err = connect("body_entered", self, "_on_body_entered")
+	assert(err == OK) 
+	err = connect("body_exited", self, "_on_body_exited")
+	assert(err == OK) 
 	collision_layer = 7
 
 func _is_valid(body):

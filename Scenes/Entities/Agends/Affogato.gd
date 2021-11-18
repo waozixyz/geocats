@@ -29,7 +29,7 @@ var next_jump_height = 0
 
 
 func _physics_process(delta):
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	var scene_name = get_tree().get_current_scene().name
 
 	var follow = PROGRESS.variables.get("follow")

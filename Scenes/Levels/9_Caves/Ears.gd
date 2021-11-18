@@ -23,7 +23,7 @@ func _fix_color():
 	sprite.modulate = color
 
 func _process(delta):
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	if touching and get_parent().visible and get_parent().get_parent().visible:
 		var r
 		var f

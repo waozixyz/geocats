@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "BasePlayerState",
 "language": "GDScript",
-"path": "res://Scenes/Player/BasePlayerState.gd"
+"path": "res://Scenes/Entities/Player/BasePlayerState.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Entity",
 "language": "GDScript",
-"path": "res://Scenes/Entity.gd"
+"path": "res://Scenes/Entities/KineticBody.gd"
 }, {
 "base": "InteractMain",
 "class": "InteractButton",
@@ -42,17 +42,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Mushroom",
 "language": "GDScript",
-"path": "res://Scenes/Objects/Mushroom.gd"
+"path": "res://Scenes/Entities/Mushroom.gd"
 }, {
 "base": "Entity",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Scenes/Player/Player.gd"
+"path": "res://Scenes/Entities/Player/Player.gd"
 }, {
 "base": "Node2D",
 "class": "PlayerFSM",
 "language": "GDScript",
-"path": "res://Scenes/Player/PlayerFSM.gd"
+"path": "res://Scenes/Entities/Player/PlayerFSM.gd"
 } ]
 _global_script_class_icons={
 "BasePlayerState": "",
@@ -74,17 +74,17 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
-global="*res://Scenes/global.gd"
 PROGRESS="*res://Scenes/UI/Dialogue/progress.gd"
-Data="*res://Scenes/Data.gd"
+Global="*res://Scenes/Global.gd"
+API="*res://Scenes/API.gd"
+SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 
 [display]
 
 window/size/width=640
 window/size/height=480
 window/dpi/allow_hidpi=true
-mouse_cursor/custom_image="res://Assets/UI/Feline/MapView/Cat_Feline_Map.png"
+mouse_cursor/custom_image="res://Assets/UI/Feline/Navigator.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -201,7 +201,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 2d/options/ninepatch_mode=0
 quality/reflections/atlas_subdiv=9

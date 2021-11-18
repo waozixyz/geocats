@@ -1,10 +1,11 @@
 extends CanvasLayer
 
 onready var chat_with = $ChatWith
-onready var Sprite = $AnimatedSprite
-onready var Container = $Container
+onready var sprite = $AnimatedSprite
+onready var container = $Container
 onready var MusicPlayer = $AudioStreamPlayer
 onready var pause = $Pause
+onready var tween = $Tween
 
 var location : int
 var scene : String 
@@ -13,10 +14,14 @@ var timer : int
 var load_time : int = 40
 var change : bool
 
-func _get_scene():
+func _ready():
+	sprite.modulate.a = 0
+	container.modulate.a = 0
+
+func _get_scene(scene_name):
 	var pos = null
 	var dir = 1
-	match scene:
+	match scene_name:
 		"TitleScreen":
 			return ["res://Scenes/Levels/0_TitleScreen/TitleScreen.tscn", pos, dir]
 		"CatsCradle":
@@ -79,7 +84,10 @@ func _get_scene():
 				1: 
 					pos = Vector2(426, 220)
 			return ["res://Scenes/Levels/9_Caves/Battle.tscn", pos, dir]
-	
+
+func _tween(obj, start, end, time = .5):
+	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	tween.start()
 func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
 	if not sound == "":
 		MusicPlayer.stream = load("res://Assets/Sounds/Transition/" + sound + ".ogg")
@@ -91,15 +99,15 @@ func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
 	scene = new_scene
 	location = int(new_location)
 	change = true
-	Sprite.visible = true
-	Container.visible = true
+	_tween(sprite, 0, 1)
+	_tween(container, 0, 1)
 
-
+var request : HTTPRequest
 func _physics_process(delta):
-	var dfps = delta * global.fps
-	if get_tree().paused and not global.pause_msg.empty():
+	var dfps = delta * Global.fps
+	if get_tree().paused and not Global.pause_msg.empty():
 		pause.visible = true
-		pause.text = global.pause_msg
+		pause.text = Global.pause_msg
 	else:
 		pause.visible = false
 		
@@ -111,7 +119,7 @@ func _physics_process(delta):
 	# check master volume
 	var i = AudioServer.get_bus_index("Master")
 	var volume = AudioServer.get_bus_volume_db(i)
-	if floor(global.data.player_hp) <= 0.0:
+	if floor(Global.data.player_hp) <= 0.0:
 		chat_with.start("feline_emergency_teleport")
 		chat_with.visible = true
 		get_tree().paused = true
@@ -122,35 +130,58 @@ func _physics_process(delta):
 		chat_with.visible = false
 		if volume < 0:
 			AudioServer.set_bus_volume_db(i, volume + .5)
+		
+		
+	if request:
+		var body_size = request.get_body_size()
+		if body_size > 0:
+			_check_response(API.response)
+			API.remove_child(request)
+			request = null
+
+func _check_response(res):
+	print(res)
+	# api set location finished
+	if res and res.has('process'):
+		if res['process'] == "location":
+			if res.has('scene') and res.has('location'):
+				SceneChanger.change_scene(res.scene, res.location)
+			else:
+				# load scene data
+				var scene_data = _get_scene(scene)
+				# change scene
+				var _null = get_tree().change_scene(scene_data[0])
+				# update game variables
+				Global.player_position = scene_data[1]
+				Global.player_direction = scene_data[2]
+			_disable_animation()
 func _input(event):
 	if chat_with.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			chat_with.visible = false
-			global.data.player_hp = 100.0
+			Global.data.player_hp = 100.0
 			var current_scene = get_tree().get_current_scene()
 			change_scene(current_scene.name, current_scene.death_location, "", 1)
 	if pause.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
 			get_tree().paused = false
-			global.pause_msg = ""
+			Global.pause_msg = ""
 
+
+	
+func _disable_animation():
+	get_tree().paused = false
+	
+	_tween(sprite, 1, 0, .2)
+	_tween(container, 1, 0)
+	
 func _new_scene():
 	timer = 0
-	Sprite.visible = false
-	Container.visible = false
-
-	if scene != "TitleScreen" and scene != "Splash":
-		global.data.scene = scene
-		global.data.location = location
-		global.data.nav_unlocked[scene] = true
-		if global.data.vechain and global.data.jwt:
-			global.user_api("/set-location", { "scene": scene, "location": location })
-	var scene_data = _get_scene()
-	var _null = get_tree().change_scene(scene_data[0])
-
-	global.player_position = scene_data[1]
-	global.player_direction = scene_data[2]
-
-	get_tree().paused = false
+	if scene == "TitleScreen" or get_tree().get_current_scene().name == "TitleScreen":
+		var err = get_tree().change_scene(_get_scene(scene)[0])
+		assert(err == OK)
+		_disable_animation()
+	else:
+		request = API.get_request("/set-user-location", { "scene": scene, "location": location })
 	change = false
-	Data.saveit()
+

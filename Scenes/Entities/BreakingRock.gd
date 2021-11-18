@@ -22,7 +22,7 @@ var shot_particles
 var played_sound 
 func _process(delta):
 
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	var color = sprite.modulate
 	if color.r > 1:
 		color.r -= .1

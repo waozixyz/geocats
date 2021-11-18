@@ -74,60 +74,61 @@ var loading_ticker = 0
 var show_chat = true
 var active = false
 var nft_ids = []
-func _process(delta):
-	if nft_ids.size() > 0 and not active:
-		global.nft_api("/available", nft_ids[0])
-		active = true
+func _process(_delta):
+#	var res_code = API.response_code
+#	if res_code == 405:
+#		login.visible = true
+#	if nft_ids.size() > 0 and not active:
+#		Global.nft_api("/available", nft_ids[0])
+#		active = true
 
-	var res = global.response
-	if res and res.has("process") and res['process'] == "logged_in":
-		waiting = true
+#	var res = Global.response
+#	if res and res.has("process") and res['process'] == "logged_in":
+#		waiting = true
 
-	if global.updating == "nft":
-		loading_ticker += delta
-		if loading_ticker > 4:
-			loading.visible = true
-		waiting = true
-	elif waiting and active and nft_ids.size() > 0:
-		var nft_id = nft_ids[0]
-
-		loading_ticker = 0
-		loading.visible = false
-		var res_code = global.response_code
-		if res_code == 0:
-			if show_chat:
-				chat_with.visible = true
-				chat_with.start("server_noconnect", true, false)
-		elif res_code == 422 or res_code == 401 or res and res.has('loggin_please'):
-			login.visible = true
-		else:
-			if res and res.has("process"):
-				if res.process == "available":
-					if res.available:
-						global.nft_api("/claim", nft_id)
-					else:
-						_nft_unavailable(nft_id, res)
-				elif res.process == "logged_in":
-					global.nft_api("/claim", nft_id)
-				elif res.process == "claiming_nft":
-					if res.available:
-						_show_nft(nft_id, res.nft, true)
-						nft_ids.erase(nft_id)
-						active = false
-					else:
-						_nft_unavailable(nft_id, res)
-				else:
-					nft_ids.erase(nft_id)
-					printerr("something wrong with nft logic")
-		waiting = false
-	else:
-		loading.visible = false
+#	if Global.updating == "nft":
+#		loading_ticker += delta
+#		if loading_ticker > 4:
+#			loading.visible = true
+#		waiting = true
+#	elif waiting and active and nft_ids.size() > 0:
+#		var nft_id = nft_ids[0]
+#
+#		loading_ticker = 0
+#		loading.visible = false
+#
+#		if res_code == 0:
+#			if show_chat:
+#				chat_with.visible = true
+#				chat_with.start("server_noconnect", true, false)
+#		else:
+#			if res and res.has("process"):
+#				if res.process == "available":
+#					if res.available:
+#						Global.nft_api("/claim", nft_id)
+#					else:
+#						_nft_unavailable(nft_id, res)
+#				elif res.process == "logged_in":
+#					Global.nft_api("/claim", nft_id)
+#				elif res.process == "claiming_nft":
+#					if res.available:
+#						_show_nft(nft_id, res.nft, true)
+#						nft_ids.erase(nft_id)
+#						active = false
+#					else:
+#						_nft_unavailable(nft_id, res)
+#				else:
+#					nft_ids.erase(nft_id)
+#					printerr("something wrong with nft logic")
+#		waiting = false
+#	else:
+#		loading.visible = false
 		
-	if login.visible or loading.visible:
-		player.disable("nft")
-	else:
-		player.enable("nft")
-
+#	if login.visible or loading.visible:
+#		player.disable("nft")
+#	else:
+#		player.enable("nft")
+	pass
 func reward(nft_id, chat = true):
 	if not nft_ids.has(nft_id):
 		nft_ids.append(nft_id)

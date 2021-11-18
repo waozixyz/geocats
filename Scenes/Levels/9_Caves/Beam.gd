@@ -32,7 +32,7 @@ func _process(delta):
 		if touching and body and body.hp > 0 and sprite.frame > 4 and sprite.frame < 27:
 			elapsed += 1
 			if elapsed % 13 == 0:
-				body.damage(dmg * delta * global.fps)
+				body.damage(dmg * delta * Global.fps)
 			if not explosion.is_playing():
 				explosion.play()
 

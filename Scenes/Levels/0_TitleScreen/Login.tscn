@@ -148,8 +148,8 @@ margin_top = 329.0
 margin_right = 610.0
 margin_bottom = 374.0
 custom_fonts/font = SubResource( 4 )
-text = "Authentication Token Expired
-Please Login again to see if you are eligible for a reward."
+text = "Login Session Expired
+Please login to keep your progress up to date"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

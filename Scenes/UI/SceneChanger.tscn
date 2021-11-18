@@ -284,9 +284,9 @@ script = ExtResource( 1 )
 bus = "Sound"
 
 [node name="Container" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -294,6 +294,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="Container"]
 margin_right = 640.0
 margin_bottom = 480.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -312,11 +313,9 @@ align = 1
 visible = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 120, 0 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 67 )
-frame = 16
 speed_scale = 2.0
 playing = true
 centered = false
@@ -332,3 +331,5 @@ text = "Game Paused"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tween" type="Tween" parent="."]

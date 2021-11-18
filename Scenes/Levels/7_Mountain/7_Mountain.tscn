@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Levels/7_Mountain/ground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/7_Mountain/Mountain_art.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/7_Mountain/clouds.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Levels/7_Mountain/solidcliff.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/7_Mountain/ring.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_2.png" type="Texture" id=9]
@@ -17,7 +17,7 @@
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Music/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/7_Mountain/Telescope.gd" type="Script" id=21]
 

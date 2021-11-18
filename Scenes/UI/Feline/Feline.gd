@@ -83,7 +83,6 @@ func _button_action(label):
 			if OS.get_name() == "HTML5":
 				change_to = "TitleScreen"
 			else:
-				Data.saveit()
 				get_tree().quit()
 
 
@@ -113,7 +112,7 @@ var last_visible = false
 var press_timer = 0
 var red_pressed
 func _process(delta):
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	if old_view is Control and old_view.modulate.a == 0:
 		old_view.visible = false
 	# red button press logic

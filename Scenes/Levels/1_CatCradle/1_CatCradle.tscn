@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Assets/Levels/1_CatCradle/Cats_Cradle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractSimple.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Objects/Ladder.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Levels/1_CatCradle/present.png" type="Texture" id=23]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/Interact.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]

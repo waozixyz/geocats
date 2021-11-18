@@ -101,9 +101,9 @@ func _ready():
 	jump_height = 400
 	state_machine.enter_logic(self) 
 	._ready()
-	if global.player_position:
-		position = global.player_position
-		sprite.flip_h  = global.player_direction * -1
+	if Global.player_position:
+		position = Global.player_position
+		sprite.flip_h  = Global.player_direction * -1
 
 # disable player movement
 var no_vx = false
@@ -123,7 +123,7 @@ func enable(reason):
 # main process loop
 var dmg_blink = 0
 func _physics_process(delta):
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
 	._physics_process(delta)
@@ -133,13 +133,13 @@ func _physics_process(delta):
 		state_machine.logic(delta)
 		
 		# update player hp
-		var hp = global.data.player_hp
+		var hp = Global.data.player_hp
 		if hp < 100:
 			hp += 0.06 * dfps
 
 		if underwater and water_sub == "slime":
 			hp -= .6 * dfps
-		global.data.player_hp = hp
+		Global.data.player_hp = hp
 	elif no_vx:
 		 velocity.x = 0
 
@@ -177,7 +177,7 @@ func update_inputs():
 
 # player damage function
 func damage(dmg):
-	global.data.player_hp -= dmg
+	Global.data.player_hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
 	hurt_sfx.play()
 	

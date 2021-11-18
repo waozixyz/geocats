@@ -8,7 +8,7 @@ func show_code():
 func _ready():
 	hide_interact = false
 	._ready()
-	panel.get_node("Label").text = str(global.pumpkin_code)
+	panel.get_node("Label").text = str(Global.pumpkin_code)
 
 func _process(delta):
 	._process(delta)

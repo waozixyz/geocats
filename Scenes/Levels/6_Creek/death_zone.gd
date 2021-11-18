@@ -13,9 +13,9 @@ func _on_body_entered(body):
 		inside = true
 
 func _process(delta):
-	var dfps = delta * global.fps
+	var dfps = delta * Global.fps
 	if inside:
-		global.data.player_hp -= .8 * dfps
+		Global.data.player_hp -= .8 * dfps
 		
 func _on_body_exited(body):
 	if body.name == "Player":
