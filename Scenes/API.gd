@@ -9,6 +9,7 @@ var current_body
 var last_body
 
 
+
 func _ready():
 	if Global.debug:
 		api_url = "https://geodump.deta.dev"
@@ -50,8 +51,10 @@ func _save_request():
 	last_path = current_path
 
 func repeat_request():
-	get_request(last_path, last_body)
-
+	if last_path and last_body:
+		get_request(last_path, last_body)
+		last_path = ""
+		last_body = ""
 var response
 func _on_request_completed(_result, response_code, _headers, body):
 	response = parse_json(body.get_string_from_utf8())

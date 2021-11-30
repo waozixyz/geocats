@@ -72,5 +72,7 @@ func _next():
 	else:
 		API.repeat_request()
 		visible = false
-	API.remove_child(request)
+	if request:
+		API.remove_child(request)
+		request = null
 
