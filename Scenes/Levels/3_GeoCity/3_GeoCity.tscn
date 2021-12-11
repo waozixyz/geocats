@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://Scenes/Levels/3_GeoCity/NoteSpr.gd" type="Script" id=40]
 [ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/City_Snow_BG.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/City_Snowman.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Music/snowy_swing.ogg" type="AudioStream" id=43]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 25 )
@@ -195,22 +196,22 @@ extents = Vector2( 75, 47 )
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 17 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=45]
 animations = [ {
-"frames": [ SubResource( 43 ), SubResource( 44 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 44 ) ],
+"frames": [ SubResource( 43 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 43 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -222,30 +223,30 @@ extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 18 )
-region = Rect2( 22, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 11, 7 )
+region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 18 )
-region = Rect2( 11, 0, 11, 7 )
+region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=52]
 animations = [ {
 "frames": [ SubResource( 48 ), SubResource( 49 ) ],
 "loop": true,
-"name": "walk",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 50 ), SubResource( 51 ) ],
 "loop": true,
-"name": "idle",
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -259,14 +260,14 @@ region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=55]
 animations = [ {
-"frames": [ SubResource( 53 ), SubResource( 54 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 53 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 53 ), SubResource( 54 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -331,89 +332,89 @@ animations = [ {
 "speed": 9.0
 } ]
 
-[sub_resource type="AtlasTexture" id=78]
+[sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=79]
+[sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 28 )
 region = Rect2( 1200, 0, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=80]
+[sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 28 )
 region = Rect2( 2400, 0, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=81]
+[sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 28 )
 region = Rect2( 3600, 0, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=82]
+[sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 28 )
 region = Rect2( 4800, 0, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=83]
+[sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 400, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=84]
+[sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 28 )
 region = Rect2( 1200, 400, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=85]
+[sub_resource type="AtlasTexture" id=76]
 atlas = ExtResource( 28 )
 region = Rect2( 2400, 400, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=86]
+[sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 28 )
 region = Rect2( 3600, 400, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=87]
+[sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 28 )
 region = Rect2( 4800, 400, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=88]
+[sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 800, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 28 )
 region = Rect2( 1200, 800, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 28 )
 region = Rect2( 2400, 800, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=91]
+[sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 28 )
 region = Rect2( 3600, 800, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=92]
+[sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 28 )
 region = Rect2( 4800, 800, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=93]
+[sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 1200, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=94]
+[sub_resource type="AtlasTexture" id=85]
 atlas = ExtResource( 28 )
 region = Rect2( 1200, 1200, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=95]
+[sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 28 )
 region = Rect2( 2400, 1200, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=96]
+[sub_resource type="AtlasTexture" id=87]
 atlas = ExtResource( 28 )
 region = Rect2( 3600, 1200, 1200, 400 )
 
-[sub_resource type="AtlasTexture" id=97]
+[sub_resource type="AtlasTexture" id=88]
 atlas = ExtResource( 28 )
 region = Rect2( 4800, 1200, 1200, 400 )
 
-[sub_resource type="SpriteFrames" id=77]
+[sub_resource type="SpriteFrames" id=89]
 animations = [ {
-"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ) ],
+"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ) ],
 "loop": true,
 "name": "default",
 "speed": 9.0
@@ -888,7 +889,7 @@ position = Vector2( 4602.3, 1004.71 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 4800
-limit_bottom = 2000
+limit_bottom = 1500
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
 frame = 26
@@ -902,10 +903,14 @@ volume_db = -3.0
 pitch_scale = 0.36
 bus = "Music"
 
+[node name="Snowy_Swing" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 43 )
+volume_db = 5.889
+bus = "Music"
+
 [node name="Salty_Swing" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 12 )
 volume_db = -10.0
-autoplay = true
 bus = "Music"
 
 [node name="GiantPumpkin" type="Area2D" parent="."]
@@ -949,15 +954,15 @@ scale = Vector2( 0.25, 0.25 )
 [node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="AbovePlayer/CreepyCity"]
 position = Vector2( 1157, 701 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 77 )
+frames = SubResource( 89 )
 script = ExtResource( 29 )
 
 [node name="SnowyCity" type="Node2D" parent="AbovePlayer"]
 
 [node name="Snow" type="AnimatedSprite" parent="AbovePlayer/SnowyCity"]
 position = Vector2( -4.74997, -100.25 )
-frames = SubResource( 77 )
-frame = 12
+frames = SubResource( 89 )
+frame = 2
 playing = true
 centered = false
 script = ExtResource( 29 )

@@ -22,8 +22,8 @@ func set_theme(): #Change to Pumpkin function which is called by collision
 	below_player.get_node("City_Buildings").texture = load(res_path + theme + "/bg.png")
 	below_player.get_node("City_BG").texture = load(res_path + theme + "/red_sky.png")
 	get_node("Music/Salty_Swing").stop()
-	get_node("Music/Creepy_Swing").play()
-
+	#get_node("Music/Creepy_Swing").play()
+	get_node("Music/Snowy_Swing").play()
 func _physics_process(delta):
 	if PROGRESS.variables.get("NonacoPumpkinPuzzle"):
 		theme = "CreepyCity"
