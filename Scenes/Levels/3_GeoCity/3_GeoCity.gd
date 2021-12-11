@@ -9,7 +9,8 @@ var theme = "GeoCity"
 var res_path = "res://Assets/Levels/3_GeoCity/"
 var last_theme = "GeoCity"
 func _ready():
-	giant_pumpkin.visible = true
+	get_tree().get_current_scene().theme = "SnowyCity"
+	giant_pumpkin.visible = false
 
 
 func set_theme(): #Change to Pumpkin function which is called by collision
