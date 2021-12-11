@@ -187,8 +187,11 @@ func move():
 
 # animation helper function
 func play(animation:String):
-	if animation == "slide_wall":
-		sprite.position = Vector2(-4, -6)
+	if animation == "slide_wall" and coll_slide.disabled:
+		if sprite.flip_h:
+			sprite.position = Vector2(4, -6)
+		else:
+			sprite.position = Vector2(-4, -6)
 	else:
 		sprite.position = Vector2(0, 0)
 	if sprite.animation == animation:
@@ -207,7 +210,6 @@ func _get_vx():
 func _set_vx(val:float):
 	if val != 0:
 		sprite.flip_h = (val < 0)
-		coll_slide.position.x = 12 * (int(val > 0) * 2 -1)
 
 	velocity.x = val
 	vx = val

@@ -16,6 +16,9 @@ var data =  {
 	"music": -6,
 	"nosound": false,
 	"nomusic": false,
+	"player_hp": 100,
+	"nav_unlocked": [],
+	"nav_visible": [],
 }
 
 var pumpkin_code = ""
