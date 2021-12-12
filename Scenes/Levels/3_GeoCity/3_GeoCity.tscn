@@ -962,7 +962,7 @@ script = ExtResource( 29 )
 [node name="Snow" type="AnimatedSprite" parent="AbovePlayer/SnowyCity"]
 position = Vector2( -4.74997, -100.25 )
 frames = SubResource( 89 )
-frame = 1
+frame = 16
 playing = true
 centered = false
 script = ExtResource( 29 )
