@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/nonabot.ogg-bb5f33647d84cecb50e3a610a562726c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/nonabot.ogg"
+dest_files=[ "res://.import/nonabot.ogg-bb5f33647d84cecb50e3a610a562726c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
