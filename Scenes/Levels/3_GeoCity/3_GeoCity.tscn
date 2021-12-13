@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/small_pumpkin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=2]
@@ -24,10 +24,9 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/garbitage.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/big_pumpkin_spritesheet.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/moon.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/falling_snow_spritesheet.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/PumpkinUI.gd" type="Script" id=26]
 [ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_7.wav" type="AudioStream" id=27]
-[ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/gotpumpkin_spritesheet.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/falling_snow_spritesheet.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=29]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/pumpkin_teeth.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=31]
@@ -40,88 +39,87 @@
 [ext_resource path="res://Assets/Sounds/Feline/Feline_Owch.wav" type="AudioStream" id=38]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/note_single.png" type="Texture" id=39]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/NoteSpr.gd" type="Script" id=40]
-[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/snowman.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/sky.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/City_Snowman.png" type="Texture" id=42]
 [ext_resource path="res://Assets/Music/snowy_swing.ogg" type="AudioStream" id=43]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 1200, 0, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 2400, 0, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 3600, 0, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 4800, 0, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 0, 400, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 1200, 400, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 2400, 400, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 3600, 400, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 4800, 400, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 0, 800, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 1200, 800, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 2400, 800, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 3600, 800, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 4800, 800, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 0, 1200, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 1200, 1200, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 2400, 1200, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 3600, 1200, 1200, 400 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 28 )
 region = Rect2( 4800, 1200, 1200, 400 )
 
 [sub_resource type="SpriteFrames" id=21]
@@ -199,9 +197,6 @@ extents = Vector2( 209, 6 )
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 176, 6 )
 
-[sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 182, 6 )
-
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 101, 6 )
 
@@ -252,9 +247,6 @@ extents = Vector2( 2409, 85 )
 
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 8, 605 )
-
-[sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 2499, 10 )
 
 [sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 75, 96 )
@@ -400,47 +392,8 @@ animations = [ {
 "speed": 9.0
 } ]
 
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 28 )
-region = Rect2( 600, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 28 )
-region = Rect2( 1200, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 28 )
-region = Rect2( 1800, 0, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 450, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 28 )
-region = Rect2( 600, 450, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=92]
-atlas = ExtResource( 28 )
-region = Rect2( 1200, 450, 600, 450 )
-
-[sub_resource type="AtlasTexture" id=93]
-atlas = ExtResource( 28 )
-region = Rect2( 1800, 450, 600, 450 )
-
-[sub_resource type="SpriteFrames" id=94]
-animations = [ {
-"frames": [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 93 ), SubResource( 92 ), SubResource( 91 ), SubResource( 89 ), SubResource( 88 ), SubResource( 87 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="GeoCity" type="Node2D"]
+position = Vector2( 14.9999, 401 )
 script = ExtResource( 21 )
 
 [node name="BehindPlayer" type="Node2D" parent="."]
@@ -454,7 +407,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="CreepyCity" type="Node2D" parent="BehindPlayer"]
-visible = false
 scale = Vector2( 0.25, 0.25 )
 
 [node name="Pumpkin_Medium" type="AnimatedSprite" parent="BehindPlayer/CreepyCity"]
@@ -494,13 +446,12 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="SnowyCity" type="Node2D" parent="BehindPlayer"]
-visible = false
-scale = Vector2( 0.25, 0.25 )
 
-[node name="bg" type="Sprite" parent="BehindPlayer/SnowyCity"]
-position = Vector2( 2403, 396 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 42 )
+[node name="Snowy_Guard_rail" type="Sprite" parent="BehindPlayer/SnowyCity"]
+position = Vector2( 245, 23.9428 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 9 )
 
 [node name="City_Buildings" type="Sprite" parent="BehindPlayer"]
 texture = ExtResource( 7 )
@@ -601,11 +552,6 @@ one_way_collision = true
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionColliders/Houses"]
 position = Vector2( 2644, 486 )
 shape = SubResource( 38 )
-one_way_collision = true
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 2645, 916 )
-shape = SubResource( 39 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Houses"]
@@ -713,9 +659,7 @@ collision_mask = 7
 position = Vector2( 2410, 1113 )
 shape = SubResource( 55 )
 
-[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
 collision_mask = 7
@@ -729,8 +673,8 @@ position = Vector2( 2400, -518 )
 shape = SubResource( 56 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/EndWalls"]
-position = Vector2( -47, -1127 )
-shape = SubResource( 57 )
+position = Vector2( -24.5049, -1507.27 )
+shape = SubResource( 40 )
 
 [node name="Portals" type="Node2D" parent="."]
 
@@ -905,10 +849,10 @@ position = Vector2( 4602.3, 1004.71 )
 [node name="Camera2D" parent="Default/Player" index="0"]
 position = Vector2( 186.252, 0 )
 limit_right = 4800
-limit_bottom = 1200
+limit_bottom = 1500
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 26
+frame = 19
 flip_h = true
 
 [node name="Feline" parent="Default/CanvasLayer" index="2"]
@@ -916,22 +860,20 @@ visible = true
 
 [node name="Music" type="Node2D" parent="."]
 
-[node name="Creepy_Swing" type="AudioStreamPlayer" parent="Music"]
+[node name="CreepyCity" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 12 )
 volume_db = -3.0
 pitch_scale = 0.36
 bus = "Music"
 
-[node name="Salty_Swing" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 12 )
-volume_db = -10.0
-autoplay = true
+[node name="SnowyCity" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 43 )
+volume_db = 5.889
 bus = "Music"
 
-[node name="Snowy_Swing" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 43 )
+[node name="DefaultCity" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 12 )
 volume_db = -10.0
-autoplay = true
 bus = "Music"
 
 [node name="GiantPumpkin" type="Area2D" parent="."]
@@ -975,24 +917,20 @@ scale = Vector2( 0.25, 0.25 )
 [node name="Pumpkin_Cat_Neswulf" type="AnimatedSprite" parent="AbovePlayer/CreepyCity"]
 position = Vector2( 1157, 701 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 94 )
-frame = 15
 script = ExtResource( 29 )
 
 [node name="SnowyCity" type="Node2D" parent="AbovePlayer"]
-visible = false
-scale = Vector2( 0.25, 0.25 )
 
-[node name="Snowfall" type="AnimatedSprite" parent="AbovePlayer/SnowyCity"]
-position = Vector2( 2404, 401 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 21 )
+[node name="Snow" type="AnimatedSprite" parent="AbovePlayer/SnowyCity"]
+position = Vector2( -4.74997, -100.25 )
+playing = true
+centered = false
 script = ExtResource( 29 )
 
 [node name="Sprite" type="Sprite" parent="AbovePlayer/SnowyCity"]
-position = Vector2( 3814.77, 958.134 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 41 )
+position = Vector2( 953.76, 233.258 )
+scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 42 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

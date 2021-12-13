@@ -7,7 +7,9 @@ var player_direction
 var crt_noise = 0.0
 var pause_msg = ""
 
-var user = {}
+var user = {
+	"visited": [],
+}
 
 var data =  {
 	"access_token": "",

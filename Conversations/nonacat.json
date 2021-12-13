@@ -4,7 +4,7 @@
     "avatar": "nonacat.png",
     "position": "left",
     "type": "text",
-    "content": "Hey,|@I'm happy to see you again!",
+    "content": "Nonaco like to dump a bunch of artificial snow on the city during this time of year.",
     "animation_in": "fade_in",
     "next": "2"
   },
@@ -13,7 +13,7 @@
     "avatar": "nonacat.png",
     "position": "left",
     "type": "text",
-    "content": "It's been kinda creepy here lately...",
+    "content": "Kindof fun for some, inconvenient for people like me who have to clean it all up in the spring...",
     "next": ""
   }
 }

@@ -5,29 +5,26 @@ onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin
 
-var theme = "CreepyCity"
-var snow_theme = "SnowyCity"
-
-var theme_path = "res://Assets/Levels/3_GeoCity/" + theme + "/"
-var snow_theme_path = "res://Assets/Levels/3_GeoCity/" + snow_theme + "/"
+var res_path = "res://Assets/Levels/3_GeoCity/"
 func _ready():
-	giant_pumpkin.visible = true
+	giant_pumpkin.visible = false
+	set_theme("SnowyCity")
 
-func snowy_city(): #Change to Pumpkin function which is called by collision
-	if has_node(snow_theme):
-		snow_theme.visible = true
-	below_player.get_node("City_Buildings").texture = load(theme_path + "bg.png")
-	get_node("Salty_Swing").stop()
-	get_node("Snowy_Swing").play()
+
+func set_theme(theme): #Change to Pumpkin function which is called by collision
+	if has_node("BehindPlayer/" + theme):
+		get_node("BehindPlayer/" + theme).visible = true
+	if has_node("AbovePlayer/" + theme):
+		get_node("AbovePlayer/" + theme).visible = true
+
+	below_player.get_node("City_Buildings").texture = load(res_path + theme + "/bg.png")
+	below_player.get_node("City_BG").texture = load(res_path + theme + "/sky.png")
 	
-func creepy_city(): #Change to Pumpkin function which is called by collision
-	if has_node(theme):
-		theme.visible = true
-	below_player.get_node("City_Buildings").texture = load(theme_path + "bg.png")
-	below_player.get_node("City_BG").texture = load(theme_path + "red_sky.png")
-	get_node("Salty_Swing").stop()
-	get_node("Creepy_Swing").play()
-
+	for child in get_node("Music").get_children():
+		if child.name != theme:
+			child.stop()
+		else:
+			child.play()
 func _physics_process(delta):
 	var teleport = PROGRESS.variables.get("teleport_geolodge")
 

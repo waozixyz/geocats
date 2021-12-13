@@ -1,0 +1,46 @@
+{
+  "first": {
+    "name": "Liet",
+    "avatar": "liet.png",
+    "position": "left",
+    "type": "text",
+    "content": "...",
+    "animation_in": "fade_in",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "Never before have I encountered you. My name is Leit.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "Ususally I tend to the ancient cacti of my homelands.",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "Today is my day off, and I am watering the beautiful plants of Geocity.",
+    "next": ""
+  },
+  "repeat": {
+    "name": "Liet",
+    "avatar": "liet.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "The shifting sands of the Great Litterbox are unforgiving,",
+    "next": "r1"
+  },
+  "r1": {
+    "type": "text",
+    "content": "...but its arid wind tends to evaporate any feelings of failures past.",
+    "next": "r2"
+  },
+  "r2": {
+    "type": "text",
+    "content": "Perhaps one day we can visit my village and share a pot of cactus tea.",
+    "next": ""
+  }
+}
+

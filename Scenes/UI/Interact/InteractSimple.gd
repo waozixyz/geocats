@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	._process(delta)
 	if nft_possible:
-		if nft.main.visible or chat_with.visible or nft.login.visible or Global.updating:
+		if nft.main.visible or chat_with.visible or nft.login.visible:
 			object.visible = false
 		elif touching:
 			object.visible = true
