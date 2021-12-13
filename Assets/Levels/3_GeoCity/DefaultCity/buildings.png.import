@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cloud.png-54a18ddca83d97c79e18403f4f3f90eb.stex"
+path="res://.import/buildings.png-ea92a43f5519ab58866879b02db77665.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/CreepyCity/cloud.png"
-dest_files=[ "res://.import/cloud.png-54a18ddca83d97c79e18403f4f3f90eb.stex" ]
+source_file="res://Assets/Levels/3_GeoCity/DefaultCity/buildings.png"
+dest_files=[ "res://.import/buildings.png-ea92a43f5519ab58866879b02db77665.stex" ]
 
 [params]
 

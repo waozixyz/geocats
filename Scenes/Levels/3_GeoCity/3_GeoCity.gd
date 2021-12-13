@@ -5,10 +5,11 @@ onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin
 
+var start_theme = "DefaultCity"
 var res_path = "res://Assets/Levels/3_GeoCity/"
 func _ready():
 	giant_pumpkin.visible = false
-	set_theme("SnowyCity")
+	set_theme(start_theme)
 
 
 func set_theme(theme): #Change to Pumpkin function which is called by collision
@@ -17,8 +18,8 @@ func set_theme(theme): #Change to Pumpkin function which is called by collision
 	if has_node("AbovePlayer/" + theme):
 		get_node("AbovePlayer/" + theme).visible = true
 
-	below_player.get_node("City_Buildings").texture = load(res_path + theme + "/bg.png")
-	below_player.get_node("City_BG").texture = load(res_path + theme + "/sky.png")
+	below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
+	below_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
 	
 	for child in get_node("Music").get_children():
 		if child.name != theme:

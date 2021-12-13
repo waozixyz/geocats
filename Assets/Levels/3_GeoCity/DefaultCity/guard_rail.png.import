@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cloud.png-54a18ddca83d97c79e18403f4f3f90eb.stex"
+path="res://.import/guard_rail.png-67cf6ccfb28eb4d05f34fbd8162956b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/CreepyCity/cloud.png"
-dest_files=[ "res://.import/cloud.png-54a18ddca83d97c79e18403f4f3f90eb.stex" ]
+source_file="res://Assets/Levels/3_GeoCity/DefaultCity/guard_rail.png"
+dest_files=[ "res://.import/guard_rail.png-67cf6ccfb28eb4d05f34fbd8162956b9.stex" ]
 
 [params]
 
