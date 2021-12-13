@@ -61,8 +61,8 @@ func settings():
 	_change_view(settings_view)
 
 # exit logic
-func exit():
-	if view.name == "MainView":
+func exit(now = false):
+	if view.name == "MainView" or now:
 		if active:
 			close_sfx.play()
 			active = false

@@ -40,7 +40,6 @@ func get_request(path, body = null, jwt = Global.data.access_token):
 		# Convert data to json string:
 		var query = JSON.print(body)
 		error = http_request.request(uri, headers, false, HTTPClient.METHOD_POST, query)
-		print(query, " ", uri, " ", headers)
 	else:
 		error = http_request.request(uri, headers, false)
 	if error != OK:
@@ -58,8 +57,6 @@ func repeat_request():
 var response
 func _on_request_completed(_result, response_code, _headers, body):
 	response = parse_json(body.get_string_from_utf8())
-	print("    hhiiii      ", response)
-	print(response_code)
 	if response_code == 422:
 		_save_request()
 		get_request("/refresh", null, Global.data.refresh_token)

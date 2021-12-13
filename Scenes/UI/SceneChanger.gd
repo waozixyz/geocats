@@ -89,6 +89,7 @@ func _tween(obj, start, end, time = .5):
 	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
 func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
+	
 	if not sound == "":
 		MusicPlayer.stream = load("res://Assets/Sounds/Transition/" + sound + ".ogg")
 		MusicPlayer.stream.set_loop(false)
@@ -140,7 +141,6 @@ func _physics_process(delta):
 			request = null
 
 func _check_response(res):
-	print(res)
 	# api set location finished
 	if res and res.has('process'):
 		if res['process'] == "location":

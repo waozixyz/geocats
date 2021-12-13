@@ -69,6 +69,7 @@ func _next():
 		var scene = Global.user.scene if Global.user.has("scene") else "CatsCradle"
 		var location = Global.user.location if Global.user.has("location") else 0
 		SceneChanger.change_scene(scene, location)
+		print(Global.user)
 	else:
 		API.repeat_request()
 		visible = false
