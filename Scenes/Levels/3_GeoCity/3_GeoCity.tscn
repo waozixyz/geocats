@@ -539,18 +539,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="city_brick" type="Sprite" parent="CollisionColliders/Bricks"]
-position = Vector2( 386.132, 48 )
-scale = Vector2( 4.26668, 4 )
-
-[node name="city_brick2" type="Sprite" parent="CollisionColliders/Bricks"]
-position = Vector2( 232, 44 )
-scale = Vector2( 4.26668, 4 )
-
-[node name="city_brick3" type="Sprite" parent="CollisionColliders/Bricks"]
-position = Vector2( 92, 44 )
-scale = Vector2( 4.26668, 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
 position = Vector2( 88, 42 )
 shape = SubResource( 30 )
