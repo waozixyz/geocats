@@ -628,7 +628,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 82 )
 animation = "idle"
-frame = 8
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -711,7 +711,6 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 87 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
