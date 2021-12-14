@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snowman.png-6dafe17b97e64af7900150c6a7b5521d.stex"
+path="res://.import/sky.png-f34978cc2eba3edbb2dc0031d4eebedb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/SnowyCity/snowman.png"
-dest_files=[ "res://.import/snowman.png-6dafe17b97e64af7900150c6a7b5521d.stex" ]
+source_file="res://Assets/Levels/3_GeoCity/SnowyCity/sky.png"
+dest_files=[ "res://.import/sky.png-f34978cc2eba3edbb2dc0031d4eebedb.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
