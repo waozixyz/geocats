@@ -1,0 +1,43 @@
+{
+  "first": {
+    "name": "NO.CAT",
+    "avatar": "nocat.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "ERRrrrrRR.| meow GEO has 01000111 01001111 01001100 01000100 01000101 01001110 00100000 01010010 01010101 01001100 01000101",
+    "next": "question_block"
+  },
+  "repeat": {
+    "type": "text",
+    "content": "CRITICAL ERRROR NONONONO.| Wish - Digital darkness / Electonic Suffering.| Unable 2 -bold- repeat -bold- ",
+    "next": "question_block"
+  },
+  "question_block": {
+    "type": "question",
+    "text": "What ? = value| !| NONOANAco W0Uld you like a cosmic latte?|| Scary metal blindspot. STRANG",
+    "options": ["[Total eclipse.]", "Option 2", "Quartz Pendulum Click Track"],
+    "next": ["chose_option_1", "chose_option_2", "chose_option_3"]
+  },
+  "chose_option_1": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "V-I-D-E-O G-A-M-E-S (*__*) FUN-FUN-FUN-FUN @UNIVERSE IS A MACHINE",
+    "value": [["question", "1"]]
+  },
+  "chose_option_2": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "I'm so happy to have met you. The future is ______",
+    "value": [["question", "2"]]
+  },
+  "chose_option_3": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "solar sounds - HIFI GROOVES, across the EXTRAVERSE",
+    "value": [["question", "3"]]
+  }
+}
