@@ -17,7 +17,7 @@
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/7_Mountain/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Music/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Scenes/SpriteAutoPlay.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Levels/7_Mountain/nonabot.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/7_Mountain/Telescope.gd" type="Script" id=21]
@@ -434,7 +434,7 @@ limit_right = 5000
 limit_bottom = 5000
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 32
+frame = 19
 
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
@@ -695,7 +695,7 @@ position = Vector2( 31, 28.001 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 63 )
 animation = "idle"
-frame = 46
+frame = 43
 playing = true
 flip_h = true
 script = SubResource( 64 )
