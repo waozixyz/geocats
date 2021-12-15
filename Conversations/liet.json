@@ -10,12 +10,12 @@
   },
   "1": {
     "type": "text",
-    "content": "Never before have I encountered you. My name is Leit.",
+    "content": "Never before have I encountered you. My name is Liet.",
     "next": "2"
   },
   "2": {
     "type": "text",
-    "content": "Ususally I tend to the ancient cacti of my homelands.",
+    "content": "Usually I tend to the ancient cacti of my homelands.",
     "next": "3"
   },
   "3": {

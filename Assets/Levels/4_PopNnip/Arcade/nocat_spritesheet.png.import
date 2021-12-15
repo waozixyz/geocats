@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-149f01e730fcb955416341e52bc5527e.stex"
+path="res://.import/nocat_spritesheet.png-17a73b0dd22dd8595dbd76fa0dfdf7fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/DefaultCity/sky.png"
-dest_files=[ "res://.import/sky.png-149f01e730fcb955416341e52bc5527e.stex" ]
+source_file="res://Assets/Levels/4_PopNnip/Arcade/nocat_spritesheet.png"
+dest_files=[ "res://.import/nocat_spritesheet.png-17a73b0dd22dd8595dbd76fa0dfdf7fa.stex" ]
 
 [params]
 

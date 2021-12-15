@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-149f01e730fcb955416341e52bc5527e.stex"
+path="res://.import/entrance_city.png-29ded5de86c539ea7f858f4765f1bdf5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/DefaultCity/sky.png"
-dest_files=[ "res://.import/sky.png-149f01e730fcb955416341e52bc5527e.stex" ]
+source_file="res://Assets/Levels/3_GeoCity/SnowyCity/entrance_city.png"
+dest_files=[ "res://.import/entrance_city.png-29ded5de86c539ea7f858f4765f1bdf5.stex" ]
 
 [params]
 

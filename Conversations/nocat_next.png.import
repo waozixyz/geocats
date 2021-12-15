@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-149f01e730fcb955416341e52bc5527e.stex"
+path="res://.import/nocat_next.png-8c4baa45a18699d35b47a4ed0b97b328.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/DefaultCity/sky.png"
-dest_files=[ "res://.import/sky.png-149f01e730fcb955416341e52bc5527e.stex" ]
+source_file="res://Conversations/nocat_next.png"
+dest_files=[ "res://.import/nocat_next.png-8c4baa45a18699d35b47a4ed0b97b328.stex" ]
 
 [params]
 
