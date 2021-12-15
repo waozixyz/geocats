@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
@@ -117,14 +117,11 @@ extents = Vector2( 66, 6 )
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 8, 101 )
 
-[sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 300.95, 6 )
-
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 92.0556, 3.91539 )
+extents = Vector2( 85.533, 3.91539 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 54.668, 8.97875 )
+extents = Vector2( 54.668, 11.8186 )
 
 [sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 8, 205.34 )
@@ -354,6 +351,10 @@ scale = Vector2( 1, 0.998619 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="bg" type="Sprite" parent="BelowPlayer"]
 texture = SubResource( 1 )
@@ -416,7 +417,7 @@ position = Vector2( 364.806, 221.089 )
 position = Vector2( 0, -2 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 150.729, 525.398 )
+position = Vector2( 559, 28.0387 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 0.7, 0.7 )
@@ -434,14 +435,16 @@ scale = Vector2( 6, 6 )
 texture = SubResource( 14 )
 centered = false
 
+[node name="Roof" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Roof"]
+position = Vector2( -500, 0 )
+polygon = PoolVector2Array( 1371, -16.0221, 602, 190.263, 626, 214.296, 1366, 6.0083 )
+
 [node name="Walls" type="StaticBody2D" parent="."]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
 collision_mask = 7
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 418, 390.667 )
@@ -516,17 +519,14 @@ one_way_collision = true
 position = Vector2( 76, 226.667 )
 shape = SubResource( 28 )
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 360.667, 54 )
-rotation = -0.261799
-shape = SubResource( 29 )
-
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 657.677, -5.36623 )
+position = Vector2( 664.2, -5.36623 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 30 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 704, -20.6667 )
+position = Vector2( 704, -17.8269 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 31 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]

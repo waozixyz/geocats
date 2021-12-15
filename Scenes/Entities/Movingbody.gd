@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Entity
+class_name MovingBody
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -110,6 +110,7 @@ func _physics_process(delta):
 	else:
 		slide_count = 1
 		new_rot = rot * .5
+	print(slide_count, " ", new_rot)
 	if rot != new_rot:
 		rot = (new_rot / slide_count + rot * 3) / 4
 	if not no_rotate:

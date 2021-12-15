@@ -28,7 +28,7 @@
 [ext_resource path="res://Assets/Music/4_Arcade_AlarmAmbience.ogg" type="AudioStream" id=26]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=27]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/nocat_spritesheet.png" type="Texture" id=28]
-[ext_resource path="res://NOCAT.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Levels/4_PopNnip/NOCAT.gd" type="Script" id=29]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 12 )

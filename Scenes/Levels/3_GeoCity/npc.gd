@@ -1,4 +1,4 @@
-extends Entity
+extends MovingBody
 
 var anim = "idle"
 

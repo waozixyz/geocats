@@ -1,4 +1,4 @@
-extends Entity
+extends MovingBody
 class_name Player
 
 var horizontal : float = 0.0

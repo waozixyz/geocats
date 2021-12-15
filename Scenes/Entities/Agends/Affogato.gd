@@ -1,4 +1,4 @@
-extends Entity
+extends MovingBody
 
 onready var player =  get_parent().get_node("Player")
 

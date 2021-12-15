@@ -8,7 +8,7 @@ func _ready():
 	collision_layer = 7
 
 func _is_valid(body):
-	return body is Entity
+	return body is MovingBody
 	
 func _on_body_entered(body):
 	if _is_valid(body):
