@@ -25,12 +25,16 @@
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/gc5.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/gc9.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/gc2.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/Levels/6_Creek/ticket_machine.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/Levels/6_Creek/TicketMachine.gd" type="Script" id=26]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/machine.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/buttons.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/enter_pressed.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/ticketlarge.png" type="Texture" id=29]
-[ext_resource path="res://Scenes/UI/ButtonArea.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=31]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/enter.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/minus_pressed.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/plus.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/plus_pressed.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/6_Creek/1_CavityPuzzleRoom/minus.png" type="Texture" id=36]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 27 )
@@ -112,12 +116,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 24, 14 )
-
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 24, 14 )
-
 [sub_resource type="DynamicFontData" id=22]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
@@ -125,12 +123,6 @@ font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 size = 24
 extra_spacing_top = -10
 font_data = SubResource( 22 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 43, 14 )
-
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 160, 88 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 21 )
@@ -510,97 +502,94 @@ centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" type="Node2D" parent="CanvasLayer"]
-visible = false
+[node name="HUD" type="Control" parent="CanvasLayer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Machine" type="AnimatedSprite" parent="CanvasLayer/HUD"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 310, 102 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 19 )
 centered = false
 
-[node name="Enter" type="Area2D" parent="CanvasLayer/HUD"]
-position = Vector2( 535, 191 )
-script = ExtResource( 30 )
+[node name="Plus" type="TextureButton" parent="CanvasLayer/HUD"]
+margin_left = 534.0
+margin_top = 191.0
+margin_right = 551.0
+margin_bottom = 208.0
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 35 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/HUD/Enter"]
-position = Vector2( 0, -29 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 28 )
-centered = false
-hframes = 3
-frame = 2
+[node name="Minus" type="TextureButton" parent="CanvasLayer/HUD"]
+margin_left = 534.0
+margin_top = 220.0
+margin_right = 551.0
+margin_bottom = 237.0
+texture_normal = ExtResource( 36 )
+texture_pressed = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Enter"]
-position = Vector2( 6.99997, -21 )
-shape = SubResource( 20 )
+[node name="Enter" type="TextureButton" parent="CanvasLayer/HUD"]
+margin_left = 534.0
+margin_top = 162.0
+margin_right = 551.0
+margin_bottom = 179.0
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 28 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Plus" type="Area2D" parent="CanvasLayer/HUD"]
-position = Vector2( 535, 191 )
-script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer/HUD/Plus"]
-position = Vector2( 0, 1 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 28 )
-centered = false
-hframes = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Plus"]
-position = Vector2( 6.99997, 8 )
-shape = SubResource( 20 )
-
-[node name="Minus" type="Area2D" parent="CanvasLayer/HUD"]
-script = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Minus"]
-position = Vector2( 542, 229 )
-shape = SubResource( 21 )
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer/HUD/Minus"]
-position = Vector2( 535, 221 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 28 )
-centered = false
-hframes = 3
-frame = 1
-
-[node name="Ticket" type="Area2D" parent="CanvasLayer/HUD"]
-script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer/HUD/Ticket"]
-position = Vector2( 469, 374 )
-scale = Vector2( 3.25, 3.25 )
-texture = ExtResource( 29 )
+[node name="Ticket" type="Button" parent="CanvasLayer/HUD"]
+margin_left = 309.0
+margin_top = 265.0
+margin_right = 633.0
+margin_bottom = 473.0
+icon = ExtResource( 29 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/Ticket"]
-margin_left = 310.0
-margin_top = 439.0
-margin_right = 624.0
-margin_bottom = 477.0
+margin_left = 1.0
+margin_top = 165.0
+margin_right = 322.0
+margin_bottom = 212.0
 custom_fonts/font = SubResource( 23 )
 text = "Click here for more information!"
 align = 1
+valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/Ticket"]
-position = Vector2( 571, 263 )
-shape = SubResource( 24 )
-
-[node name="GoToSite" type="Area2D" parent="CanvasLayer/HUD"]
-script = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HUD/GoToSite"]
-position = Vector2( 467, 390 )
-shape = SubResource( 25 )
+[node name="PullTicket" type="Button" parent="CanvasLayer/HUD"]
+margin_left = 530.0
+margin_top = 245.0
+margin_right = 612.0
+margin_bottom = 272.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Default" parent="." instance=ExtResource( 9 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 127, 427 )
+position = Vector2( 597, 449 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
@@ -616,62 +605,77 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="gc1" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="Cats" type="Node2D" parent="AbovePlayer"]
+scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="gc1" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 25, 102 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 33 )
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc3" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc3" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 234, 104 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 39 )
 speed_scale = 0.7
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc4" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc4" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 100, 0 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 45 )
 speed_scale = 0.7
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc5" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc5" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 165, 0 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 50 )
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc2" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc2" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 127, 118 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 57 )
 speed_scale = 1.2
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc7" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc7" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 191, 5 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 64 )
 speed_scale = 0.9
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc8" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc8" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 235, 75 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 72 )
 speed_scale = 0.7
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc9" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc9" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 45, 35 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 79 )
 speed_scale = 0.7
 centered = false
 script = ExtResource( 31 )
 
-[node name="gc6" type="AnimatedSprite" parent="AbovePlayer"]
+[node name="gc6" type="AnimatedSprite" parent="AbovePlayer/Cats"]
 position = Vector2( 69, 8 )
+scale = Vector2( 1, 1 )
 frames = SubResource( 84 )
 speed_scale = 1.1
 centered = false
@@ -693,6 +697,9 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPuzzleRoom"]
 position = Vector2( 94, 62.187 )
 shape = SubResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Button" type="Sprite" parent="ExitPuzzleRoom"]
 visible = false
@@ -700,9 +707,7 @@ position = Vector2( 88, -5.81299 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 4 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 0.833, 1 )
 collision_layer = 7
 collision_mask = 7
@@ -710,10 +715,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 615.846, 480, 659.064, 496, 749.1, 496, 783.914, 490, 920.768, 476, 989.196, 460, 1012, 451, 1139.26, 438, 1318.13, 439, 1436.97, 445, 1470.59, 445, 1470.59, 474, 1174.07, 468, 1081.63, 478, 963.986, 506, 795.918, 516, 614.646, 513, 540.216, 493, 464.586, 464, 68.4274, 469, 68.4274, 460, 255.702, 460, 296.519, 451, 465.786, 450, 545.018, 475 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 1470.59, 446, 1464.59, 372, 1440.58, 318, 1418.97, 263, 1370.95, 140, 1271.31, 92, 1130.85, 82, 968.788, 62, 527.011, 62, 312.125, 90, 294.118, 195, 176.471, 270, 93.6375, 321, 72.0288, 341, 73.2293, 480, 46.8187, 483, 48.0192, 296, 267.707, 187, 296.519, 56, 545.018, 29, 1001.2, 35, 1354.14, 78, 1441.78, 161, 1505.4, 390, 1498.2, 448 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -728,7 +733,7 @@ script = ExtResource( 26 )
 position = Vector2( 607, 425 )
 shape = SubResource( 86 )
 
-[node name="Machine" type="AnimatedSprite" parent="TicketMachine"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="TicketMachine"]
 position = Vector2( 600, 445 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 98 )

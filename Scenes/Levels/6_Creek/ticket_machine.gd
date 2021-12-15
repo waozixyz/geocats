@@ -10,7 +10,7 @@ onready var plus_button = hud.get_node("Plus")
 onready var minus_button = hud.get_node("Minus")
 onready var enter_button = hud.get_node("Enter")
 onready var ticket = hud.get_node("Ticket")
-onready var go_to_site = hud.get_node("GoToSite")
+onready var pull_ticket = hud.get_node("PullTicket")
 
 var number: int = 0;
 var success : bool = false
@@ -71,7 +71,6 @@ func ticket_printed():
 	machine_ui.frame = 0
 	ticket_print_done = true
 func _process(delta):
-	nft.update(delta, hud.visible, nft_id)
 	if hud.visible:
 		check_button(plus_button)
 		check_button(minus_button)

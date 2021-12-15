@@ -425,7 +425,7 @@ limit_bottom = 600
 editor_draw_limits = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 22
+frame = 19
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -533,9 +533,7 @@ shape = SubResource( 31 )
 position = Vector2( 731.884, 204.058 )
 shape = SubResource( 32 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_group_": true,
