@@ -5,7 +5,7 @@ onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin
 
-var start_theme = "CreepyCity"
+var start_theme = "SnowyCity"
 var res_path = "res://Assets/Levels/3_GeoCity/"
 func _ready():
 	giant_pumpkin.visible = false

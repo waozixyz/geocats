@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="snow" type="Node2D"]
+
+[node name="CPUParticles2D_behind" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 900
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.37
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 600, 1 )
+spread = 156.03
+gravity = Vector2( 0, 200 )
+initial_velocity = 528.04
+initial_velocity_random = 1.0
+angular_velocity = 208.6
+linear_accel = 38.32
+linear_accel_random = 0.86
+radial_accel = 47.66
+radial_accel_random = 0.59
+tangential_accel = 18.69
+tangential_accel_random = 0.18
+scale_amount = 3.0
+scale_amount_random = 1.0
+hue_variation = 0.48
+hue_variation_random = 0.85
