@@ -106,11 +106,10 @@ func _physics_process(delta):
 				new_rot += -slope_angle * 4 * mul
 			else:
 				new_rot = rot * .5
-
 	else:
 		slide_count = 1
 		new_rot = rot * .5
-	print(slide_count, " ", new_rot)
+
 	if rot != new_rot:
 		rot = (new_rot / slide_count + rot * 3) / 4
 	if not no_rotate:

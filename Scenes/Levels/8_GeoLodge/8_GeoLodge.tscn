@@ -417,7 +417,7 @@ position = Vector2( 364.806, 221.089 )
 position = Vector2( 0, -2 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 559, 28.0387 )
+position = Vector2( 45, 543.751 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 0.7, 0.7 )
@@ -439,7 +439,7 @@ centered = false
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Roof"]
 position = Vector2( -500, 0 )
-polygon = PoolVector2Array( 1371, -16.0221, 602, 190.263, 626, 214.296, 1366, 6.0083 )
+polygon = PoolVector2Array( 1368, -14.0194, 602, 190.263, 626, 214.296, 1366, 6.0083 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 scale = Vector2( 1.5, 1.5 )
@@ -514,6 +514,9 @@ one_way_collision = true
 position = Vector2( 173, 263 )
 shape = SubResource( 27 )
 one_way_collision = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 76, 226.667 )
@@ -521,12 +524,10 @@ shape = SubResource( 28 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 664.2, -5.36623 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 30 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 704, -17.8269 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 31 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]

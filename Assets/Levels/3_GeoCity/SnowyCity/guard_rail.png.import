@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/buildings.png-49dbbc1d9f4c523e2f9b7c8d0f339564.stex"
+path="res://.import/guard_rail.png-94828d11f3657c94c1c61021f12793b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/3_GeoCity/SnowyCity/buildings.png"
-dest_files=[ "res://.import/buildings.png-49dbbc1d9f4c523e2f9b7c8d0f339564.stex" ]
+source_file="res://Assets/Levels/3_GeoCity/SnowyCity/guard_rail.png"
+dest_files=[ "res://.import/guard_rail.png-94828d11f3657c94c1c61021f12793b0.stex" ]
 
 [params]
 

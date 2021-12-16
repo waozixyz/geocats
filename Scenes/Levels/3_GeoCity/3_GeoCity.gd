@@ -18,17 +18,26 @@ func set_theme(theme): #Change to Pumpkin function which is called by collision
 	if has_node("AbovePlayer/" + theme):
 		get_node("AbovePlayer/" + theme).visible = true
 
-	below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
-	below_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
-	
+	var file2Check = File.new()
+	if file2Check.file_exists(res_path + theme + "/buildings.png"):
+		below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
+	if file2Check.file_exists(res_path + theme + "/sky.png"):
+		below_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
+
+	if file2Check.file_exists(res_path + theme + "/buildings.png"):
+		below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
+	if file2Check.file_exists(res_path + theme + "/sky.png"):
+		below_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
+
+
 	for child in get_node("Music").get_children():
 		if child.name != theme:
 			child.stop()
 		else:
 			child.play()
+
 func _physics_process(delta):
 	var teleport = PROGRESS.variables.get("teleport_geolodge")
-
 	if teleport:
 		chat_with.visible = false
 		chat_with.stop()
