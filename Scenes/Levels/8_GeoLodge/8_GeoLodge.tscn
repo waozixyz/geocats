@@ -448,7 +448,6 @@ __meta__ = {
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 484.333, 431.596 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 15 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
@@ -459,7 +458,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 14.6667, 449.628 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
@@ -469,7 +467,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 769.667, 349.817 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 20 )
 one_way_collision = true
 
@@ -480,13 +477,11 @@ one_way_collision = true
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 742.667, 238.665 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 21 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 706.333, 187.597 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 22 )
 one_way_collision = true
 
@@ -497,13 +492,11 @@ one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 446, 124.176 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 25 )
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 195, 197.606 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 26 )
 one_way_collision = true
 
@@ -521,17 +514,14 @@ shape = SubResource( 28 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 633.117, -13.8605 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 30 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 754.999, -15.1566 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 31 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 850.667, 211.821 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 32 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]

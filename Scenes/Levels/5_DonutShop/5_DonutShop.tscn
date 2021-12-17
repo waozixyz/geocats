@@ -200,9 +200,6 @@ position = Vector2( 19, 405 )
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 0
-
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 __meta__ = {
@@ -217,7 +214,6 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 12 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -380,9 +376,7 @@ shape = SubResource( 32 )
 position = Vector2( 953, 227 )
 shape = SubResource( 33 )
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )

@@ -16,13 +16,10 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.is_on_floor():
 		player.isDoubleJumped = false #reset is double jumped
 		return "idle" if player.horizontal == 0 else "walk"
-	if player.grounded and player.jumping and not player.sprite.animation == "crouch":
-		return "jump"
 
-	if player.isJumpPressed:
-		#if you press jump
-		if !player.isDoubleJumped:
-			return "double_jump"
+	
+	if player.isJumpPressed and not player.isDoubleJumped:
+		return "double_jump"
 	
 	player.default_anim()
 	if not player.is_on_wall():
