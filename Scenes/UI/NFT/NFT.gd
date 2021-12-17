@@ -18,7 +18,6 @@ onready var location_panel = $Main/Location
 onready var loading = $Loading
 
 var waiting
-var show_login
 var reward_available: bool = false
 var anim
 

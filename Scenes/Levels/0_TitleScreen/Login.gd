@@ -9,6 +9,7 @@ onready var mistake = $Mistake
 onready var nokey = $NoKey
 onready var noserver = $NoServer
 onready var connecting = $Connecting
+onready var login_again = $LoginAgain
 
 func _ready():
 	# connect buttons
@@ -16,6 +17,9 @@ func _ready():
 	assert(err == OK)
 	err = exit_button.connect("pressed", self, "_exit_pressed")
 	assert(err == OK)
+
+	login_again.visible = true if Global.data.login_again else false
+	Global.data.login_again = false
 
 func _exit_pressed():
 	visible = false
@@ -35,6 +39,7 @@ func _login_pressed():
 	nokey.visible = false
 	mistake.visible = false
 	noserver.visible = false
+	login_again.visible = false
 	request = API.get_request("/login", body, null)
 
 func _check_response(response):

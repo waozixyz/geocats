@@ -114,6 +114,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LoginAgain" type="Label" parent="."]
+visible = false
+margin_left = 45.0
+margin_top = 378.0
+margin_right = 610.0
+margin_bottom = 399.0
+custom_colors/font_color = Color( 0.933333, 0.141176, 0.0117647, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Please Login Again"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Connecting" type="Label" parent="."]
 visible = false
 margin_left = 45.0

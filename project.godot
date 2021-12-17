@@ -78,7 +78,6 @@ PROGRESS="*res://Scenes/UI/Dialogue/progress.gd"
 Global="*res://Scenes/Global.gd"
 API="*res://Scenes/API.gd"
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
-global="*res://Scenes/global.gd"
 Data="*res://Scenes/Data.gd"
 
 [display]

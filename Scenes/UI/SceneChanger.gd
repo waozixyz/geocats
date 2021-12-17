@@ -88,8 +88,8 @@ func _get_scene(scene_name):
 func _tween(obj, start, end, time = .5):
 	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
+
 func change_scene(new_scene, new_location = 0, sound = "", volume = 1):
-	
 	if not sound == "":
 		MusicPlayer.stream = load("res://Assets/Sounds/Transition/" + sound + ".ogg")
 		MusicPlayer.stream.set_loop(false)
@@ -132,7 +132,6 @@ func _physics_process(delta):
 		if volume < 0:
 			AudioServer.set_bus_volume_db(i, volume + .5)
 		
-		
 	if request:
 		var body_size = request.get_body_size()
 		if body_size > 0:
@@ -142,19 +141,21 @@ func _physics_process(delta):
 
 func _check_response(res):
 	# api set location finished
-	if res and res.has('process'):
-		if res['process'] == "location":
-			if res.has('scene') and res.has('location'):
-				SceneChanger.change_scene(res.scene, res.location)
-			else:
-				# load scene data
-				var scene_data = _get_scene(scene)
-				# change scene
-				var _null = get_tree().change_scene(scene_data[0])
-				# update game variables
-				Global.player_position = scene_data[1]
-				Global.player_direction = scene_data[2]
-			_disable_animation()
+	if res:
+		if res.has('process'):
+			if res['process'] == "location":
+				if res.has('scene') and res.has('location'):
+					SceneChanger.change_scene(res.scene, res.location)
+				else:
+					# load scene data
+					var scene_data = _get_scene(scene)
+					# change scene
+					var _null = get_tree().change_scene(scene_data[0])
+					# update game variables
+					Global.player_position = scene_data[1]
+					Global.player_direction = scene_data[2]
+				_disable_animation()
+
 func _input(event):
 	if chat_with.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
