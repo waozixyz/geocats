@@ -18,8 +18,9 @@ func _ready():
 	err = exit_button.connect("pressed", self, "_exit_pressed")
 	assert(err == OK)
 
-	login_again.visible = true if Global.data.login_again else false
-	Global.data.login_again = false
+	login_again.visible = true if Global.data.login_msg == 405 else false
+	noserver.visible = true if Global.data.login_msg == 500 else false
+	Global.data.login_msg = 0
 
 func _exit_pressed():
 	visible = false
@@ -74,7 +75,6 @@ func _next():
 		var scene = Global.user.scene if Global.user.has("scene") else "CatsCradle"
 		var location = Global.user.location if Global.user.has("location") else 0
 		SceneChanger.change_scene(scene, location)
-		print(Global.user)
 	else:
 		API.repeat_request()
 		visible = false

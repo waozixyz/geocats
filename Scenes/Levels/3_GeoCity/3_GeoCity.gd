@@ -5,18 +5,25 @@ onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin
 
-var start_theme = "SnowyCity"
 var res_path = "res://Assets/Levels/3_GeoCity/"
+var request
 func _ready():
 	giant_pumpkin.visible = false
-	set_theme(start_theme)
-
+	var season = Global.data.season
+	if season == "Winter":
+		set_theme("SnowyCity")
+	elif season  == "Autumn":
+		set_theme("SpookyCity")
+	else:
+		set_theme("DefaultCity")
 
 func set_theme(theme): #Change to Pumpkin function which is called by collision
-	if has_node("BehindPlayer/" + theme):
-		get_node("BehindPlayer/" + theme).visible = true
-	if has_node("AbovePlayer/" + theme):
-		get_node("AbovePlayer/" + theme).visible = true
+	for child in get_node("BehindPlayer").get_children():
+		if child.get_child_count() > 0:
+			child.visible = true if child.name == theme else false
+	for child in get_node("AbovePlayer").get_children():
+		if child.get_child_count() > 0:
+			child.visible = true if child.name == theme else false
 
 	var file2Check = File.new()
 	if file2Check.file_exists(res_path + theme + "/buildings.png"):
@@ -43,3 +50,4 @@ func _physics_process(delta):
 		chat_with.stop()
 		PROGRESS.variables["teleport_geolodge"] = false
 		SceneChanger.change_scene("GeoLodge", 0, "WayoWayo", 1)
+

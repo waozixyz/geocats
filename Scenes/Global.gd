@@ -20,7 +20,8 @@ var data =  {
 	"nomusic": false,
 	"player_hp": 100,
 	"nav_unlocked": [],
-	"login_again": false,
+	"login_msg": 200,
+	"season": "",
 }
 
 var pumpkin_code = ""

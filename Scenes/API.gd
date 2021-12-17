@@ -57,11 +57,15 @@ func repeat_request():
 var response
 func _on_request_completed(_result, response_code, _headers, body):
 	response = parse_json(body.get_string_from_utf8())
+	if response_code == 500:
+		Global.data.login_msg = 500
+		SceneChanger.change_scene("TitleScreen")
+		_save_request()
 	if response_code == 422:
 		_save_request()
 		get_request("/refresh", null, Global.data.refresh_token)
 	elif response_code == 405:
-		Global.data.login_again = true
+		Global.data.login_msg = 405
 		SceneChanger.change_scene("TitleScreen")
 		_save_request()
 	elif response_code == 200:

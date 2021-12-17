@@ -155,7 +155,9 @@ func _check_response(res):
 					Global.player_position = scene_data[1]
 					Global.player_direction = scene_data[2]
 				_disable_animation()
-
+		if res.has('season'):
+			Global.data.season = res['season']
+		print(res)
 func _input(event):
 	if chat_with.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
