@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=15]
 [ext_resource path="res://Assets/Levels/8_GeoLodge/tinypumpkinicon.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/8_GeoLodge/box.png" type="Texture" id=17]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"
@@ -75,8 +76,14 @@ animations = [ {
 [sub_resource type="StreamTexture" id=14]
 load_path = "res://.import/geolodge_FG.png-257982040e3fd00f4106be383d324047.stex"
 
+[sub_resource type="RectangleShape2D" id=58]
+extents = Vector2( 0.285719, 2.50346 )
+
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 391.667, 8.34486 )
+
+[sub_resource type="RectangleShape2D" id=59]
+extents = Vector2( 93.6668, 2.50338 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 27.1877, 3.26599 )
@@ -431,6 +438,30 @@ scale = Vector2( 7, 7 )
 texture = SubResource( 14 )
 centered = false
 
+[node name="Box" type="StaticBody2D" parent="."]
+position = Vector2( 1036, 615.851 )
+scale = Vector2( 7, 7 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+position = Vector2( -3.71434, -0.500702 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 58 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Box"]
+position = Vector2( 3.714, -0.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 58 )
+
+[node name="Box" type="Sprite" parent="Box"]
+position = Vector2( 0, -7.62939e-06 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Roof" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Roof"]
@@ -442,13 +473,15 @@ position = Vector2( 5, 2.00277 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
 collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 484.333, 431.596 )
 shape = SubResource( 15 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 748.334, 420.748 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 59 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 41.3333, 306 )

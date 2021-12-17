@@ -528,15 +528,11 @@ position = Vector2( -490, 164 )
 shape = SubResource( 54 )
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=[
-"end",
-]]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=["end"]]
 position = Vector2( -937, 147 )
 shape = SubResource( 55 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=[
-"end",
-]]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=["end"]]
 position = Vector2( -934, 14 )
 shape = SubResource( 55 )
 
@@ -563,9 +559,7 @@ position = Vector2( -192, 7 )
 shape = SubResource( 60 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
 collision_mask = 7
@@ -628,7 +622,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 82 )
 animation = "idle"
-frame = 1
+frame = 16
 speed_scale = 0.3
 playing = true
 centered = false
@@ -711,6 +705,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 87 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
