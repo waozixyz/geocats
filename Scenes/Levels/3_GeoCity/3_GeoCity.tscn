@@ -105,7 +105,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 32, 14 )
+extents = Vector2( 30, 14 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 301, 10 )
@@ -141,7 +141,7 @@ extents = Vector2( 154, 6 )
 extents = Vector2( 29, 6 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 325, 6 )
+extents = Vector2( 325, 6.5 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 182, 6 )
@@ -459,12 +459,12 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
-position = Vector2( 88, 42 )
+position = Vector2( 90, 46 )
 shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
-position = Vector2( 228, 42 )
+position = Vector2( 230, 46 )
 shape = SubResource( 13 )
 one_way_collision = true
 
@@ -554,7 +554,7 @@ shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 3578, 531 )
+position = Vector2( 3578, 530.5 )
 shape = SubResource( 25 )
 one_way_collision = true
 

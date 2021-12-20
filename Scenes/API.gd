@@ -19,7 +19,6 @@ func get_request(path, body = null, jwt = Global.data.access_token):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed")
-
 	current_path = path
 	current_body = body
 	# complete the url to use
@@ -62,9 +61,11 @@ func _on_request_completed(_result, response_code, _headers, body):
 		SceneChanger.change_scene("TitleScreen")
 		_save_request()
 	if response_code == 422:
+		# signature has expired
 		_save_request()
 		get_request("/refresh", null, Global.data.refresh_token)
 	elif response_code == 405:
+		# method not found
 		Global.data.login_msg = 405
 		SceneChanger.change_scene("TitleScreen")
 		_save_request()
@@ -76,4 +77,4 @@ func _on_request_completed(_result, response_code, _headers, body):
 				Global.data.refresh_token = response["jwt_refresh"]
 			if response.has("user"):
 				Global.user = response["user"]
-	print(response, response_code)
+

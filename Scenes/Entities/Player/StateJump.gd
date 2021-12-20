@@ -18,10 +18,11 @@ func logic(player: KinematicBody2D, _delta: float):
 		return "climb"
 	if player.underwater:
 		return "swim"
-
+	
+	if player.isJumpPressed && !player.isDoubleJumped:
+		return "double_jump" #set state to double jump
+	
 	if player.vy < 0:
-		if player.isJumpPressed && !player.isDoubleJumped:
-			return "double_jump" #set state to double jump
 		if player.is_on_ceiling():
 			#if you hit a ceiling
 			return "fall" #start falling

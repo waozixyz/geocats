@@ -446,17 +446,14 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 position = Vector2( -3.71434, -0.500702 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 58 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Box"]
 position = Vector2( 3.714, -0.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 58 )
 
 [node name="Box" type="Sprite" parent="Box"]
 position = Vector2( 0, -7.62939e-06 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 17 )
 __meta__ = {
 "_edit_lock_": true
@@ -480,7 +477,6 @@ shape = SubResource( 15 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 748.334, 420.748 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 59 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]

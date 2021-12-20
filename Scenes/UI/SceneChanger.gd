@@ -158,6 +158,7 @@ func _check_response(res):
 		if res.has('season'):
 			Global.data.season = res['season']
 		print(res)
+		
 func _input(event):
 	if chat_with.visible:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):

@@ -39,9 +39,9 @@ func _press_sound():
 # initialize feline
 func _ready():
 	var default = get_parent().get_parent()
+	geodex = load("res://Scenes/UI/Geodex/Geodex.tscn").instance()
 	if default and default.has_node("Player"):
 		player = default.get_node("Player")
-	
 	for child in system.get_children():
 		child.visible = false
 	view = main_view
@@ -52,13 +52,19 @@ func _ready():
 			if button is Button or button is TextureButton:
 				button.connect("mouse_entered", self, "_hover_sound")
 				button.connect("pressed", self, "_press_sound")
-# fading effect
+
 func _tween(obj, start, end, time = .5):
 	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
 
 func settings():
 	_change_view(settings_view)
+
+var geodex
+func _open_geodex():
+
+	add_child(geodex)
+	exit()
 
 # exit logic
 func exit(now = false):
@@ -76,8 +82,8 @@ func _button_action(label):
 	match label:
 		"Map":
 			_change_view(map_view)
-		"Home":
-			pass
+		"Geodex":
+			_open_geodex()
 		"Exit":
 			exit()
 			if OS.get_name() == "HTML5":

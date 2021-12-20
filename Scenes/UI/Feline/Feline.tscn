@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/UI/Feline/SettingsView/music_off.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/Feline/SettingsView/music_on.png" type="Texture" id=8]
 [ext_resource path="res://Assets/UI/Feline/StatusBar/exit_hover.png" type="Texture" id=9]
-[ext_resource path="res://Assets/UI/Feline/MainView/home.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/Feline/MainView/geodex.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/UI/Feline/Feline.gd" type="Script" id=11]
 [ext_resource path="res://Assets/UI/Feline/MainView/ribbon.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/Feline/MainView/maps.png" type="Texture" id=13]
@@ -125,13 +125,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Home" type="Button" parent="System/MainView"]
+[node name="Geodex" type="Button" parent="System/MainView"]
 margin_left = 176.0
 margin_top = 221.0
 margin_right = 464.0
 margin_bottom = 273.0
 theme = ExtResource( 6 )
-text = "Home"
+text = "Geodex"
 icon = ExtResource( 10 )
 align = 0
 expand_icon = true

@@ -1,0 +1,301 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/UI/Geodex/tab.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Geodex/entry_panel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Geodex/BG.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/UI/Geodex/Geodex.gd" type="Script" id=4]
+[ext_resource path="res://Assets/UI/Geodex/info.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Geodex/image.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Geodex/quit.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Geodex/full_heart.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Geodex/empty_heart.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/Geodex/entry.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/Geodex/greycat.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/Geodex/entry_selected.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/Geodex/entry_hovered.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/Geodex/tab_selected.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/UI/Geodex/Entry.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = SubResource( 1 )
+
+[node name="Geodex" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Control"]
+margin_right = 640.0
+margin_bottom = 480.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImagePanel" type="TextureRect" parent="Control"]
+margin_left = 6.0
+margin_top = 47.0
+margin_right = 341.0
+margin_bottom = 280.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="TextureRect" parent="Control/ImagePanel"]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 28.0
+margin_bottom = 19.0
+rect_scale = Vector2( 14, 14 )
+texture = ExtResource( 11 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoPanel" type="TextureRect" parent="Control"]
+margin_left = 6.0
+margin_top = 302.0
+margin_right = 341.0
+margin_bottom = 474.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EntryPanel" type="TextureRect" parent="Control"]
+margin_left = 345.0
+margin_top = 65.0
+margin_right = 609.0
+margin_bottom = 474.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Category" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabLeft" type="TextureButton" parent="Control/Category"]
+margin_left = 345.0
+margin_top = 6.0
+margin_right = 477.0
+margin_bottom = 62.0
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TabRight" type="TextureButton" parent="Control/Category"]
+margin_left = 477.0
+margin_top = 6.0
+margin_right = 609.0
+margin_bottom = 62.0
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 14 )
+flip_h = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Category"]
+margin_left = 346.0
+margin_top = 6.0
+margin_right = 609.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 3 )
+text = "GeoCat"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Control"]
+margin_left = 607.0
+margin_top = 1.0
+margin_right = 643.0
+margin_bottom = 26.0
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rarity" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="1" type="TextureButton" parent="Control/Rarity"]
+margin_left = 11.0
+margin_top = 9.0
+margin_right = 41.0
+margin_bottom = 35.0
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+button_mask = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="TextureButton" parent="Control/Rarity"]
+margin_left = 44.0
+margin_top = 9.0
+margin_right = 74.0
+margin_bottom = 35.0
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+button_mask = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="TextureButton" parent="Control/Rarity"]
+margin_left = 77.0
+margin_top = 9.0
+margin_right = 107.0
+margin_bottom = 35.0
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+button_mask = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="TextureButton" parent="Control/Rarity"]
+margin_left = 110.0
+margin_top = 9.0
+margin_right = 140.0
+margin_bottom = 35.0
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+button_mask = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="TextureButton" parent="Control/Rarity"]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 174.0
+margin_bottom = 35.0
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+button_mask = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="TextureButton" parent="Control/Rarity"]
+margin_left = 177.0
+margin_top = 9.0
+margin_right = 207.0
+margin_bottom = 35.0
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+button_mask = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entries" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Entries"]
+margin_left = 337.0
+margin_top = 67.0
+margin_right = 623.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Entries/ScrollContainer"]
+
+[node name="EntryTemplate" type="TextureButton" parent="Control/Entries/ScrollContainer/VBoxContainer"]
+visible = false
+margin_right = 272.0
+margin_bottom = 36.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Entries/ScrollContainer/VBoxContainer/EntryTemplate"]
+margin_left = 8.0
+margin_right = 272.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 2 )
+text = "NEOCAT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/Category/TabLeft" to="." method="_on_TabLeft_pressed"]
+[connection signal="pressed" from="Control/Category/TabRight" to="." method="_on_TabRight_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="mouse_entered" from="Control/Entries/ScrollContainer/VBoxContainer/EntryTemplate" to="Control/Entries/ScrollContainer/VBoxContainer/EntryTemplate" method="_on_EntryTemplate_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Entries/ScrollContainer/VBoxContainer/EntryTemplate" to="Control/Entries/ScrollContainer/VBoxContainer/EntryTemplate" method="_on_EntryTemplate_mouse_exited"]

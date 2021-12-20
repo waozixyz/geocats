@@ -344,6 +344,11 @@ offset = Vector2( -27.9162, -16.3548 )
 script = ExtResource( 4 )
 
 [node name="Snow" parent="." instance=ExtResource( 5 )]
+layers = {
+"Large": true,
+"Medium": true,
+"Small": true
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
