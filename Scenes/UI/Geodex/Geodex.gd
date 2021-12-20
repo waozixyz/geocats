@@ -3,7 +3,8 @@ extends CanvasLayer
 onready var control = $Control
 onready var entry_container = $Control/Entries/ScrollContainer/VBoxContainer
 onready var tab_label = $Control/Category/Label
-onready var entry_template = entry_container.get_node("EntryTemplate")
+onready var entry_template = $Control/EntryTemplate
+onready var info_label = $Control/InfoPanel/RichTextLabel
 
 var current_tab = 0
 var dex_data = {
@@ -68,9 +69,11 @@ func _update_nfts(remote_data):
 							nft['edition'] = [n['edition']]
 
 func _update_entries():
+	for n in entry_container.get_children():
+		entry_container.remove_child(n)
+		n.queue_free()
 	var dex = dex_data[current_tab]
 	for nft in dex.data:
-		print(nft)
 		var entry = entry_template.duplicate()
 		entry.visible = true
 		var entry_label = entry.get_node('Label')
@@ -97,6 +100,8 @@ func _input(event):
 	if event.is_action_pressed("escape"):
 		exit = true
 
+func activate_entry(title):
+	info_label.text = dex_data[current_tab].data[title].description
 
 func _update_tab():
 	tab_label.text = dex_data[current_tab].type + 's'
