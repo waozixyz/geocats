@@ -53,8 +53,9 @@ func _save_request():
 var response
 var refreshing
 func _on_request_completed(_result, response_code, _headers, body):
-	print(response_code, "a oeua")
+
 	response = parse_json(body.get_string_from_utf8())
+	print(response_code, "a oeua", response)
 	if response_code == 500:
 		Global.data.login_msg = 500
 		SceneChanger.change_scene("TitleScreen")
@@ -78,4 +79,3 @@ func _on_request_completed(_result, response_code, _headers, body):
 			if response.has("user"):
 				Global.user = response["user"]
 		refreshing = false
-	print(response_code)

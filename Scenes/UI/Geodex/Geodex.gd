@@ -53,7 +53,7 @@ func _process(delta):
 
 	if not API.refreshing and request and not repeat_request:
 		var data_size = request.get_downloaded_bytes()
-		if data_size > 0 and API.response and request.get_body_size():
+		if data_size > 0 and API.response and request.get_http_client_status() == 0:
 			_check_response(API.response)
 			API.remove_child(request)
 			request = null
@@ -140,7 +140,7 @@ func activate_entry(title):
 			current_editions.text += " " + str(edition)
 			
 	# update image
-	var file_name = title.replace(" ", "") 
+	var file_name = title.replace(" ", "_").to_lower() 
 	var type = current_dex.type
 	var file2Check = File.new()
 	var file_path = "res://Assets/NFT/" + type + "/" + file_name
@@ -152,6 +152,7 @@ func activate_entry(title):
 		image = AnimatedSprite.new()
 		image.frames = load(file_path + ".tres")
 		image.play("default")
+		print(file_path)
 		frame = image.frames.get_frame("default", 0)
 	elif png_exists:
 		image = Sprite.new()
@@ -165,7 +166,6 @@ func activate_entry(title):
 		var h = frame.get_height()
 		var size = w if h < w else h
 		var sc = image_panel.rect_size.y / (size * 1.2)
-		print(sc, image_panel.rect_size.x)
 		image.scale = Vector2(sc, sc)
 		image_container.add_child(image)
 
