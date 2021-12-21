@@ -6,6 +6,7 @@ onready var tab_label = $Control/Category/Label
 onready var entry_template = $Control/EntryTemplate
 onready var info_label = $Control/InfoPanel/RichTextLabel
 onready var image_container = $Control/ImagePanel/Container
+onready var image_panel = $Control/ImagePanel
 onready var current_editions = $Control/CurrentEditions
 onready var edition_label = $Control/EditionLabel
 var current_tab = 0
@@ -48,17 +49,17 @@ func _process(delta):
 			exit = false
 	elif control.modulate.a < 1:
 		control.modulate.a += delta
-	
-	if repeat_request and API.ready_to_repeat:
-		_request_geodex()
-		repeat_request = false	
-	if request:
+		
+
+	if not API.refreshing and request and not repeat_request:
 		var data_size = request.get_downloaded_bytes()
-		if data_size > 0 and API.response:
+		if data_size > 0 and API.response and request.get_body_size():
 			_check_response(API.response)
 			API.remove_child(request)
 			request = null
-
+	if repeat_request:
+		_request_geodex()
+		repeat_request = false
 var geocats = {}
 func _update_nfts(remote_data):
 	for remote_nft in remote_data:
@@ -146,21 +147,29 @@ func activate_entry(title):
 	var tres_exists = file2Check.file_exists(file_path + ".tres")
 	var png_exists = file2Check.file_exists(file_path + ".png")
 	var image
+	var frame
 	if tres_exists:
 		image = AnimatedSprite.new()
 		image.frames = load(file_path + ".tres")
 		image.play("default")
+		frame = image.frames.get_frame("default", 0)
 	elif png_exists:
 		image = Sprite.new()
 		image.texture = load(file_path + ".png")
+		frame = image
 	else:
 		# no resource found
 		printerr("no image found for " + title)
-	if image:
-		image.scale = Vector2(13, 13)
+	if image and frame:
+		var w = frame.get_width()
+		var h = frame.get_height()
+		var size = w if h < w else h
+		var sc = image_panel.rect_size.y / (size * 1.2)
+		print(sc, image_panel.rect_size.x)
+		image.scale = Vector2(sc, sc)
 		image_container.add_child(image)
 
-	
+
 	
 func _update_tab():
 	tab_label.text = dex_data[current_tab].type + 's'

@@ -65,11 +65,10 @@ __meta__ = {
 }
 
 [node name="Cat" type="TextureRect" parent="Control/ImagePanel"]
-margin_left = 5.0
-margin_top = 3.0
-margin_right = 28.0
-margin_bottom = 19.0
-rect_scale = Vector2( 14, 14 )
+margin_left = -1.0
+margin_right = 27.0
+margin_bottom = 20.0
+rect_scale = Vector2( 12, 12 )
 texture = ExtResource( 11 )
 stretch_mode = 4
 __meta__ = {

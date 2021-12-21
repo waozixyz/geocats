@@ -42,6 +42,7 @@ func _show_nft(nft_id, nft, new = false):
 		anim = Sprite.new()
 		anim.texture = load("res://Assets/NFTs/" + file_name + ".png")
 		anim.scale = Vector2(10, 10)
+		print(anim.texture.width)
 	image_panel.add_child(anim)
 	
 	# show location panel

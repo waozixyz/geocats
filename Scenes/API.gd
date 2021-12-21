@@ -51,28 +51,31 @@ func _save_request():
 	last_path = current_path
 	
 var response
-var ready_to_repeat
+var refreshing
 func _on_request_completed(_result, response_code, _headers, body):
-	ready_to_repeat = false
+	print(response_code, "a oeua")
 	response = parse_json(body.get_string_from_utf8())
 	if response_code == 500:
 		Global.data.login_msg = 500
 		SceneChanger.change_scene("TitleScreen")
+		refreshing = true
 	if response_code == 422:
 		# signature has expired
 		refresh_token()
+		refreshing = true
 	elif response_code == 405:
 		# method not allowed
 		Global.data.login_msg = 405
 		SceneChanger.change_scene("TitleScreen")
+		refreshing = true
 	elif response_code == 200:
 		if response:
 			if response.has("jwt"):
 				Global.data.access_token = response["jwt"]
-				ready_to_repeat = true
+
 			if response.has("jwt_refresh"):
 				Global.data.refresh_token = response["jwt_refresh"]
 			if response.has("user"):
 				Global.user = response["user"]
-			
-	print(response, response_code)
+		refreshing = false
+	print(response_code)
