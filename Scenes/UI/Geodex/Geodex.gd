@@ -5,7 +5,9 @@ onready var entry_container = $Control/Entries/ScrollContainer/VBoxContainer
 onready var tab_label = $Control/Category/Label
 onready var entry_template = $Control/EntryTemplate
 onready var info_label = $Control/InfoPanel/RichTextLabel
-
+onready var image_container = $Control/ImagePanel/Container
+onready var current_editions = $Control/CurrentEditions
+onready var edition_label = $Control/EditionLabel
 var current_tab = 0
 var dex_data = {
 	0: {
@@ -29,10 +31,14 @@ var dex_data = {
 var request: HTTPRequest
 func _ready():
 	control.modulate.a = 0
-	request = API.get_request("/get-nfts")
 	_update_tab()
-
+	_request_geodex()
 var exit
+var repeat_request
+
+func _request_geodex():
+	request = API.get_request("/get-nfts")
+	
 func _process(delta):
 	if exit:
 		if control.modulate.a > 0:
@@ -42,7 +48,10 @@ func _process(delta):
 			exit = false
 	elif control.modulate.a < 1:
 		control.modulate.a += delta
-
+	
+	if repeat_request and API.ready_to_repeat:
+		_request_geodex()
+		repeat_request = false	
 	if request:
 		var data_size = request.get_downloaded_bytes()
 		if data_size > 0 and API.response:
@@ -57,7 +66,7 @@ func _update_nfts(remote_data):
 			var n = parse_json(remote_nft['ipfs_data_json'])
 			for id in dex_data:
 				var dex = dex_data[id]
-				if dex.type.to_lower() == n['Type'].to_lower():
+				if dex.type.to_lower() == n['Type'].to_lower() or dex.type == "Geotreasure" and n['Type'] == "Geomonster":
 					var title = n['Title'].split(',')[0]
 					dex.data[title] = {}
 					var nft = dex.data[title]
@@ -69,9 +78,12 @@ func _update_nfts(remote_data):
 							nft['edition'] = [n['edition']]
 
 func _update_entries():
+	# clear entry container
 	for n in entry_container.get_children():
 		entry_container.remove_child(n)
 		n.queue_free()
+	_clear_content()
+	# load new entries
 	var dex = dex_data[current_tab]
 	for nft in dex.data:
 		var entry = entry_template.duplicate()
@@ -79,6 +91,7 @@ func _update_entries():
 		var entry_label = entry.get_node('Label')
 		entry_label.text = nft
 		entry_container.add_child(entry)
+		
 func _check_response(res):
 	# api set location finished
 	if res.has('data'):
@@ -91,6 +104,7 @@ func _check_response(res):
 			pass
 	else:
 		printerr('no data received for geodex')
+		repeat_request = true
 
 	
 func _on_Exit_pressed():
@@ -99,10 +113,55 @@ func _on_Exit_pressed():
 func _input(event):
 	if event.is_action_pressed("escape"):
 		exit = true
-
+func _clear_content():
+	# clear image container
+	for n in image_container.get_children():
+		image_container.remove_child(n)
+		n.queue_free()
+	
+	# clear description
+	info_label.text = ""
+	# clear editions
+	edition_label.visible = false
+	current_editions.text = ""
 func activate_entry(title):
-	info_label.text = dex_data[current_tab].data[title].description
+	var current_dex = dex_data[current_tab]
+	var current_nft = current_dex.data[title]
+	_clear_content()
+	# update description
+	info_label.text = current_nft.description
+	# update editions
+	if current_nft.has('edition'):
+		edition_label.visible = true
+		for edition in current_nft.edition:
+			if current_editions.text != "":
+				current_editions.text += ","
+			current_editions.text += " " + str(edition)
+			
+	# update image
+	var file_name = title.replace(" ", "") 
+	var type = current_dex.type
+	var file2Check = File.new()
+	var file_path = "res://Assets/NFT/" + type + "/" + file_name
+	var tres_exists = file2Check.file_exists(file_path + ".tres")
+	var png_exists = file2Check.file_exists(file_path + ".png")
+	var image
+	if tres_exists:
+		image = AnimatedSprite.new()
+		image.frames = load(file_path + ".tres")
+		image.play("default")
+	elif png_exists:
+		image = Sprite.new()
+		image.texture = load(file_path + ".png")
+	else:
+		# no resource found
+		printerr("no image found for " + title)
+	if image:
+		image.scale = Vector2(13, 13)
+		image_container.add_child(image)
 
+	
+	
 func _update_tab():
 	tab_label.text = dex_data[current_tab].type + 's'
 	_update_entries()

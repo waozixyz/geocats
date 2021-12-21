@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/UI/Geodex/tab.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Geodex/entry_panel.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/UI/Geodex/entry_hovered.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/Geodex/tab_selected.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/UI/Geodex/Entry.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=16]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -71,6 +72,15 @@ margin_bottom = 19.0
 rect_scale = Vector2( 14, 14 )
 texture = ExtResource( 11 )
 stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Panel" parent="Control/ImagePanel"]
+margin_left = 163.0
+margin_top = 114.5
+margin_right = 163.0
+margin_bottom = 114.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -312,6 +322,29 @@ custom_fonts/font = SubResource( 2 )
 text = "NEOCAT"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditionLabel" type="Label" parent="Control"]
+margin_left = 12.0
+margin_top = 445.0
+margin_right = 92.0
+margin_bottom = 470.0
+custom_fonts/font = ExtResource( 16 )
+text = "Edition: "
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentEditions" type="Label" parent="Control"]
+margin_left = 90.0
+margin_top = 445.0
+margin_right = 332.0
+margin_bottom = 470.0
+custom_fonts/font = ExtResource( 16 )
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -14,7 +14,9 @@ func _ready():
 	else:
 		api_url = "https://geoapi.deta.dev"
 	pause_mode = PAUSE_MODE_PROCESS
-	
+
+func refresh_token():
+	get_request("/refresh", null, Global.data.refresh_token)
 func get_request(path, body = null, jwt = Global.data.access_token):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -47,34 +49,30 @@ func get_request(path, body = null, jwt = Global.data.access_token):
 func _save_request():
 	last_body = current_body
 	last_path = current_path
-
-func repeat_request():
-	if last_path and last_body:
-		get_request(last_path, last_body)
-		last_path = ""
-		last_body = ""
+	
 var response
+var ready_to_repeat
 func _on_request_completed(_result, response_code, _headers, body):
+	ready_to_repeat = false
 	response = parse_json(body.get_string_from_utf8())
 	if response_code == 500:
 		Global.data.login_msg = 500
 		SceneChanger.change_scene("TitleScreen")
-		_save_request()
 	if response_code == 422:
 		# signature has expired
-		_save_request()
-		get_request("/refresh", null, Global.data.refresh_token)
+		refresh_token()
 	elif response_code == 405:
-		# method not found
+		# method not allowed
 		Global.data.login_msg = 405
 		SceneChanger.change_scene("TitleScreen")
-		_save_request()
 	elif response_code == 200:
 		if response:
 			if response.has("jwt"):
 				Global.data.access_token = response["jwt"]
+				ready_to_repeat = true
 			if response.has("jwt_refresh"):
 				Global.data.refresh_token = response["jwt_refresh"]
 			if response.has("user"):
 				Global.user = response["user"]
-
+			
+	print(response, response_code)

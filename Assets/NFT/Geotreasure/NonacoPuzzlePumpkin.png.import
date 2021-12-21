@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pumpkin.png-c6ecd7ac5c6e968ca2630fd7a9b29d3c.stex"
+path="res://.import/NonacoPuzzlePumpkin.png-1e887b5d8b201f8e99c1434557e216cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NFT/Geotreasure/Pumpkin.png"
-dest_files=[ "res://.import/Pumpkin.png-c6ecd7ac5c6e968ca2630fd7a9b29d3c.stex" ]
+source_file="res://Assets/NFT/Geotreasure/NonacoPuzzlePumpkin.png"
+dest_files=[ "res://.import/NonacoPuzzlePumpkin.png-1e887b5d8b201f8e99c1434557e216cb.stex" ]
 
 [params]
 
