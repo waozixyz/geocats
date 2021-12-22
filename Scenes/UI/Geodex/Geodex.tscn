@@ -34,6 +34,8 @@ font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 22
+extra_spacing_top = -2
+extra_spacing_bottom = -10
 font_data = SubResource( 5 )
 
 [node name="Geodex" type="CanvasLayer"]
@@ -315,12 +317,13 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/EntryTemplate"]
 margin_left = 8.0
-margin_right = 272.0
+margin_right = 258.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "NEOCAT"
+text = "Ta Miu, Crown Prince Thutmose"
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

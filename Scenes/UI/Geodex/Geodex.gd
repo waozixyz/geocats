@@ -9,6 +9,8 @@ onready var image_container = $Control/ImagePanel/Container
 onready var image_panel = $Control/ImagePanel
 onready var current_editions = $Control/CurrentEditions
 onready var edition_label = $Control/EditionLabel
+onready var image_empty_cat = $Control/ImagePanel/Cat
+
 var current_tab = 0
 var dex_data = {
 	0: {
@@ -67,17 +69,19 @@ func _update_nfts(remote_data):
 			var n = parse_json(remote_nft['ipfs_data_json'])
 			for id in dex_data:
 				var dex = dex_data[id]
-				if dex.type.to_lower() == n['Type'].to_lower() or dex.type == "Geotreasure" and n['Type'] == "Geomonster":
-					var title = n['Title'].split(',')[0]
-					dex.data[title] = {}
-					var nft = dex.data[title]
-					nft['description'] = n['Description']
-					if n.has('edition'):
-						if nft.has('edition'):
-							nft['edition'].append(n['edition'])
-						else:
-							nft['edition'] = [n['edition']]
-
+				if n.has('Type'):
+					if dex.type.to_lower() == n['Type'].to_lower() or dex.type == "Geotreasure" and n['Type'] == "Geomonster":
+						var title = n['Title']
+						dex.data[title] = {}
+						var nft = dex.data[title]
+						nft['description'] = n['Description']
+						if n.has('edition'):
+							if nft.has('edition'):
+								nft['edition'].append(n['edition'])
+							else:
+								nft['edition'] = [n['edition']]
+				else:
+					printerr('no type field found: ', n)
 func _update_entries():
 	# clear entry container
 	for n in entry_container.get_children():
@@ -125,6 +129,7 @@ func _clear_content():
 	# clear editions
 	edition_label.visible = false
 	current_editions.text = ""
+	image_empty_cat.visible = true
 func activate_entry(title):
 	var current_dex = dex_data[current_tab]
 	var current_nft = current_dex.data[title]
@@ -140,7 +145,8 @@ func activate_entry(title):
 			current_editions.text += " " + str(edition)
 			
 	# update image
-	var file_name = title.replace(" ", "_").to_lower() 
+	var file_name = title.replace('#', '').replace('...','').replace(',', '').replace("- ", "").replace(" ", "_").replace("'", "").replace("&", "and").to_lower() 
+	print(file_name)
 	var type = current_dex.type
 	var file2Check = File.new()
 	var file_path = "res://Assets/NFT/" + type + "/" + file_name
@@ -149,19 +155,29 @@ func activate_entry(title):
 	var image
 	var frame
 	if tres_exists:
-		image = AnimatedSprite.new()
-		image.frames = load(file_path + ".tres")
-		image.play("default")
-		print(file_path)
-		frame = image.frames.get_frame("default", 0)
+		var tres = load(file_path + ".tres")
+		if tres is StreamTexture:
+			image = Sprite.new()
+			image.texture = tres
+			frame = image.texture
+		elif tres is SpriteFrames:
+			image = AnimatedSprite.new()
+			image.frames = load(file_path + ".tres")
+			image.play("default")
+			frame = image.frames.get_frame("default", 0)
+		else:
+			return
+
 	elif png_exists:
 		image = Sprite.new()
 		image.texture = load(file_path + ".png")
-		frame = image
+		frame = image.texture
 	else:
 		# no resource found
 		printerr("no image found for " + title)
+
 	if image and frame:
+		image_empty_cat.visible = false
 		var w = frame.get_width()
 		var h = frame.get_height()
 		var size = w if h < w else h
