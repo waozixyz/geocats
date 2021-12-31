@@ -1,0 +1,225 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/door/door_closed.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Music/9_Caves.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/door/door_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/FG.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/BG.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/stars_space.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/far_bg.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/door/door_1.png" type="Texture" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 16 ), ExtResource( 8 ), null ],
+"loop": false,
+"name": "open",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.8, 20 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 1579.26 )
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends InteractButton
+
+
+func _input(event):
+	if _can_interact():
+		object.visible = false
+		if name == \"GoToDesert\":
+			SceneChanger.change_scene(\"GeoLodge\", 2, \"WoodDoorLatchOpen1\", 1.5)
+"
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 34.2662, 45.8725 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 12.157, 98.633 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 12.157, 265.804 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 12.157, 405.496 )
+
+[node name="Caves" type="Node2D"]
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="stars" type="Sprite" parent="BelowPlayer"]
+position = Vector2( -0.2, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="sun" type="AnimatedSprite" parent="BelowPlayer"]
+position = Vector2( 803.545, 65.8 )
+scale = Vector2( 1, 1 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.1
+centered = false
+script = ExtResource( 12 )
+
+[node name="bg" type="Sprite" parent="BelowPlayer"]
+position = Vector2( -0.2, 0 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="decor" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="door" type="Area2D" parent="BelowPlayer"]
+position = Vector2( 46.8, 379.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/door"]
+position = Vector2( -0.599995, 0 )
+frames = SubResource( 2 )
+animation = "open"
+frame = 3
+speed_scale = 0.5
+playing = true
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BelowPlayer/door"]
+position = Vector2( 46.2, 48 )
+shape = SubResource( 3 )
+
+[node name="Default" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
+position = Vector2( 0, -2 )
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 47.3167, 411 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 1200
+limit_bottom = 600
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="fg_base" type="Sprite" parent="AbovePlayer"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Ground" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+
+[node name="Platforms" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="End" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 22, 83 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2( -41, 1447.68 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="End"]
+position = Vector2( 5977, 1370.55 )
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "Music"
+
+[node name="GoToDesert" type="Area2D" parent="."]
+position = Vector2( 28.5323, 404.255 )
+script = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToDesert"]
+position = Vector2( 5904.87, 1920.34 )
+shape = SubResource( 6 )
+
+[node name="Button" type="Sprite" parent="GoToDesert"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 14 )
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder2" type="Area2D" parent="Ladders"]
+position = Vector2( 3614.83, 721.517 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2( 0, -2.633 )
+shape = SubResource( 7 )
+
+[node name="Ladder3" type="Area2D" parent="Ladders"]
+position = Vector2( 2015.37, 2180.59 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2( 0, 4 )
+shape = SubResource( 8 )
+
+[node name="Ladder4" type="Area2D" parent="Ladders"]
+position = Vector2( 4099.38, 1771.38 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
+shape = SubResource( 9 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]
