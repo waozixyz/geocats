@@ -80,5 +80,5 @@ func _stop_playing(stream):
 	remove_child(stream)
 	if touching and object:
 		object.visible = true
-		
+	
 	

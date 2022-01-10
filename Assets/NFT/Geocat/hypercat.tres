@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=10 format=2]
 
-[ext_resource path="res://Assets/NFT/Geocat/hyper_cat.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NFT/Geocat/hypercat.png" type="Texture" id=1]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )

@@ -56,17 +56,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ImagePanel" type="TextureRect" parent="Control"]
+[node name="ImageButton" type="TextureButton" parent="Control"]
 margin_left = 6.0
 margin_top = 47.0
 margin_right = 341.0
 margin_bottom = 280.0
-texture = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cat" type="TextureRect" parent="Control/ImagePanel"]
+[node name="Cat" type="TextureRect" parent="Control/ImageButton"]
 margin_left = -1.0
 margin_right = 27.0
 margin_bottom = 20.0
@@ -77,7 +77,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Container" type="Panel" parent="Control/ImagePanel"]
+[node name="Container" type="Panel" parent="Control/ImageButton"]
 margin_left = 163.0
 margin_top = 114.5
 margin_right = 163.0
@@ -115,6 +115,29 @@ margin_bottom = 474.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="EditionLabel" type="Label" parent="Control"]
+margin_left = 12.0
+margin_top = 445.0
+margin_right = 102.0
+margin_bottom = 470.0
+custom_fonts/font = ExtResource( 16 )
+text = "Edition: "
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentEditions" type="Label" parent="Control"]
+margin_left = 90.0
+margin_top = 445.0
+margin_right = 332.0
+margin_bottom = 470.0
+custom_fonts/font = ExtResource( 16 )
+uppercase = true
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -328,29 +351,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EditionLabel" type="Label" parent="Control"]
-margin_left = 12.0
-margin_top = 445.0
-margin_right = 92.0
-margin_bottom = 470.0
-custom_fonts/font = ExtResource( 16 )
-text = "Edition: "
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CurrentEditions" type="Label" parent="Control"]
-margin_left = 90.0
-margin_top = 445.0
-margin_right = 332.0
-margin_bottom = 470.0
-custom_fonts/font = ExtResource( 16 )
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
+[connection signal="pressed" from="Control/ImageButton" to="." method="_on_ImageButton_pressed"]
 [connection signal="pressed" from="Control/Category/TabLeft" to="." method="_on_TabLeft_pressed"]
 [connection signal="pressed" from="Control/Category/TabRight" to="." method="_on_TabRight_pressed"]
 [connection signal="pressed" from="Control/Exit" to="." method="_on_Exit_pressed"]

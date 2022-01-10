@@ -8,6 +8,8 @@ var last_path
 var current_body
 var last_body
 
+var requests = {}
+	
 func _ready():
 	if Global.debug:
 		api_url = "https://geodump.deta.dev"
@@ -16,7 +18,8 @@ func _ready():
 	pause_mode = PAUSE_MODE_PROCESS
 
 func refresh_token():
-	get_request("/refresh", null, Global.data.refresh_token)
+	get_request("/refresh", null, Global.data.refresh_token
+
 func get_request(path, body = null, jwt = Global.data.access_token):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)

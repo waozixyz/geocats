@@ -5,11 +5,11 @@ onready var entry_container = $Control/Entries/ScrollContainer/VBoxContainer
 onready var tab_label = $Control/Category/Label
 onready var entry_template = $Control/EntryTemplate
 onready var info_label = $Control/InfoPanel/RichTextLabel
-onready var image_container = $Control/ImagePanel/Container
-onready var image_panel = $Control/ImagePanel
 onready var current_editions = $Control/CurrentEditions
 onready var edition_label = $Control/EditionLabel
-onready var image_empty_cat = $Control/ImagePanel/Cat
+onready var image_empty_cat = $Control/ImageButton/Cat
+onready var image_container = $Control/ImageButton/Container
+onready var image_button = $Control/ImageButton
 
 var current_tab = 0
 var dex_data = {
@@ -72,14 +72,20 @@ func _update_nfts(remote_data):
 				if n.has('Type'):
 					if dex.type.to_lower() == n['Type'].to_lower() or dex.type == "Geotreasure" and n['Type'] == "Geomonster":
 						var title = n['Title']
-						dex.data[title] = {}
+						if not dex.data.has(title):
+							dex.data[title] = {}
 						var nft = dex.data[title]
 						nft['description'] = n['Description']
+
 						if n.has('edition'):
-							if nft.has('edition'):
-								nft['edition'].append(n['edition'])
+							var ed = n['edition']
+							if not nft.has('edition'):
+								nft['edition'] = {}
+							
+							if nft['edition'].has(ed):
+								nft['edition'][ed] += 1
 							else:
-								nft['edition'] = [n['edition']]
+								nft['edition'][ed] = 1
 				else:
 					printerr('no type field found: ', n)
 func _update_entries():
@@ -130,7 +136,16 @@ func _clear_content():
 	edition_label.visible = false
 	current_editions.text = ""
 	image_empty_cat.visible = true
+
+func _get_filename(title):
+	title = title.to_lower()
+	for chr in ["#", ".", ",", "- ", "'"]:
+		title = title.replace(chr, '')
+	return title.replace(" ", "_").replace("&", "and")
+
+var active_title
 func activate_entry(title):
+	active_title = title
 	var current_dex = dex_data[current_tab]
 	var current_nft = current_dex.data[title]
 	_clear_content()
@@ -139,14 +154,17 @@ func activate_entry(title):
 	# update editions
 	if current_nft.has('edition'):
 		edition_label.visible = true
-		for edition in current_nft.edition:
+		var editions = current_nft.edition
+		for edition in editions:
 			if current_editions.text != "":
 				current_editions.text += ","
+			
 			current_editions.text += " " + str(edition)
+			if editions[edition] > 1:
+				current_editions.text += " (" + str(editions[edition]) + ")"
 			
 	# update image
-	var file_name = title.replace('#', '').replace('...','').replace(',', '').replace("- ", "").replace(" ", "_").replace("'", "").replace("&", "and").to_lower() 
-	print(file_name)
+	var file_name = _get_filename(title)
 	var type = current_dex.type
 	var file2Check = File.new()
 	var file_path = "res://Assets/NFT/" + type + "/" + file_name
@@ -166,7 +184,7 @@ func activate_entry(title):
 			image.play("default")
 			frame = image.frames.get_frame("default", 0)
 		else:
-			return
+			printerr("texture file broken: ", tres)
 
 	elif png_exists:
 		image = Sprite.new()
@@ -181,7 +199,7 @@ func activate_entry(title):
 		var w = frame.get_width()
 		var h = frame.get_height()
 		var size = w if h < w else h
-		var sc = image_panel.rect_size.y / (size * 1.2)
+		var sc = image_button.rect_size.y / (size * 1.2)
 		image.scale = Vector2(sc, sc)
 		image_container.add_child(image)
 
@@ -203,3 +221,12 @@ func _on_TabRight_pressed():
 	if current_tab > dex_data.size() - 1:
 		current_tab = 0
 	_update_tab()
+
+
+func _on_ImageButton_pressed():
+	var current_dex = dex_data[current_tab]
+	print(active_title)
+	if current_dex.data.has(active_title):
+		var current_nft = current_dex.data[active_title]
+		print(current_nft)
+	

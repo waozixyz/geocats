@@ -42,6 +42,7 @@ corner_radius_bottom_left = 9
 script = ExtResource( 3 )
 
 [node name="Main" type="Panel" parent="."]
+visible = false
 margin_left = 54.0
 margin_top = 18.0
 margin_right = 567.0

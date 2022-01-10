@@ -75,6 +75,12 @@ var show_chat = true
 var active = false
 var nft_ids = []
 func _process(_delta):
+	if request:
+		var body_size = request.get_body_size()
+		if body_size > 0:
+			print(API.response)
+			API.remove_child(request)
+			request = null
 #	var res_code = API.response_code
 #	if res_code == 405:
 #		login.visible = true
@@ -129,9 +135,9 @@ func _process(_delta):
 #	else:
 #		player.enable("nft")
 	pass
+var request
 func reward(nft_id, chat = true):
-	if not nft_ids.has(nft_id):
-		nft_ids.append(nft_id)
+	request = API.get_request("/claim-nft", {"nft-id": nft_id})
 	show_chat = chat
 
 	

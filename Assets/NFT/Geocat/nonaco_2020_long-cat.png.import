@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nonaco_2020_longcat.png-1703330a9e720464eee0b17bf6832c2e.stex"
+path="res://.import/nonaco_2020_long-cat.png-860f934fa6abc78cdcaa59062140c733.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NFT/Geocat/nonaco_2020_longcat.png"
-dest_files=[ "res://.import/nonaco_2020_longcat.png-1703330a9e720464eee0b17bf6832c2e.stex" ]
+source_file="res://Assets/NFT/Geocat/nonaco_2020_long-cat.png"
+dest_files=[ "res://.import/nonaco_2020_long-cat.png-860f934fa6abc78cdcaa59062140c733.stex" ]
 
 [params]
 

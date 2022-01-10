@@ -40,7 +40,7 @@
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/note_single.png" type="Texture" id=39]
 [ext_resource path="res://Scenes/Levels/3_GeoCity/NoteSpr.gd" type="Script" id=40]
 [ext_resource path="res://Assets/Levels/3_GeoCity/CreepyCity/medium_pumpkin_sptritesheet.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/City_Snowman.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/3_GeoCity/SnowyCity/city_tree.png" type="Texture" id=42]
 [ext_resource path="res://Assets/Music/snowy_swing.ogg" type="AudioStream" id=43]
 [ext_resource path="res://Scenes/Entities/Particles/Snow.tscn" type="PackedScene" id=44]
 
