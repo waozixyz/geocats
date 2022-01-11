@@ -1,8 +1,9 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/door/door_closed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/temper.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Music/9_Caves.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_3.png" type="Texture" id=7]
@@ -15,6 +16,8 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/far_bg.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/door/door_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/taur.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/liet.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -24,7 +27,442 @@ animations = [ {
 "speed": 90.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="GDScript" id=2]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 28, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 11, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 4 )
+region = Rect2( 14, 11, 14, 11 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 28.8616, 23.1106 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=61]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 17 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 17 )
+region = Rect2( 28, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 17 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="SpriteFrames" id=67]
+animations = [ {
+"frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 64 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=68]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 28.8616, 23.1106 )
+
+[sub_resource type="RectangleShape2D" id=70]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=71]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 15, 12 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 0, 15, 12 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 0, 15, 12 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 12, 15, 12 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 12, 15, 12 )
+
+[sub_resource type="SpriteFrames" id=77]
+animations = [ {
+"frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=78]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=79]
+extents = Vector2( 28.8616, 23.1106 )
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
@@ -37,79 +475,79 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 12.1869, 10.7175 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 169, 73 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 44.9996, 49 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 59, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 19, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 79, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 49, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 84, 18.0001 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 30, 91.9999 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 155, 18.0001 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 82.9985, 14 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 74.9995, 7 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 143, 5.99988 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 159, 5.99988 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 159, 15.9999 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 294, 15.9999 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 52.9998, 61.9998 )
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 91, 4 )
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 22.0001, 61 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 40, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 58.9999, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=46]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 20.0001, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=47]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 13.9999, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 10, 1579.26 )
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=37]
 script/source = "extends InteractButton
 
 
@@ -120,69 +558,11 @@ func _input(event):
 			SceneChanger.change_scene(\"GeoLodge\", 2, \"WoodDoorLatchOpen1\", 1.5)
 "
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 34.2662, 45.8725 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 12.157, 98.633 )
-
-[sub_resource type="GDScript" id=36]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
-[sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 25, 136 )
-
-[sub_resource type="GDScript" id=38]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 19, 108 )
+extents = Vector2( 12.157, 98.633 )
 
 [sub_resource type="GDScript" id=40]
 script/source = "extends Area2D
@@ -211,7 +591,94 @@ func _on_body_exited(body):
 "
 
 [sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 25, 136 )
+
+[sub_resource type="GDScript" id=42]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 19, 108 )
+
+[sub_resource type="GDScript" id=44]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 19, 270 )
+
+[sub_resource type="GDScript" id=46]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 34, 360 )
 
 [sub_resource type="GDScript" id=48]
 script/source = "extends Area2D
@@ -240,38 +707,9 @@ func _on_body_exited(body):
 "
 
 [sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 34, 360 )
-
-[sub_resource type="GDScript" id=30]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
-[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 25, 618 )
 
-[sub_resource type="GDScript" id=31]
+[sub_resource type="GDScript" id=50]
 script/source = "extends Area2D
 
 func _ready():
@@ -297,69 +735,11 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 25, 166 )
 
-[sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 31, 349.385 )
-
-[sub_resource type="GDScript" id=51]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=52]
-extents = Vector2( 27, 552 )
-
-[sub_resource type="GDScript" id=33]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 31, 302 )
+extents = Vector2( 31, 349.385 )
 
 [sub_resource type="GDScript" id=53]
 script/source = "extends Area2D
@@ -388,22 +768,78 @@ func _on_body_exited(body):
 "
 
 [sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 27, 552 )
+
+[sub_resource type="GDScript" id=55]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 31, 302 )
+
+[sub_resource type="GDScript" id=57]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 31, 53 )
 
-[node name="Caves" type="Node2D"]
+[node name="DesertOutpost" type="Node2D"]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
 
 [node name="stars" type="Sprite" parent="BelowPlayer"]
 position = Vector2( -0.2, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 centered = false
 
 [node name="sun" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 803.545, 65.8 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 1 )
 frame = 1
 speed_scale = 0.1
@@ -418,6 +854,89 @@ centered = false
 [node name="decor" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 10 )
 centered = false
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Letharia" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 5159.53, 404.255 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Letharia"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 8 )
+animation = "idle"
+frame = 22
+playing = true
+
+[node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
+script = SubResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia/LethariaArea2D"]
+position = Vector2( -1.00005, 1.00002 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 11 )
+
+[node name="Taur" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 4406.7, 1500.37 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 61 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Taur"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 67 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="TaurArea2D" type="Area2D" parent="NPC/Taur"]
+script = SubResource( 68 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Taur/TaurArea2D"]
+position = Vector2( -1.00005, 1.00002 )
+shape = SubResource( 69 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Taur"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 70 )
+
+[node name="Liet" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 4406.7, 1500.37 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 71 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Liet"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 77 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="LietArea2D" type="Area2D" parent="NPC/Liet"]
+script = SubResource( 78 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet/LietArea2D"]
+position = Vector2( -1.00005, 1.00002 )
+shape = SubResource( 79 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 80 )
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
@@ -444,11 +963,10 @@ centered = false
 
 [node name="door" type="Area2D" parent="AbovePlayer"]
 position = Vector2( 46.8, 379.8 )
-scale = Vector2( 1, 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AbovePlayer/door"]
 position = Vector2( -0.599995, 0 )
-frames = SubResource( 2 )
+frames = SubResource( 12 )
 animation = "open"
 frame = 3
 speed_scale = 0.5
@@ -457,7 +975,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/door"]
 position = Vector2( 345.972, -268.557 )
-shape = SubResource( 3 )
+shape = SubResource( 13 )
 
 [node name="Ground" type="StaticBody2D" parent="." groups=[
 "end",
@@ -474,9 +992,7 @@ polygon = PoolVector2Array( -5.88358, 0.960022, -27.2, 108, 582.4, 253.6, 1006.4
 position = Vector2( 2084, 1516.8 )
 polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328.8, 874.4, 324, 914.4, 304.8, 980, 288.8, 1042.4, 269.6, 1125.6, 264.8, 1167.2, 260, 1214.4, 248.8, 1276.8, 248, 1307.2, 233.6, 1332.8, 233.6, 1362.4, 221.6, 1447.2, 194.4, 1490.4, 189.6, 1545.6, 193.6, 1603.2, 184.8, 1601.6, -30.4003, 1580.8, -48.8, 1379.2, 8, 1221.6, -108.8, 1221.6, -340.8, 1341.6, -340.8, 1342.4, -256.8, 1496, -256.8, 1496, -366.4, 1528, -384, 1533.6, -436, 1488, -472.8, 1404, -479.2, 1358.4, -470.4, 1342.4, -439.2, 1343.2, -380, 1246.4, -380, 1172.8, -382.4, 1162.4, -156.8, 1126.4, -188, 1128, -384, 1155.2, -435.2, 1227.2, -525.6, 1348, -574.4, 1461.6, -563.2, 1569.6, -494.4, 1606.4, -438.4, 1633.6, -364, 1633.6, -121.6, 1635.2, 186.4, 1546.4, 212, 1465.6, 204, 1352.8, 246.4, 1061.6, 278.4, 960, 301.6, 841.6, 345.6, 784.8, 357.6, 147.2, 354.4 )
 
-[node name="Platforms" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Platforms" type="StaticBody2D" parent="."]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
@@ -484,145 +1000,145 @@ collision_mask = 7
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1652, 546.4 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 10 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1404, 347.2 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 11 )
+shape = SubResource( 15 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1620.8, 316 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 22 )
+shape = SubResource( 16 )
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1507.2, 316 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 25 )
+shape = SubResource( 17 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1636.8, 248 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 23 )
+shape = SubResource( 18 )
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1483.2, 248 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 26 )
+shape = SubResource( 19 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2115.2, 850.4 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 24 )
+shape = SubResource( 20 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2228.8, 872.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 15 )
+shape = SubResource( 21 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2260, 1018.4 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 16 )
+shape = SubResource( 22 )
 one_way_collision = true
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1577.6, 1800 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 34 )
+shape = SubResource( 23 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2172, 1673.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 35 )
+shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2249.6, 1068.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 17 )
+shape = SubResource( 25 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2004, 1140.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 18 )
+shape = SubResource( 26 )
 one_way_collision = true
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2004, 1156.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 18 )
+shape = SubResource( 26 )
 one_way_collision = true
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2003.2, 1264.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 20 )
+shape = SubResource( 27 )
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1552.8, 1308.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 21 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1897.6, 861.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 19 )
+shape = SubResource( 29 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 903.2, 631.2 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 42 )
+shape = SubResource( 30 )
 one_way_collision = true
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 814.4, 604 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 43 )
+shape = SubResource( 31 )
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 864, 589.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 44 )
+shape = SubResource( 32 )
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 526.4, 441.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 45 )
+shape = SubResource( 33 )
 one_way_collision = true
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 552.8, 348 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 46 )
+shape = SubResource( 34 )
 one_way_collision = true
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 480.8, 324.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 46 )
+shape = SubResource( 34 )
 one_way_collision = true
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 639.2, 408 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 46 )
+shape = SubResource( 34 )
 one_way_collision = true
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 418.4, 536 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 47 )
+shape = SubResource( 35 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms"]
 position = Vector2( 2556.8, 627.2 )
@@ -673,11 +1189,11 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -41, 1447.68 )
-shape = SubResource( 4 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="End"]
 position = Vector2( 5977, 1370.55 )
-shape = SubResource( 4 )
+shape = SubResource( 36 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -686,11 +1202,11 @@ bus = "Music"
 
 [node name="GoToDesert" type="Area2D" parent="."]
 position = Vector2( 28.5323, 404.255 )
-script = SubResource( 5 )
+script = SubResource( 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToDesert"]
 position = Vector2( 5904.87, 1920.34 )
-shape = SubResource( 6 )
+shape = SubResource( 38 )
 
 [node name="Button" type="Sprite" parent="GoToDesert"]
 visible = false
@@ -708,36 +1224,10 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 position = Vector2( 0, -2.633 )
-shape = SubResource( 7 )
+shape = SubResource( 39 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 2015, 2071 )
-collision_layer = 7
-collision_mask = 7
-script = SubResource( 36 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
-position = Vector2( 0, 4 )
-shape = SubResource( 37 )
-
-[node name="Ladder9" type="Area2D" parent="Ladders"]
-position = Vector2( 1135, 1473 )
-collision_layer = 7
-collision_mask = 7
-script = SubResource( 38 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder9"]
-position = Vector2( 0, 4 )
-shape = SubResource( 39 )
-
-[node name="Ladder10" type="Area2D" parent="Ladders"]
-position = Vector2( 1066, 1048 )
 collision_layer = 7
 collision_mask = 7
 script = SubResource( 40 )
@@ -745,12 +1235,51 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
 position = Vector2( 0, 4 )
 shape = SubResource( 41 )
 
+[node name="Ladder9" type="Area2D" parent="Ladders"]
+position = Vector2( 1135, 1473 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 42 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder9"]
+position = Vector2( 0, 4 )
+shape = SubResource( 43 )
+
+[node name="Ladder10" type="Area2D" parent="Ladders"]
+position = Vector2( 1066, 1048 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 44 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder10"]
+position = Vector2( 0, 4 )
+shape = SubResource( 45 )
+
 [node name="Ladder11" type="Area2D" parent="Ladders"]
 position = Vector2( 672, 904 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 46 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder11"]
+position = Vector2( 0, 4 )
+shape = SubResource( 47 )
+
+[node name="Ladder7" type="Area2D" parent="Ladders"]
+position = Vector2( 5124, 1155 )
 collision_layer = 7
 collision_mask = 7
 script = SubResource( 48 )
@@ -758,35 +1287,22 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder11"]
-position = Vector2( 0, 4 )
-shape = SubResource( 49 )
-
-[node name="Ladder7" type="Area2D" parent="Ladders"]
-position = Vector2( 5124, 1155 )
-collision_layer = 7
-collision_mask = 7
-script = SubResource( 30 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7"]
 position = Vector2( 0, 4 )
-shape = SubResource( 8 )
+shape = SubResource( 49 )
 
 [node name="Ladder8" type="Area2D" parent="Ladders"]
 position = Vector2( 5342, 435 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 31 )
+script = SubResource( 50 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder8"]
 position = Vector2( 0, 4 )
-shape = SubResource( 32 )
+shape = SubResource( 51 )
 
 [node name="Ladder4" type="Area2D" parent="Ladders"]
 position = Vector2( 4099.38, 1771.38 )
@@ -799,34 +1315,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
 position = Vector2( 0, 23 )
-shape = SubResource( 50 )
+shape = SubResource( 52 )
 
 [node name="Ladder12" type="Area2D" parent="Ladders"]
 position = Vector2( 3835, 1704 )
-collision_layer = 7
-collision_mask = 7
-script = SubResource( 51 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder12"]
-shape = SubResource( 52 )
-
-[node name="Ladder5" type="Area2D" parent="Ladders"]
-position = Vector2( 2499, 715 )
-collision_layer = 7
-collision_mask = 7
-script = SubResource( 33 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
-shape = SubResource( 9 )
-
-[node name="Ladder6" type="Area2D" parent="Ladders"]
-position = Vector2( 1935, 351 )
 collision_layer = 7
 collision_mask = 7
 script = SubResource( 53 )
@@ -834,8 +1326,32 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder12"]
 shape = SubResource( 54 )
+
+[node name="Ladder5" type="Area2D" parent="Ladders"]
+position = Vector2( 2499, 715 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 55 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
+shape = SubResource( 56 )
+
+[node name="Ladder6" type="Area2D" parent="Ladders"]
+position = Vector2( 1935, 351 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 57 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6"]
+shape = SubResource( 58 )
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
