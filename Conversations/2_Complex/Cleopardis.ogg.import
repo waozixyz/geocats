@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cleopardis.ogg-e56762d3b18d5ac8899579774f61844f.oggstr"
+
+[deps]
+
+source_file="res://Conversations/2_Complex/Cleopardis.ogg"
+dest_files=[ "res://.import/Cleopardis.ogg-e56762d3b18d5ac8899579774f61844f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

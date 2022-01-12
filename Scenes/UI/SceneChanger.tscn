@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/UI/SceneChanger.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/loading_loop.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/UI/ChatWith.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/Interact/ChatWith.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=4]
 
 [sub_resource type="DynamicFontData" id=1]

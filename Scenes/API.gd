@@ -8,8 +8,11 @@ var last_path
 var current_body
 var last_body
 
-var requests = {}
-	
+
+var current_id = 0
+var requests = []
+var current_request_id = 0
+
 func _ready():
 	if Global.debug:
 		api_url = "https://geodump.deta.dev"
@@ -17,8 +20,31 @@ func _ready():
 		api_url = "https://geoapi.deta.dev"
 	pause_mode = PAUSE_MODE_PROCESS
 
+func is_nft_available_db(nft_id):
+	return add_request("/available-nft-db", { "nft_id": nft_id })
+
+func add_request(path, body = null, jwt = Global.data.access_token):
+	current_id += 1
+	requests.append({"id": current_id, "path": path, "body": body, "jwt": jwt})
+	return current_id
+
+var current_request
+var current_response
+func _process(delta):
+	if requests.size() > 0 and requests[0].id != current_request_id:
+		var request = requests[0]
+		current_request_id = request.id
+		current_request = get_request(request.path, request.body, request.jwt)
+		
+	if not refreshing and current_request:
+		var data_size = current_request.get_downloaded_bytes()
+		if data_size > 0 and response and current_request.get_http_client_status() == 0:
+			current_response = response
+			current_request = null
+			requests.pop_front()
+	
 func refresh_token():
-	get_request("/refresh", null, Global.data.refresh_token
+	get_request("/refresh", null, Global.data.renew_token)
 
 func get_request(path, body = null, jwt = Global.data.access_token):
 	var http_request = HTTPRequest.new()
@@ -56,14 +82,12 @@ func _save_request():
 var response
 var refreshing
 func _on_request_completed(_result, response_code, _headers, body):
-
 	response = parse_json(body.get_string_from_utf8())
-	print(response_code, "a oeua", response)
 	if response_code == 500:
 		Global.data.login_msg = 500
 		SceneChanger.change_scene("TitleScreen")
 		refreshing = true
-	if response_code == 422:
+	elif response_code == 422:
 		# signature has expired
 		refresh_token()
 		refreshing = true
@@ -82,3 +106,6 @@ func _on_request_completed(_result, response_code, _headers, body):
 			if response.has("user"):
 				Global.user = response["user"]
 		refreshing = false
+	else:
+		requests.pop_front()
+		printerr(str(response_code) + ": " + str(response))

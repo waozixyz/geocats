@@ -20,7 +20,7 @@ func _process(delta):
 
 func _input(_event):
 	# when i press the interact key (e)
-	if not chat_with.started and Input.is_action_just_pressed("interact") and object.visible and not disabled:
+	if Input.is_action_just_pressed("interact") and object.visible and not disabled:
 		if touching:
 			do_something = true
 			_add_audio("Effects",name)

@@ -11,9 +11,9 @@ extends Control
 
 ##### SETUP #####
 ## Paths ##
-var dialogues_folder = 'res://Conversations' # Folder where the JSON files will be stored
-var choice_scene = load('res://Scenes/UI/Dialogue/Choice.tscn') # Base scene for que choices
+
 ## Required nodes ##
+onready var choice_scene = $Choice
 onready var frame : Node = $Frame # The container node for the dialogues.
 onready var label : Node = $Frame/RichTextLabel # The label where the text will be displayed.
 onready var choices : Node = $Frame/Choices # The container node for the choices.
@@ -142,18 +142,19 @@ func set_frame(): # Mostly aligment operations.
 	name_left.hide()
 	name_right.hide()
 
-func initiate(file_id, block = 'first'): # Load the whole dialogue into a variable
-	id = file_id
+
+func initiate(json_file, block = 'first'): # Load the whole dialogue into a variable
 	var file = File.new()
-	file.open('%s/%s.json' % [dialogues_folder, id], file.READ)
+	file.open(json_file, file.READ)
 	var json = file.get_as_text()
 	dialogue = JSON.parse(json).result
 
 	file.close()
 	if dialogue:
 		first(block) # Call the first dialogue block
+		visible = true
 	else:
-		printerr("error with dialogue: ", file_id, ".json")
+		printerr("error with dialogue: ", json_file)
 		return
 #func start_from(file_id, block): # Similar to 
 
@@ -164,7 +165,7 @@ func clean(): # Resets some variables to prevent errors.
 	pause_index = 0
 	pause_array = []
 	current_choice = 0
-	timer.wait_time = wait_time # Resets the typewriter effect delay
+	timer.wait_time = 0.01 # Resets the typewriter effect delay
 
 func not_question():
 	is_question = false
@@ -369,6 +370,9 @@ func exit():
 	for child in choices.get_children():
 		choices.remove_child(child)
 		child.propagate_call("queue_free", [])
+	visible = false
+
+
 func next():
 	if not dialogue or on_animation: # Check if is in the middle of a dialogue 
 		return
@@ -711,13 +715,14 @@ func update_variable(variables_array, current_dict):
 
 
 func _input(event): # This function can be easily replaced. Just make sure you call the function using the right parameters.
-	if event.is_action_pressed('%s' % previous_command):
-		change_choice('previous')
-	if event.is_action_pressed('%s' % next_command):
-		if not change_choice('next'):
+	if visible:
+		if event.is_action_pressed('%s' % previous_command):
+			change_choice('previous')
+		if event.is_action_pressed('%s' % next_command):
+			if not change_choice('next'):
+				next()
+		if event.is_action_pressed('%s' % continue_command):
 			next()
-	if event.is_action_pressed('%s' % continue_command):
-		next()
 
 
 func _on_Timer_timeout():

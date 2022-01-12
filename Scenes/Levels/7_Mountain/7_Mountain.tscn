@@ -19,7 +19,7 @@
 [ext_resource path="res://Assets/Music/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Levels/7_Mountain/nonabot.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/UI/Interact/InteractChat.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/7_Mountain/Telescope.gd" type="Script" id=21]
 
 [sub_resource type="AtlasTexture" id=1]

@@ -9,20 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "AreaInteract",
+"language": "GDScript",
+"path": "res://Scenes/UI/Interact/AreaInteract.gd"
+}, {
 "base": "Node2D",
 "class": "BasePlayerState",
 "language": "GDScript",
 "path": "res://Scenes/Entities/Player/BasePlayerState.gd"
 }, {
+"base": "AreaInteract",
+"class": "ChatNPC",
+"language": "GDScript",
+"path": "res://Scenes/UI/Interact/ChatNPC.gd"
+}, {
 "base": "InteractMain",
 "class": "InteractButton",
 "language": "GDScript",
 "path": "res://Scenes/UI/Interact/InteractButton.gd"
-}, {
-"base": "InteractMain",
-"class": "InteractChat",
-"language": "GDScript",
-"path": "res://Scenes/UI/Interact/InteractChat.gd"
 }, {
 "base": "Area2D",
 "class": "InteractMain",
@@ -32,7 +37,7 @@ _global_script_classes=[ {
 "base": "InteractMain",
 "class": "InteractSimple",
 "language": "GDScript",
-"path": "res://Scenes/UI/Interact/InteractSimple.gd"
+"path": "res://Scenes/UI/Interact/SimpleInteract.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "MovingBody",
@@ -55,9 +60,10 @@ _global_script_classes=[ {
 "path": "res://Scenes/Entities/Player/PlayerFSM.gd"
 } ]
 _global_script_class_icons={
+"AreaInteract": "",
 "BasePlayerState": "",
+"ChatNPC": "",
 "InteractButton": "",
-"InteractChat": "",
 "InteractMain": "",
 "InteractSimple": "",
 "MovingBody": "",
