@@ -1,0 +1,61 @@
+{
+  "first": {
+    "name": "Sand Kitten",
+    "avatar": "sand_kitten.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "Listen to me for a second!@I have something important to tell you!",
+    "next": "block_random"
+  },
+  "repeat": {
+    "type": "text",
+    "content": "Hey! There's something else you need to know!",
+    "next": "block_random"
+  },
+  "block_random": {
+    "type": "action",
+    "operation": "random",
+    "value": ["random_0", "random_1", "random_2", "random_3"]
+  },  
+  "random_0": {
+    "type": "text",
+    "content": "My cousin told me that some of these lichen are over 5000 years old!",
+    "next": "0_1"
+  },
+  "0_1": {
+    "type": "text",
+    "content": "...Will I look like a lichen when I'm that old?",
+    "next": ""
+  },
+  "random_1": {
+    "type": "text",
+    "content": "Dr. Letharia seems a bit scary at first, but she's actually quite nice.",
+    "next": "1_1"
+  },
+  "1_1": {
+    "type": "text",
+    "content": "She even gave me a pair of sand-goggles for my birthday -",
+    "next": "1_2"
+  },
+  "1_2": {
+    "type": "text",
+    "content": "It came with a note, telling me to never travel alone.",
+    "next": ""
+  }, 
+  "random_2": {
+    "type": "text",
+    "content": "Every single day my grandma makes me eat a bowl of Lichen soup.@That's why my eyes are green.",
+    "next": ""
+  },  
+  "random_3": {
+    "type": "text",
+    "content": "If you encounter a desert-tapeworm, don't even think about trying to kill it -",
+    "next": ""
+  },
+  "3_1": {
+    "type": "text",
+    "content": "No matter how many times you defeat it, it will come back to bug you.",
+    "next": ""
+  }
+}
