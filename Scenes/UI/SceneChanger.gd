@@ -121,6 +121,7 @@ func _physics_process(delta):
 	var i = AudioServer.get_bus_index("Master")
 	var volume = AudioServer.get_bus_volume_db(i)
 	if floor(Global.data.player_hp) <= 0.0:
+		print("Sup")
 		chat_with.start("feline_emergency_teleport")
 		chat_with.visible = true
 		get_tree().paused = true

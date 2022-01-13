@@ -688,7 +688,7 @@ extents = Vector2( 31, 53 )
 scale = Vector2( 5, 5 )
 
 [node name="stars" type="Sprite" parent="BelowPlayer"]
-position = Vector2( -0.2, 0 )
+position = Vector2( -1.49012e-08, 0 )
 texture = ExtResource( 13 )
 centered = false
 
@@ -724,7 +724,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 22
+frame = 21
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -751,7 +751,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Taur"]
