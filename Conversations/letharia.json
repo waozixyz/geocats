@@ -63,22 +63,22 @@
     "animation_in": "fade_in",
 
     "type": "text",
-    "content": "",
+    "content": "...",
     "next": "4"
   },
   "4": {
     "type": "text",
-    "content": "",
+    "content": "...",
     "next": "5"
   },
   "5": {
     "type": "text",
-    "content": "There are some mysterious limestone caves nearby.",
+    "content": "Luck is a mixture of opportunism and resiliance.",
     "next": "6"
   },
   "6": {
     "type": "text",
-    "content": "I haven't explored them yet, but I have a hunch there are ancient ruins down there.",
+    "content": "",
     "next": "7"
   },
   "7": {
