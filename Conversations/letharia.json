@@ -1,59 +1,74 @@
 {
   "first": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
+    "name": "Letharia",
+    "avatar": "letharia.png",
     "position": "left",
     "animation_in": "fade_in",
     "type": "text",
-    "content": "It pains me to meet one another under such sober circumstances.",
+    "content": "It's unfortunate that we're meeting under such circumstances.",
     "next": "1"
   },
   "1": {
     "type": "text",
-    "content": "Whatever, it's fine.",
+    "content": "But whatever, let's not get distracted.@Palmerston's already sent me a message detailing the situation.",
     "next": "2"
   },
   "2": {
     "type": "text",
-    "content": "Let's get this 0xoplasmosis thing taken care of so I can get back to work.",
+    "content": "...Do you know how dangerous the great litterbox is?",
     "next": "3"
   },
   "3": {
     "type": "text",
-    "content": "...",
+    "content": "I get that you're on an important mission -",
+    "next": "3_a"
+  },
+  "3_a": {
+    "type": "text",
+    "content": "but I cannot in good conscience allow you to wander aimlessly in the desert looking for clues.",
     "next": ""
   },
   "repeat": {
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "fire",
-    "true": "fire_on",
-    "false": "fire_off"
+    "variable": "knowledge",
+    "true": "knowledge_on",
+    "false": "knowledge_off"
   },
-  "fire_off": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
+  "knowledge_off": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
     "position": "left",
     "animation_in": "fade_in",
 
     "type": "text",
-    "content": "Curse these cold nights...",
+    "content": "Have you heard? The shifting sands of the Great Litterbox are unforgiving.",
+    "next": "knowledge_off_1"
+  },
+  "knowledge_off_1": {
+    "type": "text",
+    "content": "There's a digital encyclopedia installed on our main computer.",
+    "next": "knowledge_off_2"
+  },
+  "knowledge_off_2": {
+    "type": "text",
+    "content": "Talk to me again after you've researched some basic survival techniques.",
     "next": ""
   },
-  "fire_on": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
+  "knowledge_on": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
     "position": "left",
     "animation_in": "fade_in",
 
     "type": "text",
-    "content": "…What?|@You’re still here?@Thanks for getting that fire started.",
+    "content": "",
     "next": "4"
   },
   "4": {
     "type": "text",
-    "content": "Alright, I get it now.|You’re interested in adventure.|Would you like to assist me with my research?",
+    "content": "",
     "next": "5"
   },
   "5": {

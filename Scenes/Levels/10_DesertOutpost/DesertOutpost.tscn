@@ -168,7 +168,7 @@ func _input(_event):
 "
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 28.8616, 23.1106 )
+extents = Vector2( 84.9146, 39.1112 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 23.6621, 17.57 )
@@ -461,7 +461,7 @@ func _input(_event):
 extents = Vector2( 18.7898, 11.573 )
 
 [sub_resource type="RectangleShape2D" id=79]
-extents = Vector2( 54.2708, 35.1759 )
+extents = Vector2( 37.4065, 23.6743 )
 
 [sub_resource type="GDScript" id=12]
 script/source = "extends MovingBody
@@ -603,7 +603,7 @@ func _input(_event):
 "
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 28.8616, 23.1106 )
+extents = Vector2( 59.8999, 35.0479 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 23.6621, 17.57 )
@@ -1051,14 +1051,13 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 5
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
 script = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia/LethariaArea2D"]
-position = Vector2( -1.00005, 1.00002 )
+position = Vector2( 57.7109, -14.7009 )
 shape = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia"]
@@ -1078,6 +1077,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 85 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -1104,10 +1104,11 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 76 )
 animation = "idle"
-frame = 2
+frame = 5
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/SandKitten"]
+position = Vector2( 7.72192, 4.04468 )
 script = SubResource( 77 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/SandKitten/SandKittenArea2D"]
@@ -1115,11 +1116,11 @@ position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 78 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/SandKitten"]
-position = Vector2( -0.999878, -5.75232 )
+position = Vector2( 23.9999, -7.5907 )
 shape = SubResource( 79 )
 
 [node name="Nostoc" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4406.7, 1500.37 )
+position = Vector2( 4414.1, 1530.68 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 12 )
@@ -1131,14 +1132,14 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 5
+frame = 3
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
 script = SubResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc/TaurArea2D"]
-position = Vector2( -1.00005, 1.00002 )
+position = Vector2( 3.14985, -10.5166 )
 shape = SubResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc"]
@@ -1195,14 +1196,15 @@ collision_mask = 7
 position = Vector2( 6.4, 888 )
 polygon = PoolVector2Array( -5.88358, 0.960022, -27.2, 108, 582.4, 253.6, 1006.4, 577.6, 1473.6, 1088, 1703.2, 1160, 1920, 1264, 2566.4, 1260.8, 2584, 1256, 2649.6, 1251.2, 2932, 1232, 3012, 1206.4, 4000.8, 1187.2, 4150.4, 1148.8, 4364.8, 980.8, 4728.8, 1040.8, 4793.6, 1019.2, 4760.8, 1012.8, 4705.6, 1008, 4670.4, 997.6, 4620.8, 996.8, 4533.6, 964, 4497.6, 924, 4378.4, 924.8, 4324, 980.8, 4156, 1092.8, 4100, 1116.8, 4088, 1130.4, 4032.8, 1153.6, 3979.2, 1173.6, 3028.8, 1172.8, 3001.6, 1200, 2948, 1200.8, 2925.6, 1220.8, 2668, 1220.8, 2649.6, 1240, 2576, 1240, 2567.2, 1248.8, 1929.6, 1249.6, 1704.8, 1136, 1672.8, 1081.6, 1667.2, 1076, 1626.4, 1048, 1584, 1023.2, 1546.4, 1009.6, 1496, 1009.6, 1472.8, 1016.8, 1449.6, 1016.8, 1432, 988, 1382.4, 902.4, 1368, 856.8, 1508.8, 791.2, 1509.6, 923.2, 1544.8, 923.2, 1545.6, 699.2, 1576.8, 699.2, 1576.8, 664.8, 1501.6, 664.8, 939.2, 382.4, 861.6, 379.912, 860.8, 256.712, 820.8, 256.712, 820.8, 194.312, 775.2, 179.912, 648.291, 123.327, 519.006, 89.683, 440.793, 93.8793, 345.908, 80.6483, 274.272, 68.7405, 228.19, 46.1343, 169.596, 16.0812, 117.542, 0.582031 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( 2084, 1516.72 )
-polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328.8, 874.4, 324, 914.4, 304.8, 980, 288.8, 1042.4, 269.6, 1125.6, 264.8, 1167.2, 260, 1214.4, 248.8, 1276.8, 248, 1307.2, 233.6, 1332.8, 233.6, 1362.4, 221.6, 1447.2, 194.4, 1490.4, 189.6, 1545.6, 193.6, 1603.2, 184.8, 1601.6, -30.4003, 1580.8, -48.8, 1379.2, 8, 1221.6, -108.8, 1221.27, -344.868, 1341.52, -344.493, 1346.29, -338.972, 1343.47, -326.974, 1342.4, -256.8, 1496, -256.8, 1496, -366.4, 1528, -384, 1533.6, -436, 1488, -472.8, 1404, -479.2, 1358.4, -470.4, 1342.4, -439.2, 1343.2, -380, 1246.4, -380, 1172.8, -382.4, 1162.4, -156.8, 1126.4, -188, 1128, -384, 1155.2, -435.2, 1227.2, -525.6, 1348, -574.4, 1461.6, -563.2, 1569.6, -494.4, 1606.4, -438.4, 1633.6, -364, 1633.6, -121.6, 1635.2, 186.4, 1546.4, 212, 1465.6, 204, 1352.8, 246.4, 1061.6, 278.4, 960, 301.6, 841.6, 345.6, 784.8, 357.6, 147.2, 354.4 )
-
 [node name="Platforms" type="StaticBody2D" parent="."]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Platforms"]
+position = Vector2( 2084, 1516.72 )
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328.8, 874.4, 324, 914.4, 304.8, 980, 288.8, 1042.4, 269.6, 1125.6, 264.8, 1167.2, 260, 1214.4, 248.8, 1276.8, 248, 1307.2, 233.6, 1332.8, 233.6, 1362.4, 221.6, 1447.2, 194.4, 1490.4, 189.6, 1545.6, 193.6, 1603.2, 184.8, 1601.6, -30.4003, 1580.8, -48.8, 1379.2, 8, 1221.6, -108.8, 1221.27, -344.868, 1341.52, -344.493, 1346.29, -338.972, 1343.47, -326.974, 1342.4, -256.8, 1496, -256.8, 1496, -366.4, 1528, -384, 1533.6, -436, 1488, -472.8, 1404, -479.2, 1358.4, -470.4, 1342.4, -439.2, 1343.2, -380, 1246.4, -380, 1172.8, -382.4, 1162.4, -156.8, 1126.4, -188, 1128, -384, 1155.2, -435.2, 1227.2, -525.6, 1348, -574.4, 1461.6, -563.2, 1569.6, -494.4, 1606.4, -438.4, 1633.6, -364, 1635.2, 186.4, 1546.4, 212, 1465.6, 204, 1352.8, 246.4, 1061.6, 278.4, 960, 301.6, 841.6, 345.6, 784.8, 357.6, 147.2, 354.4 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1652, 546.4 )
@@ -1370,7 +1372,7 @@ polygon = PoolVector2Array( 2912, 1212, 3043.2, 1212, 3044, 1409.6, 3012, 1412.8
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Platforms"]
 position = Vector2( 1562.4, 244.8 )
-polygon = PoolVector2Array( 2921.6, 1223.2, 2986.4, 1240, 3019.2, 1272.8, 3034.4, 1311.2, 3036.8, 1378.4, 3007.2, 1407.2, 2959.2, 1434.4, 2899.2, 1436, 2831.2, 1394.4, 2822.4, 1336, 2829.6, 1294.4, 2848.8, 1257.6, 2874.4, 1236.8 )
+polygon = PoolVector2Array( 2921.6, 1223.2, 2986.4, 1240, 3019.2, 1272.8, 3034.4, 1311.2, 3036.09, 1440.6, 3001.91, 1420, 2959.2, 1434.4, 2899.2, 1436, 2862.87, 1420.94, 2822.15, 1441.53, 2824.75, 1310.01, 2848.8, 1257.6, 2874.4, 1236.8 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Platforms"]
 position = Vector2( 899.2, 366.4 )
