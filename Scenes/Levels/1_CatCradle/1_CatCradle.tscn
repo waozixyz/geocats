@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Entities/Particles/Confetti.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Levels/1_CatCradle/present.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Levels/1_CatCradle/Interact.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Levels/10_DesertOutpost/Interact.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=32]
@@ -172,7 +172,7 @@ script = ExtResource( 30 )
 [node name="snow" parent="Present" instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present"]
-position = Vector2( 41, -28.2416 )
+position = Vector2( 40.1429, -32.7786 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Present"]

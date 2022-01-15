@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-onready var file = 'res://Assets/Levels/10_DesertOutpost/survival_guide/sand.txt'
+onready var file = 'res://Assets/Levels/10_DesertOutpost/Sand.txt'
 
 func _ready():
 	load_file()
