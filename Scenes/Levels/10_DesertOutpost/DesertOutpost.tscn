@@ -1041,6 +1041,8 @@ func _on_body_exited(body):
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 31, 53 )
 
+[sub_resource type="ButtonGroup" id=100]
+
 [sub_resource type="DynamicFontData" id=93]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
@@ -1055,26 +1057,20 @@ font_data = SubResource( 93 )
 [sub_resource type="GDScript" id=95]
 script/source = "extends RichTextLabel
 
-onready var file = 'res://Assets/Levels/10_DesertOutpost/survival_guide/sand.txt'
-
-func _ready():
-	load_file()
-
-	
-func load_file():
-	var f = File.new()
-	if f.file_exists(file):
-		f.open(file, File.READ)
-		while not f.eof_reached(): # iterate through all lines until the end of file is reached
-			var line = f.get_line()
-			text += line
-			newline()
-
-		f.close()
-	return
+onready var file = 'res://Assets/Levels/10_DesertOutpost/survival_guide/weather.txt'
+onready var f = File.new()
+func _on_WeatherButton_toggled(button_pressed):
+	if button_pressed==true:
+		if f.file_exists(file):
+			f.open(file, File.READ)
+			while not f.eof_reached(): # iterate through all lines until the end of file is reached
+				var line = f.get_line()
+				text += line
+				newline()
+			f.close()
+	elif button_pressed==false:
+			print('goodbye') # hide popup
 "
-
-[sub_resource type="ButtonGroup" id=98]
 
 [sub_resource type="ButtonGroup" id=99]
 
@@ -1123,7 +1119,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 28
+frame = 7
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -1150,7 +1146,6 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 85 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -1177,7 +1172,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 76 )
 animation = "idle"
-frame = 17
+frame = 12
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/SandKitten"]
@@ -1205,7 +1200,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 8
+frame = 11
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -1684,31 +1679,32 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 21 )
 centered = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Computer"]
-margin_left = 883.0
-margin_top = 259.0
-margin_right = 1800.0
-margin_bottom = 709.0
-focus_mode = 2
-custom_fonts/normal_font = SubResource( 94 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-fit_content_height = true
-selection_enabled = true
-script = SubResource( 95 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WeatherButton" type="TextureButton" parent="CanvasLayer/Computer"]
+[node name="WeatherButton" type="TextureButton" parent="CanvasLayer/Computer" groups=[
+"geopedia_button",
+]]
 margin_left = 80.0
 margin_top = 213.0
 margin_right = 204.0
 margin_bottom = 333.0
 toggle_mode = true
-group = SubResource( 98 )
+group = SubResource( 100 )
 texture_normal = ExtResource( 27 )
 texture_pressed = ExtResource( 25 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weather_RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Computer/WeatherButton"]
+margin_left = 803.0
+margin_top = 46.0
+margin_right = 1720.0
+margin_bottom = 496.0
+focus_mode = 2
+custom_fonts/normal_font = SubResource( 94 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+selection_enabled = true
+script = SubResource( 95 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1929,6 +1925,8 @@ script = ExtResource( 24 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
 position = Vector2( 4.22003, -2.28882e-05 )
 shape = SubResource( 97 )
+
+[connection signal="toggled" from="CanvasLayer/Computer/WeatherButton" to="CanvasLayer/Computer/WeatherButton/Weather_RichTextLabel" method="_on_WeatherButton_toggled"]
 
 [editable path="Default"]
 [editable path="Default/Affogato"]
