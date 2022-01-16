@@ -82,7 +82,7 @@ config/icon="res://icon.png"
 
 PROGRESS="*res://Scenes/UI/Dialogue/progress.gd"
 Global="*res://Scenes/Global.gd"
-API="*res://Scenes/API.gd"
+API="*res://Scenes/Deta.gd"
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 
 [display]

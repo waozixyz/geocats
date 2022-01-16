@@ -20,7 +20,7 @@ func _ready():
 		api_url = "https://geoapi.deta.dev"
 	pause_mode = PAUSE_MODE_PROCESS
 
-func is_nft_available_db(nft_id):
+func claim_nft(nft_id):
 	return add_request("/available-nft-db", { "nft_id": nft_id })
 
 func add_request(path, body = null, jwt = Global.data.access_token):
@@ -28,18 +28,24 @@ func add_request(path, body = null, jwt = Global.data.access_token):
 	requests.append({"id": current_id, "path": path, "body": body, "jwt": jwt})
 	return current_id
 
+func check_request(request_id):
+	print(requests[request_id])
+	
 var current_request
 var current_response
 func _process(delta):
-	if requests.size() > 0 and requests[0].id != current_request_id:
+	# if there isn't a current request
+	# and the requests array is not empt
+	if not current_request and requests.size() > 0:
 		var request = requests[0]
 		current_request_id = request.id
 		current_request = get_request(request.path, request.body, request.jwt)
-		
-	if not refreshing and current_request:
+	
+	if current_request:
 		var data_size = current_request.get_downloaded_bytes()
 		if data_size > 0 and response and current_request.get_http_client_status() == 0:
 			current_response = response
+			remove_child(current_request)
 			current_request = null
 			requests.pop_front()
 	
@@ -80,9 +86,11 @@ func _save_request():
 	last_path = current_path
 	
 var response
+var response_code
 var refreshing
-func _on_request_completed(_result, response_code, _headers, body):
+func _on_request_completed(_result, res_code, _headers, body):
 	response = parse_json(body.get_string_from_utf8())
+	response_code = res_code
 	if response_code == 500:
 		Global.data.login_msg = 500
 		SceneChanger.change_scene("TitleScreen")
