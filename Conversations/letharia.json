@@ -48,7 +48,7 @@
   },
   "knowledge_off_1": {
     "type": "text",
-    "content": "There's a digital encyclopedia installed on our main computer.",
+    "content": "There's a digital encyclopedia installed on our main computer system.",
     "next": "knowledge_off_2"
   },
   "knowledge_off_2": {
@@ -68,7 +68,7 @@
   },
   "4": {
     "type": "text",
-    "content": "...",
+    "content": "...ok.",
     "next": "5"
   },
   "5": {
@@ -78,7 +78,7 @@
   },
   "6": {
     "type": "text",
-    "content": "",
+    "content": "Keep that in mind if as you go on this.",
     "next": "7"
   },
   "7": {
