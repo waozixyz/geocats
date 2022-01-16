@@ -1102,7 +1102,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 22
+frame = 6
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -1156,7 +1156,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 76 )
 animation = "idle"
-frame = 11
+frame = 7
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/SandKitten"]
@@ -1184,7 +1184,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 2
+frame = 6
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -1752,7 +1752,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wildelife" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+[node name="Wildlife" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
 margin_left = -803.0
 margin_top = 233.0
 margin_right = -679.0
