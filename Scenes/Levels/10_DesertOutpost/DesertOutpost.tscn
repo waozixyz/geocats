@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/sun/sun_1.png" type="Texture" id=2]
@@ -19,11 +19,38 @@
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/taur.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/sandKitten.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/ernst.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_apps.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_glare.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_hud.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_border.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Levels/10_DesertOutpost/Computer.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/weather.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/awareness.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/weather.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/sand.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/cultivation.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/geology.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/geology.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/georing.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/geocache.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/symbiotic_relationships.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/georing.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/symbiotic_relationships.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/mewlange.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/nonaco.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/sand.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/mewlange.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/geocache.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/wildlife.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/geocats.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/wildlife.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/radiation.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/radiation.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/cultivation.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/mirrors.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/geocats.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_icons/nonaco.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/geopedia_pressed_icons/mirrors.png" type="Texture" id=51]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -1018,8 +1045,10 @@ extents = Vector2( 31, 53 )
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=94]
-size = 22
-extra_spacing_top = -5
+size = 55
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+extra_spacing_top = -3
 extra_spacing_bottom = -3
 font_data = SubResource( 93 )
 
@@ -1090,7 +1119,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 25
+frame = 33
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -1117,6 +1146,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 85 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -1143,7 +1173,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 76 )
 animation = "idle"
-frame = 14
+frame = 10
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/SandKitten"]
@@ -1171,7 +1201,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
 animation = "idle"
-frame = 5
+frame = 1
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -1191,7 +1221,7 @@ shape = SubResource( 21 )
 position = Vector2( 0, -2 )
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 3711.04, 552 )
+position = Vector2( 5342, 522 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -1624,9 +1654,10 @@ shape = SubResource( 68 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Computer" type="Node2D" parent="CanvasLayer"]
-position = Vector2( 27, 12 )
-scale = Vector2( 0.3, 0.3 )
+[node name="Computer" type="Control" parent="CanvasLayer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Computer"]
 position = Vector2( 0, 68 )
@@ -1640,12 +1671,6 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 23 )
 centered = false
 
-[node name="Icons" type="Sprite" parent="CanvasLayer/Computer"]
-position = Vector2( 0, 68 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 20 )
-centered = false
-
 [node name="Glare" type="Sprite" parent="CanvasLayer/Computer"]
 position = Vector2( 0, 68 )
 scale = Vector2( 3, 3 )
@@ -1657,10 +1682,180 @@ margin_left = 883.0
 margin_top = 259.0
 margin_right = 1800.0
 margin_bottom = 709.0
+focus_mode = 2
 custom_fonts/normal_font = SubResource( 94 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
+selection_enabled = true
 script = SubResource( 95 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeatherButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 80.0
+margin_top = 213.0
+margin_right = 204.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 25 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AwarenessButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 180.0
+margin_top = 355.055
+margin_right = 304.0
+margin_bottom = 475.055
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 20 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HorticultureButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 450.0
+margin_top = 213.0
+margin_right = 574.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 47 )
+texture_pressed = ExtResource( 29 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SandButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 265.523
+margin_top = 213.0
+margin_right = 389.523
+margin_bottom = 333.0
+texture_normal = ExtResource( 39 )
+texture_pressed = ExtResource( 28 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MewlangeButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 369.177
+margin_top = 355.055
+margin_right = 493.177
+margin_bottom = 475.055
+texture_normal = ExtResource( 37 )
+texture_pressed = ExtResource( 40 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NonacoButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 554.0
+margin_top = 355.055
+margin_right = 678.0
+margin_bottom = 475.055
+texture_normal = ExtResource( 50 )
+texture_pressed = ExtResource( 38 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WildernessButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 80.0
+margin_top = 492.0
+margin_right = 204.0
+margin_bottom = 612.0
+texture_normal = ExtResource( 44 )
+texture_pressed = ExtResource( 42 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RadiationButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 265.523
+margin_top = 492.0
+margin_right = 389.523
+margin_bottom = 612.0
+texture_normal = ExtResource( 46 )
+texture_pressed = ExtResource( 45 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeologyButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 450.0
+margin_top = 492.0
+margin_right = 574.0
+margin_bottom = 612.0
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeoringButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 180.0
+margin_top = 636.946
+margin_right = 304.0
+margin_bottom = 756.946
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 35 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MirrorButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 369.177
+margin_top = 636.946
+margin_right = 493.177
+margin_bottom = 756.946
+texture_normal = ExtResource( 48 )
+texture_pressed = ExtResource( 51 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SymbioticRelationshipButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 554.0
+margin_top = 636.946
+margin_right = 678.0
+margin_bottom = 756.946
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 36 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeocacheButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 639.0
+margin_top = 213.0
+margin_right = 763.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 41 )
+texture_pressed = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeocatButton" type="TextureButton" parent="CanvasLayer/Computer"]
+margin_left = 641.0
+margin_top = 492.0
+margin_right = 765.0
+margin_bottom = 612.0
+texture_normal = ExtResource( 49 )
+texture_pressed = ExtResource( 43 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
