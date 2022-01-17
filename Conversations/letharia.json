@@ -56,6 +56,11 @@
     "content": "Talk to me again after you've researched some basic survival techniques.",
     "next": ""
   },
+  "knowledge_off_3": {
+    "type": "text",
+    "content": "If you do this, I'll show you the best way to get into the deep desert.",
+    "next": ""
+  },
   "knowledge_on": {
     "name": "Letharia",
     "avatar": "letharia.png",
@@ -68,71 +73,62 @@
   },
   "4": {
     "type": "text",
-    "content": "...ok.",
+    "content": "...",
     "next": "5"
   },
   "5": {
     "type": "text",
-    "content": "Luck is a mixture of opportunism and resiliance.",
+    "content": "I see it in your eyes... All of the new information you learned.",
     "next": "6"
   },
   "6": {
     "type": "text",
-    "content": "Keep that in mind if as you go on this.",
+    "content": "...",
     "next": "7"
   },
   "7": {
     "type": "text",
-    "content": "Here, I’ve got a hot-fix for your Mapz system.",
+    "content": "I'll hold up my end of this deal.",
     "next": "8"
   },
   "8": {
     "type": "text",
-    "content": "|It won’t fix the| other issues with FeLine, but it should help you find the caves.",
+    "content": "You'll see a dried up riverbed when you exit the conservatory.",
+    "next": "9a"
+  },
+  "9a": {
+    "type": "text",
+    "content": "Follow it for as long as you can, it's rocky surface is easier to walk on than sand is.",
     "next": "9"
   },
   "9": {
     "name": "Feline",
-    "avatar": "feline_unimpressed.png",
+    "avatar": "feline.png",
     "animation_in": "move_in",
     "animation_out": "fade_out",
     "position": "left",
     "type": "text",
-    "content": "|...",
+    "content": "...And then what?",
     "next": "10"
   },
   "10": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
+    "name": "Letharia",
+    "avatar": "letharia.png",
     "position": "left",
     "animation_in": "fade_in",
     "animation_out": "fade_out",
     "type": "text",
-    "content": "|...Ok, you might experience some discomfort for a moment.",
+    "content": "No idea, but it's the only route that is conducive to survival.",
     "next": "11"
   },
   "11": {
     "type": "text",
-    "name": "Feline",
-    "avatar": "feline.png",
-    "position": "left",
-    "animation_in": "fade_in",
-    "animation_out": "shake_weak_short",
-    "content": "MEOWCH!!!",
-    "next": "12"
-  },
-  "12": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
-    "position": "left",
-    "animation_in": "fade_in",
-    "type": "text",
-    "content": "|If you find anything interesting on your trip spelunking, please let me know.",
+    "content": "In my opinion, this is a fools errand given to you by Norna and Wyrd.",
     "next": "13"
   },
-  "13": {
+  "12": {
     "type": "text",
-    "content": "Have fun,|@and please try to avoid annihilation",
+    "content": "The shifting sands are unforgiving. Best of luck out there.",
     "next": ""
-  },
+  }
 }

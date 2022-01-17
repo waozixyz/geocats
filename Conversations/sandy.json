@@ -1,7 +1,7 @@
 {
   "first": {
-    "name": "Sand Kitten",
-    "avatar": "sand_kitten.png",
+    "name": "Sandy",
+    "avatar": "sandy.png",
     "position": "left",
     "animation_in": "fade_in",
     "type": "text",
@@ -9,6 +9,10 @@
     "next": "block_random"
   },
   "repeat": {
+    "name": "Sandy",
+    "avatar": "sandy.png",
+    "position": "left",
+    "animation_in": "fade_in",
     "type": "text",
     "content": "Hey! There's something else you need to know!",
     "next": "block_random"
@@ -71,7 +75,7 @@
   "4_2": {
     "type": "question",
     "text": "I'd love to tell you more about Magnetoroid Shield Technology! Wanna' hear about it?",
-    "options": ["Yeah, ok", "Sorry, no"],
+    "options": ["Yeah", "Sorry"],
     "next": ["4_2_1", ""]
   },
   "4_2_1": {

@@ -1,0 +1,16 @@
+{
+  "first": {
+    "name": "Fier",
+    "avatar": "fier.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "Making a map of the desert is impossible –",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "The sand dunes are always moving, like waves on the ocean.",
+    "next": ""
+  }
+}
