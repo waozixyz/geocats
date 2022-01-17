@@ -13,7 +13,7 @@
     "position": "left",
     "animation_in": "fade_in",
     "type": "question",
-    "text": "Greetings. Would you like to hear@a poem I'm building?",
+    "text": "Greetings. Pretty cold out, eh?",
     "options": ["Yes", "No"],
     "next": ["1",""]
   },
@@ -23,26 +23,18 @@
     "position": "left",
     "animation_in": "fade_in",
     "type": "text",
-    "content": "When I was a wee robot -",
+    "content": "I feel like this snow has overstayed it's welcome.",
     "next": "2"
   },
   "2": {
     "type": "text",
-    "content": "My circuits compiled a thought.|",
-    "next": "3",
+    "content": "...",
+    "next": "3"
   },
   "3": {
     "type": "text",
-    "content": "Alike we are,|@throughout the stars",
-    "next": "4",
-  },
-  "4": {
-    "type": "action",
-    "operation": "variable",
-    "dictionary": "variables",
-    "text": "Whether mum,|@or motherboard one's got.",
-    "value": [["no_coffee", "true"]],
-    "next": "",
+    "content": "I'm sure it will melt soon.",
+    "next": ""
   },
   "empty": {
     "name": "Donutbot",
