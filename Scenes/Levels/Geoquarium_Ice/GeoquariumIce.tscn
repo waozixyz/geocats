@@ -389,7 +389,7 @@ script = SubResource( 110 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.04
+scroll_speed = 0.02
 
 [node name="Starfield" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 111 )
@@ -401,10 +401,9 @@ script = SubResource( 113 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.035
+scroll_speed = 0.018
 
 [node name="Catstellation" type="TextureRect" parent="BelowPlayer/SpaceBG"]
-visible = false
 material = SubResource( 114 )
 margin_right = 3000.0
 margin_bottom = 700.0
@@ -414,7 +413,7 @@ script = SubResource( 116 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.034
+scroll_speed = 0.005
 
 [node name="Startrails" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 117 )
@@ -426,7 +425,7 @@ script = SubResource( 119 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.025
+scroll_speed = 0.015
 
 [node name="Sun" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 120 )
@@ -438,9 +437,9 @@ script = SubResource( 122 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.02
+scroll_speed = 0.005
 
-[node name="Planet2" type="TextureRect" parent="BelowPlayer/SpaceBG"]
+[node name="blueplanet" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 123 )
 margin_right = 1500.0
 margin_bottom = 700.0
@@ -450,9 +449,9 @@ script = SubResource( 125 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.007
+scroll_speed = 0.003
 
-[node name="Planet1" type="TextureRect" parent="BelowPlayer/SpaceBG"]
+[node name="GasGiant" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 126 )
 margin_right = 3000.0
 margin_bottom = 700.0
@@ -462,7 +461,7 @@ script = SubResource( 128 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.01
+scroll_speed = 0.007
 
 [node name="Greengalaxy" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 129 )
@@ -474,7 +473,7 @@ script = SubResource( 131 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.034
+scroll_speed = 0.005
 
 [node name="Ringworld" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 132 )
@@ -486,7 +485,6 @@ script = SubResource( 134 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scroll_speed = 0.008
 
 [node name="Spacejunk1" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 135 )
@@ -498,6 +496,7 @@ script = SubResource( 137 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+scroll_speed = -0.003
 
 [node name="Spacejunk2" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 138 )
@@ -509,6 +508,7 @@ script = SubResource( 140 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+scroll_speed = 0.002
 
 [node name="Spacejunk3" type="TextureRect" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 141 )
@@ -522,7 +522,6 @@ __meta__ = {
 }
 
 [node name="catellite1" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
-visible = false
 position = Vector2( 1102.73, 416.286 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 97 )
@@ -530,7 +529,6 @@ frame = 1
 playing = true
 
 [node name="catellite2" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
-visible = false
 position = Vector2( 1096.23, 532.59 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 6 )
@@ -570,7 +568,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 9 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
