@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoquarium_Ice/bg.png" type="Texture" id=3]
@@ -341,31 +341,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=147]
-shader = SubResource( 107 )
-shader_param/scroll_speed = 0.0
-
-[sub_resource type="StreamTexture" id=148]
-load_path = "res://.import/purple_glow.png-17c558762fb03477cb71595016e014d0.stex"
-
-[sub_resource type="GDScript" id=149]
-script/source = "extends Node
-
-export(float) var scroll_speed = 0.004
-func _ready():
-	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 35.5122, 1880.53 )
-
-[sub_resource type="RectangleShape2D" id=150]
-extents = Vector2( 17.106, 758.631 )
-
 [sub_resource type="GDScript" id=151]
 script/source = "extends Area2D
 
@@ -393,21 +368,49 @@ func _on_body_exited(body):
 "
 
 [sub_resource type="RectangleShape2D" id=152]
-extents = Vector2( 17.106, 269.404 )
+extents = Vector2( 15.063, 734.187 )
+
+[sub_resource type="RectangleShape2D" id=150]
+extents = Vector2( 15.063, 253.239 )
+
+[sub_resource type="ShaderMaterial" id=147]
+shader = SubResource( 107 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="StreamTexture" id=148]
+load_path = "res://.import/purple_glow.png-17c558762fb03477cb71595016e014d0.stex"
+
+[sub_resource type="GDScript" id=149]
+script/source = "extends Node
+
+export(float) var scroll_speed = 0.004
+func _ready():
+	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id=153]
+extents = Vector2( 23.7939, 4.2168 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 35.5122, 1880.53 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 174.03, 78 )
+extents = Vector2( 1515.98, 1318.84 )
 
 [node name="DesertOutpost" type="Node2D"]
-position = Vector2( 0, 750 )
+position = Vector2( 0, 500 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
 
 [node name="ColorRect" type="ColorRect" parent="BelowPlayer"]
-margin_top = -250.0
-margin_right = 1700.0
-margin_bottom = 950.0
+margin_top = -250.16
+margin_right = 1500.0
+margin_bottom = 949.839
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -571,6 +574,7 @@ playing = true
 position = Vector2( 1096.23, 532.59 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="BlueGlow" type="TextureRect" parent="BelowPlayer/SpaceBG"]
@@ -606,7 +610,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 9 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
@@ -633,18 +637,41 @@ texture = ExtResource( 41 )
 
 [node name="NPC" type="Node2D" parent="."]
 
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder" type="Area2D" parent="Ladders"]
+position = Vector2( 4204.92, 1755.93 )
+script = SubResource( 151 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
+shape = SubResource( 152 )
+
+[node name="Ladder2" type="Area2D" parent="Ladders"]
+position = Vector2( 3393.27, 2181.27 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+shape = SubResource( 150 )
+
 [node name="Default" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4103.62, 1029.57 )
 
 [node name="CollisionShape2D" parent="Default/Affogato" index="2"]
 position = Vector2( 0, -2 )
 
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 4204.92, 778.522 )
+
 [node name="Camera2D" parent="Default/Player" index="0"]
-scale = Vector2( 9, 9 )
+scale = Vector2( 0.389047, 1.00321 )
 zoom = Vector2( 2, 2 )
 limit_right = 7500
 limit_bottom = 3500
-limit_smoothed = true
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
 frame = 19
@@ -696,23 +723,57 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 2083.82, 1475.83, 2182.43, 1483.25, 2416.07, 1540.51, 2678.1, 1570.45, 2678.21, 1892.15, 2641.59, 1896.9, 2567.23, 1883.69, 2515.62, 1892.29, 2465.84, 1883.38, 2423.82, 1909.4, 2405.61, 1966.14, 2410.02, 1997.55, 2424.25, 2049.56, 2451.24, 2092.74, 2484.12, 2118.74, 2511.11, 2137.88, 2601.88, 2176.15, 2650.26, 2198.04, 2689.72, 2216.19, 3313.29, 2201.72, 3393.66, 2127.25, 3495.95, 2035.68, 3542.72, 1977.84, 3569.09, 1912.06, 3587.46, 1863.61, 3708.08, 1476.44, 3718.68, 1474.28, 3718.68, 1413.92, 3749.1, 1414.41, 3750.57, 1473.3, 3783.45, 1473.3, 3783.45, 1482.13, 3750.08, 1482.13, 3752.05, 1564.56, 3805.53, 1563.58, 3928.2, 1518.93, 3960.06, 1488.46, 3961.44, 1408.59, 3956.37, 1306.72, 3934.2, 1168.61, 3888.93, 1051.29, 3826.39, 920.195, 3732.16, 803.331, 3663.34, 729.425, 3569.85, 643.786, 3466.38, 580.042, 3332.89, 519.531, 3171.59, 472.046, 3019.16, 459.113, 2903.22, 460.499, 2901.88, 450.185, 3099.36, 451.311, 3214.47, 470.909, 3432.23, 550.504, 3595.02, 649.396, 3766.45, 822.927, 3846.12, 934.434, 3942.16, 1170.74, 3966.56, 1335.41, 3968.96, 1462.31, 3963.33, 1538.15, 3935.98, 1692.85, 3839.17, 1912.77, 3753.12, 2037.06, 3618.07, 2178.09, 3444.77, 2291.63, 3275.05, 2362.15, 3043.19, 2402.78, 2879.45, 2394.42, 2719.3, 2364.54, 2579.47, 2304.78, 2421.7, 2212.75, 2302.19, 2108.77, 2198.21, 1982.09, 2114.55, 1838.66, 2047.62, 1648.63, 2026.1, 1506.41, 2028.73, 1343.87, 2057.42, 1162.2, 2127.79, 1011.73, 2220.17, 857.754, 2371.39, 688.818, 2534.79, 571.292, 2716.92, 490.72, 2871.53, 453.64, 2885.99, 464.324, 2743.32, 493.863, 2589.34, 556.711, 2467.42, 631.5, 2376.29, 701.262, 2223.56, 871.078, 2067.07, 1159.55, 2039.05, 1342.94, 2035.28, 1495.93 )
+polygon = PoolVector2Array( 2083.82, 1475.83, 2182.43, 1483.25, 2416.07, 1540.51, 2678.1, 1570.45, 2678.21, 1892.15, 2641.59, 1896.9, 2567.23, 1883.69, 2515.62, 1892.29, 2465.84, 1883.38, 2423.82, 1909.4, 2405.61, 1966.14, 2410.02, 1997.55, 2424.25, 2049.56, 2451.24, 2092.74, 2484.12, 2118.74, 2511.11, 2137.88, 2601.88, 2176.15, 2650.26, 2198.04, 2689.72, 2216.19, 3313.29, 2201.72, 3372.46, 2168.27, 3471.88, 2081.69, 3542.72, 1977.84, 3569.09, 1912.06, 3587.46, 1863.61, 3708.08, 1476.44, 3718.68, 1474.28, 3718.68, 1413.92, 3749.1, 1414.41, 3750.57, 1473.3, 3783.45, 1473.3, 3783.45, 1482.13, 3750.08, 1482.13, 3752.05, 1564.56, 3805.53, 1563.58, 3928.2, 1518.93, 3960.06, 1488.46, 3961.44, 1408.59, 3956.37, 1306.72, 3934.2, 1168.61, 3888.93, 1051.29, 3826.39, 920.195, 3732.16, 803.331, 3663.34, 729.425, 3569.85, 643.786, 3466.38, 580.042, 3332.89, 519.531, 3171.59, 472.046, 3019.16, 459.113, 2903.22, 460.499, 2901.88, 450.185, 3099.36, 451.311, 3214.47, 470.909, 3432.23, 550.504, 3595.02, 649.396, 3766.45, 822.927, 3846.12, 934.434, 3942.16, 1170.74, 3966.56, 1335.41, 3968.96, 1462.31, 3963.33, 1538.15, 3935.98, 1692.85, 3839.17, 1912.77, 3753.12, 2037.06, 3618.07, 2178.09, 3444.77, 2291.63, 3275.05, 2362.15, 3043.19, 2402.78, 2879.45, 2394.42, 2719.3, 2364.54, 2579.47, 2304.78, 2421.7, 2212.75, 2302.19, 2108.77, 2198.21, 1982.09, 2114.55, 1838.66, 2047.62, 1648.63, 2026.1, 1506.41, 2028.73, 1343.87, 2057.42, 1162.2, 2127.79, 1011.73, 2220.17, 857.754, 2371.39, 688.818, 2534.79, 571.292, 2716.92, 490.72, 2871.53, 453.64, 2885.99, 464.324, 2743.32, 493.863, 2589.34, 556.711, 2467.42, 631.5, 2376.29, 701.262, 2223.56, 871.078, 2067.07, 1159.55, 2039.05, 1342.94, 2035.28, 1495.93 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 3173.33, 1565.59, 3230.32, 1507.3, 3278.74, 1507.67, 3311.37, 1476.01, 3347.51, 1475.54, 3347.75, 1945.88, 3268.66, 1945.88, 3257.2, 1952.86, 3249, 1966.82, 3247.79, 2013.14, 3194, 1895.42, 3135.84, 1899.87, 3059.36, 1928.15, 2982.59, 1890.3, 2933.03, 1914.33, 2878.38, 1896.25, 2796.67, 1920.12, 2754.13, 1908.63, 2752.44, 1564.77 )
+polygon = PoolVector2Array( 3173.33, 1565.59, 3230.32, 1507.3, 3278.74, 1507.67, 3311.37, 1476.01, 3342.43, 1475.74, 3342.38, 1946.42, 3268.66, 1945.88, 3257.2, 1952.86, 3249, 1966.82, 3247.79, 2013.14, 3194, 1895.42, 3135.84, 1899.87, 3059.36, 1928.15, 2982.59, 1890.3, 2933.03, 1914.33, 2878.38, 1896.25, 2796.67, 1920.12, 2754.13, 1908.63, 2752.44, 1564.77 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 3379.4, 1475.61, 3376.32, 2010.66, 3247.34, 2010.42, 3247.49, 2017.5, 3314.28, 2019.14, 3376.96, 2019.13, 3444.25, 1987.16, 3530.42, 1863.24, 3629.68, 1575.01, 3662.57, 1473.11 )
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( 648.852, -1.6 )
-scale = Vector2( 0.805371, 1 )
-polygon = PoolVector2Array( 3235.91, 875.18, 3347.21, 875.449, 3343.51, 1411.35, 3317.34, 1410.38, 3315.89, 895.885, 3243.74, 882.207 )
+polygon = PoolVector2Array( 3382.8, 1475.79, 3381.61, 2007.83, 3247.34, 2010.42, 3247.49, 2017.5, 3314.28, 2019.14, 3376.96, 2019.13, 3444.25, 1987.16, 3530.42, 1863.24, 3629.68, 1575.01, 3662.57, 1473.11 )
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2575.45, 1961.85 )
+shape = SubResource( 153 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2714.62, 1981.72 )
+shape = SubResource( 153 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2643.7, 2042.48 )
+shape = SubResource( 153 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2528.4, 2106.05 )
+shape = SubResource( 153 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2491.99, 2018.29 )
+shape = SubResource( 153 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2627.96, 2130.15 )
+shape = SubResource( 153 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 3344.89, 874.176, 3344.19, 1386.07, 3315.77, 1385.81, 3315.47, 895.047, 3236.51, 880.211, 3236.01, 874.175 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 3382.71, 875.167, 3492.05, 874.772, 3492.05, 881.296, 3412.57, 895.531, 3411.73, 1385.18, 3380.5, 1384.99 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 3212.8, 781.844, 3511.94, 782.003, 3511.94, 774.688, 3363.85, 690.858, 3213.55, 778.167 )
 
 [node name="End" type="StaticBody2D" parent="." groups=[
 "end",
@@ -735,32 +796,9 @@ autoplay = true
 stream_paused = true
 bus = "Music"
 
-[node name="Ladders" type="Node2D" parent="."]
-
-[node name="Ladder" type="Area2D" parent="Ladders"]
-position = Vector2( 4338.21, 1103.86 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
-position = Vector2( -134.494, 628.332 )
-shape = SubResource( 150 )
-
-[node name="Ladder2" type="Area2D" parent="Ladders"]
-position = Vector2( 4338.21, 1103.86 )
-script = SubResource( 151 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
-position = Vector2( -945.066, 1097.53 )
-shape = SubResource( 152 )
-
 [node name="Telescope" type="Area2D" parent="."]
-position = Vector2( 4203.72, 1038.28 )
+visible = false
+position = Vector2( 3750, 1787.49 )
 script = ExtResource( 57 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
