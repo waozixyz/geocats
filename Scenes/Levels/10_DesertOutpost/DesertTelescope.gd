@@ -9,9 +9,9 @@ func _ready():
 	zoom_org = camera.zoom.x
 	
 func _zoomi(dir = 1):
-	camera.zoom.x += 0.03 * dir
-	camera.zoom.y += 0.03 * dir 
-	camera.position.x += 7 * dir
+	camera.zoom.x += 0.1 * dir
+	camera.zoom.y += 0.1 * dir 
+	camera.position.x += -6 * dir
 func _process(delta):
 	._process(delta)
 	if touching:
