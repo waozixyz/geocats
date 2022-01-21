@@ -1,4 +1,4 @@
-[gd_scene load_steps=319 format=2]
+[gd_scene load_steps=429 format=2]
 
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/nonacat.png" type="Texture" id=2]
@@ -46,7 +46,19 @@
 [ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/3.png" type="Texture" id=44]
 [ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/6.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/7.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Agents/PlayerCats/kitten_tileset.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Agents/PlayerCats/neocat_tileset.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Agents/PlayerCats/lunarcat_tileset.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Agents/PlayerCats/bakneko_tileset.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Agents/PlayerCats/mushroom_tileset.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/nocat_spritesheet.png" type="Texture" id=52]
+[ext_resource path="res://Scenes/Levels/4_PopNnip/NOCAT.gd" type="Script" id=53]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=54]
+[ext_resource path="res://Assets/Agents/PlayerCats/shinobi_tileset.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Agents/PlayerCats/solarcat_tileset.png" type="Texture" id=56]
 [ext_resource path="res://Scenes/Levels/10_DesertOutpost/DesertTelescope.gd" type="Script" id=57]
+[ext_resource path="res://Assets/Agents/PlayerCats/yulecat_tileset.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Agents/PlayerCats/viking_tileset.png" type="Texture" id=59]
 
 [sub_resource type="Shader" id=105]
 code = "shader_type canvas_item;
@@ -359,33 +371,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 11, 7 )
-
-[sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 8 )
-region = Rect2( 11, 0, 11, 7 )
-
-[sub_resource type="SpriteFrames" id=154]
-animations = [ {
-"frames": [ SubResource( 42 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 43 ), SubResource( 42 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=155]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=156]
-extents = Vector2( 20.4043, 10 )
-
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 11, 7 )
@@ -414,6 +399,12 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=155]
+extents = Vector2( 33.2397, 28.051 )
+
+[sub_resource type="RectangleShape2D" id=156]
+extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 9 )
@@ -1776,14 +1767,67 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=370]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=371]
+atlas = ExtResource( 47 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=372]
+atlas = ExtResource( 47 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=373]
+atlas = ExtResource( 47 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=374]
+atlas = ExtResource( 47 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=375]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=376]
+atlas = ExtResource( 47 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=377]
+atlas = ExtResource( 47 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=378]
+atlas = ExtResource( 47 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=379]
+atlas = ExtResource( 47 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=380]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=381]
+atlas = ExtResource( 47 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=200]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 370 ), SubResource( 371 ), SubResource( 372 ), SubResource( 373 ), SubResource( 374 ), SubResource( 375 ), SubResource( 376 ), SubResource( 370 ), SubResource( 370 ), SubResource( 370 ), SubResource( 370 ), SubResource( 371 ), SubResource( 371 ), SubResource( 370 ), SubResource( 370 ), SubResource( 373 ), SubResource( 370 ), SubResource( 373 ), SubResource( 373 ), SubResource( 373 ), SubResource( 374 ), SubResource( 373 ), SubResource( 373 ), SubResource( 373 ), SubResource( 370 ), SubResource( 370 ) ],
 "loop": true,
 "name": "idle",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 377 ), SubResource( 378 ), SubResource( 379 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 380 ), SubResource( 381 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -1985,756 +2029,6 @@ extents = Vector2( 33.2397, 28.051 )
 [sub_resource type="RectangleShape2D" id=208]
 extents = Vector2( 20.4043, 10 )
 
-[sub_resource type="GDScript" id=209]
-script/source = "extends MovingBody
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $AnimatedSprite
-	sprite.play()
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="SpriteFrames" id=210]
-animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=211]
-script/source = "extends InteractMain
-class_name InteractChat
-
-var active : bool
-
-var parent_name : String
-var convo_file : String
-var music_file : String
-
-func _get_complex_convo():
-	var scene_name = get_tree().get_current_scene().name
-	return parent_name + \"_\" + scene_name
-
-func show_chat():
-	parent_name = get_parent().name
-	if parent_name == \"Affogato\":
-		convo_file = _get_complex_convo()
-		music_file = parent_name.to_lower()
-	else:
-		convo_file = parent_name.replace(\" \", \"_\")
-		music_file = convo_file.to_lower()
-	
-	active = true
-	if chat_with:
-		chat_with.hide_after = false
-		chat_with.visible = true
-		chat_with.name_label.text = parent_name
-
-func hide_chat():
-	if chat_with:
-		chat_with.visible = false
-		chat_with.stop()
-	active = false
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		show_chat()
-
-func _on_body_exited(body):
-	if body.name == \"Player\":
-		hide_chat()
-		if nft_possible:
-			nft.main.visible = false
-
-func _process(delta):
-	if disabled and active:
-		hide_chat()
-	if active and \"idle\" in get_parent():
-		if chat_with.started:
-			get_parent().idle = true
-		else:
-			get_parent().idle = false
-	._process(delta)
-
-func _input(_event):
-	if active:
-		if Input.is_action_just_pressed(\"interact\"):
-			if not chat_with.started:
-				_add_audio(\"NPC\", music_file)
-				chat_with.start(convo_file)
-			if nft_possible:
-				nft.reward(nft_id, false)
-"
-
-[sub_resource type="RectangleShape2D" id=212]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=213]
-extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="GDScript" id=214]
-script/source = "extends MovingBody
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $AnimatedSprite
-	sprite.play()
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="SpriteFrames" id=215]
-animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=216]
-script/source = "extends InteractMain
-class_name InteractChat
-
-var active : bool
-
-var parent_name : String
-var convo_file : String
-var music_file : String
-
-func _get_complex_convo():
-	var scene_name = get_tree().get_current_scene().name
-	return parent_name + \"_\" + scene_name
-
-func show_chat():
-	parent_name = get_parent().name
-	if parent_name == \"Affogato\":
-		convo_file = _get_complex_convo()
-		music_file = parent_name.to_lower()
-	else:
-		convo_file = parent_name.replace(\" \", \"_\")
-		music_file = convo_file.to_lower()
-	
-	active = true
-	if chat_with:
-		chat_with.hide_after = false
-		chat_with.visible = true
-		chat_with.name_label.text = parent_name
-
-func hide_chat():
-	if chat_with:
-		chat_with.visible = false
-		chat_with.stop()
-	active = false
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		show_chat()
-
-func _on_body_exited(body):
-	if body.name == \"Player\":
-		hide_chat()
-		if nft_possible:
-			nft.main.visible = false
-
-func _process(delta):
-	if disabled and active:
-		hide_chat()
-	if active and \"idle\" in get_parent():
-		if chat_with.started:
-			get_parent().idle = true
-		else:
-			get_parent().idle = false
-	._process(delta)
-
-func _input(_event):
-	if active:
-		if Input.is_action_just_pressed(\"interact\"):
-			if not chat_with.started:
-				_add_audio(\"NPC\", music_file)
-				chat_with.start(convo_file)
-			if nft_possible:
-				nft.reward(nft_id, false)
-"
-
-[sub_resource type="RectangleShape2D" id=217]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=218]
-extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="GDScript" id=219]
-script/source = "extends MovingBody
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $AnimatedSprite
-	sprite.play()
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="SpriteFrames" id=220]
-animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=221]
-script/source = "extends InteractMain
-class_name InteractChat
-
-var active : bool
-
-var parent_name : String
-var convo_file : String
-var music_file : String
-
-func _get_complex_convo():
-	var scene_name = get_tree().get_current_scene().name
-	return parent_name + \"_\" + scene_name
-
-func show_chat():
-	parent_name = get_parent().name
-	if parent_name == \"Affogato\":
-		convo_file = _get_complex_convo()
-		music_file = parent_name.to_lower()
-	else:
-		convo_file = parent_name.replace(\" \", \"_\")
-		music_file = convo_file.to_lower()
-	
-	active = true
-	if chat_with:
-		chat_with.hide_after = false
-		chat_with.visible = true
-		chat_with.name_label.text = parent_name
-
-func hide_chat():
-	if chat_with:
-		chat_with.visible = false
-		chat_with.stop()
-	active = false
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		show_chat()
-
-func _on_body_exited(body):
-	if body.name == \"Player\":
-		hide_chat()
-		if nft_possible:
-			nft.main.visible = false
-
-func _process(delta):
-	if disabled and active:
-		hide_chat()
-	if active and \"idle\" in get_parent():
-		if chat_with.started:
-			get_parent().idle = true
-		else:
-			get_parent().idle = false
-	._process(delta)
-
-func _input(_event):
-	if active:
-		if Input.is_action_just_pressed(\"interact\"):
-			if not chat_with.started:
-				_add_audio(\"NPC\", music_file)
-				chat_with.start(convo_file)
-			if nft_possible:
-				nft.reward(nft_id, false)
-"
-
-[sub_resource type="RectangleShape2D" id=222]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=223]
-extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="GDScript" id=224]
-script/source = "extends MovingBody
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $AnimatedSprite
-	sprite.play()
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="SpriteFrames" id=225]
-animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=226]
-script/source = "extends InteractMain
-class_name InteractChat
-
-var active : bool
-
-var parent_name : String
-var convo_file : String
-var music_file : String
-
-func _get_complex_convo():
-	var scene_name = get_tree().get_current_scene().name
-	return parent_name + \"_\" + scene_name
-
-func show_chat():
-	parent_name = get_parent().name
-	if parent_name == \"Affogato\":
-		convo_file = _get_complex_convo()
-		music_file = parent_name.to_lower()
-	else:
-		convo_file = parent_name.replace(\" \", \"_\")
-		music_file = convo_file.to_lower()
-	
-	active = true
-	if chat_with:
-		chat_with.hide_after = false
-		chat_with.visible = true
-		chat_with.name_label.text = parent_name
-
-func hide_chat():
-	if chat_with:
-		chat_with.visible = false
-		chat_with.stop()
-	active = false
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		show_chat()
-
-func _on_body_exited(body):
-	if body.name == \"Player\":
-		hide_chat()
-		if nft_possible:
-			nft.main.visible = false
-
-func _process(delta):
-	if disabled and active:
-		hide_chat()
-	if active and \"idle\" in get_parent():
-		if chat_with.started:
-			get_parent().idle = true
-		else:
-			get_parent().idle = false
-	._process(delta)
-
-func _input(_event):
-	if active:
-		if Input.is_action_just_pressed(\"interact\"):
-			if not chat_with.started:
-				_add_audio(\"NPC\", music_file)
-				chat_with.start(convo_file)
-			if nft_possible:
-				nft.reward(nft_id, false)
-"
-
-[sub_resource type="RectangleShape2D" id=227]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=228]
-extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="GDScript" id=239]
-script/source = "extends MovingBody
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $AnimatedSprite
-	sprite.play()
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="SpriteFrames" id=240]
-animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=241]
-script/source = "extends InteractMain
-class_name InteractChat
-
-var active : bool
-
-var parent_name : String
-var convo_file : String
-var music_file : String
-
-func _get_complex_convo():
-	var scene_name = get_tree().get_current_scene().name
-	return parent_name + \"_\" + scene_name
-
-func show_chat():
-	parent_name = get_parent().name
-	if parent_name == \"Affogato\":
-		convo_file = _get_complex_convo()
-		music_file = parent_name.to_lower()
-	else:
-		convo_file = parent_name.replace(\" \", \"_\")
-		music_file = convo_file.to_lower()
-	
-	active = true
-	if chat_with:
-		chat_with.hide_after = false
-		chat_with.visible = true
-		chat_with.name_label.text = parent_name
-
-func hide_chat():
-	if chat_with:
-		chat_with.visible = false
-		chat_with.stop()
-	active = false
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		show_chat()
-
-func _on_body_exited(body):
-	if body.name == \"Player\":
-		hide_chat()
-		if nft_possible:
-			nft.main.visible = false
-
-func _process(delta):
-	if disabled and active:
-		hide_chat()
-	if active and \"idle\" in get_parent():
-		if chat_with.started:
-			get_parent().idle = true
-		else:
-			get_parent().idle = false
-	._process(delta)
-
-func _input(_event):
-	if active:
-		if Input.is_action_just_pressed(\"interact\"):
-			if not chat_with.started:
-				_add_audio(\"NPC\", music_file)
-				chat_with.start(convo_file)
-			if nft_possible:
-				nft.reward(nft_id, false)
-"
-
-[sub_resource type="RectangleShape2D" id=242]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=243]
-extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="GDScript" id=229]
-script/source = "extends MovingBody
-
-var anim = \"idle\"
-
-func _ready():
-	sprite = $AnimatedSprite
-	sprite.play()
-	._ready()
-
-var ticks = 0
-var jump_tick = 100
-var walk_tick = 10
-var direction = 1
-var idle = false
-func _physics_process(delta):
-	if not idle:
-		ticks += 1
-		
-		if ticks % jump_tick == 0:
-			jump(20)
-			jump_tick = int(rand_range(200, 400))
-		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
-			walk_tick = int(rand_range(8, 20))
-		if ticks % 200 == 0:
-			direction *= -1
-			velocity.x = 0
-		if velocity.x == 0:
-			anim = \"idle\"
-		else:
-			anim = \"walk\"
-	else:
-		velocity.x = 0
-		
-	sprite.flip_h = direction - 1		
-	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
-	sprite.animation = anim
-"
-
-[sub_resource type="SpriteFrames" id=230]
-animations = [ {
-"frames": [ SubResource( 52 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=231]
-script/source = "extends InteractMain
-class_name InteractChat
-
-var active : bool
-
-var parent_name : String
-var convo_file : String
-var music_file : String
-
-func _get_complex_convo():
-	var scene_name = get_tree().get_current_scene().name
-	return parent_name + \"_\" + scene_name
-
-func show_chat():
-	parent_name = get_parent().name
-	if parent_name == \"Affogato\":
-		convo_file = _get_complex_convo()
-		music_file = parent_name.to_lower()
-	else:
-		convo_file = parent_name.replace(\" \", \"_\")
-		music_file = convo_file.to_lower()
-	
-	active = true
-	if chat_with:
-		chat_with.hide_after = false
-		chat_with.visible = true
-		chat_with.name_label.text = parent_name
-
-func hide_chat():
-	if chat_with:
-		chat_with.visible = false
-		chat_with.stop()
-	active = false
-
-func _on_body_entered(body):
-	if body.name == \"Player\" and not disabled:
-		show_chat()
-
-func _on_body_exited(body):
-	if body.name == \"Player\":
-		hide_chat()
-		if nft_possible:
-			nft.main.visible = false
-
-func _process(delta):
-	if disabled and active:
-		hide_chat()
-	if active and \"idle\" in get_parent():
-		if chat_with.started:
-			get_parent().idle = true
-		else:
-			get_parent().idle = false
-	._process(delta)
-
-func _input(_event):
-	if active:
-		if Input.is_action_just_pressed(\"interact\"):
-			if not chat_with.started:
-				_add_audio(\"NPC\", music_file)
-				chat_with.start(convo_file)
-			if nft_possible:
-				nft.reward(nft_id, false)
-"
-
-[sub_resource type="RectangleShape2D" id=232]
-extents = Vector2( 33.2397, 28.051 )
-
-[sub_resource type="RectangleShape2D" id=233]
-extents = Vector2( 20.4043, 10 )
-
 [sub_resource type="GDScript" id=234]
 script/source = "extends MovingBody
 
@@ -2860,7 +2154,7 @@ extents = Vector2( 33.2397, 28.051 )
 [sub_resource type="RectangleShape2D" id=238]
 extents = Vector2( 20.4043, 10 )
 
-[sub_resource type="GDScript" id=244]
+[sub_resource type="GDScript" id=214]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -2901,20 +2195,20 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="SpriteFrames" id=245]
+[sub_resource type="SpriteFrames" id=215]
 animations = [ {
 "frames": [ SubResource( 52 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [  ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=246]
+[sub_resource type="GDScript" id=216]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -2979,13 +2273,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=247]
+[sub_resource type="RectangleShape2D" id=217]
 extents = Vector2( 33.2397, 28.051 )
 
-[sub_resource type="RectangleShape2D" id=248]
+[sub_resource type="RectangleShape2D" id=218]
 extents = Vector2( 20.4043, 10 )
 
-[sub_resource type="GDScript" id=249]
+[sub_resource type="GDScript" id=219]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -3026,20 +2320,61 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="SpriteFrames" id=250]
+[sub_resource type="AtlasTexture" id=391]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=392]
+atlas = ExtResource( 49 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=393]
+atlas = ExtResource( 49 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=394]
+atlas = ExtResource( 49 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=395]
+atlas = ExtResource( 49 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=396]
+atlas = ExtResource( 49 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=397]
+atlas = ExtResource( 49 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=398]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=399]
+atlas = ExtResource( 49 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=220]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 391 ), SubResource( 391 ), SubResource( 391 ), SubResource( 391 ), SubResource( 391 ), SubResource( 392 ), SubResource( 392 ), SubResource( 392 ), SubResource( 393 ), SubResource( 393 ), SubResource( 393 ), SubResource( 393 ), SubResource( 392 ), SubResource( 392 ), SubResource( 392 ), SubResource( 392 ), SubResource( 392 ), SubResource( 391 ), SubResource( 391 ), SubResource( 391 ), SubResource( 391 ), SubResource( 391 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ) ],
 "loop": true,
 "name": "idle",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 395 ), SubResource( 396 ), SubResource( 397 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 398 ), SubResource( 399 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
+"speed": 2.0
 } ]
 
-[sub_resource type="GDScript" id=251]
+[sub_resource type="GDScript" id=221]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -3104,11 +2439,759 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=252]
+[sub_resource type="RectangleShape2D" id=222]
 extents = Vector2( 33.2397, 28.051 )
 
-[sub_resource type="RectangleShape2D" id=253]
+[sub_resource type="RectangleShape2D" id=223]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="GDScript" id=224]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = false
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="SpriteFrames" id=225]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=226]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=227]
+extents = Vector2( 33.2397, 28.051 )
+
+[sub_resource type="RectangleShape2D" id=228]
+extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="GDScript" id=239]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = false
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=400]
+atlas = ExtResource( 50 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=401]
+atlas = ExtResource( 50 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=402]
+atlas = ExtResource( 50 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=403]
+atlas = ExtResource( 50 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=404]
+atlas = ExtResource( 50 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=405]
+atlas = ExtResource( 50 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=406]
+atlas = ExtResource( 50 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=407]
+atlas = ExtResource( 50 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=240]
+animations = [ {
+"frames": [ SubResource( 400 ), SubResource( 400 ), SubResource( 401 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 401 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 402 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 402 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 403 ), SubResource( 404 ), SubResource( 405 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 406 ), SubResource( 407 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=241]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=242]
+extents = Vector2( 33.2397, 28.051 )
+
+[sub_resource type="RectangleShape2D" id=243]
+extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="GDScript" id=229]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = false
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=408]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=409]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=410]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=411]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=412]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=413]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=414]
+atlas = ExtResource( 51 )
+region = Rect2( 30, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=415]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=416]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=417]
+atlas = ExtResource( 51 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=418]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=419]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=420]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=421]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=230]
+animations = [ {
+"frames": [ SubResource( 408 ), SubResource( 408 ), SubResource( 408 ), SubResource( 408 ), SubResource( 409 ), SubResource( 409 ), SubResource( 409 ), SubResource( 408 ), SubResource( 408 ), SubResource( 408 ), SubResource( 408 ), SubResource( 410 ), SubResource( 410 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 408 ), SubResource( 408 ), SubResource( 408 ), SubResource( 412 ), SubResource( 412 ), SubResource( 413 ), SubResource( 413 ), SubResource( 413 ), SubResource( 414 ), SubResource( 415 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 416 ), SubResource( 415 ), SubResource( 414 ), SubResource( 413 ), SubResource( 412 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 417 ), SubResource( 418 ), SubResource( 419 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 420 ), SubResource( 421 ) ],
+"loop": true,
+"name": "walk",
+"speed": 3.0
+} ]
+
+[sub_resource type="GDScript" id=231]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=232]
+extents = Vector2( 33.2397, 28.051 )
+
+[sub_resource type="RectangleShape2D" id=233]
+extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="GDScript" id=209]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = false
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=382]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=383]
+atlas = ExtResource( 48 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=384]
+atlas = ExtResource( 48 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=385]
+atlas = ExtResource( 48 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=386]
+atlas = ExtResource( 48 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=387]
+atlas = ExtResource( 48 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=388]
+atlas = ExtResource( 48 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=389]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=390]
+atlas = ExtResource( 48 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=210]
+animations = [ {
+"frames": [ SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 383 ), SubResource( 383 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 384 ), SubResource( 384 ), SubResource( 384 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 385 ), SubResource( 385 ), SubResource( 385 ), SubResource( 385 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ), SubResource( 382 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 386 ), SubResource( 387 ), SubResource( 388 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 389 ), SubResource( 390 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=211]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=212]
+extents = Vector2( 33.2397, 28.051 )
+
+[sub_resource type="RectangleShape2D" id=213]
+extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="RectangleShape2D" id=422]
+extents = Vector2( 40.8073, 23.3975 )
+
+[sub_resource type="AtlasTexture" id=423]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=424]
+atlas = ExtResource( 52 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=425]
+atlas = ExtResource( 52 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=426]
+atlas = ExtResource( 52 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=427]
+atlas = ExtResource( 52 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=428]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=429]
+atlas = ExtResource( 52 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=430]
+atlas = ExtResource( 52 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=431]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=432]
+atlas = ExtResource( 52 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=433]
+atlas = ExtResource( 52 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=434]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=435]
+atlas = ExtResource( 52 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=436]
+atlas = ExtResource( 52 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=437]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=438]
+atlas = ExtResource( 52 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=439]
+animations = [ {
+"frames": [ SubResource( 423 ), SubResource( 424 ), SubResource( 424 ), SubResource( 425 ), SubResource( 426 ), SubResource( 425 ), SubResource( 427 ), SubResource( 428 ), SubResource( 429 ), SubResource( 427 ), SubResource( 424 ), SubResource( 427 ), SubResource( 427 ), SubResource( 426 ), SubResource( 424 ), SubResource( 430 ), SubResource( 431 ), SubResource( 432 ), SubResource( 433 ), SubResource( 434 ), SubResource( 435 ), SubResource( 436 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 437 ), SubResource( 438 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=440]
+extents = Vector2( 27.4358, 20.873 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 8 )
+region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=154]
+animations = [ {
+"frames": [ SubResource( 42 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 42 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
 
 [sub_resource type="GDScript" id=254]
 script/source = "extends MovingBody
@@ -3304,12 +3387,17 @@ func _physics_process(delta):
 
 [sub_resource type="SpriteFrames" id=265]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [  ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [  ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [  ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -3427,14 +3515,59 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=441]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=442]
+atlas = ExtResource( 55 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=443]
+atlas = ExtResource( 55 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=444]
+atlas = ExtResource( 55 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=445]
+atlas = ExtResource( 55 )
+region = Rect2( 60, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=446]
+atlas = ExtResource( 55 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=447]
+atlas = ExtResource( 55 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=448]
+atlas = ExtResource( 55 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=449]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=450]
+atlas = ExtResource( 55 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=270]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 441 ), SubResource( 441 ), SubResource( 441 ), SubResource( 442 ), SubResource( 441 ), SubResource( 441 ), SubResource( 442 ), SubResource( 441 ), SubResource( 441 ), SubResource( 441 ), SubResource( 443 ), SubResource( 443 ), SubResource( 443 ), SubResource( 444 ), SubResource( 445 ), SubResource( 445 ), SubResource( 445 ), SubResource( 445 ), SubResource( 444 ), SubResource( 444 ), SubResource( 443 ), SubResource( 443 ), SubResource( 441 ), SubResource( 441 ), SubResource( 441 ), SubResource( 442 ), SubResource( 441 ), SubResource( 441 ), SubResource( 441 ), SubResource( 441 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 446 ), SubResource( 447 ), SubResource( 448 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 449 ), SubResource( 450 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -3552,14 +3685,55 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=451]
+atlas = ExtResource( 56 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=452]
+atlas = ExtResource( 56 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=453]
+atlas = ExtResource( 56 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=454]
+atlas = ExtResource( 56 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=455]
+atlas = ExtResource( 56 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=456]
+atlas = ExtResource( 56 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=457]
+atlas = ExtResource( 56 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=458]
+atlas = ExtResource( 56 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=459]
+atlas = ExtResource( 56 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=275]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 453 ), SubResource( 454 ), SubResource( 453 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 455 ), SubResource( 456 ), SubResource( 457 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 458 ), SubResource( 459 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -3679,12 +3853,17 @@ func _physics_process(delta):
 
 [sub_resource type="SpriteFrames" id=280]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [  ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [  ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 53 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -3802,14 +3981,55 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=460]
+atlas = ExtResource( 59 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=461]
+atlas = ExtResource( 59 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=462]
+atlas = ExtResource( 59 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=463]
+atlas = ExtResource( 59 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=464]
+atlas = ExtResource( 59 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=465]
+atlas = ExtResource( 59 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=466]
+atlas = ExtResource( 59 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=467]
+atlas = ExtResource( 59 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=468]
+atlas = ExtResource( 59 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=285]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 460 ), SubResource( 461 ), SubResource( 460 ), SubResource( 460 ), SubResource( 460 ), SubResource( 460 ), SubResource( 460 ), SubResource( 462 ), SubResource( 460 ), SubResource( 460 ), SubResource( 460 ), SubResource( 462 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 460 ), SubResource( 460 ), SubResource( 460 ), SubResource( 460 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 464 ), SubResource( 465 ), SubResource( 466 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 467 ), SubResource( 468 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -4052,14 +4272,55 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=469]
+atlas = ExtResource( 58 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=470]
+atlas = ExtResource( 58 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=471]
+atlas = ExtResource( 58 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=472]
+atlas = ExtResource( 58 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=473]
+atlas = ExtResource( 58 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=474]
+atlas = ExtResource( 58 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=475]
+atlas = ExtResource( 58 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=476]
+atlas = ExtResource( 58 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=477]
+atlas = ExtResource( 58 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=295]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 469 ), SubResource( 469 ), SubResource( 470 ), SubResource( 469 ), SubResource( 471 ), SubResource( 472 ), SubResource( 469 ), SubResource( 469 ), SubResource( 469 ), SubResource( 469 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 473 ), SubResource( 474 ), SubResource( 475 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 476 ), SubResource( 477 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -4363,14 +4624,12 @@ __meta__ = {
 position = Vector2( 1102.73, 416.286 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 97 )
-frame = 1
 playing = true
 
 [node name="catellite2" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1096.23, 532.59 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="BlueGlow" type="TextureRect" parent="BelowPlayer/SpaceBG"]
@@ -4406,6 +4665,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 9 )
+frame = 5
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
@@ -4431,28 +4691,6 @@ position = Vector2( 151.541, -2 )
 texture = ExtResource( 41 )
 
 [node name="NPC" type="Node2D" parent="."]
-
-[node name="Longcat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3504.31, 1878.67 )
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 7 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 154 )
-animation = "walk"
-
-[node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat/LongCatArea2D"]
-position = Vector2( 2.29077, 0.729614 )
-shape = SubResource( 155 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat"]
-position = Vector2( 3.14978, 6.61462 )
-shape = SubResource( 156 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3304.62, 2452.31 )
@@ -4509,7 +4747,7 @@ script = SubResource( 159 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 160 )
 animation = "idle"
-frame = 12
+frame = 1
 playing = true
 flip_h = true
 
@@ -4557,6 +4795,7 @@ script = SubResource( 169 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 170 )
 animation = "idle"
+frame = 2
 playing = true
 flip_h = true
 
@@ -4581,7 +4820,7 @@ script = SubResource( 174 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 175 )
 animation = "idle"
-frame = 7
+frame = 17
 playing = true
 flip_h = true
 
@@ -4629,7 +4868,7 @@ script = SubResource( 184 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 185 )
 animation = "idle"
-frame = 8
+frame = 12
 playing = true
 flip_h = true
 
@@ -4676,18 +4915,17 @@ collision_mask = 2
 script = SubResource( 194 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Cowboy_cat"]
-position = Vector2( 756.431, 594.346 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 195 )
 animation = "idle"
-frame = 16
+frame = 19
 playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Cowboy_cat"]
+[node name="CowboyArea2D" type="Area2D" parent="NPC/Cowboy_cat"]
 script = SubResource( 196 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Cowboy_cat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Cowboy_cat/CowboyArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 197 )
 
@@ -4704,13 +4942,15 @@ script = SubResource( 199 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Geokitten"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 200 )
-animation = "walk"
+animation = "idle"
+frame = 9
+playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Geokitten"]
+[node name="GeokittenArea2D" type="Area2D" parent="NPC/Geokitten"]
 script = SubResource( 201 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Geokitten/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Geokitten/GeokittenArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 202 )
 
@@ -4742,48 +4982,48 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 208 )
 
 [node name="Hypercat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3921.37, 1790.88 )
+position = Vector2( 3736.46, 1349.32 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 209 )
+script = SubResource( 234 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Hypercat"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 210 )
+frames = SubResource( 235 )
 animation = "walk"
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Hypercat"]
-script = SubResource( 211 )
+script = SubResource( 236 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Hypercat/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
-shape = SubResource( 212 )
+shape = SubResource( 237 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Hypercat"]
 position = Vector2( 0.472534, 5.82715 )
-shape = SubResource( 213 )
+shape = SubResource( 238 )
 
-[node name="Longcat_2021" type="KinematicBody2D" parent="NPC"]
+[node name="Longcat_2021 X" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3770.8, 1804.88 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 214 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat_2021"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat_2021 X"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 215 )
 animation = "walk"
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Longcat_2021"]
+[node name="LasagneArea2D" type="Area2D" parent="NPC/Longcat_2021 X"]
 script = SubResource( 216 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021 X/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 217 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021 X"]
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 218 )
 
@@ -4796,13 +5036,15 @@ script = SubResource( 219 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lunar_cat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 220 )
-animation = "walk"
+animation = "idle"
+frame = 25
+playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Lunar_cat"]
+[node name="Lunar_catArea2D" type="Area2D" parent="NPC/Lunar_cat"]
 script = SubResource( 221 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lunar_cat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lunar_cat/Lunar_catArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 222 )
 
@@ -4810,31 +5052,31 @@ shape = SubResource( 222 )
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 223 )
 
-[node name="Machine_cat" type="KinematicBody2D" parent="NPC"]
+[node name="Machine_cat X" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3667.81, 1708.32 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 224 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Machine_cat"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Machine_cat X"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 225 )
-animation = "walk"
+animation = "climb"
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Machine_cat"]
+[node name="LasagneArea2D" type="Area2D" parent="NPC/Machine_cat X"]
 script = SubResource( 226 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Machine_cat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Machine_cat X/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 227 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Machine_cat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Machine_cat X"]
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 228 )
 
 [node name="Maneki_model_9" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3496.34, 1245.73 )
+position = Vector2( 3493.95, 1237.56 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 239 )
@@ -4842,7 +5084,9 @@ script = SubResource( 239 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Maneki_model_9"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 240 )
-animation = "walk"
+animation = "idle"
+frame = 12
+playing = true
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Maneki_model_9"]
@@ -4865,13 +5109,15 @@ script = SubResource( 229 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Mushroom_cat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 230 )
-animation = "walk"
+animation = "idle"
+frame = 2
+playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Mushroom_cat"]
+[node name="Mushroom_catArea2D" type="Area2D" parent="NPC/Mushroom_cat"]
 script = SubResource( 231 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Mushroom_cat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Mushroom_cat/Mushroom_catArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 232 )
 
@@ -4880,73 +5126,80 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 233 )
 
 [node name="Neocat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3736.46, 1349.32 )
+position = Vector2( 3921.37, 1790.88 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 234 )
+script = SubResource( 209 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Neocat"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 235 )
-animation = "walk"
+frames = SubResource( 210 )
+animation = "idle"
+frame = 19
+playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Neocat"]
-script = SubResource( 236 )
+[node name="HypercatArea2D" type="Area2D" parent="NPC/Neocat"]
+script = SubResource( 211 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Neocat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Neocat/HypercatArea2D"]
 position = Vector2( 3.23462, -1.15808 )
-shape = SubResource( 237 )
+shape = SubResource( 212 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Neocat"]
 position = Vector2( 0.472534, 5.82715 )
-shape = SubResource( 238 )
+shape = SubResource( 213 )
 
-[node name="Nocat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3566.02, 1773.98 )
+[node name="NOCAT" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 4733.92, 1404.71 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 244 )
+script = ExtResource( 53 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nocat"]
+[node name="Area2D" type="Area2D" parent="NPC/NOCAT"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/NOCAT/Area2D"]
+position = Vector2( 18.1068, 16.6215 )
+shape = SubResource( 422 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/NOCAT"]
+position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 245 )
-animation = "walk"
+frames = SubResource( 439 )
+animation = "idle"
+frame = 12
+speed_scale = 0.3
+playing = true
+centered = false
 flip_h = true
+script = ExtResource( 54 )
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Nocat"]
-script = SubResource( 246 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nocat/LasagneArea2D"]
-position = Vector2( 3.23462, -1.15808 )
-shape = SubResource( 247 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nocat"]
-position = Vector2( 0.472534, 5.82715 )
-shape = SubResource( 248 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/NOCAT"]
+position = Vector2( 30.0585, 20.9007 )
+shape = SubResource( 440 )
 
 [node name="Nonaco_longcat_2020" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3526.31, 1669.65 )
+position = Vector2( 3504.31, 1878.67 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 249 )
+script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonaco_longcat_2020"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 250 )
+frames = SubResource( 154 )
 animation = "walk"
-flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Nonaco_longcat_2020"]
-script = SubResource( 251 )
+[node name="LongCatArea2D" type="Area2D" parent="NPC/Nonaco_longcat_2020"]
+script = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonaco_longcat_2020/LasagneArea2D"]
-position = Vector2( 3.23462, -1.15808 )
-shape = SubResource( 252 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonaco_longcat_2020/LongCatArea2D"]
+position = Vector2( 2.29077, 0.729614 )
+shape = SubResource( 155 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonaco_longcat_2020"]
-position = Vector2( 0.472534, 5.82715 )
-shape = SubResource( 253 )
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 156 )
 
 [node name="Palmerston" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4071.56, 1011.68 )
@@ -4975,26 +5228,26 @@ script = SubResource( 262 )
 position = Vector2( 28.02, 20.7403 )
 shape = SubResource( 263 )
 
-[node name="Pumpkin_cat" type="KinematicBody2D" parent="NPC"]
+[node name="Pumpkin_cat X" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3835.72, 1350.48 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 264 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Pumpkin_cat"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Pumpkin_cat X"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 265 )
-animation = "walk"
+animation = "climb"
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Pumpkin_cat"]
+[node name="LasagneArea2D" type="Area2D" parent="NPC/Pumpkin_cat X"]
 script = SubResource( 266 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Pumpkin_cat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Pumpkin_cat X/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 267 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Pumpkin_cat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Pumpkin_cat X"]
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 268 )
 
@@ -5007,7 +5260,9 @@ script = SubResource( 269 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Shinobi"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 270 )
-animation = "walk"
+animation = "idle"
+frame = 5
+playing = true
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Shinobi"]
@@ -5030,13 +5285,13 @@ script = SubResource( 274 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Solar_cat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 275 )
-animation = "walk"
+animation = "climb"
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Solar_cat"]
+[node name="Solar_catArea2D" type="Area2D" parent="NPC/Solar_cat"]
 script = SubResource( 276 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Solar_cat/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Solar_cat/Solar_catArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 277 )
 
@@ -5053,13 +5308,13 @@ script = SubResource( 279 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ta_miu_crown_prince_thumose"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 280 )
-animation = "walk"
+animation = "climb"
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Ta_miu_crown_prince_thumose"]
+[node name="Ta_miu_crown_prince_thumoseArea2D" type="Area2D" parent="NPC/Ta_miu_crown_prince_thumose"]
 script = SubResource( 281 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ta_miu_crown_prince_thumose/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ta_miu_crown_prince_thumose/Ta_miu_crown_prince_thumoseArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 282 )
 
@@ -5076,7 +5331,9 @@ script = SubResource( 284 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Viking_geocat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 285 )
-animation = "walk"
+animation = "idle"
+frame = 13
+playing = true
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Viking_geocat"]
@@ -5090,31 +5347,31 @@ shape = SubResource( 287 )
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 288 )
 
-[node name="Yule_cat_2020_Luxury_Edition" type="KinematicBody2D" parent="NPC"]
+[node name="Yule_cat_2020_Luxury_Edition X" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3348.42, 1336.48 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 289 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020_Luxury_Edition"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020_Luxury_Edition X"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 290 )
 animation = "walk"
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Yule_cat_2020_Luxury_Edition"]
+[node name="LasagneArea2D" type="Area2D" parent="NPC/Yule_cat_2020_Luxury_Edition X"]
 script = SubResource( 291 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Yule_cat_2020_Luxury_Edition/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Yule_cat_2020_Luxury_Edition X/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 292 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Yule_cat_2020_Luxury_Edition"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Yule_cat_2020_Luxury_Edition X"]
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 293 )
 
 [node name="Yule_cat_2020" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3348.42, 1336.48 )
+position = Vector2( 3223.83, 1383.11 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 294 )
@@ -5122,13 +5379,15 @@ script = SubResource( 294 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 295 )
-animation = "walk"
+animation = "idle"
+frame = 9
+playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Yule_cat_2020"]
+[node name="Yule_catArea2D" type="Area2D" parent="NPC/Yule_cat_2020"]
 script = SubResource( 296 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Yule_cat_2020/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Yule_cat_2020/Yule_catArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 297 )
 
