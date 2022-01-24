@@ -1,4 +1,4 @@
-[gd_scene load_steps=481 format=2]
+[gd_scene load_steps=505 format=2]
 
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/nonacat.png" type="Texture" id=2]
@@ -63,6 +63,8 @@
 [ext_resource path="res://Assets/Agents/PlayerCats/groundcat_tileset.png" type="Texture" id=61]
 [ext_resource path="res://Assets/Agents/PlayerCats/hypercat_tileset.png" type="Texture" id=62]
 [ext_resource path="res://Assets/Agents/PlayerCats/ta_miu_crown_prince_thumose_tileset.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Agents/PlayerCats/longcat_2021_tileset.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Agents/PlayerCats/2021_tacgnol_tileset.png" type="Texture" id=65]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -642,14 +644,63 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=418]
+atlas = ExtResource( 65 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=419]
+atlas = ExtResource( 65 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=420]
+atlas = ExtResource( 65 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=421]
+atlas = ExtResource( 65 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=422]
+atlas = ExtResource( 65 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=423]
+atlas = ExtResource( 65 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=424]
+atlas = ExtResource( 65 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=425]
+atlas = ExtResource( 65 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=426]
+atlas = ExtResource( 65 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=427]
+atlas = ExtResource( 65 )
+region = Rect2( 15, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=428]
+atlas = ExtResource( 65 )
+region = Rect2( 30, 30, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=75]
 animations = [ {
-"frames": [ SubResource( 56 ) ],
+"frames": [ SubResource( 418 ), SubResource( 419 ), SubResource( 420 ), SubResource( 421 ), SubResource( 422 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 56 ), SubResource( 57 ) ],
+"frames": [ SubResource( 423 ), SubResource( 424 ), SubResource( 425 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 426 ), SubResource( 427 ), SubResource( 428 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -2301,14 +2352,63 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=429]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=430]
+atlas = ExtResource( 64 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=431]
+atlas = ExtResource( 64 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=432]
+atlas = ExtResource( 64 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=433]
+atlas = ExtResource( 64 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=434]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=435]
+atlas = ExtResource( 64 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=436]
+atlas = ExtResource( 64 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=437]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=438]
+atlas = ExtResource( 64 )
+region = Rect2( 15, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=439]
+atlas = ExtResource( 64 )
+region = Rect2( 30, 30, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=188]
 animations = [ {
-"frames": [ SubResource( 56 ) ],
+"frames": [ SubResource( 429 ), SubResource( 430 ), SubResource( 431 ), SubResource( 432 ), SubResource( 433 ), SubResource( 429 ), SubResource( 430 ), SubResource( 431 ), SubResource( 432 ), SubResource( 433 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ SubResource( 434 ), SubResource( 435 ), SubResource( 436 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 437 ), SubResource( 438 ), SubResource( 439 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -4869,7 +4969,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 48 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
@@ -4951,7 +5051,7 @@ script = SubResource( 59 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 70 )
 animation = "idle"
-frame = 24
+frame = 3
 playing = true
 flip_h = true
 
@@ -4975,7 +5075,7 @@ script = SubResource( 74 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/2021_tacgnol"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 75 )
-animation = "walk"
+animation = "climb"
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/2021_tacgnol"]
@@ -4999,7 +5099,6 @@ script = SubResource( 79 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 88 )
 animation = "idle"
-frame = 2
 playing = true
 flip_h = true
 
@@ -5024,7 +5123,7 @@ script = SubResource( 92 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 103 )
 animation = "idle"
-frame = 13
+frame = 5
 playing = true
 flip_h = true
 
@@ -5072,7 +5171,7 @@ script = SubResource( 123 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 135 )
 animation = "idle"
-frame = 17
+frame = 10
 playing = true
 flip_h = true
 
@@ -5122,7 +5221,7 @@ script = SubResource( 145 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 156 )
 animation = "idle"
-frame = 10
+frame = 1
 playing = true
 flip_h = true
 
@@ -5147,7 +5246,7 @@ script = SubResource( 160 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 173 )
 animation = "idle"
-frame = 22
+frame = 8
 playing = true
 flip_h = true
 
@@ -5172,7 +5271,6 @@ script = SubResource( 177 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 178 )
 animation = "climb"
-frame = 1
 playing = true
 flip_h = true
 
@@ -5197,7 +5295,7 @@ script = SubResource( 182 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 183 )
 animation = "idle"
-frame = 19
+frame = 3
 playing = true
 flip_h = true
 
@@ -5212,26 +5310,27 @@ shape = SubResource( 185 )
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 186 )
 
-[node name="Longcat_2021 X" type="KinematicBody2D" parent="NPC"]
+[node name="Longcat_2021" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3770.8, 1804.88 )
 collision_layer = 2
 collision_mask = 2
 script = SubResource( 187 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat_2021 X"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat_2021"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 188 )
 animation = "walk"
+playing = true
 flip_h = true
 
-[node name="LasagneArea2D" type="Area2D" parent="NPC/Longcat_2021 X"]
+[node name="LasagneArea2D" type="Area2D" parent="NPC/Longcat_2021"]
 script = SubResource( 189 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021 X/LasagneArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 190 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021 X"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat_2021"]
 position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 191 )
 
@@ -5245,7 +5344,7 @@ script = SubResource( 192 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 202 )
 animation = "idle"
-frame = 22
+frame = 10
 playing = true
 flip_h = true
 
@@ -5270,7 +5369,7 @@ script = SubResource( 206 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 207 )
 animation = "idle"
-frame = 20
+frame = 34
 playing = true
 flip_h = true
 
@@ -5295,7 +5394,7 @@ script = SubResource( 211 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 220 )
 animation = "idle"
-frame = 12
+frame = 16
 playing = true
 flip_h = true
 
@@ -5320,7 +5419,7 @@ script = SubResource( 224 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 239 )
 animation = "idle"
-frame = 10
+frame = 25
 playing = true
 flip_h = true
 
@@ -5345,7 +5444,7 @@ script = SubResource( 243 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 253 )
 animation = "idle"
-frame = 15
+frame = 24
 playing = true
 flip_h = true
 
@@ -5378,7 +5477,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 274 )
 animation = "idle"
-frame = 8
+frame = 12
 speed_scale = 0.3
 playing = true
 centered = false
@@ -5471,7 +5570,7 @@ script = SubResource( 294 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 305 )
 animation = "idle"
-frame = 8
+frame = 27
 playing = true
 flip_h = true
 
@@ -5544,7 +5643,7 @@ script = SubResource( 328 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 338 )
 animation = "idle"
-frame = 18
+frame = 11
 playing = true
 flip_h = true
 
@@ -5592,7 +5691,7 @@ script = SubResource( 347 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 357 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
