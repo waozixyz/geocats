@@ -1,4 +1,4 @@
-[gd_scene load_steps=447 format=2]
+[gd_scene load_steps=481 format=2]
 
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/nonacat.png" type="Texture" id=2]
@@ -60,6 +60,9 @@
 [ext_resource path="res://Assets/Agents/PlayerCats/yulecat_tileset.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Agents/PlayerCats/viking_tileset.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Agents/PlayerCats/machinecat_tileset.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Agents/PlayerCats/groundcat_tileset.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Agents/PlayerCats/hypercat_tileset.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Agents/PlayerCats/ta_miu_crown_prince_thumose_tileset.png" type="Texture" id=63]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -1946,17 +1949,74 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=387]
+atlas = ExtResource( 61 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=388]
+atlas = ExtResource( 61 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=389]
+atlas = ExtResource( 61 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=390]
+atlas = ExtResource( 61 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=391]
+atlas = ExtResource( 61 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=392]
+atlas = ExtResource( 61 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=393]
+atlas = ExtResource( 61 )
+region = Rect2( 60, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=394]
+atlas = ExtResource( 61 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=395]
+atlas = ExtResource( 61 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=396]
+atlas = ExtResource( 61 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=397]
+atlas = ExtResource( 61 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=398]
+atlas = ExtResource( 61 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=399]
+atlas = ExtResource( 61 )
+region = Rect2( 45, 0, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=178]
 animations = [ {
-"frames": [ SubResource( 56 ) ],
+"frames": [ SubResource( 387 ), SubResource( 387 ), SubResource( 387 ), SubResource( 387 ), SubResource( 387 ), SubResource( 387 ), SubResource( 388 ), SubResource( 388 ), SubResource( 389 ), SubResource( 390 ), SubResource( 391 ), SubResource( 392 ), SubResource( 393 ), SubResource( 393 ), SubResource( 393 ), SubResource( 393 ), SubResource( 392 ), SubResource( 391 ), SubResource( 390 ), SubResource( 389 ), SubResource( 388 ), SubResource( 388 ), SubResource( 388 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ), SubResource( 394 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 56 ), SubResource( 57 ) ],
+"frames": [ SubResource( 395 ), SubResource( 396 ), SubResource( 397 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 398 ), SubResource( 399 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="GDScript" id=179]
@@ -2071,14 +2131,59 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=400]
+atlas = ExtResource( 62 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=401]
+atlas = ExtResource( 62 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=402]
+atlas = ExtResource( 62 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=403]
+atlas = ExtResource( 62 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=404]
+atlas = ExtResource( 62 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=405]
+atlas = ExtResource( 62 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=406]
+atlas = ExtResource( 62 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=407]
+atlas = ExtResource( 62 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=408]
+atlas = ExtResource( 62 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=409]
+atlas = ExtResource( 62 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=183]
 animations = [ {
-"frames": [ SubResource( 56 ) ],
+"frames": [ SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 401 ), SubResource( 400 ), SubResource( 401 ), SubResource( 400 ), SubResource( 401 ), SubResource( 402 ), SubResource( 402 ), SubResource( 402 ), SubResource( 402 ), SubResource( 402 ), SubResource( 402 ), SubResource( 403 ), SubResource( 403 ), SubResource( 404 ), SubResource( 404 ), SubResource( 404 ), SubResource( 401 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ), SubResource( 400 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 56 ), SubResource( 57 ) ],
+"frames": [ SubResource( 405 ), SubResource( 406 ), SubResource( 407 ) ],
+"loop": true,
+"name": "climb",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 408 ), SubResource( 409 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -3920,19 +4025,51 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
+[sub_resource type="AtlasTexture" id=410]
+atlas = ExtResource( 63 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=411]
+atlas = ExtResource( 63 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=412]
+atlas = ExtResource( 63 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=413]
+atlas = ExtResource( 63 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=414]
+atlas = ExtResource( 63 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=415]
+atlas = ExtResource( 63 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=416]
+atlas = ExtResource( 63 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=417]
+atlas = ExtResource( 63 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=324]
 animations = [ {
-"frames": [  ],
+"frames": [ SubResource( 410 ), SubResource( 410 ), SubResource( 411 ), SubResource( 410 ), SubResource( 411 ), SubResource( 410 ), SubResource( 410 ), SubResource( 410 ), SubResource( 410 ), SubResource( 412 ), SubResource( 412 ), SubResource( 412 ), SubResource( 412 ), SubResource( 410 ), SubResource( 411 ), SubResource( 411 ), SubResource( 410 ), SubResource( 410 ), SubResource( 410 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ SubResource( 413 ), SubResource( 414 ), SubResource( 415 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 57 ) ],
+"frames": [ SubResource( 416 ), SubResource( 417 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -4814,7 +4951,7 @@ script = SubResource( 59 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 70 )
 animation = "idle"
-frame = 18
+frame = 24
 playing = true
 flip_h = true
 
@@ -4887,7 +5024,7 @@ script = SubResource( 92 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 103 )
 animation = "idle"
-frame = 20
+frame = 13
 playing = true
 flip_h = true
 
@@ -4935,7 +5072,7 @@ script = SubResource( 123 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 135 )
 animation = "idle"
-frame = 5
+frame = 17
 playing = true
 flip_h = true
 
@@ -4985,7 +5122,7 @@ script = SubResource( 145 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 156 )
 animation = "idle"
-frame = 11
+frame = 10
 playing = true
 flip_h = true
 
@@ -5010,7 +5147,7 @@ script = SubResource( 160 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 173 )
 animation = "idle"
-frame = 13
+frame = 22
 playing = true
 flip_h = true
 
@@ -5034,7 +5171,9 @@ script = SubResource( 177 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Groundcat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 178 )
-animation = "walk"
+animation = "climb"
+frame = 1
+playing = true
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Groundcat"]
@@ -5057,7 +5196,9 @@ script = SubResource( 182 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Hypercat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 183 )
-animation = "walk"
+animation = "idle"
+frame = 19
+playing = true
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Hypercat"]
@@ -5104,7 +5245,7 @@ script = SubResource( 192 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 202 )
 animation = "idle"
-frame = 6
+frame = 22
 playing = true
 flip_h = true
 
@@ -5129,7 +5270,7 @@ script = SubResource( 206 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 207 )
 animation = "idle"
-frame = 15
+frame = 20
 playing = true
 flip_h = true
 
@@ -5154,6 +5295,7 @@ script = SubResource( 211 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 220 )
 animation = "idle"
+frame = 12
 playing = true
 flip_h = true
 
@@ -5178,7 +5320,7 @@ script = SubResource( 224 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 239 )
 animation = "idle"
-frame = 16
+frame = 10
 playing = true
 flip_h = true
 
@@ -5203,7 +5345,7 @@ script = SubResource( 243 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 253 )
 animation = "idle"
-frame = 21
+frame = 15
 playing = true
 flip_h = true
 
@@ -5236,7 +5378,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 274 )
 animation = "idle"
-frame = 12
+frame = 8
 speed_scale = 0.3
 playing = true
 centered = false
@@ -5376,7 +5518,9 @@ script = SubResource( 323 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ta_miu_crown_prince_thumose"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 324 )
-animation = "climb"
+animation = "idle"
+frame = 4
+playing = true
 flip_h = true
 
 [node name="Ta_miu_crown_prince_thumoseArea2D" type="Area2D" parent="NPC/Ta_miu_crown_prince_thumose"]
@@ -5400,7 +5544,7 @@ script = SubResource( 328 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 338 )
 animation = "idle"
-frame = 6
+frame = 18
 playing = true
 flip_h = true
 
