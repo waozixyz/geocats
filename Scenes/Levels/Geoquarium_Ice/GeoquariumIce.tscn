@@ -1,4 +1,4 @@
-[gd_scene load_steps=536 format=2]
+[gd_scene load_steps=537 format=2]
 
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/3_GeoCity/Cats/nonacat.png" type="Texture" id=2]
@@ -68,6 +68,7 @@
 [ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/temper.png" type="Texture" id=66]
 [ext_resource path="res://Assets/Agents/PlayerCats/pumpkin_cat_tileset.png" type="Texture" id=67]
 [ext_resource path="res://Assets/Agents/PlayerCats/yulecat_luxury_tileset.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/1.png" type="Texture" id=69]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -1585,6 +1586,16 @@ animations = [ {
 "frames": [ ExtResource( 19 ), ExtResource( 19 ), ExtResource( 44 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 45 ), ExtResource( 46 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 69 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -5154,11 +5165,13 @@ __meta__ = {
 [node name="catellite1" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1102.73, 416.286 )
 frames = SubResource( 41 )
+frame = 1
 playing = true
 
 [node name="catellite2" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1096.23, 532.59 )
 frames = SubResource( 44 )
+frame = 1
 playing = true
 
 [node name="BlueGlow" type="TextureRect" parent="BelowPlayer/SpaceBG"]
@@ -5194,6 +5207,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 48 )
+frame = 4
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
@@ -5275,7 +5289,7 @@ script = SubResource( 59 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 70 )
 animation = "idle"
-frame = 22
+frame = 10
 playing = true
 flip_h = true
 
@@ -5323,6 +5337,7 @@ script = SubResource( 79 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 88 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
@@ -5347,7 +5362,7 @@ script = SubResource( 92 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 103 )
 animation = "idle"
-frame = 23
+frame = 1
 playing = true
 flip_h = true
 
@@ -5420,7 +5435,6 @@ script = SubResource( 139 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 140 )
 animation = "idle"
-frame = 1
 centered = false
 script = SubResource( 141 )
 
@@ -5445,7 +5459,7 @@ script = SubResource( 145 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 156 )
 animation = "idle"
-frame = 11
+frame = 15
 playing = true
 flip_h = true
 
@@ -5470,7 +5484,7 @@ script = SubResource( 160 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 173 )
 animation = "idle"
-frame = 23
+frame = 17
 playing = true
 flip_h = true
 
@@ -5495,7 +5509,7 @@ script = SubResource( 177 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 178 )
 animation = "climb"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
@@ -5520,7 +5534,7 @@ script = SubResource( 182 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 183 )
 animation = "idle"
-frame = 11
+frame = 4
 playing = true
 flip_h = true
 
@@ -5545,7 +5559,7 @@ script = SubResource( 187 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 188 )
 animation = "walk"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
@@ -5570,7 +5584,7 @@ script = SubResource( 192 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 202 )
 animation = "idle"
-frame = 25
+frame = 4
 playing = true
 flip_h = true
 
@@ -5595,7 +5609,7 @@ script = SubResource( 206 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 207 )
 animation = "idle"
-frame = 18
+frame = 41
 playing = true
 flip_h = true
 
@@ -5620,7 +5634,7 @@ script = SubResource( 211 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 220 )
 animation = "idle"
-frame = 13
+frame = 8
 playing = true
 flip_h = true
 
@@ -5645,7 +5659,7 @@ script = SubResource( 224 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 239 )
 animation = "idle"
-frame = 21
+frame = 7
 playing = true
 flip_h = true
 
@@ -5670,7 +5684,7 @@ script = SubResource( 243 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 253 )
 animation = "idle"
-frame = 21
+frame = 19
 playing = true
 flip_h = true
 
@@ -5703,7 +5717,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 274 )
 animation = "idle"
-frame = 21
+frame = 7
 speed_scale = 0.3
 playing = true
 centered = false
@@ -5773,7 +5787,7 @@ script = SubResource( 289 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 290 )
 animation = "idle"
-frame = 13
+frame = 5
 playing = true
 flip_h = true
 
@@ -5798,7 +5812,7 @@ script = SubResource( 294 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 305 )
 animation = "idle"
-frame = 6
+frame = 22
 playing = true
 flip_h = true
 
@@ -5846,7 +5860,7 @@ script = SubResource( 323 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 324 )
 animation = "idle"
-frame = 3
+frame = 11
 playing = true
 flip_h = true
 
@@ -5896,7 +5910,7 @@ script = SubResource( 342 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 343 )
 animation = "idle"
-frame = 7
+frame = 10
 playing = true
 flip_h = true
 
@@ -5921,6 +5935,7 @@ script = SubResource( 347 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 357 )
 animation = "idle"
+frame = 6
 playing = true
 flip_h = true
 
@@ -5948,7 +5963,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 455 )
 animation = "idle"
-frame = 20
+frame = 21
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Music/0_TitleScreen.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Scenes/Levels/0_TitleScreen/Login.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/0_TitleScreen/Demo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Levels/0_TitleScreen/Slideshow.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -296,6 +296,7 @@ __meta__ = {
 position = Vector2( 0, -1.90735e-06 )
 scale = Vector2( 2.37037, 2.52 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

@@ -1720,7 +1720,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 457 )
 animation = "idle"
-frame = 28
+frame = 41
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -1747,7 +1747,6 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 466 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -1775,7 +1774,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 477 )
 animation = "idle"
-frame = 13
+frame = 6
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -1803,6 +1802,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 487 )
 animation = "idle"
+frame = 5
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -1830,7 +1830,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 501 )
 animation = "walk"
-frame = 8
+frame = 7
 playing = true
 
 [node name="SandcatArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -1858,7 +1858,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 510 )
 animation = "idle"
-frame = 7
+frame = 2
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -1886,7 +1886,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 518 )
 animation = "idle"
-frame = 7
+frame = 24
 playing = true
 
 [node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
