@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Entities/Particles/Confetti.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Levels/1_CatCradle/present.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Levels/1_CatCradle/Interact.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Levels/10_DesertOutpost/Interact.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/Present.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/Levels/1_CatCradle/LetterFromAunt.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=32]
@@ -162,7 +162,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
 position = Vector2( 0, -9.27606 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="Present" type="Area2D" parent="."]
@@ -173,7 +172,7 @@ script = ExtResource( 30 )
 [node name="snow" parent="Present" instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present"]
-position = Vector2( 41, -28.2416 )
+position = Vector2( 40.1429, -32.7786 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Present"]
@@ -187,7 +186,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" groups=["end"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" groups=[
+"end",
+]]
 position = Vector2( 7, 629 )
 shape = SubResource( 5 )
 
@@ -345,8 +346,8 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 29 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 31 )
 __meta__ = {

@@ -1,0 +1,16 @@
+{
+  "first": {
+    "name": "Sol",
+    "avatar": "sol.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "An infectious virus that's turning Geocats into dangerous monsters?",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "Huh, I don't really care.",
+    "next": ""
+  }
+}

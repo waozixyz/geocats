@@ -556,7 +556,9 @@ position = Vector2( 1249.7, -248.505 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
@@ -696,7 +698,7 @@ position = Vector2( 31, 28.001 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 63 )
 animation = "idle"
-frame = 13
+frame = 10
 playing = true
 flip_h = true
 script = SubResource( 64 )

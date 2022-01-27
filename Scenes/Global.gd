@@ -41,7 +41,7 @@ func _ready():
 	randomize()
 	for _i in range(0, 7):
 		pumpkin_code += str(int(rand_range(1, 8)))
-	loadit()
+	#loadit()
 
 	# load dialogue system data
 	#PROGRESS.variables = Global.data.prog_var

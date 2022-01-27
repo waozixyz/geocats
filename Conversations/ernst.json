@@ -1,0 +1,33 @@
+{
+  "first": {
+    "name": "Ernst",
+    "avatar": "ernst.png",
+    "position": "left",
+    "type": "text",
+    "content": "...",
+    "animation_in": "fade_in",
+    "next": "1",
+  },
+  "1": {
+    "type": "question",
+    "text": "Hm?",
+    "options": ["...", "leave"],
+    "next": ["2", ""]
+  },
+  "2": {
+    "type": "question",
+    "text": "Lichens are composite organisms, a symbiotic relationship between fungi and algae.",
+    "options": ["...", "Leave"],
+    "next": ["3", ""]
+  },
+  "3": {
+    "type": "text",
+    "content": "The ones that grow here are adapted to the harsh enviroment of the desert.",
+    "next": "4",
+  },
+  "4": {
+    "type": "text",
+    "content": "If they look like cacti to you, that's because of a process called convergent evolution.",
+    "next": "",
+  },
+}

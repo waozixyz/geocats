@@ -1,0 +1,16 @@
+{
+  "first": {
+    "name": "Savanna",
+    "avatar": "savanna.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "By day I'm a gardener.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "By night I'm developing a new type of condiment called Chestershire sauce.",
+    "next": ""
+  }
+}

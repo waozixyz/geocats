@@ -1,0 +1,134 @@
+{
+  "first": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "It's unfortunate that we're meeting under such circumstances.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "But whatever, let's not get distracted.@Palmerston's already sent me a message detailing the situation.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...Do you know how dangerous the great litterbox is?",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "I get that you're on an important mission -",
+    "next": "3_a"
+  },
+  "3_a": {
+    "type": "text",
+    "content": "but I cannot in good conscience allow you to wander aimlessly in the desert looking for clues.",
+    "next": ""
+  },
+  "repeat": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "knowledge",
+    "true": "knowledge_on",
+    "false": "knowledge_off"
+  },
+  "knowledge_off": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "animation_in": "fade_in",
+
+    "type": "text",
+    "content": "Have you heard? The shifting sands of the Great Litterbox are unforgiving.",
+    "next": "knowledge_off_1"
+  },
+  "knowledge_off_1": {
+    "type": "text",
+    "content": "There's a digital encyclopedia installed on our main computer system.",
+    "next": "knowledge_off_2"
+  },
+  "knowledge_off_2": {
+    "type": "text",
+    "content": "Talk to me again after you've researched some basic survival techniques.",
+    "next": ""
+  },
+  "knowledge_off_3": {
+    "type": "text",
+    "content": "If you do this, I'll show you the best way to get into the deep desert.",
+    "next": ""
+  },
+  "knowledge_on": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "animation_in": "fade_in",
+
+    "type": "text",
+    "content": "...",
+    "next": "4"
+  },
+  "4": {
+    "type": "text",
+    "content": "...",
+    "next": "5"
+  },
+  "5": {
+    "type": "text",
+    "content": "I see it in your eyes... All of the new information you learned.",
+    "next": "6"
+  },
+  "6": {
+    "type": "text",
+    "content": "...",
+    "next": "7"
+  },
+  "7": {
+    "type": "text",
+    "content": "I'll hold up my end of this deal.",
+    "next": "8"
+  },
+  "8": {
+    "type": "text",
+    "content": "You'll see a dried up riverbed when you exit the conservatory.",
+    "next": "9a"
+  },
+  "9a": {
+    "type": "text",
+    "content": "Follow it for as long as you can, it's rocky surface is easier to walk on than sand is.",
+    "next": "9"
+  },
+  "9": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "move_in",
+    "animation_out": "fade_out",
+    "position": "left",
+    "type": "text",
+    "content": "...And then what?",
+    "next": "10"
+  },
+  "10": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "animation_out": "fade_out",
+    "type": "text",
+    "content": "No idea, but it's the only route that is conducive to survival.",
+    "next": "11"
+  },
+  "11": {
+    "type": "text",
+    "content": "In my opinion, this is a fools errand given to you by Norna and Wyrd.",
+    "next": "13"
+  },
+  "12": {
+    "type": "text",
+    "content": "The shifting sands are unforgiving. Best of luck out there.",
+    "next": ""
+  }
+}

@@ -15,7 +15,7 @@
   },
   "2": {
     "type": "text",
-    "content": "Usually I tend to the ancient cacti of my homelands.",
+    "content": "Usually I tend to the ancient lichen of my homelands.@However -",
     "next": "3"
   },
   "3": {
@@ -39,7 +39,7 @@
   },
   "r2": {
     "type": "text",
-    "content": "Perhaps one day we can visit my village and share a pot of cactus tea.",
+    "content": "Perhaps one day we can visit my village and share a pot of Lichen tea.",
     "next": ""
   }
 }

@@ -1,0 +1,46 @@
+{
+  "first": {
+    "name": "Liet",
+    "avatar": "liet.png",
+    "position": "left",
+    "type": "text",
+    "content": "Oh, you made it!",
+    "animation_in": "fade_in",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "Welcome to the Lichen Conservatory.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "It's here that my colleagues and I cultivate a rare type of giant lichen.",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "content": "Inconsequent information to you, perhaps. I see you're on a mission.",
+    "next": ""
+  },
+  "repeat": {
+    "name": "Liet",
+    "avatar": "liet.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "If you're looking for Dr. Letharia, she's usually in her lookout tower.",
+    "next": "r1"
+  },
+  "r1": {
+    "type": "text",
+    "content": "I could tell you which tower she's in -",
+    "next": "r2"
+  },
+  "r2": {
+    "type": "text",
+    "content": "But where would the fun be in that?",
+    "next": ""
+  }
+}
+

@@ -5,22 +5,17 @@
     "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "This looks like a strange sort of button mechanism.",
+    "content": "We have no idea where to start looking... And this desert is massive.",
     "next": "1"
   },
   "1": {
     "type": "text",
-    "content": "You don't seem heavy enough to press it down though...",
+    "content": "It pains me to say this, but I think we have to talk to strangers if we want to get directions...",
     "next": "2"
   },
   "2": {
     "type": "text",
     "content": "...",
     "next": "3"
-  },
-  "3": {
-    "type": "text",
-    "content": "Let's keep exploring?",
-    "next": ""
   }
 }

@@ -3,6 +3,7 @@
 [node name="ConfirmationDialog" type="ConfirmationDialog"]
 margin_right = 475.0
 margin_bottom = 302.0
+rect_min_size = Vector2( 400, 140 )
 window_title = "Orphan .import files cleaner"
 resizable = true
 __meta__ = {
