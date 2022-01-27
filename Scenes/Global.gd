@@ -32,7 +32,7 @@ func _enter_tree():
 		
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		#API.get_request("/update-user")
+		#Deta.get_request("/update-user")
 		saveit()
 		get_tree().quit()
 

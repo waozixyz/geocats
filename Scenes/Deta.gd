@@ -10,8 +10,7 @@ var last_body
 
 
 var current_id = 0
-var requests = []
-var current_request_id = 0
+var requests = {}
 
 func _ready():
 	if Global.debug:
@@ -21,41 +20,63 @@ func _ready():
 	pause_mode = PAUSE_MODE_PROCESS
 
 func claim_nft(nft_id):
-	return add_request("/available-nft-db", { "nft_id": nft_id })
+	return add_request("/claim-nft", { "nft_id": nft_id })
 
 func add_request(path, body = null, jwt = Global.data.access_token):
 	current_id += 1
-	requests.append({"id": current_id, "path": path, "body": body, "jwt": jwt})
+	requests[current_id] = {"status": "added", "path": path, "body": body, "jwt": jwt}
 	return current_id
 
-func check_request(request_id):
-	print(requests[request_id])
+func check_request(id):
+	if requests.size() > 0:
+		for key in requests:
+			var request = requests[key]
+			if key == id and request.status == "done":
+				request.status = "delivered"
+				return request.response
+	return false
 	
-var current_request
-var current_response
+var logged_in
 func _process(delta):
-	# if there isn't a current request
-	# and the requests array is not empt
-	if not current_request and requests.size() > 0:
-		var request = requests[0]
-		current_request_id = request.id
-		current_request = get_request(request.path, request.body, request.jwt)
-	
-	if current_request:
-		var data_size = current_request.get_downloaded_bytes()
-		if data_size > 0 and response and current_request.get_http_client_status() == 0:
-			current_response = response
-			remove_child(current_request)
-			current_request = null
-			requests.pop_front()
-	
-func refresh_token():
-	get_request("/refresh", null, Global.data.renew_token)
+	for key in requests:
+		var request = requests[key]
+		if request.status == "added":
+			request.status = "requested"
+			request.request = _get_request(key, request.path, request.body, request.jwt)
+		elif request.status == "has_response":
+			var response = request.response
+			var response_code = request.res_code
+			if response_code == 500 or response_code == 405 or response_code == 401:
+				Global.data.login_msg = response_code
+				SceneChanger.change_scene("TitleScreen")
+				request.status = "need_login"
+				logged_in = false
+			elif response_code == 422:
+				# signature has expired
+				refresh_token()
+				request.status = "need_refresh"
+			elif response_code == 200:
+				if response:
+					if response.has("jwt"):
+						Global.data.access_token = response["jwt"]
+					if response.has("jwt_refresh"):
+						Global.data.refresh_token = response["jwt_refresh"]
+					if response.has("user"):
+						Global.user = response["user"]
+				request.status = "done"
+			else:
+				requests.erase(key)
+				printerr(str(response_code) + ": " + str(response))
+		elif request.status == "delivered":
+			requests.erase(key)
 
-func get_request(path, body = null, jwt = Global.data.access_token):
+func refresh_token():
+	_get_request("/refresh", null, Global.data.renew_token)
+
+func _get_request(id, path, body = null, jwt = Global.data.access_token):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
-	http_request.connect("request_completed", self, "_on_request_completed")
+	http_request.connect("request_completed", self, "_on_request_completed", [id])
 	current_path = path
 	current_body = body
 	# complete the url to use
@@ -68,12 +89,13 @@ func get_request(path, body = null, jwt = Global.data.access_token):
 	# jwt access token
 	if jwt:
 		headers.append("Authorization: Bearer " + jwt)
-	
+
 	# do the request
 	var error
 	if body:
 		# Convert data to json string:
 		var query = JSON.print(body)
+		print(body, headers, uri)
 		error = http_request.request(uri, headers, false, HTTPClient.METHOD_POST, query)
 	else:
 		error = http_request.request(uri, headers, false)
@@ -88,32 +110,12 @@ func _save_request():
 var response
 var response_code
 var refreshing
-func _on_request_completed(_result, res_code, _headers, body):
-	response = parse_json(body.get_string_from_utf8())
-	response_code = res_code
-	if response_code == 500:
-		Global.data.login_msg = 500
-		SceneChanger.change_scene("TitleScreen")
-		refreshing = true
-	elif response_code == 422:
-		# signature has expired
-		refresh_token()
-		refreshing = true
-	elif response_code == 405:
-		# method not allowed
-		Global.data.login_msg = 405
-		SceneChanger.change_scene("TitleScreen")
-		refreshing = true
-	elif response_code == 200:
-		if response:
-			if response.has("jwt"):
-				Global.data.access_token = response["jwt"]
+func _on_request_completed(_result, res_code, _headers, body, id):
+	for key in requests:
+		var request = requests[key]
+		if key == id:
+			request.response = parse_json(body.get_string_from_utf8())
+			request.res_code = res_code
+			print(request.response)
+			request["status"] = "has_response"
 
-			if response.has("jwt_refresh"):
-				Global.data.refresh_token = response["jwt_refresh"]
-			if response.has("user"):
-				Global.user = response["user"]
-		refreshing = false
-	else:
-		requests.pop_front()
-		printerr(str(response_code) + ": " + str(response))

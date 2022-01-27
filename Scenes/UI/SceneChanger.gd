@@ -135,8 +135,8 @@ func _physics_process(delta):
 	if request:
 		var body_size = request.get_body_size()
 		if body_size > 0:
-			_check_response(API.response)
-			API.remove_child(request)
+			_check_response(Deta.response)
+			Deta.remove_child(request)
 			request = null
 
 func _check_response(res):
@@ -186,6 +186,6 @@ func _new_scene():
 		assert(err == OK)
 		_disable_animation()
 	else:
-		request = API.get_request("/set-user-location", { "scene": scene, "location": location })
+		request = Deta.get_request("/set-user-location", { "scene": scene, "location": location })
 	change = false
 

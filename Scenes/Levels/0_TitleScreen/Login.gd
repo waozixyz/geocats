@@ -32,7 +32,7 @@ func _input(event):
 	if event.is_action_pressed("escape") and get_parent().name == "TitleScreen":
 		get_tree().quit()
 	
-var request : HTTPRequest
+var request_id
 func _login_pressed():
 	var body = { "Email": email.text, "Password": password.text}
 
@@ -41,7 +41,8 @@ func _login_pressed():
 	mistake.visible = false
 	noserver.visible = false
 	login_again.visible = false
-	request = API.get_request("/login", body, null)
+	request_id = Deta.add_request("/login", body, null)
+	connecting.visible = true
 
 func _check_response(response):
 	if not response:
@@ -58,16 +59,12 @@ func _check_response(response):
 			mistake.visible = true
 
 func _process(_delta):
-	if request:
-		var body_size = request.get_body_size()
-		if body_size == -1:
-			connecting.visible = true
-		elif body_size > 0:
+	if request_id:
+		var response = Deta.check_request(request_id)
+		if response:
 			connecting.visible = false
-			_check_response(API.response)
+			_check_response(response)
 
-		else:
-			connecting.visible = false
 
 	
 func _next():
@@ -76,9 +73,6 @@ func _next():
 		var location = Global.user.location if Global.user.has("location") else 0
 		SceneChanger.change_scene(scene, location)
 	else:
-		API.repeat_request()
+		#Deta.repeat_request()
 		visible = false
-	if request:
-		API.remove_child(request)
-		request = null
 

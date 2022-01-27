@@ -78,10 +78,10 @@ func _process(_delta):
 	if request:
 		var body_size = request.get_body_size()
 		if body_size > 0:
-			print(API.response)
-			API.remove_child(request)
+			print(Deta.response)
+			Deta.remove_child(request)
 			request = null
-#	var res_code = API.response_code
+#	var res_code = Deta.response_code
 #	if res_code == 405:
 #		login.visible = true
 #	if nft_ids.size() > 0 and not active:
@@ -137,7 +137,7 @@ func _process(_delta):
 	pass
 var request
 func reward(nft_id, chat = true):
-	request = API.get_request("/claim-nft", {"nft-id": nft_id})
+	request = Deta.get_request("/claim-nft", {"nft-id": nft_id})
 	show_chat = chat
 
 	
