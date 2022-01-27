@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Geocats"
-run/main_scene="res://Scenes/Levels/0_TitleScreen/Splash.tscn"
+run/main_scene="res://Scenes/Levels/TitleScreen/Splash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -84,7 +84,7 @@ PROGRESS="*res://Scenes/UI/Dialogue/progress.gd"
 Global="*res://Scenes/Global.gd"
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 Deta="*res://Scenes/Deta.gd"
-Metamask="*res://addons/metamask/Metamask.tscn"
+Utils="*res://Scenes/Utils.gd"
 
 [display]
 
@@ -208,6 +208,7 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 2d/options/ninepatch_mode=0
 quality/reflections/atlas_subdiv=9

@@ -1,27 +1,35 @@
 extends Node
 
-const debug = true
-const fps = 60
-var player_position
-var player_direction
-var crt_noise = 0.0
-var pause_msg = ""
+const EDITION = "Steam"
+const DEBUG = true
+const FPS = 60
 
+const DATA_FILE = "user://data.json"
+const USER_FILE = "user://user.json"
+
+# player stuff
 var user = {
 	"visited": [],
+	"location": 0,
+	"direction": 0,
+	"hp": 100,
 }
 
 var data =  {
+	# api stuff
 	"access_token": "",
 	"renew_token": "",
+	# sound stuff
 	"sound": -6,
 	"music": -6,
 	"nosound": false,
 	"nomusic": false,
-	"player_hp": 100,
+	# feline stuff
 	"nav_unlocked": [],
-	"login_msg": 200,
-	"season": "",
+	"nav_visited": [],
+	# dialogue variables
+	"prog_var": {},
+	"prog_dia": {},
 }
 
 var pumpkin_code = ""
@@ -32,8 +40,11 @@ func _enter_tree():
 		
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		#Deta.get_request("/update-user")
-		saveit()
+	
+		data.prog_var = PROGRESS.variables
+		data.prog_dia = PROGRESS.dialogues
+		_save_data(data, DATA_FILE)
+		_save_data(user, USER_FILE)
 		get_tree().quit()
 
 
@@ -41,15 +52,22 @@ func _ready():
 	randomize()
 	for _i in range(0, 7):
 		pumpkin_code += str(int(rand_range(1, 8)))
-	#loadit()
+		
+	# overwrite data with saved data
+	data = _load_data(DATA_FILE)
+	user = _load_data(USER_FILE)
+	
+	# load audio buses
+	_load_audio_bus("Music")
+	_load_audio_bus("Sound")
 
 	# load dialogue system data
-	#PROGRESS.variables = Global.data.prog_var
-	#PROGRESS.dialogues = Global.data.prog_dia
+	PROGRESS.variables = data.prog_var
+	PROGRESS.dialogues = data.prog_dia
 
 
 
-const FILE_NAME = "user://game-data.json"
+
 
 func _correct_data(dat):
 	var out = data
@@ -57,11 +75,10 @@ func _correct_data(dat):
 		out[key] = dat[key]
 
 	return out
-func saveit():
-	#Global.data.prog_var = PROGRESS.variables
-	#Global.data.prog_dia = PROGRESS.dialogues
+
+func _save_data(data, file_name):
 	var file = File.new()
-	file.open(FILE_NAME, File.WRITE)
+	file.open(file_name, File.WRITE)
 	file.store_string(to_json(data))
 	file.close()
 	
@@ -71,16 +88,14 @@ func _load_audio_bus(bus_name):
 	AudioServer.set_bus_volume_db(i, data[bus_name.to_lower()])
 
 	
-func loadit():
+func _load_data(file_name):
 	var file = File.new()
-	if file.file_exists(FILE_NAME):
-		file.open(FILE_NAME, File.READ)
+	if file.file_exists(file_name):
+		file.open(file_name, File.READ)
 		var file_data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(file_data) == TYPE_DICTIONARY:
-			data = _correct_data(file_data)
-			_load_audio_bus("Music")
-			_load_audio_bus("Sound")
+			return _correct_data(file_data)
 		else:
 			printerr("Corrupted data!")
 	else:
