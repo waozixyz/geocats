@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/ui_buttons.tres" type="Theme" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var play_button = $PlayButton
+onready var exit_button = $ExitButton
+
+
+func _ready():
+	# connect buttons
+	var err = play_button.connect(\"pressed\", self, \"_login_pressed\")
+	assert(err == OK)
+	err = exit_button.connect(\"pressed\", self, \"_exit_pressed\")
+	assert(err == OK)
+
+
+	Global.data.login_msg = 0
+
+func _exit_pressed():
+	visible = false
+
+func _input(event):
+	if event.is_action_pressed(\"enter\"):
+		_login_pressed()
+	
+	if event.is_action_pressed(\"escape\") and get_parent().name == \"TitleScreen\":
+		get_tree().quit()
+
+func _login_pressed():
+	_next()
+
+func _next():
+	if get_parent().name == \"TitleScreen\":
+		var scene = Global.user.scene if Global.user.has(\"scene\") else \"CatsCradle\"
+		var location = Global.user.location if Global.user.has(\"location\") else 0
+		SceneChanger.change_scene(scene, location)
+"
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+void fragment(){
+    
+    const float WIDTH = 32.;
+    vec2 cell = floor(UV * WIDTH);
+    
+    vec3 col = abs(
+        vec3(
+			cell.y*sin(-TIME + abs(cell.y)*0.5 ),
+			cell.y*sin(-TIME + abs(cell.y)*0.5 ) * .5,
+			cell.y*sin(-TIME + abs(cell.y)*0.5 ) * .2)
+    ) * (0.3/WIDTH);
+    
+
+    COLOR = vec4(col,1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = SubResource( 4 )
+
+[node name="Login" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_top = 315.0
+margin_right = 641.0
+margin_bottom = 480.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 274.701
+margin_top = 438.7
+margin_right = 364.701
+margin_bottom = 473.7
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="."]
+margin_left = 9.0
+margin_top = 450.0
+margin_right = 246.0
+margin_bottom = 475.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.972549, 0.619608, 0.203922, 1 )
+text = "V.420 - Demo Days"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="."]
+margin_left = 46.0096
+margin_top = 393.7
+margin_right = 611.01
+margin_bottom = 438.7
+custom_fonts/font = SubResource( 5 )
+text = "Welcome to Geocats Complimentary Edition!
+This version is free for anyone to play and have fun with."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 603.0
+margin_top = 324.0
+margin_right = 633.0
+margin_bottom = 349.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}

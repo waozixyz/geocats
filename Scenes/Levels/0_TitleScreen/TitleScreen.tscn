@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Music/0_TitleScreen.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Scenes/Levels/0_TitleScreen/Login.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/0_TitleScreen/Demo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Levels/0_TitleScreen/Slideshow.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
