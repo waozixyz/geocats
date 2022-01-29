@@ -13,7 +13,7 @@ var current_id = 0
 var requests = {}
 
 func _ready():
-	if Global.debug:
+	if Global.DEBUG:
 		api_url = "https://geodump.deta.dev"
 	else:
 		api_url = "https://geoapi.deta.dev"

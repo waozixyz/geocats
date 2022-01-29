@@ -7,10 +7,19 @@ const FPS = 60
 const DATA_FILE = "user://data.json"
 const USER_FILE = "user://user.json"
 
+enum Territory {
+	CATSELVENIA,
+	FELSARA,
+	ROCKS,
+	DESERT
+}
+var crt_noise = 0.0
+
 # player stuff
 var user = {
 	"visited": [],
 	"location": 0,
+	"position": Vector2(0,0),
 	"direction": 0,
 	"hp": 100,
 }
@@ -54,8 +63,8 @@ func _ready():
 		pumpkin_code += str(int(rand_range(1, 8)))
 		
 	# overwrite data with saved data
-	data = _load_data(DATA_FILE)
-	user = _load_data(USER_FILE)
+	#data = _load_data(DATA_FILE)
+	#user = _load_data(USER_FILE)
 	
 	# load audio buses
 	_load_audio_bus("Music")

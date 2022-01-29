@@ -1,8 +1,7 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Scenes/UI/SceneChanger.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/loading_loop.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/UI/Interact/ChatWith.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -310,16 +309,12 @@ custom_fonts/font = SubResource( 2 )
 text = "LOADING"
 align = 1
 
-[node name="ChatWith" parent="." instance=ExtResource( 3 )]
-visible = false
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 120, 0 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 67 )
-frame = 2
+frame = 19
 speed_scale = 2.0
-playing = true
 centered = false
 
 [node name="Pause" type="Label" parent="."]
@@ -333,5 +328,3 @@ text = "Game Paused"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Tween" type="Tween" parent="."]

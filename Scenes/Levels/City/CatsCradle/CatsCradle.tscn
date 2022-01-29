@@ -1,0 +1,443 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Assets/Levels/1_CatCradle/Cats_Cradle.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/Interact/SimpleInteract.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Entities/Particles/Confetti.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Levels/1_CatCradle/present.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Levels/Desert/DesertOutpost/Interact.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Levels/City/CatsCradle/Present.gd" type="Script" id=30]
+[ext_resource path="res://Scenes/Levels/City/CatsCradle/LetterFromAunt.gd" type="Script" id=31]
+[ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Music/1_CatCradle.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=35]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.5, 76.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9, 58.1635 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.5, 88.2143 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 81, 70.157 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 74.5 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 13.0565, 107.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 40.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 11, 256.5 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 5, 144 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8.5, 169 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 21, 130 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 51, 5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 8, 14 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 697.672, 10 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 729, 10 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 309, 12 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 358.401, 18 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 93, 9 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 81, 3 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 129, 12 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 203, 36 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 27, 5 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 124.5, 12 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 114, 12 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 38.5, 2.5 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 27, 4 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 22, 4 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 42.8818, 22.4911 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 36, 5 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 21, 6 )
+
+[sub_resource type="DynamicFontData" id=28]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=29]
+size = 22
+extra_spacing_top = -5
+extra_spacing_bottom = -3
+font_data = SubResource( 28 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 36.2031, 15.5309 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 42.5, 54 )
+
+[node name="CatCradle" type="Node2D"]
+
+[node name="WorldBckg" type="ColorRect" parent="."]
+margin_left = -75.0
+margin_top = 1.0
+margin_right = 1555.0
+margin_bottom = 771.0
+mouse_filter = 2
+color = Color( 0.117647, 0.00392157, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cats_Cradle" type="Sprite" parent="."]
+position = Vector2( 50, 0 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="KitchenLadder" type="Area2D" parent="Ladders"]
+position = Vector2( 290, 592.831 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/KitchenLadder"]
+shape = SubResource( 1 )
+
+[node name="BedLadder" type="Area2D" parent="Ladders"]
+position = Vector2( 1318, 288 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/BedLadder"]
+shape = SubResource( 2 )
+
+[node name="LastLadder" type="Area2D" parent="Ladders"]
+position = Vector2( 165, 243.823 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
+position = Vector2( 0, -3.80214 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 3 )
+
+[node name="Present" type="Area2D" parent="."]
+position = Vector2( 159.9, 676.2 )
+scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 30 )
+
+[node name="snow" parent="Present" instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Present"]
+position = Vector2( 40.1429, -32.7786 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Present"]
+position = Vector2( 1.57141, -47.4286 )
+texture = ExtResource( 23 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" groups=["end"]]
+position = Vector2( 7, 636.5 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 333.057, 497.5 )
+shape = SubResource( 32 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 57.5, 572 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 87, 304.5 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1471, 546 )
+shape = SubResource( 33 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1462.5, 197 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 737, 272 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 809, 265 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 868, 274 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 773.672, 38 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 746, 700 )
+shape = SubResource( 13 )
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 407, 132 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1116.4, 384 )
+shape = SubResource( 35 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1361, 225 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1043, 87 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 989, 300 )
+shape = SubResource( 34 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 549, 570 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 161, 665 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 222, 378 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 212, 498 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 803.5, 356.5 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="Stereo" type="StaticBody2D" parent="."]
+position = Vector2( 549, 570 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stereo"]
+position = Vector2( 266, 58 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Stereo"]
+position = Vector2( 323, 70 )
+shape = SubResource( 24 )
+one_way_collision = true
+
+[node name="StereoSFX" type="Area2D" parent="Stereo"]
+position = Vector2( 300.27, 83.255 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stereo/StereoSFX"]
+position = Vector2( -6.53906, 8.40741 )
+shape = SubResource( 25 )
+
+[node name="Statue" type="StaticBody2D" parent="."]
+position = Vector2( 900, 570 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statue"]
+position = Vector2( 314, -31 )
+shape = SubResource( 26 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Statue"]
+position = Vector2( 263, 42 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Letter" type="Node2D" parent="CanvasLayer"]
+visible = false
+position = Vector2( 5, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Letter"]
+position = Vector2( 0, 68 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Letter"]
+margin_left = 30.0
+margin_top = 90.0
+margin_right = 620.0
+margin_bottom = 530.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 29 )
+fit_content_height = true
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+volume_db = -3.493
+autoplay = true
+bus = "Music"
+
+[node name="Default" parent="." instance=ExtResource( 28 )]
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 1299, 195 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 1490
+limit_bottom = 720
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="LitterBoxSFX" type="Area2D" parent="."]
+position = Vector2( 809.231, 356.84 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LitterBoxSFX"]
+position = Vector2( -7.5437, 7.4028 )
+shape = SubResource( 30 )
+
+[node name="LitterBox" type="ColorRect" parent="."]
+margin_left = 860.0
+margin_top = 288.0
+margin_right = 926.0
+margin_bottom = 367.0
+mouse_filter = 2
+color = Color( 0.117647, 0.00392157, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="End" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = 582.0
+margin_right = 51.0
+margin_bottom = 690.0
+mouse_filter = 2
+color = Color( 0.117647, 0.00392157, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stairs" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs"]
+polygon = PoolVector2Array( 1064, 288, 728, 120, 712, 120, 712, 136, 1024, 288 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Stairs"]
+position = Vector2( -370, 247 )
+polygon = PoolVector2Array( 1064, 288, 727, 119, 716, 119, 716, 138, 1024, 288 )
+
+[node name="Teleport" type="Area2D" parent="."]
+position = Vector2( -35, 585.7 )
+script = ExtResource( 29 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
+position = Vector2( 43.5, 50 )
+shape = SubResource( 31 )
+
+[node name="Button" type="Sprite" parent="Teleport"]
+visible = false
+position = Vector2( 58, 17.3 )
+scale = Vector2( 0.239477, 0.24014 )
+texture = ExtResource( 35 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]

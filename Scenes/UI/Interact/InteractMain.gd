@@ -33,8 +33,6 @@ func _on_body_exited(body):
 		touching = false
 		if nft_possible:
 			nft.main.visible = false
-		chat_with.visible = false
-		chat_with.stop()
 
 func _process(_delta):
 	if play_audio:

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/UI/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Conversations/nonacat.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Conversations/nonacat.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/chat_elements/textbox.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/chat_elements/portrait_box.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/chat_elements/choices_container.png" type="Texture" id=6]

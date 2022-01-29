@@ -26,7 +26,7 @@ func _process(delta):
 		# top bar news scrolling
 		if int(news_tick) % 10 == 0:
 			_scroll_news()
-		news_tick += delta * Global.fps
+		news_tick += delta * Global.FPS
 
 # button press functions
 func _button_action(label):

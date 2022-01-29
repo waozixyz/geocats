@@ -76,15 +76,22 @@ _global_script_class_icons={
 
 config/name="Geocats"
 run/main_scene="res://Scenes/Levels/TitleScreen/Splash.tscn"
+boot_splash/image="res://Assets/Levels/0_TitleScreen/logo.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://Assets/default_bus_layout.tres"
 
 [autoload]
 
 PROGRESS="*res://Scenes/UI/Dialogue/progress.gd"
 Global="*res://Scenes/Global.gd"
+Utils="*res://Scenes/Utils.gd"
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 Deta="*res://Scenes/Deta.gd"
-Utils="*res://Scenes/Utils.gd"
 
 [display]
 
@@ -108,6 +115,7 @@ singletons=[  ]
 gravity=true
 vsyng=false
 fullscreen=false
+bg=false
 
 [importer_defaults]
 
@@ -211,8 +219,9 @@ pointing/emulate_touch_from_mouse=true
 quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 2d/options/ninepatch_mode=0
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/reflections/atlas_subdiv=9
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Assets/default_env.tres"
 
 [world]
 

@@ -118,7 +118,7 @@ var last_visible = false
 var press_timer = 0
 var red_pressed
 func _process(delta):
-	var dfps = delta * Global.fps
+	var dfps = delta * Global.FPS
 	if old_view is Control and old_view.modulate.a == 0:
 		old_view.visible = false
 	# red button press logic

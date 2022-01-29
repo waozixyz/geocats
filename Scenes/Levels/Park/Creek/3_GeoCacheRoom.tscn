@@ -1,0 +1,164 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/Levels/Park/Creek/Interact.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/sparkles2.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Entities/Water/Water.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/sparkles.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/water2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/FG_Frame.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/GeoChest.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Levels/Park/Creek/Treasure.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Levels/6_Creek/3_GeoCacheRoom/Water1.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=12]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/BG.png-98d1cb3b0536e7eaf6c93e43c9e78034.stex"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 50 )
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/Floor.png-5fb18ebcb7081666838e5b13cb24e8bf.stex"
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.6
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 358.888, 60.6786 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 33.9119, 32.5012 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 13, 10 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="GeoCacheRoom" type="Node2D"]
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="BG" type="Sprite" parent="BelowPlayer"]
+texture = SubResource( 1 )
+centered = false
+
+[node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer"]
+scale = Vector2( 0.166667, 0.166667 )
+z_index = 1
+frames = SubResource( 2 )
+frame = 1
+playing = true
+centered = false
+
+[node name="ExitGeoCache" type="Area2D" parent="."]
+position = Vector2( 33, 354.813 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
+position = Vector2( 94, 62.187 )
+shape = SubResource( 3 )
+
+[node name="Button" type="Sprite" parent="ExitGeoCache"]
+visible = false
+position = Vector2( 88, -5.81299 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 2 )
+
+[node name="Colliders" type="StaticBody2D" parent="." groups=[
+"end",
+]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders"]
+position = Vector2( 0, 2 )
+polygon = PoolVector2Array( 73, 462, 835, 464, 980, 434, 1234, 434, 1233, 459, 983, 460, 822, 483, 73, 486 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 74, 810, 71, 1097, 99, 1173, 202, 1217, 394, 1228, 434, 1248, 434, 1207, 273, 1187, 192, 1107, 77, 838, 47, 540, 58, 331, 58, 254, 97, 195, 210, 60, 285, 55, 467 )
+
+[node name="Default" parent="." instance=ExtResource( 12 )]
+position = Vector2( 402, 304 )
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( -254.55, 133.349 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 1300
+limit_bottom = 700
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 29
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Floor" type="Sprite" parent="AbovePlayer"]
+texture = SubResource( 4 )
+centered = false
+
+[node name="FG_Frame" type="Sprite" parent="AbovePlayer/Floor"]
+z_index = 1
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
+frames = SubResource( 5 )
+playing = true
+centered = false
+
+[node name="waterarea" type="Area2D" parent="."]
+position = Vector2( 457.652, 519.2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
+shape = SubResource( 6 )
+
+[node name="Treasure" type="Area2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
+position = Vector2( 1106.51, 424.419 )
+shape = SubResource( 7 )
+
+[node name="Sprit" type="AnimatedSprite" parent="Treasure"]
+position = Vector2( 1106, 421 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 9 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]
