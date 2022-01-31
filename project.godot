@@ -70,9 +70,14 @@ _global_script_classes=[ {
 "path": "res://Scenes/Entities/SpriteAutoPlay.gd"
 }, {
 "base": "InteractButton",
-"class": "TeleportInteract",
+"class": "TeleportExternal",
 "language": "GDScript",
-"path": "res://Scenes/UI/Interact/Teleport.gd"
+"path": "res://Scenes/UI/Interact/TeleportExternal.gd"
+}, {
+"base": "InteractButton",
+"class": "TeleportInternal",
+"language": "GDScript",
+"path": "res://Scenes/UI/Interact/TeleportInternal.gd"
 } ]
 _global_script_class_icons={
 "AreaInteract": "",
@@ -87,7 +92,8 @@ _global_script_class_icons={
 "Player": "",
 "PlayerFSM": "",
 "SpriteAutoPlay": "",
-"TeleportInteract": "res://Assets/UI/Debug/teleport_icon.png"
+"TeleportExternal": "res://Assets/UI/Debug/teleport_icon.png",
+"TeleportInternal": "res://Assets/UI/Debug/teleport_icon.png"
 }
 
 [application]

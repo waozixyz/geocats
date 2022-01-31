@@ -42,7 +42,7 @@
 [ext_resource path="res://Assets/Levels/2_Complex/bckg_deko_2.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Levels/2_Complex/elevator_button.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Levels/2_Complex/skyscraper_tileset.png" type="Texture" id=42]
-[ext_resource path="res://Scenes/Levels/City/Complex/Interact.gd" type="Script" id=43]
+[ext_resource path="res://Scenes/UI/Interact/TeleportInternal.gd" type="Script" id=43]
 [ext_resource path="res://Assets/Levels/2_Complex/stairs_1.png" type="Texture" id=44]
 [ext_resource path="res://Assets/Levels/2_Complex/bckg_deko.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Levels/2_Complex/window.png" type="Texture" id=46]
@@ -50,7 +50,7 @@
 [ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/6.png" type="Texture" id=48]
 [ext_resource path="res://Assets/Levels/2_Complex/plant_2.png" type="Texture" id=49]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=50]
-[ext_resource path="res://Scenes/UI/Interact/Teleport.gd" type="Script" id=51]
+[ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=51]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
@@ -1159,6 +1159,9 @@ shape = SubResource( 63 )
 [node name="HomeDoor" type="Area2D" parent="Interactive"]
 position = Vector2( 1080, 171 )
 script = ExtResource( 51 )
+__meta__ = {
+"_edit_lock_": true
+}
 sound_effect = "res://Assets/Sounds/Transition/WoodDoorLatchOpen1.ogg"
 scene_path = "res://Scenes/Levels/City/CatsCradle.tscn"
 location = 1
@@ -1176,6 +1179,8 @@ texture = ExtResource( 14 )
 [node name="DownElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 1448, 900 )
 script = ExtResource( 43 )
+sound_effect = "res://Assets/Sounds/Effects/Vending_Machine_2.ogg"
+new_position = Vector2( 710, 180 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/DownElevator"]
 position = Vector2( 108, 148 )
@@ -1190,6 +1195,8 @@ texture = ExtResource( 14 )
 [node name="UpElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 728, 216 )
 script = ExtResource( 43 )
+sound_effect = "res://Assets/Sounds/Effects/Vending_Machine_2.ogg"
+new_position = Vector2( 1600, 1000 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/UpElevator"]
 position = Vector2( 2, -0.205048 )
@@ -1203,7 +1210,9 @@ texture = ExtResource( 14 )
 
 [node name="Exit" type="Area2D" parent="Interactive"]
 position = Vector2( 396, 1072 )
-script = ExtResource( 43 )
+script = ExtResource( 51 )
+sound_effect = "res://Assets/Sounds/Transition/FootstepsOnGravelFast.ogg"
+sound_volume = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
 shape = SubResource( 67 )

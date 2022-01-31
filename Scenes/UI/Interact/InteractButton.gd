@@ -16,15 +16,14 @@ var teleport
 var dest_x
 var dest_y
 
-func _teleport(x, y):
+func _teleport(new_pos: Vector2):
 	player.visible = false
 	player.disable("teleport")
 
 	teleport = true
 
-
 	tween.interpolate_property(player, "position",
-		player.position, Vector2(x, y), 1,
+		player.position, new_pos, 1,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
