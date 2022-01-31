@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Assets/Music/4_PopNnip.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=27]
 [ext_resource path="res://Assets/Levels/4_PopNnip/Arcade/nocat_spritesheet.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/Levels/City/PopNnip/NOCAT.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=30]
 
 [sub_resource type="AtlasTexture" id=439]
 atlas = ExtResource( 12 )
@@ -418,6 +419,7 @@ extents = Vector2( 48, 47 )
 extents = Vector2( 56, 30 )
 
 [node name="Arcade" type="Node2D"]
+script = ExtResource( 30 )
 
 [node name="CRT_Effect" parent="." instance=ExtResource( 5 )]
 
@@ -528,15 +530,11 @@ position = Vector2( -490, 164 )
 shape = SubResource( 492 )
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=[
-"end",
-]]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=["end"]]
 position = Vector2( -937, 147 )
 shape = SubResource( 493 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=[
-"end",
-]]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=["end"]]
 position = Vector2( -934, 14 )
 shape = SubResource( 493 )
 
@@ -563,9 +561,7 @@ position = Vector2( -192, 7 )
 shape = SubResource( 498 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
 collision_mask = 7
@@ -628,7 +624,7 @@ position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 503 )
 animation = "idle"
-frame = 19
+frame = 18
 speed_scale = 0.3
 playing = true
 centered = false

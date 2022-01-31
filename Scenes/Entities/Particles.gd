@@ -10,6 +10,6 @@ func _ready():
 			if layers[child.name]:
 				child.position.x = width * .5
 				child.emission_rect_extents.x = width * .5
-				child.preprocess = 150 if preprocess else false
+				child.preprocess = 150 if preprocess else 0
 			else:
 				remove_child(child)

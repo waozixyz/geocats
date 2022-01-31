@@ -1,5 +1,10 @@
 extends Node
+
+func toggle(boolean):
+	return false if boolean else true
+
 	
+
 func _tween_completed(tween):
 	remove_child(tween)
 	
@@ -17,7 +22,7 @@ func tween_fade(obj, start, end, time = .5):
 
 # get current season
 func get_season():
-	if Global.EDITION == "Steam":
+	if global.edition == "Steam":
 		var month = OS.get_datetime()["month"]	
 		var season = ""
 		if month >= 3 and month <= 5:

@@ -40,7 +40,7 @@ var exit
 var repeat_request
 
 func _request_geodex():
-	request = Deta.get_request("/get-nfts")
+	request = deta.get_request("/get-nfts")
 	
 func _process(delta):
 	if exit:
@@ -53,11 +53,11 @@ func _process(delta):
 		control.modulate.a += delta
 		
 
-	if not Deta.refreshing and request and not repeat_request:
+	if not deta.refreshing and request and not repeat_request:
 		var data_size = request.get_downloaded_bytes()
-		if data_size > 0 and Deta.response and request.get_http_client_status() == 0:
-			_check_response(Deta.response)
-			Deta.remove_child(request)
+		if data_size > 0 and deta.response and request.get_http_client_status() == 0:
+			_check_response(deta.response)
+			deta.remove_child(request)
 			request = null
 	if repeat_request:
 		_request_geodex()

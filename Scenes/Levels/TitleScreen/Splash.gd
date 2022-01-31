@@ -7,10 +7,10 @@ var particles
 var loaded
 
 func _ready():
-	if Utils.get_season() == "Winter":
-		particles = Utils.particle_emitter["snow"].instance()
+	if utils.get_season() == "Winter":
+		particles = utils.particle_emitter["snow"].instance()
 		particles.preprocess = false
-	Utils.tween_fade(splash, 0, 1)
+	utils.tween_fade(splash, 0, 1)
 	add_child(particles)
 	loaded = true
 

@@ -37,12 +37,17 @@ func logic(player: KinematicBody2D, _delta: float):
 		else:
 			player.play("idle")
 
+
 	if player.vertical && player.on_ladder:
-		if player.is_on_floor() and player.vertical != 0 and not player.current_platforms:
-			return "climb"
-		if player.current_platforms and player.vertical != 0:
-			player.fall_through()
-			return "climb"
+		if player.is_on_floor():
+			if player.vertical < 0:
+				return "climb"
+			if player.current_platforms and player.vertical > 0:
+				player.fall_through()
+				return "climb"
+
+
+
 
 
 	if player.underwater:

@@ -29,7 +29,7 @@ func _on_body_exited(body):
 	pass
 
 func _process(delta):
-	life_timer += 1 * delta * Global.FPS
+	life_timer += 1 * delta * global.fps
 	if life_timer >= max_life:
 		dead = true
 	rotation_degrees = deg

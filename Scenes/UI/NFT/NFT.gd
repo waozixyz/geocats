@@ -78,21 +78,21 @@ func _process(_delta):
 	if request:
 		var body_size = request.get_body_size()
 		if body_size > 0:
-			print(Deta.response)
-			Deta.remove_child(request)
+			print(deta.response)
+			deta.remove_child(request)
 			request = null
-#	var res_code = Deta.response_code
+#	var res_code = deta.response_code
 #	if res_code == 405:
 #		login.visible = true
 #	if nft_ids.size() > 0 and not active:
-#		Global.nft_api("/available", nft_ids[0])
+#		global.nft_api("/available", nft_ids[0])
 #		active = true
 
-#	var res = Global.response
+#	var res = global.response
 #	if res and res.has("process") and res['process'] == "logged_in":
 #		waiting = true
 
-#	if Global.updating == "nft":
+#	if global.updating == "nft":
 #		loading_ticker += delta
 #		if loading_ticker > 4:
 #			loading.visible = true
@@ -111,11 +111,11 @@ func _process(_delta):
 #			if res and res.has("process"):
 #				if res.process == "available":
 #					if res.available:
-#						Global.nft_api("/claim", nft_id)
+#						global.nft_api("/claim", nft_id)
 #					else:
 #						_nft_unavailable(nft_id, res)
 #				elif res.process == "logged_in":
-#					Global.nft_api("/claim", nft_id)
+#					global.nft_api("/claim", nft_id)
 #				elif res.process == "claiming_nft":
 #					if res.available:
 #						_show_nft(nft_id, res.nft, true)
@@ -137,7 +137,7 @@ func _process(_delta):
 	pass
 var request
 func reward(nft_id, chat = true):
-	request = Deta.get_request("/claim-nft", {"nft-id": nft_id})
+	request = deta.get_request("/claim-nft", {"nft-id": nft_id})
 	show_chat = chat
 
 	

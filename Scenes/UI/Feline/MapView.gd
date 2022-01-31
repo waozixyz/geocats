@@ -12,8 +12,8 @@ var list = ["CatsCradle", "Complex", "GeoCity", "Creek", "Litterbox", "GeoLodge"
 
 func _change_button():
 	var path = texture_path
-	var nav_unlocked = Global.data.nav_unlocked
-	var nav_visible = Global.user.visited
+	var nav_unlocked = global.data.nav_unlocked
+	var nav_visible = global.user.visited
 	var is_unlocked = nav_unlocked.has(list[current])
 	var is_visible = nav_visible.has(list[current])
 
@@ -30,8 +30,8 @@ func _change_button():
 	btn.texture_pressed = load(path + '_clicked.png')
 
 func _press_button():
-	var nav_unlocked = Global.data.nav_unlocked
-	var nav_visible = Global.user.visited
+	var nav_unlocked = global.data.nav_unlocked
+	var nav_visible = global.user.visited
 	var is_unlocked = nav_unlocked.has(list[current])
 	var is_visible = nav_visible.has(list[current])
 	if is_unlocked and not is_visible:
@@ -39,7 +39,7 @@ func _press_button():
 		_change_button()
 	if is_visible:
 		get_parent().get_parent().exit(true)
-		SceneChanger.change_scene(list[current], 0, "WayoWayo")
+		#SceneChanger.change_scene(list[current], 0, "WayoWayo")
 
 func _ready():
 	_change_button()

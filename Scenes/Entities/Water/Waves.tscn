@@ -25,7 +25,6 @@ hue_variation_random = 1.0
 
 [node name="Waves" type="Particles2D"]
 z_index = 3
-emitting = false
 amount = 30
 explosiveness = 0.2
 local_coords = false

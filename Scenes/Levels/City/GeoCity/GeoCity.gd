@@ -9,7 +9,7 @@ var res_path = "res://Assets/Levels/3_GeoCity/"
 var request
 func _ready():
 	giant_pumpkin.visible = false
-	var season = Global.data.season
+	var season = utils.get_season()
 	if season == "Winter":
 		set_theme("SnowyCity")
 	elif season  == "Autumn":

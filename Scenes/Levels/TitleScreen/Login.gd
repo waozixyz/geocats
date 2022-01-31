@@ -26,6 +26,4 @@ func _play_pressed():
 
 func _next():
 	if get_parent().name == "TitleScreen":
-		var scene = Global.user.scene if Global.user.has("scene") else "CatsCradle"
-		var location = Global.user.location if Global.user.has("location") else 0
-		SceneChanger.change_scene(scene, location)
+		SceneChanger.change_scene("res://Scenes/City/CatsCradle.tscn")

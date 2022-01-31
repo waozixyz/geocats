@@ -36,7 +36,7 @@ func _input(_event):
 		if chat_with.visible:
 			dialogue.initiate(json_file)
 			chat_with.visible = false
-			_play_sound(sound_file)
+			AudioManager.play_sound(sound_file)
 		else:
 			active = false
 			completed = true

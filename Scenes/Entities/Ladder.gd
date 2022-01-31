@@ -1,4 +1,5 @@
 extends Area2D
+class_name Ladder, "res://Assets/UI/Debug/ladder_icon.png"
 
 func _ready():
 	var err = connect("body_entered", self, "_on_body_entered")

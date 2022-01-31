@@ -13,7 +13,6 @@ var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
 
 onready var floor_timer : Timer = $Timers/FloorTimer
-onready var ladder_timer : Timer = $Timers/LadderTimer
 onready var platform_timer : Timer = $Timers/PlatformTimer
 onready var state_machine: PlayerFSM = $PlayerStates
 onready var waves : Particles2D = $Waves
@@ -101,9 +100,9 @@ func _ready():
 	jump_height = 400
 	state_machine.enter_logic(self) 
 	._ready()
-	if Global.user.position:
-		position = Global.user.position
-		sprite.flip_h  = Global.user.direction * -1
+	if global.user.position:
+		position = global.user.position
+		sprite.flip_h  = global.user.direction * -1
 
 # disable player movement
 var no_vx = false
@@ -123,7 +122,7 @@ func enable(reason):
 # main process loop
 var dmg_blink = 0
 func _physics_process(delta):
-	var dfps = delta * Global.FPS
+	var dfps = delta * global.fps
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
 	._physics_process(delta)
@@ -133,17 +132,15 @@ func _physics_process(delta):
 		state_machine.logic(delta)
 		
 		# update player hp
-		var hp = Global.user.hp
+		var hp = global.user.hp
 		if hp < 100:
 			hp += 0.06 * dfps
 
 		if underwater and water_sub == "slime":
 			hp -= .6 * dfps
-		Global.user.hp = hp
+		global.user.hp = hp
 	elif no_vx:
 		 velocity.x = 0
-
-	
 	move()
 	if sprite.material.get_shader_param("dmg"):
 		dmg_blink += 1 * (delta * 60)
@@ -177,7 +174,7 @@ func update_inputs():
 
 # player damage function
 func damage(dmg):
-	Global.data.player_hp -= dmg
+	global.data.player_hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
 	hurt_sfx.play()
 	
@@ -197,10 +194,6 @@ func play(animation:String):
 	if sprite.animation == animation:
 		return
 	sprite.play(animation)
-
-# check if on ladder and ready to climb
-func can_climb():
-	return on_ladder and ladder_timer.is_stopped()
 
 ###########################################################
 # Setget

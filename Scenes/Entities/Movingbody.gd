@@ -83,6 +83,9 @@ func _physics_process(delta):
 		disabled_platforms = []
 	current_platforms = []
 	var slide_count = get_slide_count()
+
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
 	if slide_count > 0:
 		new_rot = 0
 		for i in slide_count:

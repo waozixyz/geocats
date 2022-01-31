@@ -12,6 +12,10 @@ func enter_logic(player: KinematicBody2D):
 	player.isDoubleJumped = false
 
 func logic(player: KinematicBody2D, _delta: float):
+	if not player.on_ladder:
+		return "fall"
+	if player.is_on_floor():
+		return "idle"
 	if player.ladder_rot != 0:
 		var diff_y = player.position.y / player.ladder_y
 		player.position.x = player.ladder_x - 25 *  (diff_y - 1) * player.ladder_rot
@@ -25,9 +29,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.jumping:
 		return "jump"
 	
-	if not player.on_ladder or player.is_on_floor():
-		player.vy *= .5
-		return "fall"
+
 
 	if player.horizontal != 0 and player.vertical == 0:
 		return "fall"

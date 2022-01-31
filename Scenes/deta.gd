@@ -13,7 +13,7 @@ var current_id = 0
 var requests = {}
 
 func _ready():
-	if Global.DEBUG:
+	if global.debug:
 		api_url = "https://geodump.deta.dev"
 	else:
 		api_url = "https://geoapi.deta.dev"
@@ -22,7 +22,7 @@ func _ready():
 func claim_nft(nft_id):
 	return add_request("/claim-nft", { "nft_id": nft_id })
 
-func add_request(path, body = null, jwt = Global.data.access_token):
+func add_request(path, body = null, jwt = global.data.access_token):
 	current_id += 1
 	requests[current_id] = {"status": "added", "path": path, "body": body, "jwt": jwt}
 	return current_id
@@ -37,17 +37,15 @@ func check_request(id):
 	return false
 	
 var logged_in
-func _process(delta):
+func _process(_delta):
 	for key in requests:
 		var request = requests[key]
 		if request.status == "added":
 			request.status = "requested"
 			request.request = _get_request(key, request.path, request.body, request.jwt)
 		elif request.status == "has_response":
-			var response = request.response
-			var response_code = request.res_code
 			if response_code == 500 or response_code == 405 or response_code == 401:
-				Global.data.login_msg = response_code
+				global.data.login_msg = response_code
 				SceneChanger.change_scene("TitleScreen")
 				request.status = "need_login"
 				logged_in = false
@@ -58,11 +56,11 @@ func _process(delta):
 			elif response_code == 200:
 				if response:
 					if response.has("jwt"):
-						Global.data.access_token = response["jwt"]
+						global.data.access_token = response["jwt"]
 					if response.has("jwt_refresh"):
-						Global.data.refresh_token = response["jwt_refresh"]
+						global.data.refresh_token = response["jwt_refresh"]
 					if response.has("user"):
-						Global.user = response["user"]
+						global.user = response["user"]
 				request.status = "done"
 			else:
 				requests.erase(key)
@@ -71,9 +69,9 @@ func _process(delta):
 			requests.erase(key)
 
 func refresh_token():
-	_get_request("/refresh", null, Global.data.renew_token)
+	_get_request("/refresh", null, global.data.renew_token)
 
-func _get_request(id, path, body = null, jwt = Global.data.access_token):
+func _get_request(id, path, body = null, jwt = global.data.access_token):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed", [id])

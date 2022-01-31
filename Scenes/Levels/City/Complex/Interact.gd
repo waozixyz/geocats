@@ -12,8 +12,7 @@ func _input(_event):
 			_add_audio("Effects", "Vending_Machine_2", false)
 			_teleport(710, 180)
 			
-		elif name == "HomeDoor":
-			SceneChanger.change_scene("CatsCradle", 1, "WoodDoorLatchOpen1", 1)
+
 		elif name == "Exit":
 			SceneChanger.change_scene("GeoCity", 0, "FootstepsOnGravelFast", 1.5)
 

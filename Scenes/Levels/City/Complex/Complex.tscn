@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=2]
+[gd_scene load_steps=149 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/City/Complex/Liet.gd" type="Script" id=2]
@@ -49,6 +49,8 @@
 [ext_resource path="res://Assets/Music/2_Complex.ogg" type="AudioStream" id=47]
 [ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/6.png" type="Texture" id=48]
 [ext_resource path="res://Assets/Levels/2_Complex/plant_2.png" type="Texture" id=49]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=50]
+[ext_resource path="res://Scenes/UI/Interact/Teleport.gd" type="Script" id=51]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
@@ -725,6 +727,8 @@ extents = Vector2( 45.128, 93.1666 )
 extents = Vector2( 82.6183, 38.2424 )
 
 [node name="Complex" type="Node2D"]
+script = ExtResource( 50 )
+locations = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -1154,7 +1158,10 @@ shape = SubResource( 63 )
 
 [node name="HomeDoor" type="Area2D" parent="Interactive"]
 position = Vector2( 1080, 171 )
-script = ExtResource( 43 )
+script = ExtResource( 51 )
+sound_effect = "res://Assets/Sounds/Transition/WoodDoorLatchOpen1.ogg"
+scene_path = "res://Scenes/Levels/City/CatsCradle.tscn"
+location = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/HomeDoor"]
 position = Vector2( 39.5, 43 )
