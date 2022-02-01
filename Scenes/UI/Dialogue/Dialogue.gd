@@ -98,7 +98,7 @@ var move_distance = 100
 var ease_in_speed = 0.25
 var ease_out_speed = 0.50
 
-var characters_folder = 'res://Conversations/'
+var characters_folder
 var characters_image_format = 'png'
 
 var previous_pos
@@ -143,7 +143,9 @@ func set_frame(): # Mostly aligment operations.
 	name_right.hide()
 
 
-func initiate(json_file, block = 'first'): # Load the whole dialogue into a variable
+func initiate(character_folder, json_file, block = 'first'): # Load the whole dialogue into a variable
+	characters_folder = character_folder + "/"
+	print(characters_folder)
 	var file = File.new()
 	file.open(json_file, file.READ)
 	var json = file.get_as_text()
@@ -433,18 +435,12 @@ func check_names(block):
 
 
 func check_animation(block):
-	reset_sprites()
 	if block.has('avatar'):
 		if block.has('animation_in'):
 			animate_sprite(block['position'], block['avatar'], block['animation_in'])
 	else:
 		return
 
-
-func reset_sprites():
-	pass
-	#sprite_left.position = Vector2(-(frame_width - (sprite_left.get_rect().size.x / 2) - sprite_offset.x) / 2, -(frame_height + (sprite_left.get_rect().size.y / 2) - sprite_offset.y) / 2)
-	#sprite_right.position = Vector2((frame_width - (sprite_right.get_rect().size.x / 2) - sprite_offset.x) / 2, -(frame_height + (sprite_left.get_rect().size.y / 2) - sprite_offset.y) / 2)
 
 
 func animate_sprite(direction, image, animation):
@@ -630,6 +626,7 @@ func animate_sprite(direction, image, animation):
 
 func load_image(spr, image):
 	spr.texture = load('%s%s' % [characters_folder, image])
+
 	var size = img_size
 	var w = spr.texture.get_width()
 	var h = spr.texture.get_height()

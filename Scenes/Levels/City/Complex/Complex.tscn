@@ -6,26 +6,22 @@
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/City/Complex/window_3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_walk_1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Agents/Hogwash/hogwash_spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/City/Complex/window_4.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_mad.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Levels/City/Complex/Cleopardis/Spritesheet.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Agents/Cleopardis/Spritesheet.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/City/Complex/stairs_2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/City/Complex/stairs_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/City/Complex/city.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/City/Complex/dial.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/City/Complex/trolley.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_normal.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_3.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/City/Complex/door_1.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Levels/City/Complex/Cats/Liet.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/City/Complex/window_2.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Levels/City/Complex/alley_house_ladder.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/City/Complex/door_2.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Levels/City/Complex/houses.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_walk_2.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Levels/City/Complex/elevator.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Levels/City/Complex/wall_bckg.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Levels/City/Complex/plant.png" type="Texture" id=33]
@@ -675,14 +671,30 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 7 )
+region = Rect2( 21, 0, 21, 11 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 21, 11 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 11, 21, 11 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 7 )
+region = Rect2( 21, 11, 21, 11 )
+
 [sub_resource type="SpriteFrames" id=83]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"frames": [ SubResource( 106 ), SubResource( 106 ), SubResource( 107 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 29 ) ],
+"frames": [ SubResource( 108 ), SubResource( 109 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -698,27 +710,21 @@ extents = Vector2( 35, 18 )
 extents = Vector2( 40.8073, 23.3975 )
 
 [sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 24 )
 region = Rect2( 32, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 24 )
 region = Rect2( 16, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 24 )
 region = Rect2( 0, 12, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 24 )
 region = Rect2( 16, 12, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=92]
-atlas = ExtResource( 24 )
 region = Rect2( 32, 12, 16, 12 )
 
 [sub_resource type="SpriteFrames" id=93]
@@ -1309,8 +1315,7 @@ __meta__ = {
 "_edit_group_": true
 }
 character_name = "Cleopardis"
-json_file = "res://Assets/Levels/City/Complex/Cleopardis/Cleopardis.json"
-sound_file = "res://Assets/Levels/City/Complex/Cleopardis/Cleopardis.wav"
+character_folder = "res://Assets/Agents/Cleopardis"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Cleopardis"]
 position = Vector2( 20.8, 33.5306 )
@@ -1339,7 +1344,7 @@ script = ExtResource( 4 )
 script = ExtResource( 1 )
 has_parent = true
 character_name = "Hogwash"
-json_file = "res://Assets/Levels/City/Complex/Hogwash/hogwash.json"
+character_folder = "res://Assets/Agents/Hogwash"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/Hogwash"]
 shape = SubResource( 84 )
