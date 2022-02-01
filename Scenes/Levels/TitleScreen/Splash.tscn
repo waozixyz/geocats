@@ -1,7 +1,7 @@
 [gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Assets/Music/0_SplashScreen.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Levels/0_TitleScreen/splash_tileset.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/TitleScreen/splash_tileset.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Levels/TitleScreen/Splash.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]

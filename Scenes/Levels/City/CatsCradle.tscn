@@ -1,16 +1,17 @@
 [gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Levels/1_CatCradle/Cats_Cradle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/City/CatsCradle/Cats_Cradle.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=5]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Levels/1_CatCradle/present.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/1_CatCradle/letter.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/City/CatsCradle/present.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/City/CatsCradle/letter.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Music/1_CatCradle.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Scenes/UI/Interact/LoadTextFile.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/UI/Interact/Consumable.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/UI/LoadTextFile.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 74.5 )
@@ -113,28 +114,6 @@ size = 22
 extra_spacing_top = -5
 extra_spacing_bottom = -3
 font_data = SubResource( 28 )
-
-[sub_resource type="GDScript" id=36]
-script/source = "extends RichTextLabel
-
-onready var file = 'res://Assets/Levels/1_CatCradle/LetterFromAunt.txt'
-
-func _ready():
-	load_file()
-
-	
-func load_file():
-	var f = File.new()
-	if f.file_exists(file):
-		f.open(file, File.READ)
-		while not f.eof_reached(): # iterate through all lines until the end of file is reached
-			var line = f.get_line()
-			text += line
-			newline()
-
-		f.close()
-	return
-"
 
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 42.5, 54 )
@@ -341,9 +320,9 @@ shape = SubResource( 3 )
 position = Vector2( 159.9, 676.2 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 10 )
-ui_node_path = NodePath("../../CanvasLayer/Letter")
-text_file = "res://Assets/Levels/1_CatCradle/LetterFromAunt.txt"
+make_node_visible = NodePath("../../CanvasLayer/Letter")
 consumable_path = NodePath("Sprite")
+progress_var = "catscradle_present"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Present"]
 position = Vector2( 40.1429, -32.7786 )
@@ -422,10 +401,11 @@ margin_bottom = 530.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 29 )
 fit_content_height = true
-script = SubResource( 36 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+text_file = "res://Assets/Levels/City/CatsCradle/LetterFromAunt.txt"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )

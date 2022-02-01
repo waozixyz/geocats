@@ -82,7 +82,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AreaInteract": "",
 "BasePlayerState": "",
-"ChatNPC": "",
+"ChatNPC": "res://Assets/UI/Debug/chat_npc_icon.png",
 "InteractButton": "",
 "InteractMain": "",
 "InteractSimple": "",
@@ -100,7 +100,7 @@ _global_script_class_icons={
 
 config/name="Geocats"
 run/main_scene="res://Scenes/Levels/TitleScreen/Splash.tscn"
-boot_splash/image="res://Assets/Levels/0_TitleScreen/logo.png"
+boot_splash/image="res://Assets/Levels/TitleScreen/logo.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"

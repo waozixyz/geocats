@@ -1,13 +1,13 @@
 [gd_scene load_steps=74 format=2]
 
-[ext_resource path="res://Assets/Levels/8_GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Levels/8_GeoLodge/rain_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/Park/GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/Park/GeoLodge/rain_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Levels/Park/GeoLodge/Fire.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sounds/Effects/Rain.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Levels/Park/GeoLodge/interactions.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Levels/8_GeoLodge/palmerston.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/Park/GeoLodge/palmerston.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Levels/Park/GeoLodge/Palmerston.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Sounds/Effects/Fire.ogg" type="AudioStream" id=11]
@@ -15,8 +15,8 @@
 [ext_resource path="res://Scenes/Levels/Park/GeoLodge/FireplacePopupDialog.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=15]
-[ext_resource path="res://Assets/Levels/8_GeoLodge/tinypumpkinicon.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/8_GeoLodge/box.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/Park/GeoLodge/tinypumpkinicon.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/Park/GeoLodge/box.png" type="Texture" id=17]
 
 [sub_resource type="StreamTexture" id=261]
 load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"

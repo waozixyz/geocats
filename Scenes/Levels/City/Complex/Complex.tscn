@@ -1,54 +1,49 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=151 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/City/Complex/Liet.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Levels/2_Complex/window_3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Hogwash/pig_cat_walk_1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/2_Complex/window_4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/City/Complex/window_3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_walk_1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/City/Complex/window_4.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Hogwash/pig_cat_mad.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/5.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Levels/2_Complex/stairs_2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/4.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_mad.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Levels/City/Complex/Cleopardis/Spritesheet.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Levels/2_Complex/stairs_3.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Levels/2_Complex/city.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/2_Complex/dial.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Levels/2_Complex/trolley.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Hogwash/pig_cat_normal.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/2.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Levels/2_Complex/bckg_deko_3.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/3.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Levels/2_Complex/door_1.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Liet.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Levels/2_Complex/window_2.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Levels/2_Complex/alley_house_ladder.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Levels/2_Complex/door_2.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Levels/2_Complex/houses.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Hogwash/pig_cat_walk_2.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Levels/2_Complex/elevator.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/7.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Levels/2_Complex/wall_bckg.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Levels/2_Complex/plant.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Levels/2_Complex/street_tileset.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Levels/2_Complex/ceiling_plant.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Levels/2_Complex/complex_tileset.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/City/Complex/city.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/City/Complex/dial.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/City/Complex/trolley.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_normal.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_3.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/City/Complex/door_1.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Levels/City/Complex/Cats/Liet.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Levels/City/Complex/window_2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/City/Complex/alley_house_ladder.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/City/Complex/door_2.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/City/Complex/houses.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/City/Complex/Cats/Hogwash/pig_cat_walk_2.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/City/Complex/elevator.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/City/Complex/wall_bckg.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Levels/City/Complex/plant.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/City/Complex/street_tileset.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/City/Complex/ceiling_plant.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/City/Complex/complex_tileset.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Levels/City/Complex/Hogwash.gd" type="Script" id=37]
-[ext_resource path="res://Assets/Levels/2_Complex/stairs_4.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_4.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/UI/Interact/SimpleInteract.tscn" type="PackedScene" id=39]
-[ext_resource path="res://Assets/Levels/2_Complex/bckg_deko_2.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Levels/2_Complex/elevator_button.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/2_Complex/skyscraper_tileset.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/City/Complex/elevator_button.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/City/Complex/skyscraper_tileset.png" type="Texture" id=42]
 [ext_resource path="res://Scenes/UI/Interact/TeleportInternal.gd" type="Script" id=43]
-[ext_resource path="res://Assets/Levels/2_Complex/stairs_1.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Levels/2_Complex/bckg_deko.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Levels/2_Complex/window.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_1.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Levels/City/Complex/window.png" type="Texture" id=46]
 [ext_resource path="res://Assets/Music/2_Complex.ogg" type="AudioStream" id=47]
-[ext_resource path="res://Assets/Levels/2_Complex/Cats/Cleopartis/6.png" type="Texture" id=48]
-[ext_resource path="res://Assets/Levels/2_Complex/plant_2.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Levels/City/Complex/plant_2.png" type="Texture" id=49]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=50]
 [ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=51]
 
@@ -644,9 +639,37 @@ extents = Vector2( 12, 72 )
 [sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 40.75, 29.2 )
 
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 11 )
+region = Rect2( 11, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 11 )
+region = Rect2( 22, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 11 )
+region = Rect2( 33, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 11 )
+region = Rect2( 11, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 11 )
+region = Rect2( 22, 14, 11, 14 )
+
 [sub_resource type="SpriteFrames" id=80]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 48 ), ExtResource( 31 ) ],
+"frames": [ SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -1285,8 +1308,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-json_file = "res://Conversations/2_Complex/Cleopardis.json"
-sound_file = "res://Conversations/2_Complex/Cleopardis.wav"
+character_name = "Cleopardis"
+json_file = "res://Assets/Levels/City/Complex/Cleopardis/Cleopardis.json"
+sound_file = "res://Assets/Levels/City/Complex/Cleopardis/Cleopardis.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Cleopardis"]
 position = Vector2( 20.8, 33.5306 )
@@ -1296,7 +1320,6 @@ shape = SubResource( 82 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
-frame = 1
 centered = false
 script = ExtResource( 4 )
 
@@ -1312,10 +1335,12 @@ frames = SubResource( 83 )
 animation = "walk"
 script = ExtResource( 4 )
 
-[node name="HogwashArea2D" type="Area2D" parent="Agents/Hogwash"]
+[node name="Hogwash" type="Area2D" parent="Agents/Hogwash"]
 script = ExtResource( 1 )
+has_parent = true
+character_name = "Hogwash"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/HogwashArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/Hogwash"]
 shape = SubResource( 84 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash"]
@@ -1372,7 +1397,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1142, 239 )
+position = Vector2( 1129, 506 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
