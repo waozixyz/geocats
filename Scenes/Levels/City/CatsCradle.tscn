@@ -338,6 +338,10 @@ shape = SubResource( 3 )
 position = Vector2( 159.9, 676.2 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+sound_effect = "res://Assets/Levels/City/CatsCradle/open_present.wav"
 make_node_visible = NodePath("../../CanvasLayer/Letter")
 consumable_path = NodePath("Sprite")
 progress_var = "catscradle_present"
@@ -387,7 +391,7 @@ shape = SubResource( 30 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Letter" type="Node2D" parent="CanvasLayer"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 5, 0 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Letter"]
@@ -419,7 +423,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 11 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 203, 672 )
+position = Vector2( 206, 657 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1490

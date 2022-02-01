@@ -35,7 +35,7 @@ func hide_chat():
 	chat_with.visible = false
 
 
-func _process(delta):
+func _process(_delta):
 	if touching and not active:
 		show_chat()
 	elif (disabled or not touching) and active:

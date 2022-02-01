@@ -11,7 +11,11 @@ func _finished_playing(id, sound, object):
 	playing.remove(id)
 func play_sound(sound_file, volume = 1, object = null, player = null):
 	if sound_file:
-		var sound = AudioStreamPlayer2D.new() if object else AudioStreamPlayer.new()
+		var sound
+		if object:
+			sound = AudioStreamPlayer2D.new()
+		else:
+			sound = AudioStreamPlayer.new()
 		if object:
 			object.add_child(sound)
 		else:
@@ -28,7 +32,7 @@ func play_sound(sound_file, volume = 1, object = null, player = null):
 		playing.append({"sound": sound, "volume": sound.volume_db, "object": object, "player": player })
 
 
-func _process(delta):
+func _process(_delta):
 	for play in playing:
 		if play.object and play.player:
 			var pos_diff = play.object.position - play.player.position

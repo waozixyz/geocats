@@ -19,15 +19,23 @@ func _ready():
 		if PROGRESS.variables.get(progress_var):
 			consumable.visible = false
 
-func _process(delta): 
-	if ui_node.visible == false and consumable.visible == false:
+func _process(_delta): 
+	if do_something  and ui_node.modulate.a == 1:
 		do_something = false
+		disabled = true
+		ui_node.visible = false
 		remove_child(interact_with.get_parent())
-	if do_something:
-		ui_node.visible = utils.toggle(ui_node.visible)
+		return
+	
+	if do_something and not disabled:
+		if consumable.visible:
+			utils.tween_fade(ui_node, 0, 1, 0.2)
+		else:
+			utils.tween_fade(ui_node, 1, 0, 0.2)
 		if progress_var:
 			PROGRESS.variables[progress_var] = true
 		if consumable:
 			consumable.visible = false
 		do_something = false
-		
+		disable_sound = true
+

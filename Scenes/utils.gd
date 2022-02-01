@@ -3,19 +3,23 @@ extends Node
 func toggle(boolean):
 	return false if boolean else true
 
-func _tween_completed(_object, _key, tween):
+var tweens = []
+func _tween_completed(obj, _key, tween):
 	remove_child(tween)
-	
+	tweens.erase(obj)
+
 # a generic tween for fading effect
 func tween_fade(obj, start, end, time = .5):
-	var tween = Tween.new()
-	add_child(tween)
-	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	tween.start()
-	tween.pause_mode = PAUSE_MODE_PROCESS
-	var err = tween.connect("tween_completed", self, "_tween_completed", [tween])
-	assert(err == OK)
-	
+	if not tweens.has(obj):
+		tweens.append(obj)
+		var tween = Tween.new()
+		add_child(tween)
+		tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+		tween.start()
+		tween.pause_mode = PAUSE_MODE_PROCESS
+		var err = tween.connect("tween_completed", self, "_tween_completed", [tween])
+		assert(err == OK)
+		
 
 # get current season
 func get_season():
