@@ -1339,6 +1339,7 @@ script = ExtResource( 4 )
 script = ExtResource( 1 )
 has_parent = true
 character_name = "Hogwash"
+json_file = "res://Assets/Levels/City/Complex/Hogwash/hogwash.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/Hogwash"]
 shape = SubResource( 84 )
