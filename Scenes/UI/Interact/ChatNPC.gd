@@ -33,7 +33,7 @@ func show_chat():
 func hide_chat():
 	active = false
 	chat_with.visible = false
-
+	dialogue.exit()
 
 func _process(_delta):
 	if touching and not active:

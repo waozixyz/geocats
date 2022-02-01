@@ -42,7 +42,6 @@ func _show_nft(nft_id, nft, new = false):
 		anim = Sprite.new()
 		anim.texture = load("res://Assets/NFTs/" + file_name + ".png")
 		anim.scale = Vector2(10, 10)
-		print(anim.texture.width)
 	image_panel.add_child(anim)
 	
 	# show location panel
@@ -78,7 +77,6 @@ func _process(_delta):
 	if request:
 		var body_size = request.get_body_size()
 		if body_size > 0:
-			print(deta.response)
 			deta.remove_child(request)
 			request = null
 #	var res_code = deta.response_code

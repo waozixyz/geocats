@@ -36,7 +36,7 @@ func _physics_process(delta):
 			change = false
 	
 func _new_scene():
-	print(level_path)
+	AudioManager.playing = []
 	var _err = get_tree().change_scene(level_path)
 	#assert(err == OK)
 	get_tree().paused = false

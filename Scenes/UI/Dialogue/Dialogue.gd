@@ -145,7 +145,6 @@ func set_frame(): # Mostly aligment operations.
 
 func initiate(character_folder, json_file, block = 'first'): # Load the whole dialogue into a variable
 	characters_folder = character_folder + "/"
-	print(characters_folder)
 	var file = File.new()
 	file.open(json_file, file.READ)
 	var json = file.get_as_text()

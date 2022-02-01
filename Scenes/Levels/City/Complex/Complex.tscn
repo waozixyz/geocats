@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=2]
+[gd_scene load_steps=151 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/City/Complex/Liet.gd" type="Script" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/City/Complex/window_3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Agents/Hogwash/hogwash_spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Agents/Liet/Liet.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/City/Complex/window_4.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Agents/Hogwash/hogwash_spritesheet.png" type="Texture" id=10]
@@ -31,7 +31,6 @@
 [ext_resource path="res://Assets/Levels/City/Complex/complex_tileset.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Levels/City/Complex/Hogwash.gd" type="Script" id=37]
 [ext_resource path="res://Assets/Levels/City/Complex/stairs_4.png" type="Texture" id=38]
-[ext_resource path="res://Scenes/UI/Interact/E_Interact.tscn" type="PackedScene" id=39]
 [ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_2.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Levels/City/Complex/elevator_button.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Levels/City/Complex/skyscraper_tileset.png" type="Texture" id=42]
@@ -673,7 +672,7 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=106]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 21, 0, 21, 11 )
 
 [sub_resource type="AtlasTexture" id=107]
@@ -681,11 +680,11 @@ atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 21, 11 )
 
 [sub_resource type="AtlasTexture" id=108]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 11, 21, 11 )
 
 [sub_resource type="AtlasTexture" id=109]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 21, 11, 21, 11 )
 
 [sub_resource type="SpriteFrames" id=83]
@@ -710,32 +709,38 @@ extents = Vector2( 35, 18 )
 [sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 40.8073, 23.3975 )
 
-[sub_resource type="AtlasTexture" id=87]
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=88]
-region = Rect2( 32, 0, 16, 12 )
-
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 7 )
 region = Rect2( 16, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 7 )
 region = Rect2( 0, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=91]
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 7 )
 region = Rect2( 16, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=92]
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 7 )
 region = Rect2( 32, 12, 16, 12 )
 
 [sub_resource type="SpriteFrames" id=93]
 animations = [ {
-"frames": [ SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 89 ), SubResource( 89 ), SubResource( 90 ), SubResource( 90 ), SubResource( 90 ), SubResource( 90 ), SubResource( 90 ) ],
+"frames": [ SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 112 ), SubResource( 113 ), SubResource( 110 ), SubResource( 113 ), SubResource( 110 ), SubResource( 111 ), SubResource( 110 ), SubResource( 110 ), SubResource( 112 ), SubResource( 110 ), SubResource( 110 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 91 ), SubResource( 92 ) ],
+"frames": [ SubResource( 114 ), SubResource( 115 ) ],
 "loop": true,
 "name": "walk",
 "speed": 6.0
@@ -1404,7 +1409,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1129, 506 )
+position = Vector2( 1178, 238 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
@@ -1424,16 +1429,11 @@ shape = SubResource( 97 )
 [node name="IceBoxSFX" type="Area2D" parent="."]
 position = Vector2( 561.491, 177.263 )
 script = ExtResource( 3 )
+sound_effect = "res://Assets/Levels/City/Complex/IceBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceBoxSFX"]
 position = Vector2( -20.9362, 51.9664 )
 shape = SubResource( 98 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="InteractWith" parent="CanvasLayer" instance=ExtResource( 39 )]
-visible = false
-mouse_filter = 2
 
 [editable path="Default"]
 [editable path="Default/Affogato"]

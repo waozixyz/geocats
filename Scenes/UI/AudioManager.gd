@@ -1,7 +1,6 @@
 extends Node
 
 var playing = []
-
 func _finished_playing(id, sound, object):
 	if object:
 		object.remove_child(sound)
