@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/twelveeight.ogg-ee72df89740d5a3cf6f3738cca85ffca.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/City/DonutShop/twelveeight.ogg"
+dest_files=[ "res://.import/twelveeight.ogg-ee72df89740d5a3cf6f3738cca85ffca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

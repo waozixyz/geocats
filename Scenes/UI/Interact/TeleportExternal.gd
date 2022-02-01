@@ -1,4 +1,4 @@
-extends InteractButton
+extends S_Interact
 class_name TeleportExternal, "res://Assets/UI/Debug/teleport_icon.png"
 
 export(String, FILE, "*.wav, *.ogg") var sound_effect
@@ -11,6 +11,6 @@ func _input(_event):
 		global.user.location = location
 		SceneChanger.change_scene(scene_path)
 		AudioManager.play_sound(sound_effect, sound_volume)
-		object.visible = false
+		button.visible = false
 
 

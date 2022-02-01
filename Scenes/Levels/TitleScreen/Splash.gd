@@ -3,6 +3,7 @@ extends Control
 onready var splash = $AnimatedSprite
 onready var audio = $AudioStreamPlayer
 
+export(String, FILE, "*.tscn") var next_scene
 var particles
 var loaded
 
@@ -14,9 +15,11 @@ func _ready():
 	add_child(particles)
 	loaded = true
 
+
 func _next():
-	SceneChanger.change_scene("TitleScreen")
+	SceneChanger.change_scene(next_scene)
 	remove_child(particles)
+
 
 func _process(_delta):
 	if splash.frame == 77:

@@ -3,12 +3,12 @@
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/City/CatsCradle/Cats_Cradle.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/UI/Interact/SimpleInteract.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=5]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/City/CatsCradle/present.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/City/CatsCradle/letter.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Music/1_CatCradle.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Levels/City/CatsCradle/CatCradle.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/UI/Interact/Consumable.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/UI/LoadTextFile.gd" type="Script" id=12]
@@ -76,6 +76,12 @@ extents = Vector2( 51, 5 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 40.5, 10 )
 
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 27, 4 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 22, 4 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.5, 76.5 )
 
@@ -87,12 +93,6 @@ extents = Vector2( 13.5, 88.2143 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 81, 70.157 )
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 27, 4 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 22, 4 )
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 42.8818, 22.4911 )
@@ -274,6 +274,24 @@ shape = SubResource( 10 )
 position = Vector2( 57.5, 572 )
 shape = SubResource( 6 )
 
+[node name="Stereo" type="StaticBody2D" parent="MainColliders"]
+position = Vector2( 549, 570 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainColliders/Stereo"]
+position = Vector2( 266, 58 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MainColliders/Stereo"]
+position = Vector2( 323, 70 )
+shape = SubResource( 24 )
+one_way_collision = true
+
 [node name="Interactables" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
@@ -332,29 +350,13 @@ shape = SubResource( 4 )
 position = Vector2( 1.57141, -47.4286 )
 texture = ExtResource( 7 )
 
-[node name="Stereo" type="StaticBody2D" parent="Interactables"]
-position = Vector2( 549, 570 )
-collision_layer = 7
-collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Stereo"]
-position = Vector2( 266, 58 )
-shape = SubResource( 23 )
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Stereo"]
-position = Vector2( 323, 70 )
-shape = SubResource( 24 )
-one_way_collision = true
-
-[node name="StereoSFX" type="Area2D" parent="Interactables/Stereo"]
-position = Vector2( 300.27, 83.255 )
+[node name="StereoSFX" type="Area2D" parent="Interactables"]
+position = Vector2( 849.27, 653.255 )
 script = ExtResource( 4 )
+sound_effect = "res://Assets/Levels/City/CatsCradle/StereoGeoquariumSample.wav"
+sound_volume = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Stereo/StereoSFX"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/StereoSFX"]
 position = Vector2( -6.53906, 8.40741 )
 shape = SubResource( 25 )
 
@@ -376,6 +378,7 @@ one_way_collision = true
 [node name="LitterBoxSFX" type="Area2D" parent="Interactables"]
 position = Vector2( 809.231, 356.84 )
 script = ExtResource( 4 )
+sound_effect = "res://Assets/Levels/City/CatsCradle/LitterBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LitterBoxSFX"]
 position = Vector2( -7.5437, 7.4028 )
@@ -416,7 +419,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 11 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 52, 646 )
+position = Vector2( 203, 672 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1490

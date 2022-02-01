@@ -1,6 +1,6 @@
 [gd_scene load_steps=83 format=2]
 
-[ext_resource path="res://Assets/Music/0_SplashScreen.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Levels/TitleScreen/SplashScreen.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Levels/TitleScreen/splash_tileset.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Levels/TitleScreen/Splash.gd" type="Script" id=4]
 
@@ -332,6 +332,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+next_scene = "res://Scenes/Levels/TitleScreen/TitleScreen.tscn"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 358.302, 208.933 )

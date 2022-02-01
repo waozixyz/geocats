@@ -1,4 +1,6 @@
-extends InteractSimple
+extends E_Interact
+
+class_name Consumable, "res://Assets/UI/Debug/consumable_icon.png"
 
 export(NodePath) var make_node_visible
 export(NodePath) var consumable_path
@@ -8,7 +10,6 @@ var consumable
 var ui_node
 
 func _ready():
-	hide_interact = false
 	ui_node = get_node(make_node_visible)
 
 	if consumable_path:
@@ -18,11 +19,10 @@ func _ready():
 		if PROGRESS.variables.get(progress_var):
 			consumable.visible = false
 
-func _process(delta):
-	if object and not ui_node.visible and consumable and not consumable.visible:
+func _process(delta): 
+	if ui_node.visible == false and consumable.visible == false:
 		do_something = false
-		object.visible = false
-		object = null
+		remove_child(interact_with.get_parent())
 	if do_something:
 		ui_node.visible = utils.toggle(ui_node.visible)
 		if progress_var:
@@ -30,3 +30,4 @@ func _process(delta):
 		if consumable:
 			consumable.visible = false
 		do_something = false
+		

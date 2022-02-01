@@ -3,9 +3,7 @@ extends Node
 func toggle(boolean):
 	return false if boolean else true
 
-	
-
-func _tween_completed(tween):
+func _tween_completed(_object, _key, tween):
 	remove_child(tween)
 	
 # a generic tween for fading effect
@@ -17,7 +15,6 @@ func tween_fade(obj, start, end, time = .5):
 	tween.pause_mode = PAUSE_MODE_PROCESS
 	var err = tween.connect("tween_completed", self, "_tween_completed", [tween])
 	assert(err == OK)
-
 	
 
 # get current season

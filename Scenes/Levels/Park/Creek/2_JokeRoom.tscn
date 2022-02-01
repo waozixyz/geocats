@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Levels/Park/Creek/2_JokeRoom/gc.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/Park/Creek/2_JokeRoom/BG.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Levels/Park/Creek/2_JokeRoom/FG.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Music/Cave_Ambience.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Levels/Park/Caves/Cave_Ambience.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Levels/Park/Creek/Jokecat_GetOut.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=9]
 

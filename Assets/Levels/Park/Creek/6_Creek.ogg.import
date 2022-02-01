@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/6_Creek.ogg-75a1e0a8103aa7a1da26373d891185aa.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Park/Creek/6_Creek.ogg"
+dest_files=[ "res://.import/6_Creek.ogg-75a1e0a8103aa7a1da26373d891185aa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

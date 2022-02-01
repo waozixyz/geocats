@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SaltySwing.ogg-588726987a36b124b47311a5690bbd36.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/City/GeoCity/SaltySwing.ogg"
+dest_files=[ "res://.import/SaltySwing.ogg-588726987a36b124b47311a5690bbd36.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
