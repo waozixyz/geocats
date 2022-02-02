@@ -466,7 +466,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 sound_effect = "res://Assets/Sounds/Transition/WoodDoorLatchOpen1.ogg"
-scene_path = "res://Scenes/Levels/City/Complex/Complex.tscn"
+scene_path = "res://Scenes/Levels/City/Complex.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2( 43.5, 50 )

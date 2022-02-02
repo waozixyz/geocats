@@ -28,7 +28,7 @@ func _teleport(new_pos: Vector2):
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
-func _process(delta):
+func _process(_delta):
 	if teleporting:
 		chat_with.visible = false
 	if teleporting and not tween.is_active():

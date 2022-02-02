@@ -1,51 +1,50 @@
 [gd_scene load_steps=151 format=2]
 
-[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Levels/City/Complex/Liet.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Levels/City/Complex/window_3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Agents/Liet/Liet.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/City/Complex/window_4.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Agents/Hogwash/hogwash_spritesheet.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Agents/Cleopardis/Spritesheet.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Levels/City/Complex/stairs_2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Levels/City/Complex/stairs_3.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Levels/City/Complex/city.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/City/Complex/dial.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Levels/City/Complex/trolley.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_3.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Levels/City/Complex/door_1.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Levels/City/Complex/window_2.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Levels/City/Complex/alley_house_ladder.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Levels/City/Complex/door_2.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Levels/City/Complex/houses.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Levels/City/Complex/elevator.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Levels/City/Complex/wall_bckg.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Entities/SimpleMovingAI.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/UI/Interact/TeleportInternal.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Levels/City/Complex/complex_tileset.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Agents/Liet/Liet.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Agents/Hogwash/hogwash_spritesheet.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Levels/City/Complex/window_3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/City/Complex/window_4.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/City/Complex/elevator.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/City/Complex/alley_house_ladder.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/City/Complex/wall_bckg.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/City/Complex/houses.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/City/Complex/door_1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_3.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/City/Complex/skyscraper_tileset.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Levels/City/Complex/city.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Levels/City/Complex/Complex.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Levels/City/Complex/plant_2.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/City/Complex/elevator_button.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/City/Complex/window_2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_3.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/City/Complex/trolley.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_2.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/City/Complex/door_2.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Levels/City/Complex/plant.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Levels/City/Complex/street_tileset.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Levels/City/Complex/ceiling_plant.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Levels/City/Complex/complex_tileset.png" type="Texture" id=36]
-[ext_resource path="res://Scenes/Levels/City/Complex/Hogwash.gd" type="Script" id=37]
-[ext_resource path="res://Assets/Levels/City/Complex/stairs_4.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko_2.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Levels/City/Complex/elevator_button.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/City/Complex/skyscraper_tileset.png" type="Texture" id=42]
-[ext_resource path="res://Scenes/UI/Interact/TeleportInternal.gd" type="Script" id=43]
-[ext_resource path="res://Assets/Levels/City/Complex/stairs_1.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Levels/City/Complex/bckg_deko.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Levels/City/Complex/window.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Levels/City/Complex/Complex.ogg" type="AudioStream" id=47]
-[ext_resource path="res://Assets/Levels/City/Complex/plant_2.png" type="Texture" id=49]
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=50]
-[ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=51]
+[ext_resource path="res://Assets/Levels/City/Complex/ceiling_plant.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/City/Complex/dial.png" type="Texture" id=35]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/City/Complex/window.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Levels/City/Complex/stairs_2.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Agents/Cleopardis/Spritesheet.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/City/Complex/street_tileset.png" type="Texture" id=40]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=41]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
-0/texture = ExtResource( 32 )
+0/texture = ExtResource( 17 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 36, 27 )
@@ -68,7 +67,7 @@
 
 [sub_resource type="TileSet" id=2]
 0/name = "skyscraper_tileset.png 0"
-0/texture = ExtResource( 42 )
+0/texture = ExtResource( 22 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 54, 63 )
@@ -199,7 +198,7 @@ points = PoolVector2Array( 4, 0, 9, 0, 9, 9, 4, 9 )
 
 [sub_resource type="TileSet" id=39]
 0/name = "complex_tileset.png 0"
-0/texture = ExtResource( 36 )
+0/texture = ExtResource( 9 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 36, 117 )
@@ -466,7 +465,7 @@ points = PoolVector2Array( 0, 4, 9, 4, 9, 9, 0, 9 )
 
 [sub_resource type="TileSet" id=49]
 0/name = "street_tileset.png 0"
-0/texture = ExtResource( 34 )
+0/texture = ExtResource( 40 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 27, 27 )
@@ -552,19 +551,22 @@ extents = Vector2( 11, 1 )
 extents = Vector2( 36, 8 )
 
 [sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 9, 1 )
+extents = Vector2( 6.9375, 1 )
+
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 4.875, 1 )
 
 [sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 9, 1 )
+extents = Vector2( 5.875, 1 )
 
 [sub_resource type="RectangleShape2D" id=55]
-extents = Vector2( 7, 1 )
+extents = Vector2( 5.375, 1 )
 
 [sub_resource type="RectangleShape2D" id=56]
-extents = Vector2( 5, 1 )
+extents = Vector2( 3.375, 0.75 )
 
 [sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 5, 1 )
+extents = Vector2( 1.875, 1 )
 
 [sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 7, 6 )
@@ -636,31 +638,31 @@ extents = Vector2( 12, 72 )
 extents = Vector2( 40.75, 29.2 )
 
 [sub_resource type="AtlasTexture" id=99]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 0, 0, 11, 14 )
 
 [sub_resource type="AtlasTexture" id=100]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 11, 0, 11, 14 )
 
 [sub_resource type="AtlasTexture" id=101]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 22, 0, 11, 14 )
 
 [sub_resource type="AtlasTexture" id=102]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 33, 0, 11, 14 )
 
 [sub_resource type="AtlasTexture" id=103]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 0, 14, 11, 14 )
 
 [sub_resource type="AtlasTexture" id=104]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 11, 14, 11, 14 )
 
 [sub_resource type="AtlasTexture" id=105]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 39 )
 region = Rect2( 22, 14, 11, 14 )
 
 [sub_resource type="SpriteFrames" id=80]
@@ -672,24 +674,24 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=106]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 11 )
 region = Rect2( 21, 0, 21, 11 )
 
 [sub_resource type="AtlasTexture" id=107]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 21, 11 )
 
 [sub_resource type="AtlasTexture" id=108]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 11, 21, 11 )
 
 [sub_resource type="AtlasTexture" id=109]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 11 )
 region = Rect2( 21, 11, 21, 11 )
 
 [sub_resource type="SpriteFrames" id=83]
 animations = [ {
-"frames": [ SubResource( 106 ), SubResource( 106 ), SubResource( 107 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ) ],
+"frames": [ SubResource( 106 ), SubResource( 106 ), SubResource( 107 ), SubResource( 107 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ), SubResource( 106 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -710,32 +712,32 @@ extents = Vector2( 35, 18 )
 extents = Vector2( 40.8073, 23.3975 )
 
 [sub_resource type="AtlasTexture" id=110]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=111]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 16, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=112]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 32, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=113]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 12, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=114]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 16, 12, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=115]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 10 )
 region = Rect2( 32, 12, 16, 12 )
 
 [sub_resource type="SpriteFrames" id=93]
 animations = [ {
-"frames": [ SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 112 ), SubResource( 113 ), SubResource( 110 ), SubResource( 113 ), SubResource( 110 ), SubResource( 111 ), SubResource( 110 ), SubResource( 110 ), SubResource( 112 ), SubResource( 110 ), SubResource( 110 ) ],
+"frames": [ SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 112 ), SubResource( 112 ), SubResource( 113 ), SubResource( 110 ), SubResource( 113 ), SubResource( 110 ), SubResource( 110 ), SubResource( 110 ), SubResource( 112 ), SubResource( 112 ), SubResource( 112 ), SubResource( 112 ), SubResource( 111 ), SubResource( 110 ), SubResource( 110 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
@@ -762,7 +764,7 @@ extents = Vector2( 45.128, 93.1666 )
 extents = Vector2( 82.6183, 38.2424 )
 
 [node name="Complex" type="Node2D"]
-script = ExtResource( 50 )
+script = ExtResource( 3 )
 locations = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -801,15 +803,15 @@ __meta__ = {
 
 [node name="bckg_deko_3" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 260, 32 )
-texture = ExtResource( 21 )
+texture = ExtResource( 29 )
 
 [node name="bckg_deko_2" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 351, 176 )
-texture = ExtResource( 40 )
+texture = ExtResource( 31 )
 
 [node name="bckg_deko" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 238, 270 )
-texture = ExtResource( 45 )
+texture = ExtResource( 24 )
 
 [node name="PinkStripes" type="TileMap" parent="BelowPlayer"]
 tile_set = SubResource( 1 )
@@ -824,7 +826,7 @@ tile_data = PoolIntArray( 65548, 0, 0, 65549, 0, 1, 65550, 0, 1, 65551, 0, 1, 65
 position = Vector2( 126, 225 )
 
 [node name="window_2" type="Sprite" parent="BelowPlayer/Windows"]
-texture = ExtResource( 25 )
+texture = ExtResource( 28 )
 centered = false
 __meta__ = {
 "_edit_group_": true
@@ -832,27 +834,27 @@ __meta__ = {
 
 [node name="window" type="Sprite" parent="BelowPlayer/Windows"]
 position = Vector2( 324, -62.7 )
-texture = ExtResource( 46 )
+texture = ExtResource( 37 )
 centered = false
 
 [node name="window_4" type="Sprite" parent="BelowPlayer/Windows"]
 position = Vector2( 258, -198 )
-texture = ExtResource( 8 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="window_3" type="Sprite" parent="BelowPlayer/Windows"]
 position = Vector2( -18, -140.658 )
-texture = ExtResource( 6 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="trolley" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 113, 45 )
-texture = ExtResource( 18 )
+texture = ExtResource( 30 )
 centered = false
 
 [node name="dial" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 108, 234 )
-texture = ExtResource( 17 )
+texture = ExtResource( 35 )
 centered = false
 
 [node name="plants" type="Node2D" parent="BelowPlayer"]
@@ -867,12 +869,12 @@ __meta__ = {
 
 [node name="ceiling_plant" type="Sprite" parent="BelowPlayer/plants"]
 position = Vector2( 180, 77 )
-texture = ExtResource( 35 )
+texture = ExtResource( 34 )
 centered = false
 
 [node name="plant_2" type="Sprite" parent="BelowPlayer/plants"]
 position = Vector2( 119.8, 99.6561 )
-texture = ExtResource( 49 )
+texture = ExtResource( 26 )
 centered = false
 
 [node name="Skyscraper" type="TileMap" parent="BelowPlayer"]
@@ -903,17 +905,17 @@ position = Vector2( 0, -140 )
 
 [node name="door" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor3"]
 position = Vector2( 227, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door3" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor3"]
 position = Vector2( 318, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door4" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor3"]
 position = Vector2( 361, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="DoorsFloor2" type="Node2D" parent="BelowPlayer/Doors"]
@@ -921,64 +923,64 @@ position = Vector2( 23, -72 )
 
 [node name="door" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor2"]
 position = Vector2( 227, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door2" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor2"]
 position = Vector2( 270, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door3" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor2"]
 position = Vector2( 318, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door4" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor2"]
 position = Vector2( 361, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door5" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor2"]
 position = Vector2( 404, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door6" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor2"]
 position = Vector2( 446, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="DoorsFloor1" type="Node2D" parent="BelowPlayer/Doors"]
 
 [node name="door" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor1"]
 position = Vector2( 227, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door2" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor1"]
 position = Vector2( 270, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door3" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor1"]
 position = Vector2( 318, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door4" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor1"]
 position = Vector2( 361, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door5" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor1"]
 position = Vector2( 404, 180 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="door_2" type="Sprite" parent="BelowPlayer/Doors/DoorsFloor1"]
 position = Vector2( 193, 194 )
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 
 [node name="Stairs" type="Node2D" parent="BelowPlayer"]
 __meta__ = {
@@ -987,7 +989,7 @@ __meta__ = {
 
 [node name="stairs_2" type="Sprite" parent="BelowPlayer/Stairs"]
 position = Vector2( 153, 135 )
-texture = ExtResource( 12 )
+texture = ExtResource( 38 )
 centered = false
 __meta__ = {
 "_edit_group_": true
@@ -995,7 +997,7 @@ __meta__ = {
 
 [node name="stairs_1" type="Sprite" parent="BelowPlayer/Stairs"]
 position = Vector2( 99, 171 )
-texture = ExtResource( 44 )
+texture = ExtResource( 20 )
 centered = false
 __meta__ = {
 "_edit_group_": true
@@ -1003,7 +1005,7 @@ __meta__ = {
 
 [node name="stairs_3" type="Sprite" parent="BelowPlayer/Stairs"]
 position = Vector2( 449, 99 )
-texture = ExtResource( 15 )
+texture = ExtResource( 21 )
 centered = false
 __meta__ = {
 "_edit_group_": true
@@ -1011,16 +1013,16 @@ __meta__ = {
 
 [node name="stairs_4" type="Sprite" parent="BelowPlayer/Stairs"]
 position = Vector2( 388, 63 )
-texture = ExtResource( 38 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="city" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 99, 268 )
-texture = ExtResource( 16 )
+texture = ExtResource( 23 )
 
 [node name="houses" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 0, 56.8 )
-texture = ExtResource( 28 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="Street" type="TileMap" parent="BelowPlayer"]
@@ -1033,16 +1035,16 @@ tile_data = PoolIntArray( 1966080, 0, 0, 1966081, 0, 0, 1966082, 0, 0, 1966083, 
 
 [node name="UpElevator" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 182, 54 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 
 [node name="elevator_button" type="Sprite" parent="BelowPlayer/UpElevator"]
 position = Vector2( 13, 10 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 41 )
+texture = ExtResource( 27 )
 
 [node name="DownElevator" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 362, 225 )
-texture = ExtResource( 30 )
+texture = ExtResource( 15 )
 centered = false
 __meta__ = {
 "_edit_group_": true
@@ -1050,12 +1052,12 @@ __meta__ = {
 
 [node name="Ladder_Sprite" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 433, 205 )
-texture = ExtResource( 26 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="HomeDoor" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 271, 40 )
-texture = ExtResource( 23 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="Window" type="StaticBody2D" parent="BelowPlayer"]
@@ -1089,27 +1091,42 @@ shape = SubResource( 52 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BelowPlayer/Tree"]
-position = Vector2( 60, 61 )
+position = Vector2( 62.0625, 64 )
 shape = SubResource( 53 )
 one_way_collision = true
 
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="BelowPlayer/Tree"]
+position = Vector2( 48, 77 )
+shape = SubResource( 53 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="BelowPlayer/Tree"]
+position = Vector2( 67.75, 58 )
+shape = SubResource( 116 )
+one_way_collision = true
+
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="BelowPlayer/Tree"]
-position = Vector2( 43, 51 )
+position = Vector2( 41.75, 52 )
 shape = SubResource( 54 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="BelowPlayer/Tree"]
-position = Vector2( 45, 40 )
+position = Vector2( 42.5, 44.75 )
 shape = SubResource( 55 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BelowPlayer/Tree"]
-position = Vector2( 45, 14 )
+position = Vector2( 43.875, 17.5 )
 shape = SubResource( 56 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="BelowPlayer/Tree"]
-position = Vector2( 65, 37 )
+position = Vector2( 69.625, 39.75 )
+shape = SubResource( 57 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="BelowPlayer/Tree"]
+position = Vector2( 58.5, 41.75 )
 shape = SubResource( 57 )
 one_way_collision = true
 
@@ -1183,7 +1200,7 @@ one_way_collision = true
 
 [node name="Ladder" type="Area2D" parent="Interactive"]
 position = Vector2( 1756, 896 )
-script = ExtResource( 9 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1193,7 +1210,7 @@ shape = SubResource( 63 )
 
 [node name="HomeDoor" type="Area2D" parent="Interactive"]
 position = Vector2( 1080, 171 )
-script = ExtResource( 51 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1209,11 +1226,11 @@ shape = SubResource( 64 )
 visible = false
 position = Vector2( 40.0625, -30.0896 )
 scale = Vector2( 0.304848, 0.305692 )
-texture = ExtResource( 14 )
+texture = ExtResource( 36 )
 
 [node name="DownElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 1448, 900 )
-script = ExtResource( 43 )
+script = ExtResource( 8 )
 sound_effect = "res://Assets/Sounds/Effects/Vending_Machine_2.ogg"
 new_position = Vector2( 710, 180 )
 
@@ -1225,11 +1242,11 @@ shape = SubResource( 65 )
 visible = false
 position = Vector2( 28, 141.5 )
 scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 14 )
+texture = ExtResource( 36 )
 
 [node name="UpElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 728, 216 )
-script = ExtResource( 43 )
+script = ExtResource( 8 )
 sound_effect = "res://Assets/Sounds/Effects/Vending_Machine_2.ogg"
 new_position = Vector2( 1600, 1000 )
 
@@ -1241,12 +1258,13 @@ shape = SubResource( 66 )
 visible = false
 position = Vector2( 55, -11 )
 scale = Vector2( 0.260204, 0.260204 )
-texture = ExtResource( 14 )
+texture = ExtResource( 36 )
 
 [node name="Exit" type="Area2D" parent="Interactive"]
 position = Vector2( 396, 1072 )
-script = ExtResource( 51 )
+script = ExtResource( 7 )
 sound_effect = "res://Assets/Sounds/Transition/FootstepsOnGravelFast.ogg"
+scene_path = "res://Scenes/Levels/City/GeoCity/GeoCity.tscn"
 sound_volume = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
@@ -1256,7 +1274,7 @@ shape = SubResource( 67 )
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
-texture = ExtResource( 14 )
+texture = ExtResource( 36 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 7
@@ -1316,7 +1334,7 @@ shape = SubResource( 79 )
 
 [node name="Cleopardis" type="Area2D" parent="Agents"]
 position = Vector2( 70, 199 )
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1332,22 +1350,23 @@ scale = Vector2( 4, 4 )
 frames = SubResource( 80 )
 animation = "idle"
 centered = false
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="Hogwash" type="KinematicBody2D" parent="Agents"]
 position = Vector2( 1056, 480 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 37 )
+script = ExtResource( 5 )
+move_speed = 300
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Agents/Hogwash"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 83 )
 animation = "walk"
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="Hogwash" type="Area2D" parent="Agents/Hogwash"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 has_parent = true
 character_name = "Hogwash"
 character_folder = "res://Assets/Agents/Hogwash"
@@ -1360,13 +1379,25 @@ position = Vector2( 6, 4 )
 shape = SubResource( 85 )
 
 [node name="Liet" type="KinematicBody2D" parent="Agents"]
-position = Vector2( 2015.38, 668.644 )
+position = Vector2( 1961, 774 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 2 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 180
+_jump_height = 260
+jump_delay_range = [ 50, 300 ]
+walk_delay_range = [ 6, 30 ]
 
 [node name="Area2D" type="Area2D" parent="Agents/Liet"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
+has_parent = true
+character_name = "Liet"
+character_folder = "res://Assets/Agents/Liet"
+json_file = "res://Assets/Agents/Liet/liet.json"
+sound_file = "res://Assets/Agents/Liet/liet.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Liet/Area2D"]
 position = Vector2( 18.1068, 16.6215 )
@@ -1381,7 +1412,7 @@ frame = 1
 speed_scale = 0.3
 centered = false
 flip_h = true
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Liet"]
 position = Vector2( 30.0585, 20.9007 )
@@ -1401,15 +1432,15 @@ position = Vector2( 550, -27.7778 )
 shape = SubResource( 96 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 47 )
+stream = ExtResource( 25 )
 volume_db = -3.0
 autoplay = true
 bus = "Music"
 
-[node name="Default" parent="." instance=ExtResource( 5 )]
+[node name="Default" parent="." instance=ExtResource( 41 )]
 
 [node name="Player" parent="Default" index="1"]
-position = Vector2( 1178, 238 )
+position = Vector2( 1116, 236 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
@@ -1420,7 +1451,7 @@ frame = 18
 
 [node name="DoorbellSFX" type="Area2D" parent="."]
 position = Vector2( 498.666, 989.967 )
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorbellSFX"]
 position = Vector2( 1.41425, 14.1421 )
@@ -1428,7 +1459,7 @@ shape = SubResource( 97 )
 
 [node name="IceBoxSFX" type="Area2D" parent="."]
 position = Vector2( 561.491, 177.263 )
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 sound_effect = "res://Assets/Levels/City/Complex/IceBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceBoxSFX"]

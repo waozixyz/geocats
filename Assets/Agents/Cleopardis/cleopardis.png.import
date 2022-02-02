@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cleopardis.png-c04c63f147f746a0ef5a18babf2e954f.stex"
+path="res://.import/cleopardis.png-0c91fbb2aa0178eb381114c91ad5bd47.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/Cleopardis/Cleopardis.png"
-dest_files=[ "res://.import/Cleopardis.png-c04c63f147f746a0ef5a18babf2e954f.stex" ]
+source_file="res://Assets/Agents/Cleopardis/cleopardis.png"
+dest_files=[ "res://.import/cleopardis.png-0c91fbb2aa0178eb381114c91ad5bd47.stex" ]
 
 [params]
 

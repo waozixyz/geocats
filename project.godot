@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/UI/Interact/S_Interact.gd"
 }, {
+"base": "MovingBody",
+"class": "SimpleMovingAI",
+"language": "GDScript",
+"path": "res://Scenes/Entities/SimpleMovingAI.gd"
+}, {
 "base": "AnimatedSprite",
 "class": "SpriteAutoPlay",
 "language": "GDScript",
@@ -91,6 +96,7 @@ _global_script_class_icons={
 "Player": "",
 "PlayerFSM": "",
 "S_Interact": "",
+"SimpleMovingAI": "res://Assets/UI/Debug/moving_npc_icon.png",
 "SpriteAutoPlay": "",
 "TeleportExternal": "res://Assets/UI/Debug/teleport_icon.png",
 "TeleportInternal": "res://Assets/UI/Debug/teleport_icon.png"

@@ -30,7 +30,6 @@ func play_sound(sound_file, volume = 1, object = null, player = null):
 		sound.play()
 		playing.append({"sound": sound, "volume": sound.volume_db, "object": object, "player": player })
 
-
 func _process(_delta):
 	for play in playing:
 		if play.object and play.player:

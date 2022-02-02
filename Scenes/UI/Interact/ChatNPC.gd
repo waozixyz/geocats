@@ -41,7 +41,7 @@ func _process(_delta):
 	elif (disabled or not touching) and active:
 		hide_chat()
 	
-	if active and has_parent and "idle" in get_parent():
+	if has_parent and "idle" in get_parent():
 		get_parent().idle = true if dialogue.visible else false
 
 	
