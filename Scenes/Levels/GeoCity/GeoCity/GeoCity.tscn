@@ -1,59 +1,60 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=121 format=2]
 
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/small_pumpkin.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/sky.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Levels/GeoCity/City/Giant_Pumpkin_Body.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/cloud.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/stars.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Levels/GeoCity/City/SnowyCity/buildings.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/creepycat_spritesheet.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/guard_rail.png" type="Texture" id=9]
-[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Levels/GeoCity/City/Interactions.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Levels/GeoCity/City/SaltySwing.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/lasagna.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Levels/GeoCity/City/npc.gd" type="Script" id=15]
-[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/city_tree.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/longcat.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/nonacat.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/entrance_city.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/Levels/GeoCity/City/GeoCity.gd" type="Script" id=21]
-[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/garbitage.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/big_pumpkin_spritesheet.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/moon.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/gotpumpkin_spritesheet.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/Levels/GeoCity/City/PumpkinUI.gd" type="Script" id=26]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_7.wav" type="AudioStream" id=27]
-[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=29]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/pumpkin_teeth.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=31]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_5.wav" type="AudioStream" id=32]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_1.wav" type="AudioStream" id=33]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_2.wav" type="AudioStream" id=34]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_3.wav" type="AudioStream" id=35]
-[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_4.wav" type="AudioStream" id=36]
-[ext_resource path="res://Assets/Sounds/Pumpkin/evilpumpkinlaugh.wav" type="AudioStream" id=37]
-[ext_resource path="res://Assets/Sounds/Feline/Feline_Owch.wav" type="AudioStream" id=38]
+[ext_resource path="res://Scenes/Entities/Particles/Snow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/Giant_Pumpkin_Body.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/stars.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/GeoCity.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/lasagna.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/GeoCity/City/SaltySwing.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Sounds/Feline/Feline_Owch.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/gotpumpkin_spritesheet.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/medium_pumpkin_sptritesheet.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_7.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_4.wav" type="AudioStream" id=18]
+[ext_resource path="res://Scenes/UI/Teleport/GeoCity.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/buildings.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/creepycat_spritesheet.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/guard_rail.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_5.wav" type="AudioStream" id=23]
+[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/city_tree.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/PumpkinUI.gd" type="Script" id=25]
+[ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/NoteSpr.gd" type="Script" id=26]
+[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/nonacat.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/big_pumpkin_spritesheet.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/GeoCity/City/snowy_swing.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/npc.gd" type="Script" id=30]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/cloud.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/entrance_city.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/longcat.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/moon.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/GeoCity/City/Cats/garbitage.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/pumpkin_teeth.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/GeoCity/City/SnowyCity/city_tree.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_2.wav" type="AudioStream" id=38]
 [ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/note_single.png" type="Texture" id=39]
-[ext_resource path="res://Scenes/Levels/GeoCity/City/NoteSpr.gd" type="Script" id=40]
-[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/medium_pumpkin_sptritesheet.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/GeoCity/City/SnowyCity/city_tree.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Levels/GeoCity/City/snowy_swing.ogg" type="AudioStream" id=43]
-[ext_resource path="res://Scenes/Entities/Particles/Snow.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Assets/Levels/GeoCity/City/DefaultCity/sky.png" type="Texture" id=40]
+[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=41]
+[ext_resource path="res://Assets/Sounds/Pumpkin/evilpumpkinlaugh.wav" type="AudioStream" id=42]
+[ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_3.wav" type="AudioStream" id=43]
+[ext_resource path="res://Assets/Levels/GeoCity/City/CreepyCity/small_pumpkin.png" type="Texture" id=44]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 41 )
+atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 14, 17 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 41 )
+atlas = ExtResource( 16 )
 region = Rect2( 14, 0, 14, 17 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 41 )
+atlas = ExtResource( 16 )
 region = Rect2( 28, 0, 14, 17 )
 
 [sub_resource type="SpriteFrames" id=4]
@@ -65,15 +66,15 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 11, 15 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 21 )
 region = Rect2( 11, 0, 11, 15 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 21 )
 region = Rect2( 22, 0, 11, 15 )
 
 [sub_resource type="SpriteFrames" id=8]
@@ -85,15 +86,15 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 6 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 1200, 300 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 6 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 300, 1200, 300 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 6 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 600, 1200, 300 )
 
 [sub_resource type="SpriteFrames" id=12]
@@ -192,11 +193,11 @@ extents = Vector2( 75, 96 )
 extents = Vector2( 75, 47 )
 
 [sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 17 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 17 )
+atlas = ExtResource( 33 )
 region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=44]
@@ -219,19 +220,19 @@ extents = Vector2( 33.2397, 28.051 )
 extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 18 )
+atlas = ExtResource( 27 )
 region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 18 )
+atlas = ExtResource( 27 )
 region = Rect2( 11, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 18 )
+atlas = ExtResource( 27 )
 region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 18 )
+atlas = ExtResource( 27 )
 region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=51]
@@ -248,11 +249,11 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 9 )
 region = Rect2( 22, 0, 11, 7 )
 
 [sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=54]
@@ -272,15 +273,15 @@ animations = [ {
 extents = Vector2( 24, 16 )
 
 [sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 35 )
 region = Rect2( 45, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 35 )
 region = Rect2( 60, 0, 15, 12 )
 
 [sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 35 )
 region = Rect2( 75, 0, 15, 12 )
 
 [sub_resource type="SpriteFrames" id=59]
@@ -301,19 +302,19 @@ extents = Vector2( 9, 469.447 )
 extents = Vector2( 61.5852, 58.9592 )
 
 [sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 23 )
+atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 23 )
+atlas = ExtResource( 28 )
 region = Rect2( 50, 0, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 23 )
+atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
 
 [sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 23 )
+atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
 [sub_resource type="SpriteFrames" id=67]
@@ -330,35 +331,35 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 600, 0, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 1200, 0, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 1800, 0, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 0, 450, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=73]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 600, 450, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=74]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 1200, 450, 600, 450 )
 
 [sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 25 )
+atlas = ExtResource( 14 )
 region = Rect2( 1800, 450, 600, 450 )
 
 [sub_resource type="SpriteFrames" id=76]
@@ -370,7 +371,7 @@ animations = [ {
 } ]
 
 [node name="GeoCity" type="Node2D"]
-script = ExtResource( 21 )
+script = ExtResource( 4 )
 
 [node name="BehindPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -380,14 +381,14 @@ __meta__ = {
 
 [node name="Sky" type="Sprite" parent="BehindPlayer"]
 z_index = -1
-texture = ExtResource( 3 )
+texture = ExtResource( 40 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Buildings" type="Sprite" parent="BehindPlayer"]
-texture = ExtResource( 7 )
+texture = ExtResource( 20 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -400,22 +401,22 @@ visible = false
 position = Vector2( 202.25, 103 )
 frames = SubResource( 4 )
 centered = false
-script = ExtResource( 29 )
+script = ExtResource( 11 )
 
 [node name="Creepy_Cat" type="AnimatedSprite" parent="BehindPlayer/CreepyCity"]
 position = Vector2( 4629.96, 1020.03 )
 frames = SubResource( 8 )
 frame = 28
-script = ExtResource( 29 )
+script = ExtResource( 11 )
 
 [node name="Moon" type="Sprite" parent="BehindPlayer/CreepyCity"]
 position = Vector2( 1739.06, 349.696 )
-texture = ExtResource( 24 )
+texture = ExtResource( 34 )
 
 [node name="Clouds" type="Sprite" parent="BehindPlayer/CreepyCity"]
 position = Vector2( -0.00012207, 0 )
 scale = Vector2( 1, 1.2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 31 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -423,7 +424,7 @@ __meta__ = {
 
 [node name="Pumpkin_Small" type="Sprite" parent="BehindPlayer/CreepyCity"]
 position = Vector2( 2530.18, 857.328 )
-texture = ExtResource( 1 )
+texture = ExtResource( 44 )
 centered = false
 
 [node name="Stars" type="AnimatedSprite" parent="BehindPlayer/CreepyCity"]
@@ -432,7 +433,7 @@ z_index = -1
 frames = SubResource( 12 )
 frame = 9
 centered = false
-script = ExtResource( 29 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -440,7 +441,7 @@ __meta__ = {
 [node name="SnowyCity" type="Node2D" parent="BehindPlayer"]
 visible = false
 
-[node name="Snow" parent="BehindPlayer/SnowyCity" instance=ExtResource( 44 )]
+[node name="Snow" parent="BehindPlayer/SnowyCity" instance=ExtResource( 1 )]
 width = 1200
 layers = {
 "Large": false,
@@ -633,9 +634,7 @@ collision_mask = 7
 position = Vector2( 2410, 1513 )
 shape = SubResource( 37 )
 
-[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -655,10 +654,14 @@ shape = SubResource( 39 )
 
 [node name="GoToComplex" type="Area2D" parent="Portals"]
 position = Vector2( 4667, 1342 )
-script = ExtResource( 11 )
+script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 2
+sound_volume = 1.5
+location = 1
+level = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/GoToComplex"]
 shape = SubResource( 40 )
@@ -667,14 +670,16 @@ shape = SubResource( 40 )
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 
 [node name="PopNnip" type="Area2D" parent="Portals"]
 position = Vector2( 2647, 1374 )
-script = ExtResource( 11 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 4
+sound_volume = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/PopNnip"]
 shape = SubResource( 41 )
@@ -683,11 +688,10 @@ shape = SubResource( 41 )
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 
 [node name="DonutShop" type="Area2D" parent="Portals"]
 position = Vector2( 1023, 1377 )
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -699,7 +703,7 @@ shape = SubResource( 41 )
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -707,7 +711,7 @@ texture = ExtResource( 10 )
 position = Vector2( 3328, 900 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 15 )
+script = ExtResource( 30 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -718,7 +722,7 @@ frames = SubResource( 44 )
 animation = "walk"
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat/LongCatArea2D"]
 position = Vector2( 2.29077, 0.729614 )
@@ -732,7 +736,7 @@ shape = SubResource( 46 )
 position = Vector2( 4124, 789 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 15 )
+script = ExtResource( 30 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -743,7 +747,7 @@ frames = SubResource( 51 )
 animation = "walk"
 
 [node name="NonacatArea2D" type="Area2D" parent="NPC/Nonacat"]
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat/NonacatArea2D"]
 position = Vector2( -1.00005, 1.00002 )
@@ -757,7 +761,7 @@ shape = SubResource( 46 )
 position = Vector2( 2029.28, 1386.47 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 15 )
+script = ExtResource( 30 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
@@ -766,7 +770,7 @@ animation = "walk"
 flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Lasagne"]
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
@@ -786,7 +790,7 @@ position = Vector2( 27, 33 )
 shape = SubResource( 55 )
 
 [node name="Area2D" type="Area2D" parent="NPC/Garbitage"]
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage/Area2D"]
 position = Vector2( 39, 33 )
@@ -796,13 +800,13 @@ shape = SubResource( 45 )
 position = Vector2( 30, 30 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 59 )
-script = ExtResource( 29 )
+script = ExtResource( 11 )
 
 [node name="Ladders" type="Node2D" parent="."]
 
 [node name="Ladder" type="Area2D" parent="Ladders"]
 position = Vector2( 4338.21, 1103.86 )
-script = ExtResource( 20 )
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -813,7 +817,7 @@ shape = SubResource( 60 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 721.176, 940 )
-script = ExtResource( 20 )
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -822,7 +826,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 shape = SubResource( 61 )
 
-[node name="Default" parent="." instance=ExtResource( 14 )]
+[node name="Default" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="Default" index="1"]
 position = Vector2( 2600, 1353 )
@@ -836,24 +840,21 @@ limit_bottom = 1600
 frame = 19
 flip_h = true
 
-[node name="Feline" parent="Default/CanvasLayer" index="2"]
-visible = true
-
 [node name="Music" type="Node2D" parent="."]
 
 [node name="CreepyCity" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 12 )
+stream = ExtResource( 10 )
 volume_db = -3.0
 pitch_scale = 0.36
 bus = "Music"
 
 [node name="SnowyCity" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 43 )
+stream = ExtResource( 29 )
 volume_db = 5.889
 bus = "Music"
 
 [node name="DefaultCity" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 12 )
+stream = ExtResource( 10 )
 volume_db = -10.0
 bus = "Music"
 
@@ -861,7 +862,7 @@ bus = "Music"
 visible = false
 position = Vector2( 3500, 831.68 )
 scale = Vector2( 2, 2 )
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -874,7 +875,7 @@ shape = SubResource( 62 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 67 )
 animation = "Sad"
-script = ExtResource( 29 )
+script = ExtResource( 11 )
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -883,15 +884,15 @@ scale = Vector2( 4, 4 )
 position = Vector2( 75, 173 )
 z_index = 1
 z_as_relative = false
-texture = ExtResource( 9 )
+texture = ExtResource( 22 )
 
 [node name="CityTree" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 953, 340 )
-texture = ExtResource( 16 )
+texture = ExtResource( 24 )
 
 [node name="CityEntrance" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 1187, 334 )
-texture = ExtResource( 19 )
+texture = ExtResource( 32 )
 
 [node name="CreepyCity" type="Node2D" parent="AbovePlayer"]
 visible = false
@@ -901,16 +902,17 @@ scale = Vector2( 0.25, 0.25 )
 position = Vector2( 1157, 1101 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 76 )
-script = ExtResource( 29 )
+script = ExtResource( 11 )
 
 [node name="SnowyCity" type="Node2D" parent="AbovePlayer"]
+visible = false
 
 [node name="Sprite" type="Sprite" parent="AbovePlayer/SnowyCity"]
 position = Vector2( 953.76, 333.258 )
 scale = Vector2( 1.3, 1.3 )
-texture = ExtResource( 42 )
+texture = ExtResource( 37 )
 
-[node name="Snow" parent="AbovePlayer/SnowyCity" instance=ExtResource( 44 )]
+[node name="Snow" parent="AbovePlayer/SnowyCity" instance=ExtResource( 1 )]
 width = 1200
 layers = {
 "Large": true,
@@ -922,7 +924,7 @@ layers = {
 
 [node name="Pumpkin" type="Node2D" parent="CanvasLayer"]
 visible = false
-script = ExtResource( 26 )
+script = ExtResource( 25 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Pumpkin"]
 position = Vector2( 319, 235 )
@@ -937,7 +939,7 @@ position = Vector2( 199, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/1"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 
 [node name="Button" type="Button" parent="CanvasLayer/Pumpkin/Notes/1"]
@@ -951,7 +953,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/1"]
-stream = ExtResource( 33 )
+stream = ExtResource( 15 )
 bus = "Sound"
 
 [node name="2" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
@@ -959,7 +961,7 @@ position = Vector2( 239, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/2"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 frame = 1
 
@@ -974,7 +976,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/2"]
-stream = ExtResource( 34 )
+stream = ExtResource( 38 )
 bus = "Sound"
 
 [node name="3" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
@@ -982,7 +984,7 @@ position = Vector2( 279, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/3"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 frame = 2
 
@@ -997,7 +999,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/3"]
-stream = ExtResource( 35 )
+stream = ExtResource( 43 )
 bus = "Sound"
 
 [node name="4" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
@@ -1005,7 +1007,7 @@ position = Vector2( 319, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/4"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 frame = 3
 
@@ -1020,7 +1022,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/4"]
-stream = ExtResource( 36 )
+stream = ExtResource( 18 )
 bus = "Sound"
 
 [node name="5" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
@@ -1028,7 +1030,7 @@ position = Vector2( 359, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/5"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 frame = 4
 
@@ -1043,7 +1045,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/5"]
-stream = ExtResource( 32 )
+stream = ExtResource( 23 )
 bus = "Sound"
 
 [node name="6" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
@@ -1051,7 +1053,7 @@ position = Vector2( 399, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/6"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 frame = 5
 
@@ -1066,7 +1068,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/6"]
-stream = ExtResource( 31 )
+stream = ExtResource( 6 )
 bus = "Sound"
 
 [node name="7" type="Node2D" parent="CanvasLayer/Pumpkin/Notes"]
@@ -1074,7 +1076,7 @@ position = Vector2( 439, 355 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Pumpkin/Notes/7"]
 scale = Vector2( 8, 8 )
-texture = ExtResource( 30 )
+texture = ExtResource( 36 )
 hframes = 14
 frame = 6
 
@@ -1089,7 +1091,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin/Notes/7"]
-stream = ExtResource( 27 )
+stream = ExtResource( 17 )
 bus = "Sound"
 
 [node name="NoteSpr" type="Sprite" parent="CanvasLayer/Pumpkin"]
@@ -1097,14 +1099,14 @@ visible = false
 position = Vector2( 178.548, 318.496 )
 scale = Vector2( 5.98063, 5.98063 )
 texture = ExtResource( 39 )
-script = ExtResource( 40 )
+script = ExtResource( 26 )
 
 [node name="Laugh" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
-stream = ExtResource( 37 )
+stream = ExtResource( 42 )
 bus = "Sound"
 
 [node name="Ouch" type="AudioStreamPlayer" parent="CanvasLayer/Pumpkin"]
-stream = ExtResource( 38 )
+stream = ExtResource( 12 )
 bus = "Sound"
 
 [editable path="Default"]

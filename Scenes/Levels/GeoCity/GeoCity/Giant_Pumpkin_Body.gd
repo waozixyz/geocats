@@ -1,4 +1,4 @@
-extends InteractSimple
+extends E_Interact
 
 onready var sprite = $AnimatedSprite
 onready var pumpkin_ui = get_parent().get_node("CanvasLayer/Pumpkin")
@@ -7,9 +7,6 @@ var complete
 func _ready():
 	complete = PROGRESS.variables.get("NonacoPumpkinPuzzle")
 	#pumpkin_ui.visible = false
-
-	nft_id = "Nonaco Puzzle Pumpkin"
-	nft_possible = true
 	._ready()
 
 func _process(delta):
@@ -19,7 +16,8 @@ func _process(delta):
 			pumpkin_ui.visible = true if not pumpkin_ui.visible else false
 			complete = PROGRESS.variables.get("NonacoPumpkinPuzzle")
 			if complete and pumpkin_ui.visible == false:
-				nft.reward(nft_id, false)
+				#nft.reward(nft_id, false)
+				pass
 			do_something  = false
 			if pumpkin_ui.visible:
 				player.disable("pumpkin")

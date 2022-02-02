@@ -1,12 +1,10 @@
-extends S_Interact
-class_name TeleportInternal, "res://Assets/UI/Debug/teleport_icon.png"
+extends Teleport
+class_name TeleportInternal
 
 onready var affogato =  get_tree().get_current_scene().get_node("Default/Affogato")
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 
-export(String, FILE, "*.wav, *.ogg") var sound_effect
 export(Vector2) var new_position 
-export(float) var sound_volume = 1.0
 
 var teleporting
 var dest_x
@@ -39,6 +37,6 @@ func _process(_delta):
 
 func _input(_event):
 	if _can_interact():
-		AudioManager.play_sound(sound_effect, sound_volume)
+		_play_sound()
 
 		_teleport(new_position)

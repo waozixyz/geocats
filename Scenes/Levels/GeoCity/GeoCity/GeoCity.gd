@@ -1,4 +1,4 @@
-extends Node2D
+extends GeneralLevel
 
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 onready var below_player = $BehindPlayer
@@ -49,5 +49,5 @@ func _physics_process(delta):
 		chat_with.visible = false
 		chat_with.stop()
 		PROGRESS.variables["teleport_geolodge"] = false
-		SceneChanger.change_scene("GeoLodge", 0, "WayoWayo", 1)
+	#	SceneChanger.change_scene("GeoLodge", 0, "WayoWayo", 1)
 

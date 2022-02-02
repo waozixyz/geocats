@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Cats_Cradle.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/UI/Teleport/GeoCity.gd" type="Script" id=5]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/present.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/letter.png" type="Texture" id=8]
@@ -124,6 +124,7 @@ locations = [ Vector2( 0, 0 ), Vector2( 25, 665 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -149,6 +150,7 @@ __meta__ = {
 
 [node name="MainColliders" type="Node2D" parent="."]
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -293,9 +295,6 @@ shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="Interactables" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Ladders" type="Node2D" parent="Interactables"]
 
@@ -434,6 +433,7 @@ frame = 19
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -463,11 +463,10 @@ __meta__ = {
 position = Vector2( -35, 585.7 )
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
-sound_effect = "res://Assets/Sounds/Transition/WoodDoorLatchOpen1.ogg"
-scene_path = "res://Scenes/Levels/GeoCity/Complex.tscn"
+sound_effect = 5
+level = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2( 43.5, 50 )

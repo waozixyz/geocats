@@ -18,12 +18,15 @@ func _ready():
 
 func change_scene(lvl_path):
 	get_tree().paused = true
-	level_path = lvl_path
-	utils.tween_fade(sprite, 0, 1)
-	utils.tween_fade(container, 0, 1)
-	change = true
-	timer = 0
-	sprite.play()
+	if lvl_path:
+		level_path = lvl_path
+		utils.tween_fade(sprite, 0, 1)
+		utils.tween_fade(container, 0, 1)
+		change = true
+		timer = 0
+		sprite.play()
+	else:
+		printerr("missing level path")
 
 
 func _physics_process(delta):

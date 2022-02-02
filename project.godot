@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/UI/Interact/E_Interact.gd"
 }, {
+"base": "Node2D",
+"class": "GeneralLevel",
+"language": "GDScript",
+"path": "res://Scenes/Levels/GeneralLevel.gd"
+}, {
 "base": "Area2D",
 "class": "Ladder",
 "language": "GDScript",
@@ -75,14 +80,24 @@ _global_script_classes=[ {
 "path": "res://Scenes/Entities/SpriteAutoPlay.gd"
 }, {
 "base": "S_Interact",
+"class": "Teleport",
+"language": "GDScript",
+"path": "res://Scenes/UI/Teleport/Teleport.gd"
+}, {
+"base": "Teleport",
 "class": "TeleportExternal",
 "language": "GDScript",
-"path": "res://Scenes/UI/Interact/TeleportExternal.gd"
+"path": "res://Scenes/UI/Teleport/External.gd"
 }, {
-"base": "S_Interact",
+"base": "TeleportExternal",
+"class": "TeleportGeoCity",
+"language": "GDScript",
+"path": "res://Scenes/UI/Teleport/GeoCity.gd"
+}, {
+"base": "Teleport",
 "class": "TeleportInternal",
 "language": "GDScript",
-"path": "res://Scenes/UI/Interact/TeleportInternal.gd"
+"path": "res://Scenes/UI/Teleport/Internal.gd"
 } ]
 _global_script_class_icons={
 "AreaInteract": "",
@@ -90,6 +105,7 @@ _global_script_class_icons={
 "ChatNPC": "res://Assets/UI/Debug/chat_npc_icon.png",
 "Consumable": "res://Assets/UI/Debug/consumable_icon.png",
 "E_Interact": "res://Assets/UI/Debug/soundeffect_icon.png",
+"GeneralLevel": "",
 "Ladder": "res://Assets/UI/Debug/ladder_icon.png",
 "MovingBody": "",
 "Mushroom": "",
@@ -98,8 +114,10 @@ _global_script_class_icons={
 "S_Interact": "",
 "SimpleMovingAI": "res://Assets/UI/Debug/moving_npc_icon.png",
 "SpriteAutoPlay": "",
-"TeleportExternal": "res://Assets/UI/Debug/teleport_icon.png",
-"TeleportInternal": "res://Assets/UI/Debug/teleport_icon.png"
+"Teleport": "res://Assets/UI/Debug/teleport_icon.png",
+"TeleportExternal": "",
+"TeleportGeoCity": "",
+"TeleportInternal": ""
 }
 
 [application]

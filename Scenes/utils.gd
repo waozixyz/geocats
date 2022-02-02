@@ -1,5 +1,25 @@
 extends Node
 
+func find_level_path(level_territory, level_name):
+	var start = "res://Scenes/Levels/"
+	var end = level_name + ".tscn"
+	var file2Check = File.new()
+	if file2Check.file_exists(start + level_territory + "/" + end):
+		return start + level_territory + "/" + end
+	elif file2Check.file_exists(start + level_territory + "/" + level_name + "/" + end):
+		return start + level_territory + "/" + level_name + "/" + end
+	else:
+		printerr("wrong path: ", start, level_territory, "/", end)
+
+func find_sound_ext(path):
+	var file2Check = File.new()
+	if file2Check.file_exists(path + ".ogg"):
+		return ".ogg"
+	elif file2Check.file_exists(path + ".wav"):
+		return ".wav"
+	else:
+		printerr("wrong path: ", path)
+
 func toggle(boolean):
 	return false if boolean else true
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FootstepsOnGravelFast.ogg-ba01297cf9416387829bc94f8904116d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/City/FootstepsOnGravelFast.ogg"
+dest_files=[ "res://.import/FootstepsOnGravelFast.ogg-ba01297cf9416387829bc94f8904116d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

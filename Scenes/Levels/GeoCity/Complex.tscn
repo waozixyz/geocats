@@ -22,7 +22,6 @@
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/alley_house_ladder.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/bckg_deko_3.png" type="Texture" id=21]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/UI/Interact/TeleportExternal.gd" type="Script" id=23]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/bckg_deko.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/complex_tileset.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/window.png" type="Texture" id=26]
@@ -32,7 +31,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/plant.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Agents/Cleopardis/Spritesheet.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=32]
-[ext_resource path="res://Scenes/UI/Interact/TeleportInternal.gd" type="Script" id=33]
+[ext_resource path="res://Scenes/UI/Teleport/Internal.gd" type="Script" id=33]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/ceiling_plant.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/window_3.png" type="Texture" id=35]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/stairs_2.png" type="Texture" id=36]
@@ -41,6 +40,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/stairs_3.png" type="Texture" id=39]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/trolley.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/street_tileset.png" type="Texture" id=41]
+[ext_resource path="res://Scenes/UI/Teleport/GeoCity.gd" type="Script" id=42]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
@@ -765,10 +765,13 @@ extents = Vector2( 82.6183, 38.2424 )
 
 [node name="Complex" type="Node2D"]
 script = ExtResource( 8 )
-locations = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+locations = [ Vector2( 0, 0 ), Vector2( 400, 1007 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Black" type="ColorRect" parent="BelowPlayer"]
 margin_left = -252.0
@@ -778,6 +781,7 @@ margin_bottom = 419.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -798,6 +802,7 @@ margin_bottom = 275.0
 mouse_filter = 2
 color = Color( 0.733333, 0.627451, 0.364706, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -1059,6 +1064,9 @@ centered = false
 position = Vector2( 271, 40 )
 texture = ExtResource( 28 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Window" type="StaticBody2D" parent="BelowPlayer"]
 position = Vector2( 228, 253 )
@@ -1210,13 +1218,11 @@ shape = SubResource( 63 )
 
 [node name="HomeDoor" type="Area2D" parent="Interactive"]
 position = Vector2( 1080, 171 )
-script = ExtResource( 23 )
+script = ExtResource( 42 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
-sound_effect = "res://Assets/Sounds/Transition/WoodDoorLatchOpen1.ogg"
-scene_path = "res://Scenes/Levels/GeoCity/CatsCradle.tscn"
+sound_effect = 5
 location = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/HomeDoor"]
@@ -1232,7 +1238,6 @@ texture = ExtResource( 22 )
 [node name="DownElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 1448, 900 )
 script = ExtResource( 33 )
-sound_effect = "res://Assets/Levels/GeoCity/Complex/Vending_Machine_2.ogg"
 new_position = Vector2( 710, 180 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/DownElevator"]
@@ -1248,7 +1253,9 @@ texture = ExtResource( 22 )
 [node name="UpElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 728, 216 )
 script = ExtResource( 33 )
-sound_effect = "res://Assets/Levels/GeoCity/Complex/Vending_Machine_2.ogg"
+__meta__ = {
+"_edit_group_": true
+}
 new_position = Vector2( 1600, 1000 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/UpElevator"]
@@ -1263,10 +1270,12 @@ texture = ExtResource( 22 )
 
 [node name="Exit" type="Area2D" parent="Interactive"]
 position = Vector2( 396, 1072 )
-script = ExtResource( 23 )
-sound_effect = "res://Assets/Sounds/Transition/FootstepsOnGravelFast.ogg"
-scene_path = "res://Scenes/Levels/GeoCity/City/GeoCity.tscn"
-sound_volume = 1.5
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 2
+level = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
 shape = SubResource( 67 )
