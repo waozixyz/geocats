@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/StereoGeoquariumSample.wav-4af533e2b6cbfd4d02deaa4380005238.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/CatsCradle/StereoGeoquariumSample.wav"
+dest_files=[ "res://.import/StereoGeoquariumSample.wav-4af533e2b6cbfd4d02deaa4380005238.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

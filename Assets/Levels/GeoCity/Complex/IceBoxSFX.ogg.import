@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/IceBoxSFX.ogg-2b6d342f857819cf0de4e7716ea6ce59.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/Complex/IceBoxSFX.ogg"
+dest_files=[ "res://.import/IceBoxSFX.ogg-2b6d342f857819cf0de4e7716ea6ce59.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

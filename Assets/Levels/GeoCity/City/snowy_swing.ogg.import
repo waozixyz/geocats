@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snowy_swing.ogg-0f6a4d89ce168c6bc07579e45703284d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/City/snowy_swing.ogg"
+dest_files=[ "res://.import/snowy_swing.ogg-0f6a4d89ce168c6bc07579e45703284d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

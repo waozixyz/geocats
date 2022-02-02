@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/StereoSFX.ogg-20ffa9d73f7847a07f1d61f25ad847cc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/CatsCradle/StereoSFX.ogg"
+dest_files=[ "res://.import/StereoSFX.ogg-20ffa9d73f7847a07f1d61f25ad847cc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AlarmAmbience.ogg-91350a3a1644283505d4d8b32c251492.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/Arcade/AlarmAmbience.ogg"
+dest_files=[ "res://.import/AlarmAmbience.ogg-91350a3a1644283505d4d8b32c251492.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

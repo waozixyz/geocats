@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Complex.ogg-ad6f2f2b3b9410914eebc22cb3bed2a2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/Complex/Complex.ogg"
+dest_files=[ "res://.import/Complex.ogg-ad6f2f2b3b9410914eebc22cb3bed2a2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/9_Caves.ogg-6c72839e71ba517a69dddcb602ca7d33.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geocaves/Caves/9_Caves.ogg"
+dest_files=[ "res://.import/9_Caves.ogg-6c72839e71ba517a69dddcb602ca7d33.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

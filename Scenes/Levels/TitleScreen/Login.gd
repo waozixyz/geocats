@@ -26,4 +26,4 @@ func _play_pressed():
 
 func _next():
 	if get_parent().name == "TitleScreen":
-		SceneChanger.change_scene("res://Scenes/Levels/City/CatsCradle.tscn")
+		SceneChanger.change_scene("res://Scenes/Levels/GeoCity/CatsCradle.tscn")
