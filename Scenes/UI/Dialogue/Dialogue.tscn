@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/UI/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI/chat_elements/textbox.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/chat_elements/portrait_box.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/chat_elements/choices_container.png" type="Texture" id=6]
-[ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 loop = true
@@ -189,29 +188,6 @@ margin_left = 536.448
 margin_top = 92.6732
 margin_right = 542.448
 margin_bottom = 98.6732
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Choice" type="Label" parent="."]
-visible = false
-margin_right = 72.0
-margin_bottom = 53.0
-custom_fonts/font = ExtResource( 2 )
-text = "Choice
-"
-align = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Bckg" type="TextureRect" parent="Choice"]
-show_behind_parent = true
-margin_right = 72.0
-margin_bottom = 23.0
-texture = ExtResource( 7 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

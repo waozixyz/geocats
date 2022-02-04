@@ -13,7 +13,8 @@ extends Control
 ## Paths ##
 
 ## Required nodes ##
-onready var choice_scene = $Choice
+var choice_scene = load('res://Scenes/UI/Dialogue/Choice.tscn') # Base scene for que choices
+
 onready var frame : Node = $Frame # The container node for the dialogues.
 onready var label : Node = $Frame/RichTextLabel # The label where the text will be displayed.
 onready var choices : Node = $Frame/Choices # The container node for the choices.
@@ -142,8 +143,19 @@ func set_frame(): # Mostly aligment operations.
 	name_right.hide()
 
 
-func initiate(character_folder, json_file, block = 'first'): # Load the whole dialogue into a variable
-	characters_folder = character_folder + "/"
+func _get_character_folder(json_file):
+	var regex = RegEx.new()
+	regex.compile("(.*\/)")
+	var result = regex.search(json_file)
+	if result:
+		return result.get_string()
+	else:
+		printerr("couldnt get character folder: ", result.get_string())
+			
+func initiate(json_file, block = 'first'): # Load the whole dialogue into a variable
+	characters_folder = _get_character_folder(json_file)
+	
+
 	var file = File.new()
 	file.open(json_file, file.READ)
 	var json = file.get_as_text()
@@ -625,19 +637,21 @@ func animate_sprite(direction, image, animation):
 
 func load_image(spr, image):
 	spr.texture = load('%s%s' % [characters_folder, image])
+	if spr.texture:
+		var size = img_size
+		var w = spr.texture.get_width()
+		var h = spr.texture.get_height()
+		if w > 60:
+			size += 20
+		var scl_x = size / w
+		var scl_y = size / h
 
-	var size = img_size
-	var w = spr.texture.get_width()
-	var h = spr.texture.get_height()
-	if w > 60:
-		size += 20
-	var scl_x = size / w
-	var scl_y = size / h
-
-	if scl_x > scl_y:
-		spr.scale = Vector2(scl_y, scl_y)
+		if scl_x > scl_y:
+			spr.scale = Vector2(scl_y, scl_y)
+		else:
+			spr.scale = Vector2(scl_x, scl_x)
 	else:
-		spr.scale = Vector2(scl_x, scl_x)
+		printerr("invalid texture: " , '%s%s' % [characters_folder, image])
 	
 func question(_text, options, _next):
 	check_pauses(label.get_text())

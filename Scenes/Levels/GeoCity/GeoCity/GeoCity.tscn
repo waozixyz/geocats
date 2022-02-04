@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://Scenes/Entities/Particles/Snow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/Giant_Pumpkin_Body.gd" type="Script" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Assets/Agents/Nonacat/nonacat_spritesheet.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/big_pumpkin_spritesheet.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/snowy_swing.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=30]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/cloud.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/DefaultCity/entrance_city.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Agents/Longcat/longcat_spritesheet.png" type="Texture" id=33]
@@ -297,14 +298,6 @@ extents = Vector2( 9, 469.447 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -313,17 +306,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=68]
@@ -687,19 +688,22 @@ position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 13 )
 
-[node name="DonutShop" type="Area2D" parent="Portals"]
+[node name="LockedItem" type="Area2D" parent="Portals"]
+script = ExtResource( 30 )
+item = NodePath("DonutShop")
+
+[node name="DonutShop" type="Area2D" parent="Portals/LockedItem"]
 position = Vector2( 1023, 1377 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
 geocity = 5
-progress_required = "geocity_donut_open"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/DonutShop"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/DonutShop"]
 shape = SubResource( 41 )
 
-[node name="Button" type="Sprite" parent="Portals/DonutShop"]
+[node name="Button" type="Sprite" parent="Portals/LockedItem/DonutShop"]
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )

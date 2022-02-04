@@ -48,7 +48,7 @@ func _process(_delta):
 func _input(_event):
 	if touching and json_file and Input.is_action_just_pressed("interact") and not dialogue.visible:
 		if chat_with.visible:
-			dialogue.initiate(character_folder, json_file)
+			dialogue.initiate(json_file)
 			chat_with.visible = false
 			AudioManager.play_sound(sound_file)
 		else:
