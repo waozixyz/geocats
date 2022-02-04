@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/affogato.ogg-b687313a2c89c9d322d3090434a897de.oggstr"
+
+[deps]
+
+source_file="res://Assets/Agents/Affogato/affogato.ogg"
+dest_files=[ "res://.import/affogato.ogg-b687313a2c89c9d322d3090434a897de.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

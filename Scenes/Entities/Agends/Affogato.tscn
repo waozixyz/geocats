@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Agents/affogato.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Agents/Affogato/affogato_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Entities/Agends/Affogato.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]

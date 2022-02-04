@@ -57,6 +57,6 @@ func get_season():
 		return season
 	
 var particle_emitter = {
-	"snow":  preload("res://Scenes/Entities/Particles/Snow.tscn"),
-	"confetti": preload("res://Scenes/Entities/Particles/Confetti.tscn")
+	"snow":  load("res://Scenes/Entities/Particles/Snow.tscn"),
+	"confetti": load("res://Scenes/Entities/Particles/Confetti.tscn")
 }

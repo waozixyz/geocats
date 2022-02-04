@@ -40,7 +40,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/stairs_3.png" type="Texture" id=39]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/trolley.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/street_tileset.png" type="Texture" id=41]
-[ext_resource path="res://Scenes/UI/Teleport/GeoCity.gd" type="Script" id=42]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=42]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_bckg.png 0"
@@ -1275,7 +1275,7 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 2
-level = 2
+geocity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
 shape = SubResource( 67 )
