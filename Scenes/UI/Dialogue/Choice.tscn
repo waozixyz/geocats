@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=2]
+
+[node name="Choice" type="Label"]
+margin_right = 72.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+text = "Choice
+"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bckg" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 72.0
+margin_bottom = 23.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
