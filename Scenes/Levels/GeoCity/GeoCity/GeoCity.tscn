@@ -656,11 +656,8 @@ __meta__ = {
 }
 sound_effect = 2
 sound_volume = 1.5
-territory = null
 geocity = 1
-geoterra = null
 location = 1
-progress_required = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/GoToComplex"]
 shape = SubResource( 40 )
@@ -679,11 +676,7 @@ __meta__ = {
 }
 sound_effect = 4
 sound_volume = 0.5
-territory = null
 geocity = 3
-geoterra = null
-location = null
-progress_required = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/PopNnip"]
 shape = SubResource( 41 )
@@ -700,12 +693,7 @@ script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = null
-sound_volume = null
-territory = null
 geocity = 5
-geoterra = null
-location = null
 progress_required = "geocity_donut_open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/DonutShop"]

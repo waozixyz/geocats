@@ -133,7 +133,6 @@ func _physics_process(_delta):
 	if shaking:
 		sprite.offset = Vector2(rand_range(-1.0, 1.0) * shake_amount, rand_range(-1.0, 1.0) * shake_amount)
 
-
 func set_frame(): # Mostly aligment operations.
 	frame.hide() # Hide the dialogue frame
 	continue_indicator.hide()
@@ -371,6 +370,7 @@ func exit():
 	for child in choices.get_children():
 		choices.remove_child(child)
 		child.propagate_call("queue_free", [])
+
 	visible = false
 
 
@@ -715,8 +715,7 @@ func _input(event): # This function can be easily replaced. Just make sure you c
 		if event.is_action_pressed('%s' % previous_command):
 			change_choice('previous')
 		if event.is_action_pressed('%s' % next_command):
-			if not change_choice('next'):
-				next()
+			change_choice('next')
 		if event.is_action_pressed('%s' % continue_command):
 			next()
 

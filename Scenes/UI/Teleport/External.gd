@@ -1,6 +1,8 @@
 extends Teleport
 class_name TeleportExternal
 
+onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
+
 enum Territory {
 	GeoCity
 	Geoterra
@@ -26,6 +28,8 @@ export(Geoterra) var geoterra
 export(int) var location = 0
 export(String) var progress_required = ""
 
+var feline_path = "res://Assets/Feline/"
+
 func _get_level_name():
 	match territory:
 		Territory.GeoCity: return GeoCity.keys()[geocity]
@@ -45,5 +49,6 @@ func _input(_event):
 			SceneChanger.change_scene(utils.find_level_path(territory_name, level_name))
 			button.visible = false
 			_play_sound()
-		elif progress_required:
-			dialogue
+		elif progress_required and not dialogue.visible:
+
+			dialogue.initiate(feline_path, feline_path + "feline_locked_door.json")
