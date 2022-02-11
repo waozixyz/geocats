@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Cats_Cradle.png" type="Texture" id=2]
@@ -13,67 +13,70 @@
 [ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/UI/LoadTextFile.gd" type="Script" id=12]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 74.5 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 13.0565, 107.5 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 11, 256.5 )
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 5, 144 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8.5, 169 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 21, 130 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 8, 14 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 81, 3 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 27, 5 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 38.5, 2.5 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 309, 12 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 93, 9 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 36, 5 )
+
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 114, 12 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 358.401, 18 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 729, 10 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 124.5, 12 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 129, 12 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 697.672, 10 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 203, 36 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 51, 5 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 40.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=23]
@@ -82,40 +85,40 @@ extents = Vector2( 27, 4 )
 [sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 22, 4 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 13.5, 76.5 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 9, 53.3675 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 13.5, 88.2143 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 81, 70.157 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 42.8818, 22.4911 )
 
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 36, 5 )
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 53.6418, 5.38007 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="RectangleShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 36.2031, 15.5309 )
 
-[sub_resource type="DynamicFontData" id=28]
+[sub_resource type="DynamicFontData" id=33]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=34]
 size = 22
 extra_spacing_top = -5
 extra_spacing_bottom = -3
-font_data = SubResource( 28 )
+font_data = SubResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 42.5, 54 )
 
 [node name="CatsCradle" type="Node2D"]
@@ -161,33 +164,35 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
+[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=[
+"end",
+]]
 position = Vector2( 7, 636.5 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="KitchenRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 333.057, 497.5 )
-shape = SubResource( 32 )
+shape = SubResource( 2 )
 
 [node name="LeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 87, 304.5 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="StatueRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 1471, 546 )
-shape = SubResource( 33 )
+shape = SubResource( 4 )
 
 [node name="BedRoomRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 1462.5, 197 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="LitterboxLeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 737, 272 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="LitterboxRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 868, 274 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 
 [node name="Platforms" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
@@ -198,32 +203,37 @@ __meta__ = {
 
 [node name="ShelfCollider" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1043, 87 )
-shape = SubResource( 17 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="PresentTablePlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 161, 665 )
-shape = SubResource( 20 )
+shape = SubResource( 9 )
 one_way_collision = true
 
 [node name="LitterboxPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 803.5, 356.5 )
-shape = SubResource( 22 )
+shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="LeavingBedroomFloor" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 407, 132 )
-shape = SubResource( 14 )
+shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="BedPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1361, 225 )
-shape = SubResource( 16 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="Bed" type="CollisionShape2D" parent="MainColliders/Platforms"]
+position = Vector2( 1214, 539 )
+shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="KitchenPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 212, 498 )
-shape = SubResource( 21 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="Stairs" type="StaticBody2D" parent="MainColliders"]
@@ -244,37 +254,37 @@ __meta__ = {
 
 [node name="BedroomFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 1116.4, 384 )
-shape = SubResource( 35 )
+shape = SubResource( 15 )
 
 [node name="MainFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 746, 700 )
-shape = SubResource( 13 )
+shape = SubResource( 16 )
 
 [node name="StairFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 222, 378 )
-shape = SubResource( 18 )
+shape = SubResource( 17 )
 
 [node name="Ceilings" type="StaticBody2D" parent="MainColliders"]
 
 [node name="LitterboxHallCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 989, 300 )
-shape = SubResource( 34 )
+shape = SubResource( 18 )
 
 [node name="BedroomCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 773.672, 38 )
-shape = SubResource( 12 )
+shape = SubResource( 19 )
 
 [node name="StarPosterCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 549, 570 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="LitterBoxCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 809, 265 )
-shape = SubResource( 10 )
+shape = SubResource( 21 )
 
 [node name="ExitCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 57.5, 572 )
-shape = SubResource( 6 )
+shape = SubResource( 22 )
 
 [node name="Stereo" type="StaticBody2D" parent="MainColliders"]
 position = Vector2( 549, 570 )
@@ -307,7 +317,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/KitchenLadder"]
-shape = SubResource( 1 )
+shape = SubResource( 25 )
 
 [node name="BedLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1318, 288 )
@@ -319,7 +329,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/BedLadder"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 2 )
+shape = SubResource( 26 )
 
 [node name="LastLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 165, 243.823 )
@@ -331,7 +341,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/LastLadder"]
 position = Vector2( 0, -3.80214 )
-shape = SubResource( 3 )
+shape = SubResource( 27 )
 
 [node name="Present" type="Area2D" parent="Interactables"]
 position = Vector2( 159.9, 676.2 )
@@ -347,7 +357,7 @@ progress_var = "catscradle_present"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Present"]
 position = Vector2( 40.1429, -32.7786 )
-shape = SubResource( 4 )
+shape = SubResource( 28 )
 
 [node name="Sprite" type="Sprite" parent="Interactables/Present"]
 position = Vector2( 1.57141, -47.4286 )
@@ -361,7 +371,7 @@ sound_volume = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/StereoSFX"]
 position = Vector2( -6.53906, 8.40741 )
-shape = SubResource( 25 )
+shape = SubResource( 29 )
 
 [node name="Statue" type="StaticBody2D" parent="Interactables"]
 position = Vector2( 900, 570 )
@@ -369,13 +379,13 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Statue"]
-position = Vector2( 314, -31 )
-shape = SubResource( 26 )
+position = Vector2( 488.592, -360.987 )
+shape = SubResource( 30 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Statue"]
 position = Vector2( 263, 42 )
-shape = SubResource( 27 )
+shape = SubResource( 31 )
 one_way_collision = true
 
 [node name="LitterBoxSFX" type="Area2D" parent="Interactables"]
@@ -385,7 +395,7 @@ sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/LitterBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LitterBoxSFX"]
 position = Vector2( -7.5437, 7.4028 )
-shape = SubResource( 30 )
+shape = SubResource( 32 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -404,8 +414,8 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
+custom_fonts/normal_font = SubResource( 34 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 29 )
 fit_content_height = true
 script = ExtResource( 12 )
 __meta__ = {
@@ -470,7 +480,7 @@ geocity = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2( 43.5, 50 )
-shape = SubResource( 31 )
+shape = SubResource( 35 )
 
 [node name="Button" type="Sprite" parent="Teleport"]
 visible = false
