@@ -1,0 +1,11 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "Huh, seems like this door is locked. Maybe someone around here can let us in?",
+    "next": ""
+  },
+}

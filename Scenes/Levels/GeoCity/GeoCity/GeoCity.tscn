@@ -1,16 +1,16 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=121 format=2]
 
-[ext_resource path="res://Scenes/Entities/Particles/Snow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Environment/Particles/Snow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/Giant_Pumpkin_Body.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/stars.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/GeoCity.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=6]
-[ext_resource path="res://Scenes/Entities/SimpleMovingAI.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Agents/Lasagne/lasagne_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/SaltySwing.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Scenes/Entities/SpriteAutoPlay.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Feline/UI/Sounds/Feline_Owch.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/gotpumpkin_spritesheet.png" type="Texture" id=14]
@@ -40,7 +40,7 @@
 [ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_2.wav" type="AudioStream" id=38]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/note_single.png" type="Texture" id=39]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/DefaultCity/sky.png" type="Texture" id=40]
-[ext_resource path="res://Scenes/Entities/Ladder.gd" type="Script" id=41]
+[ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=41]
 [ext_resource path="res://Assets/Sounds/Pumpkin/evilpumpkinlaugh.wav" type="AudioStream" id=42]
 [ext_resource path="res://Assets/Sounds/Pumpkin/pumpkin_sax_3.wav" type="AudioStream" id=43]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/small_pumpkin.png" type="Texture" id=44]
@@ -192,6 +192,9 @@ extents = Vector2( 75, 96 )
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 75, 47 )
 
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 76.5, 49 )
+
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 11, 7 )
@@ -298,14 +301,6 @@ extents = Vector2( 9, 469.447 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 54, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 54, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 50, 54 )
@@ -314,17 +309,25 @@ region = Rect2( 0, 0, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 0, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 54, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
 "frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [sub_resource type="AtlasTexture" id=68]
@@ -369,6 +372,7 @@ animations = [ {
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 4 )
+locations = [ Vector2( 0, 0 ), Vector2( 2630, 1010 ), Vector2( 1023, 1010 ) ]
 
 [node name="BehindPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -689,15 +693,18 @@ scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 13 )
 
 [node name="LockedItem" type="Area2D" parent="Portals"]
+position = Vector2( 1023, 1377 )
 script = ExtResource( 30 )
-item = NodePath("DonutShop")
+item_node = NodePath("DonutShop")
+dialogue_file = "res://Assets/Levels/GeoCity/GeoCity/feline_locked_door.json"
+unlock_var = "geocity_donut_open"
 
 [node name="DonutShop" type="Area2D" parent="Portals/LockedItem"]
-position = Vector2( 1023, 1377 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 4
 geocity = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/DonutShop"]
@@ -708,6 +715,10 @@ visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem"]
+position = Vector2( -5.5, 1 )
+shape = SubResource( 77 )
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -774,6 +785,7 @@ position = Vector2( 2029.28, 1386.47 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
+move_speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
@@ -837,8 +849,8 @@ shape = SubResource( 61 )
 
 [node name="Default" parent="." instance=ExtResource( 8 )]
 
-[node name="Player" parent="Default" index="1"]
-position = Vector2( 986, 1395 )
+[node name="Player" parent="Default" index="0"]
+position = Vector2( 2062, 1366 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 position = Vector2( -1.99994, 0 )
@@ -1119,5 +1131,4 @@ stream = ExtResource( 12 )
 bus = "Sound"
 
 [editable path="Default"]
-[editable path="Default/Affogato"]
 [editable path="Default/Player"]

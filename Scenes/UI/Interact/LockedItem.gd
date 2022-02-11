@@ -2,14 +2,33 @@ extends E_Interact
 
 class_name LockedItem
 
-onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
-
-export(NodePath) var item
-export(String, FILE, "") var dialogue_file = ""
-
-var feline_path = "res://Assets/Feline/test.json"
 
 
+export(NodePath) var item_node
+export(String, FILE, "*.json") var dialogue_file = ""
+
+export(String) var unlock_var
+
+export(String, FILE, "*.wav, *.ogg") var unlock_sound
+export(float) var unlock_volume = 1
+
+func _ready():
+	var item = get_node(item_node)
+	if item:
+		if PROGRESS.variables.get(unlock_var):
+			item.visible = true
+		else:
+			item.visible = false
+	else:
+		printerr("item to unlock not found: " + item_node)
+var dia_started
 func _process(delta):
 	if do_something:
-		dialogue.initiate(feline_path, feline_path + "feline_locked_door.json")
+		dialogue.initiate(dialogue_file)
+		dialogue.modulate.a = 0.01
+		do_something = false
+		dia_started = true
+	if dia_started and dialogue.modulate.a == 0:
+		dia_started = false
+	if not touching and dia_started:
+		dialogue.exit()

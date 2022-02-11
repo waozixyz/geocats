@@ -7,8 +7,9 @@ onready var button = $Button
 
 func _process(_delta):
 	button.visible = true if touching else false
+	
 func _can_interact():
-	if Input.is_action_just_pressed("ui_down") && button.visible == true && player.disable_reasons.size() == 0:
+	if visible and Input.is_action_just_pressed("ui_down") && button.visible == true && player.disable_reasons.size() == 0:
 		return true
 	else:
 		return false

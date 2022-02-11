@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HyperPoliticsSFX.ogg-a8f91d5283cab823f58641080d7d79c5.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/Arcade/HyperPolitics/HyperPoliticsSFX.ogg"
+dest_files=[ "res://.import/HyperPoliticsSFX.ogg-a8f91d5283cab823f58641080d7d79c5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

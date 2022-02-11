@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gamecat.ogg-ce410ead1fa2af2973e9a3a487961626.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/Arcade/GameCat/gamecat.ogg"
+dest_files=[ "res://.import/gamecat.ogg-ce410ead1fa2af2973e9a3a487961626.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

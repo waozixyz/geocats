@@ -41,6 +41,7 @@ func _input(_event):
 		global.user.location = location
 		SceneChanger.change_scene(utils.find_level_path(territory_name, level_name))
 		button.visible = false
+
 		_play_sound()
 
 

@@ -1,5 +1,16 @@
 extends Node
 
+
+func get_character_folder(json_file):
+	var regex = RegEx.new()
+	regex.compile("(.*\/)")
+	var result = regex.search(json_file)
+	if result:
+		return result.get_string()
+	else:
+		printerr("couldnt get character folder: ", result, json_file)
+		return ""
+
 func find_level_path(level_territory, level_name):
 	var start = "res://Scenes/Levels/"
 	var end = level_name + ".tscn"
@@ -56,7 +67,11 @@ func get_season():
 			season = "Winter"
 		return season
 	
-var particle_emitter = {
-	"snow":  load("res://Scenes/Entities/Particles/Snow.tscn"),
-	"confetti": load("res://Scenes/Entities/Particles/Confetti.tscn")
+var particle_path = "res://Scenes/Environment/Particles/"
+enum Particle {
+	Snow
+	Confetti
 }
+
+func _get_particle(p):
+	return particle_path + Particle.keys()[p] + ".tscn"

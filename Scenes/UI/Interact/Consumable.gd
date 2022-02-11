@@ -10,6 +10,7 @@ var consumable
 var ui_node
 
 func _ready():
+	hide_when_playing = false
 	ui_node = get_node(make_node_visible)
 
 	if consumable_path:

@@ -123,13 +123,15 @@ var avatar_left : String = ''
 var avatar_right : String = ''
 
 var shaking : bool = false
-
 func _ready():
 	set_physics_process(true)
 	var _tmsg = timer.connect('timeout', self, '_on_Timer_timeout')
 	var _smsg = sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout')
 	set_frame()
+	modulate.a = 0
+	visible = true
 
+	
 func _physics_process(_delta):
 	if shaking:
 		sprite.offset = Vector2(rand_range(-1.0, 1.0) * shake_amount, rand_range(-1.0, 1.0) * shake_amount)
@@ -143,17 +145,9 @@ func set_frame(): # Mostly aligment operations.
 	name_right.hide()
 
 
-func _get_character_folder(json_file):
-	var regex = RegEx.new()
-	regex.compile("(.*\/)")
-	var result = regex.search(json_file)
-	if result:
-		return result.get_string()
-	else:
-		printerr("couldnt get character folder: ", result.get_string())
 			
 func initiate(json_file, block = 'first'): # Load the whole dialogue into a variable
-	characters_folder = _get_character_folder(json_file)
+	characters_folder = utils.get_character_folder(json_file)
 	
 
 	var file = File.new()
@@ -164,7 +158,7 @@ func initiate(json_file, block = 'first'): # Load the whole dialogue into a vari
 	file.close()
 	if dialogue:
 		first(block) # Call the first dialogue block
-		visible = true
+		utils.tween_fade(self, 0.01, 1, 0.2)
 	else:
 		printerr("error with dialogue: ", json_file)
 		return
@@ -367,6 +361,7 @@ func clean_bbcode(string):
 		label.bbcode_text = label.get('bbcode_text') + phrase[counter] + '\n'
 		counter += 1
 
+
 func exit():
 	clean()
 	sprite_left.modulate = white_transparent
@@ -383,7 +378,7 @@ func exit():
 		choices.remove_child(child)
 		child.propagate_call("queue_free", [])
 
-	visible = false
+	utils.tween_fade(self, 1, 0, 0.2)
 
 
 func next():
@@ -725,7 +720,7 @@ func update_variable(variables_array, current_dict):
 
 
 func _input(event): # This function can be easily replaced. Just make sure you call the function using the right parameters.
-	if visible:
+	if modulate.a > 0:
 		if event.is_action_pressed('%s' % previous_command):
 			change_choice('previous')
 		if event.is_action_pressed('%s' % next_command):
