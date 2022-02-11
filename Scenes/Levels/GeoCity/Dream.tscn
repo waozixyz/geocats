@@ -1,20 +1,20 @@
 [gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Night.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/CatCradle.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/bird.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Overlay_Night.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Dream_Cloud.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/CatCradle.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Night.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Dream_Cloud.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 7 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="SpriteFrames" id=41]
@@ -141,7 +141,7 @@ flags = 4
 load_path = "res://.import/S_Button_Press.png-426e934883e13c4abbdc3919d4ae3a87.stex"
 
 [node name="CatsCradle" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 6 )
 locations = [ Vector2( 0, 0 ), Vector2( 25, 665 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -164,7 +164,7 @@ __meta__ = {
 [node name="MainTexture" type="Sprite" parent="BelowPlayer"]
 position = Vector2( 50, 0 )
 scale = Vector2( 6, 6 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -217,6 +217,7 @@ __meta__ = {
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 38 )
+frame = 1
 playing = true
 centered = false
 
@@ -236,6 +237,13 @@ position = Vector2( 899.738, -0.000396729 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BelowPlayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainColliders" type="Node2D" parent="."]
 __meta__ = {
@@ -275,13 +283,13 @@ shape = SubResource( 44 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 2 )
 volume_db = -3.493
 pitch_scale = 0.34
 autoplay = true
 bus = "Music"
 
-[node name="Default" parent="." instance=ExtResource( 11 )]
+[node name="Default" parent="." instance=ExtResource( 8 )]
 position = Vector2( -77.2185, 43.0955 )
 
 [node name="Player" parent="Default" index="1"]
@@ -299,7 +307,7 @@ frame = 19
 
 [node name="Teleport" type="Area2D" parent="."]
 position = Vector2( 1198.11, 182.51 )
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }

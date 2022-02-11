@@ -119,7 +119,7 @@ extra_spacing_bottom = -3
 font_data = SubResource( 33 )
 
 [sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 42.5, 54 )
+extents = Vector2( 51.8816, 33.7617 )
 
 [node name="CatsCradle" type="Node2D"]
 script = ExtResource( 1 )
@@ -483,6 +483,25 @@ position = Vector2( 43.5, 50 )
 shape = SubResource( 35 )
 
 [node name="Button" type="Sprite" parent="Teleport"]
+visible = false
+position = Vector2( 58, 17.3 )
+scale = Vector2( 0.239477, 0.24014 )
+texture = ExtResource( 6 )
+
+[node name="TeleportDream" type="Area2D" parent="."]
+position = Vector2( 1346.46, 139.895 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 5
+geocity = 6
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="TeleportDream"]
+position = Vector2( 43.5, 50 )
+shape = SubResource( 35 )
+
+[node name="Button" type="Sprite" parent="TeleportDream"]
 visible = false
 position = Vector2( 58, 17.3 )
 scale = Vector2( 0.239477, 0.24014 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sleep.ogg-e869bec2ce956671f6247f9bf8e8278e.oggstr"
+
+[deps]
+
+source_file="res://Assets/UI/Teleport/Sleep.ogg"
+dest_files=[ "res://.import/Sleep.ogg-e869bec2ce956671f6247f9bf8e8278e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
