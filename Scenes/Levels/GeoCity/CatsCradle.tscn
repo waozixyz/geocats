@@ -164,9 +164,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=[
-"end",
-]]
+[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
 position = Vector2( 7, 636.5 )
 shape = SubResource( 1 )
 
@@ -414,8 +412,8 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
-custom_fonts/normal_font = SubResource( 34 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 34 )
 fit_content_height = true
 script = ExtResource( 12 )
 __meta__ = {
