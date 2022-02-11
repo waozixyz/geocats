@@ -1,0 +1,319 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Night.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/bird.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Overlay_Night.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Dream_Cloud.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/CatCradle.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Entities/Default.tscn" type="PackedScene" id=11]
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 8 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="Shader" id=46]
+code = "shader_type canvas_item;
+uniform float scroll_speed;
+
+void fragment(){
+    vec2 shifteduv = UV;
+    shifteduv .x += TIME * scroll_speed;
+    vec4 color = texture(TEXTURE, shifteduv);
+    COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=51]
+shader = SubResource( 46 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="StreamTexture" id=52]
+load_path = "res://.import/starfield.png-5cafe1763d09800a7562529e2b8cc7cd.stex"
+
+[sub_resource type="GDScript" id=53]
+script/source = "extends Node
+
+export(float) var scroll_speed = 0.004
+func _ready():
+	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Shader" id=50]
+code = "shader_type canvas_item;
+uniform float scroll_speed;
+
+void fragment(){
+    vec2 shifteduv = UV;
+    shifteduv .x += TIME * scroll_speed;
+    vec4 color = texture(TEXTURE, shifteduv);
+    COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=54]
+shader = SubResource( 50 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="StreamTexture" id=55]
+load_path = "res://.import/yellowstars.png-6d1326fb7ede7ea444d6b8491851ed62.stex"
+
+[sub_resource type="GDScript" id=56]
+script/source = "extends Node
+
+export(float) var scroll_speed = 0.004
+func _ready():
+	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="ShaderMaterial" id=57]
+shader = SubResource( 46 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="StreamTexture" id=58]
+resource_local_to_scene = true
+load_path = "res://.import/starttrails.png-21a25858c01822b9d7e41646182459e5.stex"
+
+[sub_resource type="GDScript" id=59]
+script/source = "extends Node
+
+export(float) var scroll_speed = 0.004
+func _ready():
+	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 13 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 13 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 179.848, 56.779 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 197.36, 49.0732 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 104.224, 157.732 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 97.4506, 157.732 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 42.5, 54 )
+
+[sub_resource type="StreamTexture" id=45]
+flags = 4
+load_path = "res://.import/S_Button_Press.png-426e934883e13c4abbdc3919d4ae3a87.stex"
+
+[node name="CatsCradle" type="Node2D"]
+script = ExtResource( 1 )
+locations = [ Vector2( 0, 0 ), Vector2( 25, 665 ) ]
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="WorldBckg" type="ColorRect" parent="BelowPlayer"]
+margin_left = -75.0
+margin_top = 1.0
+margin_right = 1555.0
+margin_bottom = 771.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainTexture" type="Sprite" parent="BelowPlayer"]
+position = Vector2( 50, 0 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite2" type="AnimatedSprite" parent="BelowPlayer"]
+position = Vector2( 1082.14, -7.38968 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 41 )
+playing = true
+centered = false
+
+[node name="Starfield" type="TextureRect" parent="BelowPlayer"]
+material = SubResource( 51 )
+margin_right = 1500.0
+margin_bottom = 700.0
+rect_pivot_offset = Vector2( 1576.79, 392.183 )
+texture = SubResource( 52 )
+stretch_mode = 2
+script = SubResource( 53 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scroll_speed = 0.008
+
+[node name="YellowStars" type="TextureRect" parent="BelowPlayer"]
+material = SubResource( 54 )
+margin_right = 1500.0
+margin_bottom = 700.0
+texture = SubResource( 55 )
+stretch_mode = 2
+script = SubResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scroll_speed = 0.008
+
+[node name="Startrails" type="TextureRect" parent="BelowPlayer"]
+material = SubResource( 57 )
+margin_right = 1500.0
+margin_bottom = 700.0
+texture = SubResource( 58 )
+stretch_mode = 2
+script = SubResource( 59 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="BelowPlayer"]
+position = Vector2( 1341.43, 163.423 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 38 )
+playing = true
+centered = false
+
+[node name="WorldBckg2" type="ColorRect" parent="BelowPlayer"]
+margin_left = 1474.2
+margin_top = -16.0704
+margin_right = 1674.2
+margin_bottom = 483.93
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OverlayTexture" type="Sprite" parent="BelowPlayer"]
+position = Vector2( 899.738, -0.000396729 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="MainColliders" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="walls" type="StaticBody2D" parent="MainColliders"]
+position = Vector2( 102.41, -43.2717 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="Floor" type="CollisionShape2D" parent="MainColliders/walls" groups=[
+"end",
+]]
+position = Vector2( 1192.92, 367.365 )
+shape = SubResource( 15 )
+
+[node name="Roof" type="CollisionShape2D" parent="MainColliders/walls" groups=[
+"end",
+]]
+position = Vector2( 1188.97, 140.637 )
+shape = SubResource( 16 )
+
+[node name="Right" type="CollisionShape2D" parent="MainColliders/walls" groups=[
+"end",
+]]
+position = Vector2( 1266.23, 241.4 )
+shape = SubResource( 17 )
+
+[node name="Left" type="CollisionShape2D" parent="MainColliders/walls" groups=[
+"end",
+]]
+position = Vector2( 1023.97, 243.981 )
+shape = SubResource( 44 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -3.493
+pitch_scale = 0.34
+autoplay = true
+bus = "Music"
+
+[node name="Default" parent="." instance=ExtResource( 11 )]
+position = Vector2( -77.2185, 43.0955 )
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 1311, 184 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+offset = Vector2( 1, 0 )
+zoom = Vector2( 0.8, 0.8 )
+limit_top = 6
+limit_right = 1700
+limit_bottom = 390
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="Teleport" type="Area2D" parent="."]
+position = Vector2( 1198.11, 182.51 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 5
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
+position = Vector2( 43.5, 50 )
+shape = SubResource( 35 )
+
+[node name="Button" type="Sprite" parent="Teleport"]
+position = Vector2( -141.911, -103.58 )
+scale = Vector2( 0.239477, 0.24014 )
+texture = SubResource( 45 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]
