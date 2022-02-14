@@ -65,7 +65,9 @@ func add_follower(cat):
 		global.user.follawable.append(cat.name)
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
+	cat.position = position
 	followers.append(cat)
+
 
 # play default sprite animations
 func default_anim():
@@ -111,13 +113,15 @@ func _ready():
 	if global.user.position:
 		position = global.user.position
 		sprite.flip_h  = global.user.direction * -1
-	global.user.following = ["Affogato"]
+
+#	global.user.following = ["Affogato"]
 	for follower in global.user.following:
 		var follower_scene = load("res://Scenes/Agents/" + follower + "/" + follower + ".tscn")
 		if follower_scene:
 			var new_cat = follower_scene.instance()
 			followers.append(new_cat)
 			new_cat.no_gravity = true
+			new_cat.set_collision_mask(0)
 			add_child(new_cat)
 		else:
 			printerr("follower invalid: ", follower)
@@ -194,6 +198,7 @@ func _physics_process(delta):
 
 
 			else:
+				follower.apply_gravity(delta)
 				follower.velocity.y += velocity_log[0].y
 				# callibrate position
 				if velocity.y == 0:

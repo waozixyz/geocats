@@ -301,14 +301,6 @@ extents = Vector2( 9, 469.447 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -317,17 +309,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=68]

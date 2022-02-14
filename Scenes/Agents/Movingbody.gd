@@ -1,7 +1,11 @@
 extends KinematicBody2D
 class_name MovingBody
 
-onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") setget ,_get_gravity
+
+func _get_gravity():
+	return ProjectSettings.get_setting("physics/2d/default_gravity")
 
 onready var sprite = $AnimatedSprite
 
