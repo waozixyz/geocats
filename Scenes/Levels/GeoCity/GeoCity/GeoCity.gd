@@ -5,26 +5,33 @@ onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin
 
-var res_path = "res://Assets/Levels/3_GeoCity/"
-var request
+var res_path = "res://Assets/Levels/GeoCity/GeoCity/"
+
 func _ready():
-	giant_pumpkin.visible = false
+	var follow = PROGRESS.variables.get("affogato_follow")
+	
 	var season = utils.get_season()
 	if season == "Winter":
 		set_theme("SnowyCity")
 	elif season  == "Autumn":
-		set_theme("SpookyCity")
+		# giant_pumpkin.visible = true
+		set_theme("DefaultCity")
 	else:
 		set_theme("DefaultCity")
 
 func set_theme(theme): #Change to Pumpkin function which is called by collision
 	for child in get_node("BehindPlayer").get_children():
-		if child.get_child_count() > 0:
-			child.visible = true if child.name == theme else false
+		if child.get_child_count() > 0 and child is Node2D:
+			if child.name == theme:
+				child.visible = true
+			else:
+				remove_child(child)
 	for child in get_node("AbovePlayer").get_children():
-		if child.get_child_count() > 0:
-			child.visible = true if child.name == theme else false
-
+		if child.get_child_count() > 0 and child is Node2D:
+			if child.name == theme:
+				child.visible = true
+			else:
+				remove_child(child)
 	var file2Check = File.new()
 	if file2Check.file_exists(res_path + theme + "/buildings.png"):
 		below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")

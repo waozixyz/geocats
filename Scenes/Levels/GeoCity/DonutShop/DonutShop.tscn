@@ -1,18 +1,20 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/glow_fg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/shadows.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/donutbot/body_fg.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/donutbot/body_bg.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/donutbot/leg_fg.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/donutbot/leg_bg.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/donutbot/head_fg.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Agents/Affogato.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/body_fg.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/body_bg.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/leg_fg.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/leg_bg.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/head_fg.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/twelveeight.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Levels/GeoCity/DonutShop/interactions.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Agents/BlinkSprite.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Levels/GeoCity/DonutShop/DonutShop.gd" type="Script" id=16]
 
 [sub_resource type="StreamTexture" id=1]
@@ -169,6 +171,7 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -176,6 +179,7 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -186,15 +190,8 @@ centered = false
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
-[node name="Affogato" parent="Default" index="0"]
-visible = true
-position = Vector2( 819, 415 )
-
-[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
-position = Vector2( 0, -2 )
-
-[node name="Player" parent="Default" index="1"]
-position = Vector2( 19, 405 )
+[node name="Player" parent="Default" index="0"]
+position = Vector2( 763, 388 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960
@@ -214,6 +211,7 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 12 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -232,8 +230,19 @@ centered = false
 texture = ExtResource( 9 )
 centered = false
 
+[node name="Affogato" parent="." instance=ExtResource( 6 )]
+position = Vector2( 817, 401 )
+script = ExtResource( 15 )
+
+[node name="ChatNPC" parent="Affogato" index="0"]
+character_name = "Affogato"
+json_file = "res://Assets/Agents/Affogato/affogato_donutshop.json"
+sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
+
 [node name="DonutBot" type="StaticBody2D" parent="."]
 position = Vector2( 248, 333 )
+collision_layer = 3
+collision_mask = 3
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -259,6 +268,8 @@ polygon = PoolVector2Array( 92, 11, 106, 5, 120, -9, 151, -9, 151, 10 )
 [node name="Area2D" type="Area2D" parent="DonutBot"]
 position = Vector2( 28, -42 )
 script = ExtResource( 13 )
+character_name = "Donutbot"
+character_folder = "res://Assets/Levels/GeoCity/DonutShop/Donutbot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DonutBot/Area2D"]
 position = Vector2( 47.6071, -7.65298 )
@@ -402,10 +413,15 @@ bus = "Music"
 
 [node name="GoToCity" type="Area2D" parent="."]
 position = Vector2( 21, 401 )
-script = ExtResource( 15 )
+script = ExtResource( 3 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
+sound_effect = 5
+sound_volume = 1.5
+geocity = 2
+location = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToCity"]
 shape = SubResource( 36 )
@@ -417,5 +433,5 @@ scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 14 )
 
 [editable path="Default"]
-[editable path="Default/Affogato"]
 [editable path="Default/Player"]
+[editable path="Affogato"]

@@ -300,7 +300,7 @@ shape = SubResource( 26 )
 [node name="Default" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 605, 170 )
+position = Vector2( 16, 404 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960

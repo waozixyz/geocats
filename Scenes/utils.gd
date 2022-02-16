@@ -11,6 +11,16 @@ func get_character_folder(json_file):
 		printerr("couldnt get character folder: ", result, json_file)
 		return ""
 
+func find_agent_path(agent_name):
+	var start = "res://Scenes/Agents/"
+	var end = agent_name + ".tscn"
+	var file2Check = File.new()
+	if file2Check.file_exists(start + end):
+		return start + end
+	elif file2Check.file_exists(start + agent_name + "/" + end):
+		return start + agent_name + '/' + end
+	else:
+		printerr("wrong path: ", start, end)
 func find_level_path(level_territory, level_name):
 	var start = "res://Scenes/Levels/"
 	var end = level_name + ".tscn"

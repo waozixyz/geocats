@@ -28,7 +28,7 @@
     "operation": "variable",
     "dictionary": "variables",
     "text": "Ok, I'll meet you at Donut-Shop!",
-    "value": [["affogato_follow", true]]
+    "value": [["arcade_affogato_follow", true]]
   },
   "repeat": {
     "name": "Affogato",

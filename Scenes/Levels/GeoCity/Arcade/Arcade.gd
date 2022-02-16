@@ -1,12 +1,15 @@
 extends GeneralLevel
 
 onready var affogato = $Affogato
-func _physics_process(delta):
-	var follow = PROGRESS.variables.get("affogato_follow")
-
-	if follow and not 'Affogato' in global.user.follawable:
-		player.add_follower(affogato)
+func _ready():
+	if 'Affogato' in global.user.following:
 		remove_child(affogato)
-		player.add_child(affogato)
-		affogato.set_owner(player)
-		affogato.position = Vector2(0,0)
+	
+func _physics_process(delta):
+	var follow = PROGRESS.variables.get("arcade_affogato_follow")
+
+	if follow and not 'Affogato' in global.user.following:
+		remove_child(affogato)
+		player.add_follower(affogato)
+
+	

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/donutbot.ogg-73a68dd0b25f0563f9145a84c1e3fff2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/DonutShop/Donutbot/donutbot.ogg"
+dest_files=[ "res://.import/donutbot.ogg-73a68dd0b25f0563f9145a84c1e3fff2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

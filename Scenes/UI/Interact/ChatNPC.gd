@@ -28,7 +28,7 @@ func _ready():
 				sound_file = _get_default_path() + ".wav"
 	else:
 		disabled = true
-		printerr("missing character folder or json file for: ", name)
+
 var active : bool
 var completed :bool
 func show_chat():

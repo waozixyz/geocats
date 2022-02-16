@@ -629,9 +629,10 @@ func animate_sprite(direction, image, animation):
 			sprite_timer.start()
 			on_animation = true
 
+var chat_icon_path = "res://Assets/ChatIcons/"
 
 func load_image(spr, image):
-	spr.texture = load('%s%s' % [characters_folder, image])
+	spr.texture = load('%s%s' % [chat_icon_path, image])
 	if spr.texture:
 		var size = img_size
 		var w = spr.texture.get_width()
@@ -646,7 +647,7 @@ func load_image(spr, image):
 		else:
 			spr.scale = Vector2(scl_x, scl_x)
 	else:
-		printerr("invalid texture: " , '%s%s' % [characters_folder, image])
+		printerr("invalid texture: " , '%s%s' % [chat_icon_path, image])
 	
 func question(_text, options, _next):
 	check_pauses(label.get_text())

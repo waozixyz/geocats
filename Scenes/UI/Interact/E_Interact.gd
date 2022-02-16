@@ -1,7 +1,7 @@
 extends AreaInteract
 class_name E_Interact, "res://Assets/UI/Debug/soundeffect_icon.png"
 
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var player =  get_tree().get_current_scene().get_player()
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
 export(String, FILE, "*.wav, *.ogg") var sound_effect
@@ -22,7 +22,7 @@ func _ready():
 	
 func _process(_delta):
 	if interact_with:
-		if touching and (not playing or not hide_when_playing) and not disabled:
+		if touching and (not playing or not hide_when_playing) and not disabled and player.disable_reasons.size() == 0:
 			if interact_with.modulate.a == 0:
 				utils.tween_fade(interact_with, 0, 1, 0.2)
 		elif interact_with.modulate.a == 1:

@@ -296,7 +296,7 @@ animations = [ {
 extents = Vector2( 9, 322.855 )
 
 [sub_resource type="RectangleShape2D" id=61]
-extents = Vector2( 9, 469.447 )
+extents = Vector2( 8.08801, 469.224 )
 
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
@@ -372,7 +372,7 @@ animations = [ {
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 4 )
-locations = [ Vector2( 0, 0 ), Vector2( 2630, 1010 ), Vector2( 1023, 1010 ) ]
+locations = [ Vector2( 0, 0 ), Vector2( 2630, 1380 ), Vector2( 1023, 1380 ) ]
 
 [node name="BehindPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -411,7 +411,7 @@ frame = 28
 script = ExtResource( 11 )
 
 [node name="Moon" type="Sprite" parent="BehindPlayer/CreepyCity"]
-position = Vector2( 1739.06, 349.696 )
+position = Vector2( 486.5, 123.5 )
 texture = ExtResource( 34 )
 
 [node name="Clouds" type="Sprite" parent="BehindPlayer/CreepyCity"]
@@ -697,14 +697,14 @@ position = Vector2( 1023, 1377 )
 script = ExtResource( 30 )
 item_node = NodePath("DonutShop")
 dialogue_file = "res://Assets/Levels/GeoCity/GeoCity/feline_locked_door.json"
-unlock_var = "geocity_donut_open"
+unlock_var = "geocity_donutshop_open"
 
 [node name="DonutShop" type="Area2D" parent="Portals/LockedItem"]
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 4
+sound_effect = 5
 geocity = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/DonutShop"]
@@ -738,6 +738,7 @@ animation = "walk"
 
 [node name="LongCatArea2D" type="Area2D" parent="NPC/Longcat"]
 script = ExtResource( 5 )
+has_parent = true
 character_name = "Longcat"
 character_folder = "res://Assets/Agents/Longcat"
 
@@ -845,12 +846,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2( 0.911987, 0.223511 )
 shape = SubResource( 61 )
 
 [node name="Default" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 2062, 1366 )
+position = Vector2( 1024, 1364 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 position = Vector2( -1.99994, 0 )

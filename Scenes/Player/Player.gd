@@ -61,13 +61,22 @@ func jump(jumpHeight):
 		jump_sfx.play()
 
 func add_follower(cat):
-	if not global.user.follawable.has(cat.name):
-		global.user.follawable.append(cat.name)
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
 	cat.position = position
 	followers.append(cat)
-
+	add_child(cat)
+	cat.set_owner(self)
+	cat.position = Vector2(0,0)
+	if cat.has_node("ChatNPC"):
+		cat.get_node("ChatNPC").disabled = true
+	
+func remove_follower(cat):
+	if global.user.following.has(cat.name):
+		global.user.following.remove(cat.name)
+	followers.erase(cat)
+	cat.position = position
+	remove_child(cat)
 
 # play default sprite animations
 func default_anim():
@@ -114,9 +123,8 @@ func _ready():
 		position = global.user.position
 		sprite.flip_h  = global.user.direction * -1
 
-#	global.user.following = ["Affogato"]
 	for follower in global.user.following:
-		var follower_scene = load("res://Scenes/Agents/" + follower + "/" + follower + ".tscn")
+		var follower_scene = load(utils.find_agent_path(follower))
 		if follower_scene:
 			var new_cat = follower_scene.instance()
 			followers.append(new_cat)

@@ -13,6 +13,7 @@
 [node name="CRT_Effect" parent="." instance=ExtResource( 1 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="ChatWith" parent="CanvasLayer" instance=ExtResource( 4 )]
 visible = false

@@ -1,6 +1,7 @@
 extends Area2D
 class_name AreaInteract
 
+
 var touching : bool = false
 var disabled : bool = false
 
