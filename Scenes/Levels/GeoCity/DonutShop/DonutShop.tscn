@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/twelveeight.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Agents/BlinkSprite.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Agents/JumpBlinkAI.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Levels/GeoCity/DonutShop/DonutShop.gd" type="Script" id=16]
 
 [sub_resource type="StreamTexture" id=1]
@@ -171,7 +171,6 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -179,7 +178,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -191,7 +189,7 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 763, 388 )
+position = Vector2( 20, 412 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960
@@ -233,8 +231,10 @@ centered = false
 [node name="Affogato" parent="." instance=ExtResource( 6 )]
 position = Vector2( 817, 401 )
 script = ExtResource( 15 )
+add_move_n_slide = false
 
 [node name="ChatNPC" parent="Affogato" index="0"]
+has_parent = true
 character_name = "Affogato"
 json_file = "res://Assets/Agents/Affogato/affogato_donutshop.json"
 sound_file = "res://Assets/Agents/Affogato/affogato.ogg"

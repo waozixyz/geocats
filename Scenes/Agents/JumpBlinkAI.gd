@@ -1,0 +1,32 @@
+extends MovingBody
+
+
+export var _jump_height = 15
+
+var anim = "idle"
+var ticks = 0
+var idle
+
+var next_jump_height = 0
+func _init():
+	._init()
+	jump_height = _jump_height
+
+func _physics_process(delta):
+	if idle:
+		apply_gravity(delta)
+	elif is_on_floor():
+		jump(jump_height)
+		next_jump_height = 0
+	
+	ticks += 1 
+		
+	if int(ticks* .1) % 40 == 0:
+		anim = "blink"
+	else:
+		anim = "idle"
+
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+				

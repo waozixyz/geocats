@@ -1,5 +1,8 @@
 extends Node
 
+func get_teleport_sound(sound_name):
+	var path = "res://Assets/UI/Teleport/" + sound_name
+	return path + find_sound_ext(path)
 
 func get_character_folder(json_file):
 	var regex = RegEx.new()

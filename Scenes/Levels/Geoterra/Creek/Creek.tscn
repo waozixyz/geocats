@@ -23,7 +23,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/tree_cat.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/Levels/Geoterra/Creek/death_zone.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/water_4.png" type="Texture" id=23]
-[ext_resource path="res://Scenes/Levels/Geoterra/Creek/6_Creek.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/Levels/Geoterra/Creek/Creek.gd" type="Script" id=24]
 [ext_resource path="res://Assets/Sounds/Effects/Light_creek.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=26]
 
