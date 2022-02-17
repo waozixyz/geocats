@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/2_JokeRoom/BG.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/2_JokeRoom/FG.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/Geocaves/Caves/Cave_Ambience.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Scenes/Levels/Geoterra/Creek/Jokecat_GetOut.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Levels/Geoterra/JokeRoom/Jokecat_GetOut.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=1]

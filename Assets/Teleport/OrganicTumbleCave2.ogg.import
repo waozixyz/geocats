@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/OrganicTumbleCave2.ogg-956e3049e222fec0aab26750d12cf0ab.oggstr"
+
+[deps]
+
+source_file="res://Assets/Teleport/OrganicTumbleCave2.ogg"
+dest_files=[ "res://.import/OrganicTumbleCave2.ogg-956e3049e222fec0aab26750d12cf0ab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

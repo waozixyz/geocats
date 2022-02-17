@@ -3,9 +3,6 @@ onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasL
 var affogato
 var move_to_pos = false
 
-func _ready():
-	global.user.following = ["Affogato"]
-
 var step = 0
 func _physics_process(delta):
 	var teleport = PROGRESS.variables.get("teleport")

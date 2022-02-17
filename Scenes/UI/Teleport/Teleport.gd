@@ -9,6 +9,7 @@ enum Sounds {
 	OrganicSmashLilCave
 	WayoWayo
 	WoodDoorLatchOpen1
+	GroundCatJokeRoom
 }
 
 export(Sounds) var sound_effect

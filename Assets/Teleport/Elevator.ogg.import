@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Elevator.ogg-1d39fe0c921e7f9eab7842332b10ad6a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Teleport/Elevator.ogg"
+dest_files=[ "res://.import/Elevator.ogg-1d39fe0c921e7f9eab7842332b10ad6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

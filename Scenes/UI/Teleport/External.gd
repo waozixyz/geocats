@@ -19,6 +19,10 @@ enum GeoCity {
 
 enum Geoterra {
 	Creek
+	JokeRoom
+	CavityPuzzleRoom
+	GeoCacheRoom
+	Mountain
 }
 export(Territory) var territory
 export(GeoCity) var geocity
