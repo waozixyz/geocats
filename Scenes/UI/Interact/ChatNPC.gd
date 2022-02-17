@@ -1,6 +1,7 @@
 extends AreaInteract
 class_name ChatNPC, "res://Assets/UI/Debug/chat_npc_icon.png"
 
+onready var player = get_tree().get_current_scene().get_player()
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
@@ -10,7 +11,8 @@ export(String, DIR) var character_folder = ""
 
 export(String, FILE, "*.json") var json_file = ""
 export(String, FILE, "*.ogg, *.wav") var sound_file = ""
-
+export(bool) var trigger_on_touch = false
+export(String) var player_disable = ""
 func _get_default_path():
 	if character_folder.empty() and not json_file.empty():
 		return utils.get_character_folder(json_file)
@@ -42,29 +44,43 @@ func hide_chat():
 	dialogue.exit()
 
 func _process(_delta):
-	if touching and not active and not disabled:
-		show_chat()
-	elif (disabled or not touching) and active:
-		hide_chat()
+	if trigger_on_touch:
+		if touching and not active:
+			start_chat()
+			if not player_disable.empty():
+				player.disable(player_disable)
+			active = true
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false
+			if not player_disable.empty():
+				player.enable(player_disable)
+	else:
+		if touching and not active and not disabled:
+			show_chat()
+		elif (disabled or not touching) and active:
+			hide_chat()
 	
 	if has_parent and "idle" in get_parent():
 		get_parent().idle = true if dia_started else false
 
-	
+func start_chat():
+	dialogue.initiate(json_file)
+	dialogue.modulate.a = 0.1
+	dia_started = true
+
+	chat_with.visible = false
+	AudioManager.play_sound(sound_file)
+
 var dia_started
 func _input(_event):
-	if touching and json_file and Input.is_action_just_pressed("interact") and dialogue.modulate.a == 0:
-		if chat_with.visible:
-			dialogue.initiate(json_file)
-			dialogue.modulate.a = 0.1
-			dia_started = true
-			
-			chat_with.visible = false
-			AudioManager.play_sound(sound_file)
-		else:
-			active = false
-			completed = true
-			return
+	if not trigger_on_touch:
+		if touching and json_file and Input.is_action_just_pressed("interact") and dialogue.modulate.a == 0:
+			if chat_with.visible:
+				start_chat()
+			else:
+				active = false
+				completed = true
+				return
 
-	if dia_started and dialogue.modulate.a == 0:
-		dia_started = false
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false

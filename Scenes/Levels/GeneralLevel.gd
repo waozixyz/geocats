@@ -1,7 +1,7 @@
 extends Node2D
 class_name GeneralLevel
 
-export(NodePath) var player
+export(NodePath) var player 
 
 export(Array, Vector2) onready var locations 
 func get_player():
