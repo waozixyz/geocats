@@ -37,8 +37,11 @@
     "avatar": "feline_sleep.png",
     "animation_in": "fade_in",
     "position": "left",
-    "type": "text",
-    "content": "|...Huh? |@That wasn't very helpful.",
+    "type": "action",
+    "text": "|...Huh? |@That wasn't very helpful.",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [["feline_creek", true]],
     "next": ""
   }
 }

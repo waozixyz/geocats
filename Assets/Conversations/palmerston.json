@@ -27,7 +27,7 @@
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "fire",
+    "variable": "geolodge_fire",
     "true": "fire_on",
     "false": "fire_off"
   },

@@ -535,7 +535,7 @@ shape = SubResource( 37 )
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 1637, 4083 )
+position = Vector2( 1542, 3903 )
 scale = Vector2( 1.3, 1.3 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
@@ -840,6 +840,7 @@ texture = ExtResource( 18 )
 
 [node name="FelineArea" type="Area2D" parent="."]
 script = ExtResource( 20 )
+skip_var = "feline_creek"
 json_file = "res://Assets/Feline/feline_creek.json"
 trigger_on_touch = true
 player_disable = "feline_chat"

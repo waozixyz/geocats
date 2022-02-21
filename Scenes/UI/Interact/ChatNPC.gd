@@ -6,6 +6,7 @@ onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasL
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
 export(bool) var has_parent = false
+export(String) var skip_var = ""
 export(String) var character_name = name
 export(String, DIR) var character_folder = ""
 
@@ -44,7 +45,9 @@ func hide_chat():
 	dialogue.exit()
 
 func _process(_delta):
-	if trigger_on_touch:
+	PROGRESS.variables.feline_creek = true
+
+	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
 		if touching and not active:
 			start_chat()
 			if not player_disable.empty():
@@ -55,7 +58,7 @@ func _process(_delta):
 			if not player_disable.empty():
 				player.enable(player_disable)
 	else:
-		if touching and not active and not disabled:
+		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
 			show_chat()
 		elif (disabled or not touching) and active:
 			hide_chat()

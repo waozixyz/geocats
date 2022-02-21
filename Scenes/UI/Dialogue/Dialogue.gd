@@ -277,12 +277,13 @@ func update_dialogue(step): # step == whole dialogue block
 			
 		'action':
 			not_question()
-			
+
 			match step['operation']:
 				'variable':
 					update_variable(step['value'], step['dictionary'])
 					if step.has('next'):
 						next_step = step['next']
+
 					else:
 						next_step = ''
 				'random':

@@ -3,7 +3,7 @@
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "no_coffee",
+    "variable": "donutbot_no_coffee",
     "true": "empty",
     "false": "full"
   },
