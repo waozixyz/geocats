@@ -494,7 +494,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 5
+sound_effect = 1
 geocity = 6
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="TeleportDream"]
