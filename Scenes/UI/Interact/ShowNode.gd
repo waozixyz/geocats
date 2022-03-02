@@ -14,6 +14,9 @@ func _process(_delta):
 	if do_something:
 		if ui_node.modulate.a == 1:
 			utils.tween_fade(ui_node, 1, 0, transition_time)
+			
+			if not disable_player.empty():
+				player.enable(disable_player)
 		else:
 			utils.tween_fade(ui_node, 0, 1, transition_time)
 		do_something = false

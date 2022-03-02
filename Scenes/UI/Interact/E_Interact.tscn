@@ -10,6 +10,7 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
 [node name="E_Interact" type="CanvasLayer"]
+layer = 3
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0

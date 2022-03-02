@@ -26,6 +26,8 @@ func _process(_delta):
 		disabled = true
 		ui_node.visible = false
 		remove_child(interact_with.get_parent())
+		if not disable_player.empty():
+			player.enable(disable_player)
 		return
 	
 	if do_something and not disabled:
@@ -39,4 +41,5 @@ func _process(_delta):
 			consumable.visible = false
 		do_something = false
 		disable_sound = true
+		
 

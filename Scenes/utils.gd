@@ -51,7 +51,7 @@ var tweens = []
 func _tween_completed(obj, _key, tween, code):
 	remove_child(tween)
 	tweens.erase(obj.name + code)
-	print(obj, _key, tween)
+
 func tween_position(obj, new_pos, time = 1):
 	if not tweens.has(obj.name + '_p'):
 		var tween = Tween.new()
