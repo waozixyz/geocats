@@ -12,9 +12,9 @@ func _init():
 	._init()
 	jump_height = _jump_height
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if idle:
-		apply_gravity(delta)
+		apply_gravity()
 	elif is_on_floor():
 		jump(jump_height)
 		next_jump_height = 0

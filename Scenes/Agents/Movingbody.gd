@@ -37,8 +37,8 @@ func check_child_collision(child):
 		return false
 
 
-func apply_gravity (_delta: float):
-	velocity.y += gravity
+func apply_gravity (factor: float = 1):
+	velocity.y += gravity * factor
 
 # ladder variables
 var on_ladder : bool = false
@@ -122,7 +122,7 @@ func _physics_process(delta):
 	if not no_rotate:
 		sprite.rotation = rot
 	if sprite.animation != "climb" and not no_gravity:
-		apply_gravity(delta)
+		apply_gravity()
 	if add_move_n_slide:
 		velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 

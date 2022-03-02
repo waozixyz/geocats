@@ -101,7 +101,7 @@ extents = Vector2( 81, 70.157 )
 extents = Vector2( 42.8818, 22.4911 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 53.6418, 5.38007 )
+extents = Vector2( 49.1169, 5.38007 )
 
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 21, 6 )
@@ -153,16 +153,12 @@ __meta__ = {
 
 [node name="MainColliders" type="Node2D" parent="."]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Walls" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
 collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
 position = Vector2( 7, 636.5 )
@@ -195,9 +191,6 @@ shape = SubResource( 7 )
 [node name="Platforms" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
 collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ShelfCollider" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1043, 87 )
@@ -246,9 +239,8 @@ position = Vector2( -370, 247 )
 polygon = PoolVector2Array( 1064, 288, 727, 119, 716, 119, 716, 138, 1024, 288 )
 
 [node name="Floors" type="StaticBody2D" parent="MainColliders"]
-__meta__ = {
-"_edit_lock_": true
-}
+collision_layer = 7
+collision_mask = 7
 
 [node name="BedroomFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 1116.4, 384 )
@@ -263,6 +255,8 @@ position = Vector2( 222, 378 )
 shape = SubResource( 17 )
 
 [node name="Ceilings" type="StaticBody2D" parent="MainColliders"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="LitterboxHallCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 989, 300 )
@@ -377,7 +371,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Statue"]
-position = Vector2( 488.592, -360.987 )
+position = Vector2( 493.117, -360.987 )
 shape = SubResource( 30 )
 one_way_collision = true
 
@@ -400,12 +394,18 @@ shape = SubResource( 32 )
 [node name="Letter" type="Node2D" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 5, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Letter"]
 position = Vector2( 0, 68 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Letter"]
 margin_left = 30.0
@@ -417,6 +417,7 @@ custom_fonts/normal_font = SubResource( 34 )
 fit_content_height = true
 script = ExtResource( 12 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 text_file = "res://Assets/Levels/GeoCity/CatsCradle/LetterFromAunt.txt"

@@ -126,11 +126,7 @@ func _ready():
 	for follower in global.user.following:
 		var follower_scene = load(utils.find_agent_path(follower))
 		if follower_scene:
-			var new_cat = follower_scene.instance()
-			followers.append(new_cat)
-			new_cat.no_gravity = true
-			new_cat.set_collision_mask(0)
-			add_child(new_cat)
+			add_follower(follower_scene.instance())
 		else:
 			printerr("follower invalid: ", follower)
 
@@ -188,47 +184,42 @@ func _physics_process(delta):
 			var pvel_x = velocity_log[0].x
 			# reset position to be static
 			follower.velocity = -velocity
+			if abs(follower.position.y) < 100 and abs(follower.position.x) < 100:
+				if state_machine.active_state.tag == "climb":
+					if follower.position.x > 5:
+						follower.velocity.x = -currentSpeed
+					elif follower.position.x < 0:
+						follower.velocity.x = currentSpeed
 
-			if state_machine.active_state.tag == "climb":
-				if follower.position.x > 5:
-					follower.position.x -= 2
-				elif follower.position.x < 0:
-					follower.position.x += 2
-
-				if follower.position.x <= 5 and follower.position.x >= 0:
-					#if follower.position.y < 0 or follower.position.y > -20:
-					#	follower.velocity.y += velocity_log[0].y
-					if follower.position.y > 40:
-						follower.position.y -= 5
-						
-					if follower.position.y < 40:
-						follower.position.y += 5
-
-
-			else:
-				follower.apply_gravity(delta)
-				follower.velocity.y += velocity_log[0].y
-				# callibrate position
-				if velocity.y == 0:
-					if follower.position.y > 10:
-						follower.position.y -= 2
-					elif follower.position.y < 0:
-						follower.position.y += 2
-
-				if sprite.flip_h:
-						#else:
-						#	follower.velocity.x += 5
-					if pos_x > 60:
-						if pvel_x < 0:
-							follower.velocity.x -= currentSpeed
-							follower.sprite.flip_h = not sprite.flip_h
-						#else:
-						#	follower.velocity.x -= 5
+					if follower.position.x <= 5 and follower.position.x >= 0:
+						#if follower.position.y < 0 or follower.position.y > -20:
+						#	follower.velocity.y += velocity_log[0].y
+						if follower.position.y > 40:
+							follower.velocity.y = -currentSpeed
+							
+						if follower.position.y < 40:
+							follower.velocity.y = currentSpeed
 				else:
-					if pos_x < -60:
-						if pvel_x > 0:
-							follower.velocity.x += currentSpeed
-							follower.sprite.flip_h = not sprite.flip_h
+					if velocity_log[0].y == 0:
+						follower.apply_gravity(12)
+					
+					follower.velocity.y += velocity_log[0].y
+					# callibrate position
+
+					if sprite.flip_h:
+							#else:
+							#	follower.velocity.x += 5
+						if pos_x > 60:
+							if pvel_x < 0:
+								follower.velocity.x -= currentSpeed
+								follower.sprite.flip_h = not sprite.flip_h
+							#else:
+							#	follower.velocity.x -= 5
+					else:
+						if pos_x < -60:
+							if pvel_x > 0:
+								follower.velocity.x += currentSpeed
+								follower.sprite.flip_h = not sprite.flip_h
 
 		velocity_log.pop_front()
 

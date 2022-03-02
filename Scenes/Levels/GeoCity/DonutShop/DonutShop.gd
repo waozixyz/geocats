@@ -24,7 +24,7 @@ func _physics_process(delta):
 		global.user.following.remove("Affogato")
 		move_to_pos = true
 	elif move_to_pos:
-		affogato.apply_gravity(delta)
+		affogato.apply_gravity()
 		if affogato.is_on_floor():
 			affogato.jump(20)
 		if step == 0:

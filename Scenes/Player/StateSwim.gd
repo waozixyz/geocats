@@ -1,6 +1,5 @@
 extends BasePlayerState
 
-export var gravity : float = 10
 export var anim_speed : float = 1.5
 var original_anim_speed : float
 var water_friction : float = 150
@@ -11,7 +10,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.on_ladder and player.vertical != 0:
 		return "climb"
 
-	player.apply_gravity(gravity)
+	player.apply_gravity()
 	player.move_horizontally(water_friction) #move horizontally
 	if player.jumping:
 		return "jump"
