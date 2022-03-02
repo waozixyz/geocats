@@ -1,7 +1,7 @@
 extends AreaInteract
 class_name E_Interact, "res://Assets/UI/Debug/soundeffect_icon.png"
 
-onready var player =  get_tree().get_current_scene().get_player()
+onready var player = get_tree().get_current_scene().get_player()
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
 export(String, FILE, "*.wav, *.ogg") var sound_effect

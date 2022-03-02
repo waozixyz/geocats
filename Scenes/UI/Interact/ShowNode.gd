@@ -10,7 +10,6 @@ func _ready():
 	hide_when_playing = false
 	ui_node = get_node(make_node_visible)
 
-
 func _process(_delta): 
 	if do_something:
 		if ui_node.modulate.a == 1:
