@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Cats_Cradle.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Dream_Cloud.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/bird.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Levels/GeoCity/Dream.gd" type="Script" id=17]
+[ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=19]
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 15 )
@@ -130,55 +132,165 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool dmg;
+
+void fragment() {
+    vec4 c = texture(TEXTURE, UV);
+	if(dmg) {
+		c.r = .4;
+	}
+    COLOR = c;
+}"
+
+[sub_resource type="ShaderMaterial" id=58]
+shader = SubResource( 1 )
+shader_param/dmg = false
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=59]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 3 ), SubResource( 6 ), SubResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "blink",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 10, 74.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 13.0565, 107.5 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 11, 256.5 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 5, 144 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 8.5, 169 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 21, 130 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 8, 14 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 81, 3 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 27, 5 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 38.5, 2.5 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=69]
 extents = Vector2( 309, 12 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 93, 9 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 36, 5 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 114, 12 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 358.401, 18 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=74]
 extents = Vector2( 729, 10 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=75]
 extents = Vector2( 124.5, 12 )
 
 [sub_resource type="RectangleShape2D" id=18]
@@ -246,10 +358,6 @@ script = ExtResource( 1 )
 locations = [ Vector2( 0, 0 ), Vector2( 25, 665 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="WorldBckg" type="ColorRect" parent="BelowPlayer"]
 margin_left = -75.0
@@ -259,6 +367,7 @@ margin_bottom = 771.0
 mouse_filter = 2
 color = Color( 0.117647, 0.00392157, 0.168627, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -273,10 +382,6 @@ __meta__ = {
 
 [node name="Dream" type="Node2D" parent="BelowPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="MainTexture" type="Sprite" parent="BelowPlayer/Dream"]
 position = Vector2( 50, 0 )
@@ -294,6 +399,9 @@ frames = SubResource( 44 )
 frame = 1
 playing = true
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Starfield" type="TextureRect" parent="BelowPlayer/Dream"]
 material = SubResource( 46 )
@@ -361,6 +469,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Dream"]
+material = SubResource( 58 )
+position = Vector2( 1215, 270 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 59 )
+animation = "walk"
+script = ExtResource( 19 )
+
 [node name="MainColliders" type="Node2D" parent="."]
 __meta__ = {
 "_edit_group_": true
@@ -372,7 +488,7 @@ collision_mask = 7
 
 [node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
 position = Vector2( 7, 636.5 )
-shape = SubResource( 1 )
+shape = SubResource( 60 )
 
 [node name="KitchenRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 333.057, 497.5 )
@@ -380,23 +496,23 @@ shape = SubResource( 2 )
 
 [node name="LeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 87, 304.5 )
-shape = SubResource( 3 )
+shape = SubResource( 61 )
 
 [node name="StatueRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 1471, 546 )
-shape = SubResource( 4 )
+shape = SubResource( 62 )
 
 [node name="BedRoomRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 1462.5, 197 )
-shape = SubResource( 5 )
+shape = SubResource( 63 )
 
 [node name="LitterboxLeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 737, 272 )
-shape = SubResource( 6 )
+shape = SubResource( 64 )
 
 [node name="LitterboxRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 868, 274 )
-shape = SubResource( 7 )
+shape = SubResource( 65 )
 
 [node name="Platforms" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
@@ -404,37 +520,37 @@ collision_mask = 7
 
 [node name="ShelfCollider" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1043, 87 )
-shape = SubResource( 8 )
+shape = SubResource( 66 )
 one_way_collision = true
 
 [node name="PresentTablePlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 161, 665 )
-shape = SubResource( 9 )
+shape = SubResource( 67 )
 one_way_collision = true
 
 [node name="LitterboxPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 803.5, 356.5 )
-shape = SubResource( 10 )
+shape = SubResource( 68 )
 one_way_collision = true
 
 [node name="LeavingBedroomFloor" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 407, 132 )
-shape = SubResource( 11 )
+shape = SubResource( 69 )
 one_way_collision = true
 
 [node name="BedPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1361, 225 )
-shape = SubResource( 12 )
+shape = SubResource( 70 )
 one_way_collision = true
 
 [node name="Bed" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1214, 539 )
-shape = SubResource( 13 )
+shape = SubResource( 71 )
 one_way_collision = true
 
 [node name="KitchenPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 212, 498 )
-shape = SubResource( 14 )
+shape = SubResource( 72 )
 one_way_collision = true
 
 [node name="Stairs" type="StaticBody2D" parent="MainColliders"]
@@ -454,15 +570,15 @@ collision_mask = 7
 
 [node name="BedroomFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 1116.4, 384 )
-shape = SubResource( 15 )
+shape = SubResource( 73 )
 
 [node name="MainFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 746, 700 )
-shape = SubResource( 16 )
+shape = SubResource( 74 )
 
 [node name="StairFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 222, 378 )
-shape = SubResource( 17 )
+shape = SubResource( 75 )
 
 [node name="Ceilings" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7

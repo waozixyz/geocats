@@ -19,7 +19,7 @@
 [ext_resource path="res://Assets/Agents/PlayerCats/Knapsack/tileset.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Player/StateDoubleJump.gd" type="Script" id=18]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=22]
 code = "shader_type canvas_item;
 
 uniform bool dmg;
@@ -33,7 +33,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = SubResource( 22 )
 shader_param/dmg = false
 
 [sub_resource type="AtlasTexture" id=3]
@@ -51,6 +51,18 @@ region = Rect2( 60, 0, 15, 15 )
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 17 )
 region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 17 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 17 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 17 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 17 )
@@ -84,18 +96,6 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 17 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 17 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 17 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 17 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 3 ), SubResource( 6 ), SubResource( 6 ) ],
@@ -103,9 +103,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
-"name": "blink",
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 16 ), SubResource( 17 ) ],
@@ -118,15 +118,15 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "blink",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]

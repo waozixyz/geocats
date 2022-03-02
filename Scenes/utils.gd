@@ -48,20 +48,29 @@ func toggle(boolean):
 	return false if boolean else true
 
 var tweens = []
-func _tween_completed(obj, _key, tween):
+func _tween_completed(obj, _key, tween, code):
 	remove_child(tween)
-	tweens.erase(obj)
-
+	tweens.erase(obj.name + code)
+	print(obj, _key, tween)
+func tween_position(obj, new_pos, time = 1):
+	if not tweens.has(obj.name + '_p'):
+		var tween = Tween.new()
+		add_child(tween)
+		tween.interpolate_property(obj, "position", obj.position, new_pos, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+		tween.pause_mode = PAUSE_MODE_PROCESS
+		var err = tween.connect("tween_completed", self, "_tween_completed", [tween, '_p'])
+		assert(err == OK)
 # a generic tween for fading effect
 func tween_fade(obj, start, end, time = .5):
 	if not tweens.has(obj):
-		tweens.append(obj)
+		tweens.append(obj.name + '_f')
 		var tween = Tween.new()
 		add_child(tween)
 		tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 		tween.start()
 		tween.pause_mode = PAUSE_MODE_PROCESS
-		var err = tween.connect("tween_completed", self, "_tween_completed", [tween])
+		var err = tween.connect("tween_completed", self, "_tween_completed", [tween, '_f'])
 		assert(err == OK)
 		
 
