@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/door/door_closed.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/temper.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ChatIcons/ernst.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Geocaves/Caves/9_Caves.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/sun/sun_3.png" type="Texture" id=7]
@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/far_bg.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/door/door_1.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/taur.png" type="Texture" id=17]
+[ext_resource path="res://Assets/ChatIcons/nostoc.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/sandKitten.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/ernst.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=20]
@@ -54,13 +54,13 @@
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/cactusFarmer.png" type="Texture" id=52]
 [ext_resource path="res://Scenes/Levels/Geodesert/DesertOutpost/ComputerButton.gd" type="Script" id=53]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/cactusFarmer2.png" type="Texture" id=54]
-[ext_resource path="res://Assets/Levels/GeoCity/Complex/Cats/Liet.png" type="Texture" id=55]
+[ext_resource path="res://Assets/ChatIcons/liet.png" type="Texture" id=55]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/desertCat.png" type="Texture" id=56]
 [ext_resource path="res://Scenes/Levels/Geodesert/DesertOutpost/DesertTelescope.gd" type="Script" id=57]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/fg_panel.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/bg_plants.png" type="Texture" id=59]
 
-[sub_resource type="SpriteFrames" id=455]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ) ],
 "loop": true,
@@ -68,7 +68,7 @@ animations = [ {
 "speed": 90.0
 } ]
 
-[sub_resource type="GDScript" id=456]
+[sub_resource type="GDScript" id=2]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -109,40 +109,40 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=450]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=451]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
 region = Rect2( 14, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=452]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 4 )
 region = Rect2( 28, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=453]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 11, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=454]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 4 )
 region = Rect2( 14, 11, 14, 11 )
 
-[sub_resource type="SpriteFrames" id=457]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ) ],
+"frames": [ SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 453 ), SubResource( 454 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=458]
+[sub_resource type="GDScript" id=9]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -207,13 +207,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=459]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 84.9146, 39.1112 )
 
-[sub_resource type="RectangleShape2D" id=460]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 23.6621, 17.57 )
 
-[sub_resource type="GDScript" id=461]
+[sub_resource type="GDScript" id=12]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -254,36 +254,36 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=462]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 19 )
 region = Rect2( 0, 0, 12, 10 )
 
-[sub_resource type="AtlasTexture" id=463]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 19 )
 region = Rect2( 0, 10, 12, 10 )
 
-[sub_resource type="AtlasTexture" id=464]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 19 )
 region = Rect2( 12, 0, 12, 10 )
 
-[sub_resource type="AtlasTexture" id=465]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 19 )
 region = Rect2( 24, 0, 12, 10 )
 
-[sub_resource type="SpriteFrames" id=466]
+[sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ) ],
+"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 464 ), SubResource( 465 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=467]
+[sub_resource type="GDScript" id=18]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -348,13 +348,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=468]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 47.5042, 31.8105 )
 
-[sub_resource type="RectangleShape2D" id=469]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 23.6621, 17.57 )
 
-[sub_resource type="GDScript" id=470]
+[sub_resource type="GDScript" id=21]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -395,44 +395,44 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=471]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=472]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 18 )
 region = Rect2( 12, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=473]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 18 )
 region = Rect2( 24, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=474]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 8, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=475]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=476]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 18 )
 region = Rect2( 12, 0, 12, 8 )
 
-[sub_resource type="SpriteFrames" id=477]
+[sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 471 ), SubResource( 472 ), SubResource( 473 ), SubResource( 474 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 472 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 473 ), SubResource( 471 ), SubResource( 471 ), SubResource( 473 ), SubResource( 473 ), SubResource( 473 ), SubResource( 473 ) ],
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 24 ), SubResource( 22 ), SubResource( 22 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 475 ), SubResource( 476 ) ],
+"frames": [ SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=478]
+[sub_resource type="GDScript" id=29]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -497,13 +497,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=479]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 18.7898, 11.573 )
 
-[sub_resource type="RectangleShape2D" id=480]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 37.4065, 23.6743 )
 
-[sub_resource type="GDScript" id=481]
+[sub_resource type="GDScript" id=32]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -544,40 +544,40 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=482]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=483]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 17 )
 region = Rect2( 14, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=484]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=485]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 17 )
 region = Rect2( 28, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=486]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 17 )
 region = Rect2( 14, 0, 14, 11 )
 
-[sub_resource type="SpriteFrames" id=487]
+[sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 482 ), SubResource( 483 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 484 ), SubResource( 485 ), SubResource( 486 ) ],
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=488]
+[sub_resource type="GDScript" id=39]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -642,13 +642,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=489]
+[sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 59.8999, 35.0479 )
 
-[sub_resource type="RectangleShape2D" id=490]
+[sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 23.6621, 17.57 )
 
-[sub_resource type="GDScript" id=491]
+[sub_resource type="GDScript" id=42]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -689,56 +689,56 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=492]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 52 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=493]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 52 )
 region = Rect2( 12, 8, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=494]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 52 )
 region = Rect2( 0, 8, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=495]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 52 )
 region = Rect2( 24, 8, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=496]
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 52 )
 region = Rect2( 0, 16, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=497]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 52 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=498]
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 52 )
 region = Rect2( 12, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=499]
+[sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 52 )
 region = Rect2( 24, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=500]
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 52 )
 region = Rect2( 0, 8, 12, 8 )
 
-[sub_resource type="SpriteFrames" id=501]
+[sub_resource type="SpriteFrames" id=52]
 animations = [ {
-"frames": [ SubResource( 492 ), SubResource( 493 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 494 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 494 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 493 ), SubResource( 493 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 495 ), SubResource( 495 ), SubResource( 496 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 493 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ) ],
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 45 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 45 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 44 ), SubResource( 44 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 44 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 497 ), SubResource( 498 ), SubResource( 499 ), SubResource( 500 ), SubResource( 497 ), SubResource( 498 ), SubResource( 497 ), SubResource( 499 ), SubResource( 498 ) ],
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 48 ), SubResource( 49 ), SubResource( 48 ), SubResource( 50 ), SubResource( 49 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=502]
+[sub_resource type="GDScript" id=53]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -803,13 +803,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=503]
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 59.8999, 35.0479 )
 
-[sub_resource type="RectangleShape2D" id=504]
+[sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 23.6621, 17.57 )
 
-[sub_resource type="GDScript" id=505]
+[sub_resource type="GDScript" id=56]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -850,36 +850,36 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=506]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 54 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=507]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 54 )
 region = Rect2( 12, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=508]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 54 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=509]
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 54 )
 region = Rect2( 12, 0, 12, 8 )
 
-[sub_resource type="SpriteFrames" id=510]
+[sub_resource type="SpriteFrames" id=61]
 animations = [ {
-"frames": [ SubResource( 506 ), SubResource( 507 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 507 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ) ],
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 58 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 508 ), SubResource( 509 ) ],
+"frames": [ SubResource( 59 ), SubResource( 60 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=511]
+[sub_resource type="GDScript" id=62]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -944,13 +944,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=512]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 59.8999, 35.0479 )
 
-[sub_resource type="RectangleShape2D" id=513]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 23.6621, 17.57 )
 
-[sub_resource type="GDScript" id=514]
+[sub_resource type="GDScript" id=65]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -991,27 +991,27 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="AtlasTexture" id=515]
+[sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 56 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=516]
+[sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 56 )
 region = Rect2( 12, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=517]
+[sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 56 )
 region = Rect2( 24, 0, 12, 8 )
 
-[sub_resource type="SpriteFrames" id=518]
+[sub_resource type="SpriteFrames" id=69]
 animations = [ {
-"frames": [ SubResource( 515 ), SubResource( 516 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 516 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 516 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ) ],
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 67 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=519]
+[sub_resource type="GDScript" id=70]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -1076,13 +1076,13 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=520]
+[sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 59.8999, 35.0479 )
 
-[sub_resource type="RectangleShape2D" id=521]
+[sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 23.6621, 17.57 )
 
-[sub_resource type="GDScript" id=522]
+[sub_resource type="GDScript" id=73]
 script/source = "extends MovingBody
 
 var anim = \"idle\"
@@ -1123,7 +1123,7 @@ func _physics_process(delta):
 	sprite.animation = anim
 "
 
-[sub_resource type="GDScript" id=523]
+[sub_resource type="GDScript" id=74]
 script/source = "extends InteractMain
 class_name InteractChat
 
@@ -1188,47 +1188,47 @@ func _input(_event):
 				nft.reward(nft_id, false)
 "
 
-[sub_resource type="RectangleShape2D" id=524]
+[sub_resource type="RectangleShape2D" id=75]
 extents = Vector2( 40.8073, 23.3975 )
 
-[sub_resource type="AtlasTexture" id=525]
+[sub_resource type="AtlasTexture" id=76]
 atlas = ExtResource( 55 )
 region = Rect2( 0, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=526]
+[sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 55 )
 region = Rect2( 32, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=527]
+[sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 55 )
 region = Rect2( 16, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=528]
+[sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 55 )
 region = Rect2( 0, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=529]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 55 )
 region = Rect2( 16, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=530]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 55 )
 region = Rect2( 32, 12, 16, 12 )
 
-[sub_resource type="SpriteFrames" id=531]
+[sub_resource type="SpriteFrames" id=82]
 animations = [ {
-"frames": [ SubResource( 525 ), SubResource( 525 ), SubResource( 525 ), SubResource( 526 ), SubResource( 527 ), SubResource( 527 ), SubResource( 527 ), SubResource( 528 ), SubResource( 528 ), SubResource( 528 ), SubResource( 528 ), SubResource( 528 ) ],
+"frames": [ SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 78 ), SubResource( 78 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 529 ), SubResource( 530 ) ],
+"frames": [ SubResource( 80 ), SubResource( 81 ) ],
 "loop": true,
 "name": "walk",
 "speed": 6.0
 } ]
 
-[sub_resource type="GDScript" id=532]
+[sub_resource type="GDScript" id=83]
 script/source = "extends AnimatedSprite
 
 # this was created to avoid needing the playing bool true in the scene
@@ -1238,10 +1238,10 @@ func _ready():
 	play()
 "
 
-[sub_resource type="RectangleShape2D" id=533]
+[sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 27.4358, 20.873 )
 
-[sub_resource type="SpriteFrames" id=534]
+[sub_resource type="SpriteFrames" id=85]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
@@ -1254,85 +1254,85 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=535]
+[sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 12.1869, 10.7175 )
 
-[sub_resource type="RectangleShape2D" id=536]
+[sub_resource type="RectangleShape2D" id=87]
 extents = Vector2( 169, 73 )
 
-[sub_resource type="RectangleShape2D" id=537]
+[sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 44.9996, 49 )
 
-[sub_resource type="RectangleShape2D" id=538]
+[sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 59, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=539]
+[sub_resource type="RectangleShape2D" id=90]
 extents = Vector2( 19, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=540]
+[sub_resource type="RectangleShape2D" id=91]
 extents = Vector2( 79, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=541]
+[sub_resource type="RectangleShape2D" id=92]
 extents = Vector2( 49, 9.99997 )
 
-[sub_resource type="RectangleShape2D" id=542]
+[sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 84, 18.0001 )
 
-[sub_resource type="RectangleShape2D" id=543]
+[sub_resource type="RectangleShape2D" id=94]
 extents = Vector2( 30, 91.9999 )
 
-[sub_resource type="RectangleShape2D" id=544]
+[sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 155, 18.0001 )
 
-[sub_resource type="RectangleShape2D" id=545]
+[sub_resource type="RectangleShape2D" id=96]
 extents = Vector2( 82.9985, 14 )
 
-[sub_resource type="RectangleShape2D" id=546]
+[sub_resource type="RectangleShape2D" id=97]
 extents = Vector2( 74.9995, 7 )
 
-[sub_resource type="RectangleShape2D" id=547]
+[sub_resource type="RectangleShape2D" id=98]
 extents = Vector2( 143, 5.99988 )
 
-[sub_resource type="RectangleShape2D" id=548]
+[sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 159, 5.99988 )
 
-[sub_resource type="RectangleShape2D" id=549]
+[sub_resource type="RectangleShape2D" id=100]
 extents = Vector2( 59.0713, 10.5017 )
 
-[sub_resource type="RectangleShape2D" id=550]
+[sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 41.6938, 5.1947 )
 
-[sub_resource type="RectangleShape2D" id=551]
+[sub_resource type="RectangleShape2D" id=102]
 extents = Vector2( 159, 15.9999 )
 
-[sub_resource type="RectangleShape2D" id=552]
+[sub_resource type="RectangleShape2D" id=103]
 extents = Vector2( 294, 15.9999 )
 
-[sub_resource type="RectangleShape2D" id=553]
+[sub_resource type="RectangleShape2D" id=104]
 extents = Vector2( 52.0505, 61.9998 )
 
-[sub_resource type="RectangleShape2D" id=554]
+[sub_resource type="RectangleShape2D" id=105]
 extents = Vector2( 91, 4 )
 
-[sub_resource type="RectangleShape2D" id=555]
+[sub_resource type="RectangleShape2D" id=106]
 extents = Vector2( 17.6735, 61 )
 
-[sub_resource type="RectangleShape2D" id=556]
+[sub_resource type="RectangleShape2D" id=107]
 extents = Vector2( 40, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=557]
+[sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 58.9999, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=558]
+[sub_resource type="RectangleShape2D" id=109]
 extents = Vector2( 20.0001, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=559]
+[sub_resource type="RectangleShape2D" id=110]
 extents = Vector2( 13.9999, 5.00006 )
 
-[sub_resource type="RectangleShape2D" id=560]
+[sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 1579.26 )
 
-[sub_resource type="GDScript" id=561]
+[sub_resource type="GDScript" id=112]
 script/source = "extends InteractButton
 
 
@@ -1343,13 +1343,13 @@ func _input(event):
 			SceneChanger.change_scene(\"GeoLodge\", 2, \"WoodDoorLatchOpen1\", 1.5)
 "
 
-[sub_resource type="RectangleShape2D" id=562]
+[sub_resource type="RectangleShape2D" id=113]
 extents = Vector2( 34.2662, 45.8725 )
 
-[sub_resource type="RectangleShape2D" id=563]
+[sub_resource type="RectangleShape2D" id=114]
 extents = Vector2( 12.157, 98.633 )
 
-[sub_resource type="GDScript" id=564]
+[sub_resource type="GDScript" id=115]
 script/source = "extends Area2D
 
 func _ready():
@@ -1375,10 +1375,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=565]
+[sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 16.9067, 47.8872 )
 
-[sub_resource type="GDScript" id=566]
+[sub_resource type="GDScript" id=117]
 script/source = "extends Area2D
 
 func _ready():
@@ -1404,10 +1404,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=567]
+[sub_resource type="RectangleShape2D" id=118]
 extents = Vector2( 25, 136 )
 
-[sub_resource type="GDScript" id=568]
+[sub_resource type="GDScript" id=119]
 script/source = "extends Area2D
 
 func _ready():
@@ -1433,10 +1433,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=569]
+[sub_resource type="RectangleShape2D" id=120]
 extents = Vector2( 19, 108 )
 
-[sub_resource type="GDScript" id=570]
+[sub_resource type="GDScript" id=121]
 script/source = "extends Area2D
 
 func _ready():
@@ -1462,10 +1462,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=571]
+[sub_resource type="RectangleShape2D" id=122]
 extents = Vector2( 19, 278.057 )
 
-[sub_resource type="GDScript" id=572]
+[sub_resource type="GDScript" id=123]
 script/source = "extends Area2D
 
 func _ready():
@@ -1491,10 +1491,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=573]
+[sub_resource type="RectangleShape2D" id=124]
 extents = Vector2( 34, 360 )
 
-[sub_resource type="GDScript" id=574]
+[sub_resource type="GDScript" id=125]
 script/source = "extends Area2D
 
 func _ready():
@@ -1520,10 +1520,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=575]
+[sub_resource type="RectangleShape2D" id=126]
 extents = Vector2( 25, 618 )
 
-[sub_resource type="GDScript" id=576]
+[sub_resource type="GDScript" id=127]
 script/source = "extends Area2D
 
 func _ready():
@@ -1549,13 +1549,13 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=577]
+[sub_resource type="RectangleShape2D" id=128]
 extents = Vector2( 25, 166 )
 
-[sub_resource type="RectangleShape2D" id=578]
+[sub_resource type="RectangleShape2D" id=129]
 extents = Vector2( 31, 349.385 )
 
-[sub_resource type="GDScript" id=579]
+[sub_resource type="GDScript" id=130]
 script/source = "extends Area2D
 
 func _ready():
@@ -1581,10 +1581,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=580]
+[sub_resource type="RectangleShape2D" id=131]
 extents = Vector2( 27, 552 )
 
-[sub_resource type="GDScript" id=581]
+[sub_resource type="GDScript" id=132]
 script/source = "extends Area2D
 
 func _ready():
@@ -1610,10 +1610,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=582]
+[sub_resource type="RectangleShape2D" id=133]
 extents = Vector2( 31, 302 )
 
-[sub_resource type="GDScript" id=583]
+[sub_resource type="GDScript" id=134]
 script/source = "extends Area2D
 
 func _ready():
@@ -1639,28 +1639,28 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=584]
+[sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 31, 53 )
 
-[sub_resource type="ButtonGroup" id=585]
+[sub_resource type="ButtonGroup" id=136]
 
-[sub_resource type="ButtonGroup" id=586]
+[sub_resource type="ButtonGroup" id=137]
 
-[sub_resource type="DynamicFontData" id=587]
+[sub_resource type="DynamicFontData" id=138]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=588]
+[sub_resource type="DynamicFont" id=139]
 size = 55
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 extra_spacing_top = -3
 extra_spacing_bottom = -3
-font_data = SubResource( 587 )
+font_data = SubResource( 138 )
 
-[sub_resource type="RectangleShape2D" id=589]
+[sub_resource type="RectangleShape2D" id=140]
 extents = Vector2( 113.714, 68.1932 )
 
-[sub_resource type="RectangleShape2D" id=590]
+[sub_resource type="RectangleShape2D" id=141]
 extents = Vector2( 73, 78 )
 
 [node name="DesertOutpost" type="Node2D"]
@@ -1686,7 +1686,7 @@ centered = false
 
 [node name="sun" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 803.545, 65.8 )
-frames = SubResource( 455 )
+frames = SubResource( 1 )
 frame = 1
 speed_scale = 0.1
 centered = false
@@ -1711,61 +1711,60 @@ texture = ExtResource( 59 )
 position = Vector2( 5159.53, 404.255 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 456 )
+script = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Letharia"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 457 )
+frames = SubResource( 8 )
 animation = "idle"
-frame = 18
+frame = 37
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
-script = SubResource( 458 )
+script = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia/LethariaArea2D"]
 position = Vector2( 57.7109, -14.7009 )
-shape = SubResource( 459 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia"]
 position = Vector2( 3.14978, 6.61462 )
-shape = SubResource( 460 )
+shape = SubResource( 11 )
 
 [node name="Ernst" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3690.36, 330 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 461 )
+script = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ernst"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 466 )
+frames = SubResource( 17 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
-script = SubResource( 467 )
+script = SubResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ernst/ErnstArea2D"]
 position = Vector2( 20.6821, -3.65565 )
-shape = SubResource( 468 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ernst"]
 position = Vector2( 0.000121832, 2.8901 )
-shape = SubResource( 469 )
+shape = SubResource( 20 )
 
 [node name="Sandy" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 2743.2, 2048.26 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 470 )
+script = SubResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1773,55 +1772,55 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Sandy"]
 position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 477 )
+frames = SubResource( 28 )
 animation = "idle"
-frame = 7
+frame = 6
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
 position = Vector2( 7.72192, 4.04468 )
-script = SubResource( 478 )
+script = SubResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandy/SandKittenArea2D"]
 position = Vector2( -1.00005, 1.00002 )
-shape = SubResource( 479 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandy"]
 position = Vector2( 23.9999, -7.5907 )
-shape = SubResource( 480 )
+shape = SubResource( 31 )
 
 [node name="Nostoc" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4414.1, 1530.68 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 481 )
+script = SubResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nostoc"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 487 )
+frames = SubResource( 38 )
 animation = "idle"
-frame = 10
+frame = 1
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
-script = SubResource( 488 )
+script = SubResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc/TaurArea2D"]
 position = Vector2( 3.14985, -10.5166 )
-shape = SubResource( 489 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc"]
 position = Vector2( 3.14978, 6.61462 )
-shape = SubResource( 490 )
+shape = SubResource( 41 )
 
 [node name="Savanna" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3660.74, 1488.87 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 491 )
+script = SubResource( 42 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1829,27 +1828,27 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Savanna"]
 position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 501 )
+frames = SubResource( 52 )
 animation = "walk"
 frame = 3
 playing = true
 
 [node name="SandcatArea2D" type="Area2D" parent="NPC/Savanna"]
-script = SubResource( 502 )
+script = SubResource( 53 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Savanna/SandcatArea2D"]
 position = Vector2( 3.14985, -10.5166 )
-shape = SubResource( 503 )
+shape = SubResource( 54 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Savanna"]
 position = Vector2( 3.14978, 6.61462 )
-shape = SubResource( 504 )
+shape = SubResource( 55 )
 
 [node name="Sol" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 605.558, 375.568 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 505 )
+script = SubResource( 56 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1857,27 +1856,26 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Sol"]
 position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 510 )
+frames = SubResource( 61 )
 animation = "idle"
-frame = 3
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
-script = SubResource( 511 )
+script = SubResource( 62 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sol/Sandcat2Area2D"]
 position = Vector2( 3.14985, -10.5166 )
-shape = SubResource( 512 )
+shape = SubResource( 63 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sol"]
 position = Vector2( 3.14978, 6.61462 )
-shape = SubResource( 513 )
+shape = SubResource( 64 )
 
 [node name="Fier" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 5823.38, 2331.33 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 514 )
+script = SubResource( 65 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1885,56 +1883,53 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Fier"]
 position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 518 )
+frames = SubResource( 69 )
 animation = "idle"
-frame = 29
+frame = 20
 playing = true
 
 [node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
-script = SubResource( 519 )
+script = SubResource( 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Fier/Sandcat3Area2D"]
 position = Vector2( 3.14985, -10.5166 )
-shape = SubResource( 520 )
+shape = SubResource( 71 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Fier"]
 position = Vector2( 3.14978, 6.61462 )
-shape = SubResource( 521 )
+shape = SubResource( 72 )
 
 [node name="Liet_Desert" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3474.58, 2593.37 )
 collision_layer = 2
 collision_mask = 2
-script = SubResource( 522 )
+script = SubResource( 73 )
 
 [node name="Area2D" type="Area2D" parent="NPC/Liet_Desert"]
-script = SubResource( 523 )
+script = SubResource( 74 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert/Area2D"]
 position = Vector2( 18.1068, 16.6215 )
-shape = SubResource( 524 )
+shape = SubResource( 75 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Liet_Desert"]
 position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 531 )
+frames = SubResource( 82 )
 animation = "walk"
 frame = 1
 speed_scale = 0.3
 centered = false
 flip_h = true
-script = SubResource( 532 )
+script = SubResource( 83 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert"]
 position = Vector2( 30.0585, 20.9007 )
-shape = SubResource( 533 )
+shape = SubResource( 84 )
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
-[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
-position = Vector2( 0, -2 )
-
-[node name="Player" parent="Default" index="1"]
+[node name="Player" parent="Default" index="0"]
 position = Vector2( 5342, 522 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
@@ -1957,7 +1952,7 @@ position = Vector2( 46.8, 379.8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AbovePlayer/door"]
 position = Vector2( -0.599995, 0 )
-frames = SubResource( 534 )
+frames = SubResource( 85 )
 animation = "open"
 frame = 3
 speed_scale = 0.5
@@ -1966,13 +1961,15 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/door"]
 position = Vector2( 345.972, -268.557 )
-shape = SubResource( 535 )
+shape = SubResource( 86 )
 
 [node name="Sprite" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 503.984, 156 )
 texture = ExtResource( 58 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
+[node name="Ground" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
@@ -1993,156 +1990,156 @@ polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1652, 546.4 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 536 )
+shape = SubResource( 87 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1404, 347.2 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 537 )
+shape = SubResource( 88 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1620.8, 316 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 538 )
+shape = SubResource( 89 )
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1507.2, 316 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 539 )
+shape = SubResource( 90 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1636.8, 248 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 540 )
+shape = SubResource( 91 )
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1483.2, 248 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 541 )
+shape = SubResource( 92 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2115.2, 850.4 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 542 )
+shape = SubResource( 93 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2228.8, 872.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 543 )
+shape = SubResource( 94 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2260, 1018.4 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 544 )
+shape = SubResource( 95 )
 one_way_collision = true
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1577.6, 1800 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 545 )
+shape = SubResource( 96 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2172, 1673.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 546 )
+shape = SubResource( 97 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2249.6, 1068.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 547 )
+shape = SubResource( 98 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2004, 1140.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 548 )
+shape = SubResource( 99 )
 one_way_collision = true
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 3543.12, 1252.65 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 549 )
+shape = SubResource( 100 )
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 3458.29, 1179.55 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 550 )
+shape = SubResource( 101 )
 one_way_collision = true
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2004, 1156.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 548 )
+shape = SubResource( 99 )
 one_way_collision = true
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 2003.2, 1264.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 551 )
+shape = SubResource( 102 )
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1552.8, 1308.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 552 )
+shape = SubResource( 103 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1897.6, 861.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 553 )
+shape = SubResource( 104 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 903.2, 631.2 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 554 )
+shape = SubResource( 105 )
 one_way_collision = true
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 814.4, 604 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 555 )
+shape = SubResource( 106 )
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 864, 589.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 556 )
+shape = SubResource( 107 )
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 526.4, 441.6 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 557 )
+shape = SubResource( 108 )
 one_way_collision = true
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 552.8, 348 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 558 )
+shape = SubResource( 109 )
 one_way_collision = true
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 480.8, 324.8 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 558 )
+shape = SubResource( 109 )
 one_way_collision = true
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 639.2, 408 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 558 )
+shape = SubResource( 109 )
 one_way_collision = true
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 418.4, 536 )
 scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 559 )
+shape = SubResource( 110 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms"]
 position = Vector2( 2556.8, 627.2 )
@@ -2184,18 +2181,20 @@ one_way_collision = true
 polygon = PoolVector2Array( 1552.8, 1622.4, 1552.8, 1634.4, 1584, 1644.8, 1644, 1666.4, 1683.2, 1685.6, 1720.8, 1700.8, 1748.8, 1706.4, 1820.8, 1706.4, 1844, 1708.8, 1875.2, 1718.4, 1920.8, 1725.6, 1943.2, 1730.4, 1988, 1748.8, 2030.4, 1766.4, 2061.6, 1778.4, 2081.6, 1794.4, 2125.6, 1824, 2153.6, 1838.4, 2168.8, 1848.8, 2182.4, 1859.2, 2196.8, 1856, 2213.6, 1860, 2227.2, 1868, 2233.6, 1871.2, 2234.4, 1860.8, 2220.8, 1842.4, 2208.8, 1833.6, 2187.2, 1833.6, 2177.6, 1844.8, 2167.2, 1840.8, 2136, 1817.6, 2093.6, 1791.2, 2055.2, 1766.4, 2012, 1750.4, 1979.2, 1737.6, 1938.4, 1720.8, 1881.6, 1712, 1826.4, 1697.6, 1749.6, 1700, 1716.8, 1690.4, 1665.6, 1671.2, 1573.6, 1634.4 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=["end"]]
+[node name="End" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 position = Vector2( 22, 83 )
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -41, 1447.68 )
-shape = SubResource( 560 )
+shape = SubResource( 111 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="End"]
 position = Vector2( 5977, 1370.55 )
-shape = SubResource( 560 )
+shape = SubResource( 111 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -2205,11 +2204,11 @@ bus = "Music"
 
 [node name="GoToDesert" type="Area2D" parent="."]
 position = Vector2( 28.5323, 404.255 )
-script = SubResource( 561 )
+script = SubResource( 112 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToDesert"]
 position = Vector2( 5904.87, 1920.34 )
-shape = SubResource( 562 )
+shape = SubResource( 113 )
 
 [node name="Button" type="Sprite" parent="GoToDesert"]
 visible = false
@@ -2227,95 +2226,95 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 position = Vector2( 0, -4.29153e-06 )
-shape = SubResource( 563 )
+shape = SubResource( 114 )
 
 [node name="Ladder13" type="Area2D" parent="Ladders"]
 position = Vector2( 3614.83, 721.517 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 564 )
+script = SubResource( 115 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder13"]
 position = Vector2( 690.305, 800.853 )
-shape = SubResource( 565 )
+shape = SubResource( 116 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 2015, 2071 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 566 )
+script = SubResource( 117 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
 position = Vector2( 0, 4 )
-shape = SubResource( 567 )
+shape = SubResource( 118 )
 
 [node name="Ladder9" type="Area2D" parent="Ladders"]
 position = Vector2( 1135, 1473 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 568 )
+script = SubResource( 119 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder9"]
 position = Vector2( 0, 4 )
-shape = SubResource( 569 )
+shape = SubResource( 120 )
 
 [node name="Ladder10" type="Area2D" parent="Ladders"]
 position = Vector2( 1066, 1048.14 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 570 )
+script = SubResource( 121 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder10"]
 position = Vector2( 0, 4.26245 )
-shape = SubResource( 571 )
+shape = SubResource( 122 )
 
 [node name="Ladder11" type="Area2D" parent="Ladders"]
 position = Vector2( 672, 904 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 572 )
+script = SubResource( 123 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder11"]
 position = Vector2( 0, 4 )
-shape = SubResource( 573 )
+shape = SubResource( 124 )
 
 [node name="Ladder7" type="Area2D" parent="Ladders"]
 position = Vector2( 5124, 1155 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 574 )
+script = SubResource( 125 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7"]
 position = Vector2( 0, 4 )
-shape = SubResource( 575 )
+shape = SubResource( 126 )
 
 [node name="Ladder8" type="Area2D" parent="Ladders"]
 position = Vector2( 5342, 435 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 576 )
+script = SubResource( 127 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder8"]
 position = Vector2( 0, 4 )
-shape = SubResource( 577 )
+shape = SubResource( 128 )
 
 [node name="Ladder4" type="Area2D" parent="Ladders"]
 position = Vector2( 4099.38, 1771.38 )
@@ -2328,43 +2327,43 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
 position = Vector2( 0, 23 )
-shape = SubResource( 578 )
+shape = SubResource( 129 )
 
 [node name="Ladder12" type="Area2D" parent="Ladders"]
 position = Vector2( 3835, 1704 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 579 )
+script = SubResource( 130 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder12"]
-shape = SubResource( 580 )
+shape = SubResource( 131 )
 
 [node name="Ladder5" type="Area2D" parent="Ladders"]
 position = Vector2( 2499, 715 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 581 )
+script = SubResource( 132 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
-shape = SubResource( 582 )
+shape = SubResource( 133 )
 
 [node name="Ladder6" type="Area2D" parent="Ladders"]
 position = Vector2( 1935, 351 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 583 )
+script = SubResource( 134 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6"]
-shape = SubResource( 584 )
+shape = SubResource( 135 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 0.33, 0.33 )
@@ -2409,7 +2408,7 @@ margin_left = -803.0
 margin_top = -46.0
 margin_right = -679.0
 margin_bottom = 74.0
-group = SubResource( 585 )
+group = SubResource( 136 )
 texture_normal = ExtResource( 27 )
 texture_pressed = ExtResource( 25 )
 texture_focused = ExtResource( 25 )
@@ -2423,7 +2422,7 @@ margin_left = -703.0
 margin_top = 96.055
 margin_right = -579.0
 margin_bottom = 216.055
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 20 )
 texture_focused = ExtResource( 20 )
@@ -2437,7 +2436,7 @@ margin_left = -433.0
 margin_top = -46.0
 margin_right = -309.0
 margin_bottom = 74.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 47 )
 texture_pressed = ExtResource( 29 )
 texture_focused = ExtResource( 29 )
@@ -2451,7 +2450,7 @@ margin_left = -617.477
 margin_top = -46.0
 margin_right = -493.477
 margin_bottom = 74.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 28 )
 texture_focused = ExtResource( 28 )
@@ -2465,7 +2464,7 @@ margin_left = -513.823
 margin_top = 96.055
 margin_right = -389.823
 margin_bottom = 216.055
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 40 )
 texture_focused = ExtResource( 40 )
@@ -2479,7 +2478,7 @@ margin_left = -329.0
 margin_top = 96.055
 margin_right = -205.0
 margin_bottom = 216.055
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 50 )
 texture_pressed = ExtResource( 38 )
 texture_focused = ExtResource( 38 )
@@ -2493,7 +2492,7 @@ margin_left = -803.0
 margin_top = 233.0
 margin_right = -679.0
 margin_bottom = 353.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 44 )
 texture_pressed = ExtResource( 42 )
 texture_focused = ExtResource( 42 )
@@ -2507,7 +2506,7 @@ margin_left = -617.477
 margin_top = 233.0
 margin_right = -493.477
 margin_bottom = 353.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 46 )
 texture_pressed = ExtResource( 45 )
 texture_focused = ExtResource( 45 )
@@ -2521,7 +2520,7 @@ margin_left = -433.0
 margin_top = 233.0
 margin_right = -309.0
 margin_bottom = 353.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 31 )
 texture_pressed = ExtResource( 30 )
 texture_focused = ExtResource( 30 )
@@ -2535,7 +2534,7 @@ margin_left = -703.0
 margin_top = 377.946
 margin_right = -579.0
 margin_bottom = 497.946
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 32 )
 texture_pressed = ExtResource( 35 )
 texture_focused = ExtResource( 35 )
@@ -2549,7 +2548,7 @@ margin_left = -513.823
 margin_top = 377.946
 margin_right = -389.823
 margin_bottom = 497.946
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 48 )
 texture_pressed = ExtResource( 51 )
 texture_focused = ExtResource( 51 )
@@ -2563,7 +2562,7 @@ margin_left = -329.0
 margin_top = 377.946
 margin_right = -205.0
 margin_bottom = 497.946
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 34 )
 texture_pressed = ExtResource( 36 )
 texture_focused = ExtResource( 36 )
@@ -2577,7 +2576,7 @@ margin_left = -244.0
 margin_top = -46.0
 margin_right = -120.0
 margin_bottom = 74.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 41 )
 texture_pressed = ExtResource( 33 )
 texture_focused = ExtResource( 33 )
@@ -2591,7 +2590,7 @@ margin_left = -242.0
 margin_top = 233.0
 margin_right = -118.0
 margin_bottom = 353.0
-group = SubResource( 586 )
+group = SubResource( 137 )
 texture_normal = ExtResource( 49 )
 texture_pressed = ExtResource( 43 )
 texture_focused = ExtResource( 43 )
@@ -2604,8 +2603,8 @@ __meta__ = {
 margin_right = 917.0
 margin_bottom = 450.0
 focus_mode = 2
+custom_fonts/normal_font = SubResource( 139 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 588 )
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2618,7 +2617,7 @@ script = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
 position = Vector2( 4.22003, -2.28882e-05 )
-shape = SubResource( 589 )
+shape = SubResource( 140 )
 
 [node name="DesertTelescope" type="Area2D" parent="."]
 position = Vector2( 5162.68, 374 )
@@ -2630,8 +2629,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DesertTelescope"]
 position = Vector2( 0, 7.29907 )
-shape = SubResource( 590 )
+shape = SubResource( 141 )
 
 [editable path="Default"]
-[editable path="Default/Affogato"]
 [editable path="Default/Player"]

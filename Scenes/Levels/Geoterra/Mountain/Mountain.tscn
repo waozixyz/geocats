@@ -425,7 +425,7 @@ centered = false
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
-[node name="Player" parent="Default" index="1"]
+[node name="Player" parent="Default" index="0"]
 position = Vector2( 41, 4852 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
@@ -698,7 +698,7 @@ position = Vector2( 31, 28.001 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 63 )
 animation = "idle"
-frame = 6
+frame = 10
 playing = true
 flip_h = true
 script = SubResource( 64 )
@@ -760,5 +760,4 @@ position = Vector2( 1784, 1603 )
 shape = SubResource( 76 )
 
 [editable path="Default"]
-[editable path="Default/Affogato"]
 [editable path="Default/Player"]
