@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/GeoChest.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/FG_Frame.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Levels/Geoterra/GeoCacheRoom/Treasure.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Levels/Geoterra/Creek/Interact.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Water1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/water2.png" type="Texture" id=9]
@@ -72,12 +71,16 @@ centered = false
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ExitGeoCache" type="Area2D" parent="."]
 position = Vector2( 33, 354.813 )
 script = ExtResource( 6 )
+sound_effect = 3
+territory = 1
+location = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
 position = Vector2( 94, 62.187 )
@@ -146,7 +149,6 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="Treasure" type="Area2D" parent="."]
-script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )
