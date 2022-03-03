@@ -29,12 +29,14 @@ func _ready():
 var dia_started
 func _process(delta):
 	if do_something:
+		disabled = true
 		dialogue.initiate(dialogue_file)
 		dialogue.modulate.a = 0.01
 		do_something = false
 		dia_started = true
 	if dia_started and dialogue.modulate.a == 0:
 		dia_started = false
+		disabled = false
 	if not touching and dia_started:
 		dialogue.exit()
 	_check_unlocked()
