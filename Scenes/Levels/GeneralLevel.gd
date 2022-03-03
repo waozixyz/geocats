@@ -22,7 +22,9 @@ func get_music():
 		if not music:
 			music = get_node_or_null("BackgroundMusic")
 			if not music:
-				printerr("could not find level music")
+				music = get_node_or_null("Music")
+				if not music:
+					printerr("could not find level music")
 	return music
 func _ready():
 	# find player node

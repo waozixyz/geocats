@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_fg.png" type="Texture" id=2]
@@ -231,14 +231,6 @@ extents = Vector2( 98.6899, 155.642 )
 [sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 130.769, 92.1748 )
 
-[sub_resource type="GDScript" id=51]
-script/source = "extends Area2D
-
-
-func _input(_event):
-	pass
-"
-
 [sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 29, 209 )
 
@@ -252,6 +244,9 @@ scale = Vector2( 6, 6 )
 [node name="creek_level_bg" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="hammockcat" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 240, 80 )
@@ -788,6 +783,9 @@ texture = ExtResource( 18 )
 [node name="CaveToDown" type="Area2D" parent="Portals"]
 position = Vector2( 4269.47, 3100.03 )
 script = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
 sound_effect = 6
 new_position = Vector2( 4420, 4950 )
 
@@ -823,10 +821,13 @@ texture = ExtResource( 18 )
 
 [node name="CavityPuzzleRoom" type="Area2D" parent="Portals"]
 position = Vector2( 5418.25, 3966.81 )
-script = SubResource( 51 )
+script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 3
+territory = 1
+geoterra = 2
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CavityPuzzleRoom"]
 position = Vector2( 108, 148 )
