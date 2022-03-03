@@ -2,7 +2,7 @@ extends S_Interact
 class_name Teleport, "res://Assets/UI/Debug/teleport_icon.png"
 
 enum Sounds {
-	None = -1
+	None
 	Elevator
 	FootstepsFastSand
 	FootstepsOnGravelFast

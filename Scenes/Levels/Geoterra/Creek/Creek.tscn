@@ -236,7 +236,7 @@ extents = Vector2( 29, 209 )
 
 [node name="Creek" type="Node2D"]
 script = ExtResource( 7 )
-locations = [ Vector2( 0, 0 ), Vector2( 5500, 4120 ), Vector2( 8800, 4900 ), Vector2( 8900, 950 ), Vector2( 4420, 4950 ), Vector2( 0, 0 ) ]
+locations = [ Vector2( 0, 0 ), Vector2( 5500, 4120 ), Vector2( 2950, 3460 ), Vector2( 8800, 4900 ), Vector2( 8900, 950 ), Vector2( 4420, 4950 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
@@ -530,7 +530,7 @@ shape = SubResource( 37 )
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 74, 3889 )
+position = Vector2( 36.0001, 3897 )
 scale = Vector2( 1.3, 1.3 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
@@ -844,7 +844,7 @@ script = ExtResource( 20 )
 skip_var = "feline_creek"
 json_file = "res://Assets/Feline/feline_creek.json"
 trigger_on_touch = true
-player_disable = "feline_chat"
+player_disable = "feline_creek"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FelineArea"]
 position = Vector2( 1729, 3946 )

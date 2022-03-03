@@ -14,11 +14,13 @@ export(String, FILE, "*.json") var json_file = ""
 export(String, FILE, "*.ogg, *.wav") var sound_file = ""
 export(bool) var trigger_on_touch = false
 export(String) var player_disable = ""
+
 func _get_default_path():
 	if character_folder.empty() and not json_file.empty():
 		return utils.get_character_folder(json_file)
 	else:
 		return character_folder + "/" + character_name.to_lower()
+
 func _ready():
 	if not character_folder.empty() or not json_file.empty():
 		var file2Check = File.new()
@@ -45,16 +47,19 @@ func hide_chat():
 	dialogue.exit()
 
 func _process(_delta):
-	PROGRESS.variables.feline_creek = true
-
+	#print(dia_started, dialogue.modulate.a, name, PROGRESS.variables.get(skip_var), trigger_on_touch)
 	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
 		if touching and not active:
 			start_chat()
 			if not player_disable.empty():
 				player.disable(player_disable)
 			active = true
+
 		if dia_started and dialogue.modulate.a == 0:
 			dia_started = false
+			active = false
+			if not skip_var.empty():
+				PROGRESS.variables[skip_var] = true
 			if not player_disable.empty():
 				player.enable(player_disable)
 	else:
@@ -65,6 +70,7 @@ func _process(_delta):
 	
 	if has_parent and "idle" in get_parent():
 		get_parent().idle = true if dia_started else false
+
 
 func start_chat():
 	dialogue.initiate(json_file)
@@ -85,5 +91,4 @@ func _input(_event):
 				completed = true
 				return
 
-		if dia_started and dialogue.modulate.a == 0:
-			dia_started = false
+	
