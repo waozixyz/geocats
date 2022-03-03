@@ -44,6 +44,6 @@ func _input(_event):
 			if not disable_player.empty():
 				player.disable(disable_player)
 			if sound_effect and (not playing or not hide_when_playing) and not disable_sound:
-				AudioManager.play_sound(sound_effect, sound_volume, self, player)
+				AudioManager.play_sound(sound_effect, sound_volume, false, self, player)
 				playing = true
 			

@@ -167,6 +167,22 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 15, 15, 15 )
@@ -174,10 +190,6 @@ region = Rect2( 0, 15, 15, 15 )
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 18 )
@@ -199,28 +211,11 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=59]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 3 ), SubResource( 6 ), SubResource( 6 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
@@ -233,15 +228,20 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
-"loop": true,
-"name": "slide_wall",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=60]
@@ -445,7 +445,6 @@ __meta__ = {
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 56 )
-frame = 1
 playing = true
 centered = false
 
@@ -730,6 +729,7 @@ __meta__ = {
 require_grounded = true
 disable_player = "catscradle_fridge"
 make_node_visible = NodePath("../CanvasLayer/Fridge")
+sound_when_visible = "res://Assets/Levels/GeoCity/CatsCradle/inside_friedge.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FridgeInteract"]
 position = Vector2( 20, 25.5 )
