@@ -445,6 +445,7 @@ __meta__ = {
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 56 )
+frame = 1
 playing = true
 centered = false
 
@@ -669,11 +670,9 @@ shape = SubResource( 27 )
 position = Vector2( 159.9, 676.2 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 10 )
-__meta__ = {
-"_edit_lock_": true
-}
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/open_present.wav"
 disable_player = "catscradle_present"
+button_reappear_delay = 2.0
 make_node_visible = NodePath("../../CanvasLayer/Letter")
 consumable_path = NodePath("Sprite")
 progress_var = "catscradle_present"
@@ -681,6 +680,9 @@ progress_var = "catscradle_present"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Present"]
 position = Vector2( 40.1429, -32.7786 )
 shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Interactables/Present"]
 position = Vector2( 1.57141, -47.4286 )
@@ -801,7 +803,7 @@ bus = "Music"
 [node name="Default" parent="." instance=ExtResource( 11 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 163, 453 )
+position = Vector2( 1301, 178 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1490

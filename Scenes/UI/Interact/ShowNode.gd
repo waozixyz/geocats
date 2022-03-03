@@ -16,6 +16,7 @@ func _process(_delta):
 	if do_something:
 		if ui_node.modulate.a == 1:
 			utils.tween_fade(ui_node, 1, 0, transition_time)
+			timer = 0
 			if active_sound:
 				active_sound.stop()
 			if not disable_player.empty():
@@ -24,7 +25,7 @@ func _process(_delta):
 			utils.tween_fade(ui_node, 0, 1, transition_time)
 			if sound_when_visible:
 				active_sound = AudioManager.play_sound(sound_when_visible, 1, true)
-	
+			timer = 0
 		do_something = false
 
 	

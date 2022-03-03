@@ -14,6 +14,7 @@ var disable_sound = false
 var hide_when_playing = true
 export var require_grounded = false
 export var disable_player = ""
+export var button_reappear_delay = 0.5
 func _ready():
 	._ready()
 	var e_button = preload("res://Scenes/UI/Interact/E_Interact.tscn").instance()
@@ -27,8 +28,14 @@ func _check_grounded():
 		
 func _is_not_disabled():
 	return _check_grounded() and interact_with and (not playing or not hide_when_playing) and not disabled and (player.disable_reasons.size() == 0 or (not disable_player.empty() and player.disable_reasons.has(disable_player)))
-func _process(_delta):
-
+var timer = -1
+func _process(delta):
+	if timer >= 0:
+		timer += delta
+		disabled = true
+		if timer >= button_reappear_delay:
+			timer = -1
+			disabled = false
 	if touching  and _is_not_disabled():
 		if interact_with.modulate.a == 0:
 			utils.tween_fade(interact_with, 0, 1, 0.2)

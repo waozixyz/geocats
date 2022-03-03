@@ -31,6 +31,7 @@ func _process(_delta):
 		return
 	
 	if do_something and not disabled:
+		timer = 0
 		if consumable.visible:
 			utils.tween_fade(ui_node, 0, 1, 0.2)
 		else:
