@@ -18,10 +18,8 @@
 [ext_resource path="res://Scenes/Levels/GeoCity/DonutShop/DonutShop.gd" type="Script" id=16]
 
 [sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/bg.png-3a46176941f30cb33aaa3b7c14192f88.stex"
 
 [sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/window_bg.png-fb92090932025b9687ea147445c3c353.stex"
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 11 )
@@ -56,7 +54,6 @@ animations = [ {
 } ]
 
 [sub_resource type="StreamTexture" id=9]
-load_path = "res://.import/fg_base.png-bd72d431f891e1baf99446a1eb533997.stex"
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
@@ -387,7 +384,9 @@ shape = SubResource( 32 )
 position = Vector2( 953, 227 )
 shape = SubResource( 33 )
 
-[node name="End" type="StaticBody2D" parent="." groups=["end"]]
+[node name="End" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )

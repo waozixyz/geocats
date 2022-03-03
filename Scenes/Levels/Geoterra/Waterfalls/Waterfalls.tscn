@@ -1,0 +1,176 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Levels/Geoterra/Mountain/telescope.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_FG.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Interact.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Levels/Geoterra/Mountain/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Telescope.gd" type="Script" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.374, 4798.62 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 54.9967, 49.9998 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 50 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 73, 78 )
+
+[node name="Mountain" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="telescope" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Default" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="Default" index="0"]
+position = Vector2( 41, 4852 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
+limit_right = 5000
+limit_bottom = 5000
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="Collisions" type="Node2D" parent="."]
+scale = Vector2( 0.833, 0.833 )
+
+[node name="Platforms" type="StaticBody2D" parent="Collisions"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="Walls" type="StaticBody2D" parent="Collisions"]
+position = Vector2( 2050.42, 4438.18 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( -22.9818, 2273.02 )
+scale = Vector2( 1, 0.75991 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( 8424.91, 2273.02 )
+scale = Vector2( 1, 0.75991 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( 4651.2, 4534.86 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( 3000, -10 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Portals" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="GoUp" type="Area2D" parent="Portals"]
+position = Vector2( 1548, 4089 )
+script = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoUp"]
+position = Vector2( 2.9999, 4.00024 )
+shape = SubResource( 2 )
+
+[node name="Button" type="Sprite" parent="Portals/GoUp"]
+visible = false
+position = Vector2( -65.7659, 0 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="GoDown" type="Area2D" parent="Portals"]
+position = Vector2( 1472.91, 2335.62 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoDown"]
+position = Vector2( 108.749, 148 )
+shape = SubResource( 2 )
+
+[node name="Button" type="Sprite" parent="Portals/GoDown"]
+visible = false
+position = Vector2( 25.0032, 148 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="ToDesert" type="Area2D" parent="Portals"]
+position = Vector2( -73, 4728 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToDesert"]
+position = Vector2( 108, 148 )
+shape = SubResource( 3 )
+
+[node name="Button" type="Sprite" parent="Portals/ToDesert"]
+visible = false
+position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" type="Sprite" parent="AbovePlayer"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+bus = "Music"
+
+[node name="Telescope" type="Area2D" parent="."]
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
+position = Vector2( 1784, 1603 )
+shape = SubResource( 4 )
+
+[editable path="Default"]
+[editable path="Default/Player"]
