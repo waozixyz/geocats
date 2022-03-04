@@ -530,7 +530,7 @@ shape = SubResource( 37 )
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 36.0001, 3897 )
+position = Vector2( 3183, 5204 )
 scale = Vector2( 1.3, 1.3 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
@@ -765,9 +765,10 @@ texture = ExtResource( 18 )
 position = Vector2( 4301, 4828 )
 script = ExtResource( 28 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
-sound_effect = 6
+sound_effect = 4
 new_position = Vector2( 4350, 3240 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
@@ -786,7 +787,7 @@ script = ExtResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 6
+sound_effect = 4
 new_position = Vector2( 4420, 4950 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]

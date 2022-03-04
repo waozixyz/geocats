@@ -33,7 +33,11 @@ func _process(_delta):
 		player.visible = true
 		player.enable("teleport")
 		teleporting = false
-		affogato.position = player.position
+		if player.followers:
+			for follower in player.followers:
+				follower.position = Vector2(0,0)
+			print(player.followers)
+			#affogato.position = player.position
 
 func _input(_event):
 	if _can_interact():

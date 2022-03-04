@@ -301,14 +301,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -317,17 +309,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=68]
@@ -751,7 +751,7 @@ position = Vector2( 3.14978, 6.61462 )
 shape = SubResource( 46 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4124, 789 )
+position = Vector2( 4119, 775 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
@@ -852,7 +852,7 @@ shape = SubResource( 61 )
 [node name="Default" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 4729, 1333 )
+position = Vector2( 4714, 1314 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 position = Vector2( -1.99994, 0 )

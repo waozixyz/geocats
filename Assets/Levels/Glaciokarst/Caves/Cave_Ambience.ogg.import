@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cave_Ambience.ogg-42fee45b7ee13e89b509cf0bea289743.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Glaciokarst/Caves/Cave_Ambience.ogg"
+dest_files=[ "res://.import/Cave_Ambience.ogg-42fee45b7ee13e89b509cf0bea289743.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

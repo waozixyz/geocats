@@ -45,6 +45,7 @@ func hide_chat():
 	active = false
 	chat_with.visible = false
 	dialogue.exit()
+	dia_started = false
 
 func _process(_delta):
 	#print(dia_started, dialogue.modulate.a, name, PROGRESS.variables.get(skip_var), trigger_on_touch)
@@ -69,6 +70,8 @@ func _process(_delta):
 			hide_chat()
 	
 	if has_parent and "idle" in get_parent():
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false
 		get_parent().idle = true if dia_started else false
 
 

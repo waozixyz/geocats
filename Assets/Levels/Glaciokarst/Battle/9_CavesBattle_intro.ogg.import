@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/9_CavesBattle_intro.ogg-397f8f2c2cf69f3ef80d5400bd87e715.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Glaciokarst/Battle/9_CavesBattle_intro.ogg"
+dest_files=[ "res://.import/9_CavesBattle_intro.ogg-397f8f2c2cf69f3ef80d5400bd87e715.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

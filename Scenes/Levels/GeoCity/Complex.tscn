@@ -584,7 +584,7 @@ extents = Vector2( 15, 1 )
 extents = Vector2( 15, 1 )
 
 [sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 9, 70 )
+extents = Vector2( 9, 72.5 )
 
 [sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 35.5, 54 )
@@ -1214,6 +1214,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ladder"]
+position = Vector2( 0, -2.5 )
 shape = SubResource( 63 )
 
 [node name="HomeDoor" type="Area2D" parent="Interactive"]
@@ -1449,8 +1450,8 @@ bus = "Music"
 
 [node name="Default" parent="." instance=ExtResource( 13 )]
 
-[node name="Player" parent="Default" index="1"]
-position = Vector2( 1086, 501 )
+[node name="Player" parent="Default" index="0"]
+position = Vector2( 1105, 239 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 2300
@@ -1478,5 +1479,4 @@ position = Vector2( -20.9362, 51.9664 )
 shape = SubResource( 98 )
 
 [editable path="Default"]
-[editable path="Default/Affogato"]
 [editable path="Default/Player"]

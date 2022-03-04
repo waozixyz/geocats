@@ -1,7 +1,6 @@
 extends Area2D
 
 onready var player =  get_tree().get_current_scene().get_node("Default/Player")
-onready var crt =  get_tree().get_current_scene().get_node("Default/CRT_Effect/ColorRect")
 
 var inside = false
 func _ready():
@@ -15,7 +14,7 @@ func _on_body_entered(body):
 func _process(delta):
 	var dfps = delta * global.fps
 	if inside:
-		global.data.player_hp -= .8 * dfps
+		global.user.hp -= .8 * dfps
 		
 func _on_body_exited(body):
 	if body.name == "Player":

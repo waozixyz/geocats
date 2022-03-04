@@ -1,0 +1,2637 @@
+[gd_scene load_steps=201 format=2]
+
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_closed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/temper.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Levels/Glaciokarst/Caves/9_Caves.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/FG.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/BG.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/stars_space.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/far_bg.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/10_DesertOutpost/characters/taur.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/sandKitten.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/ernst.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_glare.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_hud.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_border.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/Computer.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/weather.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/awareness.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/weather.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/sand.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/cultivation.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geology.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geology.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/georing.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geocache.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/symbiotic_relationships.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/georing.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/symbiotic_relationships.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/mewlange.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/nonaco.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/sand.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/mewlange.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geocache.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/wildlife.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geocats.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/wildlife.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/radiation.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/radiation.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/cultivation.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/mirrors.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geocats.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/nonaco.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/mirrors.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/cactusFarmer.png" type="Texture" id=52]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/ComputerButton.gd" type="Script" id=53]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/cactusFarmer2.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Levels/GeoCity/Complex/Cats/Liet.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/desertCat.png" type="Texture" id=56]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/DesertTelescope.gd" type="Script" id=57]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/fg_panel.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/bg_plants.png" type="Texture" id=59]
+
+[sub_resource type="SpriteFrames" id=455]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 90.0
+} ]
+
+[sub_resource type="GDScript" id=456]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=450]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=451]
+atlas = ExtResource( 4 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=452]
+atlas = ExtResource( 4 )
+region = Rect2( 28, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=453]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 11, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=454]
+atlas = ExtResource( 4 )
+region = Rect2( 14, 11, 14, 11 )
+
+[sub_resource type="SpriteFrames" id=457]
+animations = [ {
+"frames": [ SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 450 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 452 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ), SubResource( 451 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 453 ), SubResource( 454 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=458]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=459]
+extents = Vector2( 84.9146, 39.1112 )
+
+[sub_resource type="RectangleShape2D" id=460]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=461]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=462]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 12, 10 )
+
+[sub_resource type="AtlasTexture" id=463]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 10, 12, 10 )
+
+[sub_resource type="AtlasTexture" id=464]
+atlas = ExtResource( 19 )
+region = Rect2( 12, 0, 12, 10 )
+
+[sub_resource type="AtlasTexture" id=465]
+atlas = ExtResource( 19 )
+region = Rect2( 24, 0, 12, 10 )
+
+[sub_resource type="SpriteFrames" id=466]
+animations = [ {
+"frames": [ SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 463 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ), SubResource( 462 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 464 ), SubResource( 465 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=467]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=468]
+extents = Vector2( 47.5042, 31.8105 )
+
+[sub_resource type="RectangleShape2D" id=469]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=470]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=471]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=472]
+atlas = ExtResource( 18 )
+region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=473]
+atlas = ExtResource( 18 )
+region = Rect2( 24, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=474]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 8, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=475]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=476]
+atlas = ExtResource( 18 )
+region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="SpriteFrames" id=477]
+animations = [ {
+"frames": [ SubResource( 471 ), SubResource( 472 ), SubResource( 473 ), SubResource( 474 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 472 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 471 ), SubResource( 473 ), SubResource( 471 ), SubResource( 471 ), SubResource( 473 ), SubResource( 473 ), SubResource( 473 ), SubResource( 473 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 475 ), SubResource( 476 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=478]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=479]
+extents = Vector2( 18.7898, 11.573 )
+
+[sub_resource type="RectangleShape2D" id=480]
+extents = Vector2( 37.4065, 23.6743 )
+
+[sub_resource type="GDScript" id=481]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=482]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=483]
+atlas = ExtResource( 17 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=484]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=485]
+atlas = ExtResource( 17 )
+region = Rect2( 28, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=486]
+atlas = ExtResource( 17 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="SpriteFrames" id=487]
+animations = [ {
+"frames": [ SubResource( 482 ), SubResource( 483 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ), SubResource( 482 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 484 ), SubResource( 485 ), SubResource( 486 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=488]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=489]
+extents = Vector2( 59.8999, 35.0479 )
+
+[sub_resource type="RectangleShape2D" id=490]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=491]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=492]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=493]
+atlas = ExtResource( 52 )
+region = Rect2( 12, 8, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=494]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 8, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=495]
+atlas = ExtResource( 52 )
+region = Rect2( 24, 8, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=496]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 16, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=497]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=498]
+atlas = ExtResource( 52 )
+region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=499]
+atlas = ExtResource( 52 )
+region = Rect2( 24, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=500]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 8, 12, 8 )
+
+[sub_resource type="SpriteFrames" id=501]
+animations = [ {
+"frames": [ SubResource( 492 ), SubResource( 493 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 494 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 494 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 493 ), SubResource( 493 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 496 ), SubResource( 495 ), SubResource( 495 ), SubResource( 496 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 495 ), SubResource( 493 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ), SubResource( 492 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 497 ), SubResource( 498 ), SubResource( 499 ), SubResource( 500 ), SubResource( 497 ), SubResource( 498 ), SubResource( 497 ), SubResource( 499 ), SubResource( 498 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=502]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=503]
+extents = Vector2( 59.8999, 35.0479 )
+
+[sub_resource type="RectangleShape2D" id=504]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=505]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=506]
+atlas = ExtResource( 54 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=507]
+atlas = ExtResource( 54 )
+region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=508]
+atlas = ExtResource( 54 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=509]
+atlas = ExtResource( 54 )
+region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="SpriteFrames" id=510]
+animations = [ {
+"frames": [ SubResource( 506 ), SubResource( 507 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 507 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ), SubResource( 506 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 508 ), SubResource( 509 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=511]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=512]
+extents = Vector2( 59.8999, 35.0479 )
+
+[sub_resource type="RectangleShape2D" id=513]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=514]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	sprite.play()
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = true
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(20)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="AtlasTexture" id=515]
+atlas = ExtResource( 56 )
+region = Rect2( 0, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=516]
+atlas = ExtResource( 56 )
+region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=517]
+atlas = ExtResource( 56 )
+region = Rect2( 24, 0, 12, 8 )
+
+[sub_resource type="SpriteFrames" id=518]
+animations = [ {
+"frames": [ SubResource( 515 ), SubResource( 516 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 516 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 516 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 515 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ), SubResource( 517 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=519]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=520]
+extents = Vector2( 59.8999, 35.0479 )
+
+[sub_resource type="RectangleShape2D" id=521]
+extents = Vector2( 23.6621, 17.57 )
+
+[sub_resource type="GDScript" id=522]
+script/source = "extends MovingBody
+
+var anim = \"idle\"
+
+func _ready():
+	sprite = $AnimatedSprite
+	jump_height = 30
+	._ready()
+
+var ticks = 0
+var jump_tick = 100
+var walk_tick = 10
+var direction = 1
+var idle = false
+func _physics_process(delta):
+	if not idle:
+		ticks += 1
+		
+		if ticks % jump_tick == 0:
+			jump(jump_height)
+			jump_tick = int(rand_range(200, 400))
+		if (ticks / 10) % walk_tick == 0:
+			velocity.x = 100 * direction
+			walk_tick = int(rand_range(8, 20))
+		if ticks % 200 == 0:
+			direction *= -1
+			velocity.x = 0
+		if velocity.x == 0:
+			anim = \"idle\"
+		else:
+			anim = \"walk\"
+	else:
+		velocity.x = 0
+		
+	sprite.flip_h = direction - 1		
+	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+	sprite.play(anim)
+	sprite.animation = anim
+"
+
+[sub_resource type="GDScript" id=523]
+script/source = "extends InteractMain
+class_name InteractChat
+
+var active : bool
+
+var parent_name : String
+var convo_file : String
+var music_file : String
+
+func _get_complex_convo():
+	var scene_name = get_tree().get_current_scene().name
+	return parent_name + \"_\" + scene_name
+
+func show_chat():
+	parent_name = get_parent().name
+	if parent_name == \"Affogato\":
+		convo_file = _get_complex_convo()
+		music_file = parent_name.to_lower()
+	else:
+		convo_file = parent_name.replace(\" \", \"_\")
+		music_file = convo_file.to_lower()
+	
+	active = true
+	if chat_with:
+		chat_with.hide_after = false
+		chat_with.visible = true
+		chat_with.name_label.text = parent_name
+
+func hide_chat():
+	if chat_with:
+		chat_with.visible = false
+		chat_with.stop()
+	active = false
+
+func _on_body_entered(body):
+	if body.name == \"Player\" and not disabled:
+		show_chat()
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		hide_chat()
+		if nft_possible:
+			nft.main.visible = false
+
+func _process(delta):
+	if disabled and active:
+		hide_chat()
+	if active and \"idle\" in get_parent():
+		if chat_with.started:
+			get_parent().idle = true
+		else:
+			get_parent().idle = false
+	._process(delta)
+
+func _input(_event):
+	if active:
+		if Input.is_action_just_pressed(\"interact\"):
+			if not chat_with.started:
+				_add_audio(\"NPC\", music_file)
+				chat_with.start(convo_file)
+			if nft_possible:
+				nft.reward(nft_id, false)
+"
+
+[sub_resource type="RectangleShape2D" id=524]
+extents = Vector2( 40.8073, 23.3975 )
+
+[sub_resource type="AtlasTexture" id=525]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=526]
+atlas = ExtResource( 55 )
+region = Rect2( 32, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=527]
+atlas = ExtResource( 55 )
+region = Rect2( 16, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=528]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 12, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=529]
+atlas = ExtResource( 55 )
+region = Rect2( 16, 12, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=530]
+atlas = ExtResource( 55 )
+region = Rect2( 32, 12, 16, 12 )
+
+[sub_resource type="SpriteFrames" id=531]
+animations = [ {
+"frames": [ SubResource( 525 ), SubResource( 525 ), SubResource( 525 ), SubResource( 526 ), SubResource( 527 ), SubResource( 527 ), SubResource( 527 ), SubResource( 528 ), SubResource( 528 ), SubResource( 528 ), SubResource( 528 ), SubResource( 528 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 529 ), SubResource( 530 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
+} ]
+
+[sub_resource type="GDScript" id=532]
+script/source = "extends AnimatedSprite
+
+# this was created to avoid needing the playing bool true in the scene
+# which keeps rewriting the scene file and causing merge issues
+
+func _ready():
+	play()
+"
+
+[sub_resource type="RectangleShape2D" id=533]
+extents = Vector2( 27.4358, 20.873 )
+
+[sub_resource type="SpriteFrames" id=534]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 16 ), ExtResource( 8 ), null ],
+"loop": false,
+"name": "open",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=535]
+extents = Vector2( 12.1869, 10.7175 )
+
+[sub_resource type="RectangleShape2D" id=536]
+extents = Vector2( 169, 73 )
+
+[sub_resource type="RectangleShape2D" id=537]
+extents = Vector2( 44.9996, 49 )
+
+[sub_resource type="RectangleShape2D" id=538]
+extents = Vector2( 59, 9.99997 )
+
+[sub_resource type="RectangleShape2D" id=539]
+extents = Vector2( 19, 9.99997 )
+
+[sub_resource type="RectangleShape2D" id=540]
+extents = Vector2( 79, 9.99997 )
+
+[sub_resource type="RectangleShape2D" id=541]
+extents = Vector2( 49, 9.99997 )
+
+[sub_resource type="RectangleShape2D" id=542]
+extents = Vector2( 84, 18.0001 )
+
+[sub_resource type="RectangleShape2D" id=543]
+extents = Vector2( 30, 91.9999 )
+
+[sub_resource type="RectangleShape2D" id=544]
+extents = Vector2( 155, 18.0001 )
+
+[sub_resource type="RectangleShape2D" id=545]
+extents = Vector2( 82.9985, 14 )
+
+[sub_resource type="RectangleShape2D" id=546]
+extents = Vector2( 74.9995, 7 )
+
+[sub_resource type="RectangleShape2D" id=547]
+extents = Vector2( 143, 5.99988 )
+
+[sub_resource type="RectangleShape2D" id=548]
+extents = Vector2( 159, 5.99988 )
+
+[sub_resource type="RectangleShape2D" id=549]
+extents = Vector2( 59.0713, 10.5017 )
+
+[sub_resource type="RectangleShape2D" id=550]
+extents = Vector2( 41.6938, 5.1947 )
+
+[sub_resource type="RectangleShape2D" id=551]
+extents = Vector2( 159, 15.9999 )
+
+[sub_resource type="RectangleShape2D" id=552]
+extents = Vector2( 294, 15.9999 )
+
+[sub_resource type="RectangleShape2D" id=553]
+extents = Vector2( 52.0505, 61.9998 )
+
+[sub_resource type="RectangleShape2D" id=554]
+extents = Vector2( 91, 4 )
+
+[sub_resource type="RectangleShape2D" id=555]
+extents = Vector2( 17.6735, 61 )
+
+[sub_resource type="RectangleShape2D" id=556]
+extents = Vector2( 40, 5.00006 )
+
+[sub_resource type="RectangleShape2D" id=557]
+extents = Vector2( 58.9999, 5.00006 )
+
+[sub_resource type="RectangleShape2D" id=558]
+extents = Vector2( 20.0001, 5.00006 )
+
+[sub_resource type="RectangleShape2D" id=559]
+extents = Vector2( 13.9999, 5.00006 )
+
+[sub_resource type="RectangleShape2D" id=560]
+extents = Vector2( 10, 1579.26 )
+
+[sub_resource type="GDScript" id=561]
+script/source = "extends InteractButton
+
+
+func _input(event):
+	if _can_interact():
+		object.visible = false
+		if name == \"GoToDesert\":
+			SceneChanger.change_scene(\"GeoLodge\", 2, \"WoodDoorLatchOpen1\", 1.5)
+"
+
+[sub_resource type="RectangleShape2D" id=562]
+extents = Vector2( 34.2662, 45.8725 )
+
+[sub_resource type="RectangleShape2D" id=563]
+extents = Vector2( 12.157, 98.633 )
+
+[sub_resource type="GDScript" id=564]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=565]
+extents = Vector2( 16.9067, 47.8872 )
+
+[sub_resource type="GDScript" id=566]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=567]
+extents = Vector2( 25, 136 )
+
+[sub_resource type="GDScript" id=568]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=569]
+extents = Vector2( 19, 108 )
+
+[sub_resource type="GDScript" id=570]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=571]
+extents = Vector2( 19, 278.057 )
+
+[sub_resource type="GDScript" id=572]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=573]
+extents = Vector2( 34, 360 )
+
+[sub_resource type="GDScript" id=574]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=575]
+extents = Vector2( 25, 618 )
+
+[sub_resource type="GDScript" id=576]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=577]
+extents = Vector2( 25, 166 )
+
+[sub_resource type="RectangleShape2D" id=578]
+extents = Vector2( 31, 349.385 )
+
+[sub_resource type="GDScript" id=579]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=580]
+extents = Vector2( 27, 552 )
+
+[sub_resource type="GDScript" id=581]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=582]
+extents = Vector2( 31, 302 )
+
+[sub_resource type="GDScript" id=583]
+script/source = "extends Area2D
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=584]
+extents = Vector2( 31, 53 )
+
+[sub_resource type="ButtonGroup" id=585]
+
+[sub_resource type="ButtonGroup" id=586]
+
+[sub_resource type="DynamicFontData" id=587]
+font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=588]
+size = 55
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+extra_spacing_top = -3
+extra_spacing_bottom = -3
+font_data = SubResource( 587 )
+
+[sub_resource type="RectangleShape2D" id=589]
+extents = Vector2( 113.714, 68.1932 )
+
+[sub_resource type="RectangleShape2D" id=590]
+extents = Vector2( 73, 78 )
+
+[node name="DesertOutpost" type="Node2D"]
+position = Vector2( 22, 730.743 )
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="ColorRect" type="ColorRect" parent="BelowPlayer"]
+margin_left = -259.231
+margin_top = -275.704
+margin_right = 1427.77
+margin_bottom = 813.296
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stars" type="Sprite" parent="BelowPlayer"]
+position = Vector2( -1.49012e-08, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="sun" type="AnimatedSprite" parent="BelowPlayer"]
+position = Vector2( 803.545, 65.8 )
+frames = SubResource( 455 )
+frame = 1
+speed_scale = 0.1
+centered = false
+script = ExtResource( 12 )
+
+[node name="bg" type="Sprite" parent="BelowPlayer"]
+position = Vector2( -0.2, 0 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="decor" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="BelowPlayer"]
+position = Vector2( 600.016, 300.005 )
+texture = ExtResource( 59 )
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Letharia" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 5159.53, 404.255 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 456 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Letharia"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 457 )
+animation = "idle"
+frame = 18
+playing = true
+
+[node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
+script = SubResource( 458 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia/LethariaArea2D"]
+position = Vector2( 57.7109, -14.7009 )
+shape = SubResource( 459 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 460 )
+
+[node name="Ernst" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 3690.36, 330 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 461 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ernst"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 466 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
+script = SubResource( 467 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ernst/ErnstArea2D"]
+position = Vector2( 20.6821, -3.65565 )
+shape = SubResource( 468 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ernst"]
+position = Vector2( 0.000121832, 2.8901 )
+shape = SubResource( 469 )
+
+[node name="Sandy" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 2743.2, 2048.26 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 470 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Sandy"]
+position = Vector2( 3.87964, 0.479492 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 477 )
+animation = "idle"
+frame = 7
+playing = true
+
+[node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
+position = Vector2( 7.72192, 4.04468 )
+script = SubResource( 478 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandy/SandKittenArea2D"]
+position = Vector2( -1.00005, 1.00002 )
+shape = SubResource( 479 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandy"]
+position = Vector2( 23.9999, -7.5907 )
+shape = SubResource( 480 )
+
+[node name="Nostoc" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 4414.1, 1530.68 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 481 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nostoc"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 487 )
+animation = "idle"
+frame = 10
+playing = true
+
+[node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
+script = SubResource( 488 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc/TaurArea2D"]
+position = Vector2( 3.14985, -10.5166 )
+shape = SubResource( 489 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 490 )
+
+[node name="Savanna" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 3660.74, 1488.87 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 491 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Savanna"]
+position = Vector2( 3.1499, 8.49988 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 501 )
+animation = "walk"
+frame = 3
+playing = true
+
+[node name="SandcatArea2D" type="Area2D" parent="NPC/Savanna"]
+script = SubResource( 502 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Savanna/SandcatArea2D"]
+position = Vector2( 3.14985, -10.5166 )
+shape = SubResource( 503 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Savanna"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 504 )
+
+[node name="Sol" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 605.558, 375.568 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 505 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Sol"]
+position = Vector2( 0, 7.95795 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 510 )
+animation = "idle"
+frame = 3
+playing = true
+
+[node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
+script = SubResource( 511 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sol/Sandcat2Area2D"]
+position = Vector2( 3.14985, -10.5166 )
+shape = SubResource( 512 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sol"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 513 )
+
+[node name="Fier" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 5823.38, 2331.33 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 514 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Fier"]
+position = Vector2( 0, 7.95795 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 518 )
+animation = "idle"
+frame = 29
+playing = true
+
+[node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
+script = SubResource( 519 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Fier/Sandcat3Area2D"]
+position = Vector2( 3.14985, -10.5166 )
+shape = SubResource( 520 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Fier"]
+position = Vector2( 3.14978, 6.61462 )
+shape = SubResource( 521 )
+
+[node name="Liet_Desert" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 3474.58, 2593.37 )
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 522 )
+
+[node name="Area2D" type="Area2D" parent="NPC/Liet_Desert"]
+script = SubResource( 523 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert/Area2D"]
+position = Vector2( 18.1068, 16.6215 )
+shape = SubResource( 524 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Liet_Desert"]
+position = Vector2( -1.33636, -6.2363 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 531 )
+animation = "walk"
+frame = 1
+speed_scale = 0.3
+centered = false
+flip_h = true
+script = SubResource( 532 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert"]
+position = Vector2( 30.0585, 20.9007 )
+shape = SubResource( 533 )
+
+[node name="Default" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
+position = Vector2( 0, -2 )
+
+[node name="Player" parent="Default" index="1"]
+position = Vector2( 5342, 522 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
+limit_right = 6000
+limit_bottom = 4500
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="fg_base" type="Sprite" parent="AbovePlayer"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="door" type="Area2D" parent="AbovePlayer"]
+position = Vector2( 46.8, 379.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="AbovePlayer/door"]
+position = Vector2( -0.599995, 0 )
+frames = SubResource( 534 )
+animation = "open"
+frame = 3
+speed_scale = 0.5
+playing = true
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/door"]
+position = Vector2( 345.972, -268.557 )
+shape = SubResource( 535 )
+
+[node name="Sprite" type="Sprite" parent="AbovePlayer"]
+position = Vector2( 503.984, 156 )
+texture = ExtResource( 58 )
+
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( 6.4, 888 )
+polygon = PoolVector2Array( -5.88358, 0.960022, -27.2, 108, 582.4, 253.6, 1006.4, 577.6, 1473.6, 1088, 1703.2, 1160, 1920, 1264, 2566.4, 1260.8, 2584, 1256, 2649.6, 1251.2, 2932, 1232, 3012, 1206.4, 4000.8, 1187.2, 4150.4, 1148.8, 4364.8, 980.8, 4728.8, 1040.8, 4793.6, 1019.2, 4760.8, 1012.8, 4705.6, 1008, 4670.4, 997.6, 4620.8, 996.8, 4533.6, 964, 4497.6, 924, 4378.4, 924.8, 4324, 980.8, 4156, 1092.8, 4100, 1116.8, 4088, 1130.4, 4032.8, 1153.6, 3979.2, 1173.6, 3028.8, 1172.8, 3001.6, 1200, 2948, 1200.8, 2925.6, 1220.8, 2668, 1220.8, 2649.6, 1240, 2576, 1240, 2567.2, 1248.8, 1929.6, 1249.6, 1704.8, 1136, 1672.8, 1081.6, 1667.2, 1076, 1626.4, 1048, 1584, 1023.2, 1546.4, 1009.6, 1496, 1009.6, 1472.8, 1016.8, 1449.6, 1016.8, 1432, 988, 1382.4, 902.4, 1368, 856.8, 1508.8, 791.2, 1509.6, 923.2, 1544.8, 923.2, 1545.6, 699.2, 1576.8, 699.2, 1576.8, 664.8, 1501.6, 664.8, 939.2, 382.4, 861.6, 379.912, 860.8, 256.712, 820.8, 256.712, 820.8, 194.312, 775.2, 179.912, 648.291, 123.327, 519.006, 89.683, 440.793, 93.8793, 345.908, 80.6483, 274.272, 68.7405, 228.19, 46.1343, 169.596, 16.0812, 117.542, 0.582031 )
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Platforms"]
+position = Vector2( 2084, 1516.72 )
+polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328.8, 874.4, 324, 914.4, 304.8, 980, 288.8, 1042.4, 269.6, 1125.6, 264.8, 1167.2, 260, 1214.4, 248.8, 1276.8, 248, 1307.2, 233.6, 1332.8, 233.6, 1362.4, 221.6, 1447.2, 194.4, 1490.4, 189.6, 1545.6, 193.6, 1603.2, 184.8, 1601.6, -30.4003, 1580.8, -48.8, 1379.2, 8, 1221.6, -108.8, 1221.27, -344.868, 1341.52, -344.493, 1346.29, -338.972, 1343.47, -326.974, 1342.4, -256.8, 1496, -256.8, 1496, -366.4, 1528, -384, 1533.6, -436, 1488, -472.8, 1404, -479.2, 1358.4, -470.4, 1342.4, -439.2, 1343.2, -380, 1246.4, -380, 1172.8, -382.4, 1162.4, -156.8, 1126.4, -188, 1128, -384, 1155.2, -435.2, 1227.2, -525.6, 1348, -574.4, 1461.6, -563.2, 1569.6, -494.4, 1606.4, -438.4, 1633.6, -364, 1635.2, 186.4, 1546.4, 212, 1465.6, 204, 1352.8, 246.4, 1061.6, 278.4, 960, 301.6, 841.6, 345.6, 784.8, 357.6, 147.2, 354.4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1652, 546.4 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 536 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1404, 347.2 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 537 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1620.8, 316 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 538 )
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1507.2, 316 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 539 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1636.8, 248 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 540 )
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1483.2, 248 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 541 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2115.2, 850.4 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 542 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2228.8, 872.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 543 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2260, 1018.4 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 544 )
+one_way_collision = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1577.6, 1800 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 545 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2172, 1673.6 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 546 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2249.6, 1068.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 547 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2004, 1140.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 548 )
+one_way_collision = true
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 3543.12, 1252.65 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 549 )
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 3458.29, 1179.55 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 550 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2004, 1156.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 548 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 2003.2, 1264.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 551 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1552.8, 1308.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 552 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 1897.6, 861.6 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 553 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 903.2, 631.2 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 554 )
+one_way_collision = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 814.4, 604 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 555 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 864, 589.6 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 556 )
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 526.4, 441.6 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 557 )
+one_way_collision = true
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 552.8, 348 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 558 )
+one_way_collision = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 480.8, 324.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 558 )
+one_way_collision = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 639.2, 408 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 558 )
+one_way_collision = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 418.4, 536 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 559 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms"]
+position = Vector2( 2556.8, 627.2 )
+polygon = PoolVector2Array( 291.2, 44, 489.6, 44.8, 489.6, -92, 376, -92, 376, -148, 488, -148, 488.199, -207.405, 607.2, -207.2, 607.199, -231.2, 671.199, -231.2, 671.199, -207.2, 688, -207.2, 699.199, -198.4, 700, -164.8, 744.8, -156.8, 747.199, -181.6, 715.199, -267.2, 668.8, -323.2, 631.199, -364.8, 580, -406.4, 526.399, -439.2, 413.6, -470.4, 347.199, -472.8, 352, -347.2, 483.199, -347.2, 483.199, -283.2, 414.399, -283.2, 308, -268, 215.199, -267.2, 149.374, -247.568, 148.787, -146.83, 307.199, -147.2, 307.199, -135.2, 191.199, -135.2, 176.992, -124.46, 177.248, 157.905, 233.435, 158.725, 231.079, 298.756, 487.2, 304.8, 487.199, 312.8, 233.6, 312, 78.3997, 311.2, 45.5996, 221.6, 8.79956, 162.4, -40.8005, 64, -58.4004, -16, -55.2004, -117.6, -40.8005, -202.4, 23.9995, -315.2, 79.1995, -370.4, 163.199, -433.6, 248, -466.4, 337.6, -479.2, 400.8, -477.6, 470.399, -462.4, 512.8, -449.6, 549.6, -430.4, 595.199, -402.4, 636, -368, 672.8, -327.2, 714.399, -275.2, 742.399, -215.2, 762.4, -149.6, 768, -64, 744, 69.6, 635.2, 252, 636.8, 312, 535.199, 313.6, 534.399, 229.6, 291.199, 229.6 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 4164, 444.8, 4072.8, 466.4, 4047.2, 538.4, 4052, 352.8, 4090.4, 288.8, 4149.6, 242.4, 4223.2, 219.2, 4307.2, 217.6, 4378.4, 250.4, 4421.6, 288.8, 4442.4, 320.8, 4464.8, 354.4, 4479.2, 410.4, 4481.6, 588, 4298.4, 653.6, 4166.4, 637.6, 4124, 607.2, 4122.56, 516.395, 4239.51, 517.263, 4420, 520, 4425.6, 511.2, 4444.8, 467.2, 4444.8, 427.2, 4433.6, 407.2, 4424.8, 402.4, 4407.2, 387.2, 4368, 388.8, 4367.2, 368, 4357.6, 365.6, 4355.2, 351.2, 4307.2, 350.4, 4304.8, 229.6, 4236.8, 225.6, 4152, 248.8, 4095.2, 292.8, 4064, 352, 4100.8, 352.8, 4199.2, 352.8, 4199.2, 397.6 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 2912, 1212, 3043.2, 1212, 3044, 1409.6, 3012, 1412.8, 2964.8, 1445.6, 2898.4, 1446.4, 2831.2, 1394.4, 2816.8, 1336, 2822.4, 1294.4, 2845.6, 1254.4, 2870.4, 1230.4 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Platforms"]
+position = Vector2( 1562.4, 244.8 )
+polygon = PoolVector2Array( 2921.6, 1223.2, 2986.4, 1240, 3019.2, 1272.8, 3034.4, 1311.2, 3036.09, 1440.6, 3001.91, 1420, 2959.2, 1434.4, 2899.2, 1436, 2862.87, 1420.94, 2822.15, 1441.53, 2824.75, 1310.01, 2848.8, 1257.6, 2874.4, 1236.8 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Platforms"]
+position = Vector2( 899.2, 366.4 )
+polygon = PoolVector2Array( 3036.8, 1378.4, 3166.4, 1405.6, 3400.8, 1444, 3489.6, 1446.4, 3490.4, 1454.4, 3400.8, 1450.4, 2895.2, 1359.2, 2812.8, 1349.6, 2814.4, 1336.8, 2885.6, 1339.2 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 1955.2, 399.2, 1971.2, 400, 1973.6, 702.4, 1893.65, 764.245, 1891.2, 784, 1890.4, 812, 1883.2, 907.2, 1940, 904, 1996.8, 904, 2187.2, 1004.8, 2251.2, 1004, 2251.2, 1032.8, 2102.4, 1035.2, 2059.2, 1071.2, 1956.8, 1069.6, 1851.2, 1013.6, 1789.6, 910.4, 1787.2, 790.4, 1808.8, 730.4, 1842.4, 682.4, 1899.2, 635.2, 1956.8, 604, 1952, 432, 1938.4, 420, 1608, 422.4, 1598.4, 416, 1598.4, 401.6 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 2069.6, 476.8, 2071.2, 554.4, 2027.2, 554.4, 2032, 694.4, 2064, 695.2, 2102.4, 716, 2148, 758.4, 2167.2, 796, 2167.2, 833.6, 2143.2, 870.4, 2162.4, 888, 2161.6, 907.2, 2145.6, 924, 2205.6, 946.4, 2226.4, 946.4, 2242.4, 876.8, 2252.8, 799.2, 2194.4, 694.4, 2160.8, 655.2, 2078.4, 612.8, 2078.4, 503.2, 2076, 342.4, 2048, 312.8, 1924, 309.6, 1860.8, 312.8, 1838.4, 312.8, 1816.8, 268, 1776, 220.8, 1692.8, 162.4, 1632.8, 145.6, 1599.2, 143.2, 1558.4, 146.4, 1516, 156, 1415.2, 196.8, 1360.8, 300.8, 1397.6, 368.8, 1524, 416, 1524, 399.2, 1495.2, 388, 1472, 384, 1440.8, 374.4, 1403.2, 358.4, 1380, 308, 1372.8, 293.6, 1420.8, 207.2, 1520, 164.8, 1596, 148.8, 1612, 152, 1632.8, 168.8, 1636.8, 176.8, 1656, 207.2, 1664, 240, 1668, 260, 1651.2, 308.8, 1656.8, 325.6, 1821.6, 326.4, 1948.8, 324, 2059.2, 340.8 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 872.8, 489.6, 940, 495.2, 957.6, 504.8, 994.4, 539.2, 1017.6, 577.6, 1025.6, 608.8, 1023.2, 655.2, 1024.8, 709.6, 989.6, 746.4, 961.6, 750.4, 869.6, 750.4, 869.6, 668, 910.4, 672, 941.6, 660, 968, 642.4, 977.074, 630.188, 976, 586.4, 956, 560, 932.8, 544, 920, 536, 868, 536, 840.392, 556.9, 818.4, 581.6, 812.8, 603.2, 815.2, 622.4, 824, 641.6, 832, 652.8, 831.2, 748.8, 772.8, 699.2, 769.6, 600.8, 784, 557.6, 808, 528.8, 838.4, 506.4 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 826.4, 1082.4, 826.4, 1090.4, 925.6, 1128.8, 942.4, 1141.6, 1003.2, 1164.8, 1065.6, 1190.4, 1122.4, 1200.8, 1173.6, 1203.2, 1217.6, 1216, 1261.6, 1236.8, 1282.4, 1247.2, 1316.8, 1252.8, 1333.6, 1259.2, 1333.6, 1278.4, 1315.2, 1300, 1324.8, 1315.2, 1344.8, 1314.4, 1344, 1258.4, 1332.8, 1248.8, 1312.8, 1240.8, 1297.6, 1229.6, 1281.6, 1230.4, 1268, 1232.8, 1257.6, 1228.8, 1215.2, 1205.6, 1172, 1192.8, 1116.8, 1192.8, 1072.8, 1184.8, 1046.4, 1176, 1022.4, 1167.2, 985.6, 1148.8, 958.4, 1136.8, 948.8, 1136.8, 928, 1120.8, 910.4, 1119.2, 890.4, 1105.6, 860.8, 1097.6, 844, 1086.4 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 1192, 1291.2, 1161.6, 1298.4, 1140.8, 1300, 1140, 1311.2, 1148, 1314.4, 1241.6, 1315.2, 1244, 1309.6, 1225.6, 1307.2 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Platforms"]
+polygon = PoolVector2Array( 1552.8, 1622.4, 1552.8, 1634.4, 1584, 1644.8, 1644, 1666.4, 1683.2, 1685.6, 1720.8, 1700.8, 1748.8, 1706.4, 1820.8, 1706.4, 1844, 1708.8, 1875.2, 1718.4, 1920.8, 1725.6, 1943.2, 1730.4, 1988, 1748.8, 2030.4, 1766.4, 2061.6, 1778.4, 2081.6, 1794.4, 2125.6, 1824, 2153.6, 1838.4, 2168.8, 1848.8, 2182.4, 1859.2, 2196.8, 1856, 2213.6, 1860, 2227.2, 1868, 2233.6, 1871.2, 2234.4, 1860.8, 2220.8, 1842.4, 2208.8, 1833.6, 2187.2, 1833.6, 2177.6, 1844.8, 2167.2, 1840.8, 2136, 1817.6, 2093.6, 1791.2, 2055.2, 1766.4, 2012, 1750.4, 1979.2, 1737.6, 1938.4, 1720.8, 1881.6, 1712, 1826.4, 1697.6, 1749.6, 1700, 1716.8, 1690.4, 1665.6, 1671.2, 1573.6, 1634.4 )
+one_way_collision = true
+
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
+position = Vector2( 22, 83 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2( -41, 1447.68 )
+shape = SubResource( 560 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="End"]
+position = Vector2( 5977, 1370.55 )
+shape = SubResource( 560 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+stream_paused = true
+bus = "Music"
+
+[node name="GoToDesert" type="Area2D" parent="."]
+position = Vector2( 28.5323, 404.255 )
+script = SubResource( 561 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToDesert"]
+position = Vector2( 5904.87, 1920.34 )
+shape = SubResource( 562 )
+
+[node name="Button" type="Sprite" parent="GoToDesert"]
+visible = false
+position = Vector2( 0, -60 )
+scale = Vector2( 0.198469, 0.207692 )
+texture = ExtResource( 14 )
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder2" type="Area2D" parent="Ladders"]
+position = Vector2( 3614.83, 721.517 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2( 0, -4.29153e-06 )
+shape = SubResource( 563 )
+
+[node name="Ladder13" type="Area2D" parent="Ladders"]
+position = Vector2( 3614.83, 721.517 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 564 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder13"]
+position = Vector2( 690.305, 800.853 )
+shape = SubResource( 565 )
+
+[node name="Ladder3" type="Area2D" parent="Ladders"]
+position = Vector2( 2015, 2071 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 566 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2( 0, 4 )
+shape = SubResource( 567 )
+
+[node name="Ladder9" type="Area2D" parent="Ladders"]
+position = Vector2( 1135, 1473 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 568 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder9"]
+position = Vector2( 0, 4 )
+shape = SubResource( 569 )
+
+[node name="Ladder10" type="Area2D" parent="Ladders"]
+position = Vector2( 1066, 1048.14 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 570 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder10"]
+position = Vector2( 0, 4.26245 )
+shape = SubResource( 571 )
+
+[node name="Ladder11" type="Area2D" parent="Ladders"]
+position = Vector2( 672, 904 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 572 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder11"]
+position = Vector2( 0, 4 )
+shape = SubResource( 573 )
+
+[node name="Ladder7" type="Area2D" parent="Ladders"]
+position = Vector2( 5124, 1155 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 574 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7"]
+position = Vector2( 0, 4 )
+shape = SubResource( 575 )
+
+[node name="Ladder8" type="Area2D" parent="Ladders"]
+position = Vector2( 5342, 435 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 576 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder8"]
+position = Vector2( 0, 4 )
+shape = SubResource( 577 )
+
+[node name="Ladder4" type="Area2D" parent="Ladders"]
+position = Vector2( 4099.38, 1771.38 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
+position = Vector2( 0, 23 )
+shape = SubResource( 578 )
+
+[node name="Ladder12" type="Area2D" parent="Ladders"]
+position = Vector2( 3835, 1704 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 579 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder12"]
+shape = SubResource( 580 )
+
+[node name="Ladder5" type="Area2D" parent="Ladders"]
+position = Vector2( 2499, 715 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 581 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
+shape = SubResource( 582 )
+
+[node name="Ladder6" type="Area2D" parent="Ladders"]
+position = Vector2( 1935, 351 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 583 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6"]
+shape = SubResource( 584 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2( 0.33, 0.33 )
+transform = Transform2D( 0.33, 0, 0, 0.33, 0, 0 )
+
+[node name="Computer" type="Control" parent="CanvasLayer"]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Computer"]
+position = Vector2( 0, 68 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="Border" type="Sprite" parent="CanvasLayer/Computer"]
+position = Vector2( 0, 68 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="Glare" type="Sprite" parent="CanvasLayer/Computer"]
+position = Vector2( 0, 68 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Buttons" type="Control" parent="CanvasLayer/Computer"]
+margin_left = 883.0
+margin_top = 259.0
+margin_right = 923.0
+margin_bottom = 299.0
+script = ExtResource( 53 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weather" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -803.0
+margin_top = -46.0
+margin_right = -679.0
+margin_bottom = 74.0
+group = SubResource( 585 )
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 25 )
+texture_focused = ExtResource( 25 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Awareness" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -703.0
+margin_top = 96.055
+margin_right = -579.0
+margin_bottom = 216.055
+group = SubResource( 586 )
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 20 )
+texture_focused = ExtResource( 20 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Horticulture" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -433.0
+margin_top = -46.0
+margin_right = -309.0
+margin_bottom = 74.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 47 )
+texture_pressed = ExtResource( 29 )
+texture_focused = ExtResource( 29 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sand" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -617.477
+margin_top = -46.0
+margin_right = -493.477
+margin_bottom = 74.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 39 )
+texture_pressed = ExtResource( 28 )
+texture_focused = ExtResource( 28 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mewlange" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -513.823
+margin_top = 96.055
+margin_right = -389.823
+margin_bottom = 216.055
+group = SubResource( 586 )
+texture_normal = ExtResource( 37 )
+texture_pressed = ExtResource( 40 )
+texture_focused = ExtResource( 40 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nonaco" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -329.0
+margin_top = 96.055
+margin_right = -205.0
+margin_bottom = 216.055
+group = SubResource( 586 )
+texture_normal = ExtResource( 50 )
+texture_pressed = ExtResource( 38 )
+texture_focused = ExtResource( 38 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wildlife" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -803.0
+margin_top = 233.0
+margin_right = -679.0
+margin_bottom = 353.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 44 )
+texture_pressed = ExtResource( 42 )
+texture_focused = ExtResource( 42 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Radiation" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -617.477
+margin_top = 233.0
+margin_right = -493.477
+margin_bottom = 353.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 46 )
+texture_pressed = ExtResource( 45 )
+texture_focused = ExtResource( 45 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Geology" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -433.0
+margin_top = 233.0
+margin_right = -309.0
+margin_bottom = 353.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 30 )
+texture_focused = ExtResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Georing" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -703.0
+margin_top = 377.946
+margin_right = -579.0
+margin_bottom = 497.946
+group = SubResource( 586 )
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 35 )
+texture_focused = ExtResource( 35 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mirror" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -513.823
+margin_top = 377.946
+margin_right = -389.823
+margin_bottom = 497.946
+group = SubResource( 586 )
+texture_normal = ExtResource( 48 )
+texture_pressed = ExtResource( 51 )
+texture_focused = ExtResource( 51 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Symbiosis" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -329.0
+margin_top = 377.946
+margin_right = -205.0
+margin_bottom = 497.946
+group = SubResource( 586 )
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 36 )
+texture_focused = ExtResource( 36 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Geocache" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -244.0
+margin_top = -46.0
+margin_right = -120.0
+margin_bottom = 74.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 41 )
+texture_pressed = ExtResource( 33 )
+texture_focused = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Geocat" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
+margin_left = -242.0
+margin_top = 233.0
+margin_right = -118.0
+margin_bottom = 353.0
+group = SubResource( 586 )
+texture_normal = ExtResource( 49 )
+texture_pressed = ExtResource( 43 )
+texture_focused = ExtResource( 43 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Computer/Buttons"]
+margin_right = 917.0
+margin_bottom = 450.0
+focus_mode = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 588 )
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComputerScreen" type="Area2D" parent="."]
+position = Vector2( 3499.67, 552 )
+scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
+position = Vector2( 4.22003, -2.28882e-05 )
+shape = SubResource( 589 )
+
+[node name="DesertTelescope" type="Area2D" parent="."]
+position = Vector2( 5162.68, 374 )
+script = ExtResource( 57 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DesertTelescope"]
+position = Vector2( 0, 7.29907 )
+shape = SubResource( 590 )
+
+[editable path="Default"]
+[editable path="Default/Affogato"]
+[editable path="Default/Player"]

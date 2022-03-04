@@ -10,7 +10,8 @@ var res_path = "res://Assets/Levels/GeoCity/GeoCity/"
 func _ready():
 	var follow = PROGRESS.variables.get("affogato_follow")
 	
-	var season = utils.get_season()
+	#var season = utils.get_season()
+	var season = "Summer"
 	if season == "Winter":
 		set_theme("SnowyCity")
 	elif season  == "Autumn":
