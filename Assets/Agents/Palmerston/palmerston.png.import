@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/palmerston.png-cb93e50daf60eb27ce765b3b40630ca1.stex"
+path="res://.import/palmerston.png-ed1576f95461185d44fd3532bc234452.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Glaciokarst/GeoLodge/palmerston.png"
-dest_files=[ "res://.import/palmerston.png-cb93e50daf60eb27ce765b3b40630ca1.stex" ]
+source_file="res://Assets/Agents/Palmerston/palmerston.png"
+dest_files=[ "res://.import/palmerston.png-ed1576f95461185d44fd3532bc234452.stex" ]
 
 [params]
 

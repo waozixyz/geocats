@@ -6,10 +6,10 @@
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sounds/Effects/Rain.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Scenes/Levels/Glaciokarst/GeoLodge/interactions.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/palmerston.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Agents/Palmerston/palmerston.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Levels/Glaciokarst/GeoLodge/Palmerston.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Sounds/Effects/Fire.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/Glaciokarst/GeoLodge/FireplacePopupDialog.gd" type="Script" id=13]
@@ -17,12 +17,10 @@
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=15]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/tinypumpkinicon.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/box.png" type="Texture" id=17]
-
-[sub_resource type="StreamTexture" id=261]
-load_path = "res://.import/bg.png-0c509a473966871db38a4c47ee2446db.stex"
-
-[sub_resource type="StreamTexture" id=262]
-load_path = "res://.import/mountian.png-02de661e2e6da50960b55772e7e214bd.stex"
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/mountian.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/geolodge_FG.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/bg.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/behind.png" type="Texture" id=21]
 
 [sub_resource type="AtlasTexture" id=263]
 atlas = ExtResource( 2 )
@@ -48,9 +46,6 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="StreamTexture" id=268]
-load_path = "res://.import/behind.png-8e120ef808de3f3ce719eb7815cc4f25.stex"
-
 [sub_resource type="RectangleShape2D" id=269]
 extents = Vector2( 41, 16 )
 
@@ -72,9 +67,6 @@ animations = [ {
 "name": "default",
 "speed": 24.0
 } ]
-
-[sub_resource type="StreamTexture" id=274]
-load_path = "res://.import/geolodge_FG.png-257982040e3fd00f4106be383d324047.stex"
 
 [sub_resource type="RectangleShape2D" id=275]
 extents = Vector2( 0.285719, 2.50346 )
@@ -358,11 +350,11 @@ __meta__ = {
 }
 
 [node name="bg" type="Sprite" parent="BelowPlayer"]
-texture = SubResource( 261 )
+texture = ExtResource( 20 )
 centered = false
 
 [node name="mountain" type="Sprite" parent="BelowPlayer"]
-texture = SubResource( 262 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
@@ -372,10 +364,11 @@ centered = false
 script = ExtResource( 14 )
 
 [node name="lodge_bg" type="Sprite" parent="BelowPlayer"]
-texture = SubResource( 268 )
+texture = ExtResource( 21 )
 centered = false
 
 [node name="PumpkinArea" type="Area2D" parent="."]
+visible = false
 position = Vector2( 4, -3.00415 )
 scale = Vector2( 1, 1.00138 )
 script = ExtResource( 13 )
@@ -386,7 +379,7 @@ shape = SubResource( 269 )
 
 [node name="Sprite" type="Sprite" parent="PumpkinArea"]
 modulate = Color( 1, 1, 1, 0.458824 )
-position = Vector2( 511, 340.001 )
+position = Vector2( 595, 387.001 )
 texture = ExtResource( 16 )
 
 [node name="Fire" type="Area2D" parent="."]
@@ -413,13 +406,7 @@ script = ExtResource( 14 )
 
 [node name="Default" parent="." instance=ExtResource( 9 )]
 
-[node name="Affogato" parent="Default" index="0"]
-position = Vector2( 364.806, 221.089 )
-
-[node name="CollisionShape2D" parent="Default/Affogato" index="2"]
-position = Vector2( 0, -2 )
-
-[node name="Player" parent="Default" index="1"]
+[node name="Player" parent="Default" index="0"]
 position = Vector2( 58, 628.868 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
@@ -435,7 +422,7 @@ frame = 19
 scale = Vector2( 7, 7 )
 
 [node name="fg_base" type="Sprite" parent="AbovePlayer"]
-texture = SubResource( 274 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="Box" type="StaticBody2D" parent="."]
@@ -556,9 +543,7 @@ shape = SubResource( 291 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_group_": true,
@@ -595,6 +580,8 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
+territory = 2
+glaciokarst = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToCaves"]
 shape = SubResource( 295 )
@@ -608,6 +595,7 @@ texture = ExtResource( 5 )
 [node name="PumpkinCode" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="PumpkinCode"]
+visible = false
 margin_left = 200.0
 margin_top = 400.0
 margin_right = 500.0
@@ -638,6 +626,7 @@ __meta__ = {
 
 [node name="Area2D" type="Area2D" parent="Palmerston"]
 script = ExtResource( 4 )
+character_folder = "res://Assets/Agents/Palmerston"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/Area2D"]
 position = Vector2( 23.1036, 17.0176 )
@@ -658,5 +647,4 @@ position = Vector2( 28.02, 20.7403 )
 shape = SubResource( 312 )
 
 [editable path="Default"]
-[editable path="Default/Affogato"]
 [editable path="Default/Player"]
