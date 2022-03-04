@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=2]
@@ -73,6 +73,9 @@ extents = Vector2( 48, 46 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 22, 4 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 10, 4 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 22, 4 )
@@ -201,6 +204,11 @@ position = Vector2( -922, 100 )
 shape = SubResource( 18 )
 one_way_collision = true
 
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -510, 168 )
+shape = SubResource( 27 )
+one_way_collision = true
+
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -922, 128 )
 shape = SubResource( 18 )
@@ -300,7 +308,7 @@ shape = SubResource( 26 )
 [node name="Default" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 583, 170 )
+position = Vector2( 34, 403 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 960

@@ -1,6 +1,5 @@
 extends BasePlayerState
 
-export var climb_speed : float = 200
 
 func enter_logic(player: KinematicBody2D):
 	player.coll_default.disabled = true
@@ -21,9 +20,9 @@ func logic(player: KinematicBody2D, _delta: float):
 		player.position.x = player.ladder_x - 25 *  (diff_y - 1) * player.ladder_rot
 
 	if player.underwater:
-		player.vy = player.vertical * climb_speed / 2
+		player.vy = player.vertical * player.climb_speed / 2
 	else:
-		player.vy = player.vertical * climb_speed 
+		player.vy = player.vertical * player.climb_speed 
 	#player.move_vertically()
 
 	if player.jumping:

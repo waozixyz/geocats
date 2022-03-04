@@ -45,6 +45,7 @@ var decceleration = 35 #by how much does velocity approach when you stop moving 
 var disable_reasons = []
 
 var dbl_jump_height = 350
+var climb_speed : float = 200
 
 # sound effects assets
 onready var hurt_sfx = $HurtSFX
@@ -70,7 +71,7 @@ func add_follower(cat):
 	cat.position = Vector2(0,0)
 	if cat.has_node("ChatNPC"):
 		cat.get_node("ChatNPC").disabled = true
-	
+	cat.no_gravity = true
 func remove_follower(cat):
 	if global.user.following.has(cat.name):
 		global.user.following.remove(cat.name)
@@ -182,21 +183,26 @@ func _physics_process(delta):
 		for follower in followers:
 			var pos_x = round(follower.position.x) 
 			var pvel_x = velocity_log[0].x
+			var pvel_y = velocity_log[0].y
 			# reset position to be static
 			follower.velocity = -velocity
 
 			if abs(follower.position.y) < 100 and abs(follower.position.x) < 100:
 				if state_machine.active_state.tag == "climb":
+					var x_speed = currentSpeed
+					if x_speed < 50:
+						x_speed = 50
 					if follower.position.x > 5:
-						follower.velocity.x = -currentSpeed
-					elif follower.position.x < 0:
-						follower.velocity.x = currentSpeed
-					if follower.position.x <= 5 and follower.position.x >= 0:
-						if follower.position.y > currentSpeed:
-							follower.velocity.y = -currentSpeed
-						if follower.position.y < currentSpeed:
-							follower.velocity.y = currentSpeed
-					print(follower.velocity)
+						follower.velocity.x = -x_speed
+					elif follower.position.x < -5:
+						follower.velocity.x = x_speed
+					else:
+						if follower.position.y > 40:
+							follower.velocity.y = -climb_speed
+						elif follower.position.y < 30:
+							follower.velocity.y = climb_speed
+						else:
+							follower.velocity.y = 0
 				else:
 					if velocity_log[0].y == 0:
 						follower.apply_gravity(12)

@@ -506,6 +506,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2( 0, -6 )
 shape = SubResource( 501 )
 
 [node name="GameCat2" type="Area2D" parent="."]
