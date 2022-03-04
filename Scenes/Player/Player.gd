@@ -184,21 +184,19 @@ func _physics_process(delta):
 			var pvel_x = velocity_log[0].x
 			# reset position to be static
 			follower.velocity = -velocity
+
 			if abs(follower.position.y) < 100 and abs(follower.position.x) < 100:
 				if state_machine.active_state.tag == "climb":
 					if follower.position.x > 5:
 						follower.velocity.x = -currentSpeed
 					elif follower.position.x < 0:
 						follower.velocity.x = currentSpeed
-
 					if follower.position.x <= 5 and follower.position.x >= 0:
-						#if follower.position.y < 0 or follower.position.y > -20:
-						#	follower.velocity.y += velocity_log[0].y
-						if follower.position.y > 40:
+						if follower.position.y > currentSpeed:
 							follower.velocity.y = -currentSpeed
-							
-						if follower.position.y < 40:
+						if follower.position.y < currentSpeed:
 							follower.velocity.y = currentSpeed
+					print(follower.velocity)
 				else:
 					if velocity_log[0].y == 0:
 						follower.apply_gravity(12)
@@ -206,21 +204,14 @@ func _physics_process(delta):
 					follower.velocity.y += velocity_log[0].y
 					# callibrate position
 
-					if sprite.flip_h:
-							#else:
-							#	follower.velocity.x += 5
-						if pos_x > 60:
-							if pvel_x < 0:
-								follower.velocity.x -= currentSpeed
-								follower.sprite.flip_h = not sprite.flip_h
-							#else:
-							#	follower.velocity.x -= 5
-					else:
-						if pos_x < -60:
-							if pvel_x > 0:
-								follower.velocity.x += currentSpeed
-								follower.sprite.flip_h = not sprite.flip_h
-
+					if sprite.flip_h and pos_x > 60 and pvel_x < 0:
+						follower.velocity.x -= currentSpeed
+						follower.sprite.flip_h = not sprite.flip_h
+					elif pos_x < -60 and pvel_x > 0:
+						follower.velocity.x += currentSpeed
+						follower.sprite.flip_h = not sprite.flip_h
+			else:
+				follower.apply_gravity(12)
 		velocity_log.pop_front()
 
 # update keyboard inputs

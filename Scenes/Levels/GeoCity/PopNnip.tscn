@@ -93,7 +93,7 @@ extents = Vector2( 27, 47 )
 extents = Vector2( 27, 27 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 4.75, 73 )
+extents = Vector2( 5.5, 73 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 60.1039, 35 )
@@ -284,7 +284,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-position = Vector2( -0.25, -3 )
+position = Vector2( 0.5, -3 )
 shape = SubResource( 25 )
 
 [node name="Shopkeeper" type="Area2D" parent="."]
