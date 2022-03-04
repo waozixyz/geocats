@@ -37,11 +37,11 @@ func _physics_process(delta):
 		if timer > load_time:
 			_new_scene()
 			change = false
-	
+
 func _new_scene():
 	AudioManager.playing = []
-	var _err = get_tree().change_scene(level_path)
-	#assert(err == OK)
+	var err = get_tree().change_scene(level_path)
+	assert(err == OK)
 	get_tree().paused = false
 	
 	utils.tween_fade(sprite, 1, 0)

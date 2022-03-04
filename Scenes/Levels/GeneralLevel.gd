@@ -3,8 +3,9 @@ class_name GeneralLevel
 
 export(NodePath) var player 
 export(NodePath) var music
-
+export(Vector2) var respawn_location
 export(Array, Vector2) onready var locations 
+var dead
 func get_player():
 	if not player:
 		player = get_node_or_null(player)
@@ -37,3 +38,16 @@ func _ready():
 
 		player.position = locations[global.user.location]
 
+var tween
+func _process(delta):
+	if global.user.hp <= 0:
+		tween = utils.tween_position(player, respawn_location)
+		player.disable('dead')
+		dead = true
+	if dead and global.user.hp < 100:
+		global.user.hp += 1
+	elif dead and not tween.is_active():
+		dead = false
+		player.enable('dead')
+
+		
