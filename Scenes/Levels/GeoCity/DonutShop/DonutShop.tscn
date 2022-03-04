@@ -16,12 +16,8 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Agents/JumpBlinkAI.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Levels/GeoCity/DonutShop/DonutShop.gd" type="Script" id=16]
-
-[sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/bg.png-3a46176941f30cb33aaa3b7c14192f88.stex"
-
-[sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/window_bg.png-fb92090932025b9687ea147445c3c353.stex"
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/window_bg.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/GeoCity/DonutShop/bg.png" type="Texture" id=18]
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 11 )
@@ -56,7 +52,6 @@ animations = [ {
 } ]
 
 [sub_resource type="StreamTexture" id=9]
-load_path = "res://.import/fg_base.png-bd72d431f891e1baf99446a1eb533997.stex"
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
@@ -157,11 +152,11 @@ __meta__ = {
 }
 
 [node name="bg" type="Sprite" parent="BelowPlayer"]
-texture = SubResource( 1 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="window_bg" type="Sprite" parent="BelowPlayer"]
-texture = SubResource( 2 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="shadows" type="Sprite" parent="BelowPlayer"]

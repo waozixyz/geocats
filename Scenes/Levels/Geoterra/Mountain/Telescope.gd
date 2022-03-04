@@ -1,4 +1,4 @@
-extends InteractSimple
+extends E_Interact
 
 onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
 
@@ -16,7 +16,7 @@ func _process(delta):
 	._process(delta)
 	if touching:
 		if do_something:
-			player.disable("telescope")
+			player.disable(disable_player)
 			if camera.zoom.x <= zoom_org:
 				zoom_out = true
 			if camera.zoom.x > zoom_org:
@@ -25,14 +25,14 @@ func _process(delta):
 					
 		if zoom_out:
 			if camera.zoom.x < 6.6:
-				object.visible = false
+				#object.visible = false
 				_zoomi()
-			else:
-				object.visible = true
+			#else:
+				#object.visible = true
 		else:
 			if camera.zoom.x > zoom_org:
 				_zoomi(-1)
 			else:
-				object.visible = true
-				player.enable("telescope")
+				#object.visible = true
+				player.enable(disable_player)
 
