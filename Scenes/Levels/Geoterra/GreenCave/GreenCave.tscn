@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_BG.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Interact.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Levels/Geoterra/Mountain/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.374, 1107.3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50, 50 )
+
+[node name="Watterfalls" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="BelowPlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Default" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="Default" index="0"]
+position = Vector2( 41, 4852 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
+limit_right = 5000
+limit_bottom = 5000
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="Collisions" type="Node2D" parent="."]
+scale = Vector2( 0.833, 0.833 )
+
+[node name="Platforms" type="StaticBody2D" parent="Collisions"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D147" type="CollisionPolygon2D" parent="Collisions/Platforms"]
+position = Vector2( -5823.6, -2163.21 )
+polygon = PoolVector2Array( 6918.89, 3660.97, 5824.36, 3662.14, 5824.36, 3539.5, 5823.1, 3186.01, 5827.21, 2724.05, 5821.19, 2146.7, 5878.31, 2147.93, 6700.12, 2109.22, 6554.66, 2166.37, 5874.63, 2188.09, 5865.29, 2776.87, 5867.26, 3283.51, 5943.53, 3285.57, 5943.54, 3303.43, 5874.1, 3387.93, 5867.34, 3486.28, 5882.43, 3508.66, 5963.09, 3595.04, 6032.85, 3609.35, 6142.03, 3620.52, 6257.49, 3637.45, 6551.53, 3625.57, 6625.26, 3575.97, 6657.79, 3564.18, 6689.14, 3526.23, 6715.45, 3442.88, 6735.29, 3354.73, 6742.7, 3295.6, 6713.9, 3254.67, 6679.3, 3228.6, 6637.3, 3200.74, 6616.77, 3199.16, 6618.31, 3172.53, 6682.9, 3171.68, 6719.64, 3137.82, 6719.39, 3105.79, 6677.2, 3063.82, 6640.51, 3063.42, 6634.41, 3050.56, 6529.45, 3049.88, 6474.17, 3089.91, 6451.6, 3092.39, 6335.71, 3148.98, 6248.47, 3192.74, 6229.73, 3210.1, 6208.43, 3222.13, 6166.62, 3262.36, 6163.8, 3313.38, 6255.5, 3405.78, 6291.7, 3406.83, 6303.79, 3423.99, 6553.49, 3424.7, 6566.75, 3438.54, 6566.37, 3457.46, 6529.51, 3481.45, 6480.36, 3488.27, 6462.42, 3499.97, 6437.26, 3499.58, 6426.73, 3512.65, 6387.73, 3511.48, 6380.86, 3518.27, 6291.03, 3518.39, 6212.95, 3482.77, 6187.01, 3482.38, 6168.68, 3477.12, 6133.18, 3440.45, 6128.89, 3429.14, 6112.82, 3415.88, 6114.34, 3264.39, 6143.79, 3237.47, 6144.92, 3223.51, 6185.24, 3164.28, 6215.91, 3143.37, 6236.95, 3143.57, 6258.96, 3120.44, 6298.49, 3118.38, 6358.69, 3095.07, 6385.35, 3072.8, 6472.99, 2983.59, 6508.55, 2949.11, 6508.75, 2800.69, 6637.13, 2761.94, 6907.78, 2773.31, 6908.71, 2801.08, 6850.04, 2802.74, 6770.38, 2799.51, 6733.47, 2780.72, 6624.27, 2781.16, 6588.12, 2870.09, 6591.86, 2919.68, 6635.05, 2960.53, 6765.38, 2962.51, 6801.98, 3002.99, 6880.32, 3007.28, 6877.02, 3264.91, 6877.02, 3328.82, 6901.05, 3468.93, 6997.59, 3604.37, 7061.77, 3634.81, 7527.05, 3635.27, 7538.57, 3622.61, 7601.46, 3623.18, 7655.81, 3583.85, 7847.9, 3586.1, 7901.31, 3539.37, 7903.31, 3433.83, 7902.44, 2757.7, 7872.4, 2748.35, 7838.02, 2718.31, 7764.92, 2718.65, 7704.5, 2645.21, 7702.83, 2627.19, 7735.21, 2612.83, 7765.25, 2634.86, 7885.08, 2631.53, 7913.41, 2603.59, 7912.99, 2504.91, 7811.25, 2504.55, 7692.99, 2381.81, 7638.19, 2379.16, 7634.29, 2349.35, 7689.59, 2350.63, 7877.05, 2339.24, 7891.13, 2320.78, 7906.19, 2243.16, 7669.25, 2218.6, 7437.61, 2166.71, 7921.83, 2168.44, 7924.81, 2448.68, 7924.45, 2594.62, 7923.58, 3663.01 )
+one_way_collision = true
+
+[node name="Walls" type="StaticBody2D" parent="Collisions"]
+position = Vector2( 2050.42, 4438.18 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( -39.5429, 727.321 )
+scale = Vector2( 1, 0.75991 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( 2132.29, 718.372 )
+scale = Vector2( 1, 0.75991 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( 1048.02, 1534.13 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/EndWalls"]
+position = Vector2( 1028.85, -35.3651 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Portals" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="ToCave" type="Area2D" parent="Portals"]
+position = Vector2( 1611.54, 1145.81 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave"]
+shape = SubResource( 2 )
+
+[node name="Button" type="Sprite" parent="Portals/ToCave"]
+position = Vector2( 0, -66 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="ToCave2" type="Area2D" parent="Portals"]
+position = Vector2( 1684.05, 342.122 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave2"]
+shape = SubResource( 2 )
+
+[node name="Button" type="Sprite" parent="Portals/ToCave2"]
+position = Vector2( -75.582, -59.7276 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" type="Sprite" parent="AbovePlayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="flower" type="Sprite" parent="AbovePlayer"]
+position = Vector2( 38.924, 76.978 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+bus = "Music"
+
+[editable path="Default"]
+[editable path="Default/Player"]
