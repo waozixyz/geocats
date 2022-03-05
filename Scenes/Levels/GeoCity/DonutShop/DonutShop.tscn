@@ -166,6 +166,7 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -173,6 +174,7 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -382,7 +384,9 @@ shape = SubResource( 32 )
 position = Vector2( 953, 227 )
 shape = SubResource( 33 )
 
-[node name="End" type="StaticBody2D" parent="." groups=["end"]]
+[node name="End" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
