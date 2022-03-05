@@ -1,9 +1,9 @@
-[gd_scene load_steps=201 format=2]
+[gd_scene load_steps=188 format=2]
 
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/door/door_closed.png" type="Texture" id=3]
-[ext_resource path="res://Assets/ChatIcons/ernst.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_closed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/awareness.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/9_Caves.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_3.png" type="Texture" id=7]
@@ -14,51 +14,48 @@
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/stars_space.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/far_bg.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/door/door_1.png" type="Texture" id=16]
-[ext_resource path="res://Assets/ChatIcons/nostoc.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/sandKitten.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/ernst.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_glare.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_hud.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_border.png" type="Texture" id=23]
-[ext_resource path="res://Scenes/Levels/Geodesert/DesertOutpost/Computer.gd" type="Script" id=24]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/weather.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/awareness.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/weather.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/sand.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/cultivation.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/geology.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/geology.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/georing.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/geocache.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/symbiotic_relationships.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/georing.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/symbiotic_relationships.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/mewlange.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/nonaco.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/sand.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/mewlange.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/geocache.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/wildlife.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/geocats.png" type="Texture" id=43]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/wildlife.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/radiation.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/radiation.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/cultivation.png" type="Texture" id=47]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/mirrors.png" type="Texture" id=48]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/geocats.png" type="Texture" id=49]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_icons/nonaco.png" type="Texture" id=50]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/geopedia_pressed_icons/mirrors.png" type="Texture" id=51]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/cactusFarmer.png" type="Texture" id=52]
-[ext_resource path="res://Scenes/Levels/Geodesert/DesertOutpost/ComputerButton.gd" type="Script" id=53]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/cactusFarmer2.png" type="Texture" id=54]
-[ext_resource path="res://Assets/ChatIcons/liet.png" type="Texture" id=55]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/characters/desertCat.png" type="Texture" id=56]
-[ext_resource path="res://Scenes/Levels/Geodesert/DesertOutpost/DesertTelescope.gd" type="Script" id=57]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/fg_panel.png" type="Texture" id=58]
-[ext_resource path="res://Assets/Levels/Geodesert/DesertOutpost/bg_plants.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/far_bg.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/georing.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/sandKitten.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/ernst.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_glare.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_hud.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_border.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/Computer.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/weather.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/weather.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/sand.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/cultivation.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geology.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geology.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geocache.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/symbiotic_relationships.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/georing.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/symbiotic_relationships.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/mewlange.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/nonaco.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/sand.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/mewlange.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geocache.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/wildlife.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geocats.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/wildlife.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/radiation.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/radiation.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/cultivation.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/mirrors.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geocats.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/nonaco.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/mirrors.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/cactusFarmer.png" type="Texture" id=52]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/ComputerButton.gd" type="Script" id=53]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/cactusFarmer2.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/desertCat.png" type="Texture" id=56]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/DesertTelescope.gd" type="Script" id=57]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/fg_panel.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/bg_plants.png" type="Texture" id=59]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -110,23 +107,18 @@ func _physics_process(delta):
 "
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
 region = Rect2( 14, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
 region = Rect2( 28, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 4 )
 region = Rect2( 0, 11, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 4 )
 region = Rect2( 14, 11, 14, 11 )
 
 [sub_resource type="SpriteFrames" id=8]
@@ -545,23 +537,18 @@ func _physics_process(delta):
 "
 
 [sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 17 )
 region = Rect2( 14, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 17 )
 region = Rect2( 28, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 17 )
 region = Rect2( 14, 0, 14, 11 )
 
 [sub_resource type="SpriteFrames" id=38]
@@ -1192,27 +1179,21 @@ func _input(_event):
 extents = Vector2( 40.8073, 23.3975 )
 
 [sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 55 )
 region = Rect2( 0, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=77]
-atlas = ExtResource( 55 )
 region = Rect2( 32, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 55 )
 region = Rect2( 16, 0, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 55 )
 region = Rect2( 0, 12, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 55 )
 region = Rect2( 16, 12, 16, 12 )
 
 [sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 55 )
 region = Rect2( 32, 12, 16, 12 )
 
 [sub_resource type="SpriteFrames" id=82]
@@ -1349,205 +1330,23 @@ extents = Vector2( 34.2662, 45.8725 )
 [sub_resource type="RectangleShape2D" id=114]
 extents = Vector2( 12.157, 98.633 )
 
-[sub_resource type="GDScript" id=115]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 16.9067, 47.8872 )
-
-[sub_resource type="GDScript" id=117]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
 
 [sub_resource type="RectangleShape2D" id=118]
 extents = Vector2( 25, 136 )
 
-[sub_resource type="GDScript" id=119]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=120]
 extents = Vector2( 19, 108 )
-
-[sub_resource type="GDScript" id=121]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
 
 [sub_resource type="RectangleShape2D" id=122]
 extents = Vector2( 19, 278.057 )
 
-[sub_resource type="GDScript" id=123]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=124]
 extents = Vector2( 34, 360 )
 
-[sub_resource type="GDScript" id=125]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=126]
 extents = Vector2( 25, 618 )
-
-[sub_resource type="GDScript" id=127]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
 
 [sub_resource type="RectangleShape2D" id=128]
 extents = Vector2( 25, 166 )
@@ -1555,89 +1354,11 @@ extents = Vector2( 25, 166 )
 [sub_resource type="RectangleShape2D" id=129]
 extents = Vector2( 31, 349.385 )
 
-[sub_resource type="GDScript" id=130]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=131]
 extents = Vector2( 27, 552 )
 
-[sub_resource type="GDScript" id=132]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=133]
 extents = Vector2( 31, 302 )
-
-[sub_resource type="GDScript" id=134]
-script/source = "extends Area2D
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
 
 [sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 31, 53 )
@@ -1720,7 +1441,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 37
+frame = 9
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -1747,6 +1468,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -1774,7 +1496,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 28 )
 animation = "idle"
-frame = 6
+frame = 14
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -1802,7 +1524,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 38 )
 animation = "idle"
-frame = 1
+frame = 9
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -1830,7 +1552,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "walk"
-frame = 3
+frame = 2
 playing = true
 
 [node name="SandcatArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -1858,6 +1580,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
 animation = "idle"
+frame = 4
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -1885,7 +1608,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 69 )
 animation = "idle"
-frame = 20
+frame = 28
 playing = true
 
 [node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
@@ -1967,9 +1690,7 @@ shape = SubResource( 86 )
 position = Vector2( 503.984, 156 )
 texture = ExtResource( 58 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
@@ -2181,9 +1902,7 @@ one_way_collision = true
 polygon = PoolVector2Array( 1552.8, 1622.4, 1552.8, 1634.4, 1584, 1644.8, 1644, 1666.4, 1683.2, 1685.6, 1720.8, 1700.8, 1748.8, 1706.4, 1820.8, 1706.4, 1844, 1708.8, 1875.2, 1718.4, 1920.8, 1725.6, 1943.2, 1730.4, 1988, 1748.8, 2030.4, 1766.4, 2061.6, 1778.4, 2081.6, 1794.4, 2125.6, 1824, 2153.6, 1838.4, 2168.8, 1848.8, 2182.4, 1859.2, 2196.8, 1856, 2213.6, 1860, 2227.2, 1868, 2233.6, 1871.2, 2234.4, 1860.8, 2220.8, 1842.4, 2208.8, 1833.6, 2187.2, 1833.6, 2177.6, 1844.8, 2167.2, 1840.8, 2136, 1817.6, 2093.6, 1791.2, 2055.2, 1766.4, 2012, 1750.4, 1979.2, 1737.6, 1938.4, 1720.8, 1881.6, 1712, 1826.4, 1697.6, 1749.6, 1700, 1716.8, 1690.4, 1665.6, 1671.2, 1573.6, 1634.4 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 22, 83 )
 collision_layer = 7
 collision_mask = 7
@@ -2232,7 +1951,7 @@ shape = SubResource( 114 )
 position = Vector2( 3614.83, 721.517 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 115 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder13"]
 position = Vector2( 690.305, 800.853 )
@@ -2242,7 +1961,7 @@ shape = SubResource( 116 )
 position = Vector2( 2015, 2071 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 117 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2255,7 +1974,7 @@ shape = SubResource( 118 )
 position = Vector2( 1135, 1473 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 119 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2268,7 +1987,7 @@ shape = SubResource( 120 )
 position = Vector2( 1066, 1048.14 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 121 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2281,7 +2000,7 @@ shape = SubResource( 122 )
 position = Vector2( 672, 904 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 123 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2294,7 +2013,7 @@ shape = SubResource( 124 )
 position = Vector2( 5124, 1155 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 125 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2307,7 +2026,7 @@ shape = SubResource( 126 )
 position = Vector2( 5342, 435 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 127 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2333,7 +2052,7 @@ shape = SubResource( 129 )
 position = Vector2( 3835, 1704 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 130 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2345,7 +2064,7 @@ shape = SubResource( 131 )
 position = Vector2( 2499, 715 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 132 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2357,7 +2076,7 @@ shape = SubResource( 133 )
 position = Vector2( 1935, 351 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 134 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2423,9 +2142,9 @@ margin_top = 96.055
 margin_right = -579.0
 margin_bottom = 216.055
 group = SubResource( 137 )
-texture_normal = ExtResource( 26 )
-texture_pressed = ExtResource( 20 )
-texture_focused = ExtResource( 20 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 26 )
+texture_focused = ExtResource( 26 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2535,9 +2254,9 @@ margin_top = 377.946
 margin_right = -579.0
 margin_bottom = 497.946
 group = SubResource( 137 )
-texture_normal = ExtResource( 32 )
-texture_pressed = ExtResource( 35 )
-texture_focused = ExtResource( 35 )
+texture_normal = ExtResource( 35 )
+texture_pressed = ExtResource( 17 )
+texture_focused = ExtResource( 17 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2603,8 +2322,8 @@ __meta__ = {
 margin_right = 917.0
 margin_bottom = 450.0
 focus_mode = 2
-custom_fonts/normal_font = SubResource( 139 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 139 )
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
