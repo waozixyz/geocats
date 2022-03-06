@@ -247,7 +247,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 4
+sound_effect = 6
 sound_volume = 0.5
 geocity = 2
 location = 1
@@ -267,7 +267,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = -1
 geocity = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arcade"]

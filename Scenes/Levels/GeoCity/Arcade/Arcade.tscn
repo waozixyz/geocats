@@ -611,7 +611,9 @@ centered = false
 [node name="PopNnip" type="Area2D" parent="."]
 position = Vector2( 922, 314 )
 script = ExtResource( 4 )
-sound_effect = -1
+__meta__ = {
+"_edit_group_": true
+}
 geocity = 3
 location = 1
 

@@ -301,14 +301,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 54, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 54, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 50, 54 )
@@ -317,17 +309,25 @@ region = Rect2( 0, 0, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 0, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 54, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
 "frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [sub_resource type="AtlasTexture" id=68]
@@ -659,7 +659,7 @@ script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 2
+sound_effect = 3
 sound_volume = 1.5
 geocity = 1
 location = 1
@@ -679,7 +679,7 @@ script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 4
+sound_effect = 6
 sound_volume = 0.5
 geocity = 3
 
@@ -879,6 +879,7 @@ bus = "Music"
 [node name="DefaultCity" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 10 )
 volume_db = -10.0
+autoplay = true
 bus = "Music"
 
 [node name="GiantPumpkin" type="Area2D" parent="."]

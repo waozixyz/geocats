@@ -166,6 +166,14 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
@@ -202,19 +210,16 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 26 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ) ],
@@ -227,19 +232,14 @@ animations = [ {
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 26 ) ],
-"loop": true,
-"name": "blink",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 26 ) ],
 "loop": true,
-"name": "walk",
+"name": "blink",
 "speed": 5.0
 } ]
 
@@ -342,6 +342,15 @@ extents = Vector2( 36.2031, 15.5309 )
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 30, 35.5 )
 
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 47.1908, 33.7617 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 57.5, 24 )
+
+[sub_resource type="RectangleShape2D" id=81]
+extents = Vector2( 94, 91.5 )
+
 [sub_resource type="DynamicFont" id=73]
 size = 25
 font_data = ExtResource( 22 )
@@ -382,15 +391,6 @@ size = 22
 extra_spacing_top = -5
 extra_spacing_bottom = -3
 font_data = SubResource( 69 )
-
-[sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 47.1908, 33.7617 )
-
-[sub_resource type="RectangleShape2D" id=72]
-extents = Vector2( 57.5, 24 )
-
-[sub_resource type="RectangleShape2D" id=81]
-extents = Vector2( 94, 91.5 )
 
 [node name="CatsCradle" type="Node2D"]
 script = ExtResource( 1 )
@@ -435,7 +435,6 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -480,7 +479,6 @@ __meta__ = {
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 centered = false
 
@@ -661,6 +659,46 @@ position = Vector2( 323, 70 )
 shape = SubResource( 59 )
 one_way_collision = true
 
+[node name="Default" parent="." instance=ExtResource( 11 )]
+
+[node name="Player" parent="Default" index="0"]
+position = Vector2( 1301, 178 )
+
+[node name="Camera2D" parent="Default/Player" index="0"]
+limit_right = 1490
+limit_bottom = 720
+
+[node name="AnimatedSprite" parent="Default/Player" index="1"]
+frame = 19
+
+[node name="AbovePlayer" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="LitterBox" type="ColorRect" parent="AbovePlayer"]
+margin_left = 860.0
+margin_top = 288.0
+margin_right = 926.0
+margin_bottom = 367.0
+mouse_filter = 2
+color = Color( 0.117647, 0.00392157, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="End" type="ColorRect" parent="AbovePlayer"]
+margin_left = -15.0
+margin_top = 582.0
+margin_right = 51.0
+margin_bottom = 690.0
+mouse_filter = 2
+color = Color( 0.117647, 0.00392157, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Ladders" type="Node2D" parent="Interactables"]
@@ -757,7 +795,7 @@ sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/LitterBoxSFX.ogg"
 position = Vector2( -7.5437, 7.4028 )
 shape = SubResource( 67 )
 
-[node name="FridgeInteract" type="Area2D" parent="."]
+[node name="FridgeInteract" type="Area2D" parent="Interactables"]
 position = Vector2( 105, 421 )
 script = ExtResource( 20 )
 __meta__ = {
@@ -765,12 +803,60 @@ __meta__ = {
 }
 require_grounded = true
 disable_player = "catscradle_fridge"
-make_node_visible = NodePath("../CanvasLayer/Fridge")
+make_node_visible = NodePath("../../CanvasLayer/Fridge")
 sound_when_visible = "res://Assets/Levels/GeoCity/CatsCradle/inside_friedge.ogg"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FridgeInteract"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/FridgeInteract"]
 position = Vector2( 20, 25.5 )
 shape = SubResource( 68 )
+
+[node name="Teleport" type="Area2D" parent="Interactables"]
+position = Vector2( -35, 585.7 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 6
+geocity = 1
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactables/Teleport"]
+position = Vector2( 48.1908, 50 )
+shape = SubResource( 71 )
+
+[node name="Button" type="Sprite" parent="Interactables/Teleport"]
+visible = false
+position = Vector2( 58, 17.3 )
+scale = Vector2( 0.239477, 0.24014 )
+texture = ExtResource( 6 )
+
+[node name="Dream" type="Area2D" parent="Interactables"]
+position = Vector2( 1331, 179 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/sleep_in_bed.wav"
+make_node_visible = NodePath("../../BelowPlayer/Dream")
+transition_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Dream"]
+position = Vector2( 66.5, 14 )
+shape = SubResource( 72 )
+
+[node name="ShowInstructionManual" type="Area2D" parent="Interactables"]
+position = Vector2( 1003, 111 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+require_grounded = true
+disable_player = "bookshelf"
+button_reappear_delay = 2.0
+make_node_visible = NodePath("../../CanvasLayer/InstructionBooklet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/ShowInstructionManual"]
+position = Vector2( 34, 38.5 )
+shape = SubResource( 81 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1116,94 +1202,6 @@ stream = ExtResource( 9 )
 volume_db = -3.493
 autoplay = true
 bus = "Music"
-
-[node name="Default" parent="." instance=ExtResource( 11 )]
-
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 1301, 178 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
-limit_right = 1490
-limit_bottom = 720
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
-
-[node name="AbovePlayer" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="LitterBox" type="ColorRect" parent="AbovePlayer"]
-margin_left = 860.0
-margin_top = 288.0
-margin_right = 926.0
-margin_bottom = 367.0
-mouse_filter = 2
-color = Color( 0.117647, 0.00392157, 0.168627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="End" type="ColorRect" parent="AbovePlayer"]
-margin_left = -15.0
-margin_top = 582.0
-margin_right = 51.0
-margin_bottom = 690.0
-mouse_filter = 2
-color = Color( 0.117647, 0.00392157, 0.168627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Teleport" type="Area2D" parent="."]
-position = Vector2( -35, 585.7 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-sound_effect = 5
-geocity = 1
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Teleport"]
-position = Vector2( 48.1908, 50 )
-shape = SubResource( 71 )
-
-[node name="Button" type="Sprite" parent="Teleport"]
-visible = false
-position = Vector2( 58, 17.3 )
-scale = Vector2( 0.239477, 0.24014 )
-texture = ExtResource( 6 )
-
-[node name="E_Interact" type="Area2D" parent="."]
-position = Vector2( 1331, 179 )
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_group_": true
-}
-sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/sleep_in_bed.wav"
-make_node_visible = NodePath("../BelowPlayer/Dream")
-transition_time = 0.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="E_Interact"]
-position = Vector2( 66.5, 14 )
-shape = SubResource( 72 )
-
-[node name="ShowInstructionManual" type="Area2D" parent="."]
-position = Vector2( 1003, 111 )
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_group_": true
-}
-require_grounded = true
-disable_player = "bookshelf"
-button_reappear_delay = 2.0
-make_node_visible = NodePath("../CanvasLayer/InstructionBooklet")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowInstructionManual"]
-position = Vector2( 34, 38.5 )
-shape = SubResource( 81 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

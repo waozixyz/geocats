@@ -581,10 +581,10 @@ extents = Vector2( 5.97483, 1.00473 )
 extents = Vector2( 15, 1 )
 
 [sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 9, 72.5 )
+extents = Vector2( 17.875, 1.25 )
 
-[sub_resource type="RectangleShape2D" id=64]
-extents = Vector2( 9, 70 )
+[sub_resource type="RectangleShape2D" id=110]
+extents = Vector2( 13.5, 1.25 )
 
 [sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 35.5, 54 )
@@ -1140,9 +1140,7 @@ one_way_collision = true
 
 [node name="Stairs2" type="Node2D" parent="BelowPlayer"]
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D4" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=["Stairs"]]
 position = Vector2( 153, 135 )
 collision_layer = 7
 collision_mask = 7
@@ -1151,9 +1149,7 @@ collision_mask = 7
 polygon = PoolVector2Array( 85, 0, 85, 34, 1, 34, 68, 0 )
 one_way_collision = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D2" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=["Stairs"]]
 position = Vector2( 449, 99 )
 collision_layer = 7
 collision_mask = 7
@@ -1162,9 +1158,7 @@ collision_mask = 7
 position = Vector2( -306, -89 )
 polygon = PoolVector2Array( 386, 95, 367, 95, 305.75, 125.5, 386, 125 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=["Stairs"]]
 position = Vector2( 388, 63 )
 collision_layer = 7
 collision_mask = 7
@@ -1177,9 +1171,7 @@ one_way_collision = true
 position = Vector2( 4, 10 )
 shape = SubResource( 59 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D3" type="StaticBody2D" parent="BelowPlayer/Stairs2" groups=["Stairs"]]
 position = Vector2( -63, -837 )
 collision_layer = 7
 collision_mask = 7
@@ -1208,8 +1200,13 @@ shape = SubResource( 62 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BelowPlayer/Houses"]
-position = Vector2( 74, 173.2 )
+position = Vector2( 75.125, 55.2 )
 shape = SubResource( 63 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="BelowPlayer/Houses"]
+position = Vector2( 73, 173.7 )
+shape = SubResource( 110 )
 one_way_collision = true
 
 [node name="Interactive" type="Node2D" parent="."]
@@ -1231,7 +1228,7 @@ script = ExtResource( 42 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 5
+sound_effect = 6
 location = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/HomeDoor"]
@@ -1247,6 +1244,10 @@ texture = ExtResource( 22 )
 [node name="DownElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 1448, 900 )
 script = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 1
 new_position = Vector2( 710, 180 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/DownElevator"]
@@ -1265,6 +1266,7 @@ script = ExtResource( 33 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 1
 new_position = Vector2( 1600, 1000 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/UpElevator"]
@@ -1283,7 +1285,7 @@ script = ExtResource( 42 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 2
+sound_effect = 3
 geocity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
@@ -1442,15 +1444,11 @@ scale = Vector2( 0.36, 0.36 )
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls" groups=[
-"end",
-]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls" groups=["end"]]
 position = Vector2( -30.5556, 1502.78 )
 shape = SubResource( 106 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls" groups=[
-"end",
-]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls" groups=["end"]]
 position = Vector2( 550, -27.7778 )
 shape = SubResource( 107 )
 
@@ -1484,6 +1482,9 @@ shape = SubResource( 108 )
 [node name="IceBoxSFX" type="Area2D" parent="."]
 position = Vector2( 561.491, 177.263 )
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
 sound_effect = "res://Assets/Levels/GeoCity/Complex/IceBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceBoxSFX"]

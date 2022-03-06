@@ -166,7 +166,6 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -174,7 +173,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -206,7 +204,6 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 12 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -238,8 +235,8 @@ sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
 
 [node name="DonutBot" type="StaticBody2D" parent="."]
 position = Vector2( 248, 333 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -384,9 +381,7 @@ shape = SubResource( 32 )
 position = Vector2( 953, 227 )
 shape = SubResource( 33 )
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
