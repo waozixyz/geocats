@@ -399,7 +399,6 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 __meta__ = {

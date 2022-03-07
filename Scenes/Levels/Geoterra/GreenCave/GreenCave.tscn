@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_BG.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/Teleport/Internal.gd" type="Script" id=7]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
@@ -12,8 +14,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.374, 1107.3 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 50, 50 )
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 47.1908, 33.7617 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 99.799, 77.3968 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 64.9714, 54.129 )
 
 [sub_resource type="GDScript" id=10]
 script/source = "extends Area2D
@@ -136,7 +144,7 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 1686.6, 1115.16 )
+position = Vector2( 487.264, 982.75 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -162,8 +170,8 @@ position = Vector2( -6699.93, -3258.4 )
 polygon = PoolVector2Array( 7748.11, 3570.78, 7804.32, 3571.6, 7811.35, 3578.63, 7854.28, 3579.15, 7861.44, 3610.01, 7841.88, 3628.75, 7766.44, 3627.54, 7735.99, 3605.77, 7686.36, 3588.14, 7662.81, 3585.99, 7620.65, 3550.99, 7556.45, 3550.85, 7465.99, 3521.54, 7381.23, 3520.38, 7299.56, 3479.08, 7247.9, 3479.05, 7213.87, 3495.86, 7163.3, 3494.07, 7105.06, 3496.9, 7099.68, 3550.63, 7108.84, 3653.32, 7122.88, 3669.28, 7180.72, 3668.84, 7198.63, 3686.89, 7243.96, 3693.92, 7295.76, 3688.63, 7347.83, 3710.81, 7391.6, 3710.91, 7431.49, 3724.22, 7474.67, 3712.82, 7568.1, 3670.88, 7612.74, 3668.37, 7621.33, 3690.04, 7654.72, 3722.84, 7757.61, 3744.38, 7728.89, 3770.81, 7533.56, 3752.21, 7491.06, 3764.97, 7422.6, 3771.7, 7382.23, 3756.71, 7241.69, 3756.82, 7191.27, 3806.37, 7137.66, 3847.74, 7128.29, 3892.21, 7076.84, 3968.34, 7075.65, 3981.85, 7046.15, 4010.19, 7046.43, 4066.27, 7029.62, 4082.91, 7027.24, 4156.65, 6997.42, 4187.2, 6966.76, 4185.92, 6950.57, 4169.88, 6917.46, 4137.71, 6916.16, 3990.8, 6887.2, 3959.56, 6885.49, 3936.99, 6871.66, 3903.68, 6846.11, 3869.32, 6845.17, 3812.73, 6894.29, 3806.2, 7014.95, 3805.68, 7020.05, 3794.52, 7049.12, 3773.99, 7050.55, 3452.57, 7313.25, 3452.07, 7397.38, 3494.34, 7477.97, 3494.56, 7515.56, 3502.22, 7528.92, 3512.69, 7545.87, 3513.79, 7565.43, 3524.13, 7656.96, 3525.23, 7671.98, 3547.41 )
 
 [node name="CollisionPolygon2D149" type="CollisionPolygon2D" parent="Collisions/Platforms"]
-position = Vector2( -6195.28, -2423.76 )
-polygon = PoolVector2Array( 7743.1, 3584.63, 7747.9, 3576.23, 7792.06, 3576.2, 7797.67, 3582.8, 7797.94, 3593.2, 7743.04, 3593.2 )
+position = Vector2( -7220.23, -2350.15 )
+polygon = PoolVector2Array( 7730.91, 3575.73, 7792.06, 3576.2, 7845.26, 3575.36, 7908.3, 3571.33, 7910.87, 3579.39, 7733.47, 3581.59 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D152" type="CollisionPolygon2D" parent="Collisions/Platforms"]
@@ -227,31 +235,97 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ToCave" type="Area2D" parent="Portals"]
-position = Vector2( 1611.54, 1145.81 )
+[node name="Teleport" type="Area2D" parent="Portals"]
+position = Vector2( 441.577, 934.537 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 4
+territory = 1
+geoterra = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave"]
-shape = SubResource( 2 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport"]
+position = Vector2( 48.1908, 50 )
+shape = SubResource( 12 )
 
-[node name="Button" type="Sprite" parent="Portals/ToCave"]
-position = Vector2( 0, -66 )
+[node name="Button" type="Sprite" parent="Portals/Teleport"]
+visible = false
+position = Vector2( 58, 17.3 )
+scale = Vector2( 0.239477, 0.24014 )
+texture = ExtResource( 10 )
+
+[node name="Teleport2" type="Area2D" parent="Portals"]
+position = Vector2( 1628.38, 296.821 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 7
+territory = 1
+geoterra = 4
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport2"]
+position = Vector2( 48.1908, 50 )
+shape = SubResource( 12 )
+
+[node name="Button" type="Sprite" parent="Portals/Teleport2"]
+visible = false
+position = Vector2( 58, 17.3 )
+scale = Vector2( 0.239477, 0.24014 )
+texture = ExtResource( 10 )
+
+[node name="CaveToUp" type="Area2D" parent="Portals"]
+position = Vector2( 641.865, 440.062 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 4
+new_position = Vector2( 420, 315 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
+position = Vector2( 72.6899, 155.651 )
+shape = SubResource( 13 )
+
+[node name="Button" type="Sprite" parent="Portals/CaveToUp"]
+position = Vector2( 66.2164, 117.246 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
-[node name="ToCave2" type="Area2D" parent="Portals"]
-position = Vector2( 1684.05, 342.122 )
+[node name="VineCave" type="Area2D" parent="Portals"]
+position = Vector2( 1601.84, 378.95 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 4
+new_position = Vector2( 675, 800 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave2"]
-shape = SubResource( 2 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/VineCave"]
+position = Vector2( 71.7031, 124.399 )
+shape = SubResource( 14 )
 
-[node name="Button" type="Sprite" parent="Portals/ToCave2"]
-position = Vector2( -75.582, -59.7276 )
+[node name="Button" type="Sprite" parent="Portals/VineCave"]
+position = Vector2( -15.6943, 95.8637 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="CaveToDown" type="Area2D" parent="Portals"]
+position = Vector2( 361.105, 117.753 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 4
+new_position = Vector2( 650, 600 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]
+position = Vector2( 58.7141, 165.815 )
+shape = SubResource( 13 )
+
+[node name="Button" type="Sprite" parent="Portals/CaveToDown"]
+position = Vector2( 73.0285, 127.993 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
