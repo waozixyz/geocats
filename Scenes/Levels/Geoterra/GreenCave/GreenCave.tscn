@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_BG.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Interact.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
 
@@ -15,7 +15,112 @@ extents = Vector2( 34.374, 1107.3 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50, 50 )
 
-[node name="Watterfalls" type="Node2D"]
+[sub_resource type="GDScript" id=10]
+script/source = "extends Area2D
+class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 9, 203.27 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Area2D
+class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
+
+func _ready():
+	var err = connect(\"body_entered\", self, \"_on_body_entered\")
+	assert(err == OK) 
+	err = connect(\"body_exited\", self, \"_on_body_exited\")
+	assert(err == OK) 
+	collision_layer = 7
+
+func _is_valid(body):
+	return body is MovingBody
+	
+func _on_body_entered(body):
+	if _is_valid(body):
+		body.on_ladder = true
+		body.ladder_x = self.position.x
+		body.ladder_y = self.position.y
+		body.ladder_rot = self.rotation_degrees
+
+			
+func _on_body_exited(body):
+	if _is_valid(body):
+		body.on_ladder = false
+"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9, 299.142 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 9, 131.468 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 9, 60.4341 )
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Area2D
+
+signal splash
+
+#onready var splash : Particles2D = $Splash
+export var slime = false
+
+func _ready():
+	connect(\"body_entered\", self, \"_on_body_entered\")
+	connect(\"body_exited\", self, \"_on_body_exited\")
+#	material.set_shader_param(\"sprite_scale\", scale)
+	pass
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		if body.underwater != null:
+			body.underwater = true
+			if slime:
+				body.water_sub = \"slime\"
+			else:
+				body.water_sub = \"water\"
+
+			emit_signal(\"splash\", body.position.x)
+
+func _on_body_exited(body:PhysicsBody2D):
+	if body.name == \"Player\":
+		if body.underwater != null: 
+			body.underwater = false
+
+			emit_signal(\"splash\", body.position.x)
+"
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 134.445, 130.565 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 248.793, 102.488 )
+
+[node name="Waterfalls" type="Node2D"]
 script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -31,12 +136,12 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 41, 4852 )
+position = Vector2( 1686.6, 1115.16 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
-limit_right = 5000
-limit_bottom = 5000
+limit_right = 1750
+limit_bottom = 1250
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
 frame = 19
@@ -124,7 +229,6 @@ __meta__ = {
 
 [node name="ToCave" type="Area2D" parent="Portals"]
 position = Vector2( 1611.54, 1145.81 )
-script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -139,7 +243,6 @@ texture = ExtResource( 10 )
 
 [node name="ToCave2" type="Area2D" parent="Portals"]
 position = Vector2( 1684.05, 342.122 )
-script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -161,13 +264,135 @@ centered = false
 
 [node name="flower" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 38.924, 76.978 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-autoplay = true
 bus = "Music"
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Ladders" type="Node2D" parent="Interactables"]
+
+[node name="VineLadder" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 1662.35, 754.62 )
+scale = Vector2( 1.4, 1.4 )
+script = SubResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 11 )
+
+[node name="VineLadder4" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 68.8368, 377.011 )
+scale = Vector2( 1.4, 1.4 )
+script = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder4"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 3 )
+
+[node name="VineLadder3" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 1169.2, 191.155 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder3"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 5 )
+
+[node name="VineLadder2" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 1701.77, 580.393 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder2"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 6 )
+
+[node name="VineLadder5" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 216.536, 867.893 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder5"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 6 )
+
+[node name="VineLadder6" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 185.933, 791.973 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder6"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 6 )
+
+[node name="VineLadder7" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 523.604, 508.516 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder7"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 6 )
+
+[node name="VineLadder8" type="Area2D" parent="Interactables/Ladders"]
+position = Vector2( 495.224, 482.347 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder8"]
+position = Vector2( 0, -4.79604 )
+shape = SubResource( 6 )
+
+[node name="waterarea" type="Area2D" parent="Interactables"]
+position = Vector2( 136.547, 1131.07 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea"]
+shape = SubResource( 8 )
+
+[node name="waterarea2" type="Area2D" parent="Interactables"]
+position = Vector2( 519.566, 1167.8 )
+collision_layer = 7
+collision_mask = 7
+script = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea2"]
+shape = SubResource( 9 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
