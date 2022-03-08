@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/rain_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Levels/Glaciokarst/GeoLodge/Fire.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sounds/Effects/Rain.ogg" type="AudioStream" id=6]
@@ -84,7 +84,7 @@ extents = Vector2( 27.1877, 3.26599 )
 extents = Vector2( 79.5099, 12.3574 )
 
 [sub_resource type="RectangleShape2D" id=280]
-extents = Vector2( 64, 6 )
+extents = Vector2( 70.3335, 6 )
 
 [sub_resource type="RectangleShape2D" id=281]
 extents = Vector2( 71, 6 )
@@ -105,7 +105,7 @@ extents = Vector2( 137.333, 9.34205 )
 extents = Vector2( 109.667, 7.33336 )
 
 [sub_resource type="RectangleShape2D" id=287]
-extents = Vector2( 66, 6 )
+extents = Vector2( 76, 1.99866 )
 
 [sub_resource type="RectangleShape2D" id=288]
 extents = Vector2( 8, 101 )
@@ -114,10 +114,10 @@ extents = Vector2( 8, 101 )
 extents = Vector2( 16.2165, 7.50229 )
 
 [sub_resource type="RectangleShape2D" id=290]
-extents = Vector2( 105.667, 14.489 )
+extents = Vector2( 115.667, 14.489 )
 
 [sub_resource type="RectangleShape2D" id=291]
-extents = Vector2( 8.66669, 213.156 )
+extents = Vector2( 18.0002, 213.156 )
 
 [sub_resource type="RectangleShape2D" id=292]
 extents = Vector2( 10, 315 )
@@ -447,6 +447,8 @@ __meta__ = {
 }
 
 [node name="Roof" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Roof"]
 position = Vector2( -478, 26.036 )
@@ -467,7 +469,7 @@ position = Vector2( 748.334, 420.748 )
 shape = SubResource( 277 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 41.3333, 306 )
+position = Vector2( 43.3226, 351.817 )
 rotation = -0.174533
 shape = SubResource( 278 )
 one_way_collision = true
@@ -477,7 +479,8 @@ position = Vector2( 14.6667, 449.628 )
 shape = SubResource( 279 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 391.333, 284.393 )
+position = Vector2( 397.667, 284.393 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 280 )
 one_way_collision = true
 
@@ -517,15 +520,13 @@ shape = SubResource( 286 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 173, 263 )
+position = Vector2( 198.667, 285.056 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 287 )
 one_way_collision = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 72.6667, 241.667 )
+position = Vector2( 84.6667, 241.667 )
 shape = SubResource( 288 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
@@ -533,28 +534,32 @@ position = Vector2( 633.117, -13.8605 )
 shape = SubResource( 289 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 754.999, -15.1566 )
+position = Vector2( 764.999, -15.1566 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 290 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 850.667, 211.821 )
+position = Vector2( 858.667, 211.821 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 291 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
+collision_layer = 7
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -10.5751, 73.3706 )
 shape = SubResource( 292 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( 750, -127.333 )
 shape = SubResource( 293 )
 
@@ -626,6 +631,8 @@ __meta__ = {
 
 [node name="Area2D" type="Area2D" parent="Palmerston"]
 script = ExtResource( 4 )
+has_parent = true
+character_name = "Palmerston"
 character_folder = "res://Assets/Agents/Palmerston"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/Area2D"]

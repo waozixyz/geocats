@@ -1,11 +1,12 @@
-extends InteractSimple
+extends E_Interact
 
 onready var sprite = $AnimatedSprite
 
 func _add_fire():
 	sprite.visible = true
-	_add_audio("SFX",name)
+	#AudioManager.play_sound("SFX",name)
 	disabled = true
+
 func _ready():
 	if PROGRESS.variables.has("fire"):
 		_add_fire()
