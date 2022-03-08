@@ -1,4 +1,4 @@
-extends InteractSimple
+extends E_Interact
 
 onready var sprite = $AnimatedSprite
 onready var platform_idle = $HeadPlatform/Idle

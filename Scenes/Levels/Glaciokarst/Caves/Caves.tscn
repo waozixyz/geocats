@@ -1,15 +1,15 @@
 [gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/FG_Caves.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Levels/Glaciokarst/Caves/CatHead.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/cat_cave_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/BG_Caves.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/9_Caves.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Levels/Glaciokarst/Caves/interactions.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/cat_rock_spritesheet.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/Levels/Glaciokarst/Caves/GoInside.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/BG_Far.png" type="Texture" id=13]
@@ -119,6 +119,8 @@ extents = Vector2( 12.157, 405.496 )
 extents = Vector2( 176, 29 )
 
 [node name="Caves" type="Node2D"]
+script = ExtResource( 10 )
+locations = [ Vector2( 0, 0 ), Vector2( 500, 2120 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -135,6 +137,7 @@ centered = false
 [node name="CatHead" type="Area2D" parent="BelowPlayer"]
 position = Vector2( 46.8, 379.8 )
 script = ExtResource( 2 )
+item_node = NodePath("GoInside")
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/CatHead"]
 position = Vector2( -0.599995, 0 )
@@ -168,11 +171,19 @@ polygon = PoolVector2Array( 45.4, 19, 41, 17.4, 30.8, 17.2, 32.8, 19, 41, 19.2, 
 one_way_collision = true
 
 [node name="GoInside" type="Area2D" parent="BelowPlayer/CatHead"]
-script = ExtResource( 10 )
+script = ExtResource( 8 )
+territory = 2
+glaciokarst = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BelowPlayer/CatHead/GoInside"]
 position = Vector2( 53.4, 49.8 )
 shape = SubResource( 9 )
+
+[node name="Button" type="Sprite" parent="BelowPlayer/CatHead/GoInside"]
+visible = false
+position = Vector2( 47.7999, 48 )
+scale = Vector2( 0.0461733, 0.048319 )
+texture = ExtResource( 14 )
 
 [node name="caves" type="Sprite" parent="BelowPlayer"]
 position = Vector2( -0.2, 0 )
@@ -301,6 +312,7 @@ bus = "Music"
 [node name="GoToGeoLodge" type="Area2D" parent="."]
 position = Vector2( 28.5323, 404.255 )
 script = ExtResource( 8 )
+territory = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToGeoLodge"]
 position = Vector2( -13.2662, 8.8725 )
