@@ -25,6 +25,7 @@ enum Geoterra {
 	CavityPuzzleRoom
 	GeoCacheRoom
 	Mountain
+	GreenCave
 	Watterfalls
 }
 

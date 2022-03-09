@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/UI/Teleport/Internal.gd" type="Script" id=7]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Levels/Geoterra/Mountain/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.374, 1107.3 )
@@ -203,9 +203,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
