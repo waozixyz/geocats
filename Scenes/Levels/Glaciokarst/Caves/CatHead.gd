@@ -1,43 +1,32 @@
-extends E_Interact
+extends LockedItem
 
+
+onready var idle = $Idle
+onready var open = $Open
 onready var sprite = $AnimatedSprite
-onready var platform_idle = $HeadPlatform/Idle
-onready var platform_open = $HeadPlatform/Open
-onready var platform_open2 = $HeadPlatform/Open2
-onready var go_inside_area = $GoInside
-var open_mouth
-func _ready():
-	open_mouth = PROGRESS.variables.get("CavesCatHeadOpen")
 
-	if open_mouth:
+func _check_colliders(now = false):
+	if PROGRESS.variables.get(unlock_var) == true or now:
 		sprite.animation = "open"
+		sprite.play()
 		disabled = true
-		sprite.frame = 2
-		open_it()
 	else:
-		sprite.animation = "idle"
-		platform_idle.disabled = false
-		platform_open.disabled = true
-		platform_open2.disabled = true
-		
-func open_it():
-	PROGRESS.variables["CavesCatHeadOpen"] = true
-	open_mouth = true
-	
-	platform_idle.disabled = true
-	platform_open.disabled = false
-	platform_open2.disabled = false
-	
-	go_inside_area.disabled = false
-	
+		for collider in open.get_children():
+			collider.disabled = true
+		for collider in idle.get_children():
+			collider.disabled = false
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	_check_colliders()
+
 func _process(delta):
-	if not open_mouth:
-		go_inside_area.disabled = true
-		if do_something and sprite.animation == "idle":
-			sprite.animation = "open"
-			disabled = true
-		
-		if sprite.frame == 2:
-			open_it()
-		
-	._process(delta)
+	if do_something:
+		do_something = true
+		_check_colliders(true)
+
+	if not PROGRESS.variables.get(unlock_var) and sprite.frame == 2:
+		PROGRESS.variables[unlock_var] = true
+		for colliders in open.get_children():
+			colliders.disabled = false
+		for colliders in idle.get_children():
+			colliders.disabled = true

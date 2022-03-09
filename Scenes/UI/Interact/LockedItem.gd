@@ -2,8 +2,6 @@ extends E_Interact
 
 class_name LockedItem
 
-
-
 export(NodePath) var item_node
 export(String, FILE, "*.json") var dialogue_file = ""
 
@@ -26,14 +24,16 @@ func _ready():
 	if not to_unlock:
 		printerr("item to unlock not found: " + item_node)
 	_check_unlocked()
+
 var dia_started
 func _process(delta):
 	if do_something:
 		disabled = true
-		dialogue.initiate(dialogue_file)
-		dialogue.modulate.a = 0.01
+		if not dialogue_file.empty():
+			dialogue.initiate(dialogue_file)
+			dialogue.modulate.a = 0.01
+			dia_started = true
 		do_something = false
-		dia_started = true
 	if dia_started and dialogue.modulate.a == 0:
 		dia_started = false
 		disabled = false
