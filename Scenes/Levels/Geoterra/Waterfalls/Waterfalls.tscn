@@ -10,28 +10,28 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_sixeight.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Telescope.gd" type="Script" id=21]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28.8115, 9.60385 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 19.2077, 22.8092 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 38.4153, 16.8065 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 34.374, 4798.62 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 73, 78 )
 
-[node name="Watterfalls" type="Node2D"]
+[node name="Waterfalls" type="Node2D"]
 script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -922,22 +922,22 @@ polygon = PoolVector2Array( 2360.14, 743.097, 2402.16, 695.078, 2506.6, 672.269,
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 6978.39, 472.989 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 7121.25, 477.791 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 925.57, 1187.27 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 831.933, 1199.28 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="Walls" type="StaticBody2D" parent="Collisions"]
@@ -949,31 +949,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -22.9818, 2273.02 )
 scale = Vector2( 1, 0.75991 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 8424.91, 2273.02 )
 scale = Vector2( 1, 0.75991 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 4651.2, 4534.86 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 3978.39, -10 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="Portals" type="Node2D" parent="."]
 __meta__ = {
@@ -989,7 +987,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="Button" type="Sprite" parent="Portals/ToCave"]
 position = Vector2( 0, -66 )
@@ -1017,7 +1015,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
 position = Vector2( 1784, 1603 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

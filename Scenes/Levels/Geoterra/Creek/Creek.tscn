@@ -850,7 +850,7 @@ player_disable = "feline_creek"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FelineArea"]
 position = Vector2( 1729, 3946 )
-shape = SubResource( 51 )
+shape = SubResource( 50 )
 
 [node name="RespawnLocationOnTouch" type="Area2D" parent="."]
 position = Vector2( 4224, 5010 )
@@ -862,7 +862,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch"]
 position = Vector2( -25.5, -67 )
-shape = SubResource( 51 )
+shape = SubResource( 50 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
