@@ -111,7 +111,8 @@ func move_horizontally(subtractor = 0):
 
 # check the previous state player was in
 func _get_previous_state_tag():
-	return state_machine.previous_state_tag
+	var tag = state_machine.previous_state_tag if state_machine else "idle"
+	return tag 
 
 var followers = []
 # init player
@@ -257,18 +258,19 @@ func move():
 
 # animation helper function
 func play(animation:String):
-	if animation == "slide_wall" and coll_slide.disabled:
-		if sprite.flip_h:
-			sprite.position = Vector2(4, -6)
+	if sprite:
+		if animation == "slide_wall" and coll_slide.disabled:
+			if sprite.flip_h:
+				sprite.position = Vector2(4, -6)
+			else:
+				sprite.position = Vector2(-4, -6)
 		else:
-			sprite.position = Vector2(-4, -6)
-	else:
-		sprite.position = Vector2(0, 0)
-	if sprite.animation == animation:
-		return
-	sprite.play(animation)
+			sprite.position = Vector2(0, 0)
+		if sprite.animation == animation:
+			return
+		sprite.play(animation)
 
-###########################################################
+	###########################################################
 # Setget
 ###########################################################
 func _get_vx():
@@ -287,7 +289,7 @@ func _set_vy(val:float):
 	vy = val
 
 func _get_grounded():
-	grounded = not floor_timer.is_stopped()
+	grounded = not floor_timer.is_stopped() if floor_timer else false
 	return grounded
 
 func _get_jumping():

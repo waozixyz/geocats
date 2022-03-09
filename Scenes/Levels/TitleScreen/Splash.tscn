@@ -332,7 +332,7 @@ script = ExtResource( 4 )
 next_scene = "res://Scenes/Levels/TitleScreen/TitleScreen.tscn"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 358.302, 208.933 )
+position = Vector2( 114, 316 )
 scale = Vector2( 12.8349, 12.775 )
 frames = SubResource( 79 )
 centered = false

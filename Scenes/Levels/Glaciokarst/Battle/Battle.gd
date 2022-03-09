@@ -1,12 +1,10 @@
-extends Node2D
+extends GeneralLevel
 
 onready var music_intro = $MusicIntro
 onready var music_main = $MusicMain
 onready var music_outro = $MusicOutro
 
 onready var nft = get_tree().get_current_scene().get_node("Default/NFT")
-onready var player = get_tree().get_current_scene().get_node("Default/Player")
-onready var affogato = get_tree().get_current_scene().get_node("Default/Affogato")
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 
 onready var camera = player.get_node("Camera2D")
@@ -21,7 +19,7 @@ onready var hp_bar = $HUD/HpBar
 var defeated = false
 var start_ticker = 0
 var nyrn_chat = 0
-var death_location = 1
+
 
 func _intro_done():
 	music_main.play()
@@ -29,13 +27,9 @@ func _intro_done():
 func _main_done():
 	music_outro.play()
 
-var norna_nft = "Norna Pixels"
-var wyrd_nft = "Wyrd Pixels"
-	
 func _ready():
-	nft.reward(norna_nft, false)
-	nft.reward(wyrd_nft, false)
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
+	print(defeated)
 	if not defeated:
 		music_outro.stream.loop = false
 		music_intro.stream.loop = false
@@ -55,7 +49,8 @@ var dodging
 var phase
 func _phase_one(dfps):
 	if trigger_battle.touching:
-		affogato.visible = false
+		for follower in player.followers():
+			follower.visible
 		if player.disable_reasons.size() == 0:
 			player.disable("Battle")
 		if camera.offset.x < 350 and not shoot_rock:
@@ -140,8 +135,6 @@ func _phase_five():
 		enemy.sprite.frame = 0
 		enemy.sprite.animation = "die"
 		enemy.sprite.playing = true
-		nft.reward(norna_nft, false)
-		nft.reward(wyrd_nft, false)
 		phase = 6
 
 func _phase_six():
@@ -153,16 +146,15 @@ func _phase_six():
 		defeated = true
 		PROGRESS.variables["CavesBattleDefeated"] = true
 		player.enable("Battle")
-		
+
 func _process(delta):
 	var dfps = delta * global.fps
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
 	start_ticker += 1
-	affogato.visible = false
 	phase == 6
-	if not defeated and floor(global.data.player_hp) > 0:
+	if not defeated and floor(global.user.hp) > 0:
 		if phase == 1:
 			_phase_one(dfps)
 		elif phase == 2:
@@ -175,10 +167,11 @@ func _process(delta):
 			_phase_five()
 		elif phase == 6:
 			_phase_six()
-		if not chat_with.started and phase > 2:
-			hp_bar.visible = true
-		else:
-			hp_bar.visible = false
+			
+		#if not dia_started and phase > 2:
+		#	hp_bar.visible = true
+		#else:
+		#	hp_bar.visible = false
 	else:
 		hp_bar.visible = false
 

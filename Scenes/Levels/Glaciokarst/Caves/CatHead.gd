@@ -6,10 +6,14 @@ onready var open = $Open
 onready var sprite = $AnimatedSprite
 
 func _check_colliders(now = false):
-	if PROGRESS.variables.get(unlock_var) == true or now:
+	print(player)
+	if PROGRESS.variables.get(unlock_var) == true or now or global.user.location == 1:
 		sprite.animation = "open"
 		sprite.play()
 		disabled = true
+		if global.user.location == 1:
+			player.visible = false
+			player.disable("cave")
 	else:
 		for collider in open.get_children():
 			collider.disabled = true
@@ -30,3 +34,7 @@ func _process(delta):
 			colliders.disabled = false
 		for colliders in idle.get_children():
 			colliders.disabled = true
+			
+		if global.user.location == 1:
+			player.visible = true
+			player.enable("cave")
