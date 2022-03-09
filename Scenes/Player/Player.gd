@@ -248,7 +248,7 @@ func update_inputs():
 
 # player damage function
 func damage(dmg):
-	global.data.player_hp -= dmg
+	global.user.hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
 	hurt_sfx.play()
 	
@@ -260,10 +260,7 @@ func move():
 func play(animation:String):
 	if sprite:
 		if animation == "slide_wall" and coll_slide.disabled:
-			if sprite.flip_h:
-				sprite.position = Vector2(4, -6)
-			else:
-				sprite.position = Vector2(-4, -6)
+			sprite.position = Vector2(4, -6) if sprite.flip_h else Vector2(-4, -6) 
 		else:
 			sprite.position = Vector2(0, 0)
 		if sprite.animation == animation:

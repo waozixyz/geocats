@@ -5,8 +5,9 @@ onready var music_main = $MusicMain
 onready var music_outro = $MusicOutro
 
 onready var nft = get_tree().get_current_scene().get_node("Default/NFT")
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
+onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
+export(String, DIR) var battle_dialogue_folder = ""
 onready var camera = player.get_node("Camera2D")
 onready var trigger_battle = $TriggerBattle
 
@@ -18,7 +19,6 @@ onready var hp_bar = $HUD/HpBar
 
 var defeated = false
 var start_ticker = 0
-var nyrn_chat = 0
 
 
 func _intro_done():
@@ -29,7 +29,7 @@ func _main_done():
 
 func _ready():
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
-	print(defeated)
+
 	if not defeated:
 		music_outro.stream.loop = false
 		music_intro.stream.loop = false
@@ -42,30 +42,29 @@ func _ready():
 		ceiling.sprite.frame = 0
 	else:
 		enemy.sprite.visible = false
-
+	
 var shoot_rock
 var boulder_fall
 var dodging
 var phase
+var dia_started
+
 func _phase_one(dfps):
 	if trigger_battle.touching:
-		for follower in player.followers():
+		for follower in player.followers:
 			follower.visible
-		if player.disable_reasons.size() == 0:
-			player.disable("Battle")
+		player.disable("Battle")
 		if camera.offset.x < 350 and not shoot_rock:
 			camera.offset.x += 2
 			camera.zoom *= 1.001
-		elif not chat_with.started:
-			if nyrn_chat == 0:
-				chat_with.visible = true
-				chat_with.start("norna_wyrd_caves_" + str(nyrn_chat), true, false)
-				nyrn_chat += 1
-				music_intro.play()
+		elif not dia_started:
+			if not shoot_rock:
+				_start_chat("norna_wyrd_caves_0")
 				shoot_rock = true
 			elif shoot_rock and (enemy.sprite.frame == 3 or enemy.sprite.frame == 9) and enemy.sprite.playing: 
 				enemy.sprite.playing = false
 				enemy.beam_attack()
+				music_intro.play()
 			_fix_cam()
 	if ceiling.hp < 100:
 		phase = 2
@@ -103,7 +102,7 @@ func _pre_chat():
 	enemy.shooting = false
 	enemy.ears.visible = false
 	enemy.vulnerable = false
-	chat_with.visible = true
+
 
 func _phase_three():
 	_fix_cam()
@@ -111,14 +110,17 @@ func _phase_three():
 		enemy.move()
 	if enemy.hp <= 40:
 		_pre_chat()
-		chat_with.start("norna_wyrd_caves_1", true, false)
+		_start_chat("norna_wyrd_caves_1")
 		phase = 4
 		# bug notproceeding
 
+func _start_chat(file_name):
+	dia_started = true
+	dialogue.modulate.a = 0.1
+	dialogue.initiate(battle_dialogue_folder + '/' + file_name + '.json')
 func _phase_four(dfps):
-	if not chat_with.started and player.disable_reasons.size() != 0:
+	if not dia_started and player.disable_reasons.size() != 0:
 		player.enable("Battle")
-		chat_with.visible = false
 		enemy.vulnerable = true
 		enemy.rage = 1
 		enemy.move_speed *= 2
@@ -126,11 +128,11 @@ func _phase_four(dfps):
 		enemy.move()
 	if enemy.hp <= 0:
 		_pre_chat()
-		chat_with.start("norna_wyrd_caves_2", true, false)
+		_start_chat("norna_wyrd_caves_1")
 		phase = 5
 
 func _phase_five():
-	if not chat_with.started and player.disable_reasons.size() != 0:
+	if not dia_started and player.disable_reasons.size() != 0:
 		music_main.stream.loop = false
 		enemy.sprite.frame = 0
 		enemy.sprite.animation = "die"
@@ -168,11 +170,11 @@ func _process(delta):
 		elif phase == 6:
 			_phase_six()
 			
-		#if not dia_started and phase > 2:
-		#	hp_bar.visible = true
-		#else:
-		#	hp_bar.visible = false
+		if not dia_started and phase > 2:
+			hp_bar.visible = true
+		else:
+			hp_bar.visible = false
 	else:
 		hp_bar.visible = false
-
-
+	if dialogue.modulate.a == 0 and dia_started:
+		dia_started = false
