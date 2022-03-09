@@ -48,7 +48,6 @@ func hide_chat():
 	dia_started = false
 
 func _process(_delta):
-	#print(dia_started, dialogue.modulate.a, name, PROGRESS.variables.get(skip_var), trigger_on_touch)
 	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
 		if touching and not active:
 			start_chat()

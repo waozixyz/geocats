@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/nornabullet.wav-5bfc37e28bb11a7465a6585185b423e7.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/Glaciokarst/Battle/Sounds/nornabullet.wav"
+dest_files=[ "res://.import/nornabullet.wav-5bfc37e28bb11a7465a6585185b423e7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

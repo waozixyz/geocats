@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/catnip_cat.ogg-0700b55c9c6cd28bd9418d89f476de6e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.ogg"
+dest_files=[ "res://.import/catnip_cat.ogg-0700b55c9c6cd28bd9418d89f476de6e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

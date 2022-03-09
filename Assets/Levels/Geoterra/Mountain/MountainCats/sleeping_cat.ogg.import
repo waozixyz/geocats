@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sleeping_cat.ogg-3b6381b419a23c33cc76a18aba484745.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.ogg"
+dest_files=[ "res://.import/sleeping_cat.ogg-3b6381b419a23c33cc76a18aba484745.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

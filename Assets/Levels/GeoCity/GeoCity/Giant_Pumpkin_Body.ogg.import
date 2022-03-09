@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Giant_Pumpkin_Body.ogg-97fb56f403f09bc2a8e0f655d144da4b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/GeoCity/Giant_Pumpkin_Body.ogg"
+dest_files=[ "res://.import/Giant_Pumpkin_Body.ogg-97fb56f403f09bc2a8e0f655d144da4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

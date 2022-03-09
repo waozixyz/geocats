@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/evilpumpkinlaugh.wav-e55acc22118c5d8db0470989f661d11d.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/evilpumpkinlaugh.wav"
+dest_files=[ "res://.import/evilpumpkinlaugh.wav-e55acc22118c5d8db0470989f661d11d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

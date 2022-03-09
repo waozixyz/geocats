@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fire.ogg-18393d8c299277cdd2fc2214278d7c95.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Glaciokarst/GeoLodge/Fire.ogg"
+dest_files=[ "res://.import/Fire.ogg-18393d8c299277cdd2fc2214278d7c95.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -5,9 +5,9 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_FG.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Interact.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Levels/Geoterra/Waterfalls/Interact.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Levels/Geoterra/Mountain/7_Mountain_sixeight.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_sixeight.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Telescope.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=5]

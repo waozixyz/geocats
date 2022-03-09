@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sitting_cat.ogg-d171a388974bbd9696edb1ec61d4bf7d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Mountain/MountainCats/sitting_cat.ogg"
+dest_files=[ "res://.import/sitting_cat.ogg-d171a388974bbd9696edb1ec61d4bf7d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

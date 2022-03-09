@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pumpkin_sax_6.wav-60f4a8b4c81e1358b7ec8a1daad64ee8.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_6.wav"
+dest_files=[ "res://.import/pumpkin_sax_6.wav-60f4a8b4c81e1358b7ec8a1daad64ee8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
