@@ -5,6 +5,5 @@ extends ChatNPC
 func _process(delta):
 	if touching:
 		player.position.x -= 20
-
 		player.sprite.flip_h = -1
 
