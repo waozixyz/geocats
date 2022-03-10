@@ -1241,16 +1241,15 @@ scale = Vector2( 0.304848, 0.305692 )
 texture = ExtResource( 22 )
 
 [node name="DownElevator" type="Area2D" parent="Interactive"]
-position = Vector2( 1448, 900 )
+position = Vector2( 1556, 1048 )
 script = ExtResource( 33 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 1
-new_position = Vector2( 710, 180 )
+node_to_go = NodePath("../UpElevator")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/DownElevator"]
-position = Vector2( 108, 148 )
 shape = SubResource( 66 )
 
 [node name="Button" type="Sprite" parent="Interactive/DownElevator"]
@@ -1266,7 +1265,7 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 1
-new_position = Vector2( 1600, 1000 )
+node_to_go = NodePath("../DownElevator")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/UpElevator"]
 position = Vector2( 2, -0.205048 )

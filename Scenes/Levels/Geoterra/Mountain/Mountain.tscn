@@ -513,7 +513,7 @@ __meta__ = {
 [node name="GoUp" type="Area2D" parent="Portals"]
 position = Vector2( 1548, 4089 )
 script = ExtResource( 12 )
-new_position = Vector2( 1580, 2500 )
+node_to_go = NodePath("../GoDown")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoUp"]
 position = Vector2( 2.9999, 4.00024 )
@@ -531,7 +531,7 @@ script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
-new_position = Vector2( 1580, 4080 )
+node_to_go = NodePath("../GoUp")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoDown"]
 position = Vector2( 108.749, 148 )

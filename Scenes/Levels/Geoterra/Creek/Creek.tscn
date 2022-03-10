@@ -764,17 +764,16 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="CaveToUp" type="Area2D" parent="Portals"]
-position = Vector2( 4301, 4828 )
+position = Vector2( 4409, 4976 )
 script = ExtResource( 28 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 sound_effect = 4
-new_position = Vector2( 4350, 3240 )
+node_to_go = NodePath("../CaveToDown")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
-position = Vector2( 108, 148 )
 shape = SubResource( 49 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToUp"]
@@ -784,16 +783,15 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="CaveToDown" type="Area2D" parent="Portals"]
-position = Vector2( 4269.47, 3100.03 )
+position = Vector2( 4377.47, 3248.03 )
 script = ExtResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 4
-new_position = Vector2( 4420, 4950 )
+node_to_go = NodePath("../CaveToUp")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]
-position = Vector2( 108, 148 )
 shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToDown"]
