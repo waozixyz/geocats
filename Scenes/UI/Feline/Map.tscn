@@ -77,11 +77,11 @@ margin_bottom = 70.0
 
 [node name="GeoCity" type="Label" parent="Territories/GeoCity/PopupMenu/VBoxContainer"]
 margin_right = 90.0
-margin_bottom = 45.0
+margin_bottom = 21.0
 text = "GeoCity"
 
 [node name="CatsCradle" type="Label" parent="Territories/GeoCity/PopupMenu/VBoxContainer"]
-margin_top = 49.0
+margin_top = 25.0
 margin_right = 90.0
-margin_bottom = 70.0
+margin_bottom = 46.0
 text = "CatsCradle"
