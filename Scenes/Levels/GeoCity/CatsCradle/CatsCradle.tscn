@@ -227,11 +227,12 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 26 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
-"name": "blink",
+"name": "crouch",
 "speed": 5.0
 }, {
+<<<<<<< HEAD
 "frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ) ],
 "loop": true,
 "name": "slide_wall",
@@ -240,6 +241,11 @@ animations = [ {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 26 ), SubResource( 32 ), SubResource( 26 ), SubResource( 26 ) ],
 "loop": true,
 "name": "idle",
+=======
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "blink",
+>>>>>>> 93cb436e288a18dfeeb62cf17ea255cc0a18b21c
 "speed": 5.0
 } ]
 
@@ -342,8 +348,13 @@ extents = Vector2( 36.2031, 15.5309 )
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 30, 35.5 )
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id=69]
 extents = Vector2( 47.1908, 33.7617 )
+=======
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 29.5954, 50.5 )
+>>>>>>> 93cb436e288a18dfeeb62cf17ea255cc0a18b21c
 
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 57.5, 24 )
@@ -394,7 +405,6 @@ font_data = SubResource( 80 )
 
 [node name="CatsCradle" type="Node2D"]
 script = ExtResource( 1 )
-locations = [ Vector2( 0, 0 ), Vector2( 25, 665 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 
@@ -811,21 +821,24 @@ position = Vector2( 20, 25.5 )
 shape = SubResource( 68 )
 
 [node name="Teleport" type="Area2D" parent="Interactables"]
-position = Vector2( -35, 585.7 )
+position = Vector2( 20, 635 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 6
 geocity = 1
+this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactables/Teleport"]
+<<<<<<< HEAD
 position = Vector2( 48.1908, 50 )
 shape = SubResource( 69 )
+=======
+position = Vector2( 6.4046, 2.49994 )
+shape = SubResource( 71 )
+>>>>>>> 93cb436e288a18dfeeb62cf17ea255cc0a18b21c
 
 [node name="Button" type="Sprite" parent="Interactables/Teleport"]
 visible = false
-position = Vector2( 58, 17.3 )
+position = Vector2( 11, -23 )
 scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 6 )
 

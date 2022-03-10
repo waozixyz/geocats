@@ -765,7 +765,6 @@ extents = Vector2( 82.6183, 38.2424 )
 
 [node name="Complex" type="Node2D"]
 script = ExtResource( 8 )
-locations = [ Vector2( 0, 0 ), Vector2( 400, 1007 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -1237,7 +1236,7 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 6
-location = 1
+next_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/HomeDoor"]
 position = Vector2( 39.5, 43 )
@@ -1250,17 +1249,16 @@ scale = Vector2( 0.304848, 0.305692 )
 texture = ExtResource( 22 )
 
 [node name="DownElevator" type="Area2D" parent="Interactive"]
-position = Vector2( 1448, 900 )
+position = Vector2( 1556, 1048 )
 script = ExtResource( 33 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 1
-new_position = Vector2( 710, 180 )
+node_to_go = NodePath("../UpElevator")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/DownElevator"]
-position = Vector2( 108, 148 )
-shape = SubResource( 88 )
+shape = SubResource( 66 )
 
 [node name="Button" type="Sprite" parent="Interactive/DownElevator"]
 visible = false
@@ -1275,7 +1273,7 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 1
-new_position = Vector2( 1600, 1000 )
+node_to_go = NodePath("../DownElevator")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/UpElevator"]
 position = Vector2( 2, -0.205048 )
@@ -1295,6 +1293,7 @@ __meta__ = {
 }
 sound_effect = 3
 geocity = 2
+this_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
 shape = SubResource( 90 )

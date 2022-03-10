@@ -615,7 +615,7 @@ __meta__ = {
 "_edit_group_": true
 }
 geocity = 3
-location = 1
+next_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PopNnip"]
 position = Vector2( -49, 1 )

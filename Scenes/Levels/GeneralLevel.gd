@@ -1,21 +1,21 @@
 extends Node2D
 class_name GeneralLevel
 
-export(NodePath) var player 
-export(NodePath) var music
 export(Vector2) var respawn_location
-export(Array, Vector2) onready var locations 
 export(bool) var reload_on_death
+var locations = []
 var dead
+var music
+var player
+
+
 func get_player():
 	if not player:
-		player = get_node_or_null(player)
+		player = get_node_or_null("Default/Player")
 		if not player:
-			player = get_node_or_null("Default/Player")
+			player = get_node_or_null("Player")
 			if not player:
-				player = get_node_or_null("Player")
-				if not player:
-					printerr("can't find player node: ", player)
+				printerr("can't find player node: ", player)
 	return player
 
 func get_music():
@@ -34,6 +34,7 @@ func _ready():
 	# find background music 
 	music = get_music()
 	# set player location
+	print(locations)
 	if locations:
 		locations[0] = player.position
 		player.position = locations[global.user.location]
@@ -42,6 +43,7 @@ func _ready():
 
 var tween
 func _process(_delta):
+
 	if global.user.hp <= 0:
 		tween = utils.tween_position(player, respawn_location)
 		player.disable('dead')

@@ -74,9 +74,12 @@ centered = false
 [node name="ExitGeoCache" type="Area2D" parent="."]
 position = Vector2( 33, 354.813 )
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 sound_effect = 3
 territory = 1
-location = 3
+next_loc = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
 position = Vector2( 94, 62.187 )

@@ -711,7 +711,7 @@ position = Vector2( 33, 354.813 )
 script = ExtResource( 2 )
 sound_effect = 3
 territory = 1
-location = 1
+next_loc = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPuzzleRoom"]
 position = Vector2( 94, 62.187 )
