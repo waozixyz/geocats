@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -13,8 +13,23 @@
 [ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Environment/Particles/waterfall_mist_FG.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/UI/Interact/Consumable.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat1_Spritesheet.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacatonCat2_Spritesheet.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat3_Spritesheet.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Beachball_Spritesheet.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Agents/Hogwash/hogwash_spritesheet.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer4.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer1.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/BG.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer5.png" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
@@ -72,6 +87,366 @@ extents = Vector2( 10.7142, 255.484 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 682, 1288 )
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 14.0
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 8, 7 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 22 )
+region = Rect2( 8, 0, 8, 7 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 7, 8, 7 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 22 )
+region = Rect2( 8, 7, 8, 7 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 8, 7 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "resting",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 11, 21, 11 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 24 )
+region = Rect2( 21, 11, 21, 11 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 24 )
+region = Rect2( 21, 0, 21, 11 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 21, 11 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 50, 28 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 35, 18 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 40.75, 29.2 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 14, 9 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 9, 14, 9 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 18, 14, 9 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=31]
+script/source = "extends AreaInteract
+class_name ChatNPC, \"res://Assets/UI/Debug/chat_npc_icon.png\"
+
+onready var player = get_tree().get_current_scene().get_player()
+onready var chat_with = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/ChatWith\")
+onready var dialogue = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/Dialogue\")
+
+export(bool) var has_parent = false
+export(String) var skip_var = \"\"
+export(String) var character_name = name
+export(String, DIR) var character_folder = \"\"
+
+export(String, FILE, \"*.json\") var json_file = \"\"
+export(String, FILE, \"*.ogg, *.wav\") var sound_file = \"\"
+export(bool) var trigger_on_touch = false
+export(String) var player_disable = \"\"
+
+func _get_default_path():
+	if character_folder.empty() and not json_file.empty():
+		return utils.get_character_folder(json_file)
+	else:
+		return character_folder + \"/\" + character_name.to_lower()
+
+func _ready():
+	if not character_folder.empty() or not json_file.empty():
+		var file2Check = File.new()
+		if json_file.empty():
+			json_file = _get_default_path() + \".json\"
+		if sound_file.empty():
+			if file2Check.file_exists(_get_default_path() + \".ogg\"):
+				sound_file = _get_default_path() + \".ogg\"
+			elif file2Check.file_exists(_get_default_path() + \".wav\"):
+				sound_file = _get_default_path() + \".wav\"
+	else:
+		disabled = true
+
+var active : bool
+var completed :bool
+func show_chat():
+	active = true
+	chat_with.visible = true
+	chat_with.get_node(\"Label\").text = character_name
+
+func hide_chat():
+	active = false
+	chat_with.visible = false
+	dialogue.exit()
+	dia_started = false
+
+func _process(_delta):
+	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
+		if touching and not active:
+			start_chat()
+			if not player_disable.empty():
+				player.disable(player_disable)
+			active = true
+
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false
+			active = false
+			if not skip_var.empty():
+				PROGRESS.variables[skip_var] = true
+			if not player_disable.empty():
+				player.enable(player_disable)
+	else:
+		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
+			show_chat()
+		elif (disabled or not touching) and active:
+			hide_chat()
+	
+	if has_parent and \"idle\" in get_parent():
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false
+		get_parent().idle = true if dia_started else false
+
+
+func start_chat():
+	dialogue.initiate(json_file)
+	dialogue.modulate.a = 0.1
+	dia_started = true
+
+	chat_with.visible = false
+	AudioManager.play_sound(sound_file)
+
+var dia_started
+func _input(_event):
+	if not trigger_on_touch:
+		if touching and json_file and Input.is_action_just_pressed(\"interact\") and dialogue.modulate.a == 0:
+			if chat_with.visible:
+				start_chat()
+			else:
+				active = false
+				completed = true
+				return
+
+	
+"
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 40.75, 29.2 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 10, 12 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 20 )
+region = Rect2( 10, 0, 10, 12 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 20 )
+region = Rect2( 20, 0, 10, 12 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=37]
+script/source = "extends AnimatedSprite
+class_name SpriteAutoPlay
+
+# this was created to avoid needing the playing bool true in the scene
+# which keeps rewriting the scene file and causing merge issues
+
+func _ready():
+	play()
+"
+
+[sub_resource type="GDScript" id=38]
+script/source = "extends AreaInteract
+class_name ChatNPC, \"res://Assets/UI/Debug/chat_npc_icon.png\"
+
+onready var player = get_tree().get_current_scene().get_player()
+onready var chat_with = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/ChatWith\")
+onready var dialogue = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/Dialogue\")
+
+export(bool) var has_parent = false
+export(String) var skip_var = \"\"
+export(String) var character_name = name
+export(String, DIR) var character_folder = \"\"
+
+export(String, FILE, \"*.json\") var json_file = \"\"
+export(String, FILE, \"*.ogg, *.wav\") var sound_file = \"\"
+export(bool) var trigger_on_touch = false
+export(String) var player_disable = \"\"
+
+func _get_default_path():
+	if character_folder.empty() and not json_file.empty():
+		return utils.get_character_folder(json_file)
+	else:
+		return character_folder + \"/\" + character_name.to_lower()
+
+func _ready():
+	if not character_folder.empty() or not json_file.empty():
+		var file2Check = File.new()
+		if json_file.empty():
+			json_file = _get_default_path() + \".json\"
+		if sound_file.empty():
+			if file2Check.file_exists(_get_default_path() + \".ogg\"):
+				sound_file = _get_default_path() + \".ogg\"
+			elif file2Check.file_exists(_get_default_path() + \".wav\"):
+				sound_file = _get_default_path() + \".wav\"
+	else:
+		disabled = true
+
+var active : bool
+var completed :bool
+func show_chat():
+	active = true
+	chat_with.visible = true
+	chat_with.get_node(\"Label\").text = character_name
+
+func hide_chat():
+	active = false
+	chat_with.visible = false
+	dialogue.exit()
+	dia_started = false
+
+func _process(_delta):
+	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
+		if touching and not active:
+			start_chat()
+			if not player_disable.empty():
+				player.disable(player_disable)
+			active = true
+
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false
+			active = false
+			if not skip_var.empty():
+				PROGRESS.variables[skip_var] = true
+			if not player_disable.empty():
+				player.enable(player_disable)
+	else:
+		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
+			show_chat()
+		elif (disabled or not touching) and active:
+			hide_chat()
+	
+	if has_parent and \"idle\" in get_parent():
+		if dia_started and dialogue.modulate.a == 0:
+			dia_started = false
+		get_parent().idle = true if dia_started else false
+
+
+func start_chat():
+	dialogue.initiate(json_file)
+	dialogue.modulate.a = 0.1
+	dia_started = true
+
+	chat_with.visible = false
+	AudioManager.play_sound(sound_file)
+
+var dia_started
+func _input(_event):
+	if not trigger_on_touch:
+		if touching and json_file and Input.is_action_just_pressed(\"interact\") and dialogue.modulate.a == 0:
+			if chat_with.visible:
+				start_chat()
+			else:
+				active = false
+				completed = true
+				return
+
+	
+"
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 40.75, 29.2 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 21 )
+region = Rect2( 9, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 21 )
+region = Rect2( 18, 0, 9, 11 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 42 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=44]
+script/source = "extends AnimatedSprite
+class_name SpriteAutoPlay
+
+# this was created to avoid needing the playing bool true in the scene
+# which keeps rewriting the scene file and causing merge issues
+
+func _ready():
+	play()
+"
 
 [node name="Waterfalls" type="Node2D"]
 script = ExtResource( 12 )
@@ -1398,7 +1773,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
@@ -1459,6 +1836,38 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 1443.2, 884.6 )
 scale = Vector2( 0.1, 0.1 )
 
+[node name="Office" type="Node2D" parent="AbovePlayer"]
+position = Vector2( 8.39998, 44.6 )
+
+[node name="Sprite" type="Sprite" parent="AbovePlayer/Office"]
+position = Vector2( 138, 144.2 )
+texture = ExtResource( 29 )
+
+[node name="Drawer1" type="Sprite" parent="AbovePlayer/Office"]
+position = Vector2( 120.4, 155.36 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 28 )
+
+[node name="Drawer2" type="Sprite" parent="AbovePlayer/Office"]
+position = Vector2( 127.36, 155.36 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 25 )
+
+[node name="Drawer3" type="Sprite" parent="AbovePlayer/Office"]
+position = Vector2( 138, 144.2 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 26 )
+
+[node name="Drawer4" type="Sprite" parent="AbovePlayer/Office"]
+position = Vector2( 138, 144.2 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 27 )
+
+[node name="Drawer5" type="Sprite" parent="AbovePlayer/Office"]
+position = Vector2( 138, 144.2 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 30 )
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 bus = "Music"
@@ -1510,7 +1919,114 @@ sound_volume = 10.0
 position = Vector2( 2302, 1966 )
 shape = SubResource( 11 )
 
+[node name="Consumable" type="Area2D" parent="Interactables"]
+position = Vector2( 6015, 331 )
+script = ExtResource( 16 )
+sound_volume = 10.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Consumable"]
+position = Vector2( 2, 4 )
+shape = SubResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/Consumable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Consumable/StaticBody2D"]
+position = Vector2( 2, 4 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Interactables/Consumable"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 18 )
+animation = "resting"
+
 [node name="NPC" type="Node2D" parent="."]
+
+[node name="Hogwash" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 1620, 4170 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 19 )
+move_speed = 300
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Hogwash"]
+position = Vector2( 3274, -1033 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 23 )
+animation = "walk"
+script = ExtResource( 23 )
+
+[node name="Hogwash" type="Area2D" parent="NPC/Hogwash"]
+script = ExtResource( 14 )
+has_parent = true
+character_name = "Hogwash"
+character_folder = "res://Assets/Agents/Hogwash"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Hogwash/Hogwash"]
+shape = SubResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Hogwash"]
+position = Vector2( 6, 4 )
+shape = SubResource( 25 )
+
+[node name="VacationCat1" type="Area2D" parent="NPC"]
+position = Vector2( 5813, 369 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+character_name = "Cleopardis"
+character_folder = "res://Assets/Agents/Cleopardis"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat1"]
+position = Vector2( 20.8, 33.5306 )
+shape = SubResource( 26 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/VacationCat1"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 30 )
+animation = "idle"
+centered = false
+script = ExtResource( 23 )
+
+[node name="VacationCat2" type="Area2D" parent="NPC"]
+position = Vector2( 5622, 436 )
+script = SubResource( 31 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat2"]
+position = Vector2( 20.8, 33.5306 )
+shape = SubResource( 32 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/VacationCat2"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 36 )
+animation = "idle"
+frame = 2
+centered = false
+script = SubResource( 37 )
+
+[node name="VacationCat3" type="Area2D" parent="NPC"]
+position = Vector2( 6483, 91 )
+script = SubResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat3"]
+position = Vector2( 20.8, 33.5306 )
+shape = SubResource( 39 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/VacationCat3"]
+position = Vector2( 4, 10 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 43 )
+animation = "idle"
+frame = 9
+playing = true
+centered = false
+script = SubResource( 44 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
