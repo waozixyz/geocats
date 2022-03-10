@@ -1,5 +1,91 @@
-[gd_scene format=2]
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Feline/Map/static_1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Feline/Map/ringmap2_merge.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Feline/Map/static_2.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Feline/Map/static_3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Feline/Map/exclaim_nav.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Feline/Map/question_nav.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Feline/Map/spotlight_hover.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Feline/Map/spotlight_normal.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/UI/Feline/Spotlight.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Feline/UI/feline_buttons.tres" type="Theme" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="Ringmap" type="Sprite" parent="."]
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -600, 0 )
+
+[node name="Static1" type="AnimatedSprite" parent="."]
+position = Vector2( 133, 71 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Chat" type="Node2D" parent="Static1"]
+position = Vector2( 0, 3 )
+
+[node name="QuestionNav" type="Sprite" parent="Static1/Chat"]
+position = Vector2( -3, -3 )
+texture = ExtResource( 7 )
+
+[node name="ExclaimNav" type="Sprite" parent="Static1/Chat"]
+position = Vector2( -3, -3 )
+texture = ExtResource( 6 )
+
+[node name="Territories" type="Control" parent="."]
+
+[node name="SpotLight" type="TextureButton" parent="Territories"]
+margin_left = 378.0
+margin_top = 246.0
+margin_right = 425.0
+margin_bottom = 271.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+script = ExtResource( 10 )
+
+[node name="PopupMenu" type="PopupMenu" parent="Territories/SpotLight"]
+margin_right = 100.0
+margin_bottom = 150.0
+theme = ExtResource( 11 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Territories/SpotLight/PopupMenu"]
+margin_right = 90.0
+margin_bottom = 70.0
+
+[node name="GeoCity" type="Label" parent="Territories/SpotLight/PopupMenu/VBoxContainer"]
+margin_right = 90.0
+margin_bottom = 45.0
+text = "GeoCity"
+
+[node name="CatsCradle" type="Label" parent="Territories/SpotLight/PopupMenu/VBoxContainer"]
+margin_top = 49.0
+margin_right = 90.0
+margin_bottom = 70.0
+text = "CatsCradle"
+
+[node name="GeoTerra" type="TextureButton" parent="Territories"]
+margin_left = 312.0
+margin_top = 217.0
+margin_right = 359.0
+margin_bottom = 242.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+expand = true

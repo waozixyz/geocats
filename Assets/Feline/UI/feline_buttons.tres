@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=14 format=2]
+[gd_resource type="Theme" load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Feline/Map/popup.png" type="Texture" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
@@ -46,6 +47,22 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id=13]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 96, 96 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 96, 96 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.207843, 0.101961, 0, 1 )
@@ -99,6 +116,8 @@ LineEdit/styles/read_only = null
 Panel/styles/panel = SubResource( 10 )
 Panel/styles/panelf = null
 Panel/styles/panelnc = null
+PopupDialog/styles/panel = SubResource( 13 )
+PopupMenu/styles/panel = SubResource( 14 )
 RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )

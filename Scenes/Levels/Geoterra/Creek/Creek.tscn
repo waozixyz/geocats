@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_fg.png" type="Texture" id=2]
@@ -231,6 +231,9 @@ extents = Vector2( 98.6899, 155.642 )
 
 [sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 130.769, 92.1748 )
+
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 42.75, 391 )
 
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 244.5, 287 )
@@ -850,8 +853,8 @@ trigger_on_touch = true
 player_disable = "feline_creek"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FelineArea"]
-position = Vector2( 1729, 3946 )
-shape = SubResource( 51 )
+position = Vector2( 1930.75, 3842 )
+shape = SubResource( 52 )
 
 [node name="RespawnLocationOnTouch" type="Area2D" parent="."]
 position = Vector2( 4224, 5010 )
