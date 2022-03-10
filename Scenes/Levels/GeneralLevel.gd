@@ -5,6 +5,7 @@ export(NodePath) var player
 export(NodePath) var music
 export(Vector2) var respawn_location
 export(Array, Vector2) onready var locations 
+export(bool) var reload_on_death
 var dead
 func get_player():
 	if not player:
@@ -35,11 +36,12 @@ func _ready():
 	# set player location
 	if locations:
 		locations[0] = player.position
-
 		player.position = locations[global.user.location]
+	if not respawn_location:
+		respawn_location = player.position
 
 var tween
-func _process(delta):
+func _process(_delta):
 	if global.user.hp <= 0:
 		tween = utils.tween_position(player, respawn_location)
 		player.disable('dead')
@@ -47,7 +49,11 @@ func _process(delta):
 	if dead and global.user.hp < 100:
 		global.user.hp += 1
 	elif dead and not tween.is_active():
-		dead = false
-		player.enable('dead')
-
+		if reload_on_death:
+			get_tree().reload_current_scene()
+		else:
+			player.enable('dead')
+			dead = false
+	if reload_on_death and dead and not tween.is_active():
+		player.position = respawn_location
 		

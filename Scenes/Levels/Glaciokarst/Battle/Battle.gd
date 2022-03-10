@@ -96,12 +96,6 @@ func _phase_two(dfps):
 			boulder_fall = false
 			phase = 3
 	
-func _pre_chat():
-	if player.disable_reasons.size() == 0:
-		player.disable("Battle")
-	enemy.shooting = false
-	enemy.ears.visible = false
-	enemy.vulnerable = false
 
 
 func _phase_three():
@@ -109,12 +103,16 @@ func _phase_three():
 	if enemy.moves.size() <= 0 and enemy.mode == 0:
 		enemy.move()
 	if enemy.hp <= 40:
-		_pre_chat()
 		_start_chat("norna_wyrd_caves_1")
 		phase = 4
 		# bug notproceeding
 
 func _start_chat(file_name):
+	player.disable("Battle")
+	enemy.shooting = false
+	enemy.ears.visible = false
+	enemy.vulnerable = false
+	
 	dia_started = true
 	dialogue.modulate.a = 0.1
 	dialogue.initiate(battle_dialogue_folder + '/' + file_name + '.json')
@@ -127,8 +125,7 @@ func _phase_four(dfps):
 		enemy.def = 2
 		enemy.move()
 	if enemy.hp <= 0:
-		_pre_chat()
-		_start_chat("norna_wyrd_caves_1")
+		_start_chat("norna_wyrd_caves_2")
 		phase = 5
 
 func _phase_five():
@@ -149,14 +146,15 @@ func _phase_six():
 		PROGRESS.variables["CavesBattleDefeated"] = true
 		player.enable("Battle")
 
+	
 func _process(delta):
 	var dfps = delta * global.fps
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")
 		player.on_ladder = true
 	start_ticker += 1
-	phase == 6
-	if not defeated and floor(global.user.hp) > 0:
+
+	if not defeated and not dead:
 		if phase == 1:
 			_phase_one(dfps)
 		elif phase == 2:
@@ -178,3 +176,4 @@ func _process(delta):
 		hp_bar.visible = false
 	if dialogue.modulate.a == 0 and dia_started:
 		dia_started = false
+		

@@ -185,7 +185,7 @@ func _physics_process(delta):
 		for follower in followers:
 			var pos_x = round(follower.position.x) 
 			var pvel_x = velocity_log[0].x
-			var pvel_y = velocity_log[0].y
+
 			# reset position to be static
 			follower.velocity = -velocity
 

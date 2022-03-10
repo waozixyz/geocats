@@ -76,7 +76,7 @@ func jump(jumpHeight):
 	
 var new_rot : float
 var mushroom
-func _physics_process(delta):
+func _physics_process(_delta):
 	if mushroom and mushroom.touching:
 		mushroom.touching = false
 
