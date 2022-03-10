@@ -68,9 +68,6 @@ margin_bottom = 40.0
 mouse_filter = 1
 theme = ExtResource( 6 )
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="."]
 margin_left = 176.0
@@ -131,6 +128,7 @@ margin_top = 221.0
 margin_right = 464.0
 margin_bottom = 273.0
 theme = ExtResource( 6 )
+disabled = true
 text = "Geodex"
 icon = ExtResource( 10 )
 align = 0
@@ -149,9 +147,6 @@ text = "Exit"
 icon = ExtResource( 15 )
 align = 0
 expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SettingsView" type="Control" parent="System"]
 visible = false

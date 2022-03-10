@@ -550,7 +550,7 @@ __meta__ = {
 "_edit_group_": true
 }
 territory = 1
-location = 4
+next_loc = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCreek"]
 position = Vector2( 108, 148 )

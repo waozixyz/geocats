@@ -232,14 +232,14 @@ animations = [ {
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 26 ) ],
-"loop": true,
-"name": "blink",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "blink",
 "speed": 5.0
 } ]
 
@@ -343,7 +343,7 @@ extents = Vector2( 36.2031, 15.5309 )
 extents = Vector2( 30, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 47.1908, 33.7617 )
+extents = Vector2( 29.5954, 50.5 )
 
 [sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 57.5, 24 )
@@ -394,7 +394,6 @@ font_data = SubResource( 69 )
 
 [node name="CatsCradle" type="Node2D"]
 script = ExtResource( 1 )
-locations = [ Vector2( 0, 0 ), Vector2( 25, 665 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 
@@ -435,7 +434,6 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -810,21 +808,19 @@ position = Vector2( 20, 25.5 )
 shape = SubResource( 68 )
 
 [node name="Teleport" type="Area2D" parent="Interactables"]
-position = Vector2( -35, 585.7 )
+position = Vector2( 20, 635 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 6
 geocity = 1
+this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactables/Teleport"]
-position = Vector2( 48.1908, 50 )
+position = Vector2( 6.4046, 2.49994 )
 shape = SubResource( 71 )
 
 [node name="Button" type="Sprite" parent="Interactables/Teleport"]
 visible = false
-position = Vector2( 58, 17.3 )
+position = Vector2( 11, -23 )
 scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 6 )
 

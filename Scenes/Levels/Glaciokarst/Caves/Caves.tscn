@@ -120,7 +120,6 @@ extents = Vector2( 176, 29 )
 
 [node name="Caves" type="Node2D"]
 script = ExtResource( 10 )
-locations = [ Vector2( 0, 0 ), Vector2( 500, 2120 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -191,6 +190,7 @@ one_way_collision = true
 script = ExtResource( 8 )
 territory = 2
 glaciokarst = 2
+this_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatHead/GoInside"]
 position = Vector2( 53.4, 49.8 )

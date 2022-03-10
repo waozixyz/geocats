@@ -72,7 +72,7 @@ func exit(now = false):
 		if active:
 			close_sfx.play()
 			active = false
-			_tween(self, 1, 0, .4)
+			utils.tween_fade(self, 1, 0, .4)
 
 	else:
 		_change_view(main_view)
@@ -94,8 +94,6 @@ func _button_action(label):
 
 # change view in system
 func _change_view(new_view):
-	# hide current view
-	_tween(view, 1, 0, .2)
 	# update old view
 	old_view = view
 	# change current view

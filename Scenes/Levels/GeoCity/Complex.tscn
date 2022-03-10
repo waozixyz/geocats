@@ -765,7 +765,6 @@ extents = Vector2( 82.6183, 38.2424 )
 
 [node name="Complex" type="Node2D"]
 script = ExtResource( 8 )
-locations = [ Vector2( 0, 0 ), Vector2( 400, 1007 ) ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -1229,7 +1228,7 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 6
-location = 1
+next_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactive/HomeDoor"]
 position = Vector2( 39.5, 43 )
@@ -1287,6 +1286,7 @@ __meta__ = {
 }
 sound_effect = 3
 geocity = 2
+this_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
 shape = SubResource( 68 )

@@ -375,7 +375,6 @@ animations = [ {
 
 [node name="GeoCity" type="Node2D"]
 script = ExtResource( 4 )
-locations = [ Vector2( 0, 0 ), Vector2( 2630, 1380 ), Vector2( 1023, 1380 ) ]
 
 [node name="BehindPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
@@ -673,7 +672,7 @@ __meta__ = {
 sound_effect = 3
 sound_volume = 1.5
 geocity = 1
-location = 1
+next_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/GoToComplex"]
 shape = SubResource( 40 )
@@ -693,6 +692,7 @@ __meta__ = {
 sound_effect = 6
 sound_volume = 0.5
 geocity = 3
+this_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/PopNnip"]
 shape = SubResource( 41 )
@@ -721,6 +721,7 @@ __meta__ = {
 }
 sound_effect = 5
 geocity = 5
+this_loc = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/DonutShop"]
 shape = SubResource( 41 )
