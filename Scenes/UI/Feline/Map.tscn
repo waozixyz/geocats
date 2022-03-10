@@ -7,10 +7,10 @@
 [ext_resource path="res://Assets/Feline/Map/static_3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Feline/Map/exclaim_nav.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Feline/Map/question_nav.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Feline/Map/spotlight_hover.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Feline/Map/spotlight_normal.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/UI/Feline/Spotlight.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/UI/Feline/TerritorySelector.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Feline/UI/feline_buttons.tres" type="Theme" id=11]
+[ext_resource path="res://Assets/Feline/Map/geocity.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Feline/Map/spotlight.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -51,41 +51,37 @@ position = Vector2( -3, -3 )
 texture = ExtResource( 6 )
 
 [node name="Territories" type="Control" parent="."]
-
-[node name="SpotLight" type="TextureButton" parent="Territories"]
-margin_left = 378.0
-margin_top = 246.0
-margin_right = 425.0
-margin_bottom = 271.0
-texture_normal = ExtResource( 9 )
-texture_hover = ExtResource( 8 )
 script = ExtResource( 10 )
 
-[node name="PopupMenu" type="PopupMenu" parent="Territories/SpotLight"]
+[node name="SpotLight" type="Sprite" parent="Territories"]
+position = Vector2( -100, -100 )
+texture = ExtResource( 13 )
+
+[node name="GeoCity" type="TextureButton" parent="Territories"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 352.0
+margin_top = 208.0
+margin_right = 599.2
+margin_bottom = 298.0
+texture_normal = ExtResource( 12 )
+expand = true
+
+[node name="PopupMenu" type="PopupMenu" parent="Territories/GeoCity"]
 margin_right = 100.0
 margin_bottom = 150.0
 theme = ExtResource( 11 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Territories/SpotLight/PopupMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Territories/GeoCity/PopupMenu"]
 margin_right = 90.0
 margin_bottom = 70.0
 
-[node name="GeoCity" type="Label" parent="Territories/SpotLight/PopupMenu/VBoxContainer"]
+[node name="GeoCity" type="Label" parent="Territories/GeoCity/PopupMenu/VBoxContainer"]
 margin_right = 90.0
 margin_bottom = 45.0
 text = "GeoCity"
 
-[node name="CatsCradle" type="Label" parent="Territories/SpotLight/PopupMenu/VBoxContainer"]
+[node name="CatsCradle" type="Label" parent="Territories/GeoCity/PopupMenu/VBoxContainer"]
 margin_top = 49.0
 margin_right = 90.0
 margin_bottom = 70.0
 text = "CatsCradle"
-
-[node name="GeoTerra" type="TextureButton" parent="Territories"]
-margin_left = 312.0
-margin_top = 217.0
-margin_right = 359.0
-margin_bottom = 242.0
-texture_normal = ExtResource( 9 )
-texture_hover = ExtResource( 8 )
-expand = true
