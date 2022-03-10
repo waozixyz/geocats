@@ -435,6 +435,7 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -834,6 +835,7 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/sleep_in_bed.wav"
+disable_player = "dream"
 make_node_visible = NodePath("../../BelowPlayer/Dream")
 transition_time = 0.5
 
