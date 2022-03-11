@@ -100,6 +100,7 @@ func _phase_two(dfps):
 
 func _phase_three():
 	_fix_cam()
+	enemy.vulnerable = true
 	if enemy.moves.size() <= 0 and enemy.mode == 0:
 		enemy.move()
 	if enemy.hp <= 40:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_fg.png" type="Texture" id=2]
@@ -226,17 +226,20 @@ extents = Vector2( 12, 100 )
 [sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 98.6899, 155.642 )
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 98.6899, 138.24 )
 
 [sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 130.769, 92.1748 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 98.6899, 71 )
 
 [sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 42.75, 391 )
 
 [sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 244.5, 287 )
+extents = Vector2( 100, 271.5 )
 
 [node name="Creek" type="Node2D"]
 script = ExtResource( 7 )
@@ -725,7 +728,7 @@ shape = SubResource( 46 )
 [node name="Portals" type="Node2D" parent="."]
 
 [node name="ToMountain" type="Area2D" parent="Portals"]
-position = Vector2( 8845.83, 794 )
+position = Vector2( 8953.83, 942 )
 script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
@@ -736,7 +739,6 @@ geoterra = 4
 this_loc = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToMountain"]
-position = Vector2( 108, 148 )
 shape = SubResource( 47 )
 
 [node name="Button" type="Sprite" parent="Portals/ToMountain"]
@@ -746,7 +748,7 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="GeoCacheRoom" type="Area2D" parent="Portals"]
-position = Vector2( 8737.83, 4711.48 )
+position = Vector2( 8845.83, 4859.48 )
 script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
@@ -757,8 +759,8 @@ geoterra = 3
 this_loc = 3
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GeoCacheRoom"]
-position = Vector2( 108, 148 )
-shape = SubResource( 48 )
+position = Vector2( 0, -67.2402 )
+shape = SubResource( 53 )
 
 [node name="Button" type="Sprite" parent="Portals/GeoCacheRoom"]
 visible = false
@@ -804,7 +806,7 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="JokeRoom" type="Area2D" parent="Portals"]
-position = Vector2( 2856.3, 3303.9 )
+position = Vector2( 2964.29, 3451.9 )
 script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
@@ -815,7 +817,7 @@ geoterra = 1
 this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/JokeRoom"]
-position = Vector2( 108, 148 )
+position = Vector2( 0, -14.8999 )
 shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/JokeRoom"]
@@ -825,7 +827,7 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="CavityPuzzleRoom" type="Area2D" parent="Portals"]
-position = Vector2( 5418.25, 3966.81 )
+position = Vector2( 5526, 4114.81 )
 script = ExtResource( 27 )
 __meta__ = {
 "_edit_group_": true
@@ -836,7 +838,6 @@ geoterra = 2
 this_loc = 2
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CavityPuzzleRoom"]
-position = Vector2( 108, 148 )
 shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/CavityPuzzleRoom"]
@@ -853,7 +854,7 @@ trigger_on_touch = true
 player_disable = "feline_creek"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FelineArea"]
-position = Vector2( 1930.75, 3842 )
+position = Vector2( 1779, 3854 )
 shape = SubResource( 52 )
 
 [node name="RespawnLocationOnTouch" type="Area2D" parent="."]
@@ -865,7 +866,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch"]
-position = Vector2( -25.5, -67 )
+position = Vector2( -109, -51.5 )
 shape = SubResource( 51 )
 
 [editable path="Default"]
