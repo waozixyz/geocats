@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Feline/Map/static_1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Feline/Map/ringmap2_merge.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Feline/Map/static_2.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Feline/Map/static_3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/static_3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Feline/Map/exclaim_nav.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Feline/Map/question_nav.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Feline/Map/TransportNav.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/UI/Feline/Map.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Feline/UI/feline_buttons.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/Feline/Map/spotlight.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -18,7 +20,7 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[node name="Control" type="Node2D"]
+[node name="Map" type="Node2D"]
 script = ExtResource( 10 )
 
 [node name="Ringmap" type="Sprite" parent="."]
@@ -27,7 +29,15 @@ texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -600, 0 )
 
-[node name="Chat" type="AnimatedSprite" parent="."]
+[node name="SpotLight" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 13 )
+
+[node name="Chat" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="AnimatedSprite" parent="Chat"]
 position = Vector2( 133, 71 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
@@ -36,8 +46,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="TransportNav" type="Sprite" parent="Chat"]
+position = Vector2( 133, 71 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 8 )
+
 [node name="Exclaim" type="Sprite" parent="Chat"]
-position = Vector2( -3, 0 )
+position = Vector2( 128.5, 71 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Chat/Exclaim"]
@@ -45,9 +61,12 @@ margin_left = -23.0
 margin_top = -20.0
 margin_right = 62.0
 margin_bottom = 14.0
+theme = ExtResource( 11 )
+text = "Te"
 
 [node name="Question" type="Sprite" parent="Chat"]
-position = Vector2( -3, 0 )
+position = Vector2( 128.5, 71 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Chat/Question"]
@@ -55,8 +74,13 @@ margin_left = -23.0
 margin_top = -20.0
 margin_right = 62.0
 margin_bottom = 14.0
+theme = ExtResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Welcome to XAPS
+Travel to Lichen Conservatory"
 
 [node name="Territories" type="Node2D" parent="."]
+visible = false
 
 [node name="Geoterra" type="Area2D" parent="Territories"]
 
@@ -73,13 +97,20 @@ polygon = PoolVector2Array( 479, 377, 99, 378, 145, 349, 104, 333, 142, 296, 116
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/XAPS"]
 position = Vector2( -537, 0 )
-polygon = PoolVector2Array( 513, 378, -184, 377, -183, 307, -75, 292, 196, 204, 200, 201, 198, 186, 160, 168, 156, 160, 240, 133, 247, 119, 313, 119, 401, 168, 411, 192, 393, 204, 418, 254, 465, 291, 472, 305, 452, 345 )
+polygon = PoolVector2Array( 513, 378, -184, 377, -183, 307, -75, 292, 196, 204, 200, 201, 198, 186, 160, 168, 156, 160, 240, 133, 246, 120, 312, 120, 401, 168, 411, 192, 393, 204, 418, 254, 465, 291, 472, 305, 452, 345 )
 
 [node name="GeoCity" type="Area2D" parent="Territories"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/GeoCity"]
 polygon = PoolVector2Array( 532, 204, 384, 183, 298, 215, 341, 270, 378, 297, 437, 321, 515, 312, 585, 292, 587, 239 )
 
-[node name="SpotLight" type="Sprite" parent="."]
-visible = false
-texture = ExtResource( 13 )
+[node name="Null" type="Area2D" parent="Territories"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/Null"]
+polygon = PoolVector2Array( -291, 120, -720, 120, -720, 307, -612, 292, -341, 204, -337, 201, -339, 186, -377, 168, -381, 160, -297, 133 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Territories/Null"]
+polygon = PoolVector2Array( -225, 120, -224, 117, -208, 115, -200, 115, -191, 112, -187, 112, -180, 115, -171, 117, -168, 117, -162, 114, -155, 119, -153, 119, -147, 113, -140, 117, -135, 119, -130, 119, -121, 113, -119, 113, -115, 112, -112, 114, -107, 115, -96, 111, -87, 111, -71, 119, -45, 112, -26, 121, -3, 112, 7, 113, 3, 141, 116, 141, 91, 151, 90, 154, 97, 165, 82, 178, 80, 200, 85, 209, 39, 235, 110, 258, 146, 260, 144, 261, 116, 286, 142, 296, 104, 333, 145, 349, 99, 378, -24, 378, -85, 345, -65, 305, -72, 291, -119, 254, -144, 204, -126, 192, -136, 168 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Territories/Null"]
+polygon = PoolVector2Array( 455, 112, 468, 110, 475, 110, 477, 113, 505, 92, 512, 91, 528, 100, 541, 101, 544, 103, 556, 103, 579, 87, 588, 88, 612, 98, 618, 99, 629, 104, 637, 104, 650, 110, 658, 109, 663, 109, 669, 111, 672, 111, 679, 107, 693, 107, 710, 117, 733, 120, 750, 120, 775, 110, 795, 110, 806, 105, 814, 104, 825, 104, 842, 111, 859, 120, 879, 119, 889, 116, 896, 116, 910, 119, 945, 114, 984, 108, 996, 111, 1015, 117, 1058, 119, 1100, 113, 1128, 120, 1378, 120, 1440, 120, 1440, 377, 479, 377, 479, 374, 437, 321, 515, 312, 585, 292, 587, 239, 532, 204, 384, 183, 490, 143 )

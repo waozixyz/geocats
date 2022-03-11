@@ -153,6 +153,7 @@ utils="*res://Scenes/utils.gd"
 deta="*res://Scenes/deta.gd"
 SceneChanger="*res://Scenes/UI/SceneChanger.tscn"
 AudioManager="*res://Scenes/UI/AudioManager.gd"
+Territory="*res://Scenes/Levels/Territory.gd"
 
 [display]
 
