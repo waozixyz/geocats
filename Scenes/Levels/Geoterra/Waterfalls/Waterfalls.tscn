@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -30,6 +30,18 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer1.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/BG.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer5.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/ShadowBox.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/longcatstatue_book.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Light.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/0xoplasma_Under_Microscope_Spritesheet.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/StickyNote.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Letter.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/DustusBunnicus.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=38]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Geode1.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Geode2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Notebook.png" type="Texture" id=41]
+[ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=42]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
@@ -447,6 +459,28 @@ class_name SpriteAutoPlay
 func _ready():
 	play()
 "
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 79, 98 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 34 )
+region = Rect2( 79, 0, 79, 98 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 34 )
+region = Rect2( 158, 0, 79, 98 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=49]
 
 [node name="Waterfalls" type="Node2D"]
 script = ExtResource( 12 )
@@ -1811,7 +1845,6 @@ __meta__ = {
 "_edit_group_": true
 }
 territory = 1
-location = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave"]
 shape = SubResource( 6 )
@@ -1835,38 +1868,6 @@ scale = Vector2( 0.1, 0.1 )
 [node name="Node2D2" parent="AbovePlayer" instance=ExtResource( 15 )]
 position = Vector2( 1443.2, 884.6 )
 scale = Vector2( 0.1, 0.1 )
-
-[node name="Office" type="Node2D" parent="AbovePlayer"]
-position = Vector2( 8.39998, 44.6 )
-
-[node name="Sprite" type="Sprite" parent="AbovePlayer/Office"]
-position = Vector2( 138, 144.2 )
-texture = ExtResource( 29 )
-
-[node name="Drawer1" type="Sprite" parent="AbovePlayer/Office"]
-position = Vector2( 120.4, 155.36 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 28 )
-
-[node name="Drawer2" type="Sprite" parent="AbovePlayer/Office"]
-position = Vector2( 127.36, 155.36 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 25 )
-
-[node name="Drawer3" type="Sprite" parent="AbovePlayer/Office"]
-position = Vector2( 138, 144.2 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 26 )
-
-[node name="Drawer4" type="Sprite" parent="AbovePlayer/Office"]
-position = Vector2( 138, 144.2 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 27 )
-
-[node name="Drawer5" type="Sprite" parent="AbovePlayer/Office"]
-position = Vector2( 138, 144.2 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 30 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
@@ -1911,6 +1912,7 @@ position = Vector2( 0, -3.80214 )
 shape = SubResource( 10 )
 
 [node name="E_Interact" type="Area2D" parent="Interactables"]
+visible = false
 script = ExtResource( 11 )
 sound_effect = "res://Assets/Levels/Geoterra/Waterfalls/waterfall.ogg"
 sound_volume = 10.0
@@ -2023,10 +2025,563 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "idle"
-frame = 9
+frame = 10
 playing = true
 centered = false
 script = SubResource( 44 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ResearchCabin" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Office" type="TextureRect" parent="ResearchCabin"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawer1" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 40.0
+margin_top = 300.0
+margin_right = 80.0
+margin_bottom = 340.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawer2" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 100.0
+margin_top = 300.0
+margin_right = 146.0
+margin_bottom = 340.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawer3" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 220.0
+margin_top = 300.0
+margin_right = 274.0
+margin_bottom = 340.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawer4" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 360.075
+margin_top = 299.919
+margin_right = 406.075
+margin_bottom = 339.919
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawer5" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 480.021
+margin_top = 300.46
+margin_right = 520.021
+margin_bottom = 340.46
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_right = 230.0
+margin_bottom = 150.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DustusBunnicus" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 0.781998
+margin_top = -0.539853
+margin_right = 230.782
+margin_bottom = 149.46
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DustusBunnicusIcon" type="TextureRect" parent="ResearchCabin/DustusBunnicus"]
+margin_left = 59.6677
+margin_top = 5.74101
+margin_right = 169.668
+margin_bottom = 115.741
+texture = ExtResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/DustusBunnicus"]
+margin_left = 38.3279
+margin_top = 118.695
+margin_right = 191.328
+margin_bottom = 145.695
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/DustusBunnicus/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="0xoplasmosisMicroscope" type="TextureRect" parent="ResearchCabin"]
+margin_left = 0.781998
+margin_top = -0.539853
+margin_right = 230.782
+margin_bottom = 149.46
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0xoplasmosisIcon" type="TextureRect" parent="ResearchCabin/0xoplasmosisMicroscope"]
+margin_left = 59.6677
+margin_top = 5.74101
+margin_right = 169.668
+margin_bottom = 115.741
+texture = ExtResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ResearchCabin/0xoplasmosisMicroscope"]
+position = Vector2( 112.755, 60.2212 )
+scale = Vector2( 1.3, 1.3 )
+frames = SubResource( 48 )
+playing = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/0xoplasmosisMicroscope"]
+margin_left = 14.5306
+margin_top = 133.15
+margin_right = 244.531
+margin_bottom = 179.15
+custom_fonts/normal_font = ExtResource( 38 )
+text = "A Sample of 0xoplasmosis."
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/0xoplasmosisMicroscope/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="Geode1" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 0.781998
+margin_top = -0.539853
+margin_right = 230.782
+margin_bottom = 149.46
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Geode1Icon" type="TextureRect" parent="ResearchCabin/Geode1"]
+margin_left = 59.6677
+margin_top = 5.74101
+margin_right = 169.668
+margin_bottom = 115.741
+texture = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/Geode1/Geode1Icon"]
+margin_left = -21.1707
+margin_top = 112.476
+margin_right = 131.829
+margin_bottom = 139.476
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Geode1/Geode1Icon/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="Geode2" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 0.781998
+margin_top = -0.539853
+margin_right = 230.782
+margin_bottom = 149.46
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Geode2Icon" type="TextureRect" parent="ResearchCabin/Geode2"]
+margin_left = 59.6677
+margin_top = 5.74101
+margin_right = 169.668
+margin_bottom = 115.741
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/Geode2"]
+margin_left = 36.132
+margin_top = 118.933
+margin_right = 196.132
+margin_bottom = 145.933
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Geode2/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="Notebook" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 29.8354
+margin_top = 100.489
+margin_right = 289.835
+margin_bottom = 220.489
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+margin_left = 65.0
+margin_top = 12.0
+margin_right = 122.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel2"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+margin_left = 11.0
+margin_top = 64.0
+margin_right = 96.0
+margin_bottom = 110.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel3"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+margin_left = 141.832
+margin_top = 67.1765
+margin_right = 226.832
+margin_bottom = 113.176
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel4"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+margin_left = 193.129
+margin_top = 46.6705
+margin_right = 247.129
+margin_bottom = 61.6705
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel5"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="Letter" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 189.879
+margin_top = 16.3001
+margin_right = 449.879
+margin_bottom = 151.3
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/Letter"]
+margin_left = 27.9626
+margin_top = 1.6337
+margin_right = 67.9626
+margin_bottom = 41.6337
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Letter/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ResearchCabin/Letter"]
+margin_left = 25.287
+margin_top = 45.0603
+margin_right = 65.287
+margin_bottom = 85.0603
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Letter/RichTextLabel2"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ResearchCabin/Letter"]
+margin_left = 28.1684
+margin_top = 90.7508
+margin_right = 68.1684
+margin_bottom = 130.751
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Letter/RichTextLabel3"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="StickyNote1" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 41.0757
+margin_top = 27.8281
+margin_right = 112.076
+margin_bottom = 98.8281
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote1"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote1/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="StickyNote2" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 246.406
+margin_top = 37.296
+margin_right = 317.406
+margin_bottom = 108.296
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote2"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote2/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="StickyNote3" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 413.944
+margin_top = 38.6382
+margin_right = 484.944
+margin_bottom = 109.638
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote3"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote3/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="StickyNote4" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 43.17
+margin_top = 201.837
+margin_right = 114.17
+margin_bottom = 272.837
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote4"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote4/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="StickyNote5" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 223.366
+margin_top = 193.79
+margin_right = 294.366
+margin_bottom = 264.79
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ResearchCabin/StickyNote5"]
+margin_left = 23.4736
+margin_top = 3.8158
+margin_right = 63.4736
+margin_bottom = 21.8158
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote5/RichTextLabel2"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="TextureRect" type="TextureRect" parent="ResearchCabin/StickyNote5"]
+margin_left = -11.4068
+margin_top = 17.1032
+margin_right = 16.5932
+margin_bottom = 44.1032
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 32 )
+flip_h = true
+
+[node name="StickyNote6" type="TextureRect" parent="ResearchCabin"]
+visible = false
+margin_left = 391.985
+margin_top = 201.299
+margin_right = 462.985
+margin_bottom = 272.299
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote6"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote6/RichTextLabel"]
+margin_left = 207.559
+margin_top = 88.2996
+margin_right = 219.559
+margin_bottom = 100.3
+
+[node name="ShowOffice" type="Area2D" parent="ResearchCabin"]
+scale = Vector2( 2.5, 2.5 )
+script = ExtResource( 42 )
+make_node_visible = NodePath("../Drawer1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchCabin/ShowOffice"]
+position = Vector2( 30.4784, 126.401 )
+shape = SubResource( 49 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

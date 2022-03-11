@@ -3,5 +3,6 @@
 [ext_resource path="res://Assets/Fonts/Bitread-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 20
+size = 19
+use_mipmaps = true
 font_data = ExtResource( 1 )

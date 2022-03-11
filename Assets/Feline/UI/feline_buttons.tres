@@ -10,7 +10,7 @@ size = 40
 font_data = SubResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0.321569, 0.00784314, 0 )
+bg_color = Color( 0, 0.321569, 0.00784314, 0.321569 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0.321569, 0.00784314, 0.321569 )
