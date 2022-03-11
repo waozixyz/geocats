@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exclaim_nav.png-29741113c867b8a7ec6d69c7e627dd63.stex"
+path="res://.import/arrow_up.png-339149d64bdc104723f34e10995ca0b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Feline/Map/exclaim_nav.png"
-dest_files=[ "res://.import/exclaim_nav.png-29741113c867b8a7ec6d69c7e627dd63.stex" ]
+source_file="res://Assets/Feline/Map/arrow_up.png"
+dest_files=[ "res://.import/arrow_up.png-339149d64bdc104723f34e10995ca0b1.stex" ]
 
 [params]
 

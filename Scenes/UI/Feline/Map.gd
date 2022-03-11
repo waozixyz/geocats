@@ -1,10 +1,15 @@
 extends Node2D
 
+onready var ringmap = $Ringmap
 onready var spotlight = $Spotlight
-onready var territories = $Territories
+onready var territories = $Ringmap/Territories
 onready var chat = $Chat
 onready var question = $Chat/Question
 onready var exclaim = $Chat/Exclaim
+onready var arrow_left = $Controls/ArrowLeft
+onready var arrow_right = $Controls/ArrowRight
+
+var scroll_speed = 8
 
 var filter_out = ["Battle", "JokeRoom", "CavityPuzzleRoom", "GeoCacheRoom", "GreenCave", "PopNnip", "DonutShop"]
 
@@ -59,3 +64,13 @@ func _process(_delta):
 		tween = utils.tween_fade(chat, 1, 0, 0.1)
 		last_territory = ""
 		
+	if arrow_right.pressed:
+		if ringmap.position.x > -ringmap.texture.get_width() * ringmap.scale.x + 650:
+			ringmap.position.x -= scroll_speed
+		spotlight.visible = false
+		clicked_territory = false
+	if arrow_left.pressed:
+		if ringmap.position.x < 0:
+			ringmap.position.x += scroll_speed
+		spotlight.visible = false
+		clicked_territory = false
