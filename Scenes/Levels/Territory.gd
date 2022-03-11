@@ -23,7 +23,6 @@ enum GeoCity {
 	PopNnip
 	Arcade
 	DonutShop
-	Dream
 }
 
 enum Geoterra {

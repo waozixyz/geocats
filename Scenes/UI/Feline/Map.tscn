@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Feline/Map/static_1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Feline/Map/ringmap2_merge.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Feline/Map/exclaim_nav.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Feline/Map/question_nav.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Feline/Map/TransportNav.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Scenes/UI/Feline/Map.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Feline/UI/feline_buttons.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/Feline/Map/spotlight.png" type="Texture" id=13]
@@ -29,34 +30,42 @@ texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -600, 0 )
 
-[node name="SpotLight" type="Sprite" parent="."]
+[node name="Spotlight" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 13 )
 
 [node name="Chat" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 17.0
+margin_top = 9.0
+margin_right = 314.0
+margin_bottom = 145.0
 
 [node name="Background" type="AnimatedSprite" parent="Chat"]
-position = Vector2( 133, 71 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
+centered = false
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
 [node name="TransportNav" type="Sprite" parent="Chat"]
-position = Vector2( 133, 71 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Exclaim" type="Sprite" parent="Chat"]
+visible = false
 position = Vector2( 128.5, 71 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Chat/Exclaim"]
+visible = false
 margin_left = -23.0
 margin_top = -20.0
 margin_right = 62.0
@@ -65,22 +74,28 @@ theme = ExtResource( 11 )
 text = "Te"
 
 [node name="Question" type="Sprite" parent="Chat"]
-position = Vector2( 128.5, 71 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( -4, 2 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
+centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Chat/Question"]
-margin_left = -23.0
-margin_top = -20.0
-margin_right = 62.0
-margin_bottom = 14.0
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 135.0
+margin_bottom = 48.0
 theme = ExtResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[b]Welcome to XAPS[/b]
+Travel to Lichen Conservatory
+"
 text = "Welcome to XAPS
-Travel to Lichen Conservatory"
+Travel to Lichen Conservatory
+"
 
 [node name="Territories" type="Node2D" parent="."]
-visible = false
 
 [node name="Geoterra" type="Area2D" parent="Territories"]
 
