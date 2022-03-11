@@ -73,6 +73,7 @@ func tween_fade(obj, start, end, time = .5):
 		tween.pause_mode = PAUSE_MODE_PROCESS
 		var err = tween.connect("tween_completed", self, "_tween_completed", [tween, '_f'])
 		assert(err == OK)
+		return tween
 		
 
 # get current season

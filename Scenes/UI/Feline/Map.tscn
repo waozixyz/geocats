@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Feline/Map/static_1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Feline/Map/ringmap2_merge.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/Feline/Map/static_3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Feline/Map/exclaim_nav.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Feline/Map/question_nav.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Feline/Map/territories/geocity.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/UI/Feline/Map.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Feline/Map/spotlight.png" type="Texture" id=13]
 
@@ -19,9 +18,7 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Control" type="Node2D"]
 script = ExtResource( 10 )
 
 [node name="Ringmap" type="Sprite" parent="."]
@@ -30,7 +27,7 @@ texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -600, 0 )
 
-[node name="Static1" type="AnimatedSprite" parent="."]
+[node name="Chat" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 71 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
@@ -39,28 +36,50 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Chat" type="Node2D" parent="Static1"]
-position = Vector2( 0, 3 )
-
-[node name="QuestionNav" type="Sprite" parent="Static1/Chat"]
-position = Vector2( -3, -3 )
-texture = ExtResource( 7 )
-
-[node name="ExclaimNav" type="Sprite" parent="Static1/Chat"]
-position = Vector2( -3, -3 )
+[node name="Exclaim" type="Sprite" parent="Chat"]
+position = Vector2( -3, 0 )
 texture = ExtResource( 6 )
 
-[node name="Territories" type="Control" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="Chat/Exclaim"]
+margin_left = -23.0
+margin_top = -20.0
+margin_right = 62.0
+margin_bottom = 14.0
 
-[node name="GeoCity" type="TextureButton" parent="Territories"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 298.0
-margin_top = 184.0
-margin_right = 539.0
-margin_bottom = 298.0
-rect_scale = Vector2( 1.2, 1.2 )
-texture_normal = ExtResource( 8 )
-expand = true
+[node name="Question" type="Sprite" parent="Chat"]
+position = Vector2( -3, 0 )
+texture = ExtResource( 7 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Chat/Question"]
+margin_left = -23.0
+margin_top = -20.0
+margin_right = 62.0
+margin_bottom = 14.0
+
+[node name="Territories" type="Node2D" parent="."]
+
+[node name="Geoterra" type="Area2D" parent="Territories"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/Geoterra"]
+position = Vector2( -214, -98 )
+polygon = PoolVector2Array( 656, 210, 635, 198, 627, 197, 622, 194, 619, 192, 610.26, 191.669, 610, 190, 595, 182, 589, 179, 583, 179, 568, 172, 562.632, 172.316, 558, 173, 543, 185, 525, 200, 518, 200, 507, 192, 499, 187, 492.753, 186.788, 483, 192, 471, 201, 467, 201, 463, 203, 459, 207, 446, 211, 433, 210, 429, 207, 423, 207, 415, 211, 388, 210, 382, 202, 367, 202, 354, 211, 221, 211, 217, 239, 330, 239, 305, 249, 304, 252, 311, 263, 296, 276, 294, 298, 299, 307, 253, 333, 324, 356, 360, 358, 490, 305, 505, 305, 512, 313, 704, 241, 669, 210 )
+
+[node name="Glaciokarst" type="Area2D" parent="Territories"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/Glaciokarst"]
+polygon = PoolVector2Array( 479, 377, 99, 378, 145, 349, 104, 333, 142, 296, 116, 286, 144, 261, 276, 207, 291, 207, 341, 270, 378, 297, 437, 321, 479, 374 )
+
+[node name="XAPS" type="Area2D" parent="Territories"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/XAPS"]
+position = Vector2( -537, 0 )
+polygon = PoolVector2Array( 513, 378, -184, 377, -183, 307, -75, 292, 196, 204, 200, 201, 198, 186, 160, 168, 156, 160, 240, 133, 247, 119, 313, 119, 401, 168, 411, 192, 393, 204, 418, 254, 465, 291, 472, 305, 452, 345 )
+
+[node name="GeoCity" type="Area2D" parent="Territories"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Territories/GeoCity"]
+polygon = PoolVector2Array( 532, 204, 384, 183, 298, 215, 341, 270, 378, 297, 437, 321, 515, 312, 585, 292, 587, 239 )
 
 [node name="SpotLight" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 13 )
