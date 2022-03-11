@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/geocity.png-e74690ff26a2cf4a258c371f48104b7f.stex"
+path="res://.import/geoterra.png-35173f52c157b037b28df11a4366d643.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Feline/Map/geocity.png"
-dest_files=[ "res://.import/geocity.png-e74690ff26a2cf4a258c371f48104b7f.stex" ]
+source_file="res://Assets/Feline/Map/territories/geoterra.png"
+dest_files=[ "res://.import/geoterra.png-35173f52c157b037b28df11a4366d643.stex" ]
 
 [params]
 
