@@ -175,7 +175,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFontData" id=22]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+font_path = "res://Assets/Fonts/qix_mono.ttf"
 
 [sub_resource type="DynamicFont" id=23]
 size = 24

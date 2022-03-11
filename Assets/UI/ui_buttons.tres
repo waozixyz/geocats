@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Fonts/Bitread.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.4, 0.129412, 0, 1 )
@@ -62,7 +62,7 @@ bg_color = Color( 0.207843, 0.101961, 0, 1 )
 [sub_resource type="StyleBoxEmpty" id=10]
 
 [sub_resource type="DynamicFontData" id=11]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+font_path = "res://Assets/Fonts/qix_mono.ttf"
 
 [sub_resource type="DynamicFont" id=12]
 size = 22

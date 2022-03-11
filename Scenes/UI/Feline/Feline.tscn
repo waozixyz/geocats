@@ -55,7 +55,7 @@ border_width_bottom = 1
 border_color = Color( 0.392157, 0.666667, 0.380392, 1 )
 
 [sub_resource type="DynamicFontData" id=4]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+font_path = "res://Assets/Fonts/qix_mono.ttf"
 
 [sub_resource type="DynamicFont" id=5]
 size = 24

@@ -21,7 +21,7 @@
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/InsideFridge.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Fonts/Bitread-Regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/instruction_book.png" type="Texture" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -166,6 +166,18 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 15, 15, 15 )
@@ -198,18 +210,6 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 26 ) ],
@@ -217,14 +217,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 26 ) ],
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
-"name": "blink",
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "blink",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ) ],
@@ -235,11 +240,6 @@ animations = [ {
 "frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "crouch",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
-"loop": true,
-"name": "climb",
 "speed": 5.0
 } ]
 
@@ -384,7 +384,7 @@ size = 15
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFontData" id=69]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+font_path = "res://Assets/Fonts/qix_mono.ttf"
 
 [sub_resource type="DynamicFont" id=70]
 size = 22
@@ -434,6 +434,7 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -478,7 +479,6 @@ __meta__ = {
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 centered = false
 
@@ -864,9 +864,6 @@ shape = SubResource( 81 )
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/InstructionBooklet"]
 margin_right = 640.0
@@ -882,7 +879,6 @@ margin_top = 90.8703
 margin_right = 38.8995
 margin_bottom = 130.87
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -925,10 +921,10 @@ anchor_bottom = 1.0
 step = 1.0
 
 [node name="BasicTechniquesText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
-margin_left = 28.8995
-margin_top = 41.8703
-margin_right = 230.899
-margin_bottom = 143.87
+margin_left = 27.0
+margin_top = 42.0
+margin_right = 231.0
+margin_bottom = 144.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 74 )
@@ -991,10 +987,10 @@ anchor_bottom = 1.0
 step = 1.0
 
 [node name="AdvancedTechniquesText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
-margin_left = 120.899
-margin_top = 171.87
-margin_right = 269.899
-margin_bottom = 256.87
+margin_left = 124.101
+margin_top = 184.13
+margin_right = 293.101
+margin_bottom = 269.13
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 76 )
@@ -1054,8 +1050,8 @@ step = 1.0
 [node name="SuperAdvancedTechniquesText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 413.0
 margin_top = 46.0
-margin_right = 636.0
-margin_bottom = 199.0
+margin_right = 629.0
+margin_bottom = 139.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 78 )
@@ -1113,10 +1109,10 @@ anchor_bottom = 1.0
 step = 1.0
 
 [node name="RingText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
-margin_left = 346.899
-margin_top = 175.87
-margin_right = 463.899
-margin_bottom = 277.87
+margin_left = 347.0
+margin_top = 176.0
+margin_right = 469.0
+margin_bottom = 278.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 80 )

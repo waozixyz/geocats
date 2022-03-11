@@ -1368,7 +1368,7 @@ extents = Vector2( 31, 53 )
 [sub_resource type="ButtonGroup" id=137]
 
 [sub_resource type="DynamicFontData" id=138]
-font_path = "res://Assets/Fonts/Bitread-Regular.ttf"
+font_path = "res://Assets/Fonts/qix_mono.ttf"
 
 [sub_resource type="DynamicFont" id=139]
 size = 55
