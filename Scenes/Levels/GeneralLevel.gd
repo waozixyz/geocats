@@ -34,7 +34,6 @@ func _ready():
 	# find background music 
 	music = get_music()
 	# set player location
-	print(locations)
 	if locations:
 		locations[0] = player.position
 		player.position = locations[global.user.location]

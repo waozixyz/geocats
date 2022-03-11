@@ -22,17 +22,21 @@ var last_territory = ""
 var clicked_territory = false
 var tween 
 
-func label_clicked(do_something):
-	print(do_something)
+func label_clicked(data):
+	data = data.split(', ')
+	global.user.location = 0
+	SceneChanger.change_scene(utils.find_level_path(data[0], data[1]))
 	
 func _update_question(territory):
 	exclaim.visible = false
 	var label = question.get_node("RichTextLabel")
 	label.bbcode_text = "Welcome to " + territory + " "
-
+	label.newline()
+	label.newline()
 	for t in Territory.get_scenes(Territory.Names.keys().find(territory)):
 		if filter_out.find(t) == -1:
-			label.append_bbcode("Travel to [color=blue][url=" + t + "]" + t  + "[/url] [/color]")
+			label.append_bbcode("Travel to [color=blue][url=" + territory + ", " + t + "]" + t  + "[/url] [/color]")
+			label.newline()
 			label.connect("meta_clicked", self, "label_clicked") 
 
 func _update_spotlight(pos):
@@ -41,9 +45,8 @@ func _update_spotlight(pos):
 func _input_event( viewport, event, shape_idx, territory):
 	if event is InputEventMouse and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		if territory.name != "Null":
-			if last_territory != territory.name:
-				if chat.modulate.a == 0:
-					utils.tween_fade(chat, 0, 1)
+			if last_territory != territory.name and chat.modulate.a == 0:
+				utils.tween_fade(chat, 0, 1)
 			_update_question(territory.name)
 			clicked_territory = true
 			last_territory = territory.name

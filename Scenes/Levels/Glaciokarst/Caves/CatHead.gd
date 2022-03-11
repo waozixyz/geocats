@@ -6,7 +6,6 @@ onready var open = $Open
 onready var sprite = $AnimatedSprite
 
 func _check_colliders(now = false):
-	print(player)
 	if PROGRESS.variables.get(unlock_var) == true or now or global.user.location == 1:
 		sprite.animation = "open"
 		sprite.play()

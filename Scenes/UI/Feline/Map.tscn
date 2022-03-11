@@ -120,7 +120,7 @@ centered = false
 [node name="RichTextLabel" type="RichTextLabel" parent="Chat/Question"]
 margin_left = 53.0
 margin_top = 14.0
-margin_right = 166.0
+margin_right = 175.0
 margin_bottom = 48.0
 theme = ExtResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
