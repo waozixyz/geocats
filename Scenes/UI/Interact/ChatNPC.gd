@@ -64,7 +64,8 @@ func _process(_delta):
 				player.enable(player_disable)
 	else:
 		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
-			show_chat()
+			if has_parent and get_parent().is_on_floor() or not has_parent:
+				show_chat()
 		elif (disabled or not touching) and active:
 			hide_chat()
 	

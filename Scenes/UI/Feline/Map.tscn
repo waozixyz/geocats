@@ -74,6 +74,7 @@ visible = false
 texture = ExtResource( 13 )
 
 [node name="Chat" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 17.0
 margin_top = 9.0
 margin_right = 314.0

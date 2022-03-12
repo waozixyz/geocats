@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/UI/Dialogue/Dialogue.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/UI/chat_elements/textbox.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/chat_elements/portrait_box.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/chat_elements/choices_container.png" type="Texture" id=6]
@@ -31,11 +31,12 @@ font_data = SubResource( 2 )
 [sub_resource type="StyleBoxTexture" id=4]
 region_rect = Rect2( 0, 0, 21, 26 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 18
+font_data = ExtResource( 2 )
+
 [node name="Dialogue" type="Control"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Continue_Indicator = SubResource( 1 )
@@ -101,9 +102,6 @@ text = "Name 1"
 align = 1
 valign = 2
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Choices" type="TextureRect" parent="Frame"]
 show_behind_parent = true
@@ -169,10 +167,10 @@ margin_top = -36.0
 margin_right = 222.0
 margin_bottom = 44.0
 focus_mode = 2
-custom_fonts/normal_font = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
-bbcode_text = "Empty text"
-text = "Empty text"
+bbcode_text = "Catnip in your garden, growing in the sun, drinking through the rain, eating through the soil."
+text = "Catnip in your garden, growing in the sun, drinking through the rain, eating through the soil."
 scroll_active = false
 selection_enabled = true
 __meta__ = {
