@@ -1242,9 +1242,6 @@ texture = ExtResource( 22 )
 [node name="DownElevator" type="Area2D" parent="Interactive"]
 position = Vector2( 1556, 1048 )
 script = ExtResource( 33 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 1
 node_to_go = NodePath("../UpElevator")
 
@@ -1252,8 +1249,7 @@ node_to_go = NodePath("../UpElevator")
 shape = SubResource( 128 )
 
 [node name="Button" type="Sprite" parent="Interactive/DownElevator"]
-visible = false
-position = Vector2( 28, 141.5 )
+position = Vector2( -79, -9 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 22 )
 

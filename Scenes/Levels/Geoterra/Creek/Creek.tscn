@@ -730,9 +730,6 @@ shape = SubResource( 46 )
 [node name="ToMountain" type="Area2D" parent="Portals"]
 position = Vector2( 8953.83, 942 )
 script = ExtResource( 27 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 1
 territory = 1
 geoterra = 4
@@ -743,16 +740,13 @@ shape = SubResource( 47 )
 
 [node name="Button" type="Sprite" parent="Portals/ToMountain"]
 visible = false
-position = Vector2( 108, 74.874 )
+position = Vector2( 6.16992, -27 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="GeoCacheRoom" type="Area2D" parent="Portals"]
 position = Vector2( 8845.83, 4859.48 )
 script = ExtResource( 27 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 3
 territory = 1
 geoterra = 3
@@ -764,7 +758,7 @@ shape = SubResource( 53 )
 
 [node name="Button" type="Sprite" parent="Portals/GeoCacheRoom"]
 visible = false
-position = Vector2( 108, 74.874 )
+position = Vector2( 0.169922, -107.48 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
@@ -772,7 +766,6 @@ texture = ExtResource( 18 )
 position = Vector2( 4409, 4976 )
 script = ExtResource( 28 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 sound_effect = 4
@@ -783,16 +776,13 @@ shape = SubResource( 49 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToUp"]
 visible = false
-position = Vector2( 108, 74.874 )
+position = Vector2( 5, -56 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="CaveToDown" type="Area2D" parent="Portals"]
 position = Vector2( 4377.47, 3248.03 )
 script = ExtResource( 28 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 4
 node_to_go = NodePath("../CaveToUp")
 
@@ -801,16 +791,13 @@ shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToDown"]
 visible = false
-position = Vector2( 108, 74.874 )
+position = Vector2( 3.53027, -2.03027 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="JokeRoom" type="Area2D" parent="Portals"]
 position = Vector2( 2964.29, 3451.9 )
 script = ExtResource( 27 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 3
 territory = 1
 geoterra = 1
@@ -822,16 +809,13 @@ shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/JokeRoom"]
 visible = false
-position = Vector2( 108, 74.874 )
+position = Vector2( 6.70996, -62.8999 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
 [node name="CavityPuzzleRoom" type="Area2D" parent="Portals"]
 position = Vector2( 5526, 4114.81 )
 script = ExtResource( 27 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 3
 territory = 1
 geoterra = 2
@@ -842,7 +826,7 @@ shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/CavityPuzzleRoom"]
 visible = false
-position = Vector2( 108, 74.874 )
+position = Vector2( -3, -38.8096 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
