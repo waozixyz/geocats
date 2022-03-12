@@ -7,8 +7,6 @@ var locations = []
 var dead
 var music
 var player
-
-
 func get_player():
 	if not player:
 		player = get_node_or_null("Default/Player")

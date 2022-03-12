@@ -5,13 +5,10 @@ onready var system = $System
 onready var status_bar = $System/StatusBar
 onready var background = $Background
 
-onready var tween = $Tween
-
 onready var red_button = $RedButton
 
 # different views
 onready var main_view = $System/MainView
-onready var map_view = $System/MapView
 onready var settings_view = $System/SettingsView
 
 # sound effects
@@ -40,6 +37,8 @@ func _press_sound():
 func _ready():
 	var default = get_parent().get_parent()
 	geodex = load("res://Scenes/UI/Geodex/Geodex.tscn").instance()
+	map = load("res://Scenes/UI/Feline/Map.tscn").instance()
+	map.modulate.a = 0
 	if default and default.has_node("Player"):
 		player = default.get_node("Player")
 	for child in system.get_children():
@@ -53,12 +52,16 @@ func _ready():
 				button.connect("mouse_entered", self, "_hover_sound")
 				button.connect("pressed", self, "_press_sound")
 
-func _tween(obj, start, end, time = .5):
-	tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	tween.start()
+
 
 func settings():
 	_change_view(settings_view)
+
+var map
+func _open_map():
+	get_parent().add_child(map)
+	utils.tween_fade(map, 0, 1)
+	exit()
 
 var geodex
 func _open_geodex():
@@ -72,7 +75,7 @@ func exit(now = false):
 		if active:
 			close_sfx.play()
 			active = false
-			utils.tween_fade(self, 1, 0, .4)
+			tween = utils.tween_fade(self, 1, 0, .4)
 
 	else:
 		_change_view(main_view)
@@ -81,7 +84,7 @@ func exit(now = false):
 func _button_action(label):
 	match label:
 		"Map":
-			_change_view(map_view)
+			_open_map()
 		"Geodex":
 			_open_geodex()
 		"Exit":
@@ -94,13 +97,16 @@ func _button_action(label):
 
 # change view in system
 func _change_view(new_view):
-	# update old view
-	old_view = view
-	# change current view
-	view = new_view
-	view.visible = true
-	# show current view
-	_tween(view, 0, 1, .2)
+	if new_view != view:
+		# update old view
+		old_view = view
+		utils.tween_fade(old_view, 1, 0, .2)
+		# change current view
+		view = new_view
+		view.visible = true
+		view.modulate.a = 0
+		# show current view
+		utils.tween_fade(view, 0, 1, .2)
 
 # change system theme
 func _change_color():
@@ -112,15 +118,16 @@ func _change_color():
 	pressed_sfx.play()
 ## update logic
 var ticks = 0
-var last_visible = false
 var press_timer = 0
 var red_pressed
+var tween
 func _process(delta):
+
 	var dfps = delta * global.fps
 	if old_view is Control and old_view.modulate.a == 0:
 		old_view.visible = false
 	# red button press logic
-	if visible:
+	if modulate.a > 0:
 		if red_button.pressed:
 			red_pressed = true
 			press_timer += dfps
@@ -133,15 +140,11 @@ func _process(delta):
 			red_pressed = false
 	
 	# check if visible and disable/ enable player
-	if last_visible != visible:
-		if visible:
-			if player:
-				player.disable("feline")
+	if player:
+		if modulate.a > 0:
+			player.disable("feline")
 		else:
-			if player:
-				player.enable("feline")
-	
-		last_visible = visible
+			player.enable("feline")
 	
 	# eye animations
 	if ticks < 16:
@@ -158,7 +161,7 @@ func _process(delta):
 		if ticks >= 15:
 			if not system.visible:
 				system.modulate.a = 0
-				_tween(system, 0, 1)
+				utils.tween_fade(system, 0, 1)
 			
 			system.visible = true
 		else:
@@ -167,35 +170,25 @@ func _process(delta):
 
 		if ticks < 16:
 			ticks += .3 * dfps
-		visible = true
-	else:
-		# start shutdown and hide feline
-		if not tween.is_active() and ticks <= 0:
-			visible = false
-			if change_to:
-				SceneChanger.change_scene(change_to)
-			
-		if ticks > 0:
-			ticks -= .5 * dfps
-			system.modulate.a -= .1 * dfps
-
+	elif ticks > 0:
+		ticks -= .5 * dfps
+		system.modulate.a -= .1 * dfps
 
 func _input(event):
 	if event.is_action_pressed("escape"):
 		if active:
 			exit()
 		else:
-			active = true
-			_tween(self, 0, 1, 1)
-			open_sfx.play()
-	if visible and event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT:
-			if event.pressed:
-				pass
+			if map.modulate.a > 0:
+				utils.tween_fade(map, 1, 0)
 			else:
-				# release
-				if system.visible :
-					# main view system buttons
-					for button in view.get_children():
-						if button is Button and button.pressed:
-							_button_action(button.name)
+				active = true
+				utils.tween_fade(self, 0, 1, 1)
+				open_sfx.play()
+	if modulate.a > 0 and event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if not event.pressed and system.visible :
+				# main view system buttons
+				for button in view.get_children():
+					if button is Button and button.pressed:
+						_button_action(button.name)

@@ -19,7 +19,6 @@ layer = 2
 visible = false
 
 [node name="Feline" parent="CanvasLayer" instance=ExtResource( 5 )]
-visible = false
 
 [node name="Dialogue" parent="CanvasLayer" instance=ExtResource( 6 )]
 visible = false
