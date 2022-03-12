@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_FG.png" type="Texture" id=3]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Environment/Particles/waterfall_mist_FG.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/UI/Interact/Consumable.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat1_Spritesheet.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacatonCat2_Spritesheet.png" type="Texture" id=20]
@@ -61,41 +60,102 @@ extents = Vector2( 50, 50 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 10.7142, 76.9122 )
 
-[sub_resource type="GDScript" id=8]
-script/source = "extends Area2D
-class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 10.7142, 371.912 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 10.7142, 255.484 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 682, 1288 )
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 40.75, 29.2 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 14, 9 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 9, 14, 9 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 18, 14, 9 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 40.75, 29.2 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 10, 12 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 20 )
+region = Rect2( 10, 0, 10, 12 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 20 )
+region = Rect2( 20, 0, 10, 12 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=37]
+script/source = "extends AnimatedSprite
+class_name SpriteAutoPlay
+
+# this was created to avoid needing the playing bool true in the scene
+# which keeps rewriting the scene file and causing merge issues
+
+func _ready():
+	play()
+"
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 40.75, 29.2 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 21 )
+region = Rect2( 9, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 21 )
+region = Rect2( 18, 0, 9, 11 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 42 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=44]
+script/source = "extends AnimatedSprite
+class_name SpriteAutoPlay
+
+# this was created to avoid needing the playing bool true in the scene
+# which keeps rewriting the scene file and causing merge issues
+
+func _ready():
+	play()
+"
 
 [sub_resource type="CircleShape2D" id=12]
 radius = 14.0
@@ -133,295 +193,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 40.75, 29.2 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 14, 9 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 9, 14, 9 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 18, 14, 9 )
-
-[sub_resource type="SpriteFrames" id=30]
-animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=31]
-script/source = "extends AreaInteract
-class_name ChatNPC, \"res://Assets/UI/Debug/chat_npc_icon.png\"
-
-onready var player = get_tree().get_current_scene().get_player()
-onready var chat_with = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/ChatWith\")
-onready var dialogue = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/Dialogue\")
-
-export(bool) var has_parent = false
-export(String) var skip_var = \"\"
-export(String) var character_name = name
-export(String, DIR) var character_folder = \"\"
-
-export(String, FILE, \"*.json\") var json_file = \"\"
-export(String, FILE, \"*.ogg, *.wav\") var sound_file = \"\"
-export(bool) var trigger_on_touch = false
-export(String) var player_disable = \"\"
-
-func _get_default_path():
-	if character_folder.empty() and not json_file.empty():
-		return utils.get_character_folder(json_file)
-	else:
-		return character_folder + \"/\" + character_name.to_lower()
-
-func _ready():
-	if not character_folder.empty() or not json_file.empty():
-		var file2Check = File.new()
-		if json_file.empty():
-			json_file = _get_default_path() + \".json\"
-		if sound_file.empty():
-			if file2Check.file_exists(_get_default_path() + \".ogg\"):
-				sound_file = _get_default_path() + \".ogg\"
-			elif file2Check.file_exists(_get_default_path() + \".wav\"):
-				sound_file = _get_default_path() + \".wav\"
-	else:
-		disabled = true
-
-var active : bool
-var completed :bool
-func show_chat():
-	active = true
-	chat_with.visible = true
-	chat_with.get_node(\"Label\").text = character_name
-
-func hide_chat():
-	active = false
-	chat_with.visible = false
-	dialogue.exit()
-	dia_started = false
-
-func _process(_delta):
-	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
-		if touching and not active:
-			start_chat()
-			if not player_disable.empty():
-				player.disable(player_disable)
-			active = true
-
-		if dia_started and dialogue.modulate.a == 0:
-			dia_started = false
-			active = false
-			if not skip_var.empty():
-				PROGRESS.variables[skip_var] = true
-			if not player_disable.empty():
-				player.enable(player_disable)
-	else:
-		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
-			show_chat()
-		elif (disabled or not touching) and active:
-			hide_chat()
-	
-	if has_parent and \"idle\" in get_parent():
-		if dia_started and dialogue.modulate.a == 0:
-			dia_started = false
-		get_parent().idle = true if dia_started else false
-
-
-func start_chat():
-	dialogue.initiate(json_file)
-	dialogue.modulate.a = 0.1
-	dia_started = true
-
-	chat_with.visible = false
-	AudioManager.play_sound(sound_file)
-
-var dia_started
-func _input(_event):
-	if not trigger_on_touch:
-		if touching and json_file and Input.is_action_just_pressed(\"interact\") and dialogue.modulate.a == 0:
-			if chat_with.visible:
-				start_chat()
-			else:
-				active = false
-				completed = true
-				return
-
-	
-"
-
-[sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 40.75, 29.2 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 10, 12 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 20 )
-region = Rect2( 10, 0, 10, 12 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 20 )
-region = Rect2( 20, 0, 10, 12 )
-
-[sub_resource type="SpriteFrames" id=36]
-animations = [ {
-"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=37]
-script/source = "extends AnimatedSprite
-class_name SpriteAutoPlay
-
-# this was created to avoid needing the playing bool true in the scene
-# which keeps rewriting the scene file and causing merge issues
-
-func _ready():
-	play()
-"
-
-[sub_resource type="GDScript" id=38]
-script/source = "extends AreaInteract
-class_name ChatNPC, \"res://Assets/UI/Debug/chat_npc_icon.png\"
-
-onready var player = get_tree().get_current_scene().get_player()
-onready var chat_with = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/ChatWith\")
-onready var dialogue = get_tree().get_current_scene().get_node(\"Default/CanvasLayer/Dialogue\")
-
-export(bool) var has_parent = false
-export(String) var skip_var = \"\"
-export(String) var character_name = name
-export(String, DIR) var character_folder = \"\"
-
-export(String, FILE, \"*.json\") var json_file = \"\"
-export(String, FILE, \"*.ogg, *.wav\") var sound_file = \"\"
-export(bool) var trigger_on_touch = false
-export(String) var player_disable = \"\"
-
-func _get_default_path():
-	if character_folder.empty() and not json_file.empty():
-		return utils.get_character_folder(json_file)
-	else:
-		return character_folder + \"/\" + character_name.to_lower()
-
-func _ready():
-	if not character_folder.empty() or not json_file.empty():
-		var file2Check = File.new()
-		if json_file.empty():
-			json_file = _get_default_path() + \".json\"
-		if sound_file.empty():
-			if file2Check.file_exists(_get_default_path() + \".ogg\"):
-				sound_file = _get_default_path() + \".ogg\"
-			elif file2Check.file_exists(_get_default_path() + \".wav\"):
-				sound_file = _get_default_path() + \".wav\"
-	else:
-		disabled = true
-
-var active : bool
-var completed :bool
-func show_chat():
-	active = true
-	chat_with.visible = true
-	chat_with.get_node(\"Label\").text = character_name
-
-func hide_chat():
-	active = false
-	chat_with.visible = false
-	dialogue.exit()
-	dia_started = false
-
-func _process(_delta):
-	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
-		if touching and not active:
-			start_chat()
-			if not player_disable.empty():
-				player.disable(player_disable)
-			active = true
-
-		if dia_started and dialogue.modulate.a == 0:
-			dia_started = false
-			active = false
-			if not skip_var.empty():
-				PROGRESS.variables[skip_var] = true
-			if not player_disable.empty():
-				player.enable(player_disable)
-	else:
-		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
-			show_chat()
-		elif (disabled or not touching) and active:
-			hide_chat()
-	
-	if has_parent and \"idle\" in get_parent():
-		if dia_started and dialogue.modulate.a == 0:
-			dia_started = false
-		get_parent().idle = true if dia_started else false
-
-
-func start_chat():
-	dialogue.initiate(json_file)
-	dialogue.modulate.a = 0.1
-	dia_started = true
-
-	chat_with.visible = false
-	AudioManager.play_sound(sound_file)
-
-var dia_started
-func _input(_event):
-	if not trigger_on_touch:
-		if touching and json_file and Input.is_action_just_pressed(\"interact\") and dialogue.modulate.a == 0:
-			if chat_with.visible:
-				start_chat()
-			else:
-				active = false
-				completed = true
-				return
-
-	
-"
-
-[sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 40.75, 29.2 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 0, 9, 11 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 21 )
-region = Rect2( 9, 0, 9, 11 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 21 )
-region = Rect2( 18, 0, 9, 11 )
-
-[sub_resource type="SpriteFrames" id=43]
-animations = [ {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 42 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=44]
-script/source = "extends AnimatedSprite
-class_name SpriteAutoPlay
-
-# this was created to avoid needing the playing bool true in the scene
-# which keeps rewriting the scene file and causing merge issues
-
-func _ready():
-	play()
-"
-
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 34 )
 region = Rect2( 0, 0, 79, 98 )
@@ -451,7 +222,6 @@ script = ExtResource( 12 )
 scale = Vector2( 5, 5 )
 
 [node name="WaterfallBg2" type="Sprite" parent="BelowPlayer"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 centered = false
 
@@ -460,7 +230,6 @@ position = Vector2( 463.4, 56.6 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="SceneBg" type="Sprite" parent="BelowPlayer"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 centered = false
 __meta__ = {
@@ -471,8 +240,8 @@ __meta__ = {
 position = Vector2( 444, 672.8 )
 scale = Vector2( 0.1, 0.1 )
 
-[node name="Sprite3" type="Sprite" parent="."]
-scale = Vector2( 5, 5 )
+[node name="Ground" type="Sprite" parent="BelowPlayer"]
+scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 centered = false
 __meta__ = {
@@ -482,7 +251,7 @@ __meta__ = {
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 2221, 1848 )
+position = Vector2( 678, 955 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 position = Vector2( -1, 0 )
@@ -494,7 +263,6 @@ limit_bottom = 3758
 frame = 19
 
 [node name="Collisions" type="Node2D" parent="."]
-visible = false
 scale = Vector2( 0.833, 0.833 )
 __meta__ = {
 "_edit_group_": true,
@@ -1833,9 +1601,9 @@ amount = 1000
 stream = ExtResource( 17 )
 bus = "Music"
 
-[node name="Interactables" type="Node2D" parent="."]
+[node name="Ladders" type="Node2D" parent="."]
 
-[node name="LastLadder" type="Area2D" parent="Interactables"]
+[node name="LastLadder" type="Area2D" parent="Ladders"]
 position = Vector2( 539, 1125 )
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 4 )
@@ -1843,63 +1611,33 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LastLadder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
 position = Vector2( 0, -3.80214 )
 shape = SubResource( 7 )
 
-[node name="LastLadder2" type="Area2D" parent="Interactables"]
+[node name="LastLadder2" type="Area2D" parent="Ladders"]
 position = Vector2( 753, 1742 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 8 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LastLadder2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder2"]
 position = Vector2( 0, -3.80214 )
 shape = SubResource( 9 )
 
-[node name="LastLadder3" type="Area2D" parent="Interactables"]
+[node name="LastLadder3" type="Area2D" parent="Ladders"]
 position = Vector2( 1273, 2548 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 8 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LastLadder3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder3"]
 position = Vector2( 0, -3.80214 )
 shape = SubResource( 10 )
-
-[node name="E_Interact" type="Area2D" parent="Interactables"]
-visible = false
-script = ExtResource( 11 )
-sound_effect = "res://Assets/Levels/Geoterra/Waterfalls/waterfall.ogg"
-sound_volume = 10.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/E_Interact"]
-position = Vector2( 2302, 1966 )
-shape = SubResource( 11 )
-
-[node name="Consumable" type="Area2D" parent="Interactables"]
-position = Vector2( 6015, 331 )
-script = ExtResource( 16 )
-sound_volume = 10.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Consumable"]
-position = Vector2( 2, 4 )
-shape = SubResource( 12 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/Consumable"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Consumable/StaticBody2D"]
-position = Vector2( 2, 4 )
-shape = SubResource( 12 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Interactables/Consumable"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 18 )
-animation = "resting"
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -1909,8 +1647,6 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
-character_name = "Cleopardis"
-character_folder = "res://Assets/Agents/Cleopardis"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat1"]
 position = Vector2( 20.8, 33.5306 )
@@ -1925,7 +1661,7 @@ script = ExtResource( 23 )
 
 [node name="VacationCat2" type="Area2D" parent="NPC"]
 position = Vector2( 5622, 436 )
-script = SubResource( 31 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1944,7 +1680,7 @@ script = SubResource( 37 )
 
 [node name="VacationCat3" type="Area2D" parent="NPC"]
 position = Vector2( 6483, 91 )
-script = SubResource( 38 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1958,14 +1694,36 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "idle"
-frame = 13
+frame = 5
 playing = true
 centered = false
 script = SubResource( 44 )
 
+[node name="Ball" type="Node2D" parent="."]
+
+[node name="Consumable" type="Area2D" parent="Ball"]
+position = Vector2( 6015, 331 )
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball/Consumable"]
+position = Vector2( 2, 4 )
+shape = SubResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ball/Consumable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/Consumable/StaticBody2D"]
+position = Vector2( 2, 4 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Ball/Consumable"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 18 )
+animation = "resting"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ResearchCabin" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
