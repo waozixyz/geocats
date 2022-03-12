@@ -11,7 +11,7 @@ var crt_noise = 0.0
 
 # player stuff
 var user = {
-	"visited": [],
+	"visited": {},
 	"location": 0,
 	"position": Vector2(0,0),
 	"direction": 0,
@@ -28,9 +28,6 @@ var data =  {
 	"music": -6,
 	"nosound": false,
 	"nomusic": false,
-	# feline stuff
-	"nav_unlocked": [],
-	"nav_visited": [],
 	# dialogue variables
 	"prog_var": {},
 	"prog_dia": {},

@@ -26,4 +26,4 @@ func _play_pressed():
 
 func _next():
 	if get_parent().name == "TitleScreen":
-		SceneChanger.change_scene(utils.find_level_path("GeoCity", "CatsCradle"))
+		SceneChanger.change_scene("GeoCity", "CatsCradle")

@@ -104,27 +104,34 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 centered = false
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Exclaim" type="Sprite" parent="Chat"]
-visible = false
-position = Vector2( 128.5, 71 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
+centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Chat/Exclaim"]
-visible = false
-margin_left = -23.0
-margin_top = -20.0
-margin_right = 62.0
-margin_bottom = 14.0
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 173.0
+margin_bottom = 48.0
 theme = ExtResource( 11 )
-text = "Te"
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+"
+text = "Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+"
 
 [node name="Question" type="Sprite" parent="Chat"]
-position = Vector2( -4, 2 )
+visible = false
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 centered = false
@@ -138,9 +145,15 @@ theme = ExtResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "Travel to Lichen Conservatory
+bbcode_text = "Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
 "
-text = "Travel to Lichen Conservatory
+text = "Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
+Travel to Catnip Conservatory
 "
 
 [node name="Controls" type="Control" parent="."]

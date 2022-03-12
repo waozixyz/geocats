@@ -11,13 +11,21 @@ onready var arrow_right = $Controls/ArrowRight
 
 var scroll_speed = 8
 
-var filter_out = ["Battle", "JokeRoom", "CavityPuzzleRoom", "GeoCacheRoom", "GreenCave", "PopNnip", "DonutShop"]
+var filter_out = ["Arcade", "Battle", "JokeRoom", "CatsCradle", "CavityPuzzleRoom", "GeoCacheRoom", "GreenCave", "PopNnip", "DonutShop"]
+
+func _replace_scene_name(scene_name):
+	match scene_name:
+		"CatsCradle": return "Cat's Cradel"
+		"Complex": return "NONACO Housing Project #420"
+		"Creek": return "Canopy Creek"
+		"Arcade": return "Geistesfluch Arcade"
+		_: return scene_name
 
 func _ready():
 	for territory in territories.get_children():
 		var err = territory.connect("input_event", self, "_input_event", [territory])
 		assert(err == OK)
-	chat.modulate.a = 0
+	#chat.modulate.a = 0
 var last_territory = ""
 var clicked_territory = false
 var tween 
@@ -25,20 +33,36 @@ var tween
 func label_clicked(data):
 	data = data.split(', ')
 	global.user.location = 0
-	SceneChanger.change_scene(utils.find_level_path(data[0], data[1]))
+	SceneChanger.change_scene(data[0], data[1])
 	
-func _update_question(territory):
-	exclaim.visible = false
-	var label = question.get_node("RichTextLabel")
-	label.bbcode_text = "[center] Welcome to " + territory + "[/center]"
-	label.newline()
-	label.newline()
-	for t in Territory.get_scenes(Territory.Names.keys().find(territory)):
-		if filter_out.find(t) == -1:
-			label.append_bbcode("Travel to [color=blue][url=" + territory + ", " + t + "]" + t  + "[/url][/color]")
-			label.newline()
-			label.connect("meta_clicked", self, "label_clicked") 
-
+func _update_dialogue(territory):
+	if global.user.visited.has(territory):
+		exclaim.visible = true
+		question.visible = false
+		var label = exclaim.get_node("RichTextLabel")
+		label.bbcode_text = "[center] Welcome to " + territory + "[/center]"
+		label.newline()
+		label.newline()
+		
+		for t in Territory.get_scenes(Territory.Names.keys().find(territory)):
+			# if the scene name is not in the filter out list, continue
+			var opt = filter_out.find(t)
+			if opt == -1:
+				# if the scene name has been visited, continue
+				opt = global.user.visited[territory].find(t)
+				if opt != -1:
+					label.append_bbcode("[center] Travel to [/center]")
+					label.newline()
+					label.append_bbcode("[center][color=blue][url=" + territory + ", " + t + "]" + _replace_scene_name(t)  + "[/url][/color][/center]")
+					label.newline()
+					label.newline()
+					label.connect("meta_clicked", self, "label_clicked")
+	else:
+		exclaim.visible = false
+		question.visible = true
+		
+		var label = question.get_node("RichTextLabel")
+		label.bbcode_text = "Sorry, but it seems like travel to this area is currently unavailable."
 func _update_spotlight(pos):
 	spotlight.position = pos
 	spotlight.visible = true
@@ -47,7 +71,7 @@ func _input_event( viewport, event, shape_idx, territory):
 		if territory.name != "Null":
 			if last_territory != territory.name and chat.modulate.a == 0:
 				utils.tween_fade(chat, 0, 1)
-			_update_question(territory.name)
+			_update_dialogue(territory.name)
 			clicked_territory = true
 			last_territory = territory.name
 		else:
@@ -62,7 +86,7 @@ func _process(_delta):
 		tween = null
 		if not last_territory.empty():
 			utils.tween_fade(chat, 0, 1)
-			_update_question(last_territory)
+			_update_dialogue(last_territory)
 	if not clicked_territory and not last_territory.empty():
 		tween = utils.tween_fade(chat, 1, 0, 0.1)
 		last_territory = ""

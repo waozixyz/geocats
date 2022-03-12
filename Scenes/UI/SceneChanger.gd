@@ -16,10 +16,28 @@ func _ready():
 	sprite.modulate.a = 0
 	container.modulate.a = 0
 
-func change_scene(lvl_path):
+func _get_level_path(level_territory, level_name = ""):
+	if level_name.empty():
+		level_name = level_territory
+	var start = "res://Scenes/Levels/"
+	var end = level_name + ".tscn"
+	var file2Check = File.new()
+	if file2Check.file_exists(start + level_territory + "/" + end):
+		return start + level_territory + "/" + end
+	elif file2Check.file_exists(start + level_territory + "/" + level_name + "/" + end):
+		return start + level_territory + "/" + level_name + "/" + end
+	else:
+		printerr("wrong path: ", start, level_territory, "/", end)
+
+func change_scene(level_territory, level_name = ""):
 	get_tree().paused = true
-	if lvl_path:
-		level_path = lvl_path
+	if global.user.visited.has(level_territory):
+		global.user.visited[level_territory].append(level_name)
+	else:
+		global.user.visited[level_territory] = [level_name]
+	
+	level_path = _get_level_path(level_territory, level_name)
+	if level_path:
 		utils.tween_fade(sprite, 0, 1)
 		utils.tween_fade(container, 0, 1)
 		change = true
@@ -37,6 +55,7 @@ func _physics_process(delta):
 		if timer > load_time:
 			_new_scene()
 			change = false
+
 
 func _new_scene():
 	AudioManager.playing = []

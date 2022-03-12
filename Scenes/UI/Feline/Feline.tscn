@@ -35,10 +35,9 @@ border_width_top = 3
 border_width_bottom = 3
 border_color = Color( 0.392157, 0.666667, 0.380392, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0.156863, 0.333333, 0.160784, 1 )
-border_width_top = 2
-border_width_bottom = 2
+draw_center = false
 border_color = Color( 0.392157, 0.666667, 0.380392, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -49,7 +48,6 @@ border_color = Color( 0.392157, 0.666667, 0.380392, 1 )
 
 [node name="Feline" type="Control"]
 pause_mode = 2
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -139,7 +137,6 @@ align = 0
 expand_icon = true
 
 [node name="SettingsView" type="Control" parent="System"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -168,7 +165,7 @@ margin_bottom = 20.0
 custom_icons/grabber_highlight = ExtResource( 27 )
 custom_icons/grabber = ExtResource( 27 )
 custom_styles/slider = SubResource( 1 )
-custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area_highlight = SubResource( 19 )
 custom_styles/grabber_area = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -204,7 +201,7 @@ margin_bottom = 20.0
 custom_icons/grabber_highlight = ExtResource( 27 )
 custom_icons/grabber = ExtResource( 27 )
 custom_styles/slider = SubResource( 1 )
-custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area_highlight = SubResource( 19 )
 custom_styles/grabber_area = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

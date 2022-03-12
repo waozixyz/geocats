@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CatsCradle_hovered.png-54bbb0db31daa196f0b5422106cd6373.stex"
+path="res://.import/icon.png-dcf29ce74321398d1128f8f0714657a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Feline/UI/MapView/CatsCradle_hovered.png"
-dest_files=[ "res://.import/CatsCradle_hovered.png-54bbb0db31daa196f0b5422106cd6373.stex" ]
+source_file="res://Assets/UI/scrollbar/icon.png"
+dest_files=[ "res://.import/icon.png-dcf29ce74321398d1128f8f0714657a1.stex" ]
 
 [params]
 

@@ -35,6 +35,7 @@ func _press_sound():
 
 # initialize feline
 func _ready():
+	modulate.a = 0
 	var default = get_parent().get_parent()
 	geodex = load("res://Scenes/UI/Geodex/Geodex.tscn").instance()
 	map = load("res://Scenes/UI/Feline/Map.tscn").instance()
@@ -89,7 +90,7 @@ func _button_action(label):
 		"Exit":
 			exit()
 			if OS.get_name() == "HTML5":
-				change_to = "TitleScreen"
+				SceneChanger.change_scene("TitleScreen")
 			else:
 				get_tree().quit()
 
@@ -184,6 +185,8 @@ func _input(event):
 		else:
 			if map.modulate.a > 0:
 				map_tween = utils.tween_fade(map, 1, 0)
+				utils.tween_fade(map.chat, 1, 0)
+				map.last_territory = ""
 			elif tween and not tween.is_active() or not tween:
 				active = true
 				tween = utils.tween_fade(self, 0, 1, 1)

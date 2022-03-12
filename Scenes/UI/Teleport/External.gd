@@ -31,7 +31,7 @@ func _ready():
 func _input(_event):
 	if _can_interact():
 		global.user.location = next_loc
-		SceneChanger.change_scene(utils.find_level_path(territory_name, level_name))
+		SceneChanger.change_scene(territory_name, level_name)
 		button.visible = false
 
 		_play_sound()

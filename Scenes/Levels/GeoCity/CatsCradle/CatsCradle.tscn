@@ -166,10 +166,6 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 0, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 15, 15, 15 )
@@ -177,6 +173,22 @@ region = Rect2( 0, 15, 15, 15 )
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 18 )
@@ -198,18 +210,6 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 26 ) ],
@@ -217,9 +217,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
-"name": "crouch",
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 26 ) ],
@@ -227,20 +232,15 @@ animations = [ {
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
-"name": "walk",
+"name": "crouch",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
-}, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=36]
@@ -434,7 +434,6 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -446,17 +445,16 @@ material = SubResource( 5 )
 margin_right = 1500.0
 margin_bottom = 700.0
 rect_pivot_offset = Vector2( 1576.79, 392.183 )
+mouse_filter = 2
 texture = SubResource( 6 )
 stretch_mode = 2
 script = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="YellowStars" type="TextureRect" parent="BelowPlayer/Dream"]
 material = SubResource( 9 )
 margin_right = 1500.0
 margin_bottom = 700.0
+mouse_filter = 2
 texture = SubResource( 10 )
 stretch_mode = 2
 script = SubResource( 11 )
@@ -468,6 +466,7 @@ __meta__ = {
 material = SubResource( 12 )
 margin_right = 1500.0
 margin_bottom = 700.0
+mouse_filter = 2
 texture = SubResource( 13 )
 stretch_mode = 2
 script = SubResource( 14 )
@@ -476,6 +475,7 @@ script = SubResource( 14 )
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 centered = false
 
@@ -499,6 +499,7 @@ centered = false
 [node name="RichTextLabel" type="RichTextLabel" parent="BelowPlayer/Dream"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -659,7 +660,7 @@ one_way_collision = true
 [node name="Default" parent="." instance=ExtResource( 11 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 1301, 178 )
+position = Vector2( 1303, 186 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1490

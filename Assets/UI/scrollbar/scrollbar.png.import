@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GeoLodge_clicked.png-9916b55c3f93ed01a221c74313fa362c.stex"
+path="res://.import/scrollbar.png-097bbe33ce0872e333edaba7c5c020a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Feline/UI/MapView/GeoLodge_clicked.png"
-dest_files=[ "res://.import/GeoLodge_clicked.png-9916b55c3f93ed01a221c74313fa362c.stex" ]
+source_file="res://Assets/UI/scrollbar/scrollbar.png"
+dest_files=[ "res://.import/scrollbar.png-097bbe33ce0872e333edaba7c5c020a1.stex" ]
 
 [params]
 

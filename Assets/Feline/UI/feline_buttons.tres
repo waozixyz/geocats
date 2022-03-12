@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=17 format=2]
+[gd_resource type="Theme" load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Feline/Map/popup.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/scrollbar/icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/scrollbar/scrollbar.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/qix_mono.ttf"
@@ -66,6 +68,21 @@ region_rect = Rect2( 0, 0, 96, 96 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.207843, 0.101961, 0, 1 )
+
+[sub_resource type="ImageTexture" id=15]
+
+[sub_resource type="StyleBoxTexture" id=18]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 3, 3 )
+margin_top = 3.0
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 4 )
 
 [sub_resource type="StyleBoxEmpty" id=12]
 
@@ -168,5 +185,16 @@ TextEdit/styles/completion = null
 TextEdit/styles/focus = null
 TextEdit/styles/normal = SubResource( 11 )
 TextEdit/styles/read_only = null
+VScrollBar/icons/decrement = SubResource( 15 )
+VScrollBar/icons/decrement_highlight = SubResource( 15 )
+VScrollBar/icons/decrement_pressed = SubResource( 15 )
+VScrollBar/icons/increment = SubResource( 15 )
+VScrollBar/icons/increment_highlight = SubResource( 15 )
+VScrollBar/icons/increment_pressed = SubResource( 15 )
+VScrollBar/styles/grabber = SubResource( 18 )
+VScrollBar/styles/grabber_highlight = SubResource( 18 )
+VScrollBar/styles/grabber_pressed = SubResource( 18 )
+VScrollBar/styles/scroll = SubResource( 19 )
+VScrollBar/styles/scroll_focus = null
 VSeparator/constants/separation = 4
 VSeparator/styles/separator = SubResource( 12 )

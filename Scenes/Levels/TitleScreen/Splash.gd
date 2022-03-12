@@ -3,7 +3,6 @@ extends Control
 onready var splash = $AnimatedSprite
 onready var audio = $AudioStreamPlayer
 
-export(String, FILE, "*.tscn") var next_scene
 var particles
 var loaded
 
@@ -17,7 +16,7 @@ func _ready():
 
 
 func _next():
-	SceneChanger.change_scene(next_scene)
+	SceneChanger.change_scene("TitleScreen")
 	remove_child(particles)
 
 

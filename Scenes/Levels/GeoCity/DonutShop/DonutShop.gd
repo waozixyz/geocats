@@ -13,7 +13,7 @@ func _physics_process(delta):
 		PROGRESS.variables["teleport"] = false
 		global.user.location = 0
 		AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
-		SceneChanger.change_scene(utils.find_level_path("Geoterra", "Creek"))
+		SceneChanger.change_scene("Geoterra", "Creek")
 
 
 	if "Affogato" in global.user.following:
