@@ -83,6 +83,7 @@ draw_center = false
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 3, 30 )
 
 [sub_resource type="StyleBoxEmpty" id=12]
 

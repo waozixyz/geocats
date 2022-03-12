@@ -326,26 +326,32 @@ script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="Mountain_art" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 4 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="stars" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 5 )
 speed_scale = 0.2
 centered = false
 script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ring" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 8 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="telescope" type="Sprite" parent="BelowPlayer"]
+position = Vector2( 349, 309 )
 texture = ExtResource( 1 )
 centered = false
 

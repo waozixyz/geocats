@@ -4,20 +4,18 @@
 offsets = PoolRealArray( 0.0143198, 0.164678, 0.336516, 0.353222, 0.548926, 0.694511 )
 colors = PoolColorArray( 0.196078, 0.6, 0.552941, 0.623529, 0.349544, 0.907448, 0.894869, 0.24689, 0.247059, 0.572549, 0.729412, 0.462745, 0.192157, 0.686275, 0.721569, 0.815686, 0.293665, 0.828034, 0.833053, 0.517616, 0.384314, 0.956863, 0.933333, 0.0784314 )
 
-[node name="Node2D" type="Node2D"]
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D"]
 position = Vector2( -37, -42 )
-amount = 5000
-lifetime = 10.0
+amount = 1000
+lifetime = 12.0
 preprocess = 10.0
 speed_scale = 1.79
 fixed_fps = 24
 emission_shape = 2
-emission_rect_extents = Vector2( 1200, 500 )
+emission_rect_extents = Vector2( 1240, 0 )
 spread = 180.0
 initial_velocity = 28.81
-scale_amount = 173.83
+scale_amount = 400.0
 scale_amount_random = 1.0
 color_ramp = SubResource( 1 )
 hue_variation = 0.05
