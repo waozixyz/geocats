@@ -25,7 +25,7 @@ func _ready():
 	for territory in territories.get_children():
 		var err = territory.connect("input_event", self, "_input_event", [territory])
 		assert(err == OK)
-	#chat.modulate.a = 0
+	chat.modulate.a = 0
 var last_territory = ""
 var clicked_territory = false
 var tween 
@@ -43,7 +43,7 @@ func _update_dialogue(territory):
 		label.bbcode_text = "[center] Welcome to " + territory + "[/center]"
 		label.newline()
 		label.newline()
-		
+		var count = 0
 		for t in Territory.get_scenes(Territory.Names.keys().find(territory)):
 			# if the scene name is not in the filter out list, continue
 			var opt = filter_out.find(t)
@@ -57,6 +57,10 @@ func _update_dialogue(territory):
 					label.newline()
 					label.newline()
 					label.connect("meta_clicked", self, "label_clicked")
+					count += 1
+		if count == 0:
+			label.append_bbcode("Sorry, travel here is currently unavailable")
+
 	else:
 		exclaim.visible = false
 		question.visible = true
