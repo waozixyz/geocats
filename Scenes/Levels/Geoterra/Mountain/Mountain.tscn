@@ -506,7 +506,6 @@ shape = SubResource( 21 )
 
 [node name="Portals" type="Node2D" parent="."]
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -520,17 +519,14 @@ position = Vector2( 2.9999, 4.00024 )
 shape = SubResource( 22 )
 
 [node name="Button" type="Sprite" parent="Portals/GoUp"]
-visible = false
-position = Vector2( -65.7659, 0 )
+position = Vector2( 1, -48 )
 scale = Vector2( 0.306122, 0.298077 )
+z_index = 1
 texture = ExtResource( 10 )
 
 [node name="GoDown" type="Area2D" parent="Portals"]
 position = Vector2( 1472.91, 2335.62 )
 script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 node_to_go = NodePath("../GoUp")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoDown"]
@@ -538,9 +534,9 @@ position = Vector2( 108.749, 148 )
 shape = SubResource( 22 )
 
 [node name="Button" type="Sprite" parent="Portals/GoDown"]
-visible = false
-position = Vector2( 25.0032, 148 )
+position = Vector2( 67.0901, -9.62012 )
 scale = Vector2( 0.306122, 0.298077 )
+z_index = 1
 texture = ExtResource( 10 )
 
 [node name="ToCreek" type="Area2D" parent="Portals"]
