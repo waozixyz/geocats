@@ -75,8 +75,7 @@ func exit(now = false):
 		if active:
 			close_sfx.play()
 			active = false
-			tween = utils.tween_fade(self, 1, 0, .4)
-
+			tween = utils.tween_fade(self, 1, 0, .3)
 	else:
 		_change_view(main_view)
 	
@@ -173,17 +172,21 @@ func _process(delta):
 	elif ticks > 0:
 		ticks -= .5 * dfps
 		system.modulate.a -= .1 * dfps
-
+	if map.modulate.a == 0 and map_tween and not map_tween.is_active():
+		get_parent().remove_child(map)
+		map_tween = null
+	visible = true if modulate.a > 0 else false
+var map_tween
 func _input(event):
 	if event.is_action_pressed("escape"):
-		if active:
+		if active and (tween and not tween.is_active() or not tween):
 			exit()
 		else:
 			if map.modulate.a > 0:
-				utils.tween_fade(map, 1, 0)
-			else:
+				map_tween = utils.tween_fade(map, 1, 0)
+			elif tween and not tween.is_active() or not tween:
 				active = true
-				utils.tween_fade(self, 0, 1, 1)
+				tween = utils.tween_fade(self, 0, 1, 1)
 				open_sfx.play()
 	if modulate.a > 0 and event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:

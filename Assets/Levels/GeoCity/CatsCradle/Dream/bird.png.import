@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dream_Cloud.png-6793d47df9a375dad0f26fd5500fb011.stex"
+path="res://.import/bird.png-8d1675133b7856c3362409a0094d495c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/GeoCity/CatsCradleNight/Dream_Cloud.png"
-dest_files=[ "res://.import/Dream_Cloud.png-6793d47df9a375dad0f26fd5500fb011.stex" ]
+source_file="res://Assets/Levels/GeoCity/CatsCradle/Dream/bird.png"
+dest_files=[ "res://.import/bird.png-8d1675133b7856c3362409a0094d495c.stex" ]
 
 [params]
 

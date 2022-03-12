@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cats_Cradle_Overlay_Night.png-383757b5f04f46efa48bfae2edd3bc7f.stex"
+path="res://.import/Cats_Cradle_Overlay_Night.png-73c0c5fb55d720febef06d3083988726.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Overlay_Night.png"
-dest_files=[ "res://.import/Cats_Cradle_Overlay_Night.png-383757b5f04f46efa48bfae2edd3bc7f.stex" ]
+source_file="res://Assets/Levels/GeoCity/CatsCradle/Dream/Cats_Cradle_Overlay_Night.png"
+dest_files=[ "res://.import/Cats_Cradle_Overlay_Night.png-73c0c5fb55d720febef06d3083988726.stex" ]
 
 [params]
 

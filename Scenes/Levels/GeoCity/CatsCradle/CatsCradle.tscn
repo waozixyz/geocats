@@ -12,10 +12,10 @@
 [ext_resource path="res://Scenes/UI/Interact/Consumable.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/UI/LoadTextFile.gd" type="Script" id=12]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Overlay_Night.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Cats_Cradle_Night.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/Dream_Cloud.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Levels/GeoCity/CatsCradleNight/bird.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Dream/Cats_Cradle_Overlay_Night.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Dream/Cats_Cradle_Night.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Dream/Dream_Cloud.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/GeoCity/CatsCradle/Dream/bird.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Levels/GeoCity/CatsCradle/Dream.gd" type="Script" id=17]
 [ext_resource path="res://Assets/Player/Spritesheets/knapsack.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=19]
@@ -166,17 +166,9 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 18 )
@@ -206,9 +198,17 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 0, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
@@ -217,14 +217,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 33 ), SubResource( 34 ) ],
-"loop": true,
-"name": "walk",
+"name": "crouch",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 26 ) ],
@@ -232,14 +227,19 @@ animations = [ {
 "name": "blink",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ), SubResource( 25 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
-"name": "crouch",
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -471,9 +471,6 @@ margin_bottom = 700.0
 texture = SubResource( 13 )
 stretch_mode = 2
 script = SubResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="BelowPlayer/Dream"]
 position = Vector2( 1341.43, 163.423 )
@@ -830,7 +827,7 @@ scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 6 )
 
 [node name="Dream" type="Area2D" parent="Interactables"]
-position = Vector2( 1331, 179 )
+position = Vector2( 1332, 179 )
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
@@ -864,23 +861,20 @@ shape = SubResource( 81 )
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/InstructionBooklet"]
 margin_right = 640.0
 margin_bottom = 480.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Content" type="Control" parent="CanvasLayer/InstructionBooklet"]
 margin_left = -1.10052
 margin_top = 90.8703
 margin_right = 38.8995
 margin_bottom = 130.87
-__meta__ = {
-"_edit_use_anchors_": false
-}
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 7.0
@@ -888,6 +882,7 @@ margin_top = 11.0
 margin_right = 267.0
 margin_bottom = 131.0
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 23 )
 
 [node name="BasicTechniquesTitle" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
@@ -896,29 +891,13 @@ margin_top = 17.8703
 margin_right = 205.899
 margin_bottom = 44.8703
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 73 )
 meta_underlined = false
 text = "Basic Techniques"
 fit_content_height = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/BasicTechniquesTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 27.0
-step = 1.0
-page = 27.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/BasicTechniquesTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
 
 [node name="BasicTechniquesText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 27.0
@@ -926,6 +905,7 @@ margin_top = 42.0
 margin_right = 231.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 74 )
 meta_underlined = false
@@ -941,26 +921,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/BasicTechniquesText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 102.0
-step = 1.0
-page = 102.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/BasicTechniquesText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
 [node name="AdvancedTechniquesTitle" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 94.0
 margin_top = 146.0
 margin_right = 307.0
 margin_bottom = 200.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 75 )
 meta_underlined = false
@@ -968,23 +935,6 @@ text = "Advanced Techniques
 "
 fit_content_height = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/AdvancedTechniquesTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 54.0
-step = 1.0
-page = 54.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/AdvancedTechniquesTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
 
 [node name="AdvancedTechniquesText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 124.101
@@ -992,6 +942,7 @@ margin_top = 184.13
 margin_right = 293.101
 margin_bottom = 269.13
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 76 )
 meta_underlined = false
@@ -1003,49 +954,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/AdvancedTechniquesText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 85.0
-step = 1.0
-page = 85.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/AdvancedTechniquesText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
 [node name="SuperAdvancedTechniquesTitle" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 342.0
 margin_top = 17.0
 margin_right = 623.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 77 )
 meta_underlined = false
 text = "Super Advanced Techniques"
 fit_content_height = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/SuperAdvancedTechniquesTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 27.0
-step = 1.0
-page = 27.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/SuperAdvancedTechniquesTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
 
 [node name="SuperAdvancedTechniquesText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 413.0
@@ -1053,6 +974,7 @@ margin_top = 46.0
 margin_right = 629.0
 margin_bottom = 139.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 78 )
 meta_underlined = false
@@ -1064,49 +986,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/SuperAdvancedTechniquesText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 85.0
-step = 1.0
-page = 153.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/SuperAdvancedTechniquesText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
 [node name="RingTitle" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 347.899
 margin_top = 144.87
 margin_right = 570.899
 margin_bottom = 171.87
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 79 )
 meta_underlined = false
 text = "Nonaco's GeoRing"
 fit_content_height = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/RingTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 27.0
-step = 1.0
-page = 27.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/RingTitle"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
 
 [node name="RingText" type="RichTextLabel" parent="CanvasLayer/InstructionBooklet/Content"]
 margin_left = 347.0
@@ -1114,29 +1006,13 @@ margin_top = 176.0
 margin_right = 469.0
 margin_bottom = 278.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
+mouse_filter = 2
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 80 )
 meta_underlined = false
 text = "Life's not always easy on a giant space-ring. But, we believe in you. Good luck on your adventures!"
 fit_content_height = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/RingText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 102.0
-step = 1.0
-page = 102.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="CanvasLayer/InstructionBooklet/Content/RingText"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
 
 [node name="Letter" type="Node2D" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
@@ -1159,6 +1035,7 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
+mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 70 )
 fit_content_height = true
@@ -1178,6 +1055,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Fridge"]
 margin_right = 640.0
 margin_bottom = 480.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true,

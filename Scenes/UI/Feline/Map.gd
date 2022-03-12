@@ -17,7 +17,7 @@ func _ready():
 	for territory in territories.get_children():
 		var err = territory.connect("input_event", self, "_input_event", [territory])
 		assert(err == OK)
-
+	chat.modulate.a = 0
 var last_territory = ""
 var clicked_territory = false
 var tween 
@@ -30,12 +30,12 @@ func label_clicked(data):
 func _update_question(territory):
 	exclaim.visible = false
 	var label = question.get_node("RichTextLabel")
-	label.bbcode_text = "Welcome to " + territory + " "
+	label.bbcode_text = "[center] Welcome to " + territory + "[/center]"
 	label.newline()
 	label.newline()
 	for t in Territory.get_scenes(Territory.Names.keys().find(territory)):
 		if filter_out.find(t) == -1:
-			label.append_bbcode("Travel to [color=blue][url=" + territory + ", " + t + "]" + t  + "[/url] [/color]")
+			label.append_bbcode("Travel to [color=blue][url=" + territory + ", " + t + "]" + t  + "[/url][/color]")
 			label.newline()
 			label.connect("meta_clicked", self, "label_clicked") 
 
