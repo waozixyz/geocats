@@ -1,0 +1,21 @@
+{
+    "first": {
+      "avatar": "VacationCat3.png",
+      "position": "right",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "I like to take my family camping out here on the weekends.",
+      "next": "1"
+    },
+    "1": {
+      "type": "text",
+      "content": "It takes us a day to get here, and a day to get back to Geocity.",
+      "next": "2"
+    },
+    "2": {
+        "type": "text",
+        "content": "We're left with a few happy hours to have fun and enjoy the beauty of nature!",
+        "next": ""
+      }
+  }
+  

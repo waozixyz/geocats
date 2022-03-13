@@ -1,0 +1,16 @@
+{
+    "first": {
+      "avatar": "VacationCat2.png",
+      "position": "right",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "Please leave me, and my family alone.",
+      "next": "1"
+    },
+    "1": {
+      "type": "text",
+      "content": "We are trying to have fun and relax, because it's our weekend.",
+      "next": ""
+    }
+  }
+  

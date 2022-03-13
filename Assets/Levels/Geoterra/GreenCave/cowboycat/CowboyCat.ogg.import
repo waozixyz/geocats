@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CowboyCat.ogg-6f3180c37da4749f20359cebe479316a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
+dest_files=[ "res://.import/CowboyCat.ogg-6f3180c37da4749f20359cebe479316a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

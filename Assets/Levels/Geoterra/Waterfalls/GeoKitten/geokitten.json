@@ -1,0 +1,15 @@
+{
+    "first": {
+      "avatar": "geokitten.png",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "One of those maniacs tried to attack me!",
+      "next": "1"
+    },
+    "1": {
+      "type": "text",
+      "content": "Take off, you goons!",
+      "next": ""
+    }
+  }
