@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/VacationCat1.ogg-c491e1f1af46c22f1665f719e4ab4a95.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Waterfalls/VacationCat1/VacationCat1.ogg"
+dest_files=[ "res://.import/VacationCat1.ogg-c491e1f1af46c22f1665f719e4ab4a95.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

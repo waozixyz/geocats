@@ -1,0 +1,71 @@
+
+  "first": {
+    "name": "Cowboy Cat",
+    "avatar": "cowboycat.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "...",
+    "next": "second"
+  },
+  "second": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "chrysoberyl",
+    "true": "a",
+    "false": "1"
+  },
+  "a": {
+    "type": "text",
+    "content": "Oh Great, you've found a fancy stone.",
+    "next": "b"
+  },
+  "b": {
+    "type": "text",
+    "content": "Not sure how that hunk of rock is supposed to help me get outta this darn cave",
+    "next": "c"
+  },
+  "c": {
+    "type": "text",
+    "content": "I reckon you take it to some sort of a scientist or something.@Maybe they'll know what it's good for.",
+    "next": "d"
+  },
+  "d": {
+    "type": "text",
+    "content": "All I know is cave stuff, on account of all this time I spend trapped down here in this confounding cave.",
+    "next": "e"
+  },
+  "e": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "...The vine! Climb the vine!",
+    "next": "3"
+  },
+  "1": {
+    "type": "text",
+    "content": "...You wouldn't believe how long I've been trapped down here in this smelly ol' cave.",
+    "next": "2"
+  },
+  "2": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "With all due respects, I simply refuse to take advice from machines -",
+    "next": "3"
+  },
+  "3": {
+    "name": "Garbitage",
+    "avatar": "garbitage.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "...@...Plus, I'm downright afeared of heights.",
+    "next": ""
+  },
+}
