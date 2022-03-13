@@ -1,7 +1,8 @@
 extends AreaInteract
 class_name ChatNPC, "res://Assets/UI/Debug/chat_npc_icon.png"
 
-onready var player = get_tree().get_current_scene().get_player()
+onready var current_scene = get_tree().get_current_scene()
+onready var player = current_scene.get_player()
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
@@ -40,8 +41,9 @@ func show_chat():
 	active = true
 	chat_with.visible = true
 	chat_with.get_node("Label").text = character_name
-
+	current_scene.set_disable("e_interact", "chat_npc")
 func hide_chat():
+	current_scene.set_disable("e_interact", "chat_npc", false)
 	active = false
 	chat_with.visible = false
 	dialogue.exit()

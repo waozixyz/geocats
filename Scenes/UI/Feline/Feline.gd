@@ -63,7 +63,7 @@ func _open_map():
 	get_parent().add_child(map)
 	utils.tween_fade(map, 0, 1)
 	exit()
-
+	current_scene.set_disable("e_interact", "map")
 var geodex
 func _open_geodex():
 
@@ -77,6 +77,7 @@ func exit(now = false):
 			close_sfx.play()
 			active = false
 			tween = utils.tween_fade(self, 1, 0, .3)
+			current_scene.set_disable("e_interact", "feline", false)
 	else:
 		_change_view(main_view)
 	
@@ -182,14 +183,16 @@ func _input(event):
 	if event.is_action_pressed("escape"):
 		if active and (tween and not tween.is_active() or not tween):
 			exit()
+
 		else:
 			if map.modulate.a > 0:
 				map_tween = utils.tween_fade(map, 1, 0)
 				if map.chat.modulate.a != 0:
 					utils.tween_fade(map.chat, 1, 0)
 				map.last_territory = ""
+				current_scene.set_disable("e_interact", "map", false)
 			elif tween and not tween.is_active() or not tween:
-
+				current_scene.set_disable("e_interact", "feline")
 				active = true
 				tween = utils.tween_fade(self, 0, 1, 1)
 				open_sfx.play()

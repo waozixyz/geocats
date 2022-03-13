@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var current_scene = get_tree().get_current_scene()
+
 onready var ringmap = $Ringmap
 onready var spotlight = $Spotlight
 onready var territories = $Ringmap/Territories
@@ -34,7 +36,7 @@ func label_clicked(data):
 	data = data.split(', ')
 	global.user.location = 0
 	SceneChanger.change_scene(data[0], data[1])
-	
+	current_scene.set_disable("e_interact", "map", false)
 func _update_dialogue(territory):
 	if global.user.visited.has(territory):
 		exclaim.visible = true

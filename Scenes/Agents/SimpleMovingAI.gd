@@ -38,7 +38,7 @@ func _physics_process(_delta):
 				jump(jump_height)
 			jump_tick = _get_jump_tick()
 		if (ticks / 10) % walk_tick == 0:
-			velocity.x = 100 * direction
+			velocity.x = move_speed * direction
 			walk_tick = _get_walk_tick()
 		if ticks % change_direction == 0:
 			direction *= -1
