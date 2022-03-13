@@ -120,4 +120,81 @@
     "content": "Have fun,|@and please try to avoid annihilation",
     "next": ""
   },
+  "GlaciokarstAfterBattle": {
+    "type": "divert",
+    "dictionary": "variables",
+    "variable": "GlaciokarstAfterBattle",
+    "true": "GlaciokarstBattleComplete",
+    "false": "GlaciokarstBattleIncomplete"
+  },
+  "GlaciokarstBattleIncomplete": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "fade_in",
+
+    "type": "text",
+    "content": "If you get hurt fighting some monster out there, I do not take any responsibility for your actions...",
+    "next": ""
+  },
+  "GlaciokarstBattleComplete": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "fade_in",
+
+    "type": "text",
+    "content": "Wow. I really can't believe you defeated Norna and Wyrd so easily! I'm impressed.",
+    "next": "battlecomplete_1"
+  },
+  "battlecomplete_1": {
+    "type": "text",
+    "name": "Feline",
+    "avatar": "feline.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "content": "We never mentioned that we defeated them... Palmerston, do you know something that we don't?",
+    "next": "battlecomplete_2"
+  },
+  "battlecomplete_2": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "...",
+    "next": "battlecomplete_3"
+  },
+  "battlecomplete_3": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "I'm conceerned by numerous reports of our citizens being antagonised by monsters. Events like these are happening all around the GeoRing.",
+    "next": "battlecomplete_4"
+  },
+  "battlecomplete_4": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "...I have a feeling that these monster attacks are connected.@You said that Norna told you to stay away from the desert?",
+    "next": "battlecomplete_5"
+  },
+  "battlecomplete_5": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "Maybe it's time to take a trip out to the deserts to meet an associate of mine named Dr. Letharia. She lives on the edge of the desert. An area called XAPS.",
+    "next": "battlecomplete_6"
+  },
+  "battlecomplete_6": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "She'll know what to do. I'll add Letharia's location to your FeLine Mapz system, and let her know you're on your way for a visit.",
+    "next": ""
+  },
 }
