@@ -32,7 +32,7 @@ font_data = SubResource( 2 )
 region_rect = Rect2( 0, 0, 21, 26 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 18
+size = 22
 font_data = ExtResource( 2 )
 
 [node name="Dialogue" type="Control"]
@@ -173,9 +173,6 @@ bbcode_text = "Catnip in your garden, growing in the sun, drinking through the r
 text = "Catnip in your garden, growing in the sun, drinking through the rain, eating through the soil."
 scroll_active = false
 selection_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ContinueIndicator" type="ColorRect" parent="."]
 margin_left = 536.448

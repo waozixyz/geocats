@@ -1,6 +1,8 @@
 extends MovingBody
 class_name Player
 
+onready var current_scene = get_tree().get_current_scene()
+
 var horizontal : float = 0.0
 var vertical : float = 0.0
 
@@ -42,7 +44,6 @@ var currentSpeed = 0 #how much you add to x velocity when moving horizontally
 var maxSpeed = 300 #maximum current speed can reach when moving horizontally
 var acceleration = 10 #by how much does current speed approach max speed when moving
 var decceleration = 35 #by how much does velocity approach when you stop moving horizontally
-var disable_reasons = []
 
 var dbl_jump_height = 350
 var climb_speed : float = 200
@@ -133,20 +134,6 @@ func _ready():
 		else:
 			printerr("follower invalid: ", follower)
 
-# disable player movement
-var no_vx = false
-func disable(reason, disable_vx = false):
-	if not disable_reasons.has(reason):
-		play("idle")
-		disable_reasons.append(reason)
-		velocity.x = 0
-		no_vx = disable_vx
-
-# enable player movement
-func enable(reason):
-	disable_reasons.erase(reason)
-	if disable_reasons.size() == 0:
-		no_vx = false
 
 # main process loop
 var dmg_blink = 0
@@ -158,7 +145,10 @@ func _physics_process(delta):
 	waves.substance = water_sub
 	._physics_process(delta)
 
-	if disable_reasons.size() == 0:
+	if current_scene.is_disabled(name):
+		velocity.x = 0
+		play("idle")
+	else:
 		update_inputs()
 		state_machine.logic(delta)
 		
@@ -170,8 +160,7 @@ func _physics_process(delta):
 		if underwater and water_sub == "slime":
 			hp -= .6 * dfps
 		global.user.hp = hp
-	elif no_vx:
-		 velocity.x = 0
+	
 	move()
 	if sprite.material.get_shader_param("dmg"):
 		dmg_blink += 1 * (delta * 60)

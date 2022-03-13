@@ -25,9 +25,9 @@ func _process(_delta):
 		do_something = false
 		disabled = true
 		ui_node.visible = false
-		remove_child(interact_with.get_parent())
+		remove_child(button.get_parent())
 		if not disable_player.empty():
-			player.enable(disable_player)
+			current_scene.set_disable("player", disable_player, false)
 		return
 	
 	if do_something and not disabled:

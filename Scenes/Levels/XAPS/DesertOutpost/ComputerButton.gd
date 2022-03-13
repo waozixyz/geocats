@@ -24,4 +24,4 @@ func _update_label(file_name):
 	
 func _btn_pressed(btn):
 	_update_label(btn.name.to_lower())
-	print(btn.name)
+

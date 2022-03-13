@@ -23,7 +23,7 @@ func _process(_delta):
 			if active_sound:
 				active_sound.stop()
 			if not disable_player.empty():
-				player.enable(disable_player)
+				current_scene.set_disable("player", disable_player, false)
 				
 			if not progress_when_visible.empty():
 				PROGRESS.variables[progress_when_visible] = false

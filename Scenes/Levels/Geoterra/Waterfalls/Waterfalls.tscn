@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -15,12 +15,15 @@
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Environment/Particles/waterfall_mist_FG.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat1_Spritesheet.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Feline/UI/feline_buttons.tres" type="Theme" id=19]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacatonCat2_Spritesheet.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat3_Spritesheet.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Beachball_Spritesheet.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Fonts/QixMono10.tres" type="DynamicFont" id=24]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer2.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer3.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer4.png" type="Texture" id=27]
@@ -223,8 +226,44 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 67, 22.5 )
 
+[sub_resource type="DynamicFont" id=56]
+size = 12
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=57]
+size = 12
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 16 )
+
 [sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 12.5, 12.5 )
+
+[sub_resource type="DynamicFont" id=58]
+size = 11
+extra_spacing_bottom = -7
+extra_spacing_space = -2
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=59]
+size = 11
+extra_spacing_bottom = -7
+extra_spacing_space = -2
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=60]
+size = 9
+extra_spacing_bottom = -4
+extra_spacing_space = -2
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=61]
+size = 9
+extra_spacing_bottom = -4
+extra_spacing_space = -2
+font_data = ExtResource( 16 )
 
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 106.5, 89.5 )
@@ -1707,7 +1746,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "idle"
-frame = 20
+frame = 14
 playing = true
 centered = false
 script = SubResource( 44 )
@@ -1930,7 +1969,6 @@ __meta__ = {
 
 [node name="OpenMicroscope" type="Area2D" parent="CanvasLayer/ResearchCabin"]
 position = Vector2( 377, 214 )
-scale = Vector2( 1, 1 )
 script = ExtResource( 1 )
 to_toggle = NodePath("0xoplasmosisMicroscope")
 click_close_anywhere = true
@@ -1961,7 +1999,7 @@ texture = ExtResource( 37 )
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 48 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
@@ -2044,15 +2082,11 @@ __meta__ = {
 [node name="OpenNotebook" type="Area2D" parent="CanvasLayer/ResearchCabin"]
 position = Vector2( 211, 217 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 to_toggle = NodePath("Notebook")
 click_close_anywhere = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
 position = Vector2( -16.0001, 10.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 54 )
 
 [node name="Notebook" type="TextureRect" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
@@ -2102,232 +2136,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Note1" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-position = Vector2( 340, 101 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-to_toggle = NodePath("StickyNote1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note1"]
-position = Vector2( -5.5, 11.5 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 55 )
-
-[node name="StickyNote1" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note1"]
-visible = false
-margin_left = -298.924
-margin_top = -73.1719
-margin_right = -227.924
-margin_bottom = -2.1719
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note1/StickyNote1"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Note2" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-position = Vector2( 381, 108 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-to_toggle = NodePath("StickyNote2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note2"]
-position = Vector2( -5.5, 11.5 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 55 )
-
-[node name="StickyNote2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note2"]
-visible = false
-margin_left = -134.594
-margin_top = -70.704
-margin_right = -63.594
-margin_bottom = 0.296005
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note2/StickyNote2"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Note3" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-position = Vector2( 428, 101 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-to_toggle = NodePath("StickyNote3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note3"]
-position = Vector2( -5.5, 11.5 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 55 )
-
-[node name="StickyNote3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note3"]
-visible = false
-margin_left = -14.056
-margin_top = -62.3618
-margin_right = 56.944
-margin_bottom = 8.6382
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note3/StickyNote3"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Note4" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-position = Vector2( 473, 111 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-to_toggle = NodePath("StickyNote4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note4"]
-position = Vector2( -5.5, 11.5 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 55 )
-
-[node name="StickyNote4" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note4"]
-visible = false
-margin_left = -429.83
-margin_top = 90.837
-margin_right = -358.83
-margin_bottom = 161.837
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note4/StickyNote4"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Note5" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-position = Vector2( 378, 148 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-to_toggle = NodePath("StickyNote5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note5"]
-position = Vector2( -5.5, 11.5 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 55 )
-
-[node name="StickyNote5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note5"]
-visible = false
-margin_left = -154.634
-margin_top = 45.79
-margin_right = -83.634
-margin_bottom = 116.79
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note5/StickyNote5"]
-margin_left = 23.4736
-margin_top = 3.8158
-margin_right = 63.4736
-margin_bottom = 21.8158
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note5/StickyNote5"]
-margin_left = -11.4068
-margin_top = 17.1032
-margin_right = 16.5932
-margin_bottom = 44.1032
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 32 )
-flip_h = true
-
-[node name="Note6" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-position = Vector2( 418, 141 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-to_toggle = NodePath("StickyNote6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note6"]
-position = Vector2( -5.5, 11.5 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 55 )
-
-[node name="StickyNote6" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note6"]
-visible = false
-margin_left = -26.015
-margin_top = 60.299
-margin_right = 44.985
-margin_bottom = 131.299
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note6/StickyNote6"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Letter" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 visible = false
 margin_left = 189.879
@@ -2342,34 +2150,284 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Letter"]
-margin_left = 27.9626
-margin_top = 1.6337
-margin_right = 67.9626
-margin_bottom = 41.6337
+margin_right = 99.0
+margin_bottom = 42.0
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 56 )
+text = "Chrysoberyl and it's 0xoplasmotic inhibiting effects
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Letter"]
-margin_left = 25.287
-margin_top = 45.0603
-margin_right = 65.287
-margin_bottom = 85.0603
+margin_left = 1.0
+margin_top = 43.0
+margin_right = 99.0
+margin_bottom = 89.0
 mouse_filter = 2
+theme = ExtResource( 19 )
+custom_fonts/normal_font = SubResource( 57 )
+text = "Last week, I was peacefully going about my business collecting gems. My noble and important science work was rudely interrupted by an obnoxious cat infected with 0xoplasmosis. I saw my life flash before my eyes as it rushed towards me. Out of fear, I offered it one of my Gemstones... The Chrysoberyl. It caught a ray of sunlight, and refracted into the eyes of the beast before me.
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Letter"]
-margin_left = 28.1684
-margin_top = 90.7508
-margin_right = 68.1684
-margin_bottom = 130.751
-mouse_filter = 2
+margin_left = 1.0
+margin_top = 91.0
+margin_right = 98.0
+margin_bottom = 131.0
+theme = ExtResource( 19 )
+custom_fonts/normal_font = ExtResource( 38 )
+text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment. More research is needed."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Notes" type="Control" parent="CanvasLayer/ResearchCabin"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="Note1" type="Area2D" parent="CanvasLayer/ResearchCabin/Notes"]
+position = Vector2( 340, 101 )
+script = ExtResource( 1 )
+to_toggle = NodePath("StickyNote1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
+position = Vector2( -5.5, 11.5 )
+shape = SubResource( 55 )
+
+[node name="StickyNote1" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
+visible = false
+margin_left = -324.0
+margin_top = -79.0
+margin_right = -253.0
+margin_bottom = -8.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/Notes/Note1/StickyNote1"]
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 69.0
+margin_bottom = 67.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 58 )
+text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
+autowrap = true
+
+[node name="Note2" type="Area2D" parent="CanvasLayer/ResearchCabin/Notes"]
+position = Vector2( 381, 108 )
+script = ExtResource( 1 )
+to_toggle = NodePath("StickyNote2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note2"]
+position = Vector2( -5.5, 11.5 )
+shape = SubResource( 55 )
+
+[node name="StickyNote2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note2"]
+visible = false
+margin_left = -206.0
+margin_top = -86.0
+margin_right = -135.0
+margin_bottom = -15.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/Notes/Note2/StickyNote2"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 68.0
+margin_bottom = 67.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 59 )
+text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
+autowrap = true
+
+[node name="Note3" type="Area2D" parent="CanvasLayer/ResearchCabin/Notes"]
+position = Vector2( 428, 101 )
+script = ExtResource( 1 )
+to_toggle = NodePath("StickyNote3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note3"]
+position = Vector2( -5.5, 11.5 )
+shape = SubResource( 55 )
+
+[node name="StickyNote3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note3"]
+visible = false
+margin_left = -421.0
+margin_top = 93.0
+margin_right = -350.0
+margin_bottom = 164.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+theme = ExtResource( 19 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Notes/Note3/StickyNote3"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 70.0
+margin_bottom = 64.0
+theme = ExtResource( 19 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 24 )
+text = "Hey bro, it's been too long since we've hung out last!
+let's go on a hike together soon... I'll bring the catnip  
+
+Your pal, Doug the Cat"
+
+[node name="Note4" type="Area2D" parent="CanvasLayer/ResearchCabin/Notes"]
+position = Vector2( 473, 111 )
+script = ExtResource( 1 )
+to_toggle = NodePath("StickyNote4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note4"]
+position = Vector2( -5.5, 11.5 )
+shape = SubResource( 55 )
+
+[node name="StickyNote4" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note4"]
+visible = false
+margin_left = -320.0
+margin_top = 53.0
+margin_right = -249.0
+margin_bottom = 124.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Notes/Note4/StickyNote4"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 66.0
+margin_bottom = 67.0
+mouse_filter = 2
+theme = ExtResource( 19 )
+custom_colors/default_color = Color( 0.701961, 0.0980392, 0, 1 )
+text = "Call back the Nonaco Department of Corperate Technology...URGENT!
+[3:26 PM]
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note5" type="Area2D" parent="CanvasLayer/ResearchCabin/Notes"]
+position = Vector2( 379, 164 )
+script = ExtResource( 1 )
+to_toggle = NodePath("StickyNote5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
+position = Vector2( -5.5, -3.5 )
+shape = SubResource( 55 )
+
+[node name="StickyNote5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
+visible = false
+margin_left = 26.0
+margin_top = 38.0
+margin_right = 97.0
+margin_bottom = 109.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Notes/Note5/StickyNote5"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 67.0
+margin_bottom = 31.0
+mouse_filter = 2
+theme = ExtResource( 19 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 60 )
+text = "This statue I saw during my visit to the castle was to DIE for. It would "
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Notes/Note5/StickyNote5"]
+margin_left = 18.0
+margin_top = 29.0
+margin_right = 35.0
+margin_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource( 19 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 60 )
+text = "look"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Notes/Note5/StickyNote5"]
+margin_left = 35.0
+margin_top = 29.0
+margin_right = 67.0
+margin_bottom = 66.0
+mouse_filter = 2
+theme = ExtResource( 19 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 61 )
+text = "perfect in my new appartment in GeoCity."
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note5/StickyNote5"]
+margin_left = -7.5
+margin_top = 31.5
+margin_right = 12.5
+margin_bottom = 49.5
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 32 )
+expand = true
+flip_h = true
+
+[node name="Note6" type="Area2D" parent="CanvasLayer/ResearchCabin/Notes"]
+position = Vector2( 418, 141 )
+script = ExtResource( 1 )
+to_toggle = NodePath("StickyNote6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
+position = Vector2( -5.5, 11.5 )
+shape = SubResource( 55 )
+
+[node name="StickyNote6" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
+visible = false
+margin_left = -163.0
+margin_top = -56.0
+margin_right = -92.0
+margin_bottom = 15.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Notes/Note6/StickyNote6"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 68.0
+margin_bottom = 67.0
+theme = ExtResource( 19 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 24 )
+text = "Hey Ted, 
+nice to meet you at the science fair, and thank you for sharing interest in my work. 
+It's always nice to meet a new friend and fellow scientist,
+
+Hope to see you next year at the science fair, 
+Professor Mittens"
 
 [node name="ShowResearchCabin" type="Area2D" parent="."]
 position = Vector2( 695, 949 )

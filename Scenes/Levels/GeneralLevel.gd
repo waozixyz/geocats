@@ -7,6 +7,31 @@ var locations = []
 var dead
 var music
 var player
+
+var disable = {
+	player = [],
+	e_interact = []
+}
+
+
+func set_disable(obj: String, reason: String, state = true):
+	if state:
+		if not disable[obj].has(reason):
+			disable[obj].append(reason)
+	else:
+		disable[obj].remove(reason)
+		
+func is_disabled(obj : String, reason : String = ""):
+	obj = obj.to_lower()
+	
+	if disable[obj].size() > 0:
+		if not reason.empty():
+			return disable[obj].has(reason)
+		else:
+			return true
+	else:
+		return false
+
 func get_player():
 	if not player:
 		player = get_node_or_null("Default/Player")

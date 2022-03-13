@@ -92,7 +92,8 @@ func _process(_delta):
 			utils.tween_fade(chat, 0, 1)
 			_update_dialogue(last_territory)
 	if not clicked_territory and not last_territory.empty():
-		tween = utils.tween_fade(chat, 1, 0, 0.1)
+		if chat.modulate.a != 0:
+			tween = utils.tween_fade(chat, 1, 0, 0.1)
 		last_territory = ""
 		
 	if arrow_right.pressed:

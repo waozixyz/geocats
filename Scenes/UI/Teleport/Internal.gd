@@ -18,7 +18,7 @@ func _ready():
 func _process(_delta):
 	if teleporting and not tween.is_active():
 		player.visible = true
-		player.enable("teleport")
+		current_scene.set_disable("player", "teleport", false)
 		teleporting = false
 		if player.followers:
 			for follower in player.followers:
@@ -29,7 +29,7 @@ func _input(_event):
 		_play_sound()
 		if to_go and not teleporting:
 			teleporting = true
-			player.disable("teleport")
+			current_scene.set_disable("player", "teleport")
 			chat_with.visible = false
 			player.visible = false
 			tween = utils.tween_position(player, to_go.position)

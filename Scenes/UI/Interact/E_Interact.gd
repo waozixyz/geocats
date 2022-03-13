@@ -1,6 +1,7 @@
 extends AreaInteract
 class_name E_Interact, "res://Assets/UI/Debug/soundeffect_icon.png"
 
+onready var current_scene = get_tree().get_current_scene()
 onready var player = get_tree().get_current_scene().get_player()
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 onready var feline = get_tree().get_current_scene().get_node("Default/CanvasLayer/Feline")
@@ -9,7 +10,7 @@ export(float) var sound_volume = 1
 
 var do_something 
 var playing = false
-var interact_with
+var button
 var disable_sound = false
 var hide_when_playing = true
 export var require_grounded = false
@@ -20,36 +21,41 @@ func _ready():
 	var e_button = preload("res://Scenes/UI/Interact/E_Interact.tscn").instance()
 
 	add_child(e_button)
-	interact_with = e_button.get_node("Control")
-	interact_with.modulate.a = 0
+	button = e_button.get_node("Control")
+	button.modulate.a = 0
 	
-func _check_grounded():
+func _is_grounded():
 	return true if require_grounded and player.is_on_floor() or not require_grounded else false
 		
-func _is_not_disabled():
-	return (feline and not feline.visible and not feline.map.modulate.a > 0 or not feline) and _check_grounded() and interact_with and (not playing or not hide_when_playing) and not disabled and (player.disable_reasons.size() == 0 or (not disable_player.empty() and player.disable_reasons.has(disable_player)))
+func _is_disabled():
+	var state = current_scene.is_disabled("e_interact")
+	state = not state and _is_grounded() and button and not (playing and hide_when_playing) and not disabled
+	state = not state
+	return state
 var timer = -1
 func _process(delta):
+	if name == "ShowInstructionManual":
+		print(name ,_is_disabled())
 	if timer >= 0:
 		timer += delta
 		disabled = true
 		if timer >= button_reappear_delay:
 			timer = -1
 			disabled = false
-	if touching  and _is_not_disabled():
-		if interact_with.modulate.a == 0:
-			utils.tween_fade(interact_with, 0, 1, 0.2)
+	if touching and not _is_disabled():
+		if button.modulate.a == 0:
+			utils.tween_fade(button, 0, 1, 0.2)
 				
-	elif interact_with and interact_with.modulate.a == 1:
-		utils.tween_fade(interact_with, 1, 0, 0.2)
+	elif button.modulate.a == 1:
+		utils.tween_fade(button, 1, 0, 0.2)
 
 func _input(_event):
 	# when i press the interact key (e)
-	if Input.is_action_just_pressed("interact") and _is_not_disabled() and interact_with.modulate.a > 0:
+	if Input.is_action_just_pressed("interact") and not _is_disabled() and button.modulate.a > 0:
 		if touching and dialogue.modulate.a == 0:
 			do_something = true
 			if not disable_player.empty():
-				player.disable(disable_player)
+				current_scene.set_disable("player", disable_player)
 			if sound_effect and (not playing or not hide_when_playing) and not disable_sound:
 				AudioManager.play_sound(sound_effect, sound_volume, false, self, player)
 				playing = true

@@ -1,5 +1,7 @@
 extends Control
 
+onready var current_scene = get_tree().get_current_scene()
+
 onready var eyes = $Eyes
 onready var system = $System
 onready var status_bar = $System/StatusBar
@@ -36,12 +38,10 @@ func _press_sound():
 # initialize feline
 func _ready():
 	modulate.a = 0
-	var default = get_parent().get_parent()
 	geodex = load("res://Scenes/UI/Geodex/Geodex.tscn").instance()
 	map = load("res://Scenes/UI/Feline/Map.tscn").instance()
 	map.modulate.a = 0
-	if default and default.has_node("Player"):
-		player = default.get_node("Player")
+
 	for child in system.get_children():
 		child.visible = false
 	view = main_view
@@ -185,9 +185,11 @@ func _input(event):
 		else:
 			if map.modulate.a > 0:
 				map_tween = utils.tween_fade(map, 1, 0)
-				utils.tween_fade(map.chat, 1, 0)
+				if map.chat.modulate.a != 0:
+					utils.tween_fade(map.chat, 1, 0)
 				map.last_territory = ""
 			elif tween and not tween.is_active() or not tween:
+
 				active = true
 				tween = utils.tween_fade(self, 0, 1, 1)
 				open_sfx.play()
