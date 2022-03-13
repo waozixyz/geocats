@@ -1,5 +1,6 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=82 format=2]
 
+[ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_FG.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=4]
@@ -193,6 +194,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 27.5, 27 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 58.5, 27 )
+
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 34 )
 region = Rect2( 0, 0, 79, 98 )
@@ -213,7 +220,14 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 67, 22.5 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 12.5, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 106.5, 89.5 )
 
 [node name="Waterfalls" type="Node2D"]
 script = ExtResource( 12 )
@@ -241,7 +255,6 @@ position = Vector2( 444, 672.8 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Ground" type="Sprite" parent="BelowPlayer"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 centered = false
 __meta__ = {
@@ -1694,7 +1707,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "idle"
-frame = 5
+frame = 19
 playing = true
 centered = false
 script = SubResource( 44 )
@@ -1722,557 +1735,653 @@ animation = "resting"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ResearchCabin" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ResearchCabin" type="Control" parent="CanvasLayer"]
+margin_left = 33.0
+margin_top = 52.0
+margin_right = 608.0
+margin_bottom = 428.0
+mouse_filter = 2
 
-[node name="Office" type="TextureRect" parent="ResearchCabin"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ResearchCabin"]
+margin_left = -33.0
+margin_top = -50.0
+margin_right = 607.0
+margin_bottom = 430.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="Office" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
+margin_right = 230.0
+margin_bottom = 150.0
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 29 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Drawer1" type="TextureRect" parent="ResearchCabin"]
+[node name="Drawers" type="Control" parent="CanvasLayer/ResearchCabin"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="OpenDrawer1" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
+position = Vector2( 77, 318 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("Drawer1")
+
+[node name="Drawer1" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer1"]
 visible = false
-margin_left = 40.0
-margin_top = 300.0
-margin_right = 80.0
-margin_bottom = 340.0
+margin_left = -37.0
+margin_top = -18.0
+margin_right = 3.0
+margin_bottom = 22.0
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 28 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Drawer2" type="TextureRect" parent="ResearchCabin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer1"]
+position = Vector2( -6.5, 7 )
+shape = SubResource( 52 )
+
+[node name="OpenDrawer2" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
+position = Vector2( 150, 314 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("Drawer2")
+
+[node name="Drawer2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer2"]
 visible = false
-margin_left = 100.0
-margin_top = 300.0
-margin_right = 146.0
-margin_bottom = 340.0
+margin_left = -50.0
+margin_top = -14.0
+margin_right = -4.0
+margin_bottom = 26.0
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 25 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Drawer3" type="TextureRect" parent="ResearchCabin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer2"]
+position = Vector2( 9.5, 11 )
+shape = SubResource( 53 )
+
+[node name="OpenDrawer3" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
+position = Vector2( 271, 314 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("Drawer3")
+
+[node name="Drawer3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer3"]
 visible = false
-margin_left = 220.0
-margin_top = 300.0
-margin_right = 274.0
-margin_bottom = 340.0
+margin_left = -51.0
+margin_top = -14.0
+margin_right = 3.0
+margin_bottom = 26.0
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Drawer4" type="TextureRect" parent="ResearchCabin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer3"]
+position = Vector2( 9.5, 11 )
+shape = SubResource( 53 )
+
+[node name="OpenDrawer4" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
+position = Vector2( 390, 314 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("Drawer4")
+
+[node name="Drawer4" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer4"]
 visible = false
-margin_left = 360.075
-margin_top = 299.919
-margin_right = 406.075
-margin_bottom = 339.919
+margin_left = -29.925
+margin_top = -14.081
+margin_right = 16.075
+margin_bottom = 25.919
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Drawer5" type="TextureRect" parent="ResearchCabin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer4"]
+position = Vector2( 9.5, 11 )
+shape = SubResource( 53 )
+
+[node name="OpenDrawer5" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
+position = Vector2( 496, 318 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("Drawer5")
+
+[node name="Drawer5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer5"]
 visible = false
-margin_left = 480.021
-margin_top = 300.46
-margin_right = 520.021
-margin_bottom = 340.46
+margin_left = -15.979
+margin_top = -17.54
+margin_right = 24.021
+margin_bottom = 22.46
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 30 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Light" type="TextureRect" parent="ResearchCabin"]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer5"]
+position = Vector2( -6.5, 7 )
+shape = SubResource( 52 )
+
+[node name="Light" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 margin_right = 230.0
 margin_bottom = 150.0
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 33 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="DustusBunnicus" type="TextureRect" parent="ResearchCabin"]
+[node name="DustusBunnicus" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 visible = false
 margin_left = 0.781998
 margin_top = -0.539853
 margin_right = 230.782
 margin_bottom = 149.46
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DustusBunnicusIcon" type="TextureRect" parent="ResearchCabin/DustusBunnicus"]
+[node name="DustusBunnicusIcon" type="TextureRect" parent="CanvasLayer/ResearchCabin/DustusBunnicus"]
 margin_left = 59.6677
 margin_top = 5.74101
 margin_right = 169.668
 margin_bottom = 115.741
+mouse_filter = 2
 texture = ExtResource( 37 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/DustusBunnicus"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/DustusBunnicus"]
 margin_left = 38.3279
 margin_top = 118.695
 margin_right = 191.328
 margin_bottom = 145.695
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/DustusBunnicus/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
+[node name="OpenMicroscope" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 377, 214 )
+scale = Vector2( 1, 1 )
+script = ExtResource( 1 )
+to_toggle = NodePath("0xoplasmosisMicroscope")
+click_close_anywhere = true
 
-[node name="0xoplasmosisMicroscope" type="TextureRect" parent="ResearchCabin"]
-margin_left = 0.781998
-margin_top = -0.539853
-margin_right = 230.782
-margin_bottom = 149.46
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenMicroscope"]
+position = Vector2( -6.5, 7 )
+shape = SubResource( 52 )
+
+[node name="0xoplasmosisMicroscope" type="TextureRect" parent="CanvasLayer/ResearchCabin/OpenMicroscope"]
+visible = false
+margin_left = -376.218
+margin_top = -214.54
+margin_right = -146.218
+margin_bottom = -64.5398
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 31 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="0xoplasmosisIcon" type="TextureRect" parent="ResearchCabin/0xoplasmosisMicroscope"]
+[node name="0xoplasmosisIcon" type="TextureRect" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
 margin_left = 59.6677
 margin_top = 5.74101
 margin_right = 169.668
 margin_bottom = 115.741
+mouse_filter = 2
 texture = ExtResource( 37 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ResearchCabin/0xoplasmosisMicroscope"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 48 )
+frame = 1
 playing = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/0xoplasmosisMicroscope"]
-margin_left = 14.5306
-margin_top = 133.15
-margin_right = 244.531
-margin_bottom = 179.15
-custom_fonts/normal_font = ExtResource( 38 )
-text = "A Sample of 0xoplasmosis."
-fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
+margin_left = -2.86102e-06
+margin_top = 131.0
+margin_right = 230.0
+margin_bottom = 150.0
+custom_fonts/font = ExtResource( 38 )
+text = "A Sample of 0xoplasmosis"
+align = 1
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/0xoplasmosisMicroscope/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="Geode1" type="TextureRect" parent="ResearchCabin"]
+[node name="Geode1" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 visible = false
 margin_left = 0.781998
-margin_top = -0.539853
+margin_top = -0.539856
 margin_right = 230.782
 margin_bottom = 149.46
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Geode1Icon" type="TextureRect" parent="ResearchCabin/Geode1"]
+[node name="Geode1Icon" type="TextureRect" parent="CanvasLayer/ResearchCabin/Geode1"]
 margin_left = 59.6677
 margin_top = 5.74101
 margin_right = 169.668
 margin_bottom = 115.741
+mouse_filter = 2
 texture = ExtResource( 39 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/Geode1/Geode1Icon"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Geode1/Geode1Icon"]
 margin_left = -21.1707
 margin_top = 112.476
 margin_right = 131.829
 margin_bottom = 139.476
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Geode1/Geode1Icon/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="Geode2" type="TextureRect" parent="ResearchCabin"]
+[node name="Geode2" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 visible = false
 margin_left = 0.781998
 margin_top = -0.539853
 margin_right = 230.782
 margin_bottom = 149.46
 rect_scale = Vector2( 2.5, 2.5 )
+mouse_filter = 2
 texture = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Geode2Icon" type="TextureRect" parent="ResearchCabin/Geode2"]
+[node name="Geode2Icon" type="TextureRect" parent="CanvasLayer/ResearchCabin/Geode2"]
 margin_left = 59.6677
 margin_top = 5.74101
 margin_right = 169.668
 margin_bottom = 115.741
+mouse_filter = 2
 texture = ExtResource( 40 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/Geode2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Geode2"]
 margin_left = 36.132
 margin_top = 118.933
 margin_right = 196.132
 margin_bottom = 145.933
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Geode2/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
+[node name="OpenNotebook" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 211, 217 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("Notebook")
+click_close_anywhere = true
 
-[node name="Notebook" type="TextureRect" parent="ResearchCabin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
+position = Vector2( -16.0001, 10.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 54 )
+
+[node name="Notebook" type="TextureRect" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
 visible = false
-margin_left = 29.8354
-margin_top = 100.489
-margin_right = 289.835
-margin_bottom = 220.489
+margin_left = -181.165
+margin_top = -116.511
+margin_right = 78.8354
+margin_bottom = 3.48904
 rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
 texture = ExtResource( 41 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
 margin_left = 65.0
 margin_top = 12.0
 margin_right = 122.0
 margin_bottom = 58.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+mouse_filter = 2
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel2"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
 margin_left = 11.0
 margin_top = 64.0
 margin_right = 96.0
 margin_bottom = 110.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel3"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
 margin_left = 141.832
 margin_top = 67.1765
 margin_right = 226.832
 margin_bottom = 113.176
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel4"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="RichTextLabel5" type="RichTextLabel" parent="ResearchCabin/Notebook"]
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
 margin_left = 193.129
 margin_top = 46.6705
 margin_right = 247.129
 margin_bottom = 61.6705
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Notebook/RichTextLabel5"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
+[node name="Note1" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 340, 101 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("StickyNote1")
 
-[node name="Letter" type="TextureRect" parent="ResearchCabin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note1"]
+position = Vector2( -5.5, 11.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 55 )
+
+[node name="StickyNote1" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note1"]
+visible = false
+margin_left = -298.924
+margin_top = -73.1719
+margin_right = -227.924
+margin_bottom = -2.1719
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note1/StickyNote1"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note2" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 381, 108 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("StickyNote2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note2"]
+position = Vector2( -5.5, 11.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 55 )
+
+[node name="StickyNote2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note2"]
+visible = false
+margin_left = -134.594
+margin_top = -70.704
+margin_right = -63.594
+margin_bottom = 0.296005
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note2/StickyNote2"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note3" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 428, 101 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("StickyNote3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note3"]
+position = Vector2( -5.5, 11.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 55 )
+
+[node name="StickyNote3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note3"]
+visible = false
+margin_left = -14.056
+margin_top = -62.3618
+margin_right = 56.944
+margin_bottom = 8.6382
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note3/StickyNote3"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note4" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 473, 111 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("StickyNote4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note4"]
+position = Vector2( -5.5, 11.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 55 )
+
+[node name="StickyNote4" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note4"]
+visible = false
+margin_left = -429.83
+margin_top = 90.837
+margin_right = -358.83
+margin_bottom = 161.837
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note4/StickyNote4"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note5" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 378, 148 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("StickyNote5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note5"]
+position = Vector2( -5.5, 11.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 55 )
+
+[node name="StickyNote5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note5"]
+visible = false
+margin_left = -154.634
+margin_top = 45.79
+margin_right = -83.634
+margin_bottom = 116.79
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note5/StickyNote5"]
+margin_left = 23.4736
+margin_top = 3.8158
+margin_right = 63.4736
+margin_bottom = 21.8158
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note5/StickyNote5"]
+margin_left = -11.4068
+margin_top = 17.1032
+margin_right = 16.5932
+margin_bottom = 44.1032
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 32 )
+flip_h = true
+
+[node name="Note6" type="Area2D" parent="CanvasLayer/ResearchCabin"]
+position = Vector2( 418, 141 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+to_toggle = NodePath("StickyNote6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Note6"]
+position = Vector2( -5.5, 11.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 55 )
+
+[node name="StickyNote6" type="TextureRect" parent="CanvasLayer/ResearchCabin/Note6"]
+visible = false
+margin_left = -26.015
+margin_top = 60.299
+margin_right = 44.985
+margin_bottom = 131.299
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Note6/StickyNote6"]
+margin_left = 13.7181
+margin_top = 13.5423
+margin_right = 53.7181
+margin_bottom = 53.5423
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Letter" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 visible = false
 margin_left = 189.879
 margin_top = 16.3001
 margin_right = 449.879
 margin_bottom = 151.3
 rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
 texture = ExtResource( 36 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/Letter"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Letter"]
 margin_left = 27.9626
 margin_top = 1.6337
 margin_right = 67.9626
 margin_bottom = 41.6337
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Letter/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="ResearchCabin/Letter"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Letter"]
 margin_left = 25.287
 margin_top = 45.0603
 margin_right = 65.287
 margin_bottom = 85.0603
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Letter/RichTextLabel2"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="ResearchCabin/Letter"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/ResearchCabin/Letter"]
 margin_left = 28.1684
 margin_top = 90.7508
 margin_right = 68.1684
 margin_bottom = 130.751
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/Letter/RichTextLabel3"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="StickyNote1" type="TextureRect" parent="ResearchCabin"]
-visible = false
-margin_left = 41.0757
-margin_top = 27.8281
-margin_right = 112.076
-margin_bottom = 98.8281
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote1"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote1/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="StickyNote2" type="TextureRect" parent="ResearchCabin"]
-visible = false
-margin_left = 246.406
-margin_top = 37.296
-margin_right = 317.406
-margin_bottom = 108.296
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote2"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote2/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="StickyNote3" type="TextureRect" parent="ResearchCabin"]
-visible = false
-margin_left = 413.944
-margin_top = 38.6382
-margin_right = 484.944
-margin_bottom = 109.638
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote3"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote3/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="StickyNote4" type="TextureRect" parent="ResearchCabin"]
-visible = false
-margin_left = 43.17
-margin_top = 201.837
-margin_right = 114.17
-margin_bottom = 272.837
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote4"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote4/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="StickyNote5" type="TextureRect" parent="ResearchCabin"]
-visible = false
-margin_left = 223.366
-margin_top = 193.79
-margin_right = 294.366
-margin_bottom = 264.79
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="ResearchCabin/StickyNote5"]
-margin_left = 23.4736
-margin_top = 3.8158
-margin_right = 63.4736
-margin_bottom = 21.8158
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote5/RichTextLabel2"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="TextureRect" type="TextureRect" parent="ResearchCabin/StickyNote5"]
-margin_left = -11.4068
-margin_top = 17.1032
-margin_right = 16.5932
-margin_bottom = 44.1032
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 32 )
-flip_h = true
-
-[node name="StickyNote6" type="TextureRect" parent="ResearchCabin"]
-visible = false
-margin_left = 391.985
-margin_top = 201.299
-margin_right = 462.985
-margin_bottom = 272.299
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ResearchCabin/StickyNote6"]
-margin_left = 13.7181
-margin_top = 13.5423
-margin_right = 53.7181
-margin_bottom = 53.5423
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VScrollBar2" type="VScrollBar" parent="ResearchCabin/StickyNote6/RichTextLabel"]
-margin_left = 207.559
-margin_top = 88.2996
-margin_right = 219.559
-margin_bottom = 100.3
-
-[node name="ShowOffice" type="Area2D" parent="ResearchCabin"]
-scale = Vector2( 2.5, 2.5 )
+[node name="ShowResearchCabin" type="Area2D" parent="."]
+position = Vector2( 695, 949 )
 script = ExtResource( 42 )
-make_node_visible = NodePath("../Drawer1")
+__meta__ = {
+"_edit_group_": true
+}
+make_node_visible = NodePath("../CanvasLayer/ResearchCabin")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchCabin/ShowOffice"]
-position = Vector2( 30.4784, 126.401 )
-shape = SubResource( 49 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowResearchCabin"]
+position = Vector2( -0.5, -12.5 )
+shape = SubResource( 51 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

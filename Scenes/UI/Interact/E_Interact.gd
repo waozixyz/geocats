@@ -3,7 +3,7 @@ class_name E_Interact, "res://Assets/UI/Debug/soundeffect_icon.png"
 
 onready var player = get_tree().get_current_scene().get_player()
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
-
+onready var feline = get_tree().get_current_scene().get_node("Default/CanvasLayer/Feline")
 export(String, FILE, "*.wav, *.ogg") var sound_effect
 export(float) var sound_volume = 1
 
@@ -27,7 +27,7 @@ func _check_grounded():
 	return true if require_grounded and player.is_on_floor() or not require_grounded else false
 		
 func _is_not_disabled():
-	return _check_grounded() and interact_with and (not playing or not hide_when_playing) and not disabled and (player.disable_reasons.size() == 0 or (not disable_player.empty() and player.disable_reasons.has(disable_player)))
+	return (feline and not feline.visible and not feline.map.modulate.a > 0 or not feline) and _check_grounded() and interact_with and (not playing or not hide_when_playing) and not disabled and (player.disable_reasons.size() == 0 or (not disable_player.empty() and player.disable_reasons.has(disable_player)))
 var timer = -1
 func _process(delta):
 	if timer >= 0:

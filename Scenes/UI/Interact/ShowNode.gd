@@ -16,7 +16,7 @@ func _ready():
 
 var active_sound
 func _process(_delta): 
-	if do_something:
+	if do_something and ui_node:
 		if ui_node.modulate.a == 1:
 			utils.tween_fade(ui_node, 1, 0, transition_time)
 			timer = 0
