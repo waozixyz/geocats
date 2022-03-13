@@ -119,7 +119,7 @@ extents = Vector2( 115.667, 14.489 )
 extents = Vector2( 18.0002, 213.156 )
 
 [sub_resource type="RectangleShape2D" id=292]
-extents = Vector2( 10, 315 )
+extents = Vector2( 10, 351.467 )
 
 [sub_resource type="RectangleShape2D" id=293]
 extents = Vector2( 10, 125.333 )
@@ -404,7 +404,7 @@ shape = SubResource( 270 )
 [node name="Default" parent="." instance=ExtResource( 20 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 585, 607.839 )
+position = Vector2( 51, 630.871 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 0.7, 0.7 )
@@ -549,7 +549,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
-position = Vector2( -10.5751, 73.3706 )
+position = Vector2( -10.5751, 109.837 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 292 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
