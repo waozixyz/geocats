@@ -18,7 +18,7 @@ var active_sound
 func _process(_delta): 
 	if do_something and ui_node:
 		if ui_node.modulate.a == 1:
-			utils.tween_fade(ui_node, 1, 0, transition_time)
+			utils.tween(ui_node, "fade", 0, transition_time)
 			timer = 0
 			if active_sound:
 				active_sound.stop()
@@ -30,7 +30,7 @@ func _process(_delta):
 		else:
 			if not progress_when_visible.empty():
 				PROGRESS.variables[progress_when_visible] = true
-			utils.tween_fade(ui_node, 0, 1, transition_time)
+			utils.tween(ui_node, "fade", 1, transition_time)
 			if sound_when_visible:
 				active_sound = AudioManager.play_sound(sound_when_visible, 1, true)
 			timer = 0

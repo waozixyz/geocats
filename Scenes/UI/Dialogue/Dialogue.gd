@@ -158,7 +158,7 @@ func initiate(json_file, block = 'first'): # Load the whole dialogue into a vari
 	file.close()
 	if dialogue:
 		first(block) # Call the first dialogue block
-		utils.tween_fade(self, 0.01, 1, 0.2)
+		utils.tween(self, "fade", 1, 0.2)
 	else:
 		printerr("error with dialogue: ", json_file)
 		return
@@ -379,7 +379,7 @@ func exit():
 		choices.remove_child(child)
 		child.propagate_call("queue_free", [])
 
-	utils.tween_fade(self, 1, 0, 0.2)
+	utils.tween(self, "fade", 0, 0.2)
 
 
 func next():

@@ -61,7 +61,7 @@ func settings():
 var map
 func _open_map():
 	get_parent().add_child(map)
-	utils.tween_fade(map, 0, 1)
+	utils.tween(map, "fade", 1, .5)
 	exit()
 	current_scene.set_disable("e_interact", "map")
 var geodex
@@ -76,7 +76,7 @@ func exit(now = false):
 		if active:
 			close_sfx.play()
 			active = false
-			tween = utils.tween_fade(self, 1, 0, .3)
+			tween = utils.tween(self, "fade", 0, .3)
 			current_scene.set_disable("e_interact", "feline", false)
 	else:
 		_change_view(main_view)
@@ -101,13 +101,13 @@ func _change_view(new_view):
 	if new_view != view:
 		# update old view
 		old_view = view
-		utils.tween_fade(old_view, 1, 0, .2)
+		utils.tween(old_view, "fade", 0, .2)
 		# change current view
 		view = new_view
 		view.visible = true
 		view.modulate.a = 0
 		# show current view
-		utils.tween_fade(view, 0, 1, .2)
+		utils.tween(view, "fade", 1, .2)
 
 # change system theme
 func _change_color():
@@ -162,7 +162,7 @@ func _process(delta):
 		if ticks >= 15:
 			if not system.visible:
 				system.modulate.a = 0
-				utils.tween_fade(system, 0, 1)
+				utils.tween(system, "fade", 1, .5)
 			
 			system.visible = true
 		else:
@@ -186,15 +186,15 @@ func _input(event):
 
 		else:
 			if map.modulate.a > 0:
-				map_tween = utils.tween_fade(map, 1, 0)
+				map_tween = utils.tween(map, "fade", 0, .5)
 				if map.chat.modulate.a != 0:
-					utils.tween_fade(map.chat, 1, 0)
+					utils.tween(map.chat, "fade", 0, .5)
 				map.last_territory = ""
 				current_scene.set_disable("e_interact", "map", false)
 			elif tween and not tween.is_active() or not tween:
 				current_scene.set_disable("e_interact", "feline")
 				active = true
-				tween = utils.tween_fade(self, 0, 1, 1)
+				tween = utils.tween(self, "fade", 1, 1)
 				open_sfx.play()
 	if modulate.a > 0 and event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:

@@ -1,5 +1,7 @@
 extends Control
 
+onready var current_scene = get_tree().get_current_scene()
+onready var camera = current_scene.camera
 onready var sprite = $AnimatedSprite
 onready var plus = $Plus
 onready var minus = $Minus
@@ -68,6 +70,11 @@ var print_ticket
 var ticket_print_done
 var last_frame
 func _process(delta):
+	if modulate.a > 0 and camera.zoom.x == 1:
+		utils.tween(camera, "zoom", Vector2(1.4, 1.4), .5)
+	if modulate.a < 1 and camera.zoom.x > 1.3:
+		utils.tween(camera, "zoom", Vector2(1, 1), .5)
+		
 	#if do_something:
 	#	hud.visible = false if hud.visible else true
 	#	do_something = false

@@ -73,7 +73,7 @@ func _ready():
 var tween
 func _process(_delta):
 	if global.user.hp <= 0:
-		tween = utils.tween_position(player, respawn_location)
+		tween = utils.tween(player, "position", respawn_location)
 		set_disable("player", "dead")
 		dead = true
 	if dead and global.user.hp < 100:

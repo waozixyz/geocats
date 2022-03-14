@@ -33,9 +33,9 @@ func _process(_delta):
 	if do_something and not disabled:
 		timer = 0
 		if consumable.visible:
-			utils.tween_fade(ui_node, 0, 1, 0.2)
+			utils.tween(ui_node, "fade", 1, 0.2)
 		else:
-			utils.tween_fade(ui_node, 1, 0, 0.2)
+			utils.tween(ui_node, "fade", 0, 0.2)
 		if progress_var:
 			PROGRESS.variables[progress_var] = true
 		if consumable:

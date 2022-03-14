@@ -528,9 +528,6 @@ script = ExtResource( 38 )
 [node name="HUD" type="Control" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 37 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 310, 102 )

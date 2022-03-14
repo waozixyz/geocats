@@ -10,7 +10,7 @@ func _ready():
 #	if utils.get_season() == "Winter":
 #		particles = utils.get_particle(utils.Particle.Snow)
 #		particles.preprocess = false
-	utils.tween_fade(splash, 0, 1)
+	utils.tween(splash, "fade", 1)
 	add_child(particles)
 	loaded = true
 

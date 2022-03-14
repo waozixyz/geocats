@@ -38,8 +38,8 @@ func change_scene(level_territory, level_name = ""):
 	
 	level_path = _get_level_path(level_territory, level_name)
 	if level_path:
-		utils.tween_fade(sprite, 0, 1)
-		utils.tween_fade(container, 0, 1)
+		utils.tween(sprite, "fade", 1)
+		utils.tween(container, "fade", 1)
 		change = true
 		timer = 0
 		sprite.play()
@@ -63,8 +63,8 @@ func _new_scene():
 	assert(err == OK)
 	get_tree().paused = false
 	
-	utils.tween_fade(sprite, 1, 0)
-	utils.tween_fade(container, 1, 0)
+	utils.tween(sprite, "fade", 0)
+	utils.tween(container, "fade", 0)
 	sprite.stop()
 
 

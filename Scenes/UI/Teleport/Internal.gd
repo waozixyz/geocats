@@ -32,4 +32,4 @@ func _input(_event):
 			current_scene.set_disable("player", "teleport")
 			chat_with.visible = false
 			player.visible = false
-			tween = utils.tween_position(player, to_go.position)
+			tween = utils.tween(player, "position", to_go.position)

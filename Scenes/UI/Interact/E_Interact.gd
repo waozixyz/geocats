@@ -46,10 +46,10 @@ func _process(delta):
 			disabled = false
 	if touching and not _is_disabled():
 		if button.modulate.a == 0:
-			utils.tween_fade(button, 0, 1, 0.2)
+			utils.tween(button, "fade", 1, 0.2)
 				
 	elif button.modulate.a == 1:
-		utils.tween_fade(button, 1, 0, 0.2)
+		utils.tween(button, "fade", 0, 0.2)
 		
 	if do_something:
 		if not dialogue_file.empty():

@@ -76,7 +76,7 @@ func _input_event(_viewport, event, _shape_idx, territory):
 	if event is InputEventMouse and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		if territory.name != "Null":
 			if last_territory != territory.name and chat.modulate.a == 0:
-				utils.tween_fade(chat, 0, 1)
+				utils.tween(chat, "fade", 1, .5)
 			_update_dialogue(territory.name)
 			clicked_territory = true
 			last_territory = territory.name
@@ -91,11 +91,11 @@ func _process(_delta):
 	if tween and not tween.is_active():
 		tween = null
 		if not last_territory.empty():
-			utils.tween_fade(chat, 0, 1)
+			utils.tween(chat, "fade", 1, .5)
 			_update_dialogue(last_territory)
 	if not clicked_territory and not last_territory.empty():
 		if chat.modulate.a != 0:
-			tween = utils.tween_fade(chat, 1, 0, 0.1)
+			tween = utils.tween(chat, "fade", 0, 0.1)
 		last_territory = ""
 		
 	if arrow_right.pressed:

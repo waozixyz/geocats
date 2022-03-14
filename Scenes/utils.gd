@@ -42,29 +42,22 @@ func _tween_completed(obj, _key, tween, code):
 	remove_child(tween)
 	tweens.erase(obj.name + code)
 
-func tween_position(obj, new_pos, time = 1):
-	if not tweens.has(obj.name + '_p'):
+func tween(obj, prop, val, time = 1):
+	if not tweens.has(obj.name + '_' + prop):
 		var tween = Tween.new()
 		add_child(tween)
-		tween.interpolate_property(obj, "position", obj.position, new_pos, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		var init_val
+		if prop == "fade":
+			init_val = obj.modulate.a
+			prop = "modulate:a"
+		else:
+			init_val = obj[prop]
+		tween.interpolate_property(obj, prop, init_val, val, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 		tween.pause_mode = PAUSE_MODE_PROCESS
-		var err = tween.connect("tween_completed", self, "_tween_completed", [tween, '_p'])
+		var err = tween.connect("tween_completed", self, "_tween_completed", [tween, '_' + prop])
 		assert(err == OK)
 		return tween
-# a generic tween for fading effect
-func tween_fade(obj, start, end, time = .5):
-	if not tweens.has(obj):
-		tweens.append(obj.name + '_f')
-		var tween = Tween.new()
-		add_child(tween)
-		tween.interpolate_property(obj, "modulate:a", start, end, time, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-		tween.start()
-		tween.pause_mode = PAUSE_MODE_PROCESS
-		var err = tween.connect("tween_completed", self, "_tween_completed", [tween, '_f'])
-		assert(err == OK)
-		return tween
-		
 
 # get current season
 func get_season():
