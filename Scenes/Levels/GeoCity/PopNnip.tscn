@@ -299,7 +299,7 @@ shape = SubResource( 25 )
 position = Vector2( 418, 378 )
 script = ExtResource( 2 )
 character_name = "Shopkeeper"
-character_folder = "res://Assets/Levels/GeoCity/PopNnip/Shopkeeper"
+json_file = "res://Assets/Levels/GeoCity/PopNnip/Shopkeeper/shopkeeper.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper"]
 position = Vector2( -2, 16 )

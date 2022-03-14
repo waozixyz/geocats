@@ -166,7 +166,6 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -174,7 +173,6 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 8 )
-frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -206,7 +204,6 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 12 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -266,7 +263,7 @@ polygon = PoolVector2Array( 92, 11, 106, 5, 120, -9, 151, -9, 151, 10 )
 position = Vector2( 28, -42 )
 script = ExtResource( 13 )
 character_name = "Donutbot"
-character_folder = "res://Assets/Levels/GeoCity/DonutShop/Donutbot"
+json_file = "res://Assets/Levels/GeoCity/DonutShop/Donutbot/donutbot.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DonutBot/Area2D"]
 position = Vector2( 47.6071, -7.65298 )

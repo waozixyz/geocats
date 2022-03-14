@@ -753,7 +753,7 @@ animation = "walk"
 script = ExtResource( 5 )
 has_parent = true
 character_name = "Longcat"
-character_folder = "res://Assets/Agents/Longcat"
+json_file = "res://Assets/Agents/Longcat/longcat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat/LongCatArea2D"]
 position = Vector2( 2.29077, 0.729614 )
@@ -781,7 +781,7 @@ animation = "walk"
 script = ExtResource( 5 )
 has_parent = true
 character_name = "Nonacat"
-character_folder = "res://Assets/Agents/Nonacat"
+json_file = "res://Assets/Agents/Nonacat/nonacat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat/NonacatArea2D"]
 position = Vector2( -1.00005, 1.00002 )
@@ -806,9 +806,12 @@ flip_h = true
 
 [node name="LasagneArea2D" type="Area2D" parent="NPC/Lasagne"]
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
 has_parent = true
 character_name = "Lasagne"
-character_folder = "res://Assets/Agents/Lasagne"
+json_file = "res://Assets/Agents/Lasagne/lasagne.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
@@ -822,7 +825,7 @@ shape = SubResource( 46 )
 position = Vector2( 1600, 711 )
 script = ExtResource( 5 )
 character_name = "Garbitage"
-character_folder = "res://Assets/Agents/Garbitage"
+json_file = "res://Assets/Agents/Garbitage/garbitage.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage"]
 position = Vector2( 33, 33 )

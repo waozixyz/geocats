@@ -307,14 +307,6 @@ VSeparator/styles/separator = SubResource( 42 )
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 29.9071, 18.5032 )
 
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 13 )
-region = Rect2( 13, 0, 13, 8 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 13 )
-region = Rect2( 26, 0, 13, 8 )
-
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 13, 8 )
@@ -323,17 +315,25 @@ region = Rect2( 0, 0, 13, 8 )
 atlas = ExtResource( 13 )
 region = Rect2( 39, 0, 13, 8 )
 
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 13 )
+region = Rect2( 13, 0, 13, 8 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 13 )
+region = Rect2( 26, 0, 13, 8 )
+
 [sub_resource type="SpriteFrames" id=51]
 animations = [ {
-"frames": [ SubResource( 47 ), SubResource( 48 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 48 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=52]
@@ -544,9 +544,7 @@ shape = SubResource( 27 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
 collision_mask = 7
@@ -635,7 +633,7 @@ _jump_height = 150
 script = ExtResource( 18 )
 has_parent = true
 character_name = "Palmerston"
-character_folder = "res://Assets/Agents/Palmerston"
+json_file = "res://Assets/Agents/Palmerston/palmerston.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/Area2D"]
 position = Vector2( 23.1036, 17.0176 )

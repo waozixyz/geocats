@@ -535,7 +535,7 @@ __meta__ = {
 "_edit_group_": true
 }
 character_name = "GameCat"
-character_folder = "res://Assets/Levels/GeoCity/Arcade/GameCat"
+json_file = "res://Assets/Levels/GeoCity/Arcade/GameCat/gamecat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameCat"]
 position = Vector2( 41, 15 )

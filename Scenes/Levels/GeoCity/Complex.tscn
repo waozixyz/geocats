@@ -1354,7 +1354,7 @@ __meta__ = {
 "_edit_group_": true
 }
 character_name = "Cleopardis"
-character_folder = "res://Assets/Agents/Cleopardis"
+json_file = "res://Assets/Agents/Cleopardis/cleopardis.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Cleopardis"]
 position = Vector2( 20.8, 33.5306 )
@@ -1384,7 +1384,7 @@ script = ExtResource( 32 )
 script = ExtResource( 11 )
 has_parent = true
 character_name = "Hogwash"
-character_folder = "res://Assets/Agents/Hogwash"
+json_file = "res://Assets/Agents/Hogwash/hogwash.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/Hogwash"]
 shape = SubResource( 113 )
@@ -1410,7 +1410,6 @@ walk_delay_range = [ 6, 30 ]
 script = ExtResource( 11 )
 has_parent = true
 character_name = "Liet"
-character_folder = "res://Assets/Agents/Liet"
 json_file = "res://Assets/Agents/Liet/liet.json"
 sound_file = "res://Assets/Agents/Liet/liet.ogg"
 

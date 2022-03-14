@@ -616,7 +616,7 @@ __meta__ = {
 [node name="Default" parent="." instance=ExtResource( 9 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 595, 460 )
+position = Vector2( 128, 436 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300

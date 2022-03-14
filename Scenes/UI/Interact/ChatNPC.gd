@@ -9,31 +9,25 @@ onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLa
 export(bool) var has_parent = false
 export(String) var skip_var = ""
 export(String) var character_name = name
-export(String, DIR) var character_folder = ""
-
 export(String, FILE, "*.json") var json_file = ""
 export(String, FILE, "*.ogg, *.wav") var sound_file = ""
 export(bool) var trigger_on_touch = false
 export(String) var player_disable = ""
 
 func _get_default_path():
-	if character_folder.empty() and not json_file.empty():
-		return utils.get_character_folder(json_file)
-	else:
-		return character_folder + "/" + character_name.to_lower()
+	return json_file.split('.json')[0]
 
 func _ready():
-	if not character_folder.empty() or not json_file.empty():
+	if json_file.empty():
+		disabled = true
+	else:
 		var file2Check = File.new()
-		if json_file.empty():
-			json_file = _get_default_path() + ".json"
 		if sound_file.empty():
 			if file2Check.file_exists(_get_default_path() + ".ogg"):
 				sound_file = _get_default_path() + ".ogg"
 			elif file2Check.file_exists(_get_default_path() + ".wav"):
 				sound_file = _get_default_path() + ".wav"
-	else:
-		disabled = true
+
 
 var active : bool
 var completed :bool
