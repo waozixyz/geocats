@@ -1,4 +1,4 @@
-
+{
   "first": {
     "name": "Cowboy Cat",
     "avatar": "cowboycat.png",
@@ -56,16 +56,22 @@
     "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "With all due respects, I simply refuse to take advice from machines -",
+    "content": "Hm.@Have you tried climbing up that vine behind you?",
     "next": "3"
   },
   "3": {
-    "name": "Garbitage",
-    "avatar": "garbitage.png",
+    "name": "Cowboy Cat",
+    "avatar": "cowboycat.png",
     "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "With all due respects, I simply refuse to take advice from machines -",
+    "next": "4"
+  },
+  "4": {
     "position": "left",
     "type": "text",
     "content": "...@...Plus, I'm downright afeared of heights.",
     "next": ""
-  },
+  }
 }
