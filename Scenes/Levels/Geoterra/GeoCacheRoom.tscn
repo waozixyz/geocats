@@ -12,6 +12,8 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Floor.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Levels/Geoterra/Treasure.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -38,19 +40,8 @@ extents = Vector2( 358.888, 60.6786 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 33.9119, 32.5012 )
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 13, 10 )
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
-"frames": [ SubResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="GeoCacheRoom" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -67,7 +58,6 @@ centered = false
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 2 )
-frame = 1
 playing = true
 centered = false
 
@@ -106,7 +96,7 @@ polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( -254.55, 133.349 )
+position = Vector2( 648, 103 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
@@ -147,15 +137,18 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="Treasure" type="Area2D" parent="."]
+script = ExtResource( 14 )
+json_file = "res://Assets/Levels/Geoterra/GeoCacheRoom/treasure.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )
 shape = SubResource( 7 )
 
-[node name="Sprit" type="AnimatedSprite" parent="Treasure"]
+[node name="Sprite" type="Sprite" parent="Treasure"]
 position = Vector2( 1106, 421 )
 scale = Vector2( 3, 3 )
-frames = SubResource( 9 )
+texture = ExtResource( 2 )
+hframes = 2
 
 [editable path="Default"]
 [editable path="Default/Player"]

@@ -70,10 +70,9 @@ func _process(_delta):
 				show_chat()
 		elif (disabled or not touching) and active:
 			hide_chat()
-	
+	if dia_started and dialogue.modulate.a == 0:
+		dia_started = false
 	if has_parent and "idle" in get_parent():
-		if dia_started and dialogue.modulate.a == 0:
-			dia_started = false
 		get_parent().idle = true if dia_started else false
 
 

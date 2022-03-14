@@ -60,6 +60,7 @@ func _get_music():
 					printerr("could not find level music")
 	return music
 func _ready():
+	player = _get_player()
 	camera = _get_camera()
 	# set player location
 	if locations:
@@ -73,7 +74,7 @@ var tween
 func _process(_delta):
 	if global.user.hp <= 0:
 		tween = utils.tween_position(player, respawn_location)
-		player.disable('dead')
+		set_disable("player", "dead")
 		dead = true
 	if dead and global.user.hp < 100:
 		global.user.hp += 1
@@ -82,7 +83,7 @@ func _process(_delta):
 			var err = get_tree().reload_current_scene()
 			assert(err == OK)
 		else:
-			player.enable('dead')
+			set_disable("player", "dead", false)
 			dead = false
 	if reload_on_death and dead and not tween.is_active():
 		player.position = respawn_location

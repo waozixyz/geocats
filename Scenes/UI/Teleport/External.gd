@@ -26,7 +26,7 @@ func _ready():
 	level_name = _get_level_name()
 	var locations = current_scene.locations
 	if this_loc > 0:
-		if locations.size() < this_loc:
+		if locations.size() < this_loc + 1:
 			locations.resize(this_loc + 1)
 		locations[this_loc] = position
 	current_scene.locations = locations
