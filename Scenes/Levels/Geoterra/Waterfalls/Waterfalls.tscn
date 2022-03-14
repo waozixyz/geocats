@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=42]
 [ext_resource path="res://Assets/Fonts/QixMono18Tight.tres" type="DynamicFont" id=43]
 [ext_resource path="res://Assets/Player/Spritesheets/kitten_tileset.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Fonts/QixMono15.tres" type="DynamicFont" id=45]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
@@ -163,26 +164,6 @@ func _ready():
 	play()
 "
 
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 44 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 44 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 44 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 44 )
 region = Rect2( 0, 0, 15, 15 )
@@ -211,22 +192,42 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 44 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 44 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 44 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 35 ), SubResource( 32 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 36 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 32 ), SubResource( 32 ) ],
 "loop": true,
-"name": "climb",
-"speed": 5.0
+"name": "idle",
+"speed": 3.0
 }, {
 "frames": [ SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 35 ), SubResource( 32 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 36 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 32 ), SubResource( 32 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,
-"name": "idle",
-"speed": 3.0
+"name": "climb",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=40]
@@ -297,8 +298,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 67, 22.5 )
 
-[sub_resource type="DynamicFont" id=55]
-size = 14
+[sub_resource type="DynamicFont" id=60]
 extra_spacing_top = -4
 extra_spacing_bottom = -4
 extra_spacing_char = -1
@@ -1643,9 +1643,7 @@ position = Vector2( 831.933, 1199.28 )
 shape = SubResource( 4 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -1817,7 +1815,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 21
+frame = 1
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1834,7 +1832,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 13
+frame = 22
 playing = true
 flip_h = true
 
@@ -2200,7 +2198,6 @@ position = Vector2( -16.0001, 10.5 )
 shape = SubResource( 54 )
 
 [node name="Notebook" type="Control" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
-visible = false
 margin_left = -181.165
 margin_top = -116.511
 margin_right = 78.8354
@@ -2213,26 +2210,38 @@ margin_bottom = 120.0
 rect_scale = Vector2( 2, 2 )
 mouse_filter = 2
 texture = ExtResource( 41 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RichTextLabel2" type="Label" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
 margin_left = 130.0
 margin_top = 24.0
 margin_right = 240.0
-margin_bottom = 129.0
-custom_fonts/font = ExtResource( 24 )
+margin_bottom = 59.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Chrysoberyl and it's 0xoplasmotic inhibiting effects
-"
+custom_fonts/font = SubResource( 60 )
+text = "Chrysoberyl and it's 0xoplasmotic inhibiting effects"
 autowrap = true
 
 [node name="RichTextLabel3" type="Label" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
 margin_left = 17.0
-margin_top = 121.0
+margin_top = 122.0
 margin_right = 248.0
-margin_bottom = 176.0
-custom_fonts/font = SubResource( 55 )
+margin_bottom = 177.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Last week, I was peacefully going about my business collecting gems. My noble and important science work was rudely interrupted by an obnoxious cat infected with 0xoplasmosis. I saw my life flash before my eyes as it rushed towards me. Out of fear, I offered it one of my"
+custom_fonts/font = ExtResource( 45 )
+text = "My noble and important science work was rudely interrupted by an obnoxious cat infected with 0xoplasmosis. I saw my life flash before my eyes as it rushed towards me. Out of fear, I offered it one of my"
+autowrap = true
+
+[node name="RichTextLabel6" type="Label" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
+margin_left = 129.0
+margin_top = 67.0
+margin_right = 248.0
+margin_bottom = 117.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
+text = "Last week, I was peacefully going about my business collecting gems. "
 autowrap = true
 
 [node name="RichTextLabel5" type="Label" parent="CanvasLayer/ResearchCabin/OpenNotebook/Notebook"]
@@ -2240,8 +2249,8 @@ margin_left = 17.0
 margin_top = 179.0
 margin_right = 193.0
 margin_bottom = 226.0
-custom_fonts/font = SubResource( 55 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "Gemstones... The Chrysoberyl. It caught a ray of sunlight, and refracted into the eyes of the beast before me."
 autowrap = true
 
@@ -2250,8 +2259,8 @@ margin_left = 284.0
 margin_top = 126.0
 margin_right = 508.0
 margin_bottom = 236.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment. More research is needed."
 autowrap = true
 
@@ -2325,8 +2334,8 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 139.0
 margin_bottom = 135.0
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
 autowrap = true
 
@@ -2364,8 +2373,8 @@ margin_top = 5.0
 margin_right = 136.0
 margin_bottom = 128.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
 autowrap = true
 
@@ -2405,8 +2414,8 @@ margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 143.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "Hey bro, it's been too long since we've hung out last!
 let's go on a hike together soon... I'll bring the catnip  
 
@@ -2446,8 +2455,8 @@ margin_top = 3.0
 margin_right = 132.0
 margin_bottom = 129.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "Call back the Nonaco Department of Corperate Technology...URGENT!
 [3:26 PM]"
 autowrap = true
@@ -2481,8 +2490,8 @@ margin_left = 6.0
 margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 71.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This statue I saw during my visit to the castle was to DIE for. It would look perfect"
 autowrap = true
 
@@ -2491,8 +2500,8 @@ margin_left = 73.0
 margin_top = 62.0
 margin_right = 132.0
 margin_bottom = 127.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "in my new appartment in GeoCity."
 autowrap = true
 
