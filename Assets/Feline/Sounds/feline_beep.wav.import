@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/feline_beep.wav-e0309d3ec4b6bc2abfdd91dcb13370b8.sample"
+
+[deps]
+
+source_file="res://Assets/Feline/Sounds/feline_beep.wav"
+dest_files=[ "res://.import/feline_beep.wav-e0309d3ec4b6bc2abfdd91dcb13370b8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

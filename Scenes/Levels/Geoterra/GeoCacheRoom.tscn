@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/GeoChest.png" type="Texture" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Floor.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/Levels/Geoterra/Treasure.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Levels/Glaciokarst/Caves/Cave_Ambience.ogg" type="AudioStream" id=15]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -58,6 +59,7 @@ centered = false
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
@@ -67,7 +69,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 3
+sound_effect = 4
 territory = 1
 next_loc = 3
 
@@ -96,7 +98,7 @@ polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 648, 103 )
+position = Vector2( -260, 143 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300
@@ -123,6 +125,7 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 5 )
+frame = 1
 playing = true
 centered = false
 
@@ -138,7 +141,8 @@ shape = SubResource( 6 )
 
 [node name="Treasure" type="Area2D" parent="."]
 script = ExtResource( 14 )
-json_file = "res://Assets/Levels/Geoterra/GeoCacheRoom/treasure.json"
+dialogue_file = "res://Assets/Levels/Geoterra/GeoCacheRoom/treasure.json"
+sound_effect = "res://Assets/Feline/Sounds/feline_beep.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )
@@ -149,6 +153,12 @@ position = Vector2( 1106, 421 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 2
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 15 )
+autoplay = true
+bus = "Music"
 
 [editable path="Default"]
 [editable path="Default/Player"]

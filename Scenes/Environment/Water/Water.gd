@@ -6,10 +6,11 @@ signal splash
 export var slime = false
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
-#	material.set_shader_param("sprite_scale", scale)
-	pass
+	var err = connect("body_entered", self, "_on_body_entered")
+	assert(err == OK)
+	err = connect("body_exited", self, "_on_body_exited")
+	assert(err == OK)
+
 
 func _on_body_entered(body):
 	if body.name == "Player":

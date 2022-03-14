@@ -5,6 +5,7 @@ onready var current_scene = get_tree().get_current_scene()
 onready var player = get_tree().get_current_scene().player
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 onready var feline = get_tree().get_current_scene().get_node("Default/CanvasLayer/Feline")
+export(String, FILE, "*.json") var dialogue_file = ""
 export(String, FILE, "*.wav, *.ogg") var sound_effect
 export(float) var sound_volume = 1
 
@@ -13,6 +14,7 @@ var playing = false
 var button
 var disable_sound = false
 var hide_when_playing = true
+var dia_started
 export var require_grounded = false
 export var disable_player = ""
 export var button_reappear_delay = 0.5
@@ -48,7 +50,19 @@ func _process(delta):
 				
 	elif button.modulate.a == 1:
 		utils.tween_fade(button, 1, 0, 0.2)
-
+		
+	if do_something:
+		if not dialogue_file.empty():
+			disabled = true
+			dialogue.initiate(dialogue_file)
+			dialogue.modulate.a = 0.01
+			dia_started = true
+		do_something = false
+	if dia_started and dialogue.modulate.a == 0:
+		dia_started = false
+		disabled = false
+	if not touching and dia_started:
+		dialogue.exit()
 func _input(_event):
 	# when i press the interact key (e)
 	if Input.is_action_just_pressed("interact") and not _is_disabled() and button.modulate.a > 0:

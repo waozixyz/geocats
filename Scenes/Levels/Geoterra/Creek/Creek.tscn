@@ -749,7 +749,10 @@ texture = ExtResource( 18 )
 [node name="GeoCacheRoom" type="Area2D" parent="Portals"]
 position = Vector2( 8845.83, 4859.48 )
 script = ExtResource( 27 )
-sound_effect = 3
+__meta__ = {
+"_edit_group_": true
+}
+sound_effect = 4
 territory = 1
 geoterra = 3
 this_loc = 3

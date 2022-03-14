@@ -550,7 +550,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -10.5751, 109.837 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 292 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]

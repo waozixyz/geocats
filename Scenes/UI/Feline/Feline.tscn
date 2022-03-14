@@ -25,10 +25,10 @@
 [ext_resource path="res://Assets/Feline/UI/StatusBar/settings_pressed.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Feline/UI/StatusBar/settings_hover.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/UI/Feline/SettingsView.gd" type="Script" id=32]
-[ext_resource path="res://Assets/Feline/UI/Sounds/feline_open.wav" type="AudioStream" id=33]
-[ext_resource path="res://Assets/Feline/UI/Sounds/feline_exit.wav" type="AudioStream" id=34]
-[ext_resource path="res://Assets/Feline/UI/Sounds/feline_beep_lower.wav" type="AudioStream" id=35]
-[ext_resource path="res://Assets/Feline/UI/Sounds/feline_beep.wav" type="AudioStream" id=36]
+[ext_resource path="res://Assets/Feline/Sounds/feline_open.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Feline/Sounds/feline_exit.wav" type="AudioStream" id=34]
+[ext_resource path="res://Assets/Feline/Sounds/feline_beep_lower.wav" type="AudioStream" id=35]
+[ext_resource path="res://Assets/Feline/Sounds/feline_beep.wav" type="AudioStream" id=36]
 
 [sub_resource type="StyleBoxFlat" id=1]
 border_width_top = 3
