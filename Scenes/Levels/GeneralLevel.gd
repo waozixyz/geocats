@@ -5,8 +5,9 @@ export(Vector2) var respawn_location
 export(bool) var reload_on_death
 var locations : PoolVector2Array
 var dead
-var music
-var player
+var music = get_node_or_null("Music") setget, _get_music
+var player = get_node_or_null("Default/Player") setget ,_get_player
+var camera = get_node_or_null("Default/Player/Camera2D") setget, _get_camera
 
 var disable = {
 	player = [],
@@ -32,7 +33,13 @@ func is_disabled(obj : String, reason : String = ""):
 	else:
 		return false
 
-func get_player():
+func _get_camera():
+	if not camera:
+		camera = get_node_or_null("Default/Player/Camera2D")
+		if not camera:
+			printerr("can't find camera node: ", camera)
+	return camera
+func _get_player():
 	if not player:
 		player = get_node_or_null("Default/Player")
 		if not player:
@@ -41,7 +48,7 @@ func get_player():
 				printerr("can't find player node: ", player)
 	return player
 
-func get_music():
+func _get_music():
 	if not music:
 		music = get_node_or_null("AudioStreamPlayer")
 		if not music:
@@ -52,10 +59,6 @@ func get_music():
 					printerr("could not find level music")
 	return music
 func _ready():
-	# find player node
-	player = get_player()
-	# find background music 
-	music = get_music()
 	# set player location
 	if locations:
 		locations[0] = player.position

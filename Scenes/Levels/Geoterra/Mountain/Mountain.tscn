@@ -358,7 +358,7 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 41, 4852 )
+position = Vector2( 41, 4891 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -531,16 +531,15 @@ z_index = 1
 texture = ExtResource( 10 )
 
 [node name="GoDown" type="Area2D" parent="Portals"]
-position = Vector2( 1472.91, 2335.62 )
+position = Vector2( 1580.91, 2483.62 )
 script = ExtResource( 12 )
 node_to_go = NodePath("../GoUp")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GoDown"]
-position = Vector2( 108.749, 148 )
 shape = SubResource( 22 )
 
 [node name="Button" type="Sprite" parent="Portals/GoDown"]
-position = Vector2( 67.0901, -9.62012 )
+position = Vector2( -20.9099, -31.6201 )
 scale = Vector2( 0.306122, 0.298077 )
 z_index = 1
 texture = ExtResource( 10 )
@@ -549,7 +548,8 @@ texture = ExtResource( 10 )
 position = Vector2( -73, 4728 )
 script = ExtResource( 22 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 territory = 1
 next_loc = 4
@@ -577,7 +577,7 @@ script = ExtResource( 18 )
 [node name="Area2D" type="Area2D" parent="Cats/Sitting Cat"]
 position = Vector2( 2106, 2372 )
 script = ExtResource( 20 )
-json_file = "res://Assets/Levels/Geoterra/Mountain/sitting_cat.json"
+json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sitting_cat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sitting Cat/Area2D"]
 position = Vector2( -10, -4 )

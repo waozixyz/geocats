@@ -1,6 +1,6 @@
 extends E_Interact
 
-onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
+onready var camera = current_scene.camera
 
 var zoom_out : bool = false
 var zoom_org : float = 0.0
@@ -16,7 +16,7 @@ func _process(delta):
 	._process(delta)
 	if touching:
 		if do_something:
-			player.disable(disable_player)
+			current_scene.set_disable("player", disable_player)
 			if camera.zoom.x <= zoom_org:
 				zoom_out = true
 			if camera.zoom.x > zoom_org:
@@ -34,5 +34,6 @@ func _process(delta):
 				_zoomi(-1)
 			else:
 				#object.visible = true
-				player.enable(disable_player)
+				current_scene.set_disable("player", disable_player, false)
+
 

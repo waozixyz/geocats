@@ -54,6 +54,7 @@ onready var jump_shroom_sfx = $JumpShroomSFX
 onready var jump_sfx = $JumpSFX
 onready var land_water_sfx = $LandWaterSFX
 onready var swim_water_sfx = $SwimWaterSFX
+
 # play sounds on jump and run entity jump function
 func jump(jumpHeight):
 	.jump(jumpHeight)

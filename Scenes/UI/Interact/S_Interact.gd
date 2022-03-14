@@ -3,7 +3,7 @@ extends AreaInteract
 class_name S_Interact
 
 onready var current_scene =  get_tree().get_current_scene()
-onready var player =  current_scene.get_player()
+onready var player =  current_scene.player
 onready var button = $Button
 
 func _process(_delta):
