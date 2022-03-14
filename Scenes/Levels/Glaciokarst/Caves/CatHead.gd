@@ -12,7 +12,11 @@ func _check_colliders(now = false):
 		disabled = true
 		if global.user.location == 1:
 			player.visible = false
-			player.disable("cave")
+			current_scene.set_disable("player", "cave")
+			for colliders in open.get_children():
+				colliders.disabled = false
+			for colliders in idle.get_children():
+				colliders.disabled = true
 	else:
 		for collider in open.get_children():
 			collider.disabled = true
@@ -34,6 +38,7 @@ func _process(delta):
 		for colliders in idle.get_children():
 			colliders.disabled = true
 			
-		if global.user.location == 1:
-			player.visible = true
-			player.enable("cave")
+	if global.user.location == 1 and sprite.frame == 2:
+		player.visible = true
+		current_scene.set_disable("player", "cave", false)
+

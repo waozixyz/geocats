@@ -205,7 +205,7 @@ texture = ExtResource( 14 )
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 41, 412 )
+position = Vector2( 547, 2141 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1565
@@ -320,6 +320,10 @@ bus = "Music"
 [node name="GoToGeoLodge" type="Area2D" parent="."]
 position = Vector2( 28.5323, 404.255 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 territory = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToGeoLodge"]
