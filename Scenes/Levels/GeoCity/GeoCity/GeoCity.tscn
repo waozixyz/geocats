@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Agents/Lasagne/lasagne_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/SaltySwing.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Feline/UI/Sounds/Feline_Owch.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Feline/Sounds/Feline_Owch.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/gotpumpkin_spritesheet.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_1.wav" type="AudioStream" id=15]
@@ -127,7 +127,7 @@ extents = Vector2( 21, 6 )
 extents = Vector2( 34, 6 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 209, 6 )
+extents = Vector2( 213.5, 6 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 176, 6 )
@@ -223,7 +223,7 @@ animations = [ {
 extents = Vector2( 33.2397, 28.051 )
 
 [sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 20.4043, 10 )
+extents = Vector2( 17.8259, 10.1486 )
 
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 27 )
@@ -304,14 +304,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -320,17 +312,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=68]
@@ -526,7 +526,7 @@ shape = SubResource( 19 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 1482, 379 )
+position = Vector2( 1482.5, 378 )
 shape = SubResource( 20 )
 one_way_collision = true
 
@@ -710,8 +710,8 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-item_node = NodePath("DonutShop")
 dialogue_file = "res://Assets/Levels/GeoCity/GeoCity/feline_locked_door.json"
+item_node = NodePath("DonutShop")
 unlock_var = "geocity_donutshop_open"
 
 [node name="DonutShop" type="Area2D" parent="Portals/LockedItem"]
@@ -743,9 +743,6 @@ position = Vector2( 3328, 900 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat"]
 scale = Vector2( 4, 4 )
@@ -763,7 +760,7 @@ position = Vector2( 2.29077, 0.729614 )
 shape = SubResource( 45 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat"]
-position = Vector2( 3.14978, 6.61462 )
+position = Vector2( 0.000121832, 2 )
 shape = SubResource( 46 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
@@ -771,9 +768,6 @@ position = Vector2( 4119, 775 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
 jump_delay_range = [ 100, 200 ]
 walk_delay_range = [ 6, 24 ]
 change_direction = 80
@@ -794,7 +788,7 @@ position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 45 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat"]
-position = Vector2( 3.14978, 6.61462 )
+position = Vector2( 0, 1 )
 shape = SubResource( 46 )
 
 [node name="Lasagne" type="KinematicBody2D" parent="NPC"]
@@ -821,7 +815,7 @@ position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 45 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne"]
-position = Vector2( 0.472534, 5.82715 )
+position = Vector2( -2.10596, 1.67859 )
 shape = SubResource( 46 )
 
 [node name="Garbitage" type="Area2D" parent="NPC"]
@@ -831,14 +825,17 @@ character_name = "Garbitage"
 character_folder = "res://Assets/Agents/Garbitage"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage"]
-position = Vector2( 39, 33 )
+position = Vector2( 33, 33 )
 shape = SubResource( 45 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Garbitage"]
-position = Vector2( 30, 30 )
+position = Vector2( 30, 31 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 59 )
 script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Ladders" type="Node2D" parent="."]
 
