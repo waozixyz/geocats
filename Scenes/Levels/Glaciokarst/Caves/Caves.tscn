@@ -205,7 +205,7 @@ texture = ExtResource( 14 )
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 547, 2141 )
+position = Vector2( 43, 417 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1565
