@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/subtract.ogg-674cc384e66f611224b5d1e53635a608.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/CavityPuzzleRoom/subtract.ogg"
+dest_files=[ "res://.import/subtract.ogg-674cc384e66f611224b5d1e53635a608.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
