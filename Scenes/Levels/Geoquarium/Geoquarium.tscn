@@ -5324,7 +5324,6 @@ script = SubResource( 92 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 101 )
 animation = "idle"
-frame = 1
 playing = true
 flip_h = true
 
@@ -5496,7 +5495,6 @@ script = SubResource( 190 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 204 )
 animation = "climb"
-frame = 1
 playing = true
 flip_h = true
 
@@ -5546,7 +5544,6 @@ script = SubResource( 223 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 235 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
