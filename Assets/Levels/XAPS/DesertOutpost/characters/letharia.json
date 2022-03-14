@@ -10,7 +10,7 @@
   },
   "1": {
     "type": "text",
-    "content": "But whatever, let's not get distracted.@Palmerston's already sent me a message detailing the situation.",
+    "content": "But whatever, let's not get distracted.@Palmerston's already sent me a message detailing our situation.",
     "next": "2"
   },
   "2": {
@@ -58,7 +58,7 @@
   },
   "knowledge_off_3": {
     "type": "text",
-    "content": "If you do this, I'll show you the best way to get into the deep desert.",
+    "content": "If you do this, I'll send you on a mini mission.",
     "next": ""
   },
   "knowledge_on": {
@@ -88,17 +88,17 @@
   },
   "7": {
     "type": "text",
-    "content": "I'll hold up my end of this deal.",
+    "content": "Allow me to hold up my end of this deal.",
     "next": "8"
   },
   "8": {
     "type": "text",
-    "content": "You'll see a dried up riverbed when you exit the conservatory.",
+    "content": "There's an interesting cave near the top of the smaller hill at Groundcat Creek. ",
     "next": "9a"
   },
   "9a": {
     "type": "text",
-    "content": "Follow it for as long as you can, it's rocky surface is easier to walk on than sand is.",
+    "content": "Follow it for as long as you can, and you'll end up somewhere called Gjásara Headwaters.",
     "next": "9"
   },
   "9": {
@@ -118,17 +118,163 @@
     "animation_in": "fade_in",
     "animation_out": "fade_out",
     "type": "text",
-    "content": "No idea, but it's the only route that is conducive to survival.",
+    "content": "There's a researcher there who's apparently discovered new information that might assist us in our efforts.",
     "next": "11"
   },
   "11": {
     "type": "text",
-    "content": "In my opinion, this is a fools errand given to you by Norna and Wyrd.",
+    "content": "Ask him about his encounter with a strange monster while doing fieldwork.",
     "next": "13"
   },
   "12": {
     "type": "text",
-    "content": "The shifting sands are unforgiving. Best of luck out there.",
+    "content": "He was posting about it on the Meowser, regaling everyone with tales of an epic battle between him and a mystery creature...",
+    "next": "chrysoberylcheck"
+  },
+  "chrysoberylcheck": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "chrysoberyl",
+    "true": "chrysoberyl_on",
+    "false": "chrysoberyl_off"
+  },
+  "chrysoberyl_off": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "animation_in": "fade_in",
+
+    "type": "text",
+    "content": "Have you found the cave to Gjásara Headwaters yet?",
+    "next": "chrysoberyl_off_1"
+  },
+  "chrysoberyl_off_1": {
+    "type": "text",
+    "content": "You'll find the connecter-cave at Groundcat Creek -",
+    "next": "chrysoberyl_off_2"
+  },
+  "chrysoberyl_off_2": {
+    "type": "text",
+    "content": "It's right by that weird cat that's always hanging above the cliff for fun.",
+    "next": ""
+  },
+  "chrysoberyl_on": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "animation_in": "fade_in",
+
+    "type": "question",
+    "text": "Did you find any important information on your trip?",
+    "options": ["yes", "no"],
+    "next": ["chrysoberyl_on_1", "no_option"]
+  },
+  "chrysoberyl_on_1": {
+    "type": "text",
+    "content": "...",
+    "next": "chrysoberyl_on_2"
+  },
+  "chrysoberyl_on_2": {
+    "type": "text",
+    "content": "I see it in your eyes... All of the new information you learned.",
+    "next": "chrysoberyl_on_3"
+  },
+  "chrysoberyl_on_3": {
+    "type": "text",
+    "content": "...",
+    "next": "chrysoberyl_on_4"
+  },
+  "chrysoberyl_on_4": {
+    "type": "text",
+    "content": "Ted's not the most focussed scientist I've met, but his research is better than none I suppose... Is that a crystal you have there?",
+    "next": "no option"
+  },
+  "no_option": {
+    "type": "text",
+    "content": "...",
+    "next": "no_option_3"
+  },
+  "no_option_2": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "...Uh, actually we do have something to show you",
+    "next": "no_option_3"
+  },
+  "no_option_3": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "position": "left",
+    "type": "text",
+    "content": "It's a Chrysoberyl sample we found that might be our ticket to stopping these random monster attacks from happening.",
+    "next": "no_option_4"
+  },
+  "no_option_4": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "position": "left",
+    "type": "text",
+    "content": "It scrambles their signals, and momentarily stops them from being such jerks.",
+    "next": "no_option_5"
+  },
+  "no_option_5": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "position": "left",
+    "type": "text",
+    "content": "Maybe we can harness this power to protect ourselves while out in the desert.",
+    "next": "no_option_6"
+  },
+  "no_option_6": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "That sounds easy enough. I could make some sort of a laser-pointer out of the crystal.@...",
+    "next": "no_option_7"
+  },
+  "no_option_7": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "type": "text",
+    "content": "...Sorry, but I'll need some time to engineer this new invention. Please be patient, it could take me anywhere from a few weeks to a few months.",
+    "next": "no_option_8"
+  },
+  "no_option_8": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "type": "text",
+    "content": "In the meantime, I suggest you take it easy and relax.",
+    "next": "no_option_9"
+  },
+  "no_option_9": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "type": "text",
+    "content": "It's been a stressful few months, and you'll need all your strength replenished if you want to stand a chance out in the desert.",
+    "next": "no_option_10"
+  },
+  "no_option_10": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "type": "text",
+    "content": "...Thanks for hanging on. I'm sure the direction fate seems to have thrown you in is a meaningful one.",
+    "next": "no_option_11"
+  },
+  "no_option_11": {
+    "name": "Letharia",
+    "avatar": "letharia.png",
+    "position": "left",
+    "type": "text",
+    "content": "See you again soon!",
     "next": ""
   }
 }

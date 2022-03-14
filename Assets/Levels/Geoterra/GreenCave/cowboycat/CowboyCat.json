@@ -18,12 +18,12 @@
   },
   "a": {
     "type": "text",
-    "content": "Oh Great, you've found a fancy stone.",
+    "content": "Oh great, you've found a fancy stone.",
     "next": "b"
   },
   "b": {
     "type": "text",
-    "content": "Not sure how that hunk of rock is supposed to help me get outta this darn cave",
+    "content": "Not sure how that hunk of rock is supposed to help me get outta this darn cave.",
     "next": "c"
   },
   "c": {

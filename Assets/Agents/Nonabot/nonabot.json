@@ -3,10 +3,13 @@
     "name": "NONABOT",
     "avatar": "nonabot.png",
     "position": "left",
-    "type": "text",
-    "content": "...",
+    "type": "divert",
     "animation_in": "fade_in",
-    "next": "1"
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "GlaciokarstAfterBattle",
+    "true": "a",
+    "false": "1"
   },
   "1": {
     "type": "text",
@@ -29,18 +32,22 @@
     "position": "left",
     "animation_in": "fade_in",
     "type": "text",
-    "content": "Sorry, no matter what, I can't let you into the Great litterbox.",
+    "content": "Sorry, no matter what, I can't let you travel into XAPS",
     "next": "r1"
   },
   "r1": {
     "type": "text",
-    "content": "...",
+    "content": "...Xerothermic Area Protected Site.",
     "next": "r2"
   },
   "r2": {
     "type": "text",
-    "content": "Quit staring at me like that. I'm a robot, you can't change my mind.",
+    "content": "...Quit staring at me like that. I'm a robot, you can't change my mind.",
     "next": ""
-  }
+  },
+  "a": {
+    "type": "text",
+    "content": "Hm, I guess you're welcome to travel into XAPS now... But you're only welcome to visit Dr. Letharia. I'll be watching...",
+    "next": ""
 }
 
