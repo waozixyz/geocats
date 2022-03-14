@@ -272,53 +272,53 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 95, 83.999 )
 
-[sub_resource type="AtlasTexture" id=67]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 47, 27 )
 
-[sub_resource type="AtlasTexture" id=68]
+[sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 9 )
 region = Rect2( 47, 0, 47, 27 )
 
-[sub_resource type="SpriteFrames" id=69]
+[sub_resource type="SpriteFrames" id=67]
 animations = [ {
-"frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ) ],
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="AtlasTexture" id=70]
+[sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 49, 49 )
 
-[sub_resource type="AtlasTexture" id=71]
+[sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 15 )
 region = Rect2( 49, 0, 49, 49 )
 
-[sub_resource type="AtlasTexture" id=72]
+[sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 15 )
 region = Rect2( 98, 0, 49, 49 )
 
-[sub_resource type="AtlasTexture" id=73]
+[sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 15 )
 region = Rect2( 147, 0, 49, 49 )
 
-[sub_resource type="SpriteFrames" id=74]
+[sub_resource type="SpriteFrames" id=72]
 animations = [ {
-"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ) ],
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.3
 } ]
 
-[sub_resource type="RectangleShape2D" id=75]
+[sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 84, 53 )
 
-[sub_resource type="RectangleShape2D" id=76]
+[sub_resource type="RectangleShape2D" id=74]
 extents = Vector2( 73, 78 )
 
 [node name="Mountain" type="Node2D"]
@@ -488,7 +488,9 @@ position = Vector2( 1249.7, -248.505 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
@@ -564,101 +566,6 @@ position = Vector2( 108, 74.874 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
-[node name="Cats" type="Node2D" parent="."]
-
-[node name="Sitting Cat" type="Node2D" parent="Cats"]
-
-[node name="SittingCat" type="AnimatedSprite" parent="Cats/Sitting Cat"]
-position = Vector2( 2100, 2380 )
-scale = Vector2( 5, 5 )
-frames = SubResource( 26 )
-script = ExtResource( 18 )
-
-[node name="Area2D" type="Area2D" parent="Cats/Sitting Cat"]
-position = Vector2( 2106, 2372 )
-script = ExtResource( 20 )
-json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sitting_cat.json"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sitting Cat/Area2D"]
-position = Vector2( -10, -4 )
-shape = SubResource( 27 )
-
-[node name="Thinking Cat" type="Node2D" parent="Cats"]
-position = Vector2( 918, 1322 )
-
-[node name="ThinkingCat" type="AnimatedSprite" parent="Cats/Thinking Cat"]
-position = Vector2( 27.0001, 28 )
-scale = Vector2( 5, 5 )
-frames = SubResource( 30 )
-script = ExtResource( 18 )
-
-[node name="Area2D" type="Area2D" parent="Cats/Thinking Cat"]
-script = ExtResource( 20 )
-json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/thinking_cat.json"
-sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/thinking_cat.ogg"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Thinking Cat/Area2D"]
-shape = SubResource( 27 )
-
-[node name="Nonabot" type="Node2D" parent="Cats"]
-position = Vector2( 4916, 3597 )
-
-[node name="Nonabot" type="AnimatedSprite" parent="Cats/Nonabot"]
-position = Vector2( 31, 28.001 )
-scale = Vector2( 5, 5 )
-frames = SubResource( 63 )
-animation = "idle"
-frame = 49
-flip_h = true
-script = ExtResource( 18 )
-
-[node name="Area2D" type="Area2D" parent="Cats/Nonabot"]
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_group_": true
-}
-character_name = "Nonabot"
-character_folder = "res://Assets/Agents/Nonabot"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Nonabot/Area2D"]
-position = Vector2( -6, 33.001 )
-shape = SubResource( 66 )
-
-[node name="Sleeping Cat" type="Node2D" parent="Cats"]
-position = Vector2( 597, 1362 )
-
-[node name="SleepingCat" type="AnimatedSprite" parent="Cats/Sleeping Cat"]
-position = Vector2( 3, 13 )
-scale = Vector2( 5, 5 )
-frames = SubResource( 69 )
-script = ExtResource( 18 )
-
-[node name="Area2D" type="Area2D" parent="Cats/Sleeping Cat"]
-script = ExtResource( 20 )
-json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.json"
-sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.ogg"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sleeping Cat/Area2D"]
-shape = SubResource( 27 )
-
-[node name="Catnip Cat" type="Node2D" parent="Cats"]
-position = Vector2( 253, 1367 )
-
-[node name="CatnipCat" type="AnimatedSprite" parent="Cats/Catnip Cat"]
-position = Vector2( -28, 28 )
-scale = Vector2( 5, 5 )
-frames = SubResource( 74 )
-script = ExtResource( 18 )
-
-[node name="Area2D" type="Area2D" parent="Cats/Catnip Cat"]
-script = ExtResource( 20 )
-json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.json"
-sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.ogg"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Catnip Cat/Area2D"]
-position = Vector2( -11.8921, 47.5682 )
-shape = SubResource( 75 )
-
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
 __meta__ = {
@@ -685,6 +592,107 @@ centered = false
 texture = ExtResource( 3 )
 centered = false
 
+[node name="Cats" type="Node2D" parent="AbovePlayer"]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Sitting Cat" type="Node2D" parent="AbovePlayer/Cats"]
+
+[node name="SittingCat" type="AnimatedSprite" parent="AbovePlayer/Cats/Sitting Cat"]
+position = Vector2( 2100, 2380 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 26 )
+script = ExtResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Sitting Cat"]
+position = Vector2( 2106, 2372 )
+script = ExtResource( 20 )
+character_name = "Strange Cat"
+json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sitting_cat.json"
+sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sitting_cat.ogg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Cats/Sitting Cat/Area2D"]
+position = Vector2( -10, -4 )
+shape = SubResource( 27 )
+
+[node name="Thinking Cat" type="Node2D" parent="AbovePlayer/Cats"]
+position = Vector2( 918, 1322 )
+
+[node name="ThinkingCat" type="AnimatedSprite" parent="AbovePlayer/Cats/Thinking Cat"]
+position = Vector2( 27.0001, 28 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 30 )
+script = ExtResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Thinking Cat"]
+script = ExtResource( 20 )
+character_name = "Strange Cat"
+json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/thinking_cat.json"
+sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/thinking_cat.ogg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Cats/Thinking Cat/Area2D"]
+shape = SubResource( 27 )
+
+[node name="Nonabot" type="Node2D" parent="AbovePlayer/Cats"]
+position = Vector2( 4916, 3597 )
+
+[node name="Nonabot" type="AnimatedSprite" parent="AbovePlayer/Cats/Nonabot"]
+position = Vector2( 31, 28.001 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 63 )
+animation = "idle"
+frame = 49
+flip_h = true
+script = ExtResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Nonabot"]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+character_name = "Nonabot"
+character_folder = "res://Assets/Agents/Nonabot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Cats/Nonabot/Area2D"]
+position = Vector2( -6, 33.001 )
+shape = SubResource( 64 )
+
+[node name="Sleeping Cat" type="Node2D" parent="AbovePlayer/Cats"]
+position = Vector2( 597, 1362 )
+
+[node name="SleepingCat" type="AnimatedSprite" parent="AbovePlayer/Cats/Sleeping Cat"]
+position = Vector2( 3, 13 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 67 )
+script = ExtResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Sleeping Cat"]
+script = ExtResource( 20 )
+character_name = "Strange Sleepy Cat"
+json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.json"
+sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.ogg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Cats/Sleeping Cat/Area2D"]
+shape = SubResource( 27 )
+
+[node name="Catnip Cat" type="Node2D" parent="AbovePlayer/Cats"]
+position = Vector2( 253, 1367 )
+
+[node name="CatnipCat" type="AnimatedSprite" parent="AbovePlayer/Cats/Catnip Cat"]
+position = Vector2( -28, 28 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 72 )
+script = ExtResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Catnip Cat"]
+script = ExtResource( 20 )
+character_name = "Weird Cat"
+json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.json"
+sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.ogg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Cats/Catnip Cat/Area2D"]
+position = Vector2( -11.8921, 47.5682 )
+shape = SubResource( 73 )
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 autoplay = true
@@ -700,7 +708,7 @@ disable_player = "telescope"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
 position = Vector2( 1784, 1603 )
-shape = SubResource( 76 )
+shape = SubResource( 74 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

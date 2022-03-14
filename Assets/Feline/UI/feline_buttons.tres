@@ -68,11 +68,11 @@ region_rect = Rect2( 0, 0, 96, 96 )
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.207843, 0.101961, 0, 1 )
 
-[sub_resource type="StyleBoxTexture" id=16]
+[sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 3, 30 )
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="StyleBoxEmpty" id=15]
 
 [resource]
 default_font = ExtResource( 1 )
@@ -182,7 +182,7 @@ VScrollBar/icons/increment_pressed = null
 VScrollBar/styles/grabber = null
 VScrollBar/styles/grabber_highlight = null
 VScrollBar/styles/grabber_pressed = null
-VScrollBar/styles/scroll = SubResource( 16 )
+VScrollBar/styles/scroll = SubResource( 14 )
 VScrollBar/styles/scroll_focus = null
 VSeparator/constants/separation = 4
-VSeparator/styles/separator = SubResource( 17 )
+VSeparator/styles/separator = SubResource( 15 )
