@@ -1,6 +1,6 @@
 extends ShowNode
 
-onready var music = get_tree().get_current_scene().get_music()
+onready var music = get_tree().get_current_scene().music
 func _process(delta):
 	if do_something:
 		# tween player position
