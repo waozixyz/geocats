@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
@@ -7,23 +7,26 @@
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/UI/Teleport/Internal.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Player/Spritesheets/cowboy_tileset.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_bg_vine.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=169]
 extents = Vector2( 34.374, 1107.3 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=170]
 extents = Vector2( 47.1908, 33.7617 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=171]
 extents = Vector2( 99.799, 77.3968 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=172]
 extents = Vector2( 64.9714, 54.129 )
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=173]
 script/source = "extends Area2D
 class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
 
@@ -50,10 +53,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=174]
 extents = Vector2( 9, 203.27 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=175]
 script/source = "extends Area2D
 class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
 
@@ -80,16 +83,16 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=176]
 extents = Vector2( 9, 299.142 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=177]
 extents = Vector2( 9, 131.468 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=178]
 extents = Vector2( 9, 60.4341 )
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=179]
 script/source = "extends Area2D
 
 signal splash
@@ -122,14 +125,75 @@ func _on_body_exited(body:PhysicsBody2D):
 			emit_signal(\"splash\", body.position.x)
 "
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=180]
 extents = Vector2( 134.445, 130.565 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=181]
 extents = Vector2( 248.793, 102.488 )
 
-[node name="Waterfalls" type="Node2D"]
-script = ExtResource( 13 )
+[sub_resource type="AtlasTexture" id=159]
+atlas = ExtResource( 11 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=160]
+atlas = ExtResource( 11 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=161]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=162]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=163]
+atlas = ExtResource( 11 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=164]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=165]
+atlas = ExtResource( 11 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=166]
+atlas = ExtResource( 11 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=167]
+atlas = ExtResource( 11 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=168]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=182]
+animations = [ {
+"frames": [ SubResource( 159 ), SubResource( 160 ), SubResource( 161 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 162 ), SubResource( 163 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 164 ), SubResource( 165 ), SubResource( 166 ), SubResource( 167 ), SubResource( 168 ), SubResource( 164 ), SubResource( 164 ), SubResource( 164 ), SubResource( 165 ), SubResource( 164 ), SubResource( 164 ), SubResource( 164 ), SubResource( 167 ), SubResource( 168 ), SubResource( 164 ), SubResource( 164 ), SubResource( 164 ), SubResource( 164 ), SubResource( 165 ), SubResource( 164 ), SubResource( 164 ), SubResource( 164 ), SubResource( 164 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=183]
+extents = Vector2( 33.2397, 28.051 )
+
+[node name="GreenCave" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -139,6 +203,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 3 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="BelowPlayer"]
+texture = ExtResource( 12 )
 centered = false
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
@@ -203,29 +271,31 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -39.5429, 727.321 )
 scale = Vector2( 1, 0.75991 )
-shape = SubResource( 1 )
+shape = SubResource( 169 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 2132.29, 718.372 )
 scale = Vector2( 1, 0.75991 )
-shape = SubResource( 1 )
+shape = SubResource( 169 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 1048.02, 1534.13 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 169 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 1028.85, -35.3651 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 169 )
 
 [node name="Portals" type="Node2D" parent="."]
 __meta__ = {
@@ -245,7 +315,7 @@ geoterra = 4
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport"]
 position = Vector2( 48.1908, 50 )
-shape = SubResource( 12 )
+shape = SubResource( 170 )
 
 [node name="Button" type="Sprite" parent="Portals/Teleport"]
 visible = false
@@ -265,7 +335,7 @@ geoterra = 4
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport2"]
 position = Vector2( 48.1908, 50 )
-shape = SubResource( 12 )
+shape = SubResource( 170 )
 
 [node name="Button" type="Sprite" parent="Portals/Teleport2"]
 visible = false
@@ -284,7 +354,7 @@ new_position = Vector2( 420, 315 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
 position = Vector2( 72.6899, 155.651 )
-shape = SubResource( 13 )
+shape = SubResource( 171 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToUp"]
 position = Vector2( 66.2164, 117.246 )
@@ -302,7 +372,7 @@ new_position = Vector2( 675, 800 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/VineCave"]
 position = Vector2( 71.7031, 124.399 )
-shape = SubResource( 14 )
+shape = SubResource( 172 )
 
 [node name="Button" type="Sprite" parent="Portals/VineCave"]
 position = Vector2( -15.6943, 95.8637 )
@@ -320,7 +390,7 @@ new_position = Vector2( 650, 600 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]
 position = Vector2( 58.7141, 165.815 )
-shape = SubResource( 13 )
+shape = SubResource( 171 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToDown"]
 position = Vector2( 73.0285, 127.993 )
@@ -349,26 +419,26 @@ bus = "Music"
 [node name="VineLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1662.35, 754.62 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 10 )
+script = SubResource( 173 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 11 )
+shape = SubResource( 174 )
 
 [node name="VineLadder4" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 68.8368, 377.011 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 4 )
+script = SubResource( 175 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder4"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 3 )
+shape = SubResource( 176 )
 
 [node name="VineLadder3" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1169.2, 191.155 )
@@ -380,7 +450,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder3"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 5 )
+shape = SubResource( 177 )
 
 [node name="VineLadder2" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1701.77, 580.393 )
@@ -392,7 +462,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder2"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 6 )
+shape = SubResource( 178 )
 
 [node name="VineLadder5" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 216.536, 867.893 )
@@ -404,7 +474,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder5"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 6 )
+shape = SubResource( 178 )
 
 [node name="VineLadder6" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 185.933, 791.973 )
@@ -416,7 +486,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder6"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 6 )
+shape = SubResource( 178 )
 
 [node name="VineLadder7" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 523.604, 508.516 )
@@ -428,7 +498,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder7"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 6 )
+shape = SubResource( 178 )
 
 [node name="VineLadder8" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 495.224, 482.347 )
@@ -440,31 +510,53 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder8"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 6 )
+shape = SubResource( 178 )
 
 [node name="waterarea" type="Area2D" parent="Interactables"]
 position = Vector2( 136.547, 1131.07 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 7 )
+script = SubResource( 179 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea"]
-shape = SubResource( 8 )
+shape = SubResource( 180 )
 
 [node name="waterarea2" type="Area2D" parent="Interactables"]
 position = Vector2( 519.566, 1167.8 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 7 )
+script = SubResource( 179 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea2"]
-shape = SubResource( 9 )
+shape = SubResource( 181 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CowboyCat" type="Area2D" parent="Node2D"]
+position = Vector2( 1598.53, 1164.21 )
+script = ExtResource( 8 )
+character_name = "Cowboy Cat"
+character_folder = "res://Assets/Levels/Geoterra/GreenCave/cowboycat"
+json_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.json"
+sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/CowboyCat"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 182 )
+animation = "idle"
+frame = 6
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CowboyCat"]
+position = Vector2( 2.47534, -6.80725 )
+shape = SubResource( 183 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
