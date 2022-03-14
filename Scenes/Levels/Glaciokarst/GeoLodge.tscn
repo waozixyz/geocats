@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Rain.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/FG_lodge_loft.png" type="Texture" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -306,14 +307,6 @@ VSeparator/styles/separator = SubResource( 42 )
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 29.9071, 18.5032 )
 
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 13 )
-region = Rect2( 13, 0, 13, 8 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 13 )
-region = Rect2( 26, 0, 13, 8 )
-
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 13, 8 )
@@ -322,17 +315,25 @@ region = Rect2( 0, 0, 13, 8 )
 atlas = ExtResource( 13 )
 region = Rect2( 39, 0, 13, 8 )
 
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 13 )
+region = Rect2( 13, 0, 13, 8 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 13 )
+region = Rect2( 26, 0, 13, 8 )
+
 [sub_resource type="SpriteFrames" id=51]
 animations = [ {
-"frames": [ SubResource( 47 ), SubResource( 48 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 48 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=52]
@@ -407,7 +408,6 @@ shape = SubResource( 10 )
 position = Vector2( 51, 630.871 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
-zoom = Vector2( 0.7, 0.7 )
 limit_right = 1323
 limit_bottom = 693
 editor_draw_limits = true
@@ -421,6 +421,10 @@ scale = Vector2( 7, 7 )
 [node name="fg_base" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 10 )
 centered = false
+
+[node name="FgLodgeLoft" type="Sprite" parent="AbovePlayer"]
+position = Vector2( 152, 41.0567 )
+texture = ExtResource( 21 )
 
 [node name="Box" type="StaticBody2D" parent="."]
 position = Vector2( 1036, 615.851 )
@@ -452,6 +456,7 @@ position = Vector2( -478, 26.036 )
 polygon = PoolVector2Array( 1409, -33.0456, 602, 190.263, 626, 214.296, 1524, -32.0443 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 5, 2.00277 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
@@ -539,9 +544,7 @@ shape = SubResource( 27 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
 collision_mask = 7
