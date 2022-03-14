@@ -20,8 +20,9 @@ func set_disable(obj: String, reason: String, state = true):
 		if not disable[obj].has(reason):
 			disable[obj].append(reason)
 	else:
-		disable[obj].remove(reason)
-		
+		if disable[obj].has(reason):
+			var pos = disable[obj].find(reason)
+			disable[obj].remove(pos)
 func is_disabled(obj : String, reason : String = ""):
 	obj = obj.to_lower()
 	
