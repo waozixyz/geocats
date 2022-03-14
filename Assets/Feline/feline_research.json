@@ -1,0 +1,51 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "ReadTedsBook",
+    "content": "Huh. So I guess Ted the nerd is long gone by now.@...And he's left us to pick up his slack.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "animation_in": "fade_in",
+    "avatar": "feline_unimpressed.png",
+    "content": "Let's not waste any more time.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "content": "My encyclopedia says that Chrysoberyl is a greenish gemstone, also known as Cat's Eye crystal...",
+    "next": "4"
+  },
+  "4": {
+    "name": "Feline",
+    "avatar": "feline_unimpressed.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "This place is like a kaleidoscope of gemstones... One of them must be Chrysoberyl. Let's find a sample, and bring it back to Dr. Letharia!",
+    "next": "5"
+  },
+  "5": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "...@A greenish gemstone, that also looks like a cat's eye...",
+    "next": ""
+  }
+}
