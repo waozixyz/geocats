@@ -525,6 +525,7 @@ position = Vector2( 2.9999, 4.00024 )
 shape = SubResource( 22 )
 
 [node name="Button" type="Sprite" parent="Portals/GoUp"]
+visible = false
 position = Vector2( 1, -48 )
 scale = Vector2( 0.306122, 0.298077 )
 z_index = 1
@@ -539,6 +540,7 @@ node_to_go = NodePath("../GoUp")
 shape = SubResource( 22 )
 
 [node name="Button" type="Sprite" parent="Portals/GoDown"]
+visible = false
 position = Vector2( -20.9099, -31.6201 )
 scale = Vector2( 0.306122, 0.298077 )
 z_index = 1
