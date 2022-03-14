@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -43,81 +43,82 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Notebook.png" type="Texture" id=41]
 [ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=42]
 [ext_resource path="res://Assets/Fonts/QixMono18Tight.tres" type="DynamicFont" id=43]
+[ext_resource path="res://Assets/Player/Spritesheets/kitten_tileset.png" type="Texture" id=44]
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=186]
 extents = Vector2( 21.6089, 9.60385 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=187]
 extents = Vector2( 28.8115, 9.60385 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=188]
 extents = Vector2( 19.2077, 22.8092 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=189]
 extents = Vector2( 38.4153, 16.8065 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=190]
 extents = Vector2( 34.374, 4798.62 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=191]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=192]
 extents = Vector2( 10.7142, 76.9122 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=193]
 extents = Vector2( 10.7142, 371.912 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=194]
 extents = Vector2( 10.7142, 255.484 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=195]
 extents = Vector2( 40.75, 29.2 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=196]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 14, 9 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=197]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 9, 14, 9 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=198]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 18, 14, 9 )
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="SpriteFrames" id=199]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 196 ), SubResource( 197 ), SubResource( 198 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=200]
 extents = Vector2( 40.75, 29.2 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=201]
 atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 10, 12 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=202]
 atlas = ExtResource( 20 )
 region = Rect2( 10, 0, 10, 12 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=203]
 atlas = ExtResource( 20 )
 region = Rect2( 20, 0, 10, 12 )
 
-[sub_resource type="SpriteFrames" id=36]
+[sub_resource type="SpriteFrames" id=204]
 animations = [ {
-"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 201 ), SubResource( 202 ), SubResource( 203 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=37]
+[sub_resource type="GDScript" id=205]
 script/source = "extends AnimatedSprite
 class_name SpriteAutoPlay
 
@@ -128,30 +129,30 @@ func _ready():
 	play()
 "
 
-[sub_resource type="RectangleShape2D" id=39]
+[sub_resource type="RectangleShape2D" id=206]
 extents = Vector2( 40.75, 29.2 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=207]
 atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=208]
 atlas = ExtResource( 21 )
 region = Rect2( 9, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=209]
 atlas = ExtResource( 21 )
 region = Rect2( 18, 0, 9, 11 )
 
-[sub_resource type="SpriteFrames" id=43]
+[sub_resource type="SpriteFrames" id=210]
 animations = [ {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 42 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 42 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ) ],
+"frames": [ SubResource( 207 ), SubResource( 208 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 208 ), SubResource( 208 ), SubResource( 208 ), SubResource( 208 ), SubResource( 208 ), SubResource( 209 ), SubResource( 209 ), SubResource( 208 ), SubResource( 208 ), SubResource( 208 ), SubResource( 208 ), SubResource( 208 ), SubResource( 209 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ), SubResource( 207 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=44]
+[sub_resource type="GDScript" id=211]
 script/source = "extends AnimatedSprite
 class_name SpriteAutoPlay
 
@@ -162,72 +163,141 @@ func _ready():
 	play()
 "
 
-[sub_resource type="CircleShape2D" id=12]
+[sub_resource type="AtlasTexture" id=174]
+atlas = ExtResource( 44 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=175]
+atlas = ExtResource( 44 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=176]
+atlas = ExtResource( 44 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=177]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=178]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=179]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=180]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=181]
+atlas = ExtResource( 44 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=182]
+atlas = ExtResource( 44 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=183]
+atlas = ExtResource( 44 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=184]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=185]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=213]
+animations = [ {
+"frames": [ SubResource( 174 ), SubResource( 175 ), SubResource( 176 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 177 ), SubResource( 178 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 179 ), SubResource( 180 ), SubResource( 181 ), SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ), SubResource( 179 ), SubResource( 179 ), SubResource( 179 ), SubResource( 179 ), SubResource( 180 ), SubResource( 180 ), SubResource( 179 ), SubResource( 179 ), SubResource( 182 ), SubResource( 179 ), SubResource( 182 ), SubResource( 182 ), SubResource( 182 ), SubResource( 183 ), SubResource( 182 ), SubResource( 182 ), SubResource( 182 ), SubResource( 179 ), SubResource( 179 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=214]
+extents = Vector2( 58.1104, 39.5977 )
+
+[sub_resource type="CircleShape2D" id=215]
 radius = 14.0
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=216]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 8, 7 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=217]
 atlas = ExtResource( 22 )
 region = Rect2( 8, 0, 8, 7 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=218]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 7, 8, 7 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=219]
 atlas = ExtResource( 22 )
 region = Rect2( 8, 7, 8, 7 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=220]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 8, 7 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=221]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 216 ), SubResource( 217 ), SubResource( 218 ), SubResource( 219 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 220 ) ],
 "loop": true,
 "name": "resting",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=222]
 extents = Vector2( 27.5, 27 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=223]
 extents = Vector2( 58.5, 27 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=224]
 atlas = ExtResource( 34 )
 region = Rect2( 0, 0, 79, 98 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=225]
 atlas = ExtResource( 34 )
 region = Rect2( 79, 0, 79, 98 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=226]
 atlas = ExtResource( 34 )
 region = Rect2( 158, 0, 79, 98 )
 
-[sub_resource type="SpriteFrames" id=48]
+[sub_resource type="SpriteFrames" id=227]
 animations = [ {
-"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"frames": [ SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=228]
 extents = Vector2( 67, 22.5 )
 
-[sub_resource type="DynamicFont" id=64]
+[sub_resource type="DynamicFont" id=229]
 size = 14
 extra_spacing_top = -4
 extra_spacing_bottom = -4
@@ -235,24 +305,24 @@ extra_spacing_char = -1
 extra_spacing_space = -2
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=65]
+[sub_resource type="DynamicFont" id=230]
 size = 12
 extra_spacing_top = -2
 extra_spacing_bottom = -2
 extra_spacing_space = -1
 font_data = ExtResource( 16 )
 
-[sub_resource type="RectangleShape2D" id=55]
+[sub_resource type="RectangleShape2D" id=231]
 extents = Vector2( 12.5, 12.5 )
 
-[sub_resource type="DynamicFont" id=63]
+[sub_resource type="DynamicFont" id=232]
 size = 14
 extra_spacing_bottom = -7
 extra_spacing_char = -1
 extra_spacing_space = -2
 font_data = ExtResource( 16 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=233]
 extents = Vector2( 106.5, 89.5 )
 
 [node name="Waterfalls" type="Node2D"]
@@ -1555,47 +1625,49 @@ polygon = PoolVector2Array( 2360.14, 743.097, 2402.16, 695.078, 2506.6, 672.269,
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 6978.39, 472.989 )
-shape = SubResource( 50 )
+shape = SubResource( 186 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 7121.25, 477.791 )
-shape = SubResource( 2 )
+shape = SubResource( 187 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 925.57, 1187.27 )
-shape = SubResource( 3 )
+shape = SubResource( 188 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 831.933, 1199.28 )
-shape = SubResource( 4 )
+shape = SubResource( 189 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -22.9818, 2273.02 )
 scale = Vector2( 1, 0.75991 )
-shape = SubResource( 5 )
+shape = SubResource( 190 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 8424.91, 2273.02 )
 scale = Vector2( 1, 0.75991 )
-shape = SubResource( 5 )
+shape = SubResource( 190 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 4651.2, 4534.86 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 190 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 3980.79, -142.857 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 190 )
 
 [node name="Portals" type="Node2D" parent="."]
 __meta__ = {
@@ -1613,7 +1685,7 @@ geoterra = 5
 next_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave"]
-shape = SubResource( 6 )
+shape = SubResource( 191 )
 
 [node name="Button" type="Sprite" parent="Portals/ToCave"]
 position = Vector2( 0, -66 )
@@ -1652,7 +1724,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
 position = Vector2( 0, -3.80214 )
-shape = SubResource( 7 )
+shape = SubResource( 192 )
 
 [node name="LastLadder2" type="Area2D" parent="Ladders"]
 position = Vector2( 753, 1742 )
@@ -1664,7 +1736,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder2"]
 position = Vector2( 0, -3.80214 )
-shape = SubResource( 9 )
+shape = SubResource( 193 )
 
 [node name="LastLadder3" type="Area2D" parent="Ladders"]
 position = Vector2( 1273, 2548 )
@@ -1676,7 +1748,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder3"]
 position = Vector2( 0, -3.80214 )
-shape = SubResource( 10 )
+shape = SubResource( 194 )
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -1689,11 +1761,11 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat1"]
 position = Vector2( 20.8, 33.5306 )
-shape = SubResource( 26 )
+shape = SubResource( 195 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/VacationCat1"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 30 )
+frames = SubResource( 199 )
 animation = "idle"
 centered = false
 script = ExtResource( 23 )
@@ -1704,18 +1776,22 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
+character_name = "Vacation Cat"
+character_folder = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat2"
+json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat2/VacationCat2.json"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat2/VacationCat2.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat2"]
 position = Vector2( 20.8, 33.5306 )
-shape = SubResource( 32 )
+shape = SubResource( 200 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/VacationCat2"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 36 )
+frames = SubResource( 204 )
 animation = "idle"
 frame = 2
 centered = false
-script = SubResource( 37 )
+script = SubResource( 205 )
 
 [node name="VacationCat3" type="Area2D" parent="NPC"]
 position = Vector2( 6483, 91 )
@@ -1723,20 +1799,44 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
+character_name = "Vacation Cat"
+character_folder = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat3"
+json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat3/VacationCat3.json"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat3/VacationCat3.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat3"]
 position = Vector2( 20.8, 33.5306 )
-shape = SubResource( 39 )
+shape = SubResource( 206 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/VacationCat3"]
 position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 43 )
+frames = SubResource( 210 )
 animation = "idle"
-frame = 25
+frame = 2
 playing = true
 centered = false
-script = SubResource( 44 )
+script = SubResource( 211 )
+
+[node name="GeoKitten" type="Area2D" parent="NPC"]
+position = Vector2( 5336.68, 1425.04 )
+script = ExtResource( 14 )
+character_name = "GeoKitten"
+character_folder = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten"
+json_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.json"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/GeoKitten"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 213 )
+animation = "idle"
+frame = 3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NPC/GeoKitten"]
+position = Vector2( 0.472656, 5.82715 )
+shape = SubResource( 214 )
 
 [node name="Ball" type="Node2D" parent="."]
 
@@ -1746,17 +1846,17 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball/Consumable"]
 position = Vector2( 2, 4 )
-shape = SubResource( 12 )
+shape = SubResource( 215 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ball/Consumable"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/Consumable/StaticBody2D"]
 position = Vector2( 2, 4 )
-shape = SubResource( 12 )
+shape = SubResource( 215 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ball/Consumable"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 18 )
+frames = SubResource( 221 )
 animation = "resting"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1812,7 +1912,7 @@ texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer1"]
 position = Vector2( -6.5, 7 )
-shape = SubResource( 52 )
+shape = SubResource( 222 )
 
 [node name="OpenDrawer2" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
 position = Vector2( 150, 314 )
@@ -1838,7 +1938,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer2"]
 position = Vector2( 9.5, 11 )
-shape = SubResource( 53 )
+shape = SubResource( 223 )
 
 [node name="OpenDrawer3" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
 position = Vector2( 271, 314 )
@@ -1864,7 +1964,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer3"]
 position = Vector2( 9.5, 11 )
-shape = SubResource( 53 )
+shape = SubResource( 223 )
 
 [node name="OpenDrawer4" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
 position = Vector2( 390, 314 )
@@ -1890,7 +1990,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer4"]
 position = Vector2( 9.5, 11 )
-shape = SubResource( 53 )
+shape = SubResource( 223 )
 
 [node name="OpenDrawer5" type="Area2D" parent="CanvasLayer/ResearchCabin/Drawers"]
 position = Vector2( 496, 318 )
@@ -1916,7 +2016,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer5"]
 position = Vector2( -6.5, 7 )
-shape = SubResource( 52 )
+shape = SubResource( 222 )
 
 [node name="Light" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
 margin_right = 230.0
@@ -1974,7 +2074,7 @@ click_close_anywhere = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenMicroscope"]
 position = Vector2( -6.5, 7 )
-shape = SubResource( 52 )
+shape = SubResource( 222 )
 
 [node name="0xoplasmosisMicroscope" type="TextureRect" parent="CanvasLayer/ResearchCabin/OpenMicroscope"]
 visible = false
@@ -1997,7 +2097,8 @@ texture = ExtResource( 37 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
-frames = SubResource( 48 )
+frames = SubResource( 227 )
+frame = 2
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
@@ -2092,7 +2193,7 @@ click_close_anywhere = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
 position = Vector2( -16.0001, 10.5 )
-shape = SubResource( 54 )
+shape = SubResource( 228 )
 
 [node name="Notebook" type="Control" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
 visible = false
@@ -2114,8 +2215,8 @@ margin_left = 130.0
 margin_top = 24.0
 margin_right = 240.0
 margin_bottom = 129.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Chrysoberyl and it's 0xoplasmotic inhibiting effects
 "
 autowrap = true
@@ -2125,8 +2226,8 @@ margin_left = 17.0
 margin_top = 121.0
 margin_right = 248.0
 margin_bottom = 176.0
+custom_fonts/font = SubResource( 229 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 64 )
 text = "Last week, I was peacefully going about my business collecting gems. My noble and important science work was rudely interrupted by an obnoxious cat infected with 0xoplasmosis. I saw my life flash before my eyes as it rushed towards me. Out of fear, I offered it one of my"
 autowrap = true
 
@@ -2135,8 +2236,8 @@ margin_left = 17.0
 margin_top = 179.0
 margin_right = 193.0
 margin_bottom = 226.0
+custom_fonts/font = SubResource( 229 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 64 )
 text = "Gemstones... The Chrysoberyl. It caught a ray of sunlight, and refracted into the eyes of the beast before me."
 autowrap = true
 
@@ -2145,8 +2246,8 @@ margin_left = 284.0
 margin_top = 126.0
 margin_right = 508.0
 margin_bottom = 236.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 43 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment. More research is needed."
 autowrap = true
 
@@ -2174,7 +2275,7 @@ margin_top = 4.0
 margin_right = 194.0
 margin_bottom = 276.0
 theme = ExtResource( 19 )
-custom_fonts/font = SubResource( 65 )
+custom_fonts/font = SubResource( 230 )
 text = "To whom it may concern,
 After meeting the beautful Professor Mittens at this year's annual Geocats Science Fair, no longer can I remain in solitude. This selfless work to which I devote myself now seems meaningless. It's now that I know the true meaning of love!
 Here I leave my life's work, free to anyone who wishes to take up the burden of saving this world. 
@@ -2198,7 +2299,7 @@ to_toggle = NodePath("StickyNote1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
 position = Vector2( -5.5, 11.5 )
-shape = SubResource( 55 )
+shape = SubResource( 231 )
 
 [node name="StickyNote1" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
 visible = false
@@ -2220,8 +2321,8 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 139.0
 margin_bottom = 135.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
 autowrap = true
 
@@ -2232,7 +2333,7 @@ to_toggle = NodePath("StickyNote2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note2"]
 position = Vector2( -5.5, 11.5 )
-shape = SubResource( 55 )
+shape = SubResource( 231 )
 
 [node name="StickyNote2" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note2"]
 visible = false
@@ -2259,8 +2360,8 @@ margin_top = 5.0
 margin_right = 136.0
 margin_bottom = 128.0
 theme = ExtResource( 19 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
 autowrap = true
 
@@ -2271,7 +2372,7 @@ to_toggle = NodePath("StickyNote3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note3"]
 position = Vector2( -5.5, 11.5 )
-shape = SubResource( 55 )
+shape = SubResource( 231 )
 
 [node name="StickyNote3" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note3"]
 visible = false
@@ -2300,8 +2401,8 @@ margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 143.0
 theme = ExtResource( 19 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 43 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hey bro, it's been too long since we've hung out last!
 let's go on a hike together soon... I'll bring the catnip  
 
@@ -2315,7 +2416,7 @@ to_toggle = NodePath("StickyNote4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note4"]
 position = Vector2( -5.5, 11.5 )
-shape = SubResource( 55 )
+shape = SubResource( 231 )
 
 [node name="StickyNote4" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note4"]
 visible = false
@@ -2341,8 +2442,8 @@ margin_top = 3.0
 margin_right = 132.0
 margin_bottom = 129.0
 theme = ExtResource( 19 )
-custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
 custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
 text = "Call back the Nonaco Department of Corperate Technology...URGENT!
 [3:26 PM]"
 autowrap = true
@@ -2354,7 +2455,7 @@ to_toggle = NodePath("StickyNote5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
 position = Vector2( -5.5, -3.5 )
-shape = SubResource( 55 )
+shape = SubResource( 231 )
 
 [node name="StickyNote5" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
 visible = false
@@ -2376,8 +2477,8 @@ margin_left = 6.0
 margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 71.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 43 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "This statue I saw during my visit to the castle was to DIE for. It would look perfect"
 autowrap = true
 
@@ -2386,8 +2487,8 @@ margin_left = 73.0
 margin_top = 62.0
 margin_right = 132.0
 margin_bottom = 127.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 43 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "in my new appartment in GeoCity."
 autowrap = true
 
@@ -2404,7 +2505,7 @@ to_toggle = NodePath("StickyNote6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
 position = Vector2( -5.5, 11.5 )
-shape = SubResource( 55 )
+shape = SubResource( 231 )
 
 [node name="StickyNote6" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
 visible = false
@@ -2427,7 +2528,7 @@ margin_top = 2.0
 margin_right = 135.0
 margin_bottom = 123.0
 theme = ExtResource( 19 )
-custom_fonts/font = SubResource( 63 )
+custom_fonts/font = SubResource( 232 )
 text = "Hey Ted, 
 nice to meet you at the science fair, and thank you for sharing interest in my work. 
 It's always nice to meet a new friend and fellow scientist,
@@ -2446,7 +2547,7 @@ make_node_visible = NodePath("../CanvasLayer/ResearchCabin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShowResearchCabin"]
 position = Vector2( -0.5, -12.5 )
-shape = SubResource( 51 )
+shape = SubResource( 233 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
