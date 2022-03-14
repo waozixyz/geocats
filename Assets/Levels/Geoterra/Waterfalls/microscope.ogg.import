@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/microscope.ogg-ff17524c627d9331a174a78be516ec88.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Waterfalls/microscope.ogg"
+dest_files=[ "res://.import/microscope.ogg-ff17524c627d9331a174a78be516ec88.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
