@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/addition.ogg-b845e54ab1e5a399c340d650137a9d4e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/CavityPuzzleRoom/addition.ogg"
+dest_files=[ "res://.import/addition.ogg-b845e54ab1e5a399c340d650137a9d4e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
