@@ -730,7 +730,9 @@ shape = SubResource( 46 )
 [node name="ToMountain" type="Area2D" parent="Portals"]
 position = Vector2( 8953.83, 942 )
 script = ExtResource( 27 )
-sound_effect = 1
+__meta__ = {
+"_edit_group_": true
+}
 territory = 1
 geoterra = 4
 this_loc = 4

@@ -3,7 +3,7 @@ class_name GeneralLevel
 
 export(Vector2) var respawn_location
 export(bool) var reload_on_death
-var locations = []
+var locations : PoolVector2Array
 var dead
 var music
 var player
@@ -59,7 +59,8 @@ func _ready():
 	# set player location
 	if locations:
 		locations[0] = player.position
-		player.position = locations[global.user.location]
+		if locations[global.user.location]:
+			player.position = locations[global.user.location]
 	if not respawn_location:
 		respawn_location = player.position
 

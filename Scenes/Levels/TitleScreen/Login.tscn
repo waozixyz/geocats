@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Levels/TitleScreen/Login.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/ui_buttons.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -25,6 +26,18 @@ void fragment(){
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://Assets/Fonts/qix_mono.ttf"
@@ -57,7 +70,7 @@ margin_top = 438.7
 margin_right = 364.701
 margin_bottom = 473.7
 theme = ExtResource( 3 )
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,7 +82,7 @@ margin_top = 450.0
 margin_right = 246.0
 margin_bottom = 475.0
 custom_colors/font_color = Color( 0.972549, 0.619608, 0.203922, 1 )
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 6 )
 text = "V.420 - Demo Days"
 __meta__ = {
 "_edit_use_anchors_": false

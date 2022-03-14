@@ -1,7 +1,7 @@
 extends Teleport
 class_name TeleportExternal
 
-onready var locations = get_tree().get_current_scene().locations
+onready var current_scenes = get_tree().get_current_scene()
 
 export(Territory.Names) var territory
 export(Territory.GeoCity) var geocity
@@ -24,10 +24,12 @@ var level_name
 func _ready():
 	territory_name = Territory.Names.keys()[territory]
 	level_name = _get_level_name()
-	if this_loc > -1:
+	var locations = current_scene.locations
+	if this_loc > 0:
 		if locations.size() < this_loc:
-			locations.resize(this_loc)
-		locations.insert(this_loc, position)
+			locations.resize(this_loc + 1)
+		locations[this_loc] = position
+	current_scene.locations = locations
 func _input(_event):
 	if _can_interact():
 		global.user.location = next_loc

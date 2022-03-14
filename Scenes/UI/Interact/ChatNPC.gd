@@ -54,7 +54,7 @@ func _process(_delta):
 		if touching and not active:
 			start_chat()
 			if not player_disable.empty():
-				player.disable(player_disable)
+				current_scene.set_disable("player", player_disable)
 			active = true
 
 		if dia_started and dialogue.modulate.a == 0:
@@ -63,7 +63,7 @@ func _process(_delta):
 			if not skip_var.empty():
 				PROGRESS.variables[skip_var] = true
 			if not player_disable.empty():
-				player.enable(player_disable)
+				current_scene.set_disable("player", player_disable, false)
 	else:
 		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
 			if has_parent and get_parent().is_on_floor() or not has_parent:
