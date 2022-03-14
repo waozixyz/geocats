@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/pocket.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/minus.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Levels/Geoterra/CavityPuzzleRoom/TicketMachine.gd" type="Script" id=37]
 [ext_resource path="res://Scenes/Levels/Geoterra/CavityPuzzleRoom/TicketMachineSprite.gd" type="Script" id=38]
+[ext_resource path="res://Scenes/UI/Interact/TextureButton.gd" type="Script" id=39]
 
 [sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 119, 68 )
@@ -543,9 +544,8 @@ margin_bottom = 208.0
 texture_normal = ExtResource( 34 )
 texture_pressed = ExtResource( 35 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 39 )
+sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/addition.ogg"
 
 [node name="Minus" type="TextureButton" parent="CanvasLayer/HUD"]
 margin_left = 534.0
@@ -555,9 +555,11 @@ margin_bottom = 237.0
 texture_normal = ExtResource( 36 )
 texture_pressed = ExtResource( 33 )
 expand = true
+script = ExtResource( 39 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/subtract.ogg"
 
 [node name="Enter" type="TextureButton" parent="CanvasLayer/HUD"]
 margin_left = 534.0
@@ -567,9 +569,11 @@ margin_bottom = 179.0
 texture_normal = ExtResource( 32 )
 texture_pressed = ExtResource( 28 )
 expand = true
+script = ExtResource( 39 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/enter.ogg"
 
 [node name="Ticket" type="Button" parent="CanvasLayer/HUD"]
 margin_left = 309.0
@@ -612,7 +616,7 @@ __meta__ = {
 [node name="Default" parent="." instance=ExtResource( 9 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 97, 433 )
+position = Vector2( 595, 460 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 limit_right = 1300

@@ -1815,7 +1815,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 21
+frame = 4
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1832,7 +1832,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 10
+frame = 20
 playing = true
 flip_h = true
 

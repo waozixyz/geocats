@@ -87,7 +87,10 @@ func _process(delta):
 			ticks = 0
 			success = false
 			print_ticket = true
-
+			AudioManager.play_sound("res://Assets/Levels/Geoterra/CavityPuzzleRoom/completed.ogg")
+			minus.disabled = true
+			plus.disabled = true
+			enter.disabled = true
 	if failed:
 		sprite.frame = 11
 		ticks += 1
