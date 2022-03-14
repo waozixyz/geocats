@@ -12,4 +12,5 @@ func _on_Button_toggled(button_pressed):
 				newline()
 			f.close()
 	elif button_pressed==false:
-			print('goodbye') # hide popup
+		pass
+

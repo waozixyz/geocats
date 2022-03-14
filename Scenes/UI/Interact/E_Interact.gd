@@ -36,8 +36,6 @@ func _is_disabled():
 	return state
 var timer = -1
 func _process(delta):
-	if name == "ShowInstructionManual":
-		print(name ,_is_disabled())
 	if timer >= 0:
 		timer += delta
 		disabled = true

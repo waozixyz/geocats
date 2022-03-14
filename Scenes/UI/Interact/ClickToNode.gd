@@ -29,7 +29,6 @@ func _process(_delta):
 		if node_toggle and node_toggle.visible:
 			if not current_scene.is_disabled("e_interact", name):
 				current_scene.set_disable("e_interact", name)
-				print(name)
 		elif current_scene.is_disabled("e_interact", name):
 			current_scene.set_disable("e_interact", name, false)
 

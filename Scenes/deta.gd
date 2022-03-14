@@ -93,7 +93,6 @@ func _get_request(id, path, body = null, jwt = global.data.access_token):
 	if body:
 		# Convert data to json string:
 		var query = JSON.print(body)
-		print(body, headers, uri)
 		error = http_request.request(uri, headers, false, HTTPClient.METHOD_POST, query)
 	else:
 		error = http_request.request(uri, headers, false)
@@ -114,6 +113,5 @@ func _on_request_completed(_result, res_code, _headers, body, id):
 		if key == id:
 			request.response = parse_json(body.get_string_from_utf8())
 			request.res_code = res_code
-			print(request.response)
 			request["status"] = "has_response"
 

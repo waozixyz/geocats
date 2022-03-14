@@ -20,7 +20,6 @@ func set_disable(obj: String, reason: String, state = true):
 		if not disable[obj].has(reason):
 			disable[obj].append(reason)
 	else:
-		print(reason, disable["e_interact"])
 		disable[obj].remove(reason)
 		
 func is_disabled(obj : String, reason : String = ""):
