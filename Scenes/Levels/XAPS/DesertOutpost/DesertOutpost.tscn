@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=2]
+[gd_scene load_steps=187 format=2]
 
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/far_bg.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/georing.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/sandy.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/ernst.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_glare.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_hud.png" type="Texture" id=22]
@@ -107,30 +106,30 @@ func _physics_process(delta):
 "
 
 [sub_resource type="AtlasTexture" id=3]
-region = Rect2( 0, 0, 14, 11 )
-
-[sub_resource type="AtlasTexture" id=4]
-region = Rect2( 14, 0, 14, 11 )
-
-[sub_resource type="AtlasTexture" id=5]
-region = Rect2( 28, 0, 14, 11 )
-
-[sub_resource type="AtlasTexture" id=6]
 region = Rect2( 0, 11, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 region = Rect2( 14, 11, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=5]
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=6]
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=7]
+region = Rect2( 28, 0, 14, 11 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 4 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -248,30 +247,30 @@ func _physics_process(delta):
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 19 )
-region = Rect2( 0, 0, 12, 10 )
+region = Rect2( 12, 0, 12, 10 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 19 )
-region = Rect2( 0, 10, 12, 10 )
+region = Rect2( 24, 0, 12, 10 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 19 )
-region = Rect2( 12, 0, 12, 10 )
+region = Rect2( 0, 0, 12, 10 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 19 )
-region = Rect2( 24, 0, 12, 10 )
+region = Rect2( 0, 10, 12, 10 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 16 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -388,39 +387,33 @@ func _physics_process(delta):
 "
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 18 )
 region = Rect2( 12, 0, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 18 )
-region = Rect2( 24, 0, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 8, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 12, 8 )
 
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 18 )
+[sub_resource type="AtlasTexture" id=25]
 region = Rect2( 12, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=26]
+region = Rect2( 24, 0, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=27]
+region = Rect2( 0, 8, 12, 8 )
 
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 22 ), SubResource( 24 ), SubResource( 22 ), SubResource( 22 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 26 ), SubResource( 24 ), SubResource( 24 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -540,27 +533,27 @@ func _physics_process(delta):
 region = Rect2( 0, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=34]
-region = Rect2( 14, 0, 14, 11 )
+region = Rect2( 28, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=35]
-region = Rect2( 0, 0, 14, 11 )
+region = Rect2( 14, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=36]
-region = Rect2( 28, 0, 14, 11 )
+region = Rect2( 0, 0, 14, 11 )
 
 [sub_resource type="AtlasTexture" id=37]
 region = Rect2( 14, 0, 14, 11 )
 
 [sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ), SubResource( 36 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -682,46 +675,46 @@ region = Rect2( 0, 0, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 52 )
-region = Rect2( 12, 8, 12, 8 )
+region = Rect2( 12, 0, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 52 )
-region = Rect2( 0, 8, 12, 8 )
+region = Rect2( 24, 0, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 52 )
-region = Rect2( 24, 8, 12, 8 )
+region = Rect2( 0, 8, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 52 )
-region = Rect2( 0, 16, 12, 8 )
+region = Rect2( 0, 0, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 52 )
-region = Rect2( 0, 0, 12, 8 )
+region = Rect2( 12, 8, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 52 )
-region = Rect2( 12, 0, 12, 8 )
+region = Rect2( 0, 8, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 52 )
-region = Rect2( 24, 0, 12, 8 )
+region = Rect2( 24, 8, 12, 8 )
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 52 )
-region = Rect2( 0, 8, 12, 8 )
+region = Rect2( 0, 16, 12, 8 )
 
 [sub_resource type="SpriteFrames" id=52]
 animations = [ {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 45 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 45 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 44 ), SubResource( 44 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 44 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 43 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 48 ), SubResource( 49 ), SubResource( 48 ), SubResource( 50 ), SubResource( 49 ) ],
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 43 ), SubResource( 44 ), SubResource( 43 ), SubResource( 45 ), SubResource( 44 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 49 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 49 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 48 ), SubResource( 48 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 50 ), SubResource( 50 ), SubResource( 51 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 48 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -855,14 +848,14 @@ region = Rect2( 12, 0, 12, 8 )
 
 [sub_resource type="SpriteFrames" id=61]
 animations = [ {
-"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 58 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ), SubResource( 57 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 59 ), SubResource( 60 ) ],
+"frames": [ SubResource( 57 ), SubResource( 58 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 60 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ), SubResource( 59 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -1179,34 +1172,34 @@ func _input(_event):
 extents = Vector2( 40.8073, 23.3975 )
 
 [sub_resource type="AtlasTexture" id=76]
-region = Rect2( 0, 0, 16, 12 )
-
-[sub_resource type="AtlasTexture" id=77]
-region = Rect2( 32, 0, 16, 12 )
-
-[sub_resource type="AtlasTexture" id=78]
-region = Rect2( 16, 0, 16, 12 )
-
-[sub_resource type="AtlasTexture" id=79]
-region = Rect2( 0, 12, 16, 12 )
-
-[sub_resource type="AtlasTexture" id=80]
 region = Rect2( 16, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=81]
+[sub_resource type="AtlasTexture" id=77]
 region = Rect2( 32, 12, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=78]
+region = Rect2( 0, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=79]
+region = Rect2( 32, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=80]
+region = Rect2( 16, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=81]
+region = Rect2( 0, 12, 16, 12 )
 
 [sub_resource type="SpriteFrames" id=82]
 animations = [ {
-"frames": [ SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 78 ), SubResource( 78 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 80 ), SubResource( 81 ) ],
+"frames": [ SubResource( 76 ), SubResource( 77 ) ],
 "loop": true,
 "name": "walk",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 78 ), SubResource( 78 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 80 ), SubResource( 80 ), SubResource( 81 ), SubResource( 81 ), SubResource( 81 ), SubResource( 81 ), SubResource( 81 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 } ]
 
 [sub_resource type="GDScript" id=83]
@@ -1330,58 +1323,58 @@ extents = Vector2( 34.2662, 45.8725 )
 [sub_resource type="RectangleShape2D" id=114]
 extents = Vector2( 12.157, 98.633 )
 
-[sub_resource type="RectangleShape2D" id=116]
+[sub_resource type="RectangleShape2D" id=115]
 extents = Vector2( 16.9067, 47.8872 )
 
-[sub_resource type="RectangleShape2D" id=118]
+[sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 25, 136 )
 
-[sub_resource type="RectangleShape2D" id=120]
+[sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 19, 108 )
 
-[sub_resource type="RectangleShape2D" id=122]
+[sub_resource type="RectangleShape2D" id=118]
 extents = Vector2( 19, 278.057 )
 
-[sub_resource type="RectangleShape2D" id=124]
+[sub_resource type="RectangleShape2D" id=119]
 extents = Vector2( 34, 360 )
 
-[sub_resource type="RectangleShape2D" id=126]
+[sub_resource type="RectangleShape2D" id=120]
 extents = Vector2( 25, 618 )
 
-[sub_resource type="RectangleShape2D" id=128]
+[sub_resource type="RectangleShape2D" id=121]
 extents = Vector2( 25, 166 )
 
-[sub_resource type="RectangleShape2D" id=129]
+[sub_resource type="RectangleShape2D" id=122]
 extents = Vector2( 31, 349.385 )
 
-[sub_resource type="RectangleShape2D" id=131]
+[sub_resource type="RectangleShape2D" id=123]
 extents = Vector2( 27, 552 )
 
-[sub_resource type="RectangleShape2D" id=133]
+[sub_resource type="RectangleShape2D" id=124]
 extents = Vector2( 31, 302 )
 
-[sub_resource type="RectangleShape2D" id=135]
+[sub_resource type="RectangleShape2D" id=125]
 extents = Vector2( 31, 53 )
 
-[sub_resource type="ButtonGroup" id=136]
+[sub_resource type="ButtonGroup" id=126]
 
-[sub_resource type="ButtonGroup" id=137]
+[sub_resource type="ButtonGroup" id=127]
 
-[sub_resource type="DynamicFontData" id=138]
+[sub_resource type="DynamicFontData" id=128]
 font_path = "res://Assets/Fonts/qix_mono.ttf"
 
-[sub_resource type="DynamicFont" id=139]
+[sub_resource type="DynamicFont" id=129]
 size = 55
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 extra_spacing_top = -3
 extra_spacing_bottom = -3
-font_data = SubResource( 138 )
+font_data = SubResource( 128 )
 
-[sub_resource type="RectangleShape2D" id=140]
+[sub_resource type="RectangleShape2D" id=130]
 extents = Vector2( 113.714, 68.1932 )
 
-[sub_resource type="RectangleShape2D" id=141]
+[sub_resource type="RectangleShape2D" id=131]
 extents = Vector2( 73, 78 )
 
 [node name="DesertOutpost" type="Node2D"]
@@ -1441,7 +1434,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 9
+frame = 5
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -1496,7 +1489,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 28 )
 animation = "idle"
-frame = 14
+frame = 18
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -1524,7 +1517,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 38 )
 animation = "idle"
-frame = 9
+frame = 1
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -1552,7 +1545,6 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "walk"
-frame = 2
 playing = true
 
 [node name="SandcatArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -1580,7 +1572,6 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
 animation = "idle"
-frame = 4
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -1608,7 +1599,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 69 )
 animation = "idle"
-frame = 28
+frame = 8
 playing = true
 
 [node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
@@ -1690,7 +1681,9 @@ shape = SubResource( 86 )
 position = Vector2( 503.984, 156 )
 texture = ExtResource( 58 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
+[node name="Ground" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
@@ -1902,7 +1895,9 @@ one_way_collision = true
 polygon = PoolVector2Array( 1552.8, 1622.4, 1552.8, 1634.4, 1584, 1644.8, 1644, 1666.4, 1683.2, 1685.6, 1720.8, 1700.8, 1748.8, 1706.4, 1820.8, 1706.4, 1844, 1708.8, 1875.2, 1718.4, 1920.8, 1725.6, 1943.2, 1730.4, 1988, 1748.8, 2030.4, 1766.4, 2061.6, 1778.4, 2081.6, 1794.4, 2125.6, 1824, 2153.6, 1838.4, 2168.8, 1848.8, 2182.4, 1859.2, 2196.8, 1856, 2213.6, 1860, 2227.2, 1868, 2233.6, 1871.2, 2234.4, 1860.8, 2220.8, 1842.4, 2208.8, 1833.6, 2187.2, 1833.6, 2177.6, 1844.8, 2167.2, 1840.8, 2136, 1817.6, 2093.6, 1791.2, 2055.2, 1766.4, 2012, 1750.4, 1979.2, 1737.6, 1938.4, 1720.8, 1881.6, 1712, 1826.4, 1697.6, 1749.6, 1700, 1716.8, 1690.4, 1665.6, 1671.2, 1573.6, 1634.4 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=["end"]]
+[node name="End" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 position = Vector2( 22, 83 )
 collision_layer = 7
 collision_mask = 7
@@ -1955,7 +1950,7 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder13"]
 position = Vector2( 690.305, 800.853 )
-shape = SubResource( 116 )
+shape = SubResource( 115 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 2015, 2071 )
@@ -1968,7 +1963,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
 position = Vector2( 0, 4 )
-shape = SubResource( 118 )
+shape = SubResource( 116 )
 
 [node name="Ladder9" type="Area2D" parent="Ladders"]
 position = Vector2( 1135, 1473 )
@@ -1981,7 +1976,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder9"]
 position = Vector2( 0, 4 )
-shape = SubResource( 120 )
+shape = SubResource( 117 )
 
 [node name="Ladder10" type="Area2D" parent="Ladders"]
 position = Vector2( 1066, 1048.14 )
@@ -1994,7 +1989,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder10"]
 position = Vector2( 0, 4.26245 )
-shape = SubResource( 122 )
+shape = SubResource( 118 )
 
 [node name="Ladder11" type="Area2D" parent="Ladders"]
 position = Vector2( 672, 904 )
@@ -2007,7 +2002,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder11"]
 position = Vector2( 0, 4 )
-shape = SubResource( 124 )
+shape = SubResource( 119 )
 
 [node name="Ladder7" type="Area2D" parent="Ladders"]
 position = Vector2( 5124, 1155 )
@@ -2020,7 +2015,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7"]
 position = Vector2( 0, 4 )
-shape = SubResource( 126 )
+shape = SubResource( 120 )
 
 [node name="Ladder8" type="Area2D" parent="Ladders"]
 position = Vector2( 5342, 435 )
@@ -2033,7 +2028,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder8"]
 position = Vector2( 0, 4 )
-shape = SubResource( 128 )
+shape = SubResource( 121 )
 
 [node name="Ladder4" type="Area2D" parent="Ladders"]
 position = Vector2( 4099.38, 1771.38 )
@@ -2046,7 +2041,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
 position = Vector2( 0, 23 )
-shape = SubResource( 129 )
+shape = SubResource( 122 )
 
 [node name="Ladder12" type="Area2D" parent="Ladders"]
 position = Vector2( 3835, 1704 )
@@ -2058,7 +2053,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder12"]
-shape = SubResource( 131 )
+shape = SubResource( 123 )
 
 [node name="Ladder5" type="Area2D" parent="Ladders"]
 position = Vector2( 2499, 715 )
@@ -2070,7 +2065,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
-shape = SubResource( 133 )
+shape = SubResource( 124 )
 
 [node name="Ladder6" type="Area2D" parent="Ladders"]
 position = Vector2( 1935, 351 )
@@ -2082,7 +2077,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6"]
-shape = SubResource( 135 )
+shape = SubResource( 125 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 0.33, 0.33 )
@@ -2127,7 +2122,7 @@ margin_left = -803.0
 margin_top = -46.0
 margin_right = -679.0
 margin_bottom = 74.0
-group = SubResource( 136 )
+group = SubResource( 126 )
 texture_normal = ExtResource( 27 )
 texture_pressed = ExtResource( 25 )
 texture_focused = ExtResource( 25 )
@@ -2141,7 +2136,7 @@ margin_left = -703.0
 margin_top = 96.055
 margin_right = -579.0
 margin_bottom = 216.055
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 26 )
 texture_focused = ExtResource( 26 )
@@ -2155,7 +2150,7 @@ margin_left = -433.0
 margin_top = -46.0
 margin_right = -309.0
 margin_bottom = 74.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 47 )
 texture_pressed = ExtResource( 29 )
 texture_focused = ExtResource( 29 )
@@ -2169,7 +2164,7 @@ margin_left = -617.477
 margin_top = -46.0
 margin_right = -493.477
 margin_bottom = 74.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 28 )
 texture_focused = ExtResource( 28 )
@@ -2183,7 +2178,7 @@ margin_left = -513.823
 margin_top = 96.055
 margin_right = -389.823
 margin_bottom = 216.055
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 40 )
 texture_focused = ExtResource( 40 )
@@ -2197,7 +2192,7 @@ margin_left = -329.0
 margin_top = 96.055
 margin_right = -205.0
 margin_bottom = 216.055
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 50 )
 texture_pressed = ExtResource( 38 )
 texture_focused = ExtResource( 38 )
@@ -2211,7 +2206,7 @@ margin_left = -803.0
 margin_top = 233.0
 margin_right = -679.0
 margin_bottom = 353.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 44 )
 texture_pressed = ExtResource( 42 )
 texture_focused = ExtResource( 42 )
@@ -2225,7 +2220,7 @@ margin_left = -617.477
 margin_top = 233.0
 margin_right = -493.477
 margin_bottom = 353.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 46 )
 texture_pressed = ExtResource( 45 )
 texture_focused = ExtResource( 45 )
@@ -2239,7 +2234,7 @@ margin_left = -433.0
 margin_top = 233.0
 margin_right = -309.0
 margin_bottom = 353.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 31 )
 texture_pressed = ExtResource( 30 )
 texture_focused = ExtResource( 30 )
@@ -2253,7 +2248,7 @@ margin_left = -703.0
 margin_top = 377.946
 margin_right = -579.0
 margin_bottom = 497.946
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 35 )
 texture_pressed = ExtResource( 17 )
 texture_focused = ExtResource( 17 )
@@ -2267,7 +2262,7 @@ margin_left = -513.823
 margin_top = 377.946
 margin_right = -389.823
 margin_bottom = 497.946
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 48 )
 texture_pressed = ExtResource( 51 )
 texture_focused = ExtResource( 51 )
@@ -2281,7 +2276,7 @@ margin_left = -329.0
 margin_top = 377.946
 margin_right = -205.0
 margin_bottom = 497.946
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 34 )
 texture_pressed = ExtResource( 36 )
 texture_focused = ExtResource( 36 )
@@ -2295,7 +2290,7 @@ margin_left = -244.0
 margin_top = -46.0
 margin_right = -120.0
 margin_bottom = 74.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 41 )
 texture_pressed = ExtResource( 33 )
 texture_focused = ExtResource( 33 )
@@ -2309,7 +2304,7 @@ margin_left = -242.0
 margin_top = 233.0
 margin_right = -118.0
 margin_bottom = 353.0
-group = SubResource( 137 )
+group = SubResource( 127 )
 texture_normal = ExtResource( 49 )
 texture_pressed = ExtResource( 43 )
 texture_focused = ExtResource( 43 )
@@ -2322,8 +2317,8 @@ __meta__ = {
 margin_right = 917.0
 margin_bottom = 450.0
 focus_mode = 2
+custom_fonts/normal_font = SubResource( 129 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 139 )
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2336,7 +2331,7 @@ script = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
 position = Vector2( 4.22003, -2.28882e-05 )
-shape = SubResource( 140 )
+shape = SubResource( 130 )
 
 [node name="DesertTelescope" type="Area2D" parent="."]
 position = Vector2( 5162.68, 374 )
@@ -2348,7 +2343,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DesertTelescope"]
 position = Vector2( 0, 7.29907 )
-shape = SubResource( 141 )
+shape = SubResource( 131 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
