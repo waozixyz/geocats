@@ -72,7 +72,7 @@ func _update_dialogue(territory):
 func _update_spotlight(pos):
 	spotlight.position = pos
 	spotlight.visible = true
-func _input_event( viewport, event, shape_idx, territory):
+func _input_event(_viewport, event, _shape_idx, territory):
 	if event is InputEventMouse and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		if territory.name != "Null":
 			if last_territory != territory.name and chat.modulate.a == 0:

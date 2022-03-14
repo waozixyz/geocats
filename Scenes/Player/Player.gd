@@ -139,6 +139,7 @@ func _ready():
 # main process loop
 var dmg_blink = 0
 var velocity_log = []
+var no_move
 
 func _physics_process(delta):
 	var dfps = delta * global.fps
@@ -147,9 +148,12 @@ func _physics_process(delta):
 	._physics_process(delta)
 
 	if current_scene.is_disabled(name):
-		velocity.x = 0
-		play("idle")
+		if not no_move:
+			velocity.x = 0
+			play("idle")
+		no_move = true
 	else:
+		no_move = false
 		update_inputs()
 		state_machine.logic(delta)
 		

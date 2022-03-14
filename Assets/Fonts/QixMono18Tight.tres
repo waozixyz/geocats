@@ -3,7 +3,8 @@
 [ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 10
-extra_spacing_bottom = -4
+size = 18
+extra_spacing_bottom = -7
+extra_spacing_char = -2
 extra_spacing_space = -2
 font_data = ExtResource( 1 )

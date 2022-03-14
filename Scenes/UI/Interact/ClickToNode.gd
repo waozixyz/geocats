@@ -1,7 +1,10 @@
 extends Area2D
 
+onready var current_scene = get_tree().get_current_scene()
+
 export(NodePath) var to_toggle
 export(bool) var click_close_anywhere = false
+export(bool) var disable_e_on_show = true
 var timer
 var node_toggle
 var colli
@@ -19,11 +22,18 @@ func _ready():
 		colli.shape.set_extents(Vector2(640, 480))
 		add_child(colli)
 
-func _process(delta):
+func _process(_delta):
 	if click_close_anywhere and node_toggle:
 		colli.disabled = false if node_toggle.visible else true
+	if disable_e_on_show:
+		if node_toggle and node_toggle.visible:
+			if not current_scene.is_disabled("e_interact", name):
+				current_scene.set_disable("e_interact", name)
+				print(name)
+		elif current_scene.is_disabled("e_interact", name):
+			current_scene.set_disable("e_interact", name, false)
 
-func _input_event( viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouse and event.is_pressed() and event.button_index == BUTTON_LEFT and node_toggle:
 		if timer.time_left == 0:
 			node_toggle.visible = false if node_toggle.visible else true

@@ -20,6 +20,7 @@ func set_disable(obj: String, reason: String, state = true):
 		if not disable[obj].has(reason):
 			disable[obj].append(reason)
 	else:
+		print(reason, disable["e_interact"])
 		disable[obj].remove(reason)
 		
 func is_disabled(obj : String, reason : String = ""):
@@ -59,6 +60,7 @@ func _get_music():
 					printerr("could not find level music")
 	return music
 func _ready():
+	camera = _get_camera()
 	# set player location
 	if locations:
 		locations[0] = player.position
@@ -69,7 +71,6 @@ func _ready():
 
 var tween
 func _process(_delta):
-
 	if global.user.hp <= 0:
 		tween = utils.tween_position(player, respawn_location)
 		player.disable('dead')
@@ -78,7 +79,8 @@ func _process(_delta):
 		global.user.hp += 1
 	elif dead and not tween.is_active():
 		if reload_on_death:
-			get_tree().reload_current_scene()
+			var err = get_tree().reload_current_scene()
+			assert(err == OK)
 		else:
 			player.enable('dead')
 			dead = false

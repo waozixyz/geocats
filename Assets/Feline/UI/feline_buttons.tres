@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=19 format=2]
 
-[ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Feline/Map/popup.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/scrollbar/scrollbar.png" type="Texture" id=4]
 

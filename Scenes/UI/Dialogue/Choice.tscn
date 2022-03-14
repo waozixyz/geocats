@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/UI/chat_elements/choicebox_V1.png" type="Texture" id=2]
 
 [node name="Choice" type="Label"]

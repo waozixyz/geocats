@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/Background.png" type="Texture" id=2]
@@ -34,7 +34,7 @@
 [ext_resource path="res://Scenes/Levels/Glaciokarst/Battle/Beam.gd" type="Script" id=32]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/9_CavesBattle_outro.ogg" type="AudioStream" id=33]
 [ext_resource path="res://Assets/Agents/NornaWyrd/Attacks/medium_lazer.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Fonts/QixMono.tres" type="DynamicFont" id=35]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=35]
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=36]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/9_CavesBattle_intro.ogg" type="AudioStream" id=37]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/BoulderPieceSpriteSheet.png" type="Texture" id=38]
@@ -456,6 +456,12 @@ extents = Vector2( 63.9928, 29.2025 )
 
 [sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 18.0491, 29.2025 )
+
+[sub_resource type="DynamicFont" id=91]
+size = 24
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 35 )
 
 [sub_resource type="StyleBoxFlat" id=89]
 bg_color = Color( 0.403922, 0, 0, 1 )
@@ -1086,11 +1092,8 @@ margin_left = 251.0
 margin_top = 11.0
 margin_right = 371.0
 margin_bottom = 36.0
-custom_fonts/font = ExtResource( 35 )
+custom_fonts/font = SubResource( 91 )
 text = "Norna & Wyrd"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Red" type="Panel" parent="HUD/HpBar"]
 margin_left = 122.0
