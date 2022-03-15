@@ -23,7 +23,7 @@ func play_sound(sound_file, volume = 1, loop = false, object = null, player = nu
 		sound.stream = load(sound_file)
 		if sound.stream is AudioStreamOGGVorbis:
 			sound.stream.loop = loop
-		sound.volume_db = volume
+		sound.volume_db = linear2db(volume * 0.01)
 		sound.bus = "Sound"
 		sound.connect("finished", self, "_finished_playing", [playing.size(), sound, object])
 		sound.play()
