@@ -99,7 +99,7 @@
   "11": {
     "type": "text",
     "name": "Feline",
-    "avatar": "feline.png",
+    "avatar": "feline_shocked.png",
     "position": "left",
     "animation_in": "fade_in",
     "animation_out": "shake_weak_short",
