@@ -1844,7 +1844,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 13
+frame = 12
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1860,6 +1860,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
+frame = 17
 playing = true
 flip_h = true
 
@@ -2246,7 +2247,6 @@ text = "\"This strange Geode seems to be emitting the sound of static electricit
 autowrap = true
 
 [node name="OpenNotebook" type="Area2D" parent="CanvasLayer/ResearchCabin"]
-visible = false
 position = Vector2( 211, 217 )
 script = ExtResource( 1 )
 to_toggle = NodePath("Notebook")
@@ -2258,6 +2258,7 @@ position = Vector2( -16.0001, 10.5 )
 shape = SubResource( 56 )
 
 [node name="Notebook" type="Control" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
+visible = false
 margin_left = -181.165
 margin_top = -116.511
 margin_right = 78.8354
@@ -2334,6 +2335,7 @@ text = "This mechanism briefly stopped the monster from advancing upon me, and I
 autowrap = true
 
 [node name="Letter" type="Control" parent="CanvasLayer/ResearchCabin"]
+visible = false
 margin_left = 189.879
 margin_top = 16.3001
 margin_right = 229.879
@@ -2545,6 +2547,7 @@ position = Vector2( -5.5, -3.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote5" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
+visible = false
 margin_left = 26.0
 margin_top = 38.0
 margin_right = 97.0
