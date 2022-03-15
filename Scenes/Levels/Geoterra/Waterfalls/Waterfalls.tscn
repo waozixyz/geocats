@@ -195,14 +195,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -215,6 +207,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -222,14 +222,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -1656,9 +1656,7 @@ position = Vector2( 831.933, 1199.28 )
 shape = SubResource( 4 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -1841,7 +1839,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 18
+frame = 2
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1857,7 +1855,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 24
+frame = 15
 playing = true
 flip_h = true
 
@@ -2281,8 +2279,8 @@ margin_left = 124.611
 margin_top = 19.7774
 margin_right = 258.611
 margin_bottom = 81.7774
-custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 57 )
 text = "Chrysoberyl: Anti-0xoplasmotic?"
 autowrap = true
 
@@ -2295,8 +2293,8 @@ margin_left = 25.707
 margin_top = 126.472
 margin_right = 256.707
 margin_bottom = 193.472
-custom_fonts/font = SubResource( 58 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 58 )
 text = "dreaded 0xoplasmosis infection.
 I saw my life flash before my eyes as the monster rushed towards me. Out of fear, I offered it one of my Gemstones..."
 autowrap = true
@@ -2309,8 +2307,8 @@ margin_left = 127.0
 margin_top = 46.0
 margin_right = 251.0
 margin_bottom = 123.0
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "Last week, while I was peacefully going about my business collecting gems, I was rudely interrupted by an obnoxious cat infected with the"
 autowrap = true
 
@@ -2319,8 +2317,8 @@ margin_left = 22.1986
 margin_top = 182.831
 margin_right = 198.199
 margin_bottom = 229.831
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "...The Chrysoberyl. 
 It caught a ray of sunlight, and refracted into the eyes of the beast before me."
 autowrap = true
@@ -2330,8 +2328,8 @@ margin_left = 278.855
 margin_top = 126.697
 margin_right = 502.855
 margin_bottom = 236.697
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment? More research is needed."
 autowrap = true
 
@@ -2406,8 +2404,8 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 139.0
 margin_bottom = 135.0
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
 autowrap = true
 
@@ -2448,8 +2446,8 @@ margin_top = 5.0
 margin_right = 136.0
 margin_bottom = 128.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
 autowrap = true
 
@@ -2493,8 +2491,8 @@ margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 143.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "Hey bro, it's been too long since we've hung out!
 let's go on a hike together soon... I'll bring the catnip  
 
@@ -2535,8 +2533,8 @@ margin_top = 3.0
 margin_right = 132.0
 margin_bottom = 129.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "Call back the Nonaco Department of Corperate Technology...
 URGENT!
 [3:26 PM]"
@@ -2575,8 +2573,8 @@ margin_left = 5.80005
 margin_top = 2.0
 margin_right = 133.8
 margin_bottom = 71.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This statue I saw during my visit to the castle was to DIE for. It would look PURRfect in"
 autowrap = true
 __meta__ = {
@@ -2588,8 +2586,8 @@ margin_left = 75.5997
 margin_top = 65.9995
 margin_right = 134.6
 margin_bottom = 130.999
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "my new
 research
 base."
@@ -2615,6 +2613,7 @@ position = Vector2( -5.5, 11.5 )
 shape = SubResource( 60 )
 
 [node name="StickyNote6" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
+visible = false
 margin_left = -157.0
 margin_top = 73.0
 margin_right = -20.0
