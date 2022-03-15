@@ -32,7 +32,7 @@ enum Geoterra {
 	GeoCacheRoom
 	Mountain
 	GreenCave
-	Watterfalls
+	Waterfalls
 }
 
 enum Glaciokarst {

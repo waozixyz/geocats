@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
@@ -22,6 +22,9 @@ extents = Vector2( 47.1908, 33.7617 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 99.799, 77.3968 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 46.6365, 32.3975 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 64.9714, 54.129 )
@@ -196,6 +199,7 @@ extents = Vector2( 33.2397, 28.051 )
 script = ExtResource( 9 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
+position = Vector2( -0.443603, -0.443726 )
 scale = Vector2( 5, 5 )
 __meta__ = {
 "_edit_group_": true
@@ -304,13 +308,15 @@ __meta__ = {
 }
 
 [node name="Teleport" type="Area2D" parent="Portals"]
-position = Vector2( 441.577, 934.537 )
+position = Vector2( 441.577, 935.567 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 4
 territory = 1
+next_loc = 5
+this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport"]
 position = Vector2( 48.1908, 50 )
@@ -323,7 +329,7 @@ scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 10 )
 
 [node name="Teleport2" type="Area2D" parent="Portals"]
-position = Vector2( 1628.38, 296.821 )
+position = Vector2( 1676.16, 339.473 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -331,68 +337,83 @@ __meta__ = {
 sound_effect = 7
 territory = 1
 geoterra = 6
+next_loc = 1
+this_loc = 2
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport2"]
-position = Vector2( 48.1908, 50 )
 shape = SubResource( 2 )
 
 [node name="Button" type="Sprite" parent="Portals/Teleport2"]
 visible = false
-position = Vector2( -28.2695, -8.47357 )
+position = Vector2( -55.5283, -50.8046 )
 scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 10 )
 
 [node name="CaveToUp" type="Area2D" parent="Portals"]
-position = Vector2( 641.865, 440.062 )
+position = Vector2( 727.304, 586.927 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 4
+node_to_go = NodePath("../CaveToDown")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
-position = Vector2( 72.6899, 155.651 )
 shape = SubResource( 3 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToUp"]
 visible = false
-position = Vector2( 66.2164, 117.246 )
+position = Vector2( -20.6412, -30.4038 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="OneWayCave" type="Area2D" parent="Portals"]
+position = Vector2( 675.826, 797.684 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/OneWayCave"]
+shape = SubResource( 26 )
+
+[node name="Button" type="Sprite" parent="Portals/OneWayCave"]
+visible = false
+position = Vector2( -20.6412, -30.4038 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
 [node name="VineCave" type="Area2D" parent="Portals"]
-position = Vector2( 1601.84, 378.95 )
+position = Vector2( 1678.9, 500.595 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 4
+node_to_go = NodePath("../OneWayCave")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/VineCave"]
-position = Vector2( 71.7031, 124.399 )
 shape = SubResource( 4 )
 
 [node name="Button" type="Sprite" parent="Portals/VineCave"]
-visible = false
-position = Vector2( -15.6943, 95.8637 )
+position = Vector2( -99.5374, -23.8427 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
 [node name="CaveToDown" type="Area2D" parent="Portals"]
-position = Vector2( 361.105, 117.753 )
+position = Vector2( 435.741, 274.067 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 4
+node_to_go = NodePath("../CaveToUp")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]
-position = Vector2( 58.7141, 165.815 )
 shape = SubResource( 3 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToDown"]
 visible = false
-position = Vector2( 73.0285, 127.993 )
+position = Vector2( 5.70392, -31.4854 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
@@ -548,7 +569,7 @@ sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 scale = Vector2( 4, 4 )
 frames = SubResource( 24 )
 animation = "idle"
-frame = 8
+frame = 1
 playing = true
 flip_h = true
 

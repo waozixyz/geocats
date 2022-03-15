@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_fg.png" type="Texture" id=2]
@@ -224,7 +224,10 @@ extents = Vector2( 12, 355.324 )
 extents = Vector2( 12, 100 )
 
 [sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 50, 50 )
+extents = Vector2( 118.859, 112.238 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 83.0044, 53.769 )
 
 [sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 98.6899, 138.24 )
@@ -750,8 +753,27 @@ this_loc = 4
 shape = SubResource( 47 )
 
 [node name="Button" type="Sprite" parent="Portals/ToMountain"]
-visible = false
-position = Vector2( 6.16992, -27 )
+position = Vector2( -46.5, -40.4968 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 18 )
+
+[node name="ToGreenCave" type="Area2D" parent="Portals"]
+position = Vector2( 5822.86, 2597.23 )
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_group_": true
+}
+territory = 1
+geoterra = 5
+next_loc = 1
+this_loc = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToGreenCave"]
+position = Vector2( -0.987793, -8.22998 )
+shape = SubResource( 53 )
+
+[node name="Button" type="Sprite" parent="Portals/ToGreenCave"]
+position = Vector2( 60.8154, -42.4717 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 18 )
 
