@@ -635,7 +635,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -666,7 +666,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 23 )
 animation = "idle"
-frame = 10
+frame = 6
 playing = true
 
 [node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -729,7 +729,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "walk"
-frame = 6
+frame = 5
 playing = true
 
 [node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -760,7 +760,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 50 )
 animation = "idle"
-frame = 8
+frame = 12
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -791,7 +791,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 56 )
 animation = "idle"
-frame = 32
+frame = 4
 playing = true
 
 [node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
