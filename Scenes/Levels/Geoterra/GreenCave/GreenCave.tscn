@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Player/Spritesheets/cowboy_tileset.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_bg_vine.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave.ogg" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.374, 1107.3 )
@@ -23,13 +23,13 @@ extents = Vector2( 47.1908, 33.7617 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 99.799, 77.3968 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 46.6365, 32.3975 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 64.9714, 54.129 )
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Area2D
 class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
 
@@ -56,10 +56,10 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 9, 203.27 )
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=8]
 script/source = "extends Area2D
 class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
 
@@ -86,16 +86,16 @@ func _on_body_exited(body):
 		body.on_ladder = false
 "
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 9, 299.142 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 9, 131.468 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 9, 60.4341 )
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=12]
 script/source = "extends Area2D
 
 signal splash
@@ -128,71 +128,71 @@ func _on_body_exited(body:PhysicsBody2D):
 			emit_signal(\"splash\", body.position.x)
 "
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 134.445, 130.565 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 248.793, 102.488 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 11 )
-region = Rect2( 15, 0, 15, 15 )
+region = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 11 )
-region = Rect2( 30, 0, 15, 15 )
+region = Rect2( 15, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 11 )
-region = Rect2( 45, 0, 15, 15 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 11 )
-region = Rect2( 60, 0, 15, 15 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 11 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 11 )
-region = Rect2( 45, 15, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 11 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 11 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 11 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
 
-[sub_resource type="SpriteFrames" id=24]
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 15 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 17 ), SubResource( 18 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 15 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 18 ), SubResource( 19 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 33.2397, 28.051 )
 
 [node name="GreenCave" type="Node2D"]
@@ -374,7 +374,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/OneWayCave"]
-shape = SubResource( 26 )
+shape = SubResource( 4 )
 
 [node name="Button" type="Sprite" parent="Portals/OneWayCave"]
 visible = false
@@ -392,7 +392,7 @@ sound_effect = 4
 node_to_go = NodePath("../OneWayCave")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/VineCave"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Button" type="Sprite" parent="Portals/VineCave"]
 position = Vector2( -99.5374, -23.8427 )
@@ -429,7 +429,8 @@ position = Vector2( 38.924, 76.978 )
 texture = ExtResource( 2 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 13 )
+autoplay = true
 bus = "Music"
 
 [node name="Interactables" type="Node2D" parent="."]
@@ -439,26 +440,26 @@ bus = "Music"
 [node name="VineLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1662.35, 754.62 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 5 )
+script = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="VineLadder4" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 68.8368, 377.011 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 7 )
+script = SubResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder4"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="VineLadder3" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1169.2, 191.155 )
@@ -470,7 +471,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder3"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="VineLadder2" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1701.77, 580.393 )
@@ -482,7 +483,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder2"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="VineLadder5" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 216.536, 867.893 )
@@ -494,7 +495,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder5"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="VineLadder6" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 185.933, 791.973 )
@@ -506,7 +507,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder6"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="VineLadder7" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 523.604, 508.516 )
@@ -518,7 +519,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder7"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="VineLadder8" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 495.224, 482.347 )
@@ -530,31 +531,31 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder8"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="waterarea" type="Area2D" parent="Interactables"]
 position = Vector2( 136.547, 1131.07 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 11 )
+script = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea"]
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="waterarea2" type="Area2D" parent="Interactables"]
 position = Vector2( 519.566, 1167.8 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 11 )
+script = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea2"]
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -567,15 +568,15 @@ sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/CowboyCat"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 24 )
+frames = SubResource( 25 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CowboyCat"]
 position = Vector2( 2.47534, -6.80725 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

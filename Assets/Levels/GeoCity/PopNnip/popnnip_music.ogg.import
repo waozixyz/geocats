@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/popnnip_music.ogg-a79380d1d74303b3bb9aabd9615c0869.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/PopNnip/popnnip_music.ogg"
+dest_files=[ "res://.import/popnnip_music.ogg-a79380d1d74303b3bb9aabd9615c0869.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/waterfalls_lead.ogg-ee36bddf359e2a3cf40b4026d7aa01ee.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Waterfalls/waterfalls_lead.ogg"
+dest_files=[ "res://.import/waterfalls_lead.ogg-ee36bddf359e2a3cf40b4026d7aa01ee.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
