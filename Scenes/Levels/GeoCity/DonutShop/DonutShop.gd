@@ -1,4 +1,5 @@
 extends GeneralLevel
+
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 var affogato
 var move_to_pos = false
@@ -20,7 +21,7 @@ func _physics_process(delta):
 		affogato = player.get_node("Affogato")
 		player.remove_follower(affogato)
 		add_child(affogato)
-		player.disable("donutshop")
+		set_disable("player", "donutshop")
 		global.user.following.remove("Affogato")
 		move_to_pos = true
 	elif move_to_pos:
@@ -54,5 +55,5 @@ func _physics_process(delta):
 			if affogato.position.x > 700:
 				move_to_pos = false
 				remove_child(affogato)
-				player.enable("donutshop")
+				set_disable("player", "donutshop", false)
 				player.position.x += 10
