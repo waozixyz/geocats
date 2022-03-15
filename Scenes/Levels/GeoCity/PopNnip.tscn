@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/popnnip_FG.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/potentialBG_popnnip.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Levels/GeoCity/PopNnip/popnnip_music.ogg" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 9 )
@@ -74,31 +75,31 @@ extents = Vector2( 48, 46 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 22, 4 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 10, 4 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 22, 4 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 42, 4 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 8, 253 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 506, 10 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 27, 47 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 27, 27 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 5.5, 73 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 60.1039, 35 )
 
 [node name="PopNnip" type="Node2D"]
@@ -205,7 +206,7 @@ one_way_collision = true
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -510, 168 )
-shape = SubResource( 27 )
+shape = SubResource( 19 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
@@ -215,30 +216,32 @@ one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -134, 120 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -146, 164 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -2417, -881 )
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -1440, -885 )
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -1943, -1127 )
-shape = SubResource( 22 )
+shape = SubResource( 23 )
 
 [node name="GeoCity" type="Area2D" parent="."]
 position = Vector2( 12, 395 )
@@ -252,7 +255,7 @@ geocity = 2
 next_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GeoCity"]
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="Button" type="Sprite" parent="GeoCity"]
 visible = false
@@ -270,7 +273,7 @@ geocity = 4
 this_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arcade"]
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="Button" type="Sprite" parent="Arcade"]
 visible = false
@@ -284,6 +287,12 @@ volume_db = -13.0
 autoplay = true
 bus = "Music"
 
+[node name="Music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -13.0
+autoplay = true
+bus = "Music"
+
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 606, 271 )
 script = ExtResource( 3 )
@@ -293,7 +302,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
 position = Vector2( 0.5, -3 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="Shopkeeper" type="Area2D" parent="."]
 position = Vector2( 418, 378 )
@@ -303,7 +312,7 @@ json_file = "res://Assets/Levels/GeoCity/PopNnip/Shopkeeper/shopkeeper.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeeper"]
 position = Vector2( -2, 16 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="Default" parent="." instance=ExtResource( 8 )]
 

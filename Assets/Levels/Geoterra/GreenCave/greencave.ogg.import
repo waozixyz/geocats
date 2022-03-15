@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/greencave.ogg-1b82caf92d5b41634f3fc82f0cffd5a0.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/GreenCave/greencave.ogg"
+dest_files=[ "res://.import/greencave.ogg-1b82caf92d5b41634f3fc82f0cffd5a0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
