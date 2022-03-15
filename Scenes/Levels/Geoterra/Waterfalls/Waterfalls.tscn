@@ -1657,9 +1657,7 @@ position = Vector2( 831.933, 1199.28 )
 shape = SubResource( 4 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -1831,7 +1829,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 1
+frame = 19
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1847,7 +1845,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 11
+frame = 18
 playing = true
 flip_h = true
 
@@ -1899,7 +1897,6 @@ animation = "resting"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ResearchCabin" type="Control" parent="CanvasLayer"]
-visible = false
 margin_left = 33.0
 margin_top = 52.0
 margin_right = 608.0
@@ -1940,6 +1937,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer1")
 disable_e_on_show = false
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
 
 [node name="Drawer1" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer1"]
 visible = false
@@ -1963,6 +1961,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer2")
 disable_e_on_show = false
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
 
 [node name="Drawer2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer2"]
 visible = false
@@ -1989,6 +1988,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer3")
 disable_e_on_show = false
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
 
 [node name="Drawer3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer3"]
 visible = false
@@ -2015,6 +2015,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer4")
 disable_e_on_show = false
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
 
 [node name="Drawer4" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer4"]
 visible = false
@@ -2041,6 +2042,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer5")
 disable_e_on_show = false
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
 
 [node name="Drawer5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer5"]
 visible = false
@@ -2112,6 +2114,7 @@ position = Vector2( 377, 214 )
 script = ExtResource( 1 )
 to_toggle = NodePath("0xoplasmosisMicroscope")
 click_close_anywhere = true
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/microscope.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenMicroscope"]
 position = Vector2( -6.5, 7 )
@@ -2139,7 +2142,6 @@ texture = ExtResource( 37 )
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 55 )
-frame = 2
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
@@ -2231,6 +2233,7 @@ position = Vector2( 211, 217 )
 script = ExtResource( 1 )
 to_toggle = NodePath("Notebook")
 click_close_anywhere = true
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/letter.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
 position = Vector2( -16.0001, 10.5 )
@@ -2259,8 +2262,8 @@ margin_left = 130.0
 margin_top = 24.0
 margin_right = 240.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 57 )
 text = "Chrysoberyl and it's 0xoplasmotic inhibiting effects"
 autowrap = true
 
@@ -2269,8 +2272,8 @@ margin_left = 17.0
 margin_top = 122.0
 margin_right = 248.0
 margin_bottom = 177.0
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "My noble and important science work was rudely interrupted by an obnoxious cat infected with 0xoplasmosis. I saw my life flash before my eyes as it rushed towards me. Out of fear, I offered it one of my"
 autowrap = true
 
@@ -2279,8 +2282,8 @@ margin_left = 129.0
 margin_top = 67.0
 margin_right = 248.0
 margin_bottom = 117.0
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "Last week, I was peacefully going about my business collecting gems. "
 autowrap = true
 
@@ -2289,8 +2292,8 @@ margin_left = 17.0
 margin_top = 179.0
 margin_right = 193.0
 margin_bottom = 226.0
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "Gemstones... The Chrysoberyl. It caught a ray of sunlight, and refracted into the eyes of the beast before me."
 autowrap = true
 
@@ -2299,8 +2302,8 @@ margin_left = 284.0
 margin_top = 126.0
 margin_right = 508.0
 margin_bottom = 236.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment. More research is needed."
 autowrap = true
 
@@ -2349,6 +2352,7 @@ mouse_filter = 2
 position = Vector2( 340, 101 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote1")
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
 position = Vector2( -5.5, 11.5 )
@@ -2374,8 +2378,8 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 139.0
 margin_bottom = 135.0
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
 autowrap = true
 
@@ -2383,6 +2387,7 @@ autowrap = true
 position = Vector2( 381, 108 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote2")
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note2"]
 position = Vector2( -5.5, 11.5 )
@@ -2413,8 +2418,8 @@ margin_top = 5.0
 margin_right = 136.0
 margin_bottom = 128.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
 autowrap = true
 
@@ -2422,6 +2427,7 @@ autowrap = true
 position = Vector2( 428, 101 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote3")
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note3"]
 position = Vector2( -5.5, 11.5 )
@@ -2454,8 +2460,8 @@ margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 143.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "Hey bro, it's been too long since we've hung out last!
 let's go on a hike together soon... I'll bring the catnip  
 
@@ -2466,6 +2472,7 @@ autowrap = true
 position = Vector2( 473, 111 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote4")
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note4"]
 position = Vector2( -5.5, 11.5 )
@@ -2495,8 +2502,8 @@ margin_top = 3.0
 margin_right = 132.0
 margin_bottom = 129.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "Call back the Nonaco Department of Corperate Technology...URGENT!
 [3:26 PM]"
 autowrap = true
@@ -2505,6 +2512,7 @@ autowrap = true
 position = Vector2( 379, 164 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote5")
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
 position = Vector2( -5.5, -3.5 )
@@ -2530,8 +2538,8 @@ margin_left = 6.0
 margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 71.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This statue I saw during my visit to the castle was to DIE for. It would look perfect"
 autowrap = true
 
@@ -2540,8 +2548,8 @@ margin_left = 73.0
 margin_top = 62.0
 margin_right = 132.0
 margin_bottom = 127.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "in my new appartment in GeoCity."
 autowrap = true
 
@@ -2555,6 +2563,7 @@ flip_h = true
 position = Vector2( 418, 141 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote6")
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
 position = Vector2( -5.5, 11.5 )

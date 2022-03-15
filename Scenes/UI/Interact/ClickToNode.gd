@@ -5,6 +5,9 @@ onready var current_scene = get_tree().get_current_scene()
 export(NodePath) var to_toggle
 export(bool) var click_close_anywhere = false
 export(bool) var disable_e_on_show = true
+export(String, FILE, "*.ogg, *.wav") var sound_file = ""
+export(float) var sound_volume = 1
+
 var timer
 var node_toggle
 var colli
@@ -35,5 +38,6 @@ func _process(_delta):
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouse and event.is_pressed() and event.button_index == BUTTON_LEFT and node_toggle:
 		if timer.time_left == 0:
+			AudioManager.play_sound(sound_file, sound_volume)
 			node_toggle.visible = false if node_toggle.visible else true
 		timer.start()
