@@ -1692,8 +1692,7 @@ __meta__ = {
 }
 territory = 1
 geoterra = 5
-next_loc = 2
-this_loc = 1
+next_loc = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCave"]
 shape = SubResource( 6 )
@@ -1833,11 +1832,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 22
-=======
 frame = 4
->>>>>>> origin/main
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1853,11 +1848,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 25
-=======
 frame = 9
->>>>>>> origin/main
 playing = true
 flip_h = true
 
@@ -1882,7 +1873,7 @@ sound_file = "res://Assets/Feline/Sounds/happyfeline.wav"
 trigger_on_touch = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FelineAreaTower"]
-position = Vector2( 1258.13, 1153.59 )
+position = Vector2( 1259.76, 1153.59 )
 shape = SubResource( 42 )
 
 [node name="Ball" type="Node2D" parent="."]
