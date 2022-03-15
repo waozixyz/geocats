@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sol.wav-f420003a767abc546e1f86cef86cc351.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/sol/sol.wav"
+dest_files=[ "res://.import/sol.wav-f420003a767abc546e1f86cef86cc351.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

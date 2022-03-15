@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ernst.wav-13f7c7f51435f1d9e78f37d7ffa088ae.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.wav"
+dest_files=[ "res://.import/ernst.wav-13f7c7f51435f1d9e78f37d7ffa088ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

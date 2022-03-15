@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=2]
+[gd_scene load_steps=178 format=2]
 
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
@@ -59,6 +59,7 @@
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=57]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/fg_panel.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/bg_plants.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc.png" type="Texture" id=60]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -187,29 +188,38 @@ extents = Vector2( 18.7898, 11.573 )
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 37.4065, 23.6743 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 60 )
 region = Rect2( 0, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=125]
+atlas = ExtResource( 60 )
+region = Rect2( 0, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=126]
+atlas = ExtResource( 60 )
 region = Rect2( 14, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=127]
+atlas = ExtResource( 60 )
 region = Rect2( 0, 0, 14, 11 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=128]
+atlas = ExtResource( 60 )
+region = Rect2( 14, 0, 14, 11 )
+
+[sub_resource type="AtlasTexture" id=129]
+atlas = ExtResource( 60 )
 region = Rect2( 28, 0, 14, 11 )
-
-[sub_resource type="AtlasTexture" id=30]
-region = Rect2( 14, 0, 14, 11 )
 
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ) ],
+"frames": [ SubResource( 124 ), SubResource( 125 ), SubResource( 126 ), SubResource( 125 ), SubResource( 125 ), SubResource( 125 ), SubResource( 125 ), SubResource( 125 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"frames": [ SubResource( 127 ), SubResource( 128 ), SubResource( 129 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -588,18 +598,21 @@ script = ExtResource( 20 )
 __meta__ = {
 "_edit_group_": true
 }
+move_speed = 25
+_jump_height = 20
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Letharia"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 31
+frame = 12
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
 script = ExtResource( 18 )
 character_name = "Letharia"
 json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/letharia.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/letharia/letharia.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Letharia/LethariaArea2D"]
 position = Vector2( 57.7109, -14.7009 )
@@ -621,11 +634,15 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ernst"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
-animation = "walk"
+animation = "idle"
+frame = 5
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
 script = ExtResource( 18 )
+character_name = "Ernst"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Ernst/ErnstArea2D"]
 position = Vector2( 20.6821, -3.65565 )
@@ -649,15 +666,17 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 23 )
 animation = "idle"
-frame = 5
+frame = 10
 playing = true
 
-[node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
+[node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
 position = Vector2( 7.72192, 4.04468 )
 script = ExtResource( 18 )
-json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sandy.json"
+character_name = "Sandy"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sandy/sandy.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sandy/sandkitten.wav"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandy/SandKittenArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandy/SandyArea2D"]
 position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 24 )
 
@@ -678,14 +697,17 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 31 )
 animation = "idle"
-frame = 4
+frame = 3
 playing = true
 
-[node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
+[node name="NostocArea2D" type="Area2D" parent="NPC/Nostoc"]
 script = ExtResource( 18 )
-json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc.json"
+character_name = "Nostoc"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc/nostoc.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc/nostoc.wav"
+sound_volume = 76.494
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc/TaurArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nostoc/NostocArea2D"]
 position = Vector2( 3.14985, -10.5166 )
 shape = SubResource( 32 )
 
@@ -707,13 +729,16 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "walk"
+frame = 6
 playing = true
 
-[node name="SandcatArea2D" type="Area2D" parent="NPC/Savanna"]
+[node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
 script = ExtResource( 18 )
-json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/savanna.json"
+character_name = "Savanna"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/savanna/savanna.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/savanna/savanna.wav"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Savanna/SandcatArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Savanna/SavannaArea2D"]
 position = Vector2( 3.14985, -10.5166 )
 shape = SubResource( 44 )
 
@@ -735,12 +760,14 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 50 )
 animation = "idle"
-frame = 7
+frame = 8
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
 script = ExtResource( 18 )
-json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sol.json"
+character_name = "Sol"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sol/sol.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sol/sol.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sol/Sandcat2Area2D"]
 position = Vector2( 3.14985, -10.5166 )
@@ -764,14 +791,16 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 56 )
 animation = "idle"
-frame = 35
+frame = 32
 playing = true
 
-[node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
+[node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
 script = ExtResource( 18 )
-json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/fier.json"
+character_name = "Fier"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/fier/fier.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/fier/fier.wav"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Fier/Sandcat3Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Fier/FierArea2D"]
 position = Vector2( 3.14985, -10.5166 )
 shape = SubResource( 57 )
 
@@ -787,8 +816,9 @@ script = ExtResource( 20 )
 
 [node name="Area2D" type="Area2D" parent="NPC/Liet_Desert"]
 script = ExtResource( 18 )
+character_name = "Liet"
 json_file = "res://Assets/Agents/Liet/liet_desert.json"
-sound_file = "res://Assets/Agents/Liet/liet.ogg"
+sound_file = "res://Assets/Agents/Liet/liet.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert/Area2D"]
 position = Vector2( 18.1068, 16.6215 )
