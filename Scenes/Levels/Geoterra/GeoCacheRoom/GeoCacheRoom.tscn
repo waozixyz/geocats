@@ -1,24 +1,24 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/GeoChest.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles2.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Levels/Geoterra/GeoCacheRoom/Treasure.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/GeoChest.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/FG_Frame.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/BG.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Water1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/water2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Floor.png" type="Texture" id=12]
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Levels/Glaciokarst/Caves/Cave_Ambience.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=5]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/BG.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Floor.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/water2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Levels/Glaciokarst/Caves/Cave_Ambience.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Water1.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles2.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
@@ -29,7 +29,7 @@ extents = Vector2( 50, 50 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 0.6
@@ -42,7 +42,7 @@ extents = Vector2( 358.888, 60.6786 )
 extents = Vector2( 33.9119, 32.5012 )
 
 [node name="GeoCacheRoom" type="Node2D"]
-script = ExtResource( 13 )
+script = ExtResource( 2 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -52,19 +52,20 @@ __meta__ = {
 }
 
 [node name="BG" type="Sprite" parent="BelowPlayer"]
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer"]
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ExitGeoCache" type="Area2D" parent="."]
 position = Vector2( 33, 354.813 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -80,7 +81,7 @@ shape = SubResource( 3 )
 visible = false
 position = Vector2( 88, -5.81299 )
 scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 10 )
+texture = ExtResource( 6 )
 
 [node name="Colliders" type="StaticBody2D" parent="." groups=["end"]]
 collision_layer = 7
@@ -93,7 +94,7 @@ polygon = PoolVector2Array( 73, 462, 835, 464, 980, 434, 1234, 434, 1233, 459, 9
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 74, 810, 71, 1097, 99, 1173, 202, 1217, 394, 1228, 434, 1248, 434, 1207, 273, 1187, 192, 1107, 77, 838, 47, 540, 58, 331, 58, 254, 97, 195, 210, 60, 285, 55, 467 )
 
-[node name="Default" parent="." instance=ExtResource( 11 )]
+[node name="Default" parent="." instance=ExtResource( 14 )]
 position = Vector2( 402, 304 )
 
 [node name="Player" parent="Default" index="0"]
@@ -114,7 +115,7 @@ __meta__ = {
 }
 
 [node name="Floor" type="Sprite" parent="AbovePlayer"]
-texture = ExtResource( 12 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="FG_Frame" type="Sprite" parent="AbovePlayer/Floor"]
@@ -124,13 +125,12 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
 [node name="waterarea" type="Area2D" parent="."]
 position = Vector2( 457.652, 519.2 )
-script = ExtResource( 1 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -139,7 +139,7 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="Treasure" type="Area2D" parent="."]
-script = ExtResource( 14 )
+script = ExtResource( 1 )
 dialogue_file = "res://Assets/Levels/Geoterra/GeoCacheRoom/treasure.json"
 sound_effect = "res://Assets/Feline/Sounds/feline_beep.wav"
 
@@ -150,12 +150,12 @@ shape = SubResource( 7 )
 [node name="Sprite" type="Sprite" parent="Treasure"]
 position = Vector2( 1106, 421 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 2
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 15 )
+stream = ExtResource( 12 )
 autoplay = true
 bus = "Music"
 

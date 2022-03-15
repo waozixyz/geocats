@@ -162,26 +162,6 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
@@ -206,6 +186,26 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 31 ), SubResource( 32 ), SubResource( 31 ), SubResource( 31 ) ],
@@ -213,19 +213,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 31 ) ],
 "loop": true,
 "name": "blink",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 30 ) ],
@@ -237,6 +227,16 @@ animations = [ {
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=36]
@@ -472,7 +472,6 @@ script = SubResource( 14 )
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 centered = false
 
@@ -806,11 +805,8 @@ position = Vector2( 20, 25.5 )
 shape = SubResource( 68 )
 
 [node name="Teleport" type="Area2D" parent="Interactables"]
-position = Vector2( 15, 635.7 )
+position = Vector2( 60, 656 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 sound_effect = 6
 geocity = 1
 this_loc = 1
@@ -819,8 +815,7 @@ this_loc = 1
 shape = SubResource( 69 )
 
 [node name="Button" type="Sprite" parent="Interactables/Teleport"]
-visible = false
-position = Vector2( 58, 17.3 )
+position = Vector2( 17, -46 )
 scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 6 )
 
