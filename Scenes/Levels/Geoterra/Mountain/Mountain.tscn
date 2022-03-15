@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/solidplatform.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Telescope.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -488,7 +489,9 @@ position = Vector2( 1249.7, -248.505 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
@@ -563,6 +566,32 @@ shape = SubResource( 23 )
 [node name="Button" type="Sprite" parent="Portals/ToCreek"]
 visible = false
 position = Vector2( 108, 74.874 )
+scale = Vector2( 0.306122, 0.298077 )
+texture = ExtResource( 10 )
+
+[node name="LockedItem" type="Area2D" parent="Portals"]
+script = ExtResource( 23 )
+unlock_var = "GlaciokarstAfterBattle"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Portals/LockedItem"]
+position = Vector2( 4877.09, 3671.92 )
+shape = SubResource( 23 )
+
+[node name="ToOutpost" type="Area2D" parent="Portals/LockedItem"]
+position = Vector2( 4877.09, 3671.92 )
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_group_": true
+}
+territory = 3
+this_loc = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/ToOutpost"]
+shape = SubResource( 23 )
+
+[node name="Button" type="Sprite" parent="Portals/LockedItem/ToOutpost"]
+visible = false
+position = Vector2( 14.8857, -106.604 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 10 )
 
