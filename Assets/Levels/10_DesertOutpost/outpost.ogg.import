@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/outpost.ogg-73062e582e55dbfc2b1ff7d0297380c5.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/10_DesertOutpost/outpost.ogg"
+dest_files=[ "res://.import/outpost.ogg-73062e582e55dbfc2b1ff7d0297380c5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
