@@ -578,7 +578,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 43
+frame = 42
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -607,7 +607,6 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -635,7 +634,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 23 )
 animation = "idle"
-frame = 16
+frame = 15
 playing = true
 
 [node name="SandKittenArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -664,7 +663,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 31 )
 animation = "idle"
-frame = 7
+frame = 10
 playing = true
 
 [node name="TaurArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -722,6 +721,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 50 )
 animation = "idle"
+frame = 11
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -750,7 +750,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 56 )
 animation = "idle"
-frame = 2
+frame = 29
 playing = true
 
 [node name="Sandcat3Area2D" type="Area2D" parent="NPC/Fier"]
@@ -1510,6 +1510,7 @@ __meta__ = {
 }
 
 [node name="Button" type="Sprite" parent="Portals/ToMountain"]
+visible = false
 position = Vector2( 0, -86.6104 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 14 )
