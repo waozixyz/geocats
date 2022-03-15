@@ -6,7 +6,7 @@ export(NodePath) var to_toggle
 export(bool) var click_close_anywhere = false
 export(bool) var disable_e_on_show = true
 export(String, FILE, "*.ogg, *.wav") var sound_file = ""
-export(float) var sound_volume = 1
+export(float, 0, 100) var sound_volume = 100
 
 var timer
 var node_toggle

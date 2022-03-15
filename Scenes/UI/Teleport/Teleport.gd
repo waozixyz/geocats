@@ -13,7 +13,7 @@ enum Sounds {
 }
 
 export(Sounds) var sound_effect
-export(float) var sound_volume = 1.0
+export(float, 0, 100) var sound_volume = 100
 
 func _play_sound():
 	if sound_effect != Sounds.None:

@@ -11,6 +11,7 @@ export(String) var skip_var = ""
 export(String) var character_name = name
 export(String, FILE, "*.json") var json_file = ""
 export(String, FILE, "*.ogg, *.wav") var sound_file = ""
+export(float, 0, 100) var sound_volume = 100
 export(bool) var trigger_on_touch = false
 export(String) var player_disable = ""
 
@@ -76,7 +77,8 @@ func start_chat():
 	dia_started = true
 
 	chat_with.visible = false
-	AudioManager.play_sound(sound_file)
+
+	AudioManager.play_sound(sound_file, sound_volume)
 
 var dia_started
 func _input(_event):

@@ -7,7 +7,7 @@ onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLa
 onready var feline = get_tree().get_current_scene().get_node("Default/CanvasLayer/Feline")
 export(String, FILE, "*.json") var dialogue_file = ""
 export(String, FILE, "*.wav, *.ogg") var sound_effect
-export(float) var sound_volume = 1
+export(float, 0, 100) var sound_volume = 100
 
 var do_something 
 var playing = false
