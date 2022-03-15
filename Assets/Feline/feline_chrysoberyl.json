@@ -1,0 +1,50 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "ReadTedsBook",
+    "content": "Hey!@That's it!@My refractometer is telling me that this is chrysoberyl!",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "...@Is this gemstone really the solution we've been searching for?",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "...",
+    "next": "3"
+  },
+  "3": {
+    "name": "Feline",
+    "type": "text",
+    "animation_in": "fade_in",
+    "avatar": "feline_sleep.png",
+    "content": "Not sure about you, but I'd really like to figure out what's actually going on here.",
+    "next": "4"
+  },
+  "4": {
+    "name": "Feline",
+    "avatar": "feline_unimpressed.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "...Also, I'm still pretty irritated with the way Norna and Wyrd were acting back in that mushroom cave.",
+    "next": "5"
+  },
+  "5": {
+    "name": "Feline",
+    "avatar": "feline_sleep.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "...Whatever, let's get back to XAPS and meet up with Letharia again. She'll know what to do.'",
+    "next": ""
+  }
+}
