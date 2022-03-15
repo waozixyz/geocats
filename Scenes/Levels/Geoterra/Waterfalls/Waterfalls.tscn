@@ -195,14 +195,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -215,6 +207,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -222,14 +222,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -237,10 +237,10 @@ animations = [ {
 extents = Vector2( 58.1104, 39.5977 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 87.4824, 68.3833 )
+extents = Vector2( 87.4824, 68.9417 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 108.11, 75.5378 )
+extents = Vector2( 108.11, 156.215 )
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 14.0
@@ -321,7 +321,6 @@ font_data = ExtResource( 16 )
 size = 12
 extra_spacing_top = -2
 extra_spacing_bottom = -2
-extra_spacing_space = -1
 font_data = ExtResource( 16 )
 
 [sub_resource type="RectangleShape2D" id=59]
@@ -330,8 +329,6 @@ extents = Vector2( 12.5, 12.5 )
 [sub_resource type="DynamicFont" id=60]
 size = 14
 extra_spacing_bottom = -7
-extra_spacing_char = -1
-extra_spacing_space = -2
 font_data = ExtResource( 16 )
 
 [sub_resource type="RectangleShape2D" id=61]
@@ -392,10 +389,6 @@ frame = 19
 
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="Platforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
@@ -1662,9 +1655,7 @@ position = Vector2( 831.933, 1199.28 )
 shape = SubResource( 4 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -1690,6 +1681,9 @@ shape = SubResource( 5 )
 
 [node name="Portals" type="Node2D" parent="."]
 position = Vector2( -114.829, -22.0825 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ToCave" type="Area2D" parent="Portals"]
 position = Vector2( 339, 3350 )
@@ -1844,7 +1838,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 12
+frame = 24
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1860,7 +1854,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 17
+frame = 22
 playing = true
 flip_h = true
 
@@ -1870,16 +1864,19 @@ shape = SubResource( 40 )
 
 [node name="FeLineAreaChrysoberyl" type="Area2D" parent="NPC"]
 position = Vector2( 2014.22, 2655.5 )
-script = ExtResource( 14 )
-character_name = "FeLine"
-json_file = "res://Assets/Feline/feline_chrysoberyl.json"
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FeLineAreaChrysoberyl"]
+position = Vector2( 0, -0.55835 )
 shape = SubResource( 41 )
 
 [node name="FelineAreaTower" type="Area2D" parent="NPC"]
 position = Vector2( 290.115, 907.302 )
 script = ExtResource( 14 )
+skip_var = "waterfalls_feline_tower"
 json_file = "res://Assets/Feline/feline_research.json"
 sound_file = "res://Assets/Feline/Sounds/happyfeline.wav"
 trigger_on_touch = true
@@ -1888,23 +1885,21 @@ trigger_on_touch = true
 position = Vector2( 532.25, -389.448 )
 shape = SubResource( 42 )
 
-[node name="Ball" type="Node2D" parent="."]
-
-[node name="Consumable" type="KinematicBody2D" parent="Ball"]
+[node name="Ball" type="KinematicBody2D" parent="."]
 position = Vector2( 6015, 331 )
 script = ExtResource( 11 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball/Consumable"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball"]
 position = Vector2( 2, 4 )
 shape = SubResource( 43 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ball/Consumable"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ball"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/Consumable/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/StaticBody2D"]
 position = Vector2( 2, 4 )
 shape = SubResource( 43 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Ball/Consumable"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Ball"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 49 )
 animation = "resting"
@@ -2280,8 +2275,8 @@ margin_left = 124.834
 margin_top = 20.0
 margin_right = 258.834
 margin_bottom = 82.0
-custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 57 )
 text = "Chrysoberyl: Anti-0xoplasmotic?"
 autowrap = true
 
@@ -2294,8 +2289,8 @@ margin_left = 19.707
 margin_top = 126.472
 margin_right = 250.707
 margin_bottom = 193.472
-custom_fonts/font = SubResource( 62 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
 text = "dreaded 0xoplasmosis infection.
 I saw my life flash before my eyes as the monster rushed towards me. Out of fear, I offered it one of my Gemstones..."
 autowrap = true
@@ -2308,8 +2303,8 @@ margin_left = 127.0
 margin_top = 46.0
 margin_right = 251.0
 margin_bottom = 123.0
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "Last week, while I was peacefully going about my business collecting gems, I was rudely interrupted by an obnoxious cat infected with the"
 autowrap = true
 
@@ -2318,8 +2313,8 @@ margin_left = 22.1986
 margin_top = 182.831
 margin_right = 198.199
 margin_bottom = 229.831
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "...The Chrysoberyl. 
 It caught a ray of sunlight, and refracted into the eyes of the beast before me."
 autowrap = true
@@ -2329,13 +2324,12 @@ margin_left = 278.855
 margin_top = 126.697
 margin_right = 502.855
 margin_bottom = 236.697
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment. More research is needed."
 autowrap = true
 
 [node name="Letter" type="Control" parent="CanvasLayer/ResearchCabin"]
-visible = false
 margin_left = 189.879
 margin_top = 16.3001
 margin_right = 229.879
@@ -2386,7 +2380,6 @@ position = Vector2( -5.5, 11.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote1" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
-visible = false
 margin_left = -324.0
 margin_top = -79.0
 margin_right = -196.0
@@ -2405,8 +2398,8 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 139.0
 margin_bottom = 135.0
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
 autowrap = true
 
@@ -2427,6 +2420,9 @@ margin_top = -86.0
 margin_right = -69.0
 margin_bottom = 49.0
 mouse_filter = 2
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StickyNote2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note2/StickyNote2"]
 margin_right = 71.0
@@ -2435,7 +2431,6 @@ rect_scale = Vector2( 2, 2 )
 mouse_filter = 2
 texture = ExtResource( 35 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -2445,8 +2440,8 @@ margin_top = 5.0
 margin_right = 136.0
 margin_bottom = 128.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
 autowrap = true
 
@@ -2464,10 +2459,13 @@ shape = SubResource( 59 )
 visible = false
 margin_left = -421.0
 margin_top = 93.0
-margin_right = -350.0
-margin_bottom = 164.0
+margin_right = -285.0
+margin_bottom = 233.0
 mouse_filter = 2
 theme = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StickyNote3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note3/StickyNote3"]
 margin_right = 71.0
@@ -2487,9 +2485,9 @@ margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 143.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Hey bro, it's been too long since we've hung out last!
+custom_fonts/font = ExtResource( 43 )
+text = "Hey bro, it's been too long since we've hung out!
 let's go on a hike together soon... I'll bring the catnip  
 
 Your pal, Doug the Cat"
@@ -2509,8 +2507,8 @@ shape = SubResource( 59 )
 visible = false
 margin_left = -320.0
 margin_top = 53.0
-margin_right = -249.0
-margin_bottom = 124.0
+margin_right = -183.0
+margin_bottom = 192.0
 mouse_filter = 2
 __meta__ = {
 "_edit_group_": true
@@ -2529,8 +2527,8 @@ margin_top = 3.0
 margin_right = 132.0
 margin_bottom = 129.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "Call back the Nonaco Department of Corperate Technology...
 URGENT!
 [3:26 PM]"
@@ -2547,12 +2545,14 @@ position = Vector2( -5.5, -3.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote5" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
-visible = false
 margin_left = 26.0
 margin_top = 38.0
-margin_right = 97.0
-margin_bottom = 109.0
+margin_right = 163.0
+margin_bottom = 175.0
 mouse_filter = 2
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StickyNote5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note5/StickyNote5"]
 margin_right = 71.0
@@ -2566,8 +2566,8 @@ margin_left = 5.80005
 margin_top = 2.0
 margin_right = 133.8
 margin_bottom = 71.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This statue I saw during my visit to the castle was to DIE for. It would look PURRfect in"
 autowrap = true
 __meta__ = {
@@ -2579,8 +2579,8 @@ margin_left = 75.5997
 margin_top = 65.9995
 margin_right = 134.6
 margin_bottom = 130.999
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "my new
 research
 base."
@@ -2606,12 +2606,14 @@ position = Vector2( -5.5, 11.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote6" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
-visible = false
-margin_left = -163.0
-margin_top = -56.0
-margin_right = -92.0
-margin_bottom = 15.0
+margin_left = -157.0
+margin_top = 73.0
+margin_right = -20.0
+margin_bottom = 209.0
 mouse_filter = 2
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StickyNote6" type="TextureRect" parent="CanvasLayer/ResearchCabin/Notes/Note6/StickyNote6"]
 margin_right = 71.0
