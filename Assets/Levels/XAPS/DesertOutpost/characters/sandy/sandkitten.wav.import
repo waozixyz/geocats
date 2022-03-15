@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sandkitten.wav-199e4a3e321c9ab23cd6a59e8246b6f3.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/sandy/sandkitten.wav"
+dest_files=[ "res://.import/sandkitten.wav-199e4a3e321c9ab23cd6a59e8246b6f3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
