@@ -321,7 +321,6 @@ font_data = ExtResource( 16 )
 size = 12
 extra_spacing_top = -2
 extra_spacing_bottom = -2
-extra_spacing_space = -1
 font_data = ExtResource( 16 )
 
 [sub_resource type="RectangleShape2D" id=59]
@@ -330,8 +329,6 @@ extents = Vector2( 12.5, 12.5 )
 [sub_resource type="DynamicFont" id=60]
 size = 14
 extra_spacing_bottom = -7
-extra_spacing_char = -1
-extra_spacing_space = -2
 font_data = ExtResource( 16 )
 
 [sub_resource type="RectangleShape2D" id=61]
@@ -1841,7 +1838,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 16
+frame = 24
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1857,6 +1854,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
+frame = 22
 playing = true
 flip_h = true
 
@@ -2157,7 +2155,6 @@ texture = ExtResource( 37 )
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 55 )
-frame = 2
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
@@ -2333,7 +2330,6 @@ text = "This mechanism briefly stopped the monster from advancing upon me, and I
 autowrap = true
 
 [node name="Letter" type="Control" parent="CanvasLayer/ResearchCabin"]
-visible = false
 margin_left = 189.879
 margin_top = 16.3001
 margin_right = 229.879
@@ -2384,7 +2380,6 @@ position = Vector2( -5.5, 11.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote1" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
-visible = false
 margin_left = -324.0
 margin_top = -79.0
 margin_right = -196.0
@@ -2550,7 +2545,6 @@ position = Vector2( -5.5, -3.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote5" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
-visible = false
 margin_left = 26.0
 margin_top = 38.0
 margin_right = 163.0
@@ -2612,7 +2606,6 @@ position = Vector2( -5.5, 11.5 )
 shape = SubResource( 59 )
 
 [node name="StickyNote6" type="Control" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
-visible = false
 margin_left = -157.0
 margin_top = 73.0
 margin_right = -20.0
