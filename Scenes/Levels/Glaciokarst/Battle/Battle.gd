@@ -117,7 +117,7 @@ func _start_chat(file_name):
 	dialogue.modulate.a = 0.1
 	dialogue.initiate(battle_dialogue_folder + '/' + file_name + '.json')
 func _phase_four(dfps):
-	if not dia_started and not is_disabled(player):
+	if not dia_started and is_disabled("player", "battle"):
 		set_disable("player", "battle", false)
 		enemy.vulnerable = true
 		enemy.rage = 1
@@ -129,7 +129,7 @@ func _phase_four(dfps):
 		phase = 5
 
 func _phase_five():
-	if not dia_started and player.disable_reasons.size() != 0:
+	if not dia_started and is_disabled("player", "battle"):
 		music_main.stream.loop = false
 		enemy.sprite.frame = 0
 		enemy.sprite.animation = "die"
@@ -143,11 +143,16 @@ func _phase_six():
 		enemy.visible = false
 		enemy.disable_colliders()
 		defeated = true
-		PROGRESS.variables["CavesBattleDefeated"] = true
+		PROGRESS.variables["GlaciokarstAfterBattle"] = true
 		set_disable("player", "battle", false)
 
-	
+var timer = 0
 func _process(delta):
+	if PROGRESS.variables.has("GlaciokarstAfterBattle") and PROGRESS.variables["GlaciokarstAfterBattle"] :
+		timer += delta
+	if timer > 1:
+		AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
+		SceneChanger.change_scene("Glaciokarst", "GeoLodge")
 	var dfps = delta * global.fps
 	if start_ticker > 2 and start_ticker < 6 and player.position.x < 200:
 		player.state_machine.change_state("climb")

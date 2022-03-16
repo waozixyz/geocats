@@ -206,6 +206,7 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 0.3
 playing = true
 centered = false

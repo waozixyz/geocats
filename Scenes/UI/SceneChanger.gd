@@ -62,7 +62,7 @@ func _new_scene():
 			item.sound.stop()
 			item.volume = linear2db(0)
 			item.sound.playing = false
-			
+
 	var err = get_tree().change_scene(level_path)
 	assert(err == OK)
 	get_tree().paused = false
