@@ -23,7 +23,7 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_glare.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_hud.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_border.png" type="Texture" id=23]
-[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/Computer.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=24]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/weather.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/weather.png" type="Texture" id=27]
@@ -605,7 +605,7 @@ _jump_height = 20
 scale = Vector2( 4, 4 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 17
+frame = 31
 playing = true
 
 [node name="LethariaArea2D" type="Area2D" parent="NPC/Letharia"]
@@ -635,7 +635,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
 animation = "idle"
-frame = 18
+frame = 10
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC/Ernst"]
@@ -666,7 +666,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 23 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -697,6 +697,7 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 31 )
 animation = "idle"
+frame = 6
 playing = true
 
 [node name="NostocArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -728,7 +729,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 43 )
 animation = "walk"
-frame = 4
+frame = 6
 playing = true
 
 [node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -759,7 +760,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 50 )
 animation = "idle"
-frame = 13
+frame = 3
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -790,7 +791,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 56 )
 animation = "idle"
-frame = 21
+frame = 23
 playing = true
 
 [node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
@@ -841,7 +842,7 @@ shape = SubResource( 68 )
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 5420.88, 552.196 )
+position = Vector2( 3496, 572.257 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -878,9 +879,7 @@ shape = SubResource( 70 )
 position = Vector2( 503.984, 156 )
 texture = ExtResource( 58 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
@@ -1092,9 +1091,7 @@ one_way_collision = true
 polygon = PoolVector2Array( 1552.8, 1622.4, 1552.8, 1634.4, 1584, 1644.8, 1644, 1666.4, 1683.2, 1685.6, 1720.8, 1700.8, 1748.8, 1706.4, 1820.8, 1706.4, 1844, 1708.8, 1875.2, 1718.4, 1920.8, 1725.6, 1943.2, 1730.4, 1988, 1748.8, 2030.4, 1766.4, 2061.6, 1778.4, 2081.6, 1794.4, 2125.6, 1824, 2153.6, 1838.4, 2168.8, 1848.8, 2182.4, 1859.2, 2196.8, 1856, 2213.6, 1860, 2227.2, 1868, 2233.6, 1871.2, 2234.4, 1860.8, 2220.8, 1842.4, 2208.8, 1833.6, 2187.2, 1833.6, 2177.6, 1844.8, 2167.2, 1840.8, 2136, 1817.6, 2093.6, 1791.2, 2055.2, 1766.4, 2012, 1750.4, 1979.2, 1737.6, 1938.4, 1720.8, 1881.6, 1712, 1826.4, 1697.6, 1749.6, 1700, 1716.8, 1690.4, 1665.6, 1671.2, 1573.6, 1634.4 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 22, 83 )
 collision_layer = 7
 collision_mask = 7
@@ -1261,7 +1258,7 @@ scale = Vector2( 0.33, 0.33 )
 transform = Transform2D( 0.33, 0, 0, 0.33, 0, 0 )
 
 [node name="Computer" type="Control" parent="CanvasLayer"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1494,8 +1491,8 @@ __meta__ = {
 margin_right = 917.0
 margin_bottom = 450.0
 focus_mode = 2
-custom_fonts/normal_font = SubResource( 113 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 113 )
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1505,6 +1502,7 @@ __meta__ = {
 position = Vector2( 3499.67, 552 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 24 )
+make_node_visible = NodePath("../CanvasLayer/Computer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
 position = Vector2( 4.22003, -2.28882e-05 )

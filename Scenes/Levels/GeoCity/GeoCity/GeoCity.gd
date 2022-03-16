@@ -53,9 +53,8 @@ func set_theme(theme): #Change to Pumpkin function which is called by collision
 
 func _physics_process(delta):
 	var teleport = PROGRESS.variables.get("teleport_geolodge")
-	if teleport:
-		chat_with.visible = false
-		chat_with.stop()
+	if teleport or true:
 		PROGRESS.variables["teleport_geolodge"] = false
-	#	SceneChanger.change_scene("GeoLodge", 0, "WayoWayo", 1)
+		AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
+		SceneChanger.change_scene("Glaciokarst", "GeoLodge")
 

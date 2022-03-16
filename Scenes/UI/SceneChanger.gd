@@ -56,7 +56,6 @@ func _physics_process(delta):
 			_new_scene()
 			change = false
 
-
 func _new_scene():
 	for item in AudioManager.playing:
 		item.sound.stop()
