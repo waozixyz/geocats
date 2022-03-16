@@ -4,7 +4,7 @@
     "avatar": "wyrd.png",
     "position": "left",
     "type": "text",
-    "content": "Ok,|@let’s get out of here.",
+    "content": "Ok, I've had enough of this.|@let’s get out of here.",
     "animation_in": "fade_in",
     "next": "1"
   },
@@ -23,7 +23,7 @@
     "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "You never saw us,|@we never saw you.|@Understood?",
+    "content": "Listen up - You never saw us,|@we never saw you.|@Understood?",
     "next": "3"
   },
   "3": {
@@ -32,7 +32,7 @@
     "animation_in": "fade_in",
     "position": "right",
     "type": "text",
-    "content": "Also, whatever you do,@stay away from the Great Litterbox.@There’s nothing weird going on out there, either.",
+    "content": "Also, whatever you do,@stay away from desert.@There’s definitely nothing weird going on out there.",
     "next": "4"
   },
  "4": {

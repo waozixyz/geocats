@@ -4,7 +4,7 @@
     "avatar": "lasagne.png",
     "position": "left",
     "type": "question",
-    "text": "Have you seen any of those creepy green cats?",
+    "text": "Have you seen any of those creepy monster cats?",
     "animation_in": "fade_in",
     "options": ["yes", "no"],
     "next": ["yes_option", "no_option"]
@@ -12,11 +12,11 @@
   "yes_option": {
     "type": "text",
     "content": "Something nefarious is brewing...",
-    "next": "",
+    "next": ""
   },
   "no_option": {
     "type": "text",
     "content": "Watch out! One of them tried to bite me...",
-    "next": "",
-  },
+    "next": ""
+  }
 }
