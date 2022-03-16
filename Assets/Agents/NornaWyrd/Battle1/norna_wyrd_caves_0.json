@@ -4,7 +4,7 @@
     "avatar": "norna.png",
     "position": "left",
     "type": "text",
-    "content": "…So anyways, I said to her, There’s no way I’m jumping into that river! It’s like 15 degrees outside|@and I didn't bring a towel with me!",
+    "content": "...Wyrd, how was I supossed to know that your hearing was THAT sensitive... If I'd known, I wouldn't have brought us to that death-metal concert last weekend!",
     "animation_in": "move_in",
     "next": "1"
   },
@@ -14,21 +14,30 @@
     "animation_in": "fade_in",
     "position": "right",
     "type": "text",
-    "content": "Haha, I totally remember that!",
+    "content": "Dude, don't worry about it... Life's not exactly easy being fused together like this.",
     "next": "2"
   },
   "2": {
     "name": "Norna",
-    "position": "left",
+    "avatar": "norna.png",
+    "animation_in": "fade_in",
+    "position": "right",
     "type": "text",
-    "content": "|||...Wait....Who's that‽",
+    "content": "Anyways, I wasn't aware of your needs...now that I know them, I'll accommodate you immediately.",
     "next": "3"
   },
   "3": {
+    "name": "Norna",
+    "position": "left",
+    "type": "text",
+    "content": "...@Wait a second...@....Who's that!?",
+    "next": "4"
+  },
+  "4": {
     "name": "Wyrd",
     "position": "right",
     "type": "text",
-    "content": "...Intruder alert!",
+    "content": "...An intruder!@Intruder alert!",
     "next": ""
   }
 }

@@ -9,7 +9,8 @@
     "dictionary": "variables",
     "variable": "GlaciokarstAfterBattle",
     "true": "a",
-    "false": "1"
+    "false": "1",
+    "content": "Hello."
   },
   "1": {
     "type": "text",

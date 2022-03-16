@@ -14,7 +14,7 @@
     "animation_in": "fade_in",
     "position": "right",
     "type": "text",
-    "content": "...I’m Norna,@this is my counterpart Wyrd.",
+    "content": "...I’m Norna,@this is my other-half, Wyrd.",
     "next": "2"
   },
   "2": {
@@ -32,7 +32,7 @@
     "animation_in": "fade_in",
     "position": "right",
     "type": "text",
-    "content": "We’re taking samples of this slime mold.@Our employer uses it for freaky experiments.",
+    "content": "We’re taking samples of this slime mold.@Our employer uses it to conduct freaky experiments.",
     "next": "4"
   },
  "4": {
@@ -43,5 +43,5 @@
     "type": "text",
     "content": "...You’re going to get us fired!@Shut your trap Norna!",
     "next": ""
-  },
+  }
 }
