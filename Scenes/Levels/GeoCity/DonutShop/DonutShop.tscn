@@ -15,7 +15,7 @@
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Agents/JumpBlinkAI.gd" type="Script" id=15]
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Levels/GeoCity/DonutShop/DonutShop.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/window_bg.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/bg.png" type="Texture" id=18]
 
@@ -382,9 +382,7 @@ shape = SubResource( 30 )
 position = Vector2( 953, 227 )
 shape = SubResource( 31 )
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
