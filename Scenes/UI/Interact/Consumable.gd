@@ -19,6 +19,7 @@ func _ready():
 	if progress_var:
 		if PROGRESS.variables.get(progress_var):
 			consumable.visible = false
+			disabled = true
 
 func _process(_delta): 
 	if do_something  and ui_node.modulate.a == 1:

@@ -146,10 +146,6 @@ void fragment() {
 shader = SubResource( 15 )
 shader_param/dmg = false
 
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 18 )
-region = Rect2( 15, 0, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 15, 15 )
@@ -162,29 +158,9 @@ region = Rect2( 45, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 60, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 0, 15, 15 )
+region = Rect2( 15, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 18 )
@@ -206,22 +182,41 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ SubResource( 17 ) ],
-"loop": true,
-"name": "blink",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ) ],
 "loop": true,
-"name": "walk",
-"speed": 5.0
+"name": "slide_wall",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
@@ -233,14 +228,19 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
-"name": "slide_wall",
-"speed": 12.0
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "blink",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 10, 74.5 )
+extents = Vector2( 27, 74.5 )
 
 [sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 13.0565, 107.5 )
@@ -303,7 +303,7 @@ extents = Vector2( 203, 36 )
 extents = Vector2( 51, 5 )
 
 [sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 40.5, 10 )
+extents = Vector2( 40.5, 34 )
 
 [sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 27, 4 )
@@ -339,7 +339,7 @@ extents = Vector2( 36.2031, 15.5309 )
 extents = Vector2( 30, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=66]
-extents = Vector2( 47.1908, 33.7617 )
+extents = Vector2( 33.0954, 33.7617 )
 
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 57.5, 24 )
@@ -394,10 +394,8 @@ script = ExtResource( 1 )
 [node name="BelowPlayer" type="Node2D" parent="."]
 
 [node name="WorldBckg" type="ColorRect" parent="BelowPlayer"]
-margin_left = -75.0
-margin_top = 1.0
-margin_right = 1555.0
-margin_bottom = 771.0
+margin_right = 1630.0
+margin_bottom = 770.0
 mouse_filter = 2
 color = Color( 0.117647, 0.00392157, 0.168627, 1 )
 __meta__ = {
@@ -406,7 +404,6 @@ __meta__ = {
 }
 
 [node name="MainTexture" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 50, 0 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 2 )
 centered = false
@@ -416,9 +413,12 @@ __meta__ = {
 
 [node name="Dream" type="Node2D" parent="BelowPlayer"]
 modulate = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="MainTexture" type="Sprite" parent="BelowPlayer/Dream"]
-position = Vector2( 50, 0 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 14 )
 centered = false
@@ -427,7 +427,7 @@ __meta__ = {
 }
 
 [node name="Sprite2" type="AnimatedSprite" parent="BelowPlayer/Dream"]
-position = Vector2( 1082.14, -7.38968 )
+position = Vector2( 1032.14, -7.39 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
 playing = true
@@ -445,6 +445,9 @@ mouse_filter = 2
 texture = ExtResource( 26 )
 stretch_mode = 2
 script = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="YellowStars" type="TextureRect" parent="BelowPlayer/Dream"]
 material = SubResource( 8 )
@@ -455,7 +458,7 @@ texture = ExtResource( 25 )
 stretch_mode = 2
 script = SubResource( 9 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="Startrails" type="TextureRect" parent="BelowPlayer/Dream"]
@@ -466,27 +469,27 @@ mouse_filter = 2
 texture = ExtResource( 24 )
 stretch_mode = 2
 script = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="AnimatedSprite" parent="BelowPlayer/Dream"]
-position = Vector2( 1341.43, 163.423 )
+position = Vector2( 1291.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
 playing = true
 centered = false
 
 [node name="WorldBckg2" type="ColorRect" parent="BelowPlayer/Dream"]
-margin_left = 1474.2
-margin_top = -16.0704
-margin_right = 1674.2
+margin_left = 1424.2
+margin_top = -16.07
+margin_right = 1624.2
 margin_bottom = 483.93
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="OverlayTexture" type="Sprite" parent="BelowPlayer/Dream"]
-position = Vector2( 899.738, -0.000396729 )
+position = Vector2( 849.738, 0 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 13 )
 centered = false
@@ -501,87 +504,90 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Dream"]
 material = SubResource( 16 )
-position = Vector2( 1215, 270 )
+position = Vector2( 1165, 270 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 32 )
 animation = "walk"
 script = ExtResource( 19 )
 
 [node name="MainColliders" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Walls" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=[
-"end",
-]]
-position = Vector2( 7, 636.5 )
+[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
+position = Vector2( -26, 636.5 )
 shape = SubResource( 33 )
 
 [node name="KitchenRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 333.057, 497.5 )
+position = Vector2( 283.057, 497.5 )
 shape = SubResource( 34 )
 
 [node name="LeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 87, 304.5 )
+position = Vector2( 37, 304.5 )
 shape = SubResource( 35 )
 
 [node name="StatueRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 1471, 546 )
+position = Vector2( 1421, 546 )
 shape = SubResource( 36 )
 
 [node name="BedRoomRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 1462.5, 197 )
+position = Vector2( 1412.5, 197 )
 shape = SubResource( 37 )
 
 [node name="LitterboxLeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 737, 272 )
+position = Vector2( 687, 272 )
 shape = SubResource( 38 )
 
 [node name="LitterboxRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 868, 274 )
+position = Vector2( 818, 274 )
 shape = SubResource( 39 )
 
 [node name="Platforms" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="ShelfCollider" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 1043, 87 )
+position = Vector2( 993, 87 )
 shape = SubResource( 40 )
 one_way_collision = true
 
 [node name="PresentTablePlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 161, 665 )
+position = Vector2( 111, 665 )
 shape = SubResource( 41 )
 one_way_collision = true
 
 [node name="LitterboxPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 803.5, 356.5 )
+position = Vector2( 753.5, 356.5 )
 shape = SubResource( 42 )
 one_way_collision = true
 
 [node name="LeavingBedroomFloor" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 407, 132 )
+position = Vector2( 357, 132 )
 shape = SubResource( 43 )
 one_way_collision = true
 
 [node name="BedPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 1361, 225 )
+position = Vector2( 1311, 225 )
 shape = SubResource( 44 )
 one_way_collision = true
 
 [node name="Bed" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 1214, 539 )
+position = Vector2( 1164, 539 )
 shape = SubResource( 45 )
 one_way_collision = true
 
 [node name="KitchenPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
-position = Vector2( 212, 498 )
+position = Vector2( 162, 498 )
 shape = SubResource( 46 )
 one_way_collision = true
 
@@ -590,10 +596,11 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainColliders/Stairs"]
+position = Vector2( -50, 0 )
 polygon = PoolVector2Array( 1064, 288, 728, 120, 712, 120, 712, 136, 1024, 288 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MainColliders/Stairs"]
-position = Vector2( -370, 247 )
+position = Vector2( -420, 247 )
 polygon = PoolVector2Array( 1064, 288, 727, 119, 716, 119, 716, 138, 1024, 288 )
 
 [node name="Floors" type="StaticBody2D" parent="MainColliders"]
@@ -601,15 +608,15 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="BedroomFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
-position = Vector2( 1116.4, 384 )
+position = Vector2( 1066.4, 384 )
 shape = SubResource( 47 )
 
 [node name="MainFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
-position = Vector2( 746, 700 )
+position = Vector2( 696, 700 )
 shape = SubResource( 48 )
 
 [node name="StairFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
-position = Vector2( 222, 378 )
+position = Vector2( 172, 378 )
 shape = SubResource( 49 )
 
 [node name="Ceilings" type="StaticBody2D" parent="MainColliders"]
@@ -617,27 +624,27 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="LitterboxHallCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
-position = Vector2( 989, 300 )
+position = Vector2( 939, 300 )
 shape = SubResource( 50 )
 
 [node name="BedroomCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
-position = Vector2( 773.672, 38 )
+position = Vector2( 723.672, 38 )
 shape = SubResource( 51 )
 
 [node name="StarPosterCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
-position = Vector2( 549, 570 )
+position = Vector2( 499, 570 )
 shape = SubResource( 52 )
 
 [node name="LitterBoxCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
-position = Vector2( 809, 265 )
+position = Vector2( 759, 265 )
 shape = SubResource( 53 )
 
 [node name="ExitCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
-position = Vector2( 57.5, 572 )
+position = Vector2( 7.5, 596 )
 shape = SubResource( 54 )
 
 [node name="Stereo" type="StaticBody2D" parent="MainColliders"]
-position = Vector2( 549, 570 )
+position = Vector2( 499, 570 )
 collision_layer = 7
 collision_mask = 7
 __meta__ = {
@@ -657,49 +664,31 @@ one_way_collision = true
 [node name="Default" parent="." instance=ExtResource( 11 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 1303, 186 )
+position = Vector2( 1258, 196 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
-limit_right = 1490
+limit_right = 1440
 limit_bottom = 720
 
 [node name="AnimatedSprite" parent="Default/Player" index="1"]
 frame = 19
 
 [node name="AbovePlayer" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="LitterBox" type="ColorRect" parent="AbovePlayer"]
-margin_left = 860.0
+margin_left = 810.0
 margin_top = 288.0
-margin_right = 926.0
+margin_right = 876.0
 margin_bottom = 367.0
 mouse_filter = 2
 color = Color( 0.117647, 0.00392157, 0.168627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="End" type="ColorRect" parent="AbovePlayer"]
-margin_left = -15.0
-margin_top = 582.0
-margin_right = 51.0
-margin_bottom = 690.0
-mouse_filter = 2
-color = Color( 0.117647, 0.00392157, 0.168627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Ladders" type="Node2D" parent="Interactables"]
 
 [node name="KitchenLadder" type="Area2D" parent="Interactables/Ladders"]
-position = Vector2( 290, 592.831 )
+position = Vector2( 240, 592.831 )
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -711,7 +700,7 @@ position = Vector2( 0, -2.76105 )
 shape = SubResource( 57 )
 
 [node name="BedLadder" type="Area2D" parent="Interactables/Ladders"]
-position = Vector2( 1318, 288 )
+position = Vector2( 1268, 288 )
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -723,7 +712,7 @@ position = Vector2( 0, -4.79604 )
 shape = SubResource( 58 )
 
 [node name="LastLadder" type="Area2D" parent="Interactables/Ladders"]
-position = Vector2( 165, 243.823 )
+position = Vector2( 115, 243.823 )
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -735,10 +724,11 @@ position = Vector2( 0, -3.80214 )
 shape = SubResource( 59 )
 
 [node name="Present" type="Area2D" parent="Interactables"]
-position = Vector2( 159.9, 676.2 )
+position = Vector2( 109.9, 676.2 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 10 )
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/open_present.wav"
+require_grounded = true
 disable_player = "catscradle_present"
 button_reappear_delay = 2.0
 make_node_visible = NodePath("../../CanvasLayer/Letter")
@@ -757,7 +747,7 @@ position = Vector2( 1.57141, -47.4286 )
 texture = ExtResource( 7 )
 
 [node name="StereoSFX" type="Area2D" parent="Interactables"]
-position = Vector2( 849.27, 653.255 )
+position = Vector2( 799.27, 653.255 )
 script = ExtResource( 4 )
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/StereoGeoquariumSample.wav"
 sound_volume = 65.378
@@ -772,17 +762,17 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Statue"]
-position = Vector2( 493.117, -360.987 )
+position = Vector2( 443.117, -360.987 )
 shape = SubResource( 62 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Statue"]
-position = Vector2( 263, 42 )
+position = Vector2( 213, 42 )
 shape = SubResource( 63 )
 one_way_collision = true
 
 [node name="LitterBoxSFX" type="Area2D" parent="Interactables"]
-position = Vector2( 809.231, 356.84 )
+position = Vector2( 759.231, 356.84 )
 script = ExtResource( 4 )
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/LitterBoxSFX.ogg"
 
@@ -791,7 +781,7 @@ position = Vector2( -7.5437, 7.4028 )
 shape = SubResource( 64 )
 
 [node name="FridgeInteract" type="Area2D" parent="Interactables"]
-position = Vector2( 105, 421 )
+position = Vector2( 55, 421 )
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_group_": true
@@ -806,13 +796,14 @@ position = Vector2( 20, 25.5 )
 shape = SubResource( 65 )
 
 [node name="Teleport" type="Area2D" parent="Interactables"]
-position = Vector2( 60, 656 )
+position = Vector2( 10, 656 )
 script = ExtResource( 5 )
 sound_effect = 6
 geocity = 1
 this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactables/Teleport"]
+position = Vector2( 14.0954, 0 )
 shape = SubResource( 66 )
 
 [node name="Button" type="Sprite" parent="Interactables/Teleport"]
@@ -821,7 +812,7 @@ scale = Vector2( 0.239477, 0.24014 )
 texture = ExtResource( 6 )
 
 [node name="Dream" type="Area2D" parent="Interactables"]
-position = Vector2( 1332, 179 )
+position = Vector2( 1282, 179 )
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
@@ -836,7 +827,7 @@ position = Vector2( 66.5, 14 )
 shape = SubResource( 67 )
 
 [node name="ShowInstructionManual" type="Area2D" parent="Interactables"]
-position = Vector2( 1003, 111 )
+position = Vector2( 953, 111 )
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_group_": true
@@ -887,8 +878,8 @@ margin_right = 205.899
 margin_bottom = 44.8703
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 69 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 69 )
 meta_underlined = false
 text = "Basic Techniques"
 fit_content_height = true
@@ -901,8 +892,8 @@ margin_right = 231.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 70 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 70 )
 meta_underlined = false
 text = "Here's some advice:
 Use the arrow keys
@@ -923,8 +914,8 @@ margin_right = 307.0
 margin_bottom = 200.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 71 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 71 )
 meta_underlined = false
 text = "Advanced Techniques
 "
@@ -938,8 +929,8 @@ margin_right = 293.101
 margin_bottom = 269.13
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 72 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 72 )
 meta_underlined = false
 text = "Ladders are everywhere! 
 Use them to reach new heights that would normally be out of reach for a feline."
@@ -956,8 +947,8 @@ margin_right = 623.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 73 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 73 )
 meta_underlined = false
 text = "Super Advanced Techniques"
 fit_content_height = true
@@ -970,8 +961,8 @@ margin_right = 629.0
 margin_bottom = 139.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 74 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 74 )
 meta_underlined = false
 text = "Cats are expert climbers and
 parkour is an indispensable strategy that all cats should be aware of. If you're ever in danger, consider climbing a tree."
@@ -988,8 +979,8 @@ margin_right = 570.899
 margin_bottom = 171.87
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 75 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 75 )
 meta_underlined = false
 text = "Nonaco's GeoRing"
 fit_content_height = true
@@ -1002,8 +993,8 @@ margin_right = 469.0
 margin_bottom = 278.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 76 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 76 )
 meta_underlined = false
 text = "Life's not always easy on a giant space-ring. But, we believe in you. Good luck on your adventures!"
 fit_content_height = true
@@ -1031,8 +1022,8 @@ margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 78 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 78 )
 fit_content_height = true
 script = ExtResource( 12 )
 __meta__ = {
