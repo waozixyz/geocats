@@ -4,7 +4,7 @@
     "avatar": "nostoc.png",
     "position": "left",
     "type": "text",
-    "content": "Hey, I'm Nostoc, an apprentice machinist. I create and maintain the infrastructure here.",
+    "content": "Hey, I'm Nostoc, an apprentice machinist.@I create and maintain the infrastructure here.",
     "animation_in": "fade_in",
     "next": "1"
   },
@@ -15,12 +15,12 @@
   },
   "2": {
     "type": "text",
-    "content": "...Can you hear that? There's a really irritating sound coming from inside this terrarium.",
+    "content": "...Can you hear that?@There's this really irritating noise coming from inside this terrarium.",
     "next": "3"
   },
   "3": {
     "type": "text",
-    "content": "Is it coming from the lightbulbs? Is it one of the pipes‽",
+    "content": "Is it coming from the lightbulbs?@...One of the pipes‽",
     "next": ""
   },
   "repeat": {
@@ -28,7 +28,7 @@
     "avatar": "nostoc.png",
     "position": "left",
     "animation_in": "fade_in",
-    "type": "repeat",
+    "type": "text",
     "content": "...I used to work as a Catstronaut, but often found myself missing life on the ring.",
     "next": ""
   }

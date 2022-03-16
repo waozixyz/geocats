@@ -489,7 +489,9 @@ position = Vector2( 1249.7, -248.505 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 7
 
