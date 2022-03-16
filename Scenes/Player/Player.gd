@@ -76,11 +76,12 @@ func add_follower(cat):
 	cat.no_gravity = true
 
 func remove_follower(cat):
-	if global.user.following.has(cat.name):
-		global.user.following.remove(cat.name)
-	followers.erase(cat)
-	cat.position = position
-	remove_child(cat)
+	if cat:
+		if global.user.following.has(cat.name):
+			global.user.following.remove(cat.name)
+		followers.erase(cat)
+		cat.position = position
+		remove_child(cat)
 
 # play default sprite animations
 func default_anim():

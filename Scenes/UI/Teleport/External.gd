@@ -10,7 +10,7 @@ export(Territory.Glaciokarst) var glaciokarst
 export(Territory.XAPS) var xaps
 export(int) var next_loc = 0
 export(int) var this_loc = 0
-
+export(bool) var use_parent_pos = false
 func _get_level_name():
 	match territory:
 		Territory.Names.GeoCity: return Territory.GeoCity.keys()[geocity]
@@ -28,7 +28,10 @@ func _ready():
 	if this_loc > 0:
 		if locations.size() < this_loc + 1:
 			locations.resize(this_loc + 1)
-		locations[this_loc] = position
+		if use_parent_pos:
+			locations[this_loc] = get_parent().position + position
+		else:
+			locations[this_loc] = position
 	current_scene.locations = locations
 func _input(_event):
 	if _can_interact():

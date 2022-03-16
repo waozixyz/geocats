@@ -5,7 +5,6 @@ onready var player =  get_tree().get_current_scene().player
 var id = 0
 var playing = {}
 func _finished_playing(id, sound, object):
-	print("hi")
 	if object:
 		object.remove_child(sound)
 		object.playing = false
@@ -36,6 +35,8 @@ func play_sound(sound_file, volume = 100, loop = false, object = null):
 		id += 1
 		return sound
 func _process(_delta):
+	if (!weakref(player).get_ref()):
+		player = get_tree().get_current_scene().player
 	for play in playing.values():
 		if play.object:
 			var pos_diff = play.object.position - player.position

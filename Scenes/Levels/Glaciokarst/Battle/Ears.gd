@@ -1,5 +1,6 @@
 extends Area2D
 
+onready var player = get_tree().get_current_scene().player 
 onready var enemy = get_tree().get_current_scene().get_node("Enemy")
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -24,7 +25,7 @@ func _fix_color():
 
 func _process(delta):
 	var dfps = delta * global.fps
-	if touching and get_parent().visible and get_parent().get_parent().visible:
+	if touching and get_parent().visible and get_parent().get_parent().visible and player.grounded:
 		var r
 		var f
 		if get_parent().name == "wyrd":

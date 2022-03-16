@@ -728,6 +728,7 @@ __meta__ = {
 sound_effect = 5
 geocity = 5
 this_loc = 2
+use_parent_pos = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/DonutShop"]
 shape = SubResource( 43 )
