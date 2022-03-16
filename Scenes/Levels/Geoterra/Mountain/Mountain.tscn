@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/UI/Teleport/Internal.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat_3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat_1.png" type="Texture" id=16]
@@ -489,9 +489,7 @@ position = Vector2( 1249.7, -248.505 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
