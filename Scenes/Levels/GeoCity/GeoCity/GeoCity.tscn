@@ -184,7 +184,7 @@ extents = Vector2( 123, 6 )
 extents = Vector2( 6, 51 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 2409, 85 )
+extents = Vector2( 2409, 87.1046 )
 
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 8, 800 )
@@ -650,7 +650,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Ground"]
-position = Vector2( 2410, 1513 )
+position = Vector2( 2410, 1513.28 )
 shape = SubResource( 39 )
 
 [node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
@@ -699,8 +699,7 @@ script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 6
-sound_volume = 0.5
+sound_effect = 5
 geocity = 3
 this_loc = 1
 
@@ -721,6 +720,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 dialogue_file = "res://Assets/Levels/GeoCity/GeoCity/feline_locked_door.json"
+sound_effect = "res://Assets/Feline/Sounds/Feline_Owch.wav"
 item_node = NodePath("DonutShop")
 unlock_var = "geocity_donutshop_open"
 
@@ -753,6 +753,7 @@ position = Vector2( 3328, 900 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
+move_speed = 75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat"]
 scale = Vector2( 4, 4 )
@@ -778,6 +779,7 @@ position = Vector2( 4119, 775 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
+move_speed = 75
 jump_delay_range = [ 100, 200 ]
 walk_delay_range = [ 6, 24 ]
 change_direction = 80
@@ -806,7 +808,7 @@ position = Vector2( 2029.28, 1386.47 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 7 )
-move_speed = 200
+move_speed = 125
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )

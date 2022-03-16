@@ -226,22 +226,22 @@ extents = Vector2( 12, 100 )
 [sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 118.859, 112.238 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 83.0044, 53.769 )
 
-[sub_resource type="RectangleShape2D" id=48]
+[sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 98.6899, 138.24 )
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 130.769, 92.1748 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 98.6899, 71 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 42.75, 391 )
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 100, 271.5 )
 
 [node name="Creek" type="Node2D"]
@@ -770,7 +770,7 @@ this_loc = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToGreenCave"]
 position = Vector2( -0.987793, -8.22998 )
-shape = SubResource( 53 )
+shape = SubResource( 48 )
 
 [node name="Button" type="Sprite" parent="Portals/ToGreenCave"]
 position = Vector2( 60.8154, -42.4717 )
@@ -790,7 +790,7 @@ this_loc = 3
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/GeoCacheRoom"]
 position = Vector2( 0, -67.2402 )
-shape = SubResource( 48 )
+shape = SubResource( 49 )
 
 [node name="Button" type="Sprite" parent="Portals/GeoCacheRoom"]
 visible = false
@@ -808,7 +808,7 @@ sound_effect = 4
 node_to_go = NodePath("../CaveToDown")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToUp"]
-shape = SubResource( 49 )
+shape = SubResource( 50 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToUp"]
 visible = false
@@ -823,7 +823,7 @@ sound_effect = 4
 node_to_go = NodePath("../CaveToUp")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CaveToDown"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="Button" type="Sprite" parent="Portals/CaveToDown"]
 visible = false
@@ -841,7 +841,7 @@ this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/JokeRoom"]
 position = Vector2( 0, -14.8999 )
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="Button" type="Sprite" parent="Portals/JokeRoom"]
 visible = false
@@ -858,7 +858,7 @@ geoterra = 2
 this_loc = 2
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/CavityPuzzleRoom"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="Button" type="Sprite" parent="Portals/CavityPuzzleRoom"]
 visible = false
@@ -875,7 +875,7 @@ player_disable = "feline_creek"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FelineArea"]
 position = Vector2( 1779, 3854 )
-shape = SubResource( 51 )
+shape = SubResource( 52 )
 
 [node name="RespawnLocationOnTouch" type="Area2D" parent="."]
 position = Vector2( 4224, 5010 )
@@ -887,7 +887,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch"]
 position = Vector2( -109, -51.5 )
-shape = SubResource( 52 )
+shape = SubResource( 53 )
 
 [editable path="Default"]
 [editable path="Default/Player"]
