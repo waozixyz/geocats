@@ -3,5 +3,4 @@
 [ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 22
 font_data = ExtResource( 1 )

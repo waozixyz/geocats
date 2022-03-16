@@ -58,7 +58,7 @@ void fragment(){
 shader = SubResource( 4 )
 shader_param/scroll_speed = 0.0
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Node
 
 export(float) var scroll_speed = 0.004
@@ -70,7 +70,7 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 uniform float scroll_speed;
 
@@ -81,8 +81,24 @@ void fragment(){
     COLOR = color;
 }"
 
-[sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 8 )
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends Node
+
+export(float) var scroll_speed = 0.004
+func _ready():
+	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 4 )
 shader_param/scroll_speed = 0.0
 
 [sub_resource type="GDScript" id=11]
@@ -97,39 +113,23 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = SubResource( 4 )
-shader_param/scroll_speed = 0.0
-
-[sub_resource type="GDScript" id=14]
-script/source = "extends Node
-
-export(float) var scroll_speed = 0.004
-func _ready():
-	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 16, 13 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 16 )
 region = Rect2( 16, 0, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 4.0
 } ]
 
-[sub_resource type="Shader" id=18]
+[sub_resource type="Shader" id=15]
 code = "shader_type canvas_item;
 
 uniform bool dmg;
@@ -142,251 +142,251 @@ void fragment() {
     COLOR = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 18 )
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 15 )
 shader_param/dmg = false
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 0, 15, 15 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 18 )
-region = Rect2( 15, 30, 15, 15 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 30, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 18 )
-region = Rect2( 15, 30, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 30, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 30, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 15, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 30, 30, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 15, 30, 15, 15 )
 
-[sub_resource type="SpriteFrames" id=35]
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 30, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 31 ), SubResource( 32 ), SubResource( 31 ), SubResource( 31 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 31 ) ],
+"frames": [ SubResource( 17 ) ],
 "loop": true,
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 30 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 20 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ) ],
 "loop": true,
-"name": "crouch",
+"name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 20 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 20 ), SubResource( 20 ), SubResource( 21 ), SubResource( 21 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ), SubResource( 24 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
-"name": "slide_wall",
-"speed": 12.0
+"name": "walk",
+"speed": 5.0
 }, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 26 ) ],
 "loop": true,
-"name": "walk",
+"name": "crouch",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 12.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 10, 74.5 )
 
-[sub_resource type="RectangleShape2D" id=37]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 13.0565, 107.5 )
 
-[sub_resource type="RectangleShape2D" id=38]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 11, 256.5 )
 
-[sub_resource type="RectangleShape2D" id=39]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 5, 144 )
 
-[sub_resource type="RectangleShape2D" id=40]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 8.5, 169 )
 
-[sub_resource type="RectangleShape2D" id=41]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 21, 130 )
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 8, 14 )
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 81, 3 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 27, 5 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 38.5, 2.5 )
 
-[sub_resource type="RectangleShape2D" id=46]
+[sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 309, 12 )
 
-[sub_resource type="RectangleShape2D" id=47]
+[sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 93, 9 )
 
-[sub_resource type="RectangleShape2D" id=48]
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 36, 5 )
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 114, 12 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 358.401, 18 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 729, 10 )
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 124.5, 12 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 129, 12 )
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 697.672, 10 )
 
-[sub_resource type="RectangleShape2D" id=55]
+[sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 203, 36 )
 
-[sub_resource type="RectangleShape2D" id=56]
+[sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 51, 5 )
 
-[sub_resource type="RectangleShape2D" id=57]
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 40.5, 10 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 27, 4 )
 
-[sub_resource type="RectangleShape2D" id=59]
+[sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 22, 4 )
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 13.5, 79.2611 )
 
-[sub_resource type="RectangleShape2D" id=61]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 9, 53.3675 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 13.5, 88.2143 )
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 81, 70.157 )
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 42.8818, 22.4911 )
 
-[sub_resource type="RectangleShape2D" id=65]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 49.1169, 5.38007 )
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 21, 6 )
 
-[sub_resource type="RectangleShape2D" id=67]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 36.2031, 15.5309 )
 
-[sub_resource type="RectangleShape2D" id=68]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 30, 35.5 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 47.1908, 33.7617 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 57.5, 24 )
 
-[sub_resource type="RectangleShape2D" id=71]
+[sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 94, 91.5 )
 
-[sub_resource type="DynamicFont" id=72]
+[sub_resource type="DynamicFont" id=69]
 size = 25
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=70]
+size = 15
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=71]
+size = 25
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=72]
+size = 15
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=73]
-size = 15
+size = 25
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=74]
-size = 25
+size = 15
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=75]
-size = 15
+size = 25
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=76]
-size = 25
-font_data = ExtResource( 22 )
-
-[sub_resource type="DynamicFont" id=77]
 size = 15
 font_data = ExtResource( 22 )
 
-[sub_resource type="DynamicFont" id=78]
-size = 25
-font_data = ExtResource( 22 )
-
-[sub_resource type="DynamicFont" id=79]
-size = 15
-font_data = ExtResource( 22 )
-
-[sub_resource type="DynamicFontData" id=80]
+[sub_resource type="DynamicFontData" id=77]
 font_path = "res://Assets/Fonts/qix_mono.ttf"
 
-[sub_resource type="DynamicFont" id=81]
+[sub_resource type="DynamicFont" id=78]
 size = 22
 extra_spacing_top = -5
 extra_spacing_bottom = -3
-font_data = SubResource( 80 )
+font_data = SubResource( 77 )
 
 [node name="CatsCradle" type="Node2D"]
 script = ExtResource( 1 )
@@ -430,7 +430,6 @@ __meta__ = {
 position = Vector2( 1082.14, -7.38968 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -445,33 +444,33 @@ rect_pivot_offset = Vector2( 1576.79, 392.183 )
 mouse_filter = 2
 texture = ExtResource( 26 )
 stretch_mode = 2
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="YellowStars" type="TextureRect" parent="BelowPlayer/Dream"]
-material = SubResource( 9 )
+material = SubResource( 8 )
 margin_right = 1500.0
 margin_bottom = 700.0
 mouse_filter = 2
 texture = ExtResource( 25 )
 stretch_mode = 2
-script = SubResource( 11 )
+script = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Startrails" type="TextureRect" parent="BelowPlayer/Dream"]
-material = SubResource( 12 )
+material = SubResource( 10 )
 margin_right = 1500.0
 margin_bottom = 700.0
 mouse_filter = 2
 texture = ExtResource( 24 )
 stretch_mode = 2
-script = SubResource( 14 )
+script = SubResource( 11 )
 
 [node name="Sprite" type="AnimatedSprite" parent="BelowPlayer/Dream"]
 position = Vector2( 1341.43, 163.423 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 17 )
+frames = SubResource( 14 )
 playing = true
 centered = false
 
@@ -501,10 +500,10 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer/Dream"]
-material = SubResource( 19 )
+material = SubResource( 16 )
 position = Vector2( 1215, 270 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 35 )
+frames = SubResource( 32 )
 animation = "walk"
 script = ExtResource( 19 )
 
@@ -517,33 +516,35 @@ __meta__ = {
 collision_layer = 7
 collision_mask = 7
 
-[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
+[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=[
+"end",
+]]
 position = Vector2( 7, 636.5 )
-shape = SubResource( 36 )
+shape = SubResource( 33 )
 
 [node name="KitchenRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 333.057, 497.5 )
-shape = SubResource( 37 )
+shape = SubResource( 34 )
 
 [node name="LeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 87, 304.5 )
-shape = SubResource( 38 )
+shape = SubResource( 35 )
 
 [node name="StatueRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 1471, 546 )
-shape = SubResource( 39 )
+shape = SubResource( 36 )
 
 [node name="BedRoomRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 1462.5, 197 )
-shape = SubResource( 40 )
+shape = SubResource( 37 )
 
 [node name="LitterboxLeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 737, 272 )
-shape = SubResource( 41 )
+shape = SubResource( 38 )
 
 [node name="LitterboxRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
 position = Vector2( 868, 274 )
-shape = SubResource( 42 )
+shape = SubResource( 39 )
 
 [node name="Platforms" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
@@ -551,37 +552,37 @@ collision_mask = 7
 
 [node name="ShelfCollider" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1043, 87 )
-shape = SubResource( 43 )
+shape = SubResource( 40 )
 one_way_collision = true
 
 [node name="PresentTablePlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 161, 665 )
-shape = SubResource( 44 )
+shape = SubResource( 41 )
 one_way_collision = true
 
 [node name="LitterboxPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 803.5, 356.5 )
-shape = SubResource( 45 )
+shape = SubResource( 42 )
 one_way_collision = true
 
 [node name="LeavingBedroomFloor" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 407, 132 )
-shape = SubResource( 46 )
+shape = SubResource( 43 )
 one_way_collision = true
 
 [node name="BedPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1361, 225 )
-shape = SubResource( 47 )
+shape = SubResource( 44 )
 one_way_collision = true
 
 [node name="Bed" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 1214, 539 )
-shape = SubResource( 48 )
+shape = SubResource( 45 )
 one_way_collision = true
 
 [node name="KitchenPlatform" type="CollisionShape2D" parent="MainColliders/Platforms"]
 position = Vector2( 212, 498 )
-shape = SubResource( 49 )
+shape = SubResource( 46 )
 one_way_collision = true
 
 [node name="Stairs" type="StaticBody2D" parent="MainColliders"]
@@ -601,15 +602,15 @@ collision_mask = 7
 
 [node name="BedroomFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 1116.4, 384 )
-shape = SubResource( 50 )
+shape = SubResource( 47 )
 
 [node name="MainFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 746, 700 )
-shape = SubResource( 51 )
+shape = SubResource( 48 )
 
 [node name="StairFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
 position = Vector2( 222, 378 )
-shape = SubResource( 52 )
+shape = SubResource( 49 )
 
 [node name="Ceilings" type="StaticBody2D" parent="MainColliders"]
 collision_layer = 7
@@ -617,23 +618,23 @@ collision_mask = 7
 
 [node name="LitterboxHallCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 989, 300 )
-shape = SubResource( 53 )
+shape = SubResource( 50 )
 
 [node name="BedroomCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 773.672, 38 )
-shape = SubResource( 54 )
+shape = SubResource( 51 )
 
 [node name="StarPosterCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 549, 570 )
-shape = SubResource( 55 )
+shape = SubResource( 52 )
 
 [node name="LitterBoxCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 809, 265 )
-shape = SubResource( 56 )
+shape = SubResource( 53 )
 
 [node name="ExitCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
 position = Vector2( 57.5, 572 )
-shape = SubResource( 57 )
+shape = SubResource( 54 )
 
 [node name="Stereo" type="StaticBody2D" parent="MainColliders"]
 position = Vector2( 549, 570 )
@@ -645,12 +646,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainColliders/Stereo"]
 position = Vector2( 266, 58 )
-shape = SubResource( 58 )
+shape = SubResource( 55 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MainColliders/Stereo"]
 position = Vector2( 323, 70 )
-shape = SubResource( 59 )
+shape = SubResource( 56 )
 one_way_collision = true
 
 [node name="Default" parent="." instance=ExtResource( 11 )]
@@ -707,7 +708,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/KitchenLadder"]
 position = Vector2( 0, -2.76105 )
-shape = SubResource( 60 )
+shape = SubResource( 57 )
 
 [node name="BedLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1318, 288 )
@@ -719,7 +720,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/BedLadder"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 61 )
+shape = SubResource( 58 )
 
 [node name="LastLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 165, 243.823 )
@@ -731,7 +732,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/LastLadder"]
 position = Vector2( 0, -3.80214 )
-shape = SubResource( 62 )
+shape = SubResource( 59 )
 
 [node name="Present" type="Area2D" parent="Interactables"]
 position = Vector2( 159.9, 676.2 )
@@ -746,7 +747,7 @@ progress_var = "catscradle_present"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Present"]
 position = Vector2( 40.1429, -32.7786 )
-shape = SubResource( 63 )
+shape = SubResource( 60 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -759,11 +760,11 @@ texture = ExtResource( 7 )
 position = Vector2( 849.27, 653.255 )
 script = ExtResource( 4 )
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/StereoGeoquariumSample.wav"
-sound_volume = 10.0
+sound_volume = 65.378
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/StereoSFX"]
 position = Vector2( -6.53906, 8.40741 )
-shape = SubResource( 64 )
+shape = SubResource( 61 )
 
 [node name="Statue" type="StaticBody2D" parent="Interactables"]
 position = Vector2( 900, 570 )
@@ -772,12 +773,12 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Statue"]
 position = Vector2( 493.117, -360.987 )
-shape = SubResource( 65 )
+shape = SubResource( 62 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Statue"]
 position = Vector2( 263, 42 )
-shape = SubResource( 66 )
+shape = SubResource( 63 )
 one_way_collision = true
 
 [node name="LitterBoxSFX" type="Area2D" parent="Interactables"]
@@ -787,7 +788,7 @@ sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/LitterBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LitterBoxSFX"]
 position = Vector2( -7.5437, 7.4028 )
-shape = SubResource( 67 )
+shape = SubResource( 64 )
 
 [node name="FridgeInteract" type="Area2D" parent="Interactables"]
 position = Vector2( 105, 421 )
@@ -802,7 +803,7 @@ sound_when_visible = "res://Assets/Levels/GeoCity/CatsCradle/inside_friedge.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/FridgeInteract"]
 position = Vector2( 20, 25.5 )
-shape = SubResource( 68 )
+shape = SubResource( 65 )
 
 [node name="Teleport" type="Area2D" parent="Interactables"]
 position = Vector2( 60, 656 )
@@ -812,7 +813,7 @@ geocity = 1
 this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Interactables/Teleport"]
-shape = SubResource( 69 )
+shape = SubResource( 66 )
 
 [node name="Button" type="Sprite" parent="Interactables/Teleport"]
 position = Vector2( 17, -46 )
@@ -832,7 +833,7 @@ transition_time = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Dream"]
 position = Vector2( 66.5, 14 )
-shape = SubResource( 70 )
+shape = SubResource( 67 )
 
 [node name="ShowInstructionManual" type="Area2D" parent="Interactables"]
 position = Vector2( 1003, 111 )
@@ -847,7 +848,7 @@ make_node_visible = NodePath("../../CanvasLayer/InstructionBooklet")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/ShowInstructionManual"]
 position = Vector2( 34, 38.5 )
-shape = SubResource( 71 )
+shape = SubResource( 68 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -886,8 +887,8 @@ margin_right = 205.899
 margin_bottom = 44.8703
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 69 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 72 )
 meta_underlined = false
 text = "Basic Techniques"
 fit_content_height = true
@@ -900,8 +901,8 @@ margin_right = 231.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 70 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 73 )
 meta_underlined = false
 text = "Here's some advice:
 Use the arrow keys
@@ -922,8 +923,8 @@ margin_right = 307.0
 margin_bottom = 200.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 71 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 74 )
 meta_underlined = false
 text = "Advanced Techniques
 "
@@ -937,8 +938,8 @@ margin_right = 293.101
 margin_bottom = 269.13
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 72 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 75 )
 meta_underlined = false
 text = "Ladders are everywhere! 
 Use them to reach new heights that would normally be out of reach for a feline."
@@ -955,8 +956,8 @@ margin_right = 623.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 73 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 76 )
 meta_underlined = false
 text = "Super Advanced Techniques"
 fit_content_height = true
@@ -969,8 +970,8 @@ margin_right = 629.0
 margin_bottom = 139.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 74 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 77 )
 meta_underlined = false
 text = "Cats are expert climbers and
 parkour is an indispensable strategy that all cats should be aware of. If you're ever in danger, consider climbing a tree."
@@ -987,8 +988,8 @@ margin_right = 570.899
 margin_bottom = 171.87
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 75 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 78 )
 meta_underlined = false
 text = "Nonaco's GeoRing"
 fit_content_height = true
@@ -1001,8 +1002,8 @@ margin_right = 469.0
 margin_bottom = 278.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 76 )
 custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
-custom_fonts/normal_font = SubResource( 79 )
 meta_underlined = false
 text = "Life's not always easy on a giant space-ring. But, we believe in you. Good luck on your adventures!"
 fit_content_height = true
@@ -1030,8 +1031,8 @@ margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 78 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 81 )
 fit_content_height = true
 script = ExtResource( 12 )
 __meta__ = {
@@ -1067,7 +1068,8 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -3.493
+volume_db = -20.497
+autoplay = true
 bus = "Music"
 
 [editable path="Default"]

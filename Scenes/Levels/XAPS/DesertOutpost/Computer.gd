@@ -15,7 +15,7 @@ func _on_body_entered(body):
 
 	if body.name == "Player":
 		touching = true
-		interact_with.visible = true
+d		interact_with.visible = true
 	
 func _on_body_exited(body):
 	if body.name == "Player":
