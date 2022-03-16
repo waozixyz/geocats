@@ -60,6 +60,7 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/fg_panel.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/bg_plants.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Agents/Liet/Liet.png" type="Texture" id=61]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -344,49 +345,45 @@ extents = Vector2( 23.6621, 17.57 )
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 40.8073, 23.3975 )
 
-[sub_resource type="AtlasTexture" id=63]
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 27.4358, 20.873 )
+
+[sub_resource type="AtlasTexture" id=118]
+atlas = ExtResource( 61 )
 region = Rect2( 0, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=64]
-region = Rect2( 32, 0, 16, 12 )
-
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 61 )
 region = Rect2( 16, 0, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=66]
+[sub_resource type="AtlasTexture" id=120]
+atlas = ExtResource( 61 )
+region = Rect2( 32, 0, 16, 12 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 61 )
 region = Rect2( 0, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=67]
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 61 )
 region = Rect2( 16, 12, 16, 12 )
 
-[sub_resource type="AtlasTexture" id=68]
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 61 )
 region = Rect2( 32, 12, 16, 12 )
 
-[sub_resource type="SpriteFrames" id=69]
+[sub_resource type="SpriteFrames" id=124]
 animations = [ {
-"frames": [ SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ) ],
+"frames": [ SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 120 ), SubResource( 120 ), SubResource( 121 ), SubResource( 118 ), SubResource( 121 ), SubResource( 118 ), SubResource( 118 ), SubResource( 118 ), SubResource( 120 ), SubResource( 120 ), SubResource( 120 ), SubResource( 120 ), SubResource( 119 ), SubResource( 118 ), SubResource( 118 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 67 ), SubResource( 68 ) ],
+"frames": [ SubResource( 122 ), SubResource( 123 ) ],
 "loop": true,
 "name": "walk",
 "speed": 6.0
 } ]
-
-[sub_resource type="GDScript" id=70]
-script/source = "extends AnimatedSprite
-
-# this was created to avoid needing the playing bool true in the scene
-# which keeps rewriting the scene file and causing merge issues
-
-func _ready():
-	play()
-"
-
-[sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 27.4358, 20.873 )
 
 [sub_resource type="SpriteFrames" id=72]
 animations = [ {
@@ -599,7 +596,7 @@ shape = SubResource( 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 10
+frame = 20
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC"]
@@ -613,7 +610,7 @@ sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 23
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ErnstArea2D"]
@@ -634,7 +631,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 12
+frame = 18
 playing = true
 
 [node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -666,7 +663,7 @@ move_speed = 0
 scale = Vector2( 4, 4 )
 frames = SubResource( 34 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="NostocArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -700,7 +697,6 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 46 )
 animation = "walk"
-frame = 3
 playing = true
 
 [node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -733,7 +729,6 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 53 )
 animation = "idle"
-frame = 8
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -764,7 +759,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 59 )
 animation = "idle"
-frame = 2
+frame = 8
 playing = true
 
 [node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
@@ -786,6 +781,9 @@ position = Vector2( 3474.58, 2593.37 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 20 )
+move_speed = 20
+_jump_height = 30
+walk_delay_range = [ 100, 300 ]
 
 [node name="Area2D" type="Area2D" parent="NPC/Liet_Desert"]
 script = ExtResource( 18 )
@@ -797,20 +795,20 @@ sound_file = "res://Assets/Agents/Liet/liet.wav"
 position = Vector2( 18.1068, 16.6215 )
 shape = SubResource( 62 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert"]
+position = Vector2( 30.0585, 20.9007 )
+shape = SubResource( 71 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Liet_Desert"]
 position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 69 )
+frames = SubResource( 124 )
 animation = "walk"
 frame = 1
 speed_scale = 0.3
 centered = false
 flip_h = true
-script = SubResource( 70 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert"]
-position = Vector2( 30.0585, 20.9007 )
-shape = SubResource( 71 )
+script = ExtResource( 12 )
 
 [node name="Default" parent="." instance=ExtResource( 5 )]
 
