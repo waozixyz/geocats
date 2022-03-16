@@ -57,10 +57,12 @@ func _physics_process(delta):
 			change = false
 
 func _new_scene():
-	for item in AudioManager.playing:
-		item.sound.stop()
-	AudioManager.playing = []
-	
+	for item in AudioManager.playing.values():
+		if item.sound.pause_mode != PAUSE_MODE_PROCESS:
+			item.sound.stop()
+			item.volume = linear2db(0)
+			item.sound.playing = false
+			
 	var err = get_tree().change_scene(level_path)
 	assert(err == OK)
 	get_tree().paused = false

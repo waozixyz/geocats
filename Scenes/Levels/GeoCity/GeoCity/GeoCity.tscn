@@ -678,7 +678,6 @@ __meta__ = {
 "_edit_group_": true
 }
 sound_effect = 3
-sound_volume = 1.5
 geocity = 1
 next_loc = 1
 
@@ -697,7 +696,6 @@ script = ExtResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 5
 geocity = 3
 this_loc = 1
 

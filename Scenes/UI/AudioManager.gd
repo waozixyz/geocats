@@ -1,14 +1,19 @@
 extends Node
 
-var playing = []
+onready var player =  get_tree().get_current_scene().player
+
+var id = 0
+var playing = {}
 func _finished_playing(id, sound, object):
+	print("hi")
 	if object:
 		object.remove_child(sound)
 		object.playing = false
 	else:
 		remove_child(sound)
-	playing.remove(id)
-func play_sound(sound_file, volume = 1, loop = false, object = null, player = null):
+	playing.erase(id)
+
+func play_sound(sound_file, volume = 100, loop = false, object = null):
 	if sound_file:
 		var sound
 		if object:
@@ -25,13 +30,16 @@ func play_sound(sound_file, volume = 1, loop = false, object = null, player = nu
 			sound.stream.loop = loop
 		sound.volume_db = linear2db(volume * 0.01)
 		sound.bus = "Sound"
-		sound.connect("finished", self, "_finished_playing", [playing.size(), sound, object])
+		sound.connect("finished", self, "_finished_playing", [id, sound, object])
 		sound.play()
-		playing.append({"sound": sound, "volume": sound.volume_db, "object": object, "player": player })
+		playing[id] = {"sound": sound, "volume": sound.volume_db, "object": object}
+		id += 1
 		return sound
 func _process(_delta):
-	for play in playing:
-		if play.object and play.player:
-			var pos_diff = play.object.position - play.player.position
+	for play in playing.values():
+		if play.object:
+			var pos_diff = play.object.position - player.position
 			pos_diff =  abs(abs(pos_diff.x) - abs(pos_diff.y)) / 100 
 			play.sound.volume_db = play.volume - pos_diff
+		elif play.sound.volume_db != play.volume:
+			play.sound.volume_db = play.volume

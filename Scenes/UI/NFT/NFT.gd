@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var player =  get_tree().get_current_scene().player
 
 onready var login = $Login
 onready var main = $Main

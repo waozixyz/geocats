@@ -32,7 +32,7 @@ func _process(_delta):
 				PROGRESS.variables[progress_when_visible] = true
 			utils.tween(ui_node, "fade", 1, transition_time)
 			if sound_when_visible:
-				active_sound = AudioManager.play_sound(sound_when_visible, 1, true)
+				active_sound = AudioManager.play_sound(sound_when_visible, sound_volume, true)
 			timer = 0
 		do_something = false
 

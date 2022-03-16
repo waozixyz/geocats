@@ -29,7 +29,11 @@ func _ready():
 	assert(err == OK)
 	completed = PROGRESS.variables.get("CavityPuzzleTicketPrinted")
 	ticket.visible = true if completed else false
-	
+	if completed:
+		minus.disabled = true
+		plus.disabled = true
+		enter.disabled = true
+		sprite.frame = 13
 func _pull_ticket():
 	pass
 
@@ -75,11 +79,6 @@ func _process(delta):
 	if modulate.a < 1 and camera.zoom.x > 1.3:
 		utils.tween(camera, "zoom", Vector2(1, 1), .5)
 		
-	#if do_something:
-	#	hud.visible = false if hud.visible else true
-	#	do_something = false
-	#if not touching:
-	#	hud.visible = false
 	if success:
 		sprite.frame = 12
 		ticks += 1
