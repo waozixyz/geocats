@@ -18,7 +18,7 @@
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=42]
 
 [sub_resource type="RectangleShape2D" id=186]
-extents = Vector2( 17.875, 65 )
+extents = Vector2( 17.875, 71 )
 
 [sub_resource type="RectangleShape2D" id=188]
 extents = Vector2( 35.5, 54 )
@@ -60,7 +60,7 @@ extents = Vector2( 5.875, 1 )
 extents = Vector2( 5.375, 1 )
 
 [sub_resource type="RectangleShape2D" id=180]
-extents = Vector2( 3.375, 0.75 )
+extents = Vector2( 3.0625, 0.75 )
 
 [sub_resource type="RectangleShape2D" id=181]
 extents = Vector2( 1.875, 1 )
@@ -274,7 +274,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Ladder"]
-position = Vector2( 0, -2 )
+position = Vector2( 0, -8 )
 shape = SubResource( 186 )
 
 [node name="HomeDoor" type="Area2D" parent="Interactive"]
@@ -406,12 +406,12 @@ shape = SubResource( 175 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/Tree"]
-position = Vector2( 62.0625, 64 )
+position = Vector2( 70, 64.75 )
 shape = SubResource( 176 )
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions/Tree"]
-position = Vector2( 48, 77 )
+position = Vector2( 60.25, 76.75 )
 shape = SubResource( 176 )
 one_way_collision = true
 
@@ -421,17 +421,17 @@ shape = SubResource( 177 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/Tree"]
-position = Vector2( 41.75, 52 )
+position = Vector2( 48, 54.5 )
 shape = SubResource( 178 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions/Tree"]
-position = Vector2( 42.5, 44.75 )
+position = Vector2( 49.5, 44 )
 shape = SubResource( 179 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/Tree"]
-position = Vector2( 43.875, 17.5 )
+position = Vector2( 52.4375, 14.25 )
 shape = SubResource( 180 )
 one_way_collision = true
 

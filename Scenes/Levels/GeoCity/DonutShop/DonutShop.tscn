@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/shadows.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Agents/Affogato.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/body_fg.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/Donutbot/body_bg.png" type="Texture" id=8]
@@ -183,12 +183,10 @@ centered = false
 texture = ExtResource( 10 )
 centered = false
 
-[node name="Default" parent="." instance=ExtResource( 5 )]
-
-[node name="Player" parent="Default" index="0"]
+[node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 20, 412 )
 
-[node name="Camera2D" parent="Default/Player" index="0"]
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 960
 limit_bottom = 480
 
@@ -233,7 +231,7 @@ add_move_n_slide = false
 [node name="ChatNPC" parent="Affogato" index="0"]
 has_parent = true
 character_name = "Affogato"
-json_file = "res://Assets/Agents/Affogato/affogato_donutshop.json"
+json_file = "res://Assets/Levels/GeoCity/DonutShop/affogato_donutshop.json"
 sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
 
 [node name="DonutBot" type="StaticBody2D" parent="."]
@@ -384,9 +382,7 @@ shape = SubResource( 30 )
 position = Vector2( 953, 227 )
 shape = SubResource( 31 )
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
@@ -431,6 +427,5 @@ position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 14 )
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]
 [editable path="Affogato"]

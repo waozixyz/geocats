@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/computerstand.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/bg.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/surveysign.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/rocksBG.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/testgeocat.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/fgframecover.png" type="Texture" id=12]
@@ -610,17 +610,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Default" parent="." instance=ExtResource( 9 )]
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 127, 427 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 128, 436 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 1300
 limit_bottom = 700
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 4
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -743,5 +738,4 @@ stream = ExtResource( 16 )
 autoplay = true
 bus = "Music"
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

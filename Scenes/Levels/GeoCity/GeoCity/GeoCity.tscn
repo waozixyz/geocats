@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Agents/Lasagne/lasagne_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/SaltySwing.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=11]
@@ -307,14 +307,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -323,17 +315,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=69]
 animations = [ {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=70]
@@ -874,21 +874,17 @@ __meta__ = {
 position = Vector2( 0.911987, 0.223511 )
 shape = SubResource( 63 )
 
-[node name="Default" parent="." instance=ExtResource( 8 )]
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4717, 1308 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 4714, 1314 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
-position = Vector2( -1.99994, 0 )
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 4800
 limit_bottom = 1600
 
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
-flip_h = true
-
 [node name="Music" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CreepyCity" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 10 )
@@ -1162,5 +1158,4 @@ bus = "Sound"
 stream = ExtResource( 12 )
 bus = "Sound"
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

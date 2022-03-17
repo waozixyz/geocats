@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/PopNnip.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/Shopkeeper/keep.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/popnnip_flashing_light.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/popnnip_FG.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/GeoCity/PopNnip/potentialBG_popnnip.png" type="Texture" id=11]
@@ -224,9 +224,7 @@ position = Vector2( -146, 164 )
 shape = SubResource( 21 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
 collision_mask = 7
@@ -312,17 +310,11 @@ json_file = "res://Assets/Levels/GeoCity/PopNnip/Shopkeeper/shopkeeper.json"
 position = Vector2( -2, 16 )
 shape = SubResource( 27 )
 
-[node name="Default" parent="." instance=ExtResource( 8 )]
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 30, 402 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 34, 403 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 960
 limit_bottom = 480
 
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
-
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]
