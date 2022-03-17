@@ -177,7 +177,7 @@
   },
   "chrysoberyl_on_2": {
     "type": "text",
-    "content": "I see it in your eyes... All of the new information you learned.",
+    "content": "A-ha! So you did find information!",
     "next": "chrysoberyl_on_3"
   },
   "chrysoberyl_on_3": {
@@ -187,7 +187,7 @@
   },
   "chrysoberyl_on_4": {
     "type": "text",
-    "content": "Ted's not the most focussed scientist I've met, but his research is better than none I suppose... Is that a crystal you have there?",
+    "content": "Ted's not the most focussed scientist I've met, but having his research is better than having none I suppose... Is that a crystal you have there?",
     "next": "no option"
   },
   "no_option": {
@@ -234,7 +234,7 @@
     "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "content": "That sounds easy enough. I could make some sort of a laser-pointer out of the crystal.@...",
+    "content": "That sounds easy enough. I could make some sort of a laser-pointer out of this crystal.@...",
     "next": "no_option_7"
   },
   "no_option_7": {
@@ -242,7 +242,7 @@
     "avatar": "letharia.png",
     "position": "left",
     "type": "text",
-    "content": "...Sorry, but I'll need some time to engineer this new invention. Please be patient, it could take me anywhere from a few weeks to a few months.",
+    "content": "...Sorry, but I'll need some time to engineer this new invention. Please be patient, it could take me anywhere from a few weeks, to a few months.",
     "next": "no_option_8"
   },
   "no_option_8": {
@@ -250,7 +250,7 @@
     "avatar": "letharia.png",
     "position": "left",
     "type": "text",
-    "content": "In the meantime, I suggest you take it easy and relax.",
+    "content": "In the meantime, I suggest you take it easy and relax. After our conversation I'll teleport you to my favourite place... The Geoquarium!",
     "next": "no_option_9"
   },
   "no_option_9": {
@@ -274,7 +274,7 @@
     "avatar": "letharia.png",
     "position": "left",
     "type": "text",
-    "content": "See you again soon!",
+    "content": "See you again soon! When the time is right, I'll teach you a few techneques like super-dashing!",
     "next": ""
   }
 }
