@@ -108,6 +108,11 @@ _global_script_classes=[ {
 "class": "TeleportInternal",
 "language": "GDScript",
 "path": "res://Scenes/Environment/Teleport/Internal.gd"
+}, {
+"base": "E_Interact",
+"class": "Telescope",
+"language": "GDScript",
+"path": "res://Scenes/Environment/Telescope.gd"
 } ]
 _global_script_class_icons={
 "AreaInteract": "",
@@ -129,7 +134,8 @@ _global_script_class_icons={
 "SpriteAutoPlay": "",
 "Teleport": "res://Assets/UI/Debug/teleport_icon.png",
 "TeleportExternal": "",
-"TeleportInternal": ""
+"TeleportInternal": "",
+"Telescope": "res://Assets/UI/Debug/telescope.png"
 }
 
 [application]

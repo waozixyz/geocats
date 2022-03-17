@@ -1,4 +1,5 @@
 extends E_Interact
+class_name Telescope, "res://Assets/UI/Debug/telescope.png"
 
 export(Vector2) var dest_zoom = Vector2(2,2)
 export(float) var zoom_speed = 1
