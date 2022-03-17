@@ -25,7 +25,7 @@ func _main_done():
 
 func _ready():
 	set_disable("feline", "battle")
-	defeated = PROGRESS.variables.get("CavesBattleDefeated")
+	defeated = PROGRESS.variables.get("GlaciokarstAfterBattle")
 
 	if not defeated:
 		music_outro.stream.loop = false
@@ -146,8 +146,6 @@ func _phase_six():
 
 var timer = 0
 func _process(delta):
-	PROGRESS.variables["GlaciokarstAfterBattle"]  = true
-
 	if PROGRESS.variables.has("teleport") and PROGRESS.variables["teleport"]:
 		PROGRESS.variables["teleport"] = false
 		AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
