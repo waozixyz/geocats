@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/glow_fg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Levels/GeoCity/DonutShop/shadows.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Agents/Affogato.tscn" type="PackedScene" id=6]

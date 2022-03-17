@@ -1,7 +1,7 @@
 [gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/pocket.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/holr.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/Geoterra/CavityPuzzleRoom/floor.png" type="Texture" id=5]

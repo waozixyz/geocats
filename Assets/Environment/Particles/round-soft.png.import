@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/round-soft.png-7d0920998c2910863dd49c7d9a05ccca.stex"
+path="res://.import/round-soft.png-1f02ee8d0dc50a544dd8cb59a7cc9ccc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Particles/round-soft.png"
-dest_files=[ "res://.import/round-soft.png-7d0920998c2910863dd49c7d9a05ccca.stex" ]
+source_file="res://Assets/Environment/Particles/round-soft.png"
+dest_files=[ "res://.import/round-soft.png-1f02ee8d0dc50a544dd8cb59a7cc9ccc.stex" ]
 
 [params]
 

@@ -46,10 +46,14 @@ func _process(_delta):
 	if (!weakref(player).get_ref()) and not player == null:
 		player = get_tree().get_current_scene().player
 
-	for play in playing.values():
-		if play.object:
-			var pos_diff = play.object.position - player.position
-			pos_diff =  abs(abs(pos_diff.x) - abs(pos_diff.y)) / 100 
-			play.sound.volume_db = play.volume - pos_diff
-		elif play.sound.volume_db != play.volume:
-			play.sound.volume_db = play.volume
+	
+	for item in playing.values():
+		if item.object and player is KinematicBody2D:
+			if !weakref(item.object).get_ref():
+				playing.erase(item)
+			else:
+				var pos_diff = item.object.position - player.position
+				pos_diff =  abs(abs(pos_diff.x) - abs(pos_diff.y)) / 100 
+				item.sound.volume_db = item.volume - pos_diff
+		elif item.sound.volume_db != item.volume:
+			item.sound.volume_db = item.volume

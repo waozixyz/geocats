@@ -72,7 +72,7 @@ _global_script_classes=[ {
 "base": "AreaInteract",
 "class": "RespawnLocationOnTouch",
 "language": "GDScript",
-"path": "res://Scenes/UI/Teleport/RespawnLocationOnTouch.gd"
+"path": "res://Scenes/Environment/Teleport/RespawnLocationOnTouch.gd"
 }, {
 "base": "AreaInteract",
 "class": "S_Interact",
@@ -97,17 +97,17 @@ _global_script_classes=[ {
 "base": "S_Interact",
 "class": "Teleport",
 "language": "GDScript",
-"path": "res://Scenes/UI/Teleport/Teleport.gd"
+"path": "res://Scenes/Environment/Teleport/Teleport.gd"
 }, {
 "base": "Teleport",
 "class": "TeleportExternal",
 "language": "GDScript",
-"path": "res://Scenes/UI/Teleport/External.gd"
+"path": "res://Scenes/Environment/Teleport/External.gd"
 }, {
 "base": "Teleport",
 "class": "TeleportInternal",
 "language": "GDScript",
-"path": "res://Scenes/UI/Teleport/Internal.gd"
+"path": "res://Scenes/Environment/Teleport/Internal.gd"
 } ]
 _global_script_class_icons={
 "AreaInteract": "",

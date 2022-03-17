@@ -18,15 +18,15 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/ground_cat_3.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/HangingCat/hanging_cat.png" type="Texture" id=17]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=18]
-[ext_resource path="res://Scenes/UI/Teleport/RespawnLocationOnTouch.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Environment/Teleport/RespawnLocationOnTouch.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/TreeCat/tree_cat.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/Levels/Geoterra/Creek/death_zone.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/water_4.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/Light_creek.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=26]
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=27]
-[ext_resource path="res://Scenes/UI/Teleport/Internal.gd" type="Script" id=28]
+[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Environment/Teleport/Internal.gd" type="Script" id=28]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )

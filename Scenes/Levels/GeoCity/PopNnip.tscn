@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=3]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=4]

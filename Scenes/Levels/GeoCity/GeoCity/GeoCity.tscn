@@ -18,7 +18,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/medium_pumpkin_sptritesheet.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_7.wav" type="AudioStream" id=17]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_4.wav" type="AudioStream" id=18]
-[ext_resource path="res://Scenes/UI/Teleport/External.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=19]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/DefaultCity/buildings.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/creepycat_spritesheet.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/DefaultCity/guard_rail.png" type="Texture" id=22]
@@ -307,14 +307,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -323,17 +315,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=69]
 animations = [ {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=70]

@@ -1,7 +1,7 @@
 extends Node
 
 func get_teleport_sound(sound_name):
-	var path = "res://Assets/Teleport/" + sound_name
+	var path = "res://Assets/Environment/Teleport/" + sound_name
 	return path + find_sound_ext(path)
 
 func get_character_folder(json_file):
