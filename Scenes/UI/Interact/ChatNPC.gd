@@ -7,6 +7,7 @@ onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasL
 onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
 
 export(bool) var has_parent = false
+export(String) var enable_var = ""
 export(String) var skip_var = ""
 export(String) var character_name = name
 export(String, FILE, "*.json") var json_file = ""
@@ -44,8 +45,25 @@ func hide_chat():
 	dialogue.exit()
 	dia_started = false
 
+func _is_enable_var():
+	if enable_var.empty():
+		return true
+	elif PROGRESS.variables.get(enable_var):
+		return PROGRESS.variables.get(enable_var)
+	else:
+		return false
+
+
+func _is_skip_var():
+	if skip_var.empty():
+		return false
+	elif PROGRESS.variables.get(skip_var):
+		return PROGRESS.variables.get(skip_var)
+	else:
+		return false
+			
 func _process(_delta):
-	if trigger_on_touch and not PROGRESS.variables.get(skip_var):
+	if trigger_on_touch and not _is_skip_var() and _is_enable_var():
 		if touching and not active:
 			start_chat()
 			if not player_disable.empty():
@@ -60,7 +78,7 @@ func _process(_delta):
 			if not player_disable.empty():
 				current_scene.set_disable("player", player_disable, false)
 	else:
-		if touching and not active and not disabled and not PROGRESS.variables.get(skip_var):
+		if touching and not active and not disabled and not _is_skip_var() and _is_enable_var():
 			if has_parent and get_parent().is_on_floor() or not has_parent:
 				show_chat()
 		elif (disabled or not touching) and active:

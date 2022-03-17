@@ -148,9 +148,10 @@ func _phase_six():
 
 var timer = 0
 func _process(delta):
-	if PROGRESS.variables.has("GlaciokarstAfterBattle") and PROGRESS.variables["GlaciokarstAfterBattle"] :
-		timer += delta
-	if timer > 1:
+	PROGRESS.variables["GlaciokarstAfterBattle"]  = true
+
+	if PROGRESS.variables.has("teleport") and PROGRESS.variables["teleport"]:
+		PROGRESS.variables["teleport"] = false
 		AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
 		SceneChanger.change_scene("Glaciokarst", "GeoLodge")
 	var dfps = delta * global.fps

@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/Background.png" type="Texture" id=2]
@@ -32,13 +32,13 @@
 [ext_resource path="res://Assets/Agents/NornaWyrd/Attacks/beam_spritesheet.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/ceiling.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/Levels/Glaciokarst/Battle/Beam.gd" type="Script" id=32]
-[ext_resource path="res://Assets/Levels/Glaciokarst/Battle/9_CavesBattle_outro.ogg" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Levels/Glaciokarst/Battle/outro.ogg" type="AudioStream" id=33]
 [ext_resource path="res://Assets/Agents/NornaWyrd/Attacks/medium_lazer.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=35]
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=36]
-[ext_resource path="res://Assets/Levels/Glaciokarst/Battle/9_CavesBattle_intro.ogg" type="AudioStream" id=37]
+[ext_resource path="res://Assets/Levels/Glaciokarst/Battle/intro.ogg" type="AudioStream" id=37]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/BoulderPieceSpriteSheet.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Levels/Glaciokarst/Battle/9_CavesBattle_main.ogg" type="AudioStream" id=39]
+[ext_resource path="res://Assets/Levels/Glaciokarst/Battle/main.ogg" type="AudioStream" id=39]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/Sounds/nornabullet.wav" type="AudioStream" id=40]
 [ext_resource path="res://Assets/Teleport/OrganicSmashLilCave.wav" type="AudioStream" id=41]
 [ext_resource path="res://Assets/Teleport/OrganicTumbleCave2.wav" type="AudioStream" id=42]
@@ -46,6 +46,7 @@
 [ext_resource path="res://Assets/Levels/Glaciokarst/Battle/Sounds/norna_new_explosion.wav" type="AudioStream" id=44]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=45]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/Cave_Ambience.ogg" type="AudioStream" id=46]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=47]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.9695, 36.4577 )
@@ -486,6 +487,9 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
+
+[sub_resource type="RectangleShape2D" id=92]
+extents = Vector2( 180, 152 )
 
 [node name="CaveBattle" type="Node2D"]
 script = ExtResource( 5 )
@@ -1113,6 +1117,17 @@ margin_right = 514.0
 margin_bottom = 52.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 90 )
+
+[node name="AfterBattle" type="Area2D" parent="."]
+script = ExtResource( 47 )
+enable_var = "GlaciokarstAfterBattle"
+json_file = "res://Assets/Levels/Glaciokarst/Battle/feline_battle.json"
+trigger_on_touch = true
+player_disable = "about_to_teleport"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AfterBattle"]
+position = Vector2( 170, 142 )
+shape = SubResource( 92 )
 
 [editable path="Default"]
 [editable path="Default/Player"]

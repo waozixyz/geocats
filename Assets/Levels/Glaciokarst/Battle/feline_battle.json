@@ -10,8 +10,6 @@
   },
   "1": {
     "type": "text",
-    "animation_in": "fade_in",
-    "avatar": "feline.png",
     "content": "Good job protecting us there... Those two we're pretty tough.",
     "next": "2"
   },
@@ -22,18 +20,19 @@
   },
   "3": {
     "type": "text",
-    "avatar": "feline.png",
-    "animation_in": "fade_in",
     "content": "Well, let's go report back to Palmerston and let him know about our encounter. ",
     "next": "4"
   },
   "4": {
-    "name": "Feline",
-    "avatar": "feline.png",
-    "animation_in": "fade_in",
-    "position": "left",
     "type": "text",
     "content": "Maybe they're on their way out to the deserts of the GeoRing?",
-    "next": ""
-  }
+    "next": "5"
+  },
+  "5": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "...",
+    "value": [["teleport", true]]
+  },
 }
