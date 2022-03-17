@@ -180,7 +180,7 @@ func _process(delta):
 	visible = true if modulate.a > 0 else false
 var map_tween
 func _input(event):
-	if event.is_action_pressed("escape"):
+	if event.is_action_pressed("escape") and not current_scene.is_disabled("feline"):
 		if active and (tween and not tween.is_active() or not tween):
 			exit()
 

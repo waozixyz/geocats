@@ -24,7 +24,7 @@ func _main_done():
 	music_outro.play()
 
 func _ready():
-
+	set_disable("feline", "battle")
 	defeated = PROGRESS.variables.get("CavesBattleDefeated")
 
 	if not defeated:

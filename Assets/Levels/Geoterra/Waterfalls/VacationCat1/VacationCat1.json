@@ -1,6 +1,7 @@
 {
     "first": {
       "avatar": "VacationCat1.png",
+      "name": "Vacation Cat",
       "position": "left",
       "animation_in": "fade_in",
       "type": "text",
