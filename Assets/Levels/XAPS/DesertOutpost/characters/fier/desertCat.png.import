@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desertCat.png-958cd0e9977e9a0379a3f06981e69c81.stex"
+path="res://.import/desertCat.png-c9add5ff6c41354fcfc493b7eec2c619.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/desertCat.png"
-dest_files=[ "res://.import/desertCat.png-958cd0e9977e9a0379a3f06981e69c81.stex" ]
+source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/fier/desertCat.png"
+dest_files=[ "res://.import/desertCat.png-c9add5ff6c41354fcfc493b7eec2c619.stex" ]
 
 [params]
 

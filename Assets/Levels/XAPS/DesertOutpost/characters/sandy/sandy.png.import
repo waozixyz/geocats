@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/liet.png-0cb069e2e5cf98099debf1b2532b8e06.stex"
+path="res://.import/sandy.png-d04930b35b2ee93ef30414e6b81271e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/liet.png"
-dest_files=[ "res://.import/liet.png-0cb069e2e5cf98099debf1b2532b8e06.stex" ]
+source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/sandy/sandy.png"
+dest_files=[ "res://.import/sandy.png-d04930b35b2ee93ef30414e6b81271e0.stex" ]
 
 [params]
 

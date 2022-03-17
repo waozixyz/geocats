@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nostoc.png-de1514ee19b99f0cd31887c5756f6503.stex"
+path="res://.import/nostoc.png-aa2c6d1a7bcbb6c5c764a0445a0062b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc.png"
-dest_files=[ "res://.import/nostoc.png-de1514ee19b99f0cd31887c5756f6503.stex" ]
+source_file="res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc/nostoc.png"
+dest_files=[ "res://.import/nostoc.png-aa2c6d1a7bcbb6c5c764a0445a0062b2.stex" ]
 
 [params]
 
