@@ -550,6 +550,7 @@ margin_right = 1427.77
 margin_bottom = 813.296
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -596,7 +597,7 @@ shape = SubResource( 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 20
+frame = 30
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC"]
@@ -610,7 +611,7 @@ sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 5
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ErnstArea2D"]
@@ -631,7 +632,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 18
+frame = 12
 playing = true
 
 [node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -663,7 +664,7 @@ move_speed = 0
 scale = Vector2( 4, 4 )
 frames = SubResource( 34 )
 animation = "idle"
-frame = 3
+frame = 5
 playing = true
 
 [node name="NostocArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -697,6 +698,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 46 )
 animation = "walk"
+frame = 3
 playing = true
 
 [node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -729,6 +731,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 53 )
 animation = "idle"
+frame = 12
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -759,7 +762,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 59 )
 animation = "idle"
-frame = 8
+frame = 2
 playing = true
 
 [node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
@@ -851,9 +854,7 @@ shape = SubResource( 73 )
 position = Vector2( 503.984, 156 )
 texture = ExtResource( 58 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
@@ -1065,9 +1066,7 @@ one_way_collision = true
 polygon = PoolVector2Array( 1552.8, 1622.4, 1552.8, 1634.4, 1584, 1644.8, 1644, 1666.4, 1683.2, 1685.6, 1720.8, 1700.8, 1748.8, 1706.4, 1820.8, 1706.4, 1844, 1708.8, 1875.2, 1718.4, 1920.8, 1725.6, 1943.2, 1730.4, 1988, 1748.8, 2030.4, 1766.4, 2061.6, 1778.4, 2081.6, 1794.4, 2125.6, 1824, 2153.6, 1838.4, 2168.8, 1848.8, 2182.4, 1859.2, 2196.8, 1856, 2213.6, 1860, 2227.2, 1868, 2233.6, 1871.2, 2234.4, 1860.8, 2220.8, 1842.4, 2208.8, 1833.6, 2187.2, 1833.6, 2177.6, 1844.8, 2167.2, 1840.8, 2136, 1817.6, 2093.6, 1791.2, 2055.2, 1766.4, 2012, 1750.4, 1979.2, 1737.6, 1938.4, 1720.8, 1881.6, 1712, 1826.4, 1697.6, 1749.6, 1700, 1716.8, 1690.4, 1665.6, 1671.2, 1573.6, 1634.4 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 22, 83 )
 collision_layer = 7
 collision_mask = 7
@@ -1234,10 +1233,17 @@ scale = Vector2( 0.33, 0.33 )
 transform = Transform2D( 0.33, 0, 0, 0.33, 0, 0 )
 
 [node name="Computer" type="Control" parent="CanvasLayer"]
-modulate = Color( 1, 1, 1, 0 )
+margin_top = 580.0
+margin_bottom = 580.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Computer"]
+margin_top = -580.0
+margin_right = 1927.0
+margin_bottom = 877.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Computer"]
 position = Vector2( 0, 68 )
@@ -1467,8 +1473,8 @@ __meta__ = {
 margin_right = 917.0
 margin_bottom = 450.0
 focus_mode = 2
-custom_fonts/normal_font = SubResource( 114 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 114 )
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false

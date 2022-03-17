@@ -2,7 +2,7 @@ extends Control
 
 onready var label = $RichTextLabel
 
-var dir_path = "res://Assets/Levels/10_DesertOutpost/survival_guide"
+var dir_path = "res://Assets/Levels/XAPS/DesertOutpost/survival_guide"
 var file = File.new()
 
 func _ready():
