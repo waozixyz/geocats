@@ -142,7 +142,7 @@ shape = SubResource( 6 )
 [node name="Treasure" type="Area2D" parent="."]
 script = ExtResource( 1 )
 dialogue_file = "res://Assets/Levels/Geoterra/GeoCacheRoom/treasure.json"
-sound_effect = "res://Assets/Feline/Sounds/feline_beep.wav"
+sound_effect = "res://Assets/UI/Feline/Sounds/feline_beep.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )

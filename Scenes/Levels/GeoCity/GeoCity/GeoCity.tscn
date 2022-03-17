@@ -716,7 +716,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 dialogue_file = "res://Assets/Levels/GeoCity/GeoCity/feline_locked_door.json"
-sound_effect = "res://Assets/Feline/Sounds/Feline_Owch.wav"
+sound_effect = "res://Assets/UI/Feline/Sounds/Feline_Owch.wav"
 item_node = NodePath("DonutShop")
 unlock_var = "geocity_donutshop_open"
 

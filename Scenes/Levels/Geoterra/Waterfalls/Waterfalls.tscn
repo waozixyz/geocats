@@ -1882,7 +1882,7 @@ __meta__ = {
 }
 skip_var = "waterfalls_feline_tower"
 json_file = "res://Assets/Feline/feline_research.json"
-sound_file = "res://Assets/Feline/Sounds/happyfeline.wav"
+sound_file = "res://Assets/UI/Feline/Sounds/happyfeline.wav"
 trigger_on_touch = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FelineAreaTower"]
