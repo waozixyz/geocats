@@ -2,38 +2,29 @@ extends E_Interact
 
 onready var camera = current_scene.camera
 
-var zoom_out : bool = false
 var zoom_org : float = 0.0
+export(bool) var skip_var
+export(String, FILE, "*.wav, *.ogg") var sound_when_visible 
 
 func _ready():
-	zoom_org = camera.zoom.x
-	
-func _zoomi(dir = 1):
-	camera.zoom.x += 0.03 * dir
-	camera.zoom.y += 0.03 * dir 
-	camera.position.x += 7 * dir
-func _process(delta):
-	._process(delta)
-	if touching:
-		if do_something:
-			current_scene.set_disable("player", disable_player)
-			if camera.zoom.x <= zoom_org:
-				zoom_out = true
-			if camera.zoom.x > zoom_org:
-				zoom_out = false
-			do_something = false
-					
-		if zoom_out:
-			if camera.zoom.x < 6.6:
-				#object.visible = false
-				_zoomi()
-			#else:
-				#object.visible = true
-		else:
-			if camera.zoom.x > zoom_org:
-				_zoomi(-1)
-			else:
-				#object.visible = true
+	pass
+
+var active_sound
+func _process(_delta): 
+	if do_something and camera:
+		if camera.modulate.a == 1:
+			utils.tween(camera, "zoom", Vector2(9, 9), 2)
+			timer = 0
+			if active_sound:
+				active_sound.stop()
+			if not disable_player.empty():
 				current_scene.set_disable("player", disable_player, false)
+				
+		else:
+			utils.tween(camera, "zoom", Vector2(0, 0), 2)
+			if sound_when_visible:
+				active_sound = AudioManager.play_sound(sound_when_visible, sound_volume, true)
+			timer = 0
+		do_something = false
 
-
+	

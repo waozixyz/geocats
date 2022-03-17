@@ -352,14 +352,14 @@ __meta__ = {
 }
 
 [node name="telescope" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 349, 309 )
+position = Vector2( 349, 309.104 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 41, 4891 )
+position = Vector2( 1779.98, 1448.61 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
