@@ -26,7 +26,7 @@
   "3_a": {
     "type": "text",
     "content": "but I cannot in good conscience allow you to wander aimlessly in the desert looking for clues.",
-    "next": ""
+    "next": "repeat"
   },
   "repeat": {
     "type": "divert",
@@ -48,13 +48,13 @@
   },
   "knowledge_off_1": {
     "type": "text",
-    "content": "There's a digital encyclopedia installed on our main computer system.",
+    "content": "There's a digital encyclopedia installed on our main computer system.@You can find it where Ernst usually hangs out.",
     "next": "knowledge_off_2"
   },
   "knowledge_off_2": {
     "type": "text",
     "content": "Talk to me again after you've researched some basic survival techniques.",
-    "next": ""
+    "next": "knowledge_off_3"
   },
   "knowledge_off_3": {
     "type": "text",

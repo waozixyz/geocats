@@ -384,7 +384,9 @@ shape = SubResource( 30 )
 position = Vector2( 953, 227 )
 shape = SubResource( 31 )
 
-[node name="End" type="StaticBody2D" parent="." groups=["end"]]
+[node name="End" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
