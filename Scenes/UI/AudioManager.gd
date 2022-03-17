@@ -1,9 +1,14 @@
 extends Node
 
-onready var player =  get_tree().get_current_scene().player
+var player
 
 var id = 0
 var playing = {}
+
+func _ready():
+	if not get_tree().get_current_scene().get("player") == null:
+		player = get_tree().get_current_scene().player
+		print('hi')
 func _finished_playing(id, sound, object):
 	if object:
 		object.remove_child(sound)
@@ -35,8 +40,12 @@ func play_sound(sound_file, volume = 100, loop = false, object = null):
 		id += 1
 		return sound
 func _process(_delta):
-	if (!weakref(player).get_ref()):
+	if not get_tree().get_current_scene().get("player") == null and player == null:
 		player = get_tree().get_current_scene().player
+		print('hi')
+	if (!weakref(player).get_ref()) and not player == null:
+		player = get_tree().get_current_scene().player
+
 	for play in playing.values():
 		if play.object:
 			var pos_diff = play.object.position - player.position
