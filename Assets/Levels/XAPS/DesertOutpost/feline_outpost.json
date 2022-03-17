@@ -1,0 +1,21 @@
+{
+  "first": {
+    "name": "Feline",
+    "avatar": "feline.png",
+    "animation_in": "fade_in",
+    "position": "left",
+    "type": "text",
+    "content": "Chalk it up to my mechanical instincts, but there's something about Palmerston that I don't like.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "...But whatever.@Letharia must be around here somewhere...",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "It pains me to say this, but I think we have to talk to strangers if we want to find her.",
+    "next": ""
+  },
+}
