@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stairs_2.png-9a2d37f06a8cd9693d83f04fb88bf337.stex"
+path="res://.import/complex_bg.png-66459a7532f6d1b168dfdbc1f1e8b4fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/GeoCity/Complex/stairs_2.png"
-dest_files=[ "res://.import/stairs_2.png-9a2d37f06a8cd9693d83f04fb88bf337.stex" ]
+source_file="res://Assets/Levels/GeoCity/Complex/complex_bg.png"
+dest_files=[ "res://.import/complex_bg.png-66459a7532f6d1b168dfdbc1f1e8b4fd.stex" ]
 
 [params]
 

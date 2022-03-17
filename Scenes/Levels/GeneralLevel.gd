@@ -6,12 +6,14 @@ export(bool) var reload_on_death
 var locations : PoolVector2Array
 var dead
 var music = get_node_or_null("Music") setget, _get_music
-var player = get_node_or_null("Default/Player") setget ,_get_player
-var camera = get_node_or_null("Default/Player/Camera2D") setget, _get_camera
+var player = get_node_or_null("Player") setget ,_get_player
+var camera = get_node_or_null("Player/Camera2D") setget, _get_camera
+
 
 var disable = {
 	player = [],
-	e_interact = []
+	e_interact = [],
+	feline = []
 }
 
 
@@ -36,17 +38,15 @@ func is_disabled(obj : String, reason : String = ""):
 
 func _get_camera():
 	if not camera:
-		camera = get_node_or_null("Default/Player/Camera2D")
+		camera = get_node_or_null("Player/Camera2D")
 		if not camera:
 			printerr("can't find camera node: ", camera)
 	return camera
 func _get_player():
 	if not player:
-		player = get_node_or_null("Default/Player")
+		player = get_node_or_null("Player")
 		if not player:
-			player = get_node_or_null("Player")
-			if not player:
-				printerr("can't find player node: ", player)
+			printerr("can't find player node: ", player)
 	return player
 
 func _get_music():
@@ -59,7 +59,24 @@ func _get_music():
 				if not music:
 					printerr("could not find level music")
 	return music
+
+var canvas_layer
+var feline = load("res://Scenes/UI/Feline/Feline.tscn").instance()
+var crt_effect = load("res://Scenes/UI/CRT_Effect.tscn").instance()
+var dialogue = load("res://Scenes/UI/Dialogue/Dialogue.tscn").instance()
+var chat_with =  load("res://Scenes/UI/Interact/ChatWith.tscn").instance()
+func _add_default_nodes():
+	canvas_layer = CanvasLayer.new()
+	add_child(canvas_layer)
+	canvas_layer.add_child(feline)
+	chat_with.visible = false
+	canvas_layer.add_child(chat_with)
+	canvas_layer.add_child(dialogue)
+	
 func _ready():
+	_add_default_nodes()
+	print(crt_effect)
+
 	player = _get_player()
 	camera = _get_camera()
 	# set player location

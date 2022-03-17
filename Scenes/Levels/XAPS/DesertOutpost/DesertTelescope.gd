@@ -1,6 +1,6 @@
-extends InteractSimple
+extends E_Interact
 
-onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
+onready var camera = get_tree().get_current_scene().camera
 
 var zoom_out : bool = false
 var zoom_org : float = 0.0

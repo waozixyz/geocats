@@ -1,6 +1,5 @@
 extends GeneralLevel
 
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 onready var below_player = $BehindPlayer
 onready var above_player = $FrontPlayer
 onready var giant_pumpkin = $GiantPumpkin

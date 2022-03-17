@@ -4,8 +4,6 @@ onready var music_intro = $MusicIntro
 onready var music_main = $MusicMain
 onready var music_outro = $MusicOutro
 
-onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
-
 export(String, DIR) var battle_dialogue_folder = ""
 onready var trigger_battle = $TriggerBattle
 

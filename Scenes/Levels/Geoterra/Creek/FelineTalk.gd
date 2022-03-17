@@ -1,7 +1,7 @@
 extends Area2D
 
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var chat_with = get_tree().get_current_scene().chat_with
+onready var player =  get_tree().get_current_scene().player
 
 
 func _ready():

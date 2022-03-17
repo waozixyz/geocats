@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-onready var camera = get_tree().get_current_scene().get_node("Default/Player/Camera2D")
+onready var camera = get_tree().get_current_scene().camera
 
 onready var collision_shape = $CollisionShape2D
 onready var sprite = $Sprite

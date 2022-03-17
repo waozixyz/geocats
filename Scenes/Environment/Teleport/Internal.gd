@@ -1,8 +1,7 @@
 extends Teleport
 class_name TeleportInternal
 
-onready var affogato =  get_tree().get_current_scene().get_node("Default/Affogato")
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
+onready var chat_with = get_tree().get_current_scene().chat_with
 
 export(NodePath) var node_to_go 
 

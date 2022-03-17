@@ -1,6 +1,5 @@
 extends GeneralLevel
 
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
 var affogato
 var move_to_pos = false
 

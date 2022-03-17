@@ -3,8 +3,8 @@ class_name ChatNPC, "res://Assets/UI/Debug/chat_npc_icon.png"
 
 onready var current_scene = get_tree().get_current_scene()
 onready var player = current_scene.player
-onready var chat_with = get_tree().get_current_scene().get_node("Default/CanvasLayer/ChatWith")
-onready var dialogue = get_tree().get_current_scene().get_node("Default/CanvasLayer/Dialogue")
+onready var chat_with = current_scene.chat_with
+onready var dialogue = current_scene.dialogue
 
 export(bool) var has_parent = false
 export(String) var enable_var = ""

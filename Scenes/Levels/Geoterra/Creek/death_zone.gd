@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var player =  get_tree().get_current_scene().get_node("Default/Player")
+onready var player =  get_tree().get_current_scene().player
 
 var inside = false
 func _ready():
