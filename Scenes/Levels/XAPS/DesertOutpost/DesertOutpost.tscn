@@ -612,7 +612,7 @@ shape = SubResource( 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 12
+frame = 19
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC"]
@@ -626,7 +626,7 @@ sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 5
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ErnstArea2D"]
@@ -647,7 +647,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 24
+frame = 21
 playing = true
 
 [node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -679,7 +679,7 @@ move_speed = 0
 scale = Vector2( 4, 4 )
 frames = SubResource( 34 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="NostocArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -713,7 +713,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 46 )
 animation = "walk"
-frame = 6
+frame = 7
 playing = true
 
 [node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -746,7 +746,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 53 )
 animation = "idle"
-frame = 8
+frame = 7
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -777,7 +777,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 59 )
 animation = "idle"
-frame = 32
+frame = 15
 playing = true
 
 [node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
@@ -1249,6 +1249,7 @@ shape = SubResource( 110 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Computer" type="Control" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 193.0
 margin_bottom = 193.0
 
