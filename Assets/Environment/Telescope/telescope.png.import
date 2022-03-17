@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/telescope.png-456f5cdacd42e5d5ac04910ff63172bd.stex"
+path="res://.import/telescope.png-83b77ef271e7556089f7033ab3149678.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Geoterra/Mountain/telescope.png"
-dest_files=[ "res://.import/telescope.png-456f5cdacd42e5d5ac04910ff63172bd.stex" ]
+source_file="res://Assets/Environment/Telescope/telescope.png"
+dest_files=[ "res://.import/telescope.png-83b77ef271e7556089f7033ab3149678.stex" ]
 
 [params]
 
