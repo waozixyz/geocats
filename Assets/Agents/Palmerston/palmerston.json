@@ -38,10 +38,18 @@
     "animation_in": "fade_in",
 
     "type": "text",
-    "content": "Curse these cold nights...",
+    "content": "...@...Curse these cold nights...",
     "next": ""
   },
   "fire_on": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "feline_fix",
+    "true": "feline_is_fixed",
+    "false": "feline_is_broken"
+  },
+  "feline_is_broken": {
     "name": "Palmerston",
     "avatar": "palmerston.png",
     "position": "left",
@@ -53,12 +61,12 @@
   },
   "4": {
     "type": "text",
-    "content": "Alright, I get it now.|You’re interested in adventure.|Would you like to assist me with my research?",
+    "content": "Alright, I get it now.|You’re interested in adventure.@Would you like to assist me with my research?",
     "next": "5"
   },
   "5": {
     "type": "text",
-    "content": "There are some mysterious limestone caves nearby.",
+    "content": "There are some mysterious limestone caves nearby in an area called the Glaciokarst.",
     "next": "6"
   },
   "6": {
@@ -102,7 +110,6 @@
     "avatar": "feline_shocked.png",
     "position": "left",
     "animation_in": "fade_in",
-    "animation_out": "shake_weak_short",
     "content": "MEOWCH!!!",
     "next": "12"
   },
@@ -116,12 +123,25 @@
     "next": "13"
   },
   "13": {
-    "type": "text",
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
     "content": "Have fun,|@and please try to avoid annihilation",
+    "value": [["feline_fix", true]],
     "next": ""
+  },
+  "feline_is_fixed": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "The Glaciokarst is a mostly unexplored area. There are countless cave systems where no cat has ever set foot.",
+    "next": "GlaciokarstAfterBattle"
   },
   "GlaciokarstAfterBattle": {
     "type": "divert",
+    "condition": "boolean",
     "dictionary": "variables",
     "variable": "GlaciokarstAfterBattle",
     "true": "GlaciokarstBattleComplete",
@@ -196,5 +216,5 @@
     "type": "text",
     "content": "She'll know what to do. I'll add Letharia's location to your FeLine Mapz system, and let her know you're on your way for a visit.",
     "next": ""
-  },
+  }
 }
