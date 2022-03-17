@@ -18,7 +18,7 @@
 [ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/waterfalls_no_lead.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat1/VacationCat1_Spritesheet.png" type="Texture" id=18]
-[ext_resource path="res://Assets/UI/Feline/feline_buttons.tres" type="Theme" id=19]
+[ext_resource path="res://Assets/Feline/feline_buttons.tres" type="Theme" id=19]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat2/VacatonCat2_Spritesheet.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/VacationCat3/VacationCat3_Spritesheet.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Beachball_Spritesheet.png" type="Texture" id=22]
@@ -1839,7 +1839,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 12
+frame = 15
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1855,7 +1855,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 21
+frame = 2
 playing = true
 flip_h = true
 
@@ -1875,15 +1875,17 @@ position = Vector2( 0, -0.55835 )
 shape = SubResource( 41 )
 
 [node name="FelineAreaTower" type="Area2D" parent="NPC"]
-position = Vector2( 290.115, 907.302 )
+position = Vector2( 616, 901 )
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
 skip_var = "waterfalls_feline_tower"
 json_file = "res://Assets/Feline/feline_research.json"
 sound_file = "res://Assets/Feline/Sounds/happyfeline.wav"
 trigger_on_touch = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FelineAreaTower"]
-position = Vector2( 532.25, -389.448 )
 shape = SubResource( 42 )
 
 [node name="Ball" type="KinematicBody2D" parent="."]
@@ -2156,6 +2158,7 @@ texture = ExtResource( 37 )
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 55 )
+frame = 2
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
