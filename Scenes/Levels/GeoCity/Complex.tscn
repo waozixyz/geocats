@@ -39,7 +39,7 @@ extents = Vector2( 45.128, 59 )
 extents = Vector2( 82.6183, 38.2424 )
 
 [sub_resource type="RectangleShape2D" id=173]
-extents = Vector2( 118.938, 0.75 )
+extents = Vector2( 119.5, 0.25 )
 
 [sub_resource type="RectangleShape2D" id=174]
 extents = Vector2( 11, 1 )
@@ -71,11 +71,11 @@ extents = Vector2( 30.7477, 3 )
 [sub_resource type="RectangleShape2D" id=184]
 extents = Vector2( 5.97483, 0.75 )
 
-[sub_resource type="RectangleShape2D" id=185]
-extents = Vector2( 15, 1 )
+[sub_resource type="RectangleShape2D" id=237]
+extents = Vector2( 15.75, 0.875 )
 
-[sub_resource type="RectangleShape2D" id=227]
-extents = Vector2( 17.875, 1.375 )
+[sub_resource type="RectangleShape2D" id=236]
+extents = Vector2( 19, 1.375 )
 
 [sub_resource type="RectangleShape2D" id=187]
 extents = Vector2( 13.5, 1.25 )
@@ -382,7 +382,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Window"]
-position = Vector2( 23.8125, 7.5 )
+position = Vector2( 23.5, 8.25 )
 shape = SubResource( 173 )
 one_way_collision = true
 
@@ -499,18 +499,18 @@ shape = SubResource( 183 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/Houses"]
-position = Vector2( 44.25, 96.95 )
+position = Vector2( 44, 96.95 )
 shape = SubResource( 184 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/Houses"]
-position = Vector2( 73.75, 152.95 )
-shape = SubResource( 185 )
+position = Vector2( 74, 153.075 )
+shape = SubResource( 237 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/Houses"]
-position = Vector2( 75.125, 52.825 )
-shape = SubResource( 227 )
+position = Vector2( 75, 52.575 )
+shape = SubResource( 236 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions/Houses"]
