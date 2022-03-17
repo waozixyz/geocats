@@ -323,6 +323,7 @@ extents = Vector2( 84, 53 )
 extents = Vector2( 73, 78 )
 
 [node name="Mountain" type="Node2D"]
+position = Vector2( -228.077, 11.1272 )
 script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -724,7 +725,6 @@ shape = SubResource( 73 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-autoplay = true
 bus = "Music"
 
 [node name="Telescope" type="Area2D" parent="."]
