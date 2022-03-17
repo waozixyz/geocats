@@ -1,0 +1,61 @@
+{
+  "first": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "Wow. I really can't believe you defeated Norna and Wyrd so easily! I'm impressed.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "name": "Feline",
+    "avatar": "feline.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "content": "We never mentioned that we defeated them... Palmerston, do you know something that we don't?",
+    "next": "3"
+  },
+  "3": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "...",
+    "next": "4"
+  },
+  "4": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "I'm conceerned by numerous reports of our citizens being antagonised by monsters. Events like these are happening all around the GeoRing.",
+    "next": "5"
+  },
+  "5": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "...I have a feeling that these monster attacks are connected.@You said that Norna told you to stay away from the desert?",
+    "next": "6"
+  },
+  "6": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "Maybe it's time to take a trip out to the deserts to meet an associate of mine named Dr. Letharia. She lives on the edge of the desert. An area called XAPS.",
+    "next": "7"
+  },
+  "7": {
+    "name": "Palmerston",
+    "avatar": "palmerston.png",
+    "position": "left",
+    "type": "text",
+    "content": "She'll know what to do. I'll add Letharia's location to your FeLine Mapz system, and let her know you're on your way for a visit.",
+    "next": ""
+  },
+}

@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/geolodge_FG.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/tinypumpkinicon.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/behind.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Agents/Palmerston/palmerston.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Palmerston/palmerston.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/mountian.png" type="Texture" id=16]
@@ -544,9 +544,7 @@ shape = SubResource( 27 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
 
-[node name="EndWalls" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
 collision_mask = 7
@@ -631,13 +629,25 @@ __meta__ = {
 move_speed = 0
 _jump_height = 150
 
-[node name="Area2D" type="Area2D" parent="Palmerston"]
+[node name="DefaultDialogue" type="Area2D" parent="Palmerston"]
 script = ExtResource( 18 )
 has_parent = true
+skip_var = "GlaciokarstAfterBattle"
 character_name = "Palmerston"
-json_file = "res://Assets/Agents/Palmerston/palmerston.json"
+json_file = "res://Assets/Levels/Glaciokarst/GeoLodge/Palmerston/palmerston.json"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/DefaultDialogue"]
+position = Vector2( 23.1036, 17.0176 )
+shape = SubResource( 46 )
+
+[node name="AfterBattleDialogue" type="Area2D" parent="Palmerston"]
+script = ExtResource( 18 )
+has_parent = true
+enable_var = "GlaciokarstAfterBattle"
+character_name = "Palmerston"
+json_file = "res://Assets/Levels/Glaciokarst/GeoLodge/Palmerston/palmerston_afterbattle.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston/AfterBattleDialogue"]
 position = Vector2( 23.1036, 17.0176 )
 shape = SubResource( 46 )
 

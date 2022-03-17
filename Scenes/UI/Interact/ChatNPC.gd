@@ -63,6 +63,7 @@ func _is_skip_var():
 		return false
 			
 func _process(_delta):
+
 	if trigger_on_touch and not _is_skip_var() and _is_enable_var():
 		if touching and not active:
 			start_chat()
@@ -101,7 +102,7 @@ func start_chat():
 var dia_started
 func _input(_event):
 	if not trigger_on_touch:
-		if touching and json_file and Input.is_action_just_pressed("interact") and dialogue.modulate.a == 0:
+		if touching and json_file and Input.is_action_just_pressed("interact") and dialogue.modulate.a == 0 and not _is_skip_var() and _is_enable_var():
 			if chat_with.visible:
 				start_chat()
 			else:

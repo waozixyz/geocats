@@ -55,7 +55,6 @@ func _physics_process(_delta):
 		direction *= -1
 
 
-
 	sprite.flip_h = direction - 1
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 	sprite.play(anim)

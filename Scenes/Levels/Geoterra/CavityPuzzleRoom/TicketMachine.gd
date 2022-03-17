@@ -49,7 +49,6 @@ func _plus_pressed():
 		if frame > total_frames - 1:
 			frame = 0
 		sprite.frame = frame
-	#	sprite.frame = frame
 	
 
 func _minus_pressed():
