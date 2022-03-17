@@ -359,7 +359,7 @@ centered = false
 [node name="Default" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="Default" index="0"]
-position = Vector2( 41, 4891 )
+position = Vector2( 64, 4847 )
 
 [node name="Camera2D" parent="Default/Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -489,9 +489,7 @@ position = Vector2( 1249.7, -248.505 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -571,6 +569,7 @@ texture = ExtResource( 10 )
 
 [node name="LockedItem" type="Area2D" parent="Portals"]
 script = ExtResource( 23 )
+item_node = NodePath("ToOutpost")
 unlock_var = "GlaciokarstAfterBattle"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Portals/LockedItem"]
@@ -728,6 +727,7 @@ autoplay = true
 bus = "Music"
 
 [node name="Telescope" type="Area2D" parent="."]
+position = Vector2( 1784, 1603 )
 script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true,
@@ -736,7 +736,6 @@ __meta__ = {
 disable_player = "telescope"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
-position = Vector2( 1784, 1603 )
 shape = SubResource( 74 )
 
 [editable path="Default"]

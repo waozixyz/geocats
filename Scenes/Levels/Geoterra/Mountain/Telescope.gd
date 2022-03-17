@@ -14,26 +14,27 @@ func _zoomi(dir = 1):
 	camera.position.x += 7 * dir
 func _process(delta):
 	._process(delta)
-	if touching:
-		if do_something:
-			current_scene.set_disable("player", disable_player)
-			if camera.zoom.x <= zoom_org:
-				zoom_out = true
-			if camera.zoom.x > zoom_org:
-				zoom_out = false
-			do_something = false
-					
-		if zoom_out:
-			if camera.zoom.x < 6.6:
-				#object.visible = false
-				_zoomi()
-			#else:
-				#object.visible = true
+
+	if do_something:
+		print('hi')
+		current_scene.set_disable("player", disable_player)
+		if camera.zoom.x <= zoom_org:
+			zoom_out = true
+		if camera.zoom.x > zoom_org:
+			zoom_out = false
+		do_something = false
+				
+	if zoom_out:
+		if camera.zoom.x < 6.6:
+			#object.visible = false
+			_zoomi()
+		#else:
+			#object.visible = true
+	else:
+		if camera.zoom.x > zoom_org:
+			_zoomi(-1)
 		else:
-			if camera.zoom.x > zoom_org:
-				_zoomi(-1)
-			else:
-				#object.visible = true
-				current_scene.set_disable("player", disable_player, false)
+			#object.visible = true
+			current_scene.set_disable("player", disable_player, false)
 
 

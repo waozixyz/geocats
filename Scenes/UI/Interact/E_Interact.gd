@@ -55,13 +55,14 @@ func _process(delta):
 			dialogue.initiate(dialogue_file)
 			dialogue.modulate.a = 0.01
 			dia_started = true
-		do_something = false
+			do_something = false
 	if dia_started and dialogue.modulate.a == 0:
 		dia_started = false
 		disabled = false
 	if not touching and dia_started:
 		dialogue.exit()
 func _input(_event):
+
 	# when i press the interact key (e)
 	if Input.is_action_just_pressed("interact") and not _is_disabled() and button.modulate.a > 0:
 		if touching and dialogue.modulate.a == 0:
