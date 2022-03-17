@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/Cave_Ambience.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Water1.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles2.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=2]
@@ -59,7 +59,6 @@ centered = false
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 2 )
-frame = 1
 playing = true
 centered = false
 
@@ -94,18 +93,12 @@ polygon = PoolVector2Array( 73, 462, 835, 464, 980, 434, 1234, 434, 1233, 459, 9
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 74, 810, 71, 1097, 99, 1173, 202, 1217, 394, 1228, 434, 1248, 434, 1207, 273, 1187, 192, 1107, 77, 838, 47, 540, 58, 331, 58, 254, 97, 195, 210, 60, 285, 55, 467 )
 
-[node name="Default" parent="." instance=ExtResource( 14 )]
-position = Vector2( 402, 304 )
+[node name="Player" parent="." instance=ExtResource( 14 )]
+position = Vector2( 125, 426 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( -260, 143 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 1300
 limit_bottom = 700
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -160,5 +153,4 @@ stream = ExtResource( 12 )
 autoplay = true
 bus = "Music"
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

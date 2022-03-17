@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/ground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_art.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/clouds.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/solidcliff.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/ring.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat_2.png" type="Texture" id=9]
@@ -18,7 +18,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat_1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/Geoterra/sixeight.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Levels/Geoterra/Mountain/nonabot.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Agents/Nonabot/nonabot.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Telescope.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=22]
@@ -356,25 +356,25 @@ position = Vector2( 349, 309 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="Default" parent="." instance=ExtResource( 6 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 42, 4862 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 64, 4847 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
-zoom = Vector2( 1.5, 1.5 )
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 5000
 limit_bottom = 5000
 
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
-
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Platforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Platforms"]
 position = Vector2( 3000, -10 )
@@ -492,6 +492,10 @@ one_way_collision = true
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -10, 3000 )
@@ -569,6 +573,9 @@ texture = ExtResource( 10 )
 
 [node name="LockedItem" type="Area2D" parent="Portals"]
 script = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
 item_node = NodePath("ToOutpost")
 unlock_var = "GlaciokarstAfterBattle"
 
@@ -738,5 +745,4 @@ disable_player = "telescope"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
 shape = SubResource( 74 )
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

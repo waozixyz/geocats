@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Levels/Glaciokarst/Caves/CatHead.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/cat_cave_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/BG_Caves.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Glaciokarst/Caves/9_Caves.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=8]
@@ -208,17 +208,12 @@ position = Vector2( -1, -36 )
 scale = Vector2( 0.23, 0.24 )
 texture = ExtResource( 14 )
 
-[node name="Default" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 36, 406 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 43, 417 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 1565
 limit_bottom = 2385
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -391,5 +386,4 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
 shape = SubResource( 29 )
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

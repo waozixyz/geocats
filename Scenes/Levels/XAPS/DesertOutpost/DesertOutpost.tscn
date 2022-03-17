@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_closed.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/awareness.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/letharia/letharia.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_3.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/door/door_2.png" type="Texture" id=8]
@@ -565,6 +565,9 @@ margin_top = -275.704
 margin_right = 1427.77
 margin_bottom = 813.296
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="stars" type="Sprite" parent="BelowPlayer"]
 position = Vector2( -1.49012e-08, 0 )
@@ -612,7 +615,7 @@ shape = SubResource( 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 19
+frame = 10
 playing = true
 
 [node name="ErnstArea2D" type="Area2D" parent="NPC"]
@@ -626,7 +629,7 @@ sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 2
+frame = 13
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ErnstArea2D"]
@@ -647,7 +650,7 @@ position = Vector2( 3.87964, 0.479492 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 21
+frame = 6
 playing = true
 
 [node name="SandyArea2D" type="Area2D" parent="NPC/Sandy"]
@@ -679,7 +682,7 @@ move_speed = 0
 scale = Vector2( 4, 4 )
 frames = SubResource( 34 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="NostocArea2D" type="Area2D" parent="NPC/Nostoc"]
@@ -713,7 +716,7 @@ position = Vector2( 3.1499, 8.49988 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 46 )
 animation = "walk"
-frame = 7
+frame = 4
 playing = true
 
 [node name="SavannaArea2D" type="Area2D" parent="NPC/Savanna"]
@@ -746,7 +749,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 53 )
 animation = "idle"
-frame = 7
+frame = 4
 playing = true
 
 [node name="Sandcat2Area2D" type="Area2D" parent="NPC/Sol"]
@@ -777,7 +780,7 @@ position = Vector2( 0, 7.95795 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 59 )
 animation = "idle"
-frame = 15
+frame = 30
 playing = true
 
 [node name="FierArea2D" type="Area2D" parent="NPC/Fier"]
@@ -831,22 +834,18 @@ centered = false
 flip_h = true
 script = ExtResource( 12 )
 
-[node name="Default" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 89, 1046.26 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 3496, 572.257 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
-zoom = Vector2( 1.5, 1.5 )
-limit_top = 769
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 6000
-limit_bottom = 4500
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
+limit_bottom = 3000
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="fg_base" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 9 )
@@ -876,6 +875,9 @@ texture = ExtResource( 58 )
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( 6.4, 888 )
@@ -885,6 +887,9 @@ polygon = PoolVector2Array( -5.88358, 0.960022, -27.2, 108, 582.4, 253.6, 1006.4
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Platforms"]
 position = Vector2( 2084, 1516.72 )
@@ -1088,6 +1093,10 @@ one_way_collision = true
 position = Vector2( 22, 83 )
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -41, 1447.68 )
@@ -1098,6 +1107,9 @@ position = Vector2( 5977, 1370.55 )
 shape = SubResource( 98 )
 
 [node name="Ladders" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 3614.83, 721.517 )
@@ -1512,6 +1524,9 @@ position = Vector2( 0, 7.29907 )
 shape = SubResource( 116 )
 
 [node name="Portals" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ToMountain" type="Area2D" parent="Portals"]
 position = Vector2( 68.8216, 1042.07 )
@@ -1543,5 +1558,4 @@ stream = ExtResource( 32 )
 autoplay = true
 bus = "Music"
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

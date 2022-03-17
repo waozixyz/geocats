@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_FG.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Environment/Particles/waterfall_mist.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_Bule_BG.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_Front_BG.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Environment/Particles/waterfall_stream.tscn" type="PackedScene" id=9]
@@ -195,14 +195,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -215,6 +207,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -222,14 +222,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -374,26 +374,25 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Default" parent="." instance=ExtResource( 6 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 710, 925 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 5970, 347 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
-position = Vector2( -1, 0 )
-zoom = Vector2( 1.5, 1.5 )
-limit_right = 7020
-limit_bottom = 3758
-
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
+[node name="Camera2D" parent="Player" index="0"]
+limit_right = 7000
+limit_bottom = 3750
 
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Platforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Collisions/Platforms"]
 position = Vector2( -2314.53, 3737.1 )
@@ -1659,11 +1658,17 @@ one_way_collision = true
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -22.9818, 2273.02 )
 scale = Vector2( 1, 0.75991 )
 shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 8424.91, 2273.02 )
@@ -1712,6 +1717,9 @@ __meta__ = {
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 3 )
@@ -1739,6 +1747,9 @@ stream = ExtResource( 48 )
 bus = "Music"
 
 [node name="Ladders" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LastLadder" type="Area2D" parent="Ladders"]
 position = Vector2( 539, 1125 )
@@ -1777,6 +1788,9 @@ position = Vector2( 0, -3.80214 )
 shape = SubResource( 9 )
 
 [node name="NPC" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="VacationCat1" type="Area2D" parent="NPC"]
 position = Vector2( 5813, 369 )
@@ -1839,7 +1853,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 25
+frame = 10
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1910,12 +1924,15 @@ animation = "resting"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ResearchCabin" type="Control" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 33.0
 margin_top = 52.0
 margin_right = 608.0
 margin_bottom = 428.0
 mouse_filter = 2
 __meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -1927,7 +1944,7 @@ margin_bottom = 430.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="Office" type="TextureRect" parent="CanvasLayer/ResearchCabin"]
@@ -2673,5 +2690,4 @@ stream = ExtResource( 47 )
 volume_db = -11.187
 autoplay = true
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]

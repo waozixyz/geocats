@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_BG.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Default.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment/Teleport/Internal.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=9]
@@ -134,18 +134,6 @@ extents = Vector2( 134.445, 130.565 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 248.793, 102.488 )
 
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 11 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 11 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 11 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 15, 15 )
@@ -166,6 +154,18 @@ region = Rect2( 45, 0, 15, 15 )
 atlas = ExtResource( 11 )
 region = Rect2( 60, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 11 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 11 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 15, 15, 15 )
@@ -176,14 +176,14 @@ region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 21 ), SubResource( 22 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 23 ), SubResource( 24 ) ],
@@ -202,7 +202,8 @@ script = ExtResource( 9 )
 position = Vector2( -0.443603, -0.443726 )
 scale = Vector2( 5, 5 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="BelowPlayer"]
@@ -213,21 +214,19 @@ centered = false
 texture = ExtResource( 12 )
 centered = false
 
-[node name="Default" parent="." instance=ExtResource( 6 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 484, 985 )
 
-[node name="Player" parent="Default" index="0"]
-position = Vector2( 487.264, 982.75 )
-
-[node name="Camera2D" parent="Default/Player" index="0"]
-zoom = Vector2( 1.5, 1.5 )
+[node name="Camera2D" parent="Player" index="0"]
 limit_right = 1750
 limit_bottom = 1250
 
-[node name="AnimatedSprite" parent="Default/Player" index="1"]
-frame = 19
-
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Platforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
@@ -275,9 +274,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -419,6 +416,10 @@ texture = ExtResource( 10 )
 
 [node name="AbovePlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 1 )
@@ -570,7 +571,7 @@ sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 18
+frame = 21
 playing = true
 flip_h = true
 
@@ -578,5 +579,4 @@ flip_h = true
 position = Vector2( 2.47534, -6.80725 )
 shape = SubResource( 26 )
 
-[editable path="Default"]
-[editable path="Default/Player"]
+[editable path="Player"]
