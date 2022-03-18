@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_Front_BG.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Environment/Particles/waterfall_stream.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Levels/Geoterra/Waterfalls/Ball.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=14]
@@ -195,14 +194,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -215,6 +206,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -222,14 +221,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -244,6 +243,10 @@ extents = Vector2( 108.11, 156.215 )
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 14.0
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 8, 7 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 22 )
@@ -261,20 +264,16 @@ region = Rect2( 0, 7, 8, 7 )
 atlas = ExtResource( 22 )
 region = Rect2( 8, 7, 8, 7 )
 
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 22 )
-region = Rect2( 0, 0, 8, 7 )
-
 [sub_resource type="SpriteFrames" id=49]
 animations = [ {
-"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 48 ) ],
 "loop": true,
 "name": "resting",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "moving",
 "speed": 5.0
 } ]
 
@@ -375,7 +374,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 710, 925 )
+position = Vector2( 5981, 331 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 7000
@@ -425,7 +424,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D227" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
 position = Vector2( -122.449, -3358.94 )
-polygon = PoolVector2Array( 7805.52, 3594.24, 7813.93, 3581.03, 7839.14, 3581.03, 7846.34, 3589.44, 7763.51, 3627.85, 7763.51, 3611.04, 7770.71, 3605.04, 7787.52, 3605.04, 7794.72, 3595.44 )
+polygon = PoolVector2Array( 7805.52, 3594.24, 7813.93, 3581.03, 7839.14, 3581.03, 7866.75, 3585.83, 7769.51, 3644.65, 7763.51, 3611.04, 7770.71, 3605.04, 7787.52, 3605.04, 7794.72, 3595.44 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D215" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
@@ -440,7 +439,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D113" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
 position = Vector2( -2833.13, -2625.45 )
-polygon = PoolVector2Array( 7513.81, 3555.82, 7625.45, 3576.23, 7666.27, 3577.43, 7737.1, 3608.64, 7840.34, 3613.45, 7919.57, 3638.66, 8014.41, 3644.66, 8096.04, 3650.66, 8216.09, 3654.26, 8291.72, 3674.67, 8361.34, 3702.28, 8411.77, 3715.49, 8462.19, 3733.49, 8608.64, 3734.69, 8715.49, 3757.5, 8873.95, 3769.51, 9051.62, 3792.32, 9250.9, 3836.73, 9368.55, 3852.34, 9312.12, 3869.15, 8599.04, 3765.91, 8454.98, 3756.3, 8360.14, 3732.29, 8195.68, 3675.87, 8018.01, 3663.87, 7929.17, 3656.66, 7830.73, 3633.85, 7739.5, 3631.45, 7662.67, 3600.24, 7497, 3577.43, 7244.9, 3565.43, 7072.03, 3595.44, 6872.75, 3576.23, 6618.25, 3539.02, 6429.77, 3524.61, 6441.78, 3501.8, 6626.65, 3503, 6757.5, 3535.41, 6882.35, 3543.82, 6923.17, 3552.22, 7068.43, 3563.03, 7144.06, 3557.02, 7244.9, 3535.41, 7354.14, 3551.02 )
+polygon = PoolVector2Array( 7513.81, 3555.82, 7625.45, 3576.23, 7666.27, 3577.43, 7737.1, 3608.64, 7840.34, 3613.45, 7919.57, 3638.66, 8014.41, 3644.66, 8096.04, 3650.66, 8254.5, 3656.66, 8291.72, 3674.67, 8361.34, 3702.28, 8411.77, 3715.49, 8462.19, 3733.49, 8608.64, 3734.69, 8715.49, 3757.5, 8873.95, 3769.51, 9051.62, 3792.32, 9250.9, 3836.73, 9368.55, 3852.34, 9312.12, 3869.15, 8599.04, 3765.91, 8454.98, 3756.3, 8360.14, 3732.29, 8195.68, 3675.87, 8018.01, 3663.87, 7929.17, 3656.66, 7830.73, 3633.85, 7739.5, 3631.45, 7662.67, 3600.24, 7497, 3577.43, 7244.9, 3565.43, 7072.03, 3595.44, 6872.75, 3576.23, 6618.25, 3539.02, 6429.77, 3524.61, 6441.78, 3501.8, 6626.65, 3503, 6757.5, 3535.41, 6882.35, 3543.82, 6923.17, 3552.22, 7068.43, 3563.03, 7144.06, 3557.02, 7244.9, 3535.41, 7354.14, 3551.02 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D110" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
@@ -540,7 +539,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D156" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
 position = Vector2( -240.096, -3237.7 )
-polygon = PoolVector2Array( 7716.69, 3577.43, 7725.09, 3570.23, 7738.3, 3561.82, 7752.7, 3552.22, 7785.11, 3549.82, 7795.92, 3565.43, 7817.53, 3572.63, 7773.11, 3597.84, 7728.69, 3601.44, 7716.69, 3595.44 )
+polygon = PoolVector2Array( 7716.69, 3577.43, 7725.09, 3570.23, 7738.3, 3561.82, 7752.7, 3552.22, 7785.11, 3549.82, 7795.92, 3565.43, 7817.53, 3572.63, 7773.11, 3597.84, 7728.69, 3601.44, 7702.28, 3607.45 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D154" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
@@ -570,7 +569,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D114" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
 position = Vector2( -1672.27, -2842.74 )
-polygon = PoolVector2Array( 7695.08, 3596.64, 7733.49, 3589.44, 7763.51, 3570.23, 7837.94, 3571.43, 7884.75, 3583.43, 7925.57, 3583.43, 7974.79, 3576.23, 8010.8, 3570.23, 8070.83, 3540.22, 8123.65, 3510.2, 8182.47, 3488.6, 8276.11, 3468.19, 8346.94, 3445.38, 8430.97, 3426.17, 8503, 3426.17, 8533.01, 3420.17, 8637.46, 3388.96, 8827.13, 3330.13, 8957.98, 3270.11, 9025.21, 3240.1, 9103.24, 3211.28, 9199.28, 3200.48, 9270.11, 3164.47, 9343.34, 3116.45, 9390.16, 3086.44, 9456.18, 3040.82, 9477.79, 3016.81, 9498.2, 2992.8, 9559.42, 2931.57, 9559.42, 2905.16, 9599.04, 2841.54, 9668.36, 2780.96, 9681.87, 2717.89, 9732.29, 2725.09, 9621.85, 2888.36, 9474.19, 3067.23, 9378.15, 3132.05, 9348.14, 3177.67, 8022.81, 3579.83, 7913.57, 3602.64, 7840.34, 3603.84, 7744.3, 3606.24, 6565.43, 3797.12, 6561.83, 3786.31, 6607.44, 3776.71, 6639.86, 3763.51, 6683.07, 3756.3, 6709.48, 3750.3, 6740.7, 3728.69, 6848.74, 3726.29, 6855.94, 3734.69, 6965.19, 3715.49, 6989.2, 3714.29, 6998.8, 3708.28, 7147.66, 3680.67, 7182.47, 3679.47, 7217.29, 3671.07, 7320.53, 3639.86, 7426.17, 3609.84, 7505.4, 3599.04, 7626.65, 3597.84 )
+polygon = PoolVector2Array( 7695.08, 3596.64, 7733.49, 3589.44, 7763.51, 3570.23, 7837.94, 3571.43, 7884.75, 3583.43, 7925.57, 3583.43, 7974.79, 3576.23, 8010.8, 3570.23, 8070.83, 3540.22, 8123.65, 3510.2, 8182.47, 3488.6, 8276.11, 3468.19, 8346.94, 3445.38, 8430.97, 3426.17, 8503, 3426.17, 8533.01, 3420.17, 8637.46, 3388.96, 8827.13, 3330.13, 8953.18, 3266.51, 8978.39, 3259.31, 9025.21, 3240.1, 9103.24, 3211.28, 9199.28, 3200.48, 9270.11, 3164.47, 9333.74, 3116.45, 9390.16, 3086.44, 9433.38, 3049.22, 9477.79, 3016.81, 9498.2, 2992.8, 9543.82, 2913.57, 9566.63, 2911.17, 9474.19, 3067.23, 9378.15, 3132.05, 9348.14, 3177.67, 8836.74, 3360.15, 8677.07, 3404.56, 8253.3, 3509.01, 8073.23, 3583.44, 7913.57, 3602.64, 7840.34, 3603.84, 7744.3, 3606.24, 6884.76, 3755.1, 6755.1, 3761.11, 6554.62, 3799.52, 6553.42, 3789.92, 6639.86, 3763.51, 6683.07, 3756.3, 6709.48, 3750.3, 6740.7, 3728.69, 6848.74, 3726.29, 6855.94, 3734.69, 6965.19, 3715.49, 6989.2, 3714.29, 6998.8, 3708.28, 7147.66, 3680.67, 7182.47, 3679.47, 7217.29, 3671.07, 7320.53, 3639.86, 7426.17, 3609.84, 7505.4, 3599.04, 7626.65, 3597.84 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D125" type="CollisionPolygon2D" parent="Collisions/TopMountain"]
@@ -1706,6 +1705,10 @@ position = Vector2( 3980.79, -142.857 )
 rotation = 1.5708
 shape = SubResource( 5 )
 
+[node name="CollisionShape2D5" type="CollisionPolygon2D" parent="Collisions/EndWalls"]
+position = Vector2( 7934.22, -24.8109 )
+polygon = PoolVector2Array( -48.27, 93.2383, 3.35059, 3.20228, 2.1499, -84.4328, 51.3696, -84.4328, 45.3672, 4.40277, -18.2578, 92.0378 )
+
 [node name="Portals" type="Node2D" parent="."]
 position = Vector2( -114.829, -22.0825 )
 __meta__ = {
@@ -1817,7 +1820,8 @@ __meta__ = {
 position = Vector2( 5813, 369 )
 script = ExtResource( 14 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 character_name = "Vacation Cat"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat1/VacationCat1.json"
@@ -1838,7 +1842,8 @@ script = ExtResource( 23 )
 position = Vector2( 5622, 436 )
 script = ExtResource( 14 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 character_name = "Vacation Cat"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat2/VacationCat2.json"
@@ -1860,7 +1865,8 @@ script = SubResource( 20 )
 position = Vector2( 6496.42, 21.1004 )
 script = ExtResource( 14 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 character_name = "Vacation Cat"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat3/VacationCat3.json"
@@ -1874,7 +1880,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 20
+frame = 16
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1882,6 +1888,9 @@ script = SubResource( 26 )
 [node name="GeoKitten" type="Area2D" parent="NPC"]
 position = Vector2( 5336.68, 1425.04 )
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 character_name = "GeoKitten"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.json"
 sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
@@ -1890,7 +1899,7 @@ sound_file = "res://Assets/Levels/Geoterra/Waterfalls/GeoKitten/geokitten.wav"
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 24
+frame = 21
 playing = true
 flip_h = true
 
@@ -1924,17 +1933,13 @@ trigger_on_touch = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FelineAreaTower"]
 shape = SubResource( 42 )
 
-[node name="Ball" type="KinematicBody2D" parent="."]
+[node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2( 6015, 331 )
-script = ExtResource( 11 )
+collision_layer = 7
+collision_mask = 7
+gravity_scale = 20.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball"]
-position = Vector2( 2, 4 )
-shape = SubResource( 43 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ball"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/StaticBody2D"]
 position = Vector2( 2, 4 )
 shape = SubResource( 43 )
 
@@ -1942,6 +1947,7 @@ shape = SubResource( 43 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 49 )
 animation = "resting"
+script = ExtResource( 23 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -94,18 +94,24 @@ func default_anim():
 			play("walk")
 
 # check if player is donig a wall slide
-func check_wall_slide(raycast: RayCast2D, direction: int):
-	if raycast.is_colliding() && horizontal == direction:
-		var shape_id = raycast.get_collider_shape()
-		var collider = raycast.get_collider()
-		if not collider is TileMap:
-			var owner_id = collider.shape_find_owner(shape_id)
-			if collider:
-				var hit_node = collider.shape_owner_get_owner(owner_id)
+func check_wall_slide():
+	var raycast
+	if left_raycast.is_colliding() && horizontal == -1:
+		raycast = left_raycast
+	elif right_raycast.is_colliding() && horizontal == 1:
+		raycast = right_raycast
+	else:
+		return false
 
-				if hit_node:
-					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
-						return true
+	var shape_id = raycast.get_collider_shape()
+	var collider = raycast.get_collider()
+	if collider is StaticBody2D:
+		var owner_id = collider.shape_find_owner(shape_id)
+		if collider:
+			var hit_node = collider.shape_owner_get_owner(owner_id)
+			if hit_node:
+				if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
+					return true
 
 # move horizontal function
 func move_horizontally(subtractor = 0):
