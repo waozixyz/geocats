@@ -27,35 +27,28 @@
     "next": "4"
   },
   "4": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
-    "position": "left",
+
     "type": "text",
     "content": "I'm conceerned by numerous reports of our citizens being antagonised by monsters. Events like these are happening all around the GeoRing.",
     "next": "5"
   },
   "5": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
-    "position": "left",
     "type": "text",
     "content": "...I have a feeling that these monster attacks are connected.@You said that Norna told you to stay away from the desert?",
     "next": "6"
   },
   "6": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
-    "position": "left",
+
     "type": "text",
     "content": "Maybe it's time to take a trip out to the deserts to meet an associate of mine named Dr. Letharia. She lives on the edge of the desert. An area called XAPS.",
     "next": "7"
   },
   "7": {
-    "name": "Palmerston",
-    "avatar": "palmerston.png",
-    "position": "left",
-    "type": "text",
-    "content": "She'll know what to do. I'll add Letharia's location to your FeLine Mapz system, and let her know you're on your way for a visit.",
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "She'll know what to do. I'll add Letharia's location to your FeLine Mapz system, and let her know you're on your way for a visit",
+    "value": [["enable_location", true]],
     "next": ""
   },
 }

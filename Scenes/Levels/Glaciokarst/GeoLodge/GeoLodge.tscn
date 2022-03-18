@@ -1,41 +1,41 @@
 [gd_scene load_steps=74 format=2]
 
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/rain_spritesheet.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=6]
-[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/bg.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/geolodge_FG.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/tinypumpkinicon.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/behind.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Palmerston/palmerston.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=15]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/mountian.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/box.png" type="Texture" id=17]
-[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Rain.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/bg.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Levels/Glaciokarst/GeoLodge/GeoLodge.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/tinypumpkinicon.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/box.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/mountian.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/FG_lodge_loft.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Rain.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/rain_spritesheet.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/behind.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Palmerston/palmerston.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/geolodge_FG.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/Geolodge_fire_Spritesheet.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Levels/Glaciokarst/GeoLodge/FG_lodge_loft.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 189, 99 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 12 )
 region = Rect2( 189, 0, 189, 99 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 12 )
 region = Rect2( 0, 99, 189, 99 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 12 )
 region = Rect2( 189, 99, 189, 99 )
 
 [sub_resource type="SpriteFrames" id=5]
@@ -50,11 +50,11 @@ animations = [ {
 extents = Vector2( 41, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 14 )
+atlas = ExtResource( 19 )
 region = Rect2( 20, 0, 20, 14 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 14 )
+atlas = ExtResource( 19 )
 region = Rect2( 40, 0, 20, 14 )
 
 [sub_resource type="SpriteFrames" id=9]
@@ -211,7 +211,7 @@ Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = ExtResource( 2 )
+Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = null
 Button/styles/focus = SubResource( 33 )
 Button/styles/hover = SubResource( 34 )
@@ -308,19 +308,19 @@ VSeparator/styles/separator = SubResource( 42 )
 extents = Vector2( 29.9071, 18.5032 )
 
 [sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 16 )
 region = Rect2( 39, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 16 )
 region = Rect2( 13, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 13 )
+atlas = ExtResource( 16 )
 region = Rect2( 26, 0, 13, 8 )
 
 [sub_resource type="SpriteFrames" id=51]
@@ -340,7 +340,7 @@ animations = [ {
 extents = Vector2( 25.6066, 12.0048 )
 
 [node name="GeoLodge" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 7, 7 )
@@ -350,21 +350,21 @@ __meta__ = {
 }
 
 [node name="bg" type="Sprite" parent="BelowPlayer"]
-texture = ExtResource( 9 )
+texture = ExtResource( 2 )
 centered = false
 
 [node name="mountain" type="Sprite" parent="BelowPlayer"]
-texture = ExtResource( 16 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="rain" type="AnimatedSprite" parent="BelowPlayer"]
 frames = SubResource( 5 )
 speed_scale = 0.2
 centered = false
-script = ExtResource( 4 )
+script = ExtResource( 13 )
 
 [node name="lodge_bg" type="Sprite" parent="BelowPlayer"]
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="PumpkinArea" type="Area2D" parent="."]
@@ -379,12 +379,12 @@ shape = SubResource( 6 )
 [node name="Sprite" type="Sprite" parent="PumpkinArea"]
 modulate = Color( 1, 1, 1, 0.458824 )
 position = Vector2( 595, 387.001 )
-texture = ExtResource( 11 )
+texture = ExtResource( 7 )
 
 [node name="Fire" type="Area2D" parent="."]
 position = Vector2( 462, 456 )
 scale = Vector2( 7, 7 )
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 make_node_visible = NodePath("AnimatedSprite")
 sound_when_visible = "res://Assets/Levels/Glaciokarst/GeoLodge/Fire.ogg"
 progress_when_visible = "geolodge_fire"
@@ -395,7 +395,7 @@ position = Vector2( 11, 10.9 )
 frames = SubResource( 9 )
 speed_scale = 0.2
 centered = false
-script = ExtResource( 4 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
 position = Vector2( 20, 17.9719 )
@@ -412,12 +412,12 @@ limit_bottom = 693
 scale = Vector2( 7, 7 )
 
 [node name="fg_base" type="Sprite" parent="AbovePlayer"]
-texture = ExtResource( 10 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="FgLodgeLoft" type="Sprite" parent="AbovePlayer"]
 position = Vector2( 152, 41.0567 )
-texture = ExtResource( 21 )
+texture = ExtResource( 10 )
 
 [node name="Box" type="StaticBody2D" parent="."]
 position = Vector2( 1036, 615.851 )
@@ -435,7 +435,7 @@ shape = SubResource( 11 )
 
 [node name="Box" type="Sprite" parent="Box"]
 position = Vector2( 0, -7.62939e-06 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -557,21 +557,21 @@ shape = SubResource( 29 )
 position = Vector2( 917, 468.647 )
 collision_layer = 7
 collision_mask = 7
-script = ExtResource( 8 )
+script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
 position = Vector2( 0, -25.0346 )
 shape = SubResource( 30 )
 
 [node name="Rain" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 19 )
+stream = ExtResource( 11 )
 volume_db = -3.104
 autoplay = true
 bus = "Music"
 
 [node name="GoToCaves" type="Area2D" parent="."]
 position = Vector2( 21, 623.862 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -585,7 +585,7 @@ shape = SubResource( 31 )
 visible = false
 position = Vector2( 0, -60 )
 scale = Vector2( 0.198469, 0.207692 )
-texture = ExtResource( 7 )
+texture = ExtResource( 17 )
 
 [node name="PumpkinCode" type="CanvasLayer" parent="."]
 
@@ -614,7 +614,7 @@ __meta__ = {
 position = Vector2( 1090, 478.661 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 15 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -622,7 +622,7 @@ move_speed = 0
 _jump_height = 150
 
 [node name="DefaultDialogue" type="Area2D" parent="Palmerston"]
-script = ExtResource( 18 )
+script = ExtResource( 3 )
 has_parent = true
 skip_var = "GlaciokarstAfterBattle"
 character_name = "Palmerston"
@@ -633,7 +633,7 @@ position = Vector2( 23.1036, 17.0176 )
 shape = SubResource( 46 )
 
 [node name="AfterBattleDialogue" type="Area2D" parent="Palmerston"]
-script = ExtResource( 18 )
+script = ExtResource( 3 )
 has_parent = true
 enable_var = "GlaciokarstAfterBattle"
 character_name = "Palmerston"
@@ -651,7 +651,7 @@ animation = "walk"
 speed_scale = 0.1
 centered = false
 flip_h = true
-script = ExtResource( 4 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Palmerston"]
 position = Vector2( 28.02, 20.7403 )
