@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -60,6 +60,12 @@ extents = Vector2( 19.2077, 22.8092 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 38.4153, 16.8065 )
 
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 160.864, 39.0156 )
+
+[sub_resource type="RectangleShape2D" id=66]
+extents = Vector2( 49.8199, 8.77844 )
+
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 34.374, 4798.62 )
 
@@ -73,7 +79,7 @@ extents = Vector2( 75.2204, 22.5815 )
 extents = Vector2( 50, 50 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 10.7142, 76.9122 )
+extents = Vector2( 10.7142, 80.1264 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10.7142, 371.912 )
@@ -245,7 +251,7 @@ extents = Vector2( 58.1104, 39.5977 )
 extents = Vector2( 87.4824, 68.9417 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 108.11, 156.215 )
+extents = Vector2( 132, 70.5 )
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 14.0
@@ -316,6 +322,9 @@ scale = Vector2( 5, 5 )
 [node name="WaterfallBg2" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 7 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WaterfallStream" parent="BelowPlayer" instance=ExtResource( 9 )]
 position = Vector2( 463.4, 56.6 )
@@ -347,7 +356,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5981, 331 )
+position = Vector2( 710, 973 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 7000
@@ -388,7 +397,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D114" type="CollisionPolygon2D" parent="Collisions/TopRightSurface"]
 position = Vector2( -1672.27, -2842.74 )
-polygon = PoolVector2Array( 7733.49, 3589.44, 7774.31, 3569.03, 7813.93, 3570.23, 7908.76, 3587.04, 7974.79, 3576.23, 8010.8, 3570.23, 8070.83, 3540.22, 8182.47, 3488.6, 8276.11, 3468.19, 8430.97, 3426.17, 8503, 3426.17, 8827.13, 3330.13, 8953.18, 3266.51, 8978.39, 3259.31, 9025.21, 3240.1, 9103.24, 3211.28, 9199.28, 3200.48, 9271.31, 3158.47, 9333.74, 3116.45, 9390.16, 3086.44, 9433.38, 3049.22, 9477.79, 3016.81, 9561.83, 2911.17, 9589.44, 2953.18, 9529.41, 3030.01, 9378.15, 3132.05, 9200.48, 3225.69, 8836.74, 3360.15, 8677.07, 3404.56, 8253.3, 3509.01, 8073.23, 3583.44, 7913.57, 3602.64, 7840.34, 3603.84, 7744.3, 3606.24, 6884.76, 3755.1, 6755.1, 3761.11, 6554.62, 3799.52, 6553.42, 3789.92, 6639.86, 3763.51, 6709.48, 3750.3, 6740.7, 3728.69, 6848.74, 3726.29, 6855.94, 3734.69, 6965.19, 3715.49, 7012.01, 3708.29, 7147.66, 3680.67, 7182.47, 3679.47, 7217.29, 3671.07, 7320.53, 3639.86, 7406.96, 3613.45, 7505.4, 3599.04, 7626.65, 3597.84 )
+polygon = PoolVector2Array( 7733.49, 3589.44, 7774.31, 3569.03, 7813.93, 3570.23, 7908.76, 3587.04, 7974.79, 3576.23, 8010.8, 3570.23, 8070.83, 3540.22, 8182.47, 3488.6, 8276.11, 3468.19, 8430.97, 3426.17, 8503, 3426.17, 8827.13, 3330.13, 8953.18, 3266.51, 8978.39, 3259.31, 9025.21, 3240.1, 9103.24, 3211.28, 9199.28, 3200.48, 9271.31, 3158.47, 9333.74, 3116.45, 9390.16, 3086.44, 9433.38, 3049.22, 9477.79, 3016.81, 9561.83, 2911.17, 9589.44, 2953.18, 9529.41, 3030.01, 9378.15, 3132.05, 9200.48, 3225.69, 8836.74, 3360.15, 8677.07, 3404.56, 8253.3, 3509.01, 8073.23, 3583.44, 7913.57, 3602.64, 7840.34, 3603.84, 7744.3, 3606.24, 6884.76, 3755.1, 6755.1, 3761.11, 6554.62, 3799.52, 6553.42, 3789.92, 6639.86, 3763.51, 6709.48, 3750.3, 6740.7, 3728.69, 6839.14, 3726.29, 6860.75, 3733.5, 6995.2, 3713.09, 7141.66, 3679.47, 7182.47, 3679.47, 7217.29, 3671.07, 7320.53, 3639.86, 7406.96, 3613.45, 7505.4, 3599.04, 7626.65, 3597.84 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D146" type="CollisionPolygon2D" parent="Collisions/TopRightSurface"]
@@ -423,7 +432,7 @@ one_way_collision = true
 
 [node name="CollisionPolygon2D120" type="CollisionPolygon2D" parent="Collisions/TopGround"]
 position = Vector2( 0, 1.20048 )
-polygon = PoolVector2Array( 2360.14, 743.097, 2402.16, 695.078, 2506.6, 672.269, 2555.82, 673.469, 2635.05, 685.474, 2684.27, 686.675, 2702.28, 698.68, 2769.51, 698.68, 2831.93, 703.481, 2980.79, 773.109, 3082.83, 811.525, 3133.25, 775.51, 3133.25, 750.3, 3172.87, 745.498, 3195.68, 786.315, 3230.49, 799.52, 3246.1, 812.725, 3265.31, 815.126, 3318.13, 773.109, 3330.13, 762.305, 3390.16, 762.305, 3406.96, 779.112, 3426.17, 801.921, 3369.75, 823.529, 3246.1, 839.136, 3157.26, 812.725, 3067.23, 852.341, 2816.33, 739.496, 2684.27, 722.689, 2442.98, 709.484, 2324.13, 824.73, 2250.9, 887.155, 2234.09, 872.749, 2253.3, 846.339, 2259.3, 827.131, 2292.92, 800.72, 2316.93, 791.116 )
+polygon = PoolVector2Array( 2360.14, 743.097, 2402.16, 695.078, 2506.6, 672.269, 2555.82, 673.469, 2635.05, 685.474, 2684.27, 686.675, 2702.28, 698.68, 2769.51, 698.68, 2831.93, 703.481, 2980.79, 773.109, 3082.83, 811.525, 3133.25, 775.51, 3133.25, 750.3, 3172.87, 745.498, 3195.68, 786.315, 3230.49, 799.52, 3246.1, 812.725, 3265.31, 815.126, 3318.13, 773.109, 3330.13, 762.305, 3390.16, 762.305, 3406.96, 779.112, 3426.17, 801.921, 3369.75, 823.529, 3246.1, 839.136, 3157.26, 812.725, 3067.23, 852.341, 2816.33, 739.496, 2684.27, 722.689, 2453.78, 728.691, 2324.13, 824.73, 2250.9, 887.155, 2234.09, 872.749, 2253.3, 846.339, 2259.3, 827.131, 2292.92, 800.72, 2316.93, 791.116 )
 
 [node name="CollisionPolygon2D213" type="CollisionPolygon2D" parent="Collisions/TopGround"]
 position = Vector2( -493.397, -2851.14 )
@@ -1586,17 +1595,23 @@ position = Vector2( 831.933, 1199.28 )
 shape = SubResource( 4 )
 one_way_collision = true
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions/Tower"]
+position = Vector2( 847.539, 1257.5 )
+shape = SubResource( 65 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions/Tower"]
+position = Vector2( 656.062, 1227.72 )
+shape = SubResource( 66 )
+one_way_collision = true
+
 [node name="CollisionPolygon2D162" type="CollisionPolygon2D" parent="Collisions/Tower"]
 position = Vector2( -6949.58, -2605.04 )
 polygon = PoolVector2Array( 7774.31, 3536.61, 7795.92, 3536.61, 7930.37, 3675.87, 7923.17, 3683.07, 7643.46, 3684.27, 7636.26, 3678.27 )
 
-[node name="CollisionPolygon2D164" type="CollisionPolygon2D" parent="Collisions/Tower"]
-position = Vector2( -7117.65, -2355.34 )
-polygon = PoolVector2Array( 7746.7, 3573.83, 7746.7, 3615.85, 7735.9, 3615.85, 7735.9, 3591.84, 7723.89, 3591.84, 7723.89, 3573.83 )
-
 [node name="CollisionPolygon2D163" type="CollisionPolygon2D" parent="Collisions/Tower"]
 position = Vector2( -6924.37, -2331.33 )
-polygon = PoolVector2Array( 7992.8, 3549.82, 7992.8, 3566.63, 7980.79, 3567.83, 7980.79, 3591.84, 7956.14, 3592.25, 7927.97, 3626.65, 7590.64, 3627.85, 7590.64, 3549.82 )
+polygon = PoolVector2Array( 7992.8, 3549.82, 7992.8, 3567.82, 7980.79, 3567.83, 7980.79, 3591.84, 7956.14, 3592.25, 7927.97, 3626.65, 7927.97, 3549.82 )
 
 [node name="CollisionPolygon2D165" type="CollisionPolygon2D" parent="Collisions/Tower"]
 position = Vector2( -6965.19, -2085.23 )
@@ -1765,7 +1780,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/LastLadder"]
-position = Vector2( 0, -3.80214 )
+position = Vector2( 0, -7.01654 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
 [node name="LastLadder2" type="Area2D" parent="Ladders"]
@@ -1861,7 +1877,6 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 15
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1881,7 +1896,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 9
+frame = 19
 playing = true
 flip_h = true
 
@@ -1908,11 +1923,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 skip_var = "waterfalls_feline_tower"
-json_file = "res://Assets/Feline/feline_research.json"
+json_file = "res://Assets/Levels/Geoterra/Waterfalls/feline_research.json"
 sound_file = "res://Assets/UI/Feline/Sounds/happyfeline.wav"
 trigger_on_touch = true
+player_disable = "research tower"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FelineAreaTower"]
+position = Vector2( 85, 27.5 )
 shape = SubResource( 42 )
 
 [node name="Ball" type="RigidBody2D" parent="."]
@@ -2182,6 +2199,7 @@ texture = ExtResource( 37 )
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 55 )
+frame = 2
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
@@ -2677,6 +2695,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+disable_player = "research_tower"
 make_node_visible = NodePath("../CanvasLayer/ResearchCabin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShowResearchCabin"]

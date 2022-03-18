@@ -141,7 +141,6 @@ func _ready():
 # main process loop
 var dmg_blink = 0
 var velocity_log = []
-var no_move
 
 func _physics_process(delta):
 	var dfps = delta * global.fps
@@ -150,12 +149,10 @@ func _physics_process(delta):
 	._physics_process(delta)
 
 	if current_scene.is_disabled(name):
-		if not no_move:
-			velocity.x = 0
-			play("idle")
-		no_move = true
+		velocity.x = 0
+		currentSpeed = 0
+		play("idle")
 	else:
-		no_move = false
 		update_inputs()
 		state_machine.logic(delta)
 		
@@ -167,7 +164,7 @@ func _physics_process(delta):
 		if underwater and water_sub == "slime":
 			hp -= .6 * dfps
 		global.user.hp = hp
-	
+
 	move()
 	if sprite.material.get_shader_param("dmg"):
 		dmg_blink += 1 * (delta * 60)
