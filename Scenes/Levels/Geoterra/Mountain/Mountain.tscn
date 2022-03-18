@@ -695,6 +695,7 @@ script = ExtResource( 20 )
 __meta__ = {
 "_edit_group_": true
 }
+skip_var = "DesertOutpostUnlocked"
 character_name = "Nonabot"
 json_file = "res://Assets/Levels/Geoterra/Mountain/nonabot.json"
 sound_file = "res://Assets/Agents/Nonabot/nonabot.ogg"

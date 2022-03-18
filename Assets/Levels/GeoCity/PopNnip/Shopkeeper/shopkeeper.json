@@ -29,7 +29,7 @@
     "avatar": "shopkeeper.png",
     "position": "left",
     "type": "text",
-    "content": "Check online! We've got some really cool stickers for sale at www.geocats.net - ",
+    "content": "Check online! We've got some really cool stickers for sale at [url=https://geocats.net/shop]geocats.net/shop[/url] - ",
 
     "next": "3"
   },
