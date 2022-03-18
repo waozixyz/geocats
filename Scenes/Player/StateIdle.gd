@@ -19,7 +19,13 @@ func logic(player: KinematicBody2D, _delta: float):
 		if player.currentSpeed < 0:
 			player.currentSpeed = 0
 	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
-	player.move_horizontally()
+
+	if player.on_ladder and player.vertical != 0:
+		if player.current_platforms:
+			player.fall_through()
+			return "climb"
+		elif player.vertical < 0:
+			return "climb"
 	if player.vertical > 0:
 		player.play("crouch")
 		if player.jumping and player.current_platforms:
@@ -37,19 +43,6 @@ func logic(player: KinematicBody2D, _delta: float):
 		else:
 			player.play("idle")
 
-
-	if player.vertical && player.on_ladder:
-		if player.is_on_floor():
-			if player.vertical < 0:
-				return "climb"
-			if player.current_platforms and player.vertical > 0:
-				player.fall_through()
-				return "climb"
-
-
-
-
-
 	if player.underwater:
 		return "swim"
 	if not player.grounded:
@@ -58,4 +51,7 @@ func logic(player: KinematicBody2D, _delta: float):
 		return "jump"
 	if player.horizontal != 0:
 		return "walk"
+	
+
+
 	return null

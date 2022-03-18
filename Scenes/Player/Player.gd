@@ -113,11 +113,6 @@ func check_wall_slide():
 				if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
 					return true
 
-# move horizontal function
-func move_horizontally(subtractor = 0):
-	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
-	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
-
 # check the previous state player was in
 func _get_previous_state_tag():
 	var tag = state_machine.previous_state_tag if state_machine else "idle"
@@ -255,8 +250,11 @@ func damage(dmg):
 	
 # main move function
 func move():
-	velocity = move_and_slide(velocity, Vector2.UP, true)
+	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
+	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 
+	velocity = move_and_slide(velocity, Vector2.UP,true)
+ 
 # animation helper function
 func play(animation:String):
 	if sprite:

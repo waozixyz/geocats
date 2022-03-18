@@ -8,7 +8,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.check_wall_slide():
 		return "wall_slide"
 
-	if player.on_ladder and player.vertical != 0:
+	if player.on_ladder and player.vx == 0  and player.vertical != 0:
 		return "climb"
 	if player.underwater:
 		player.land_water_sfx.play()
@@ -19,5 +19,5 @@ func logic(player: KinematicBody2D, _delta: float):
 	if player.isJumpPressed and not player.isDoubleJumped:
 		return "double_jump"
 	player.default_anim()
-	player.move_horizontally(player.airFriction) #move horizontally
+
 		
