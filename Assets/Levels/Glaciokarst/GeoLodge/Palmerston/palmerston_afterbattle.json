@@ -48,7 +48,7 @@
     "operation": "variable",
     "dictionary": "variables",
     "text": "She'll know what to do. I'll add Letharia's location to your FeLine Mapz system, and let her know you're on your way for a visit",
-    "value": [["enable_location", true]],
+    "value": [["DesertOutpostUnlocked", true]],
     "next": ""
   },
 }
