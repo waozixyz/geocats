@@ -15,6 +15,7 @@
     "type": "text",
     "animation_in": "fade_in",
     "avatar": "feline_unimpressed.png",
+    "position": "left",
     "content": "Let's not waste any more time.",
     "next": "2"
   },
@@ -27,6 +28,7 @@
     "type": "text",
     "avatar": "feline.png",
     "animation_in": "fade_in",
+    "position": "left",
     "content": "My encyclopedia says that Chrysoberyl is a greenish gemstone, also known as Cat's Eye crystal...",
     "next": "4"
   },

@@ -7,7 +7,7 @@ func enter_logic(player: KinematicBody2D):
 	player.velocity *= 0.5
 
 func logic(player: KinematicBody2D, _delta: float):
-	if player.on_ladder and player.vertical != 0:
+	if player.on_ladder and player.vx == 0:
 		return "climb"
 
 	player.apply_gravity()

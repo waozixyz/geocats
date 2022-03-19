@@ -6,7 +6,7 @@ colors = PoolColorArray( 0.196078, 0.6, 0.552941, 0.623529, 0.349544, 0.907448, 
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 position = Vector2( -37, -42 )
-amount = 1000
+amount = 900
 lifetime = 12.0
 preprocess = 10.0
 speed_scale = 1.79

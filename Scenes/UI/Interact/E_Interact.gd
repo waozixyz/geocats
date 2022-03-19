@@ -5,6 +5,7 @@ onready var current_scene = get_tree().get_current_scene()
 onready var player = current_scene.player
 onready var dialogue = current_scene.dialogue
 onready var feline = current_scene.feline
+onready var camera = current_scene.camera
 export(String, FILE, "*.json") var dialogue_file = ""
 export(String, FILE, "*.wav, *.ogg") var sound_effect
 export(float, 0, 100) var sound_volume = 100

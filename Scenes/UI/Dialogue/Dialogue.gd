@@ -123,7 +123,11 @@ var avatar_left : String = ''
 var avatar_right : String = ''
 
 var shaking : bool = false
+func label_clicked(data):
+	OS.shell_open(data)
 func _ready():
+	var err = label.connect("meta_clicked", self, "label_clicked")
+	assert(err == OK)
 	set_physics_process(true)
 	var _tmsg = timer.connect('timeout', self, '_on_Timer_timeout')
 	var _smsg = sprite_timer.connect('timeout', self, '_on_Sprite_Timer_timeout')

@@ -75,7 +75,6 @@ func _add_default_nodes():
 	
 func _ready():
 	_add_default_nodes()
-	print(crt_effect)
 
 	player = _get_player()
 	camera = _get_camera()

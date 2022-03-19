@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Beachball_Spritesheet.png-ec37a806b0ab4c4949fd85ac43cb58d1.stex"
+path="res://.import/telescope.png-83b77ef271e7556089f7033ab3149678.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Geoterra/Waterfalls/Beachball_Spritesheet.png"
-dest_files=[ "res://.import/Beachball_Spritesheet.png-ec37a806b0ab4c4949fd85ac43cb58d1.stex" ]
+source_file="res://Assets/Environment/Telescope/telescope.png"
+dest_files=[ "res://.import/telescope.png-83b77ef271e7556089f7033ab3149678.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

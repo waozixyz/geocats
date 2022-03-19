@@ -1,6 +1,6 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=99 format=2]
 
-[ext_resource path="res://Assets/Levels/Geoterra/Mountain/telescope.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Environment/Telescope/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/solidplatform.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/ground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_art.png" type="Texture" id=4]
@@ -20,9 +20,10 @@
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Agents/Nonabot/nonabot.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Telescope.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/Environment/Telescope.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Nonabot.gd" type="Script" id=24]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -327,6 +328,10 @@ script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Mountain_art" type="Sprite" parent="BelowPlayer"]
 texture = ExtResource( 4 )
@@ -355,11 +360,15 @@ __meta__ = {
 position = Vector2( 349, 309 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 42, 4862 )
+position = Vector2( 54, 4863 )
 
 [node name="Camera2D" parent="Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
 limit_right = 5000
 limit_bottom = 5000
 
@@ -373,6 +382,7 @@ __meta__ = {
 collision_layer = 7
 collision_mask = 7
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -579,7 +589,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 item_node = NodePath("ToOutpost")
-unlock_var = "GlaciokarstAfterBattle"
+unlock_var = "DesertOutpostUnlocked"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Portals/LockedItem"]
 position = Vector2( 4877.09, 3671.92 )
@@ -671,6 +681,7 @@ shape = SubResource( 27 )
 
 [node name="Nonabot" type="Node2D" parent="AbovePlayer/Cats"]
 position = Vector2( 4916, 3597 )
+script = ExtResource( 24 )
 
 [node name="Nonabot" type="AnimatedSprite" parent="AbovePlayer/Cats/Nonabot"]
 position = Vector2( 31, 28.001 )
@@ -686,8 +697,10 @@ script = ExtResource( 20 )
 __meta__ = {
 "_edit_group_": true
 }
+skip_var = "DesertOutpostUnlocked"
 character_name = "Nonabot"
-json_file = "res://Assets/Agents/Nonabot/nonabot.json"
+json_file = "res://Assets/Levels/Geoterra/Mountain/nonabot.json"
+sound_file = "res://Assets/Agents/Nonabot/nonabot.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbovePlayer/Cats/Nonabot/Area2D"]
 position = Vector2( -6, 33.001 )
@@ -742,7 +755,9 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-disable_player = "telescope"
+dest_zoom = Vector2( 7.5, 7.5 )
+zoom_speed = 5.0
+offset = Vector2( 150, 120 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
 shape = SubResource( 74 )

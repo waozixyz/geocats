@@ -3,14 +3,10 @@
     "name": "NONABOT",
     "avatar": "nonabot.png",
     "position": "left",
-    "type": "divert",
+    "type": "text",
     "animation_in": "fade_in",
-    "condition": "boolean",
-    "dictionary": "variables",
-    "variable": "GlaciokarstAfterBattle",
-    "true": "a",
-    "false": "1",
-    "content": "Hello."
+    "content": "Hello.",
+    "next": "1",
   },
   "1": {
     "type": "text",
@@ -45,10 +41,6 @@
     "type": "text",
     "content": "...Quit staring at me like that. I'm a robot, you can't change my mind.",
     "next": ""
-  },
-  "a": {
-    "type": "text",
-    "content": "Hm, I guess you're welcome to travel into XAPS now... But you're only welcome to visit Dr. Letharia. I'll be watching...",
-    "next": ""
+  }
 }
 

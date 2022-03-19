@@ -38,6 +38,7 @@ func show_chat():
 	chat_with.visible = true
 	chat_with.get_node("Label").text = character_name
 	current_scene.set_disable("e_interact", "chat_npc")
+
 func hide_chat():
 	current_scene.set_disable("e_interact", "chat_npc", false)
 	active = false
@@ -63,15 +64,17 @@ func _is_skip_var():
 		return false
 			
 func _process(_delta):
-
 	if trigger_on_touch and not _is_skip_var() and _is_enable_var():
 		if touching and not active:
 			start_chat()
+
 			if not player_disable.empty():
 				current_scene.set_disable("player", player_disable)
+			current_scene.set_disable("e_interact", "chat_npc")
 			active = true
 
 		if dia_started and dialogue.modulate.a == 0:
+			current_scene.set_disable("e_interact", "chat_npc", false)
 			dia_started = false
 			active = false
 			if not skip_var.empty():

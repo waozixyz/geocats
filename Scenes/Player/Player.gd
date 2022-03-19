@@ -94,23 +94,24 @@ func default_anim():
 			play("walk")
 
 # check if player is donig a wall slide
-func check_wall_slide(raycast: RayCast2D, direction: int):
-	if raycast.is_colliding() && horizontal == direction:
-		var shape_id = raycast.get_collider_shape()
-		var collider = raycast.get_collider()
-		if not collider is TileMap:
-			var owner_id = collider.shape_find_owner(shape_id)
-			if collider:
-				var hit_node = collider.shape_owner_get_owner(owner_id)
+func check_wall_slide():
+	var raycast
+	if left_raycast.is_colliding() && horizontal == -1:
+		raycast = left_raycast
+	elif right_raycast.is_colliding() && horizontal == 1:
+		raycast = right_raycast
+	else:
+		return false
 
-				if hit_node:
-					if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
-						return true
-
-# move horizontal function
-func move_horizontally(subtractor = 0):
-	currentSpeed = move_toward(currentSpeed, maxSpeed - subtractor, acceleration) #accelerate current speed
-	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
+	var shape_id = raycast.get_collider_shape()
+	var collider = raycast.get_collider()
+	if collider is StaticBody2D:
+		var owner_id = collider.shape_find_owner(shape_id)
+		if collider:
+			var hit_node = collider.shape_owner_get_owner(owner_id)
+			if hit_node:
+				if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
+					return true
 
 # check the previous state player was in
 func _get_previous_state_tag():
@@ -140,7 +141,6 @@ func _ready():
 # main process loop
 var dmg_blink = 0
 var velocity_log = []
-var no_move
 
 func _physics_process(delta):
 	var dfps = delta * global.fps
@@ -149,12 +149,10 @@ func _physics_process(delta):
 	._physics_process(delta)
 
 	if current_scene.is_disabled(name):
-		if not no_move:
-			velocity.x = 0
-			play("idle")
-		no_move = true
+		velocity.x = 0
+		currentSpeed = 0
+		play("idle")
 	else:
-		no_move = false
 		update_inputs()
 		state_machine.logic(delta)
 		
@@ -166,7 +164,7 @@ func _physics_process(delta):
 		if underwater and water_sub == "slime":
 			hp -= .6 * dfps
 		global.user.hp = hp
-	
+
 	move()
 	if sprite.material.get_shader_param("dmg"):
 		dmg_blink += 1 * (delta * 60)
@@ -249,8 +247,11 @@ func damage(dmg):
 	
 # main move function
 func move():
-	velocity = move_and_slide(velocity, Vector2.UP, true)
+	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
+	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 
+	velocity = move_and_slide(velocity, Vector2.UP,true)
+ 
 # animation helper function
 func play(animation:String):
 	if sprite:

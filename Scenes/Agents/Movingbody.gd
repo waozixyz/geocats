@@ -10,6 +10,7 @@ func _get_gravity():
 onready var sprite = $AnimatedSprite
 
 export(bool) var add_move_n_slide = false
+
 # variables for all entities
 var no_rotate = false
 var no_gravity = false
