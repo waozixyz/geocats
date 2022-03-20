@@ -23,7 +23,7 @@ func _process(delta):
 		current_scene.set_disable("player", disable_player)
 		if camera.zoom != dest_zoom and _is_active():
 			tween_zoom = utils.tween(camera, "zoom", dest_zoom, zoom_speed)
-			tween_offset = utils.tween(camera, "offset", offset, zoom_speed * .5)
+			tween_offset = utils.tween(camera, "offset", offset, zoom_speed)
 		else:
 			var speed = zoom_speed
 			if tween_zoom.is_active():
