@@ -789,7 +789,7 @@ flip_h = true
 script = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5252, 403 )
+position = Vector2( 44, 1066 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 6000
@@ -1539,11 +1539,21 @@ selection_enabled = true
 position = Vector2( 3499.67, 552 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 24 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+disable_player = "computer"
 make_node_visible = NodePath("../CanvasLayer/Computer")
+progress_after_activating = "xaps_geopedia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
-position = Vector2( 4.22003, -2.28882e-05 )
+position = Vector2( 4.22021, 0 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 115 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DesertTelescope" type="Area2D" parent="."]
 position = Vector2( 5162.68, 374 )
