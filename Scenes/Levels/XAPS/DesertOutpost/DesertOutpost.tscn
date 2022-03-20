@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_1.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Environment/Telescope.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/awareness.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/awareness.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/letharia/letharia.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/sun/sun_3.png" type="Texture" id=7]
@@ -15,7 +15,7 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/stars_space.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/far_bg.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/georing.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/georing_pressed.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=20]
@@ -23,34 +23,34 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_hud.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_border.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=24]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/weather.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/awareness.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/weather.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/sand.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/cultivation.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geology.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geology.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/weather_pressed.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/awareness_pressed.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/weather.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/sand_pressed.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/cultivation_pressed.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/geology_pressed.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/geology.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/outpost.ogg" type="AudioStream" id=32]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geocache.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/symbiotic_relationships.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/georing.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/symbiotic_relationships.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/mewlange.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/nonaco.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/sand.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/mewlange.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geocache.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/wildlife.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/geocats.png" type="Texture" id=43]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/wildlife.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/radiation.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/radiation.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/cultivation.png" type="Texture" id=47]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/mirrors.png" type="Texture" id=48]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/geocats.png" type="Texture" id=49]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_icons/nonaco.png" type="Texture" id=50]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia_pressed_icons/mirrors.png" type="Texture" id=51]
-[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/cactusFarmer.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/geocache_pressed.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/symbiotic_relationships.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/georing.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/symbiotic_relationships_pressed.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/mewlange.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/nonaco_pressed.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/sand.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/mewlange_pressed.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/geocache.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/wildlife_pressed.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/geocats_pressed.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/wildlife.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/radiation_pressed.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/radiation.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/cultivation.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/mirrors.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/geocats.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/nonaco.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/mirrors_pressed.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/savanna/cactusFarmer.png" type="Texture" id=52]
 [ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/ComputerButton.gd" type="Script" id=53]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/sol/cactusFarmer2.png" type="Texture" id=54]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=55]
@@ -837,7 +837,6 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="CollisionColliders/Spheres/Sphere1"]
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( 872.8, 489.6, 940, 495.2, 957.6, 504.8, 994.4, 539.2, 1017.6, 577.6, 1025.6, 608.8, 1023.2, 655.2, 1024.8, 709.6, 989.6, 746.4, 961.6, 750.4, 869.6, 750.4, 869.6, 668, 910.4, 672, 941.6, 660, 968, 642.4, 977.074, 630.188, 976, 586.4, 956, 560, 932.8, 544, 920, 536, 868, 536, 840.392, 556.9, 818.4, 581.6, 812.8, 603.2, 815.2, 622.4, 824, 641.6, 832, 652.8, 831.2, 748.8, 772.8, 699.2, 769.6, 600.8, 784, 557.6, 808, 528.8, 838.4, 506.4 )
 
 [node name="Sphere2" type="StaticBody2D" parent="CollisionColliders/Spheres"]
@@ -936,18 +935,15 @@ polygon = PoolVector2Array( 291.2, 44, 489.6, 44.8, 489.6, -92, 376, -92, 375.2,
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3"]
 position = Vector2( 320.9, 302.4 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 133 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3"]
 position = Vector2( 333.6, -141.2 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 134 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3"]
 position = Vector2( 500.625, 302 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 135 )
 one_way_collision = true
 
@@ -970,7 +966,6 @@ polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere5"]
 position = Vector2( 1200.8, -339.92 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 138 )
 one_way_collision = true
 
@@ -982,13 +977,11 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere6"]
 position = Vector2( 301.601, 341.6 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 137 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere6"]
 position = Vector2( 122.4, 526.4 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 137 )
 one_way_collision = true
 
@@ -1118,7 +1111,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1609.6, 1558.8 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 139 )
 one_way_collision = true
 

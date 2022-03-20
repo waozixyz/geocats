@@ -32,7 +32,7 @@
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "knowledge",
+    "variable": "xaps_geopedia",
     "true": "knowledge_on",
     "false": "knowledge_off"
   },
@@ -135,7 +135,7 @@
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "chrysoberyl",
+    "variable": "geoterra_chrysoberyl",
     "true": "chrysoberyl_on",
     "false": "chrysoberyl_off"
   },
