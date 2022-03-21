@@ -410,7 +410,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="BehindPlayer"]
+[node name="Billboard" type="Sprite" parent="BehindPlayer"]
 position = Vector2( 914.996, 188.081 )
 texture = ExtResource( 45 )
 
