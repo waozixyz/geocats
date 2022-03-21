@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://Assets/Environment/Telescope/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/solidplatform.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=23]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Nonabot.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_Billboard_paws.png" type="Texture" id=25]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 11 )
@@ -54,6 +55,9 @@ extents = Vector2( 263.429, 31.8784 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 363.695, 11.3206 )
+
+[sub_resource type="RectangleShape2D" id=75]
+extents = Vector2( 223.401, 366.419 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 417.327, 10.4514 )
@@ -364,6 +368,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Sprite" type="Sprite" parent="BelowPlayer"]
+position = Vector2( 370.889, 674.259 )
+texture = ExtResource( 25 )
+
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 54, 4863 )
 
@@ -404,6 +412,10 @@ one_way_collision = true
 position = Vector2( 2008.4, 3001.2 )
 shape = SubResource( 7 )
 one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions/Platforms"]
+position = Vector2( 2264.59, 3993.75 )
+shape = SubResource( 75 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions/Platforms"]
 position = Vector2( 2056.42, 2665.07 )
