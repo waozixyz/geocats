@@ -66,37 +66,34 @@
     "avatar": "letharia.png",
     "position": "left",
     "animation_in": "fade_in",
-
-    "type": "text",
-    "content": "...",
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [["geoterra_greencave_unlocked", true]],
+    "text": "...",
     "next": "4"
   },
   "4": {
     "type": "text",
-    "content": "...",
+    "content": "I see it in your eyes... All of the new information you learned.",
     "next": "5"
   },
   "5": {
     "type": "text",
-    "content": "I see it in your eyes... All of the new information you learned.",
+    "content": "...",
     "next": "6"
   },
   "6": {
     "type": "text",
-    "content": "...",
+    "content": "Allow me to hold up my end of this deal.",
     "next": "7"
   },
   "7": {
     "type": "text",
-    "content": "Allow me to hold up my end of this deal.",
+    "content": "There's an interesting cave near the top of the smaller hill at Groundcat Creek. ",
     "next": "8"
   },
   "8": {
-    "type": "text",
-    "content": "There's an interesting cave near the top of the smaller hill at Groundcat Creek. ",
-    "next": "9a"
-  },
-  "9a": {
     "type": "text",
     "content": "Follow it for as long as you can, and you'll end up somewhere called Gjásara Headwaters.",
     "next": "9"
