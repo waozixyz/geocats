@@ -2,9 +2,9 @@ extends BasePlayerState
 
 
 func logic(player: KinematicBody2D, _delta: float):
-
-
-	if !player.grounded:
+	if player.grounded:
+		player.isDoubleJumped = false
+	else:
 		return "fall"
 	if player.vertical > 0:
 		player.play("crouch")

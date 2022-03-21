@@ -7,6 +7,7 @@ export(NodePath) var make_node_visible
 export var transition_time = 0.2
 export(String, FILE, "*.wav, *.ogg") var sound_when_visible 
 export(String) var progress_when_visible
+export(String) var progress_after_activating
 
 var ui_node
 
@@ -24,7 +25,8 @@ func _process(_delta):
 				active_sound.stop()
 			if not disable_player.empty():
 				current_scene.set_disable("player", disable_player, false)
-				
+			if not progress_after_activating.empty():
+				PROGRESS.variables[progress_after_activating] = true
 			if not progress_when_visible.empty():
 				PROGRESS.variables[progress_when_visible] = false
 		else:

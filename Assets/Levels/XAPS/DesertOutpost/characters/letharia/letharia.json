@@ -32,7 +32,7 @@
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "knowledge",
+    "variable": "xaps_geopedia",
     "true": "knowledge_on",
     "false": "knowledge_off"
   },
@@ -116,7 +116,6 @@
     "avatar": "letharia.png",
     "position": "left",
     "animation_in": "fade_in",
-    "animation_out": "fade_out",
     "type": "text",
     "content": "There's a researcher there who's apparently discovered new information that might assist us in our efforts.",
     "next": "11"
@@ -124,7 +123,7 @@
   "11": {
     "type": "text",
     "content": "Ask him about his encounter with a strange monster while doing fieldwork.",
-    "next": "13"
+    "next": "12"
   },
   "12": {
     "type": "text",
@@ -135,7 +134,7 @@
     "type": "divert",
     "condition": "boolean",
     "dictionary": "variables",
-    "variable": "chrysoberyl",
+    "variable": "geoterra_chrysoberyl",
     "true": "chrysoberyl_on",
     "false": "chrysoberyl_off"
   },
