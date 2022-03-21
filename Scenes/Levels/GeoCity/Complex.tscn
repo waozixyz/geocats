@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/complex_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/GeoCity/Complex/Apt_Complex_Billboard_animated_spritesheet.png" type="Texture" id=2]
@@ -93,6 +93,9 @@ extents = Vector2( 15.75, 0.875 )
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 19, 1.375 )
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 10.625, 0.729996 )
 
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 15.4611, 1.25 )
@@ -287,7 +290,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 19.0108, 210.213 )
 frames = SubResource( 3 )
-frame = 16
+frame = 5
 playing = true
 
 [node name="Interactive" type="Node2D" parent="."]
@@ -474,9 +477,7 @@ one_way_collision = true
 [node name="Stairs2" type="Node2D" parent="Collisions"]
 scale = Vector2( 4, 4 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Collisions/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Collisions/Stairs2" groups=["Stairs"]]
 position = Vector2( 153, 135 )
 collision_layer = 7
 collision_mask = 7
@@ -485,9 +486,7 @@ collision_mask = 7
 polygon = PoolVector2Array( 85, 0, 85, 34, 1, 34, 68.75, 0 )
 one_way_collision = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions/Stairs2" groups=["Stairs"]]
 position = Vector2( 449, 99 )
 collision_layer = 7
 collision_mask = 7
@@ -496,9 +495,7 @@ collision_mask = 7
 position = Vector2( -297, -88.75 )
 polygon = PoolVector2Array( 386, 95, 367, 95, 305.75, 125.5, 386, 125 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Collisions/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions/Stairs2" groups=["Stairs"]]
 position = Vector2( 388, 63 )
 collision_layer = 7
 collision_mask = 7
@@ -508,9 +505,7 @@ position = Vector2( 15.5, 0 )
 polygon = PoolVector2Array( 30, 4, 95, 38, 11, 38, 11, 4 )
 one_way_collision = true
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Collisions/Stairs2" groups=[
-"Stairs",
-]]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Collisions/Stairs2" groups=["Stairs"]]
 position = Vector2( -63, -837 )
 collision_layer = 7
 collision_mask = 7
@@ -545,8 +540,8 @@ shape = SubResource( 23 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions/Houses"]
-position = Vector2( 15.944, 139.74 )
-shape = SubResource( 67 )
+position = Vector2( 16.125, 139.22 )
+shape = SubResource( 68 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions/Houses"]
@@ -617,15 +612,11 @@ scale = Vector2( 0.36, 0.36 )
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls" groups=[
-"end",
-]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls" groups=["end"]]
 position = Vector2( -30.5556, 1502.78 )
 shape = SubResource( 38 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls" groups=[
-"end",
-]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/EndWalls" groups=["end"]]
 position = Vector2( 550, -27.7778 )
 shape = SubResource( 39 )
 

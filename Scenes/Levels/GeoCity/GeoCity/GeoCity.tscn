@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://Scenes/Environment/Particles/Snow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/Giant_Pumpkin_Body.gd" type="Script" id=2]
@@ -107,7 +107,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 30, 14 )
+extents = Vector2( 31, 14 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 37, 2.50002 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 301, 10 )
@@ -119,7 +122,7 @@ extents = Vector2( 290, 10 )
 extents = Vector2( 242, 6 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 32, 6 )
+extents = Vector2( 23.5, 6 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 21, 6 )
@@ -134,16 +137,16 @@ extents = Vector2( 213.5, 6 )
 extents = Vector2( 176, 6 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 101, 6 )
+extents = Vector2( 101, 4 )
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 184, 6 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 154, 6 )
+extents = Vector2( 157.5, 2.5 )
 
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 29, 6 )
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 33.5, 4 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 12, 3.5 )
@@ -158,7 +161,7 @@ extents = Vector2( 241.719, 6.5 )
 extents = Vector2( 182, 6 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 91, 6 )
+extents = Vector2( 91, 1.65698 )
 
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 14, 2 )
@@ -185,7 +188,7 @@ extents = Vector2( 35, 5 )
 extents = Vector2( 123, 6 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 6, 51 )
+extents = Vector2( 6, 52 )
 
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 2409, 87.1046 )
@@ -306,10 +309,10 @@ animations = [ {
 extents = Vector2( 9, 322.855 )
 
 [sub_resource type="RectangleShape2D" id=64]
-extents = Vector2( 9, 130.975 )
+extents = Vector2( 9, 136.891 )
 
 [sub_resource type="RectangleShape2D" id=65]
-extents = Vector2( 9, 42.6843 )
+extents = Vector2( 9, 45.4096 )
 
 [sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 8.08801, 469.224 )
@@ -490,8 +493,8 @@ shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
-position = Vector2( 414.976, 282.932 )
-shape = SubResource( 13 )
+position = Vector2( 412, 269.5 )
+shape = SubResource( 82 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Bricks"]
@@ -523,7 +526,7 @@ shape = SubResource( 16 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 1406, 871.2 )
+position = Vector2( 1397.5, 870 )
 shape = SubResource( 17 )
 one_way_collision = true
 
@@ -553,7 +556,7 @@ shape = SubResource( 21 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 2644, 839 )
+position = Vector2( 2644, 837 )
 shape = SubResource( 22 )
 one_way_collision = true
 
@@ -568,18 +571,18 @@ shape = SubResource( 22 )
 one_way_collision = true
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 3006, 826.482 )
+position = Vector2( 3005.5, 821.5 )
 shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 3006, 682.482 )
+position = Vector2( 3006, 679 )
 shape = SubResource( 24 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 2415, 842 )
-shape = SubResource( 25 )
+position = Vector2( 2416.5, 840 )
+shape = SubResource( 83 )
 one_way_collision = true
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="CollisionColliders/Houses"]
@@ -613,12 +616,12 @@ shape = SubResource( 29 )
 one_way_collision = true
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 4194, 728 )
+position = Vector2( 4197, 722 )
 shape = SubResource( 30 )
 one_way_collision = true
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 4195.75, 994.686 )
+position = Vector2( 4195.75, 990.343 )
 shape = SubResource( 30 )
 one_way_collision = true
 
@@ -668,11 +671,11 @@ shape = SubResource( 38 )
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="CollisionColliders/Houses"]
-position = Vector2( 4554, 151 )
+position = Vector2( 4554, 152 )
 shape = SubResource( 39 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionColliders/Houses"]
-polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 205, 4799, 201, 4801, 1032 )
+polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 203, 4799, 201, 4801, 1032 )
 
 [node name="Ground" type="StaticBody2D" parent="CollisionColliders"]
 collision_layer = 7
@@ -682,9 +685,7 @@ collision_mask = 7
 position = Vector2( 2410, 1513.28 )
 shape = SubResource( 40 )
 
-[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
 collision_layer = 7
 collision_mask = 7
 
@@ -902,6 +903,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2( 0, -5.91602 )
 shape = SubResource( 64 )
 
 [node name="Ladder4" type="Area2D" parent="Ladders"]
@@ -913,6 +915,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
+position = Vector2( 0, -4.73242 )
 shape = SubResource( 65 )
 
 [node name="Ladder5" type="Area2D" parent="Ladders"]
@@ -924,6 +927,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
+position = Vector2( 0, -5.99286 )
 shape = SubResource( 65 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
