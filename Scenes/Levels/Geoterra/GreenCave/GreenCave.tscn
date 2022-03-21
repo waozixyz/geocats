@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Player/Spritesheets/cowboy_tileset.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_bg_vine.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.374, 1107.3 )
@@ -29,107 +30,20 @@ extents = Vector2( 46.6365, 32.3975 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 64.9714, 54.129 )
 
-[sub_resource type="GDScript" id=6]
-script/source = "extends Area2D
-class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
-
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 9, 203.27 )
-
-[sub_resource type="GDScript" id=8]
-script/source = "extends Area2D
-class_name Ladder, \"res://Assets/UI/Debug/ladder_icon.png\"
-
-func _ready():
-	var err = connect(\"body_entered\", self, \"_on_body_entered\")
-	assert(err == OK) 
-	err = connect(\"body_exited\", self, \"_on_body_exited\")
-	assert(err == OK) 
-	collision_layer = 7
-
-func _is_valid(body):
-	return body is MovingBody
-	
-func _on_body_entered(body):
-	if _is_valid(body):
-		body.on_ladder = true
-		body.ladder_x = self.position.x
-		body.ladder_y = self.position.y
-		body.ladder_rot = self.rotation_degrees
-
-			
-func _on_body_exited(body):
-	if _is_valid(body):
-		body.on_ladder = false
-"
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 9, 299.142 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 9, 131.468 )
+extents = Vector2( 13.9286, 131.468 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 9, 60.4341 )
 
-[sub_resource type="GDScript" id=12]
-script/source = "extends Area2D
-
-signal splash
-
-#onready var splash : Particles2D = $Splash
-export var slime = false
-
-func _ready():
-	connect(\"body_entered\", self, \"_on_body_entered\")
-	connect(\"body_exited\", self, \"_on_body_exited\")
-#	material.set_shader_param(\"sprite_scale\", scale)
-	pass
-
-func _on_body_entered(body):
-	if body.name == \"Player\":
-		if body.underwater != null:
-			body.underwater = true
-			if slime:
-				body.water_sub = \"slime\"
-			else:
-				body.water_sub = \"water\"
-
-			emit_signal(\"splash\", body.position.x)
-
-func _on_body_exited(body:PhysicsBody2D):
-	if body.name == \"Player\":
-		if body.underwater != null: 
-			body.underwater = false
-
-			emit_signal(\"splash\", body.position.x)
-"
-
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 134.445, 130.565 )
+extents = Vector2( 134.445, 129.817 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 248.793, 102.488 )
@@ -313,7 +227,6 @@ __meta__ = {
 sound_effect = 4
 territory = 1
 next_loc = 5
-this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport"]
 position = Vector2( 48.1908, 50 )
@@ -331,11 +244,10 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-sound_effect = 7
+sound_effect = 4
 territory = 1
 geoterra = 6
-next_loc = 1
-this_loc = 2
+this_loc = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/Teleport2"]
 shape = SubResource( 2 )
@@ -372,12 +284,6 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Portals/OneWayCave"]
 shape = SubResource( 4 )
-
-[node name="Button" type="Sprite" parent="Portals/OneWayCave"]
-visible = false
-position = Vector2( -20.6412, -30.4038 )
-scale = Vector2( 0.306122, 0.298077 )
-texture = ExtResource( 10 )
 
 [node name="VineCave" type="Area2D" parent="Portals"]
 position = Vector2( 1678.9, 500.595 )
@@ -441,7 +347,7 @@ bus = "Music"
 [node name="VineLadder" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1662.35, 754.62 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -453,7 +359,7 @@ shape = SubResource( 7 )
 [node name="VineLadder4" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 68.8368, 377.011 )
 scale = Vector2( 1.4, 1.4 )
-script = SubResource( 8 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -471,7 +377,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder3"]
-position = Vector2( 0, -4.79604 )
+position = Vector2( 0.928589, -4.79605 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 10 )
 
 [node name="VineLadder2" type="Area2D" parent="Interactables/Ladders"]
@@ -538,19 +445,20 @@ shape = SubResource( 11 )
 position = Vector2( 136.547, 1131.07 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea"]
+position = Vector2( 0, 0.747559 )
 shape = SubResource( 13 )
 
 [node name="waterarea2" type="Area2D" parent="Interactables"]
 position = Vector2( 519.566, 1167.8 )
 collision_layer = 7
 collision_mask = 7
-script = SubResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -558,24 +466,24 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea2"]
 shape = SubResource( 14 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Cats" type="Node2D" parent="."]
 
-[node name="CowboyCat" type="Area2D" parent="Node2D"]
+[node name="CowboyCat" type="Area2D" parent="Cats"]
 position = Vector2( 1598.53, 1164.21 )
 script = ExtResource( 8 )
 character_name = "Cowboy Cat"
 json_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.json"
 sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/CowboyCat"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/CowboyCat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 21
+frame = 22
 playing = true
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CowboyCat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/CowboyCat"]
 position = Vector2( 2.47534, -6.80725 )
 shape = SubResource( 26 )
 

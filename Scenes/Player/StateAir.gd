@@ -10,7 +10,7 @@ func logic(player: KinematicBody2D, _delta: float):
 
 	if player.on_ladder and player.vertical != 0:
 		return "climb"
-	if player.underwater:
+	if player.underwater.size() > 0:
 		player.land_water_sfx.play()
 		return "swim"
 	if player.is_on_floor():

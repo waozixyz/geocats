@@ -9,7 +9,7 @@ var vertical : float = 0.0
 var vx: float = 0 setget _set_vx, _get_vx
 var vy: float = 0 setget _set_vy, _get_vy
 
-var underwater : bool = false
+var underwater = []
 var water_sub : String = "water"
 var grounded : bool = false setget ,_get_grounded
 var jumping : bool = false setget ,_get_jumping
@@ -38,8 +38,8 @@ var jumpInput : int = 0
 
 var previous_state : String setget ,_get_previous_state_tag
 
-var airFriction = 20 #how much you subtract velocity when you start moving horizontally in the air
-
+var air_friction = 20 #how much you subtract velocity when you start moving horizontally in the air
+var water_friction : float = 150
 var currentSpeed = 0 #how much you add to x velocity when moving horizontally
 var maxSpeed = 300 #maximum current speed can reach when moving horizontally
 var acceleration = 10 #by how much does current speed approach max speed when moving
@@ -247,10 +247,17 @@ func damage(dmg):
 	
 # main move function
 func move():
-	currentSpeed = move_toward(currentSpeed, maxSpeed, acceleration) #accelerate current speed
+	var subtractor = 0
+	if underwater.size() > 0:
+		subtractor += water_friction
+		velocity.y *= 0.9
+	elif not grounded:
+		subtractor += air_friction
+	currentSpeed = move_toward(currentSpeed,  maxSpeed - subtractor, acceleration) #accelerate current speed
+	
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
-
-	velocity = move_and_slide(velocity, Vector2.UP,true)
+	
+	velocity = move_and_slide(velocity, Vector2.UP, true)
  
 # animation helper function
 func play(animation:String):

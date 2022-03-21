@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Water
 signal splash
 
 #onready var splash : Particles2D = $Splash
@@ -14,18 +14,17 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		if body.underwater != null:
-			body.underwater = true
-			if slime:
-				body.water_sub = "slime"
-			else:
-				body.water_sub = "water"
+		body.underwater.append(name)
+		if slime:
+			body.water_sub = "slime"
+		else:
+			body.water_sub = "water"
 
-			emit_signal("splash", body.position.x)
+		emit_signal("splash", body.position.x)
 
 func _on_body_exited(body:PhysicsBody2D):
 	if body.name == "Player":
-		if body.underwater != null: 
-			body.underwater = false
-
-			emit_signal("splash", body.position.x)
+		print(body.underwater)
+		var pos = body.underwater.find(name)
+		body.underwater.remove(pos)
+		emit_signal("splash", body.position.x)

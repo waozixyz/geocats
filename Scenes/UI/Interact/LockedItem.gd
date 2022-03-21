@@ -23,6 +23,8 @@ func _ready():
 	if not to_unlock:
 		printerr("item to unlock not found: " + item_node)
 	_check_unlocked()
+	if dialogue_file.empty():
+		disabled = true
 
 func _process(delta):
 	_check_unlocked()

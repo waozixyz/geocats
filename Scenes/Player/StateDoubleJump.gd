@@ -14,7 +14,7 @@ func logic(player: KinematicBody2D, _delta: float):
 		return "wall_slide"
 	if player.on_ladder and player.vertical == 0:
 		return "climb"
-	if player.underwater:
+	if player.underwater.size() > 0:
 		return "swim"
 	if player.vy < 0:
 		if player.is_on_ceiling():

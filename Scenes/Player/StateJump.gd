@@ -5,7 +5,7 @@ extends BasePlayerState
 func enter_logic(player: KinematicBody2D):
 	.enter_logic(player)
 	var jump_height = player.jump_height
-	if player.underwater:
+	if player.underwater.size() > 0:
 		jump_height *= .9
 	player.jump(jump_height)
 
@@ -15,7 +15,7 @@ func logic(player: KinematicBody2D, _delta: float):
 		return "wall_slide"
 	if player.on_ladder and player.vx == 0 and player.vertical != 0:
 		return "climb"
-	if player.underwater:
+	if player.underwater.size() > 0:
 		return "swim"
 	
 	if player.isJumpPressed && !player.isDoubleJumped:

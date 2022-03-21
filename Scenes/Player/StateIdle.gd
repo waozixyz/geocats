@@ -43,7 +43,7 @@ func logic(player: KinematicBody2D, _delta: float):
 		else:
 			player.play("idle")
 
-	if player.underwater:
+	if player.underwater.size() > 0:
 		return "swim"
 	if not player.grounded:
 		return "fall"

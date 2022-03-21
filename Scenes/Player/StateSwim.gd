@@ -2,7 +2,7 @@ extends BasePlayerState
 
 export var anim_speed : float = 1.5
 var original_anim_speed : float
-var water_friction : float = 150
+
 func enter_logic(player: KinematicBody2D):
 	player.velocity *= 0.5
 
@@ -11,10 +11,10 @@ func logic(player: KinematicBody2D, _delta: float):
 		return "climb"
 
 	player.apply_gravity()
-	player.move_horizontally(water_friction) #move horizontally
+
 	if player.jumping:
 		return "jump"
-	if player.underwater:
+	if player.underwater.size() > 0:
 		if player.horizontal != 0 or not player.grounded:
 			player.waves.emitting = true
 

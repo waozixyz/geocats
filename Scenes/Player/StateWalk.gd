@@ -16,7 +16,7 @@ func logic(player: KinematicBody2D, _delta: float):
 	else:
 		player.play("walk")
 
-	if player.underwater:
+	if player.underwater.size() > 0:
 		player.land_water_sfx.play()
 		return "swim"
 	if not player.is_on_floor():

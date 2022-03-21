@@ -22,7 +22,7 @@ func logic(player: KinematicBody2D, _delta: float):
 		var diff_y = player.position.y / player.ladder_y
 		player.position.x = player.ladder_x - 25 *  (diff_y - 1) * player.ladder_rot
 
-	if player.underwater:
+	if player.underwater.size() > 0:
 		player.vy = player.vertical * player.climb_speed / 2
 	else:
 		player.vy = player.vertical * player.climb_speed 
