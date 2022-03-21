@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/drawer_open.ogg-5ffb20f2743eb05b0c6fef2457625716.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/drawer_open.ogg"
+dest_files=[ "res://.import/drawer_open.ogg-5ffb20f2743eb05b0c6fef2457625716.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

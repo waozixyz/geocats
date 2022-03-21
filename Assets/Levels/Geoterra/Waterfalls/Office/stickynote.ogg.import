@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/stickynote.ogg-a849782b2a6ba33067c4d4099161dd37.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
+dest_files=[ "res://.import/stickynote.ogg-a849782b2a6ba33067c4d4099161dd37.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

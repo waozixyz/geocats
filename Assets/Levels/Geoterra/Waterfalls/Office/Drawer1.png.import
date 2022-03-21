@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StickyNote.png-93f779211abf182a3577c7a1af7a334d.stex"
+path="res://.import/Drawer1.png-f97174abcb78018192c7819d285f96bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Geoterra/Waterfalls/StickyNote.png"
-dest_files=[ "res://.import/StickyNote.png-93f779211abf182a3577c7a1af7a334d.stex" ]
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer1.png"
+dest_files=[ "res://.import/Drawer1.png-f97174abcb78018192c7819d285f96bc.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

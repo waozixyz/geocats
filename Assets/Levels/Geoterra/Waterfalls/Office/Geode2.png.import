@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0xoplasma_Under_Microscope_Spritesheet.png-fe532793281dd753ea04fe41384f64d5.stex"
+path="res://.import/Geode2.png-47485208a14920b163f36548a1211588.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Geoterra/Waterfalls/0xoplasma_Under_Microscope_Spritesheet.png"
-dest_files=[ "res://.import/0xoplasma_Under_Microscope_Spritesheet.png-fe532793281dd753ea04fe41384f64d5.stex" ]
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/Geode2.png"
+dest_files=[ "res://.import/Geode2.png-47485208a14920b163f36548a1211588.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

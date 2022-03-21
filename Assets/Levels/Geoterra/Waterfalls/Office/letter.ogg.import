@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/letter.ogg-404eadaa7de33ac71e8a1732f30aea73.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/letter.ogg"
+dest_files=[ "res://.import/letter.ogg-404eadaa7de33ac71e8a1732f30aea73.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

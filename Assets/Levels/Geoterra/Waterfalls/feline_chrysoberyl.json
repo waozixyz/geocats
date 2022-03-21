@@ -5,9 +5,6 @@
     "animation_in": "fade_in",
     "position": "left",
     "type": "text",
-    "condition": "boolean",
-    "dictionary": "variables",
-    "variable": "ReadTedsBook",
     "content": "Hey!@That's it!@My refractometer is telling me that this is chrysoberyl!",
     "next": "1"
   },
@@ -44,8 +41,11 @@
     "avatar": "feline_sleep.png",
     "animation_in": "fade_in",
     "position": "left",
-    "type": "text",
-    "content": "...Whatever, let's get back to XAPS and meet up with Letharia again. She'll know what to do.'",
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [["geoterra_chrysoberyl_true", true]],
+    "text": "...Whatever, let's get back to XAPS and meet up with Letharia again. She'll know what to do.'",
     "next": ""
   }
 }

@@ -24,23 +24,23 @@
 [ext_resource path="res://Scenes/Levels/Geoterra/Waterfalls/OpenNotebook.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=23]
 [ext_resource path="res://Assets/Fonts/QixMono20.tres" type="DynamicFont" id=24]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer2.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer3.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer4.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer1.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/BG.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Drawer5.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer4.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer1.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/BG.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer5.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/ShadowBox.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/longcatstatue_book.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Light.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/0xoplasma_Under_Microscope_Spritesheet.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/StickyNote.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Letter.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/DustusBunnicus.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/0xoplasma_Under_Microscope_Spritesheet.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/StickyNote.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Letter.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/DustusBunnicus.png" type="Texture" id=37]
 [ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=38]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Geode1.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Geode2.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Notebook.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Geode1.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Geode2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Office/Notebook.png" type="Texture" id=41]
 [ext_resource path="res://Scenes/UI/Interact/ShowNode.gd" type="Script" id=42]
 [ext_resource path="res://Assets/Fonts/QixMono18Tight.tres" type="DynamicFont" id=43]
 [ext_resource path="res://Assets/Player/Spritesheets/kitten_tileset.png" type="Texture" id=44]
@@ -209,14 +209,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -229,6 +221,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -236,14 +236,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -1881,7 +1881,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 5
+frame = 15
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1901,7 +1901,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 3
+frame = 7
 playing = true
 flip_h = true
 
@@ -1914,6 +1914,7 @@ position = Vector2( 2014.22, 2655.5 )
 script = ExtResource( 49 )
 item_node = NodePath("chrysoberyl")
 unlock_var = "geoterra_waterfalls_tower_now"
+relock_var = "geoterra_chrysoberyl_true"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/LockedItem"]
 position = Vector2( 0, -0.55835 )
@@ -1922,6 +1923,7 @@ shape = SubResource( 41 )
 [node name="chrysoberyl" type="Area2D" parent="NPC/LockedItem"]
 script = ExtResource( 50 )
 dialogue_file = "res://Assets/Levels/Geoterra/Waterfalls/feline_chrysoberyl.json"
+require_grounded = true
 disable_player = "chrysoberyl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/LockedItem/chrysoberyl"]
@@ -2008,7 +2010,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer1")
 disable_e_on_show = false
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/drawer_open.ogg"
 
 [node name="Drawer1" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer1"]
 visible = false
@@ -2032,7 +2034,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer2")
 disable_e_on_show = false
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/drawer_open.ogg"
 
 [node name="Drawer2" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer2"]
 visible = false
@@ -2059,7 +2061,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer3")
 disable_e_on_show = false
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/drawer_open.ogg"
 
 [node name="Drawer3" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer3"]
 visible = false
@@ -2086,7 +2088,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer4")
 disable_e_on_show = false
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/drawer_open.ogg"
 
 [node name="Drawer4" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer4"]
 visible = false
@@ -2113,7 +2115,7 @@ __meta__ = {
 }
 to_toggle = NodePath("Drawer5")
 disable_e_on_show = false
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/drawer_open.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/drawer_open.ogg"
 
 [node name="Drawer5" type="TextureRect" parent="CanvasLayer/ResearchCabin/Drawers/OpenDrawer5"]
 visible = false
@@ -2185,7 +2187,7 @@ position = Vector2( 377, 214 )
 script = ExtResource( 1 )
 to_toggle = NodePath("0xoplasmosisMicroscope")
 click_close_anywhere = true
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/microscope.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/microscope.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenMicroscope"]
 position = Vector2( -6.5, 7 )
@@ -2304,6 +2306,7 @@ position = Vector2( 211, 217 )
 script = ExtResource( 22 )
 to_toggle = NodePath("Notebook")
 click_close_anywhere = true
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/letter.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/OpenNotebook"]
 position = Vector2( -16.0001, 10.5 )
@@ -2434,7 +2437,7 @@ mouse_filter = 2
 position = Vector2( 340, 101 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote1")
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note1"]
 position = Vector2( -5.5, 11.5 )
@@ -2469,7 +2472,7 @@ autowrap = true
 position = Vector2( 381, 108 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote2")
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note2"]
 position = Vector2( -5.5, 11.5 )
@@ -2511,7 +2514,7 @@ autowrap = true
 position = Vector2( 428, 101 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote3")
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note3"]
 position = Vector2( -5.5, 11.5 )
@@ -2559,7 +2562,7 @@ autowrap = true
 position = Vector2( 473, 111 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote4")
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note4"]
 position = Vector2( -5.5, 11.5 )
@@ -2600,7 +2603,7 @@ autowrap = true
 position = Vector2( 379, 164 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote5")
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note5"]
 position = Vector2( -5.5, -3.5 )
@@ -2662,7 +2665,7 @@ flip_h = true
 position = Vector2( 418, 141 )
 script = ExtResource( 1 )
 to_toggle = NodePath("StickyNote6")
-sound_file = "res://Assets/Levels/Geoterra/Waterfalls/stickynote.ogg"
+sound_file = "res://Assets/Levels/Geoterra/Waterfalls/Office/stickynote.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ResearchCabin/Notes/Note6"]
 position = Vector2( -5.5, 11.5 )

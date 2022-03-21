@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Letter.png-d7e735e4f47b4ba99773ce0ee927340b.stex"
+path="res://.import/Drawer3.png-b3b0ae59fff517748095a374511aa60d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Geoterra/Waterfalls/Letter.png"
-dest_files=[ "res://.import/Letter.png-d7e735e4f47b4ba99773ce0ee927340b.stex" ]
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/Drawer3.png"
+dest_files=[ "res://.import/Drawer3.png-b3b0ae59fff517748095a374511aa60d.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

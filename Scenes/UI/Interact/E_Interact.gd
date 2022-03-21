@@ -62,6 +62,7 @@ func _process(delta):
 		disabled = false
 	if not touching and dia_started:
 		dialogue.exit()
+		
 func _input(_event):
 
 	# when i press the interact key (e)

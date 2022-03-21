@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Geode2.png-8bd4ba13220a5c773dede2a828bb4300.stex"
+path="res://.import/Geode1.png-845328d9998c15a3ee443e1d3d0e3496.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Geoterra/Waterfalls/Geode2.png"
-dest_files=[ "res://.import/Geode2.png-8bd4ba13220a5c773dede2a828bb4300.stex" ]
+source_file="res://Assets/Levels/Geoterra/Waterfalls/Office/Geode1.png"
+dest_files=[ "res://.import/Geode1.png-845328d9998c15a3ee443e1d3d0e3496.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
