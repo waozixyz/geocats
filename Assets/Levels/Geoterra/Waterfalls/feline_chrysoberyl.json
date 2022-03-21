@@ -26,8 +26,7 @@
     "avatar": "feline_sleep.png",
     "animation_in": "fade_in",
     "type": "text",
-  
-  
+    "position": "left",
     "content": "Not sure about you, but I'd really like to figure out what's actually going on here.",
     "next": "4"
   },

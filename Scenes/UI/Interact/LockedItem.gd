@@ -12,12 +12,12 @@ export(float) var unlock_volume = 1
 var to_unlock 
 func _check_unlocked():
 	if to_unlock:
-		if PROGRESS.variables.get(unlock_var):
+		if PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var]:
 			to_unlock.visible = true
 			disabled = true
 		else:
 			to_unlock.visible = false
-	
+			to_unlock.disabled = true
 func _ready():
 	to_unlock = get_node(item_node)
 	if not to_unlock:
