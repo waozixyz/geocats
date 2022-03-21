@@ -290,8 +290,8 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 19.0108, 210.213 )
 frames = SubResource( 3 )
-frame = 5
-playing = true
+frame = 4
+script = ExtResource( 32 )
 
 [node name="Interactive" type="Node2D" parent="."]
 
