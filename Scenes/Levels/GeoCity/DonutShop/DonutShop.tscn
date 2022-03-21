@@ -413,7 +413,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-sound_effect = 5
+sound_effect = 10
 sound_volume = 1.5
 geocity = 2
 next_loc = 2

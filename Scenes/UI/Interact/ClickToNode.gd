@@ -3,6 +3,7 @@ class_name ClickToNode
 onready var current_scene = get_tree().get_current_scene()
 
 export(NodePath) var to_toggle
+export(NodePath) var second_toggle
 export(bool) var click_close_anywhere = false
 export(bool) var disable_e_on_show = true
 export(String, FILE, "*.ogg, *.wav") var sound_file = ""
@@ -10,6 +11,7 @@ export(float, 0, 100) var sound_volume = 100
 
 var timer
 var node_toggle
+var node_toggle_2
 var colli
 func _ready():
 	timer = Timer.new()
@@ -17,6 +19,7 @@ func _ready():
 	timer.wait_time = 0.1
 	timer.one_shot = true
 	node_toggle = get_node(to_toggle)
+	node_toggle_2 = get_node(second_toggle)
 	var err = connect("input_event", self, "_input_event")
 	assert(err == OK)
 	if click_close_anywhere:
@@ -40,4 +43,6 @@ func _input_event(_viewport, event, _shape_idx):
 		if timer.time_left == 0:
 			AudioManager.play_sound(sound_file, sound_volume)
 			node_toggle.visible = false if node_toggle.visible else true
+			if node_toggle_2:
+				node_toggle_2.visible = false if node_toggle_2.visible else true
 		timer.start()

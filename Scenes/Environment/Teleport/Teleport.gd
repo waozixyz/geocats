@@ -12,6 +12,7 @@ enum Sounds {
 	WoodDoorLatchOpen2
 	GroundCatJokeRoom
 	MetalOpenLid
+	GlassDoorOpen
 }
 
 export(Sounds) var sound_effect

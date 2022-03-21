@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GlassDoorOpen.wav-c2888552c9b9d9dabb3ce1d4b76dd7bc.sample"
+
+[deps]
+
+source_file="res://Assets/Environment/Teleport/GlassDoorOpen.wav"
+dest_files=[ "res://.import/GlassDoorOpen.wav-c2888552c9b9d9dabb3ce1d4b76dd7bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

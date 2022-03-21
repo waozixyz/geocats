@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/WoodDoorLatchOpen2.wav-07c757c884eae8ab9e050dd441065050.sample"
+path="res://.import/WoodDoorLatchOpen2.wav-775757c82cf587d9e6bd84abad510682.sample"
 
 [deps]
 
-source_file="res://Assets/Teleport/WoodDoorLatchOpen2.wav"
-dest_files=[ "res://.import/WoodDoorLatchOpen2.wav-07c757c884eae8ab9e050dd441065050.sample" ]
+source_file="res://Assets/Environment/Teleport/WoodDoorLatchOpen2.wav"
+dest_files=[ "res://.import/WoodDoorLatchOpen2.wav-775757c82cf587d9e6bd84abad510682.sample" ]
 
 [params]
 

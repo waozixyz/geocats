@@ -247,6 +247,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = 10
 geocity = 2
 next_loc = 1
 
