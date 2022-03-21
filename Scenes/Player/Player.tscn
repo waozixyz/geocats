@@ -72,6 +72,18 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 17 )
 region = Rect2( 0, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 17 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 17 )
+region = Rect2( 30, 0, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 17 )
 region = Rect2( 30, 15, 15, 15 )
@@ -83,18 +95,6 @@ region = Rect2( 45, 15, 15, 15 )
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 17 )
 region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 17 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 17 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 17 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -108,14 +108,9 @@ animations = [ {
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
-"name": "blink",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "climb",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
@@ -123,9 +118,14 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
-"name": "walk",
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "blink",
 "speed": 5.0
 } ]
 

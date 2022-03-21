@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name ClickToNode
 onready var current_scene = get_tree().get_current_scene()
 
 export(NodePath) var to_toggle
