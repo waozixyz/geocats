@@ -331,12 +331,12 @@ centered = false
 position = Vector2( 187, 60.5 )
 texture = ExtResource( 3 )
 
-[node name="SpriteAutoPlay" type="AnimatedSprite" parent="BelowPlayer"]
+[node name="AdSpace" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 19.9762, 209.411 )
 frames = SubResource( 3 )
 script = ExtResource( 32 )
 
-[node name="SpriteAutoPlay2" type="AnimatedSprite" parent="BelowPlayer"]
+[node name="EscHint" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 77.8124, 250.387 )
 frames = SubResource( 10 )
 script = SubResource( 11 )
