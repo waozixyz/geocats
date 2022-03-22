@@ -332,6 +332,13 @@ one_way_collision = true
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="Collisions/Branches"]
 polygon = PoolVector2Array( 719, 596, 607, 636, 551, 636, 551, 657, 643, 655, 705, 636 )
 
+[node name="BranchePlatforms" type="StaticBody2D" parent="Collisions" groups=["end"]]
+visible = false
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="Collisions/BranchePlatforms"]
+polygon = PoolVector2Array( 6955, 1050, 6956, 1056, 6990, 1056, 6990, 1061, 7140, 1062, 7140, 1050 )
+one_way_collision = true
+
 [node name="Trees" type="StaticBody2D" parent="Collisions"]
 visible = false
 
@@ -377,6 +384,13 @@ polygon = PoolVector2Array( 694, 1304, 760, 1314, 751, 384, 733, 203, 699, 358, 
 polygon = PoolVector2Array( 551, 636, 486, 637, 428, 656, 365, 682, 365, 690, 459, 661, 552, 660 )
 one_way_collision = true
 
+[node name="TreesPlatforms" type="StaticBody2D" parent="Collisions"]
+visible = false
+
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="Collisions/TreesPlatforms"]
+polygon = PoolVector2Array( 551, 636, 486, 637, 428, 656, 365, 682, 365, 690, 459, 661, 552, 660 )
+one_way_collision = true
+
 [node name="Ground" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 0
@@ -394,30 +408,6 @@ polygon = PoolVector2Array( 6449, 4417, 6385, 4433, 6248, 4475, 6033, 4578, 5865
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Collisions/Ground"]
 polygon = PoolVector2Array( 6505, 4446, 6580, 4505, 6667, 4557, 6724, 4603, 6797, 4659, 6879, 4723, 6963, 4774, 7081, 4840, 7291, 4898, 7536, 4941, 7782, 4964, 7995, 4969, 8247, 4979, 8600, 4955, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7736, 5006, 7518, 4998, 7266, 4963, 7018, 4880, 6862, 4782, 6385, 4457, 6384, 4433, 6431, 4416, 6455, 4414, 6480, 4424 )
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4435.2, 3307.77, 4674, 3264, 5190, 3186, 5383, 3162, 5579, 3113, 5782, 3036, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4484.82, 3354.86, 4314.95, 3371.68, 4119.03, 3377.57, 4302.34, 3428.02, 4226.66, 3431.39, 3952, 3392 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( -867.235, 806.8 )
-polygon = PoolVector2Array( 5969.1, 2774.14, 6265, 2797, 6403.39, 2802.02, 6494.33, 2845.53, 6603.63, 2906.9 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( -400.041, 546.2 )
-polygon = PoolVector2Array( 6154.17, 2854.13, 6310.34, 2823.43, 6447.97, 2819.5, 6586.66, 2892.54 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( -871.239, 1065.6 )
-polygon = PoolVector2Array( 6154.17, 2854.13, 6310.34, 2823.43, 6454.51, 2805.93, 6554.66, 2819.74 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( -1787.65, 768 )
-polygon = PoolVector2Array( 6169.12, 2811.12, 6330.34, 2796.98, 6461.86, 2789.91, 6542.47, 2823.85 )
-one_way_collision = true
-
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Collisions/Ground"]
 polygon = PoolVector2Array( 9000, 984, 8965, 984, 8869, 1018, 8832, 1036, 8762, 1079, 8672, 1128, 8595, 1152, 8522, 1159, 8251, 1234, 7820, 1429, 7737, 1491, 7715, 1565, 7693, 1619, 7657, 1650, 7656, 1750, 8229, 1459, 9000, 1186 )
 
@@ -425,64 +415,93 @@ polygon = PoolVector2Array( 9000, 984, 8965, 984, 8869, 1018, 8832, 1036, 8762, 
 position = Vector2( 2300, 3619 )
 shape = SubResource( 35 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions/Ground"]
-position = Vector2( 2360, 625 )
-shape = SubResource( 36 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 5778, 2628, 5535, 2619, 5427, 2592, 5346, 2583, 5220, 2583, 5058, 2601, 4896, 2610, 4743, 2619, 4662, 2619, 4635, 2619, 4491, 2583, 4428, 2556, 4347, 2529, 4131, 2421, 4005, 2403, 3879, 2403, 3780, 2412, 3717, 2439, 3636, 2475, 3537, 2520, 3465, 2565, 3393, 2628, 3312, 2691, 3213, 2790, 3177, 2853, 3141, 2934, 3114, 2988, 3060, 3060, 2952, 3159, 2790, 3312, 2646, 3474, 2673, 3474, 2808, 3339, 3060, 3105, 3240, 2817, 3420, 2664, 3591, 2556, 3798, 2448, 4104, 2448, 4554, 2637, 5535, 2637, 5778, 2646 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 6327, 2673, 6237, 2673, 5958, 2628, 5778, 2628, 5778, 2646, 5958, 2646, 6228, 2691, 6327, 2682 )
-one_way_collision = true
-
 [node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="Collisions/Ground"]
 polygon = PoolVector2Array( 5301, 3087, 5265, 3087, 5148, 3132, 4959, 3141, 4914, 3087, 4887, 3024, 4887, 2862, 4887, 2637, 4761, 2637, 4761, 3015, 4752, 3132, 4959, 3150, 5148, 3141 )
-
-[node name="CollisionPolygon2D41" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 1325.59, 1260.33, 1437.01, 1245.62, 1326.85, 1281.36 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D42" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( -7, -320.382 )
-polygon = PoolVector2Array( 1325.44, 1268.74, 1365.81, 1246.46, 1397.76, 1244.78, 1417.94, 1260.33, 1391.87, 1253.19, 1373.79, 1256.13, 1326.85, 1281.36 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D43" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( 140, -463 )
-polygon = PoolVector2Array( 1301.72, 1287.94, 1365.81, 1246.46, 1425, 1221, 1433.43, 1266.53, 1408.16, 1244.83, 1373.79, 1256.13, 1311.54, 1290.31 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D47" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( 5432, 1633 )
-polygon = PoolVector2Array( 1301.72, 1287.94, 1306, 1272, 1365.81, 1246.46, 1417, 1228, 1496, 1229, 1549, 1215, 1514, 1235, 1408.16, 1244.83, 1373.79, 1256.13, 1311.54, 1290.31 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D44" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( 133, -155 )
-polygon = PoolVector2Array( 1302, 1270, 1365.81, 1246.46, 1390, 1248, 1438, 1216, 1429, 1248, 1401, 1261, 1350, 1292, 1382, 1263, 1373.79, 1256.13, 1320, 1269 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="Collisions/Ground"]
-position = Vector2( 119, 198 )
-polygon = PoolVector2Array( 1324, 1270, 1371, 1248, 1409, 1228, 1439, 1224, 1436, 1249, 1424, 1249, 1394, 1276, 1388, 1274, 1412, 1252, 1412, 1239, 1373.79, 1256.13, 1339, 1272 )
-one_way_collision = true
-
-[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 6991, 2155, 6617, 2154, 6449, 2213, 6387, 2213, 6289, 2250, 6125, 2253, 5962, 2279, 5884, 2278, 5785, 2296, 5487, 2313, 5283, 2312, 5154, 2325, 4956, 2335, 4746, 2374, 4517, 2402, 4386, 2416, 4260, 2415, 4281, 2427, 4422, 2422, 4607, 2401, 4839, 2368, 5012, 2343, 5299, 2327, 5619, 2321, 5897, 2300, 6306, 2267, 6657, 2180, 6996, 2176 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Collisions/Ground"]
 position = Vector2( 2, -20 )
 polygon = PoolVector2Array( 8972, 5033, 8972, 4960, 8965, 4729, 8869, 4689, 8806, 4689, 8812, 1245, 8998, 1194, 8999, 5033 )
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Collisions/Ground"]
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Collisions/Ground"]
+polygon = PoolVector2Array( 2213, 3633, 2233, 2920, 2259, 2239, 2272, 1833, 2286, 1347, 2284, 1019, 2298, 613, 2264, 614, 2134, 653, 2048, 647, 2049, 667, 2017, 666, 1999, 673, 1866, 672, 1694, 730, 1621, 757, 1565, 758, 1562, 810, 1561, 1061, 1553, 1100, 1556, 1449, 1549, 1746, 1413, 1824, 1303, 1880, 1186, 1880, 1075, 1823, 1000, 1818, 1019, 1829, 1138, 1883, 1305, 1896, 1540, 1782, 1628.6, 1774.19, 1605, 786, 1885, 696, 2283, 645, 2243, 1720, 2189, 2899, 2155, 3640 )
+
+[node name="GroundPlatforms" type="StaticBody2D" parent="Collisions" groups=["end"]]
+collision_layer = 7
+collision_mask = 0
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+polygon = PoolVector2Array( 3776, 3388, 3855, 3375, 4070, 3346, 4312, 3325, 4435.2, 3307.77, 4674, 3264, 5190, 3186, 5383, 3162, 5579, 3113, 5782, 3036, 5893, 2973, 6265, 2797, 6547, 2677, 6751, 2650, 6859, 2653, 6874, 2690, 6759, 2745, 6564, 2778, 6317, 2897, 5907, 3101, 5095, 3270, 4484.82, 3354.86, 4314.95, 3371.68, 4119.03, 3377.57, 4302.34, 3428.02, 4226.66, 3431.39, 3952, 3392 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( -867.235, 806.8 )
+polygon = PoolVector2Array( 5969.1, 2774.14, 6265, 2797, 6403.39, 2802.02, 6494.33, 2845.53, 6603.63, 2906.9 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( -400.041, 546.2 )
+polygon = PoolVector2Array( 6154.17, 2854.13, 6310.34, 2823.43, 6447.97, 2819.5, 6586.66, 2892.54 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( -871.239, 1065.6 )
+polygon = PoolVector2Array( 6154.17, 2854.13, 6310.34, 2823.43, 6454.51, 2805.93, 6554.66, 2819.74 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( -1787.65, 768 )
+polygon = PoolVector2Array( 6169.12, 2811.12, 6330.34, 2796.98, 6461.86, 2789.91, 6542.47, 2823.85 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( 2360, 625 )
+shape = SubResource( 36 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+polygon = PoolVector2Array( 5778, 2628, 5535, 2619, 5427, 2592, 5346, 2583, 5220, 2583, 5058, 2601, 4896, 2610, 4743, 2619, 4662, 2619, 4635, 2619, 4491, 2583, 4428, 2556, 4347, 2529, 4131, 2421, 4005, 2403, 3879, 2403, 3780, 2412, 3717, 2439, 3636, 2475, 3537, 2520, 3465, 2565, 3393, 2628, 3312, 2691, 3213, 2790, 3177, 2853, 3141, 2934, 3114, 2988, 3060, 3060, 2952, 3159, 2790, 3312, 2646, 3474, 2673, 3474, 2808, 3339, 3060, 3105, 3240, 2817, 3420, 2664, 3591, 2556, 3798, 2448, 4104, 2448, 4554, 2637, 5535, 2637, 5778, 2646 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+polygon = PoolVector2Array( 6327, 2673, 6237, 2673, 5958, 2628, 5778, 2628, 5778, 2646, 5958, 2646, 6228, 2691, 6327, 2682 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D41" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+polygon = PoolVector2Array( 1325.59, 1260.33, 1437.01, 1245.62, 1326.85, 1281.36 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D42" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( -7, -320.382 )
+polygon = PoolVector2Array( 1325.44, 1268.74, 1365.81, 1246.46, 1397.76, 1244.78, 1417.94, 1260.33, 1391.87, 1253.19, 1373.79, 1256.13, 1326.85, 1281.36 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D43" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( 140, -463 )
+polygon = PoolVector2Array( 1301.72, 1287.94, 1365.81, 1246.46, 1425, 1221, 1433.43, 1266.53, 1408.16, 1244.83, 1373.79, 1256.13, 1311.54, 1290.31 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D47" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( 5432, 1633 )
+polygon = PoolVector2Array( 1301.72, 1287.94, 1306, 1272, 1365.81, 1246.46, 1417, 1228, 1496, 1229, 1549, 1215, 1514, 1235, 1408.16, 1244.83, 1373.79, 1256.13, 1311.54, 1290.31 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D44" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( 133, -155 )
+polygon = PoolVector2Array( 1302, 1270, 1365.81, 1246.46, 1390, 1248, 1438, 1216, 1429, 1248, 1401, 1261, 1350, 1292, 1382, 1263, 1373.79, 1256.13, 1320, 1269 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+position = Vector2( 119, 198 )
+polygon = PoolVector2Array( 1324, 1270, 1371, 1248, 1409, 1228, 1439, 1224, 1436, 1249, 1424, 1249, 1394, 1276, 1388, 1274, 1412, 1252, 1412, 1239, 1373.79, 1256.13, 1339, 1272 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
 polygon = PoolVector2Array( 3037, 3480, 3008, 3492, 2964, 3493, 2906, 3504, 2844, 3516, 2777, 3528, 2714, 3542, 2655, 3555, 2558, 3576, 2467, 3588, 2417, 3588, 2388, 3601, 2389, 3637, 2425, 3636, 2666, 3584, 2943, 3516, 3054, 3493, 3073, 3480 )
 one_way_collision = true
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 2213, 3633, 2233, 2920, 2259, 2239, 2272, 1833, 2286, 1347, 2284, 1019, 2298, 613, 2264, 614, 2134, 653, 2048, 647, 2049, 667, 2017, 666, 1999, 673, 1866, 672, 1694, 730, 1621, 757, 1565, 758, 1562, 810, 1561, 1061, 1553, 1100, 1556, 1449, 1549, 1746, 1413, 1824, 1303, 1880, 1186, 1880, 1075, 1823, 1000, 1818, 1019, 1829, 1138, 1883, 1305, 1896, 1540, 1782, 1628.6, 1774.19, 1605, 786, 1885, 696, 2283, 645, 2243, 1720, 2189, 2899, 2155, 3640 )
+[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+polygon = PoolVector2Array( 6991, 2155, 6617, 2154, 6449, 2213, 6387, 2213, 6289, 2250, 6125, 2253, 5962, 2279, 5884, 2278, 5785, 2296, 5487, 2313, 5283, 2312, 5154, 2325, 4956, 2335, 4746, 2374, 4517, 2402, 4386, 2416, 4260, 2415, 4281, 2427, 4422, 2422, 4607, 2401, 4839, 2368, 5012, 2343, 5299, 2327, 5619, 2321, 5897, 2300, 6306, 2267, 6657, 2180, 6996, 2176 )
+one_way_collision = true
 
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 visible = false

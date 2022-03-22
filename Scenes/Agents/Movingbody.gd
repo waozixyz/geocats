@@ -24,7 +24,7 @@ var fall_through_timer
 export var jump_height = 100
 
 func fall_through(layer_bit = 0):
-	print(layer_bit)
+
 	for platform in current_platforms.keys():
 		platform.set_collision_layer_bit(layer_bit, false)
 		disabled_platforms[platform] = layer_bit

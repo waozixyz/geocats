@@ -144,17 +144,21 @@ func _ready():
 var dmg_blink = 0
 var velocity_log = []
 
+var no_vx = false
 func _physics_process(delta):
 	var dfps = delta * global.fps
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
 	._physics_process(delta)
-
 	if current_scene.is_disabled(name):
-		velocity.x = 0
-		currentSpeed = 0
-		play("idle")
+		if not no_vx:
+			velocity.x = 0
+			currentSpeed = 0
+			play("idle")
+			no_vx = true
+
 	else:
+		no_vx = false
 		update_inputs()
 		state_machine.logic(delta)
 		
@@ -255,10 +259,10 @@ func move():
 		velocity.y *= 0.9
 	elif not grounded:
 		subtractor += air_friction
-	currentSpeed = move_toward(currentSpeed,  maxSpeed - subtractor, acceleration) #accelerate current speed
-	
-	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
-	
+	if not no_vx:
+		currentSpeed = move_toward(currentSpeed,  maxSpeed - subtractor, acceleration) #accelerate current speed
+		_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
+
 	velocity = move_and_slide(velocity, Vector2.UP, true, 4, max_angle)
  
 # animation helper function

@@ -49,7 +49,7 @@ var dia_started
 func _phase_one(dfps):
 	if trigger_battle.touching:
 		for follower in player.followers:
-			follower.visible
+			follower.visible = false
 		set_disable("player", "battle")
 		if camera.offset.x < 350 and not shoot_rock:
 			camera.offset.x += 2
@@ -80,6 +80,7 @@ func _phase_two(dfps):
 		if boulder.position.y > -30:
 			if not dodging:
 				player.velocity.x += 250
+
 				player.jump(120)
 			dodging = true
 			_fix_cam()
