@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hogwash.ogg-43bb227371d59ead3ba4e097cd8070e3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/Complex/Hogwash/hogwash.ogg"
+dest_files=[ "res://.import/hogwash.ogg-43bb227371d59ead3ba4e097cd8070e3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spritesheet.png-c563550d21e493a271de2f992025b4f9.stex"
+path="res://.import/garbitage_spritesheet.png-7e30d62de61f2b57e3750f8c07568a61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/Cleopardis/Spritesheet.png"
-dest_files=[ "res://.import/Spritesheet.png-c563550d21e493a271de2f992025b4f9.stex" ]
+source_file="res://Assets/Levels/GeoCity/GeoCity/Garbitage/garbitage_spritesheet.png"
+dest_files=[ "res://.import/garbitage_spritesheet.png-7e30d62de61f2b57e3750f8c07568a61.stex" ]
 
 [params]
 

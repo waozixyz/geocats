@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_6.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Agents/Lasagne/lasagne_spritesheet.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Lasagne/lasagne_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/SaltySwing.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=11]
 [ext_resource path="res://Assets/UI/Feline/Sounds/Feline_Owch.wav" type="AudioStream" id=12]
@@ -26,15 +26,15 @@
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/DefaultCity/city_tree.png" type="Texture" id=24]
 [ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/PumpkinUI.gd" type="Script" id=25]
 [ext_resource path="res://Scenes/Levels/GeoCity/GeoCity/NoteSpr.gd" type="Script" id=26]
-[ext_resource path="res://Assets/Agents/Nonacat/nonacat_spritesheet.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Nonacat/nonacat_spritesheet.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/big_pumpkin_spritesheet.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/snowy_swing.ogg" type="AudioStream" id=29]
 [ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=30]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/cloud.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/DefaultCity/entrance_city.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Agents/Longcat/longcat_spritesheet.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Longcat/longcat_spritesheet.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/moon.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Agents/Garbitage/garbitage_spritesheet.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Garbitage/garbitage_spritesheet.png" type="Texture" id=35]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/CreepyCity/pumpkin_teeth.png" type="Texture" id=36]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/SnowyCity/city_tree.png" type="Texture" id=37]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Pumpkin/pumpkin_sax_2.wav" type="AudioStream" id=38]
@@ -320,14 +320,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 54, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 54, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 50, 54 )
@@ -336,17 +328,25 @@ region = Rect2( 0, 0, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 0, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 54, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=72]
 animations = [ {
-"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
 "frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [sub_resource type="AtlasTexture" id=73]
@@ -794,7 +794,7 @@ animation = "walk"
 script = ExtResource( 5 )
 has_parent = true
 character_name = "Longcat"
-json_file = "res://Assets/Agents/Longcat/longcat.json"
+json_file = "res://Assets/Levels/GeoCity/GeoCity/Longcat/longcat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat/LongCatArea2D"]
 position = Vector2( 2.29077, 0.729614 )
@@ -823,7 +823,7 @@ animation = "walk"
 script = ExtResource( 5 )
 has_parent = true
 character_name = "Nonacat"
-json_file = "res://Assets/Agents/Nonacat/nonacat.json"
+json_file = "res://Assets/Levels/GeoCity/GeoCity/Nonacat/nonacat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat/NonacatArea2D"]
 position = Vector2( -1.00005, 1.00002 )
@@ -853,7 +853,7 @@ __meta__ = {
 }
 has_parent = true
 character_name = "Lasagne"
-json_file = "res://Assets/Agents/Lasagne/lasagne.json"
+json_file = "res://Assets/Levels/GeoCity/GeoCity/Lasagne/lasagne.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne/LasagneArea2D"]
 position = Vector2( 3.23462, -1.15808 )
@@ -866,8 +866,11 @@ shape = SubResource( 50 )
 [node name="Garbitage" type="Area2D" parent="NPC"]
 position = Vector2( 1600, 711 )
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
 character_name = "Garbitage"
-json_file = "res://Assets/Agents/Garbitage/garbitage.json"
+json_file = "res://Assets/Levels/GeoCity/GeoCity/Garbitage/garbitage.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Garbitage"]
 position = Vector2( 33, 33 )

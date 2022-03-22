@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nonacat_spritesheet.png-462069a783bc12558ebdcc1e21c53987.stex"
+path="res://.import/longcat_spritesheet.png-373f6ea2effad8c5d81fa287839c918d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/Nonacat/nonacat_spritesheet.png"
-dest_files=[ "res://.import/nonacat_spritesheet.png-462069a783bc12558ebdcc1e21c53987.stex" ]
+source_file="res://Assets/Levels/GeoCity/GeoCity/Longcat/longcat_spritesheet.png"
+dest_files=[ "res://.import/longcat_spritesheet.png-373f6ea2effad8c5d81fa287839c918d.stex" ]
 
 [params]
 

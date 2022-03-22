@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/longcat_spritesheet.png-637717d4e9069a1b7e924670b89edd46.stex"
+path="res://.import/Spritesheet.png-8c69f73a1985914a4d275de88c4d9aba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/Longcat/longcat_spritesheet.png"
-dest_files=[ "res://.import/longcat_spritesheet.png-637717d4e9069a1b7e924670b89edd46.stex" ]
+source_file="res://Assets/Levels/GeoCity/Complex/Cleopardis/Spritesheet.png"
+dest_files=[ "res://.import/Spritesheet.png-8c69f73a1985914a4d275de88c4d9aba.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lasagne_spritesheet.png-925356d08cbf53826460822c2abe4683.stex"
+path="res://.import/lasagne_spritesheet.png-3decaa6ac428aca7e23435a2a3081617.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/Lasagne/lasagne_spritesheet.png"
-dest_files=[ "res://.import/lasagne_spritesheet.png-925356d08cbf53826460822c2abe4683.stex" ]
+source_file="res://Assets/Levels/GeoCity/GeoCity/Lasagne/lasagne_spritesheet.png"
+dest_files=[ "res://.import/lasagne_spritesheet.png-3decaa6ac428aca7e23435a2a3081617.stex" ]
 
 [params]
 

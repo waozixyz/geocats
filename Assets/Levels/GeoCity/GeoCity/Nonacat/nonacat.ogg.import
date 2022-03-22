@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/nonacat.ogg-975008fa5a462b9645327a489e1da188.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/GeoCity/Nonacat/nonacat.ogg"
+dest_files=[ "res://.import/nonacat.ogg-975008fa5a462b9645327a489e1da188.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

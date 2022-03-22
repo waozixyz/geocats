@@ -766,7 +766,7 @@ walk_delay_range = [ 100, 300 ]
 script = ExtResource( 18 )
 has_parent = true
 character_name = "Liet"
-json_file = "res://Assets/Agents/Liet/liet_desert.json"
+json_file = "res://Assets/Levels/XAPS/DesertOutpost/liet_desert.json"
 sound_file = "res://Assets/Agents/Liet/liet.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Liet_Desert/Area2D"]

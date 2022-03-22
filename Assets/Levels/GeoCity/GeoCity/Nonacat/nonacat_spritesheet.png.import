@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hogwash_spritesheet.png-4d280a1ebf3d411e22ab92a0f39710f5.stex"
+path="res://.import/nonacat_spritesheet.png-674efab0926a88452c30f473fb019214.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Agents/Hogwash/hogwash_spritesheet.png"
-dest_files=[ "res://.import/hogwash_spritesheet.png-4d280a1ebf3d411e22ab92a0f39710f5.stex" ]
+source_file="res://Assets/Levels/GeoCity/GeoCity/Nonacat/nonacat_spritesheet.png"
+dest_files=[ "res://.import/nonacat_spritesheet.png-674efab0926a88452c30f473fb019214.stex" ]
 
 [params]
 

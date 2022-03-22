@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/garbitage.ogg-ed8c2d21de40865280c981f22cd3df3f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Levels/GeoCity/GeoCity/Garbitage/garbitage.ogg"
+dest_files=[ "res://.import/garbitage.ogg-ed8c2d21de40865280c981f22cd3df3f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
