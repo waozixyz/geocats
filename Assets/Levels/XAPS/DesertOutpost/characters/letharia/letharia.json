@@ -74,6 +74,37 @@
     "next": "4"
   },
   "4": {
+    "type": "question",
+    "text": "These Worm-like creatures spend most of their time burrowing underneath the sand.",
+    "options": ["Sand Worms", "Space Worms", "Mooninites"],
+    "next": ["chose_option_1", "chose_option_2", "chose_option_3"]
+  },
+  "chose_option_1": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Sand Worms! Brilliant!",
+    "value": [["question", "1"]],
+    "next": "4b"
+  },
+  "chose_option_2": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "...Space worms? I'm sorry, but I think you better keep studying...",
+    "value": [["question", "2"]],
+    "next": "knowledge_on"
+  },
+  "chose_option_3": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "You better lay off the catnip and keep studying - Your answer is incorrect.",
+    "value": [["question", "3"]],
+    "next": "knowledge_on"
+  },
+
+  "4b": {
     "type": "text",
     "content": "I see it in your eyes... All of the new information you learned.",
     "next": "5"
@@ -262,7 +293,7 @@
     "avatar": "letharia.png",
     "position": "left",
     "type": "text",
-    "content": "...Thanks for hanging on. I'm sure the direction fate seems to have thrown you in is a meaningful one.",
+    "content": "I'm sure the direction fate seems to have thrown you in is a meaningful one. For now, I'll send you to the Geoquarium. It's a prototype invention that will soon be available for anyone to customise and enjoy.",
     "next": "no_option_11"
   },
   "no_option_11": {
