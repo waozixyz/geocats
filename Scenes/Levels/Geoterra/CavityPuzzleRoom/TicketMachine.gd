@@ -39,9 +39,7 @@ func _pull_ticket():
 
 func _ticket_pressed():
 	if ticket_print_done:
-		#OS.shell_open("https://geocats.net/ground-cat-conservatory-web-portal/")
-		pass
-
+		OS.shell_open("https://discord.gg/28jQ9RETNz")
 
 func _plus_pressed():
 	if sprite.frame < 11:

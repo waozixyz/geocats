@@ -13,7 +13,7 @@ export(String) var relock_var
 func _relock():
 	to_unlock.visible = false
 	to_unlock.disabled = true
-	if not to_unlock.disable_player.empty():
+	if disable_player and not to_unlock.disable_player.empty():
 			current_scene.set_disable("player", to_unlock.disable_player, false)
 var to_unlock 
 func _check_unlocked():
