@@ -209,6 +209,14 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -221,14 +229,6 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -236,14 +236,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -318,6 +318,7 @@ extents = Vector2( 106.5, 89.5 )
 
 [node name="Waterfalls" type="Node2D"]
 script = ExtResource( 12 )
+music = [ NodePath("WaterfallMusicBeforeNotebook"), NodePath("WaterfallMusicAfterNotebook") ]
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -1881,7 +1882,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 14
+frame = 8
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1901,7 +1902,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 25
+frame = 10
 playing = true
 flip_h = true
 
@@ -1913,8 +1914,8 @@ shape = SubResource( 40 )
 position = Vector2( 2014.22, 2655.5 )
 script = ExtResource( 49 )
 item_node = NodePath("chrysoberyl")
-unlock_var = "geoterra_waterfalls_tower_now"
-relock_var = "geoterra_chrysoberyl_true"
+unlock_var = "geoterra_waterfalls_feline_tower"
+relock_var = "geoterra_chrysoberyl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/LockedItem"]
 position = Vector2( 0, -0.55835 )
@@ -1964,6 +1965,7 @@ texture = ExtResource( 11 )
 [node name="CanvasLayerForResearchCabin" type="CanvasLayer" parent="."]
 
 [node name="ResearchCabin" type="Control" parent="CanvasLayerForResearchCabin"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 33.0
 margin_top = 52.0
 margin_right = 608.0

@@ -789,7 +789,7 @@ flip_h = true
 script = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 44, 1066 )
+position = Vector2( 5201, 372 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 6000
@@ -1549,7 +1549,6 @@ progress_after_activating = "xaps_geopedia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerScreen"]
 position = Vector2( 4.22021, 0 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 115 )
 __meta__ = {
 "_edit_lock_": true

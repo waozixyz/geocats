@@ -182,6 +182,14 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 15, 15, 15 )
@@ -198,14 +206,6 @@ region = Rect2( 60, 15, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 20 ), SubResource( 17 ), SubResource( 20 ), SubResource( 20 ) ],
@@ -218,9 +218,9 @@ animations = [ {
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "blink",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
@@ -228,14 +228,14 @@ animations = [ {
 "name": "climb",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "blink",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 29 ) ],
 "loop": true,
 "name": "crouch",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 30 ), SubResource( 31 ) ],
-"loop": true,
-"name": "walk",
 "speed": 5.0
 } ]
 

@@ -189,7 +189,7 @@
   "no_option": {
     "type": "text",
     "content": "...",
-    "next": "no_option_3"
+    "next": "no_option_2"
   },
   "no_option_2": {
     "name": "Feline",

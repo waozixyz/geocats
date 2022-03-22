@@ -53,12 +53,14 @@ func _process(delta):
 	if do_something:
 		if not dialogue_file.empty():
 			disabled = true
+			current_scene.set_disable("e_interact", "interact_chat")
 			dialogue.initiate(dialogue_file)
 			dialogue.modulate.a = 0.01
 			dia_started = true
 			do_something = false
 	if dia_started and dialogue.modulate.a == 0:
 		dia_started = false
+		current_scene.set_disable("e_interact", "interact_chat", false)
 		disabled = false
 	if not touching and dia_started:
 		dialogue.exit()

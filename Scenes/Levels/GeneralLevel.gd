@@ -5,7 +5,9 @@ export(Vector2) var respawn_location
 export(bool) var reload_on_death
 var locations : PoolVector2Array
 var dead
-var music = get_node_or_null("Music") setget, _get_music
+
+var current_song = 0
+export(Array, NodePath) var music = get_node_or_null("Music") setget, _get_music
 var player = get_node_or_null("Player") setget ,_get_player
 var camera = get_node_or_null("Player/Camera2D") setget, _get_camera
 
@@ -58,6 +60,7 @@ func _get_music():
 				music = get_node_or_null("Music")
 				if not music:
 					printerr("could not find level music")
+
 	return music
 
 var canvas_layer
@@ -73,8 +76,23 @@ func _add_default_nodes():
 	canvas_layer.add_child(chat_with)
 	canvas_layer.add_child(dialogue)
 	
+func next_song():
+	if music is Array:
+		music[current_song].stop()
+		current_song += 1
+		if current_song >= music.size():
+			current_song = 0
+		music[current_song].play()
+
+func _init_music_array():
+	if music is Array and music.size() > 0:
+		var i = 0
+		for m in music:
+			music[i] = get_node(m)
+			i += 1
 func _ready():
 	_add_default_nodes()
+	_init_music_array()
 
 	player = _get_player()
 	camera = _get_camera()

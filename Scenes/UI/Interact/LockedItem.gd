@@ -22,6 +22,7 @@ func _check_unlocked():
 			_relock()
 		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var] :
 			to_unlock.visible = true
+			to_unlock.disabled = false
 			disabled = true
 		else:
 			_relock()

@@ -24,7 +24,6 @@ func _on_body_entered(body):
 
 func _on_body_exited(body:PhysicsBody2D):
 	if body.name == "Player":
-		print(body.underwater)
 		var pos = body.underwater.find(name)
 		body.underwater.remove(pos)
 		emit_signal("splash", body.position.x)

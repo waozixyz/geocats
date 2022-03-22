@@ -44,7 +44,7 @@
     "type": "action",
     "operation": "variable",
     "dictionary": "variables",
-    "value": [["geoterra_chrysoberyl_true", true]],
+    "value": [["geoterra_chrysoberyl", true]],
     "text": "...Whatever, let's get back to XAPS and meet up with Letharia again. She'll know what to do.'",
     "next": ""
   }
