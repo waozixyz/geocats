@@ -379,7 +379,7 @@ one_way_collision = true
 
 [node name="Ground" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Ground"]
 position = Vector2( -1.19209e-06, 0 )
@@ -710,7 +710,7 @@ __meta__ = {
 position = Vector2( 2319, 2090 )
 rotation = 0.0226893
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
@@ -722,7 +722,7 @@ shape = SubResource( 44 )
 [node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 516, 1012 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
@@ -735,7 +735,7 @@ shape = SubResource( 45 )
 [node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 7036, 1166 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true

@@ -232,6 +232,15 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=489]
 extents = Vector2( 484, 28 )
 
+[sub_resource type="RectangleShape2D" id=493]
+extents = Vector2( 17, 54 )
+
+[sub_resource type="RectangleShape2D" id=495]
+extents = Vector2( 477, 15 )
+
+[sub_resource type="RectangleShape2D" id=497]
+extents = Vector2( 61, 57 )
+
 [sub_resource type="RectangleShape2D" id=490]
 extents = Vector2( 216, 18 )
 
@@ -241,20 +250,11 @@ extents = Vector2( 115, 12 )
 [sub_resource type="RectangleShape2D" id=492]
 extents = Vector2( 10, 4 )
 
-[sub_resource type="RectangleShape2D" id=493]
-extents = Vector2( 17, 54 )
-
 [sub_resource type="RectangleShape2D" id=494]
 extents = Vector2( 286, 5 )
 
-[sub_resource type="RectangleShape2D" id=495]
-extents = Vector2( 477, 15 )
-
 [sub_resource type="RectangleShape2D" id=496]
 extents = Vector2( 238, 19 )
-
-[sub_resource type="RectangleShape2D" id=497]
-extents = Vector2( 61, 57 )
 
 [sub_resource type="RectangleShape2D" id=498]
 extents = Vector2( 119, 29 )
@@ -410,55 +410,60 @@ script = ExtResource( 18 )
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -473, 228 )
 shape = SubResource( 489 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -735, 178 )
-shape = SubResource( 490 )
-one_way_collision = true
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -743, -28 )
-shape = SubResource( 491 )
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -490, 164 )
-shape = SubResource( 492 )
-one_way_collision = true
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=["end"]]
 position = Vector2( -937, 147 )
 shape = SubResource( 493 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground" groups=["end"]]
-position = Vector2( -934, 14 )
-shape = SubResource( 493 )
-one_way_collision = true
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -667, 73 )
-shape = SubResource( 494 )
-one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -484, -103 )
 shape = SubResource( 495 )
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -669, 48 )
-shape = SubResource( 496 )
-one_way_collision = true
-
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground"]
 position = Vector2( -73, 178 )
 shape = SubResource( 497 )
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground"]
+[node name="Platforms" type="StaticBody2D" parent="."]
+position = Vector2( 968, 232 )
+collision_layer = 7
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( -735, 178 )
+shape = SubResource( 490 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( -743, -28 )
+shape = SubResource( 491 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( -490, 164 )
+shape = SubResource( 492 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Platforms" groups=["end"]]
+position = Vector2( -934, 14 )
+shape = SubResource( 493 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( -667, 73 )
+shape = SubResource( 494 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( -669, 48 )
+shape = SubResource( 496 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( -192, 7 )
 shape = SubResource( 498 )
 one_way_collision = true
@@ -466,7 +471,7 @@ one_way_collision = true
 [node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 2408, 1117 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
 position = Vector2( -2417, -881 )
@@ -499,7 +504,7 @@ bus = "Music"
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 569, 370 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -559,6 +564,7 @@ json_file = "res://Assets/Levels/GeoCity/Arcade/affogato_arcade.json"
 sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 843, 313 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 960

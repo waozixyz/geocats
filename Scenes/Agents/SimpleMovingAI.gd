@@ -7,7 +7,6 @@ var direction = 1
 
 
 export(int) var move_speed = 150
-export(int) var _jump_height = 100
 export(Array) var jump_delay_range = [100, 400]
 export(Array) var walk_delay_range = [1, 20]
 export(int) var change_direction = 200
@@ -25,7 +24,6 @@ func _get_walk_tick():
 	
 func _ready():
 	._ready()
-	jump_height = _jump_height
 	jump_tick = _get_jump_tick()
 	walk_tick = _get_walk_tick()
 

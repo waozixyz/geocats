@@ -24,6 +24,7 @@ func logic(player: KinematicBody2D, _delta: float):
 			return "wall_slide"
 		else:
 			return "fall"
+
 func exit_logic(player: KinematicBody2D):
 	.exit_logic(player)
 

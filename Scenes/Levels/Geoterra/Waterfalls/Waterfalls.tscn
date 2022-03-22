@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -51,7 +51,7 @@
 [ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=49]
 [ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=50]
 [ext_resource path="res://Assets/Player/Spritesheets/0xoplasmosis_tileset.png" type="Texture" id=51]
-[ext_resource path="res://Scenes/Agents/Movingbody.gd" type="Script" id=52]
+[ext_resource path="res://Scenes/Agents/AttackAI.gd" type="Script" id=52]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
@@ -79,6 +79,9 @@ extents = Vector2( 106.733, 300.308 )
 
 [sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 75.2204, 22.5815 )
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 27.0107, 81.2305 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 50, 50 )
@@ -423,7 +426,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5674, 1476 )
+position = Vector2( 4851, 2006 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 7000
@@ -431,17 +434,10 @@ limit_bottom = 3750
 
 [node name="Collisions" type="Node2D" parent="."]
 scale = Vector2( 0.833, 0.833 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="TopRightSurface" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
-collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
+collision_mask = 0
 
 [node name="CollisionPolygon2D227" type="CollisionPolygon2D" parent="Collisions/TopRightSurface"]
 position = Vector2( -122.449, -3358.94 )
@@ -483,10 +479,7 @@ polygon = PoolVector2Array( -50.6675, 108.845, -0.247559, 5.60322, 45.3672, 4.40
 
 [node name="TopGround" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
-collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/TopGround"]
 position = Vector2( 6978.39, 472.989 )
@@ -864,10 +857,7 @@ one_way_collision = true
 
 [node name="MiddleGround" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
-collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
+collision_mask = 0
 
 [node name="CollisionPolygon2D70" type="CollisionPolygon2D" parent="Collisions/MiddleGround"]
 polygon = PoolVector2Array( 5348.14, 2571.43, 5348.14, 2593.04, 5177.67, 2594.24, 5094.84, 2559.42, 5036.01, 2548.62, 4948.38, 2524.61, 4829.53, 2499.4, 4690.28, 2468.19, 4606.24, 2472.99, 4507.8, 2464.59, 4392.56, 2474.19, 4304.92, 2481.39, 4225.69, 2500.6, 4141.66, 2484.99, 4044.42, 2450.18, 3974.79, 2450.18, 3924.37, 2465.79, 3855.94, 2469.39, 3788.72, 2486.19, 3683.07, 2498.2, 3642.26, 2518.61, 3643.46, 2495.8, 3655.46, 2497, 3698.68, 2480.19, 3763.51, 2480.19, 3787.52, 2466.99, 3830.73, 2447.78, 3919.57, 2448.98, 3962.79, 2424.97, 4009.6, 2424.97, 4032.41, 2434.57, 4123.65, 2453.78, 4195.68, 2478.99, 4242.5, 2482.59, 4294.12, 2468.19, 4358.94, 2468.19, 4409.36, 2458.58, 4474.19, 2452.58, 4570.23, 2454.98, 4692.68, 2457.38, 4785.11, 2474.19, 4905.16, 2497, 5028.81, 2534.21, 5109.24, 2549.82, 5163.27, 2564.23, 5240.1, 2573.83, 5308.52, 2582.23 )
@@ -1493,13 +1483,9 @@ one_way_collision = true
 polygon = PoolVector2Array( 5492.2, 2531.81, 5493.4, 2521.01, 5513.81, 2519.81, 5522.21, 2504.2, 5843.94, 2501.8, 6170.47, 2178.87, 6386.55, 2178.87, 6398.56, 2172.87, 6590.64, 1980.79, 6627.85, 1961.58, 6644.66, 1950.78, 6740.7, 1854.74, 7533.01, 1854.74, 7533.01, 1872.75, 6743.1, 1873.95, 6638.66, 1971.19, 6595.44, 1995.2, 6391.36, 2192.08, 6171.67, 2192.08, 5843.94, 2515.01, 5530.61, 2516.21, 5525.81, 2525.81 )
 one_way_collision = true
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Collisions/MiddleGround"]
-polygon = PoolVector2Array( 5977.19, 2878.75, 6048.02, 2799.52, 6084.03, 2751.5, 6140.46, 2690.28, 6268.91, 2566.63, 6282.11, 2559.42, 6368.55, 2474.19, 6422.57, 2420.17, 6483.79, 2346.94, 6530.61, 2278.51, 6578.63, 2178.87, 6576.23, 2106.84, 6603.84, 2045.62, 6644.66, 2028.81, 6663.87, 1979.59, 6744.3, 1930.37, 6857.14, 1887.15, 6921.97, 1881.15, 6960.38, 1897.96, 7008.4, 1912.36, 7206.48, 1919.57, 7277.31, 1938.78, 7358.94, 1939.98, 7374.55, 1930.37, 7421.37, 1927.97, 7444.18, 1961.58, 7453.78, 2048.02, 7435.77, 2099.64, 7397.36, 2079.23, 7337.33, 2013.21, 6903.96, 1905.16, 6747.9, 1956.78, 6721.49, 2002.4, 6632.65, 2084.03, 6617.05, 2210.08, 6512.6, 2388.96, 6366.15, 2529.41, 6189.68, 2685.47, 5991.6, 2877.55 )
-one_way_collision = true
-
 [node name="LowerGround" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Collisions/LowerGround"]
 position = Vector2( -2314.53, 3737.1 )
@@ -1648,10 +1634,7 @@ one_way_collision = true
 
 [node name="Tower" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
-collision_mask = 7
-__meta__ = {
-"_edit_lock_": true
-}
+collision_mask = 0
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/Tower"]
 position = Vector2( 925.57, 1187.27 )
@@ -1741,7 +1724,7 @@ polygon = PoolVector2Array( 7704.68, 3548.62, 7704.68, 3566.63, 7590.64, 3566.63
 
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -22.9818, 2273.02 )
@@ -1772,6 +1755,21 @@ shape = SubResource( 5 )
 position = Vector2( 7931.57, -32.413 )
 rotation = 1.5708
 shape = SubResource( 63 )
+
+[node name="RightStairsUnder" type="StaticBody2D" parent="Collisions"]
+position = Vector2( 5900, 1800 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Collisions/RightStairsUnder"]
+polygon = PoolVector2Array( 77.19, 1078.75, 148.02, 999.52, 184.03, 951.5, 240.46, 890.28, 368.91, 766.63, 382.11, 759.42, 468.55, 674.19, 522.57, 620.17, 583.79, 546.94, 630.61, 478.51, 678.63, 378.87, 717.05, 410.08, 612.6, 588.96, 466.15, 729.41, 289.68, 885.475, 91.6, 1077.55 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D7" type="CollisionShape2D" parent="Collisions/RightStairsUnder" groups=["end"]]
+position = Vector2( 700.84, 343.259 )
+shape = SubResource( 80 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Collisions/RightStairsUnder"]
+polygon = PoolVector2Array( 683.433, 258.823, 727.851, 227.611, 763.87, 179.59, 844.3, 130.37, 957.14, 87.15, 1021.97, 81.15, 1060.38, 97.96, 1108.4, 112.36, 1306.48, 119.57, 1377.31, 138.78, 1458.94, 139.98, 1474.55, 130.37, 1521.37, 127.97, 1544.18, 160.58, 1553.78, 248.02, 1535.77, 299.64, 1497.36, 279.23, 1437.33, 213.21, 1003.96, 105.16, 847.9, 156.78, 821.49, 202.4, 741.057, 278.031 )
+one_way_collision = true
 
 [node name="Portals" type="Node2D" parent="."]
 position = Vector2( -114.829, -22.0825 )
@@ -1945,7 +1943,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 12
+frame = 22
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1965,7 +1963,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 19
+frame = 11
 playing = true
 flip_h = true
 
@@ -2013,14 +2011,15 @@ position = Vector2( 85, 27.5 )
 shape = SubResource( 42 )
 
 [node name="0xoplasmosis" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 6011, 1467 )
+position = Vector2( 4732, 2048 )
 collision_layer = 3
-collision_mask = 3
+collision_mask = 2
 script = ExtResource( 52 )
 __meta__ = {
 "_edit_group_": true
 }
 add_move_n_slide = true
+jump_height = 240
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/0xoplasmosis"]
 scale = Vector2( 4, 4 )
@@ -2037,7 +2036,7 @@ shape = SubResource( 78 )
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2( 6015, 331 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 gravity_scale = 20.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball"]

@@ -1,8 +1,5 @@
 extends MovingBody
 
-
-export var _jump_height = 15
-
 var anim = "idle"
 var ticks = 0
 var idle
@@ -10,7 +7,6 @@ var idle
 var next_jump_height = 0
 func _init():
 	._init()
-	jump_height = _jump_height
 
 func _physics_process(_delta):
 	if idle:

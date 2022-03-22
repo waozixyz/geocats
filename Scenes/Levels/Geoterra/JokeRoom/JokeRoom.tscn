@@ -77,7 +77,7 @@ centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["end"]]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 148.531, 553.231, 270.08, 552.546, 380.997, 540.518, 444.696, 542.3, 616.194, 594.863, 751.611, 595.754, 987.699, 559.227, 1155.63, 524.928, 1339.16, 529.382, 1472.96, 534.378, 1476.17, 624.411, 84.2158, 627.502, 83.8817, 552.1 )

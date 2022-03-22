@@ -531,7 +531,7 @@ __meta__ = {
 position = Vector2( 385, -142 )
 scale = Vector2( 4.3, 4.3 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 23 )
 breakable = false
 
@@ -664,7 +664,7 @@ one_way_collision = true
 [node name="Mushroom5" type="StaticBody2D" parent="Mushrooms" groups=["mushroom"]]
 position = Vector2( 170.6, 193.4 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
@@ -753,7 +753,7 @@ one_way_collision = true
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 197, 67 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 29 )
 __meta__ = {
 "_edit_group_": true
@@ -806,7 +806,7 @@ centered = false
 [node name="Bullet" type="Area2D" parent="Enemy"]
 visible = false
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 26 )
 
 [node name="Ball" type="Sprite" parent="Enemy/Bullet"]
@@ -926,7 +926,7 @@ limit_bottom = 1000
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 23 )
 total_frames = 4
 
@@ -1029,7 +1029,7 @@ centered = false
 visible = false
 scale = Vector2( 0.8, 0.8 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 205, -13, 205, 55, 195, 67, 190, 83, 182, 98, 163, 126, 163, 148, 147, 162, 128, 163, 102, 154, 78, 154, 33, 195, 34, 230, 29, 239, 32, 267, 60, 296, 112, 315, 163, 321, 333, 320, 420, 320, 502, 311, 593, 311, 662, 352, 677, 384, 683, 420, 684, 457, 667, 469, 635, 469, 604, 436, 551, 413, 495, 408, 440, 415, 391, 422, 340, 419, 238, 420, 144, 432, 105, 437, 90, 458, 70, 492, 66, 512, 51, 531, 56.1013, 553.769, 59.2511, 586.054, 54.5264, 607.315, 44.3758, 634.783, 32, 682, 27, 732, 24, 776, 27, 829, 30, 913, 23, 967, 29, 1022, 34, 1107, 34, 1153, 62.5, 1187.5, 112.5, 1202.5, 230, 1207.5, 342.5, 1207.5, 465, 1198.75, 595, 1200, 715, 1190, 765, 1187.5, 815, 1205, 1028.75, 1203.75, 1116.25, 1191.25, 1193.75, 1187.5, 1253.75, 1191.25, 1323, 1206, 1472.5, 1196.25, 1570, 1183.75, 1625, 1171.25, 1675, 1144, 1718, 1090, 1730, 1057, 1731, 956, 1726, 901, 1731, 865, 1716, 799, 1717, 723, 1715, 684, 1734, 629, 1731, 572, 1741, 522, 1724, 455, 1710, 395, 1702, 343, 1703, 278, 1709, 245, 1706, 181, 1712, 151, 1665, 100, 1576, 35, 1501, 31, 1462, 18, 1416, 31, 1353, 64, 1304, 66, 1249, 39, 1198, 40, 1157, 54, 1097, 53, 1064, 44, 1012, 58, 980, 70, 915, 69, 878, 52, 828, 39, 765, 39, 715, 59, 683, 69, 613, 82, 576, 83, 540, 68, 474, 23, 441, 20, 402, 33, 368, 79, 344, 90, 321, 87, 309, 48, 280, 2, 281, -36, 212, -36, 203, -15, 205, -51, 290, -52, 290, 0, 1760, -6, 1772, 1233, 5, 1252, -4, 301, 3, -2, 191, 1, 196, -14 )

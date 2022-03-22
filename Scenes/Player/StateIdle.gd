@@ -22,14 +22,14 @@ func logic(player: KinematicBody2D, _delta: float):
 
 	if player.on_ladder and player.vertical != 0:
 		if player.current_platforms:
-			player.fall_through()
+			player.fall_through(0)
 			return "climb"
 		elif player.vertical < 0:
 			return "climb"
 	if player.vertical > 0:
 		player.play("crouch")
 		if player.jumping and player.current_platforms:
-			player.fall_through()
+			player.fall_through(0)
 			return "fall"
 	elif player.vertical < 0:
 		player.play("slide_wall")

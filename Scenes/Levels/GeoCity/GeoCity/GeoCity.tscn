@@ -320,14 +320,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -336,17 +328,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=72]
 animations = [ {
-"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=73]
@@ -477,7 +477,7 @@ layers = {
 [node name="Bricks" type="StaticBody2D" parent="CollisionColliders"]
 position = Vector2( 2800, 900 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
 }
@@ -502,184 +502,192 @@ position = Vector2( 384, 46 )
 shape = SubResource( 13 )
 one_way_collision = true
 
-[node name="Houses" type="StaticBody2D" parent="CollisionColliders"]
+[node name="Platforms" type="StaticBody2D" parent="CollisionColliders"]
 position = Vector2( 0, 400 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 291, 314 )
 shape = SubResource( 14 )
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 978, 90 )
 shape = SubResource( 15 )
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1156, 751 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1397.5, 870 )
 shape = SubResource( 17 )
 one_way_collision = true
 
-[node name="CollisionShape2D25" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1469, 830 )
 shape = SubResource( 18 )
 one_way_collision = true
 
-[node name="CollisionShape2D27" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1468, 894 )
 shape = SubResource( 18 )
 one_way_collision = true
 
-[node name="CollisionShape2D26" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1467, 839 )
 shape = SubResource( 19 )
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1482.5, 378 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2644, 486 )
 shape = SubResource( 21 )
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2644, 837 )
 shape = SubResource( 22 )
 one_way_collision = true
 
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2644, 918 )
 shape = SubResource( 23 )
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3420, 899 )
 shape = SubResource( 22 )
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3005.5, 821.5 )
 shape = SubResource( 24 )
 one_way_collision = true
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3006, 679 )
 shape = SubResource( 24 )
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2416.5, 840 )
 shape = SubResource( 83 )
 one_way_collision = true
 
-[node name="CollisionShape2D31" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2252, 707.5 )
 shape = SubResource( 26 )
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3578, 530.5 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3548.9, 198.986 )
 shape = SubResource( 28 )
 one_way_collision = true
 
-[node name="CollisionShape2D33" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3548.9, 425.986 )
 shape = SubResource( 28 )
 one_way_collision = true
 
-[node name="CollisionShape2D32" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3548.48, 446.986 )
 shape = SubResource( 28 )
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 4234, 410 )
 shape = SubResource( 29 )
 one_way_collision = true
 
-[node name="CollisionShape2D24" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 4197, 722 )
 shape = SubResource( 30 )
 one_way_collision = true
 
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 4195.75, 990.343 )
 shape = SubResource( 30 )
 one_way_collision = true
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 4558, 978 )
 shape = SubResource( 31 )
 one_way_collision = true
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3172, 1019 )
 shape = SubResource( 32 )
 one_way_collision = true
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2975, 1018 )
 shape = SubResource( 32 )
 one_way_collision = true
 
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1808, 862 )
 shape = SubResource( 33 )
 one_way_collision = true
 
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 297, 805 )
 shape = SubResource( 34 )
 one_way_collision = true
 
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 109, 695 )
 shape = SubResource( 35 )
 one_way_collision = true
 
-[node name="CollisionShape2D23" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 483, 694 )
 shape = SubResource( 36 )
 one_way_collision = true
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 1725, 797 )
 shape = SubResource( 37 )
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 4677, 106 )
 shape = SubResource( 38 )
 one_way_collision = true
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="CollisionColliders/Houses"]
+[node name="Walls" type="StaticBody2D" parent="CollisionColliders"]
+position = Vector2( 0, 400 )
+collision_layer = 7
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="CollisionColliders/Walls"]
 position = Vector2( 4554, 152 )
 shape = SubResource( 39 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionColliders/Houses"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionColliders/Walls"]
 polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 203, 4799, 201, 4801, 1032 )
 
 [node name="Ground" type="StaticBody2D" parent="CollisionColliders"]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Ground"]
 position = Vector2( 2410, 1513.28 )
@@ -687,7 +695,7 @@ shape = SubResource( 40 )
 
 [node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/EndWalls"]
 position = Vector2( 0, 800 )

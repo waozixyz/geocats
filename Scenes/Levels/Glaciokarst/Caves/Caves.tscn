@@ -168,7 +168,7 @@ shape = SubResource( 8 )
 [node name="Idle" type="StaticBody2D" parent="CatHead"]
 position = Vector2( -26, -105 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -180,7 +180,7 @@ one_way_collision = true
 [node name="Open" type="StaticBody2D" parent="CatHead"]
 scale = Vector2( 5, 5 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatHead/Open"]
 position = Vector2( -29.6, -37.2 )
@@ -228,7 +228,7 @@ __meta__ = {
 [node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -250,7 +250,7 @@ polygon = PoolVector2Array( 122.4, 1537.6, 112, 1586.4, 116.8, 1623.2, 134.4, 16
 [node name="Platforms" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 1163.2, 211.2 )
@@ -303,7 +303,7 @@ shape = SubResource( 23 )
 [node name="End" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 22, 83 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -30.4405, 137.558 )
@@ -342,7 +342,7 @@ texture = ExtResource( 14 )
 [node name="Ladder2" type="Area2D" parent="Ladders"]
 position = Vector2( 1469.51, 351.633 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
@@ -352,7 +352,7 @@ shape = SubResource( 26 )
 [node name="Ladder3" type="Area2D" parent="Ladders"]
 position = Vector2( 1433.1, 749.804 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -365,7 +365,7 @@ shape = SubResource( 27 )
 [node name="Ladder4" type="Area2D" parent="Ladders"]
 position = Vector2( 1464.52, 1658.43 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -377,7 +377,7 @@ shape = SubResource( 28 )
 [node name="waterarea" type="Area2D" parent="."]
 position = Vector2( 779, 1084 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true

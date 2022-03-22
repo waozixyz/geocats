@@ -113,6 +113,7 @@ func check_wall_slide():
 				if not check_child_collision(hit_node) and not hit_node.is_in_group("end") and not hit_node.get_parent().is_in_group("end"):
 					return true
 
+
 # check the previous state player was in
 func _get_previous_state_tag():
 	var tag = state_machine.previous_state_tag if state_machine else "idle"
@@ -121,6 +122,7 @@ func _get_previous_state_tag():
 var followers = []
 # init player
 func _ready():
+	max_angle = 1
 	sprite.play()
 	sprite.playing = true
 	jump_height = 400
@@ -257,7 +259,7 @@ func move():
 	
 	_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
 	
-	velocity = move_and_slide(velocity, Vector2.UP, true)
+	velocity = move_and_slide(velocity, Vector2.UP, true, 4, max_angle)
  
 # animation helper function
 func play(animation:String):

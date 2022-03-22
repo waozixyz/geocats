@@ -16,20 +16,19 @@ var no_rotate = false
 var no_gravity = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
-var current_platforms = []
-var disabled_platforms = []
+var current_platforms = {}
+var disabled_platforms = {}
 # fall through platform
-var fall_through_timer = 0
-var fall_through_time = 30
+var fall_through_timer
 # jump height
-var jump_height = 100
+export var jump_height = 100
 
-func fall_through():
-	for platform in current_platforms:
-		platform.disabled = true
-
-		disabled_platforms.insert(disabled_platforms.size(), platform)
-	fall_through_timer =  OS.get_ticks_msec() * 0.001 + fall_through_time
+func fall_through(layer_bit = 0):
+	print(layer_bit)
+	for platform in current_platforms.keys():
+		platform.set_collision_layer_bit(layer_bit, false)
+		disabled_platforms[platform] = layer_bit
+	fall_through_timer.start()
 
 func check_child_collision(child):
 	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
@@ -47,6 +46,7 @@ var ladder_x : float
 var ladder_y : float
 var ladder_rot : float
 var ladder_tween : Tween
+var max_angle = 0.7
 # tween to ladder function
 func tween_to_ladder():
 	var new_x = ladder_x
@@ -66,6 +66,11 @@ func _ready():
 	ladder_tween = Tween.new()
 	add_child(ladder_tween)
 	randomize()
+	fall_through_timer = Timer.new()
+	add_child(fall_through_timer)
+	fall_through_timer.wait_time = 0.2
+	fall_through_timer.one_shot = true
+
 	
 func _stop_playing(stream):
 	remove_child(stream)
@@ -82,13 +87,13 @@ func _physics_process(_delta):
 		mushroom.touching = false
 
 	var rot = sprite.rotation
-	if fall_through_timer >  OS.get_ticks_msec() * 0.001:
-		fall_through_timer -= 1
-	else:
+	if fall_through_timer.time_left == 0:
 		for platform in disabled_platforms:
-			platform.disabled = false
-		disabled_platforms = []
-	current_platforms = []
+			var layer_bit = disabled_platforms[platform]
+
+			platform.set_collision_layer_bit(layer_bit, true)
+		disabled_platforms = {}
+	current_platforms = {}
 	var slide_count = get_slide_count()
 
 	if slide_count > 0:
@@ -98,7 +103,7 @@ func _physics_process(_delta):
 			if is_on_floor():
 				for child in collision.collider.get_children():
 					if check_child_collision(child):
-						current_platforms.insert(current_platforms.size(), child)
+						current_platforms[child.get_parent()] = true
 					if child.get_parent().is_in_group("mushroom"):
 						mushroom = child.get_parent()
 						mushroom.touching = true
@@ -106,12 +111,12 @@ func _physics_process(_delta):
 
 			var normal = collision.normal
 
-			if normal.x > -.7 && normal.x < .7 and normal.y < .7:
+			if normal.x > -max_angle && normal.x < max_angle and normal.y < max_angle:
 				var slope_angle = normal.dot(Vector2(0,-1)) - 1
 				var mul = 1
 				if normal.x < 0:
-					mul = -1
-				new_rot += -slope_angle * 4 * mul
+					mul = -1 
+				new_rot += -slope_angle * 3 * normal.x
 			else:
 				new_rot = rot * .5
 	else:

@@ -144,7 +144,7 @@ __meta__ = {
 
 [node name="Platforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionPolygon2D147" type="CollisionPolygon2D" parent="Collisions/Platforms"]
 position = Vector2( -5823.6, -2163.21 )
@@ -182,7 +182,7 @@ one_way_collision = true
 [node name="Walls" type="StaticBody2D" parent="Collisions"]
 position = Vector2( 2050.42, 4438.18 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -190,7 +190,7 @@ __meta__ = {
 
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( -39.5429, 727.321 )
@@ -444,7 +444,7 @@ shape = SubResource( 11 )
 [node name="waterarea" type="Area2D" parent="Interactables"]
 position = Vector2( 136.547, 1131.07 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
@@ -457,7 +457,7 @@ shape = SubResource( 13 )
 [node name="waterarea2" type="Area2D" parent="Interactables"]
 position = Vector2( 519.566, 1167.8 )
 collision_layer = 7
-collision_mask = 7
+collision_mask = 0
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
