@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -50,6 +50,8 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/waterfalls_lead.ogg" type="AudioStream" id=48]
 [ext_resource path="res://Scenes/UI/Interact/LockedItem.gd" type="Script" id=49]
 [ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=50]
+[ext_resource path="res://Assets/Player/Spritesheets/0xoplasmosis_tileset.png" type="Texture" id=51]
+[ext_resource path="res://Scenes/Agents/Movingbody.gd" type="Script" id=52]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
@@ -209,14 +211,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 44 )
 region = Rect2( 30, 15, 15, 15 )
@@ -229,6 +223,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 27 ), SubResource( 27 ), SubResource( 30 ), SubResource( 27 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 27 ), SubResource( 27 ) ],
@@ -236,14 +238,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -255,6 +257,67 @@ extents = Vector2( 87.4824, 68.9417 )
 
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 132, 70.5 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 51 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=76]
+animations = [ {
+"frames": [ SubResource( 62 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 75 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 72 ), SubResource( 72 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 67 ), SubResource( 68 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=78]
+extents = Vector2( 20.4043, 15.9136 )
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 14.0
@@ -313,7 +376,7 @@ size = 14
 extra_spacing_bottom = -7
 font_data = ExtResource( 16 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 106.5, 89.5 )
 
 [node name="Waterfalls" type="Node2D"]
@@ -360,7 +423,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 696, 943 )
+position = Vector2( 5674, 1476 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 7000
@@ -1882,7 +1945,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 2
+frame = 6
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1902,7 +1965,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 22
+frame = 25
 playing = true
 flip_h = true
 
@@ -1948,6 +2011,28 @@ player_disable = "research tower"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/FelineAreaTower"]
 position = Vector2( 85, 27.5 )
 shape = SubResource( 42 )
+
+[node name="0xoplasmosis" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 6011, 1467 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 52 )
+__meta__ = {
+"_edit_group_": true
+}
+add_move_n_slide = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/0xoplasmosis"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 76 )
+animation = "idle"
+frame = 19
+flip_h = true
+script = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis"]
+position = Vector2( 0.472656, -0.0865479 )
+shape = SubResource( 78 )
 
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2( 6015, 331 )
@@ -2716,7 +2801,7 @@ make_node_visible = NodePath("../CanvasLayerForResearchCabin/ResearchCabin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShowResearchCabin"]
 position = Vector2( -0.5, -12.5 )
-shape = SubResource( 62 )
+shape = SubResource( 79 )
 
 [node name="WaterfallSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 1909.26, 3013.54 )
