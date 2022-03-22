@@ -391,8 +391,35 @@ animations = [ {
 "speed": 6.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 82.9985, 14 )
+
+[sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 59.0713, 10.5017 )
+
+[sub_resource type="RectangleShape2D" id=91]
+extents = Vector2( 52.0505, 61.9998 )
+
+[sub_resource type="RectangleShape2D" id=93]
+extents = Vector2( 17.6735, 61 )
+
+[sub_resource type="RectangleShape2D" id=97]
+extents = Vector2( 13.9999, 5.00006 )
+
+[sub_resource type="RectangleShape2D" id=94]
+extents = Vector2( 40, 5.00006 )
+
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 30, 91.9999 )
+
+[sub_resource type="RectangleShape2D" id=73]
+extents = Vector2( 12.1869, 10.7175 )
+
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 169, 73 )
+
+[sub_resource type="RectangleShape2D" id=75]
+extents = Vector2( 44.9996, 49 )
 
 [sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 155, 18.0001 )
@@ -405,15 +432,6 @@ extents = Vector2( 159, 5.99988 )
 
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 159, 15.9999 )
-
-[sub_resource type="RectangleShape2D" id=73]
-extents = Vector2( 12.1869, 10.7175 )
-
-[sub_resource type="RectangleShape2D" id=74]
-extents = Vector2( 169, 73 )
-
-[sub_resource type="RectangleShape2D" id=75]
-extents = Vector2( 44.9996, 49 )
 
 [sub_resource type="RectangleShape2D" id=76]
 extents = Vector2( 104, 9.99997 )
@@ -442,14 +460,8 @@ extents = Vector2( 49, 10 )
 [sub_resource type="RectangleShape2D" id=80]
 extents = Vector2( 84, 18.0001 )
 
-[sub_resource type="RectangleShape2D" id=83]
-extents = Vector2( 82.9985, 14 )
-
 [sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 74.9995, 7 )
-
-[sub_resource type="RectangleShape2D" id=87]
-extents = Vector2( 59.0713, 10.5017 )
 
 [sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 41.6938, 5.1947 )
@@ -457,26 +469,14 @@ extents = Vector2( 41.6938, 5.1947 )
 [sub_resource type="RectangleShape2D" id=90]
 extents = Vector2( 294, 15.9999 )
 
-[sub_resource type="RectangleShape2D" id=91]
-extents = Vector2( 52.0505, 61.9998 )
-
 [sub_resource type="RectangleShape2D" id=92]
 extents = Vector2( 91, 4 )
-
-[sub_resource type="RectangleShape2D" id=93]
-extents = Vector2( 17.6735, 61 )
-
-[sub_resource type="RectangleShape2D" id=94]
-extents = Vector2( 40, 5.00006 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 58.9999, 5.00006 )
 
 [sub_resource type="RectangleShape2D" id=96]
 extents = Vector2( 20.0001, 5.00006 )
-
-[sub_resource type="RectangleShape2D" id=97]
-extents = Vector2( 13.9999, 5.00006 )
 
 [sub_resource type="RectangleShape2D" id=139]
 extents = Vector2( 26.3996, 5.99968 )
@@ -760,7 +760,6 @@ __meta__ = {
 }
 jump_height = 30
 move_speed = 20
-_jump_height = 30
 walk_delay_range = [ 100, 300 ]
 
 [node name="Area2D" type="Area2D" parent="NPC/Liet_Desert"]
@@ -827,6 +826,44 @@ __meta__ = {
 position = Vector2( 6.4, 888 )
 polygon = PoolVector2Array( -5.88358, 0.960022, -27.2, 108, 582.4, 253.6, 1006.4, 577.6, 1473.6, 1088, 1703.2, 1160, 1920, 1264, 2566.4, 1260.8, 2584, 1256, 2649.6, 1251.2, 2932, 1232, 3012, 1206.4, 4000.8, 1187.2, 4150.4, 1148.8, 4364.8, 980.8, 4728.8, 1040.8, 4793.6, 1019.2, 4760.8, 1012.8, 4705.6, 1008, 4670.4, 997.6, 4620.8, 996.8, 4533.6, 964, 4497.6, 924, 4378.4, 924.8, 4324, 980.8, 4156, 1092.8, 4100, 1116.8, 4088, 1130.4, 4032.8, 1153.6, 3979.2, 1173.6, 3028.8, 1172.8, 3001.6, 1200, 2948, 1200.8, 2925.6, 1220.8, 2668, 1220.8, 2649.6, 1240, 2576, 1240, 2567.2, 1248.8, 1929.6, 1249.6, 1704.8, 1136, 1672.8, 1081.6, 1667.2, 1076, 1626.4, 1048, 1584, 1023.2, 1546.4, 1009.6, 1496, 1009.6, 1472.8, 1016.8, 1449.6, 1016.8, 1419.2, 968.8, 1383.2, 906.4, 1361.6, 850.4, 1506.4, 783.2, 1506.4, 922.4, 1544.8, 923.2, 1545.6, 699.2, 1576.8, 699.2, 1576.8, 664.8, 1501.6, 664.8, 939.2, 382.4, 861.6, 379.912, 860.8, 256.712, 864, 213.6, 820.8, 194.312, 775.2, 179.912, 648.291, 123.327, 519.006, 89.683, 440.793, 93.8793, 345.908, 80.6483, 274.272, 68.7405, 228.19, 46.1343, 169.596, 16.0812, 117.542, 0.582031 )
 
+[node name="Ground2" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
+position = Vector2( 1577.6, 1800 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 83 )
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
+position = Vector2( 3543.12, 1252.65 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 87 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
+position = Vector2( 1897.6, 861.6 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 91 )
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
+position = Vector2( 814.4, 604 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 93 )
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
+position = Vector2( 418.4, 536 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 97 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
+position = Vector2( 864, 589.6 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 94 )
+
 [node name="Spheres" type="Node2D" parent="CollisionColliders"]
 
 [node name="Sphere1" type="StaticBody2D" parent="CollisionColliders/Spheres"]
@@ -859,36 +896,6 @@ position = Vector2( 2228.8, 872.8 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 81 )
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
-position = Vector2( 2260, 1018.4 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 82 )
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
-position = Vector2( 2249.6, 1068.8 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 85 )
-one_way_collision = true
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
-position = Vector2( 2004, 1140.8 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 86 )
-one_way_collision = true
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
-position = Vector2( 2004, 1156.8 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 86 )
-one_way_collision = true
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
-position = Vector2( 2003.2, 1264.8 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 89 )
-one_way_collision = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
 position = Vector2( 1571.09, 444.972 )
 scale = Vector2( 4, 4 )
@@ -904,19 +911,57 @@ position = Vector2( 1404, 347.2 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 75 )
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
+[node name="Sphere2Platforms" type="StaticBody2D" parent="CollisionColliders/Spheres"]
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
+position = Vector2( 2260, 1018.4 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 82 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
+position = Vector2( 2249.6, 1068.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 85 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
+position = Vector2( 2004, 1140.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 86 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
+position = Vector2( 2004, 1156.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 86 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
+position = Vector2( 2003.2, 1264.8 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 89 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
 position = Vector2( 1584.8, 316 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 76 )
 one_way_collision = true
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
 position = Vector2( 2008, 408.8 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 136 )
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere2Platforms"]
 position = Vector2( 1576.8, 248 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 78 )
@@ -938,12 +983,21 @@ polygon = PoolVector2Array( 291.2, 44, 489.6, 44.8, 489.6, -92, 376, -92, 375.2,
 position = Vector2( 320.9, 302.4 )
 shape = SubResource( 133 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3"]
+[node name="Sphere3Platforms" type="StaticBody2D" parent="CollisionColliders/Spheres"]
+position = Vector2( 3196, 784 )
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3Platforms"]
 position = Vector2( 333.6, -141.2 )
 shape = SubResource( 134 )
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere3Platforms"]
 position = Vector2( 500.625, 302 )
 shape = SubResource( 135 )
 one_way_collision = true
@@ -965,7 +1019,13 @@ collision_mask = 0
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="CollisionColliders/Spheres/Sphere5"]
 polygon = PoolVector2Array( 148.8, 343.2, 391.2, 343.2, 805.6, 343.2, 848.8, 328.8, 874.4, 324, 914.4, 304.8, 980, 288.8, 1042.4, 269.6, 1125.6, 264.8, 1167.2, 260, 1214.4, 248.8, 1276.8, 248, 1307.2, 233.6, 1332.8, 233.6, 1362.4, 221.6, 1447.2, 194.4, 1490.4, 189.6, 1545.6, 193.6, 1603.2, 184.8, 1601.6, -30.4003, 1580.8, -48.8, 1379.2, 8, 1221.6, -108.8, 1221.27, -344.868, 1341.52, -344.493, 1346.29, -338.972, 1343.47, -326.974, 1342.4, -256.8, 1496, -256.8, 1496, -366.4, 1528, -384, 1533.6, -436, 1488, -472.8, 1404, -479.2, 1358.4, -470.4, 1342.4, -439.2, 1343.2, -380, 1246.4, -380, 1172.8, -382.4, 1162.4, -156.8, 1126.4, -188, 1128, -384, 1155.2, -435.2, 1227.2, -525.6, 1348, -574.4, 1461.6, -563.2, 1569.6, -494.4, 1606.4, -438.4, 1633.6, -364, 1635.2, 186.4, 1546.4, 212, 1465.6, 204, 1352.8, 246.4, 1061.6, 278.4, 960, 301.6, 841.6, 345.6, 784.8, 357.6, 147.2, 354.4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere5"]
+[node name="Sphere5Platforms" type="StaticBody2D" parent="CollisionColliders/Spheres"]
+position = Vector2( 2605, 1895.9 )
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere5Platforms"]
 position = Vector2( 1200.8, -339.92 )
 shape = SubResource( 138 )
 one_way_collision = true
@@ -976,21 +1036,27 @@ scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere6"]
-position = Vector2( 301.601, 341.6 )
-shape = SubResource( 137 )
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere6"]
-position = Vector2( 122.4, 526.4 )
-shape = SubResource( 137 )
-one_way_collision = true
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="CollisionColliders/Spheres/Sphere6"]
 polygon = PoolVector2Array( 164, 444.8, 72.8, 466.4, 47.2, 538.4, 52, 352.8, 90.4, 288.8, 149.6, 242.4, 223.2, 219.2, 307.2, 217.6, 378.4, 250.4, 421.6, 288.8, 442.4, 320.8, 464.8, 354.4, 479.2, 410.4, 481.6, 588, 298.4, 653.6, 166.4, 637.6, 124, 607.2, 122.56, 516.395, 239.51, 517.263, 420, 520, 425.6, 511.2, 444.8, 467.2, 444.8, 427.2, 433.6, 407.2, 424.8, 402.4, 407.2, 387.2, 368, 388.8, 367.2, 368, 357.6, 365.6, 355.2, 351.2, 307.2, 350.4, 304.8, 229.6, 236.8, 225.6, 152, 248.8, 95.2, 292.8, 64, 352, 100.8, 352.8, 199.2, 352.8, 199.2, 397.6 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Sphere6Platforms" type="StaticBody2D" parent="CollisionColliders/Spheres"]
+position = Vector2( 5000, 0 )
+scale = Vector2( 1.25, 1.25 )
+collision_layer = 7
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere6Platforms"]
+position = Vector2( 301.601, 341.6 )
+shape = SubResource( 137 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionColliders/Spheres/Sphere6Platforms"]
+position = Vector2( 122.4, 526.4 )
+shape = SubResource( 137 )
+one_way_collision = true
 
 [node name="Sphere7" type="StaticBody2D" parent="CollisionColliders/Spheres"]
 scale = Vector2( 1.25, 1.25 )
@@ -1015,21 +1081,11 @@ scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 80 )
 one_way_collision = true
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
-position = Vector2( 1577.6, 1800 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 83 )
-
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 2172, 1673.6 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 84 )
 one_way_collision = true
-
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
-position = Vector2( 3543.12, 1252.65 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 87 )
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 3458.29, 1179.55 )
@@ -1043,26 +1099,11 @@ scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 90 )
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
-position = Vector2( 1897.6, 861.6 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 91 )
-
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 903.2, 631.2 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 92 )
 one_way_collision = true
-
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
-position = Vector2( 814.4, 604 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 93 )
-
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
-position = Vector2( 864, 589.6 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 94 )
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 526.4, 441.6 )
@@ -1087,11 +1128,6 @@ position = Vector2( 639.2, 408 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 96 )
 one_way_collision = true
-
-[node name="CollisionShape2D27" type="CollisionShape2D" parent="CollisionColliders/Platforms"]
-position = Vector2( 418.4, 536 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 97 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="CollisionColliders/Platforms"]
 position = Vector2( 899.2, 366.4 )
