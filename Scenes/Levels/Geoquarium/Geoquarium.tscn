@@ -2256,7 +2256,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 50 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
