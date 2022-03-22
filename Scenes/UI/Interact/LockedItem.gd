@@ -14,7 +14,7 @@ func _relock():
 	to_unlock.visible = false
 	to_unlock.disabled = true
 	if disable_player and not to_unlock.disable_player.empty():
-			current_scene.set_disable("player", to_unlock.disable_player, false)
+		current_scene.set_disable("player", to_unlock.disable_player, false)
 var to_unlock 
 func _check_unlocked():
 	if to_unlock:
@@ -23,7 +23,6 @@ func _check_unlocked():
 		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var] :
 			to_unlock.visible = true
 			to_unlock.disabled = false
-			disabled = true
 		else:
 			_relock()
 			
@@ -32,8 +31,6 @@ func _ready():
 	if not to_unlock:
 		printerr("item to unlock not found: " + item_node)
 	_check_unlocked()
-	if dialogue_file.empty():
-		disabled = true
 
 func _process(delta):
 	_check_unlocked()

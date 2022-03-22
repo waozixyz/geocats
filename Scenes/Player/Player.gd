@@ -122,7 +122,7 @@ func _get_previous_state_tag():
 var followers = []
 # init player
 func _ready():
-	max_angle = 1
+	max_angle = .8
 	sprite.play()
 	sprite.playing = true
 	jump_height = 400

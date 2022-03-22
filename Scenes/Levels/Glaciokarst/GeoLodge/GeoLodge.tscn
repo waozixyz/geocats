@@ -77,11 +77,23 @@ extents = Vector2( 391.667, 8.34486 )
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 93.6668, 2.50338 )
 
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 32.1754, 3.26599 )
-
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 79.5099, 12.3574 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 8, 101 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 16.2165, 7.50229 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 115.667, 14.489 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 18.0002, 213.156 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 32.1754, 3.26599 )
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 70.3335, 6 )
@@ -106,18 +118,6 @@ extents = Vector2( 109.667, 7.33336 )
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 76, 1.99866 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 8, 101 )
-
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 16.2165, 7.50229 )
-
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 115.667, 14.489 )
-
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 18.0002, 213.156 )
 
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 10, 315 )
@@ -463,60 +463,9 @@ shape = SubResource( 12 )
 position = Vector2( 748.334, 420.748 )
 shape = SubResource( 13 )
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 48.2346, 350.951 )
-rotation = -0.174533
-shape = SubResource( 14 )
-one_way_collision = true
-
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 14.6667, 449.628 )
 shape = SubResource( 15 )
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 397.667, 284.393 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 769.667, 349.817 )
-shape = SubResource( 17 )
-one_way_collision = true
-
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 744.667, 267.035 )
-shape = SubResource( 18 )
-one_way_collision = true
-
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 742.667, 238.665 )
-shape = SubResource( 18 )
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 706.333, 187.597 )
-shape = SubResource( 19 )
-one_way_collision = true
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 724, 162.224 )
-shape = SubResource( 20 )
-one_way_collision = true
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 446, 124.176 )
-shape = SubResource( 21 )
-one_way_collision = true
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 195, 197.606 )
-shape = SubResource( 22 )
-one_way_collision = true
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 198.667, 285.056 )
-shape = SubResource( 23 )
-one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 84.6667, 241.667 )
@@ -536,6 +485,64 @@ shape = SubResource( 27 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 5, 2.00277 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 7
+collision_mask = 0
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 48.2346, 350.951 )
+rotation = -0.174533
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 397.667, 284.393 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 769.667, 349.817 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 744.667, 267.035 )
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 742.667, 238.665 )
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 706.333, 187.597 )
+shape = SubResource( 19 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 724, 162.224 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 446, 124.176 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 195, 197.606 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Platforms"]
+position = Vector2( 198.667, 285.056 )
+shape = SubResource( 23 )
+one_way_collision = true
 
 [node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
@@ -620,7 +627,6 @@ __meta__ = {
 }
 jump_height = 150
 move_speed = 0
-_jump_height = 150
 
 [node name="DefaultDialogue" type="Area2D" parent="Palmerston"]
 script = ExtResource( 3 )

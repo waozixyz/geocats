@@ -11,6 +11,7 @@ func _check_colliders(now = false):
 	if PROGRESS.variables.get(unlock_var) == true or now or global.user.location == 1 and not is_after_battle:
 		sprite.animation = "open"
 		sprite.play()
+		disabled = true
 		if global.user.location == 1:
 			if not is_after_battle:
 				player.visible = false

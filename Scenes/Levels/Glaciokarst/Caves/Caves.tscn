@@ -71,14 +71,20 @@ extents = Vector2( 26.8, 20 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 50, 50 )
 
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 53.6001, 4 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 697.789, 11 )
+
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 63.2, 2 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 20.8, 6 )
-
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 24, 8 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 23.2126, 6 )
@@ -94,12 +100,6 @@ extents = Vector2( 17, 6 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 17, 6 )
-
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 53.6001, 4 )
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 697.789, 11 )
 
 [sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 10, 244 )
@@ -209,7 +209,7 @@ scale = Vector2( 0.23, 0.24 )
 texture = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 36, 406 )
+position = Vector2( 541, 2174 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 1565
@@ -247,6 +247,21 @@ polygon = PoolVector2Array( 1699, 2407, 1709.2, 2336.2, 1729, 2299, 1751, 2299, 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 122.4, 1537.6, 112, 1586.4, 116.8, 1623.2, 134.4, 1652.8, 152.8, 1690.4, 160, 1720, 195.2, 1740, 196, 1792.8, 247.2, 1799.2, 332.8, 1799.2, 371.2, 1789.6, 472, 1792.8, 556, 1786.4, 693.6, 1788.8, 799.2, 1773.6, 988.8, 1772.8, 1068.8, 1789.6, 1132.8, 1791.2, 1153.6, 1796, 1196, 1796, 1224, 1760, 1222.4, 1699.2, 1220, 1686.4, 1216.8, 1648, 1216.8, 1528, 1216.8, 1429.6, 1212, 1303.2, 1203.2, 1205.6, 1212, 1129.6, 1202.4, 1069.6, 1215.2, 1014.4, 1214.4, 1012.8, 1202.4, 977.6, 1158.4, 952.8, 1158.4, 940.8, 1165.6, 934.4, 1189.6, 935.2, 1206.4, 925.6, 1183.2, 904, 1192.8, 880.8, 1202.4, 877.6, 1200.8, 845.6, 1201.6, 761.6, 1202.4, 653.6, 1205.6, 563.2, 1184.8, 474.4, 1178.4, 412, 1180, 362.4, 1199.2, 362.4, 1200.8, 244.8, 1207.2, 214.4, 1252.8, 215.2, 1252.8, 1906.4, -3.2, 1905.6, 2.4, 1535.2 )
 
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 1136, 841.6 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 600.8, 328.8 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 22 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 568.78, -10.5743 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 23 )
+
 [node name="Platforms" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 7
@@ -261,10 +276,6 @@ one_way_collision = true
 position = Vector2( 1156, 404.8 )
 shape = SubResource( 15 )
 one_way_collision = true
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="Platforms"]
-position = Vector2( 1136, 841.6 )
-shape = SubResource( 16 )
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Platforms"]
 position = Vector2( 872, 1572 )
@@ -291,14 +302,6 @@ one_way_collision = true
 position = Vector2( 1207, 1742 )
 shape = SubResource( 21 )
 one_way_collision = true
-
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="Platforms"]
-position = Vector2( 600.8, 328.8 )
-shape = SubResource( 22 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Platforms"]
-position = Vector2( 568.78, -10.5743 )
-shape = SubResource( 23 )
 
 [node name="End" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 22, 83 )
