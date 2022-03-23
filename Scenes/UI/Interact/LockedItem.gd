@@ -11,18 +11,21 @@ export(float) var unlock_volume = 1
 export(String) var relock_var
 export(bool) var one_use = true
 export(bool) var disable_locked_item = true
+
 func _relock():
 	to_unlock.visible = false
 	if disable_locked_item:
 		to_unlock.disabled = true
-	if to_unlock.get(disable_player) and not to_unlock.disable_player.empty():
+	if to_unlock is E_Interact and not to_unlock.disable_player.empty():
 		current_scene.set_disable("player", to_unlock.disable_player, false)
+	if not dialogue_file:
+		disabled = true
 var to_unlock 
 func _check_unlocked():
 	if to_unlock:
 		if relock_var and PROGRESS.variables.get(relock_var) and PROGRESS.variables[relock_var]:
 			_relock()
-		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var] :
+		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var] or true:
 			to_unlock.visible = true
 			to_unlock.disabled = false
 			if one_use:
