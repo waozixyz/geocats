@@ -49,6 +49,6 @@
     "operation": "variable",
     "dictionary": "variables",
     "text": "Ok, let's go!",
-    "value": [["affogato_follow", true]]
+    "value": [["arcade_affogato_follow", true]]
   },
 }
