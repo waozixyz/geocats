@@ -112,8 +112,14 @@ func _process(_delta):
 		set_disable("player", "dead")
 		dead = true
 	if dead and global.user.hp < 100:
+		player.velocity.x = 0
+		player.velocity.y = 0
+		player.collision_layer = 0
+		player.collision_mask = 0
 		global.user.hp += 1
 	elif dead and not tween.is_active():
+		player.collision_layer = 1
+		player.collision_mask = 1
 		if reload_on_death:
 			var err = get_tree().reload_current_scene()
 			assert(err == OK)

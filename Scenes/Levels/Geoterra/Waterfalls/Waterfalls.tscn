@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Scenes/UI/Interact/ClickToNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Waterfalls/Waterfall_BG.png" type="Texture" id=2]
@@ -52,6 +52,8 @@
 [ext_resource path="res://Scenes/UI/Interact/E_Interact.gd" type="Script" id=50]
 [ext_resource path="res://Assets/Player/Spritesheets/0xoplasmosis_tileset.png" type="Texture" id=51]
 [ext_resource path="res://Scenes/Agents/AttackAI.gd" type="Script" id=52]
+[ext_resource path="res://Scenes/Levels/Geoterra/Waterfalls/OxoDamageArea.gd" type="Script" id=53]
+[ext_resource path="res://Scenes/Environment/Teleport/RespawnLocationOnTouch.gd" type="Script" id=54]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6089, 9.60385 )
@@ -322,6 +324,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 20.4043, 15.9136 )
 
+[sub_resource type="RectangleShape2D" id=81]
+extents = Vector2( 24.5, 21 )
+
 [sub_resource type="CircleShape2D" id=43]
 radius = 14.0
 
@@ -382,6 +387,9 @@ font_data = ExtResource( 16 )
 [sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 106.5, 89.5 )
 
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 72.5, 72.5 )
+
 [node name="Waterfalls" type="Node2D"]
 script = ExtResource( 12 )
 music = [ NodePath("WaterfallMusicBeforeNotebook"), NodePath("WaterfallMusicAfterNotebook") ]
@@ -426,7 +434,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 238, 3333 )
+position = Vector2( 232, 3337 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 7000
@@ -472,10 +480,17 @@ one_way_collision = true
 [node name="TopRightSurface" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
 collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D207" type="CollisionPolygon2D" parent="Collisions/TopRightSurface"]
 position = Vector2( -788.715, -3069.63 )
 polygon = PoolVector2Array( 7639.86, 3653.06, 7619.45, 3653.06, 7625.45, 3648.26, 7649.46, 3645.86, 7738.3, 3557.02, 7943.58, 3557.02, 7837.94, 3620.65, 7753.9, 3655.46, 7667.47, 3651.86 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D5" type="CollisionPolygon2D" parent="Collisions/TopRightSurface"]
 position = Vector2( 7934.22, -24.8109 )
@@ -484,6 +499,10 @@ polygon = PoolVector2Array( -50.6675, 108.845, -0.247559, 5.60322, 45.3672, 4.40
 [node name="TopGroundPlatforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
 collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/TopGroundPlatforms"]
 position = Vector2( 6978.39, 472.989 )
@@ -494,6 +513,9 @@ one_way_collision = true
 position = Vector2( 7121.25, 477.791 )
 shape = SubResource( 2 )
 one_way_collision = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D213" type="CollisionPolygon2D" parent="Collisions/TopGroundPlatforms"]
 position = Vector2( -493.397, -2851.14 )
@@ -1647,6 +1669,9 @@ collision_mask = 0
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Collisions/LowerGround"]
 position = Vector2( -2314.53, 3737.1 )
 polygon = PoolVector2Array( 2524.61, 361.339, 3177.68, 456.177, 3813.93, 421.363, 4136.86, 230.487, 4334.94, 166.862, 4662.67, 332.528, 5056.88, 351.726, 5498.2, 171.664, 5972.39, 130.847, 6244.9, -0.00512695, 6457.84, -3.61938, 6672.27, 13.2002, 6993.26, 124.832, 7030.47, 136.837, 7340.2, 208.866, 7594.7, 217.269, 7915.97, 195.673, 8384.61, 240.078, 8718.35, 212.467, 8863.6, 230.474, 9558.68, 352.923, 9753.91, 513.8, 10090, 551.015, 10516.2, 711.879, 10723.9, 768.302, 10721.9, 749.082, 10603.1, 681.855, 10595.9, 653.043, 10565.9, 629.034, 10546.7, 627.833, 10532.3, 638.638, 10468.6, 611.026, 10349.8, 576.213, 10216.5, 498.182, 10040.1, 450.162, 9938.03, 445.36, 9809.58, 440.559, 9742.36, 352.923, 9654.72, 165.648, 9640.31, 127.233, 9389.42, 214.868, 9282.57, 244.88, 9196.14, 241.279, 9122.91, 235.276, 9088.09, 226.873, 9029.27, 225.672, 8958.44, 201.663, 8862.4, 199.262, 8741.16, 170.45, 8669.13, 171.651, 8639.11, 183.656, 8527.47, 190.858, 8454.24, 201.663, 8345, 198.061, 8168.53, 188.458, 8121.71, 172.851, 8049.68, 152.443, 8002.86, 157.245, 7929.63, 135.636, 7881.61, 135.636, 7825.19, 146.441, 7726.75, 175.252, 7606.7, 189.658, 7377.41, 184.856, 7310.18, 182.455, 7222.55, 157.245, 7176.93, 151.243, 6993.26, 105.625, 6974.05, 93.6196, 6822.79, 34.7961, 6682.33, -7.2207, 6615.1, -14.4236, 6555.08, -42.0347, 6507.06, -74.4478, 6394.22, -110.462, 6375.37, -110.213, 6269.21, -68.9248, 6249.43, -68.0864, 6216.05, -45.4895, 6185.96, -43.7866, 6145.59, -38.074, 6067.23, -1.20557, 6044.42, 14.4006, 5998.8, 40.8113, 5968.79, 50.415, 5933.58, 58.2842, 5721.3, 56.4565, 5710.87, 63.3374, 5648.23, 63.8706, 5637.51, 69.48, 5559.82, 66.5081, 5436.23, 114.031, 5304.18, 156.047, 5246.55, 181.257, 5200.93, 228.076, 5161.32, 261.689, 5125.3, 279.697, 5067.68, 306.107, 5011.26, 309.709, 4900.81, 286.9, 4828.79, 266.491, 4773.56, 280.897, 4679.93, 271.293, 4635.51, 240.081, 4507.06, 145.243, 4337.02, 69.4504, 4264.67, 68.999, 4036.37, 155.61, 3893.49, 252.519, 3766.54, 316.947, 3727.65, 334.939, 3574.28, 392.207, 3390, 394.855, 3127.27, 367.983, 2634.29, 323.987, 2569.79, 318.539, 2533.07, 302.646 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TowerPlatforms" type="StaticBody2D" parent="Collisions"]
 collision_layer = 7
@@ -1804,7 +1829,8 @@ __meta__ = {
 position = Vector2( 339, 3350 )
 script = ExtResource( 13 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 territory = 1
 geoterra = 5
@@ -1966,7 +1992,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "idle"
-frame = 24
+frame = 3
 playing = true
 centered = false
 script = SubResource( 26 )
@@ -1986,7 +2012,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 39 )
 animation = "idle"
-frame = 14
+frame = 20
 playing = true
 flip_h = true
 
@@ -2034,7 +2060,7 @@ position = Vector2( 85, 27.5 )
 shape = SubResource( 42 )
 
 [node name="0xoplasmosis" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4732, 2048 )
+position = Vector2( 6111, 1475 )
 collision_layer = 3
 collision_mask = 2
 script = ExtResource( 52 )
@@ -2056,10 +2082,76 @@ script = ExtResource( 23 )
 position = Vector2( 0.472656, -0.0865479 )
 shape = SubResource( 78 )
 
+[node name="Area2D" type="Area2D" parent="NPC/0xoplasmosis"]
+script = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis/Area2D"]
+position = Vector2( -2.5, -1 )
+shape = SubResource( 81 )
+
+[node name="0xoplasmosis2" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 349, 2049 )
+collision_layer = 3
+collision_mask = 2
+script = ExtResource( 52 )
+__meta__ = {
+"_edit_group_": true
+}
+add_move_n_slide = true
+jump_height = 240
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/0xoplasmosis2"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 76 )
+animation = "idle"
+frame = 19
+flip_h = true
+script = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis2"]
+position = Vector2( 0.472656, -0.0865479 )
+shape = SubResource( 78 )
+
+[node name="Area2D" type="Area2D" parent="NPC/0xoplasmosis2"]
+script = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis2/Area2D"]
+position = Vector2( -2.5, -1 )
+shape = SubResource( 81 )
+
+[node name="0xoplasmosis3" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 5632, 2897 )
+collision_layer = 3
+collision_mask = 2
+script = ExtResource( 52 )
+__meta__ = {
+"_edit_group_": true
+}
+add_move_n_slide = true
+jump_height = 240
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/0xoplasmosis3"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 76 )
+animation = "idle"
+frame = 19
+flip_h = true
+script = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis3"]
+position = Vector2( 0.472656, -0.0865479 )
+shape = SubResource( 78 )
+
+[node name="Area2D" type="Area2D" parent="NPC/0xoplasmosis3"]
+script = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis3/Area2D"]
+position = Vector2( -2.5, -1 )
+shape = SubResource( 81 )
+
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2( 6015, 331 )
 collision_layer = 7
-collision_mask = 0
 gravity_scale = 20.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball"]
@@ -2326,7 +2418,7 @@ texture = ExtResource( 37 )
 position = Vector2( 112.755, 60.2212 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 55 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayerForResearchCabin/ResearchCabin/OpenMicroscope/0xoplasmosisMicroscope"]
@@ -2853,5 +2945,75 @@ scale = Vector2( 1, 2 )
 stream = ExtResource( 47 )
 volume_db = -11.187
 autoplay = true
+
+[node name="RespawnLocationOnTouch" type="Area2D" parent="."]
+position = Vector2( 705, 939 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch"]
+shape = SubResource( 82 )
+
+[node name="RespawnLocationOnTouch2" type="Area2D" parent="."]
+position = Vector2( 2217, 2011 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch2"]
+shape = SubResource( 82 )
+
+[node name="RespawnLocationOnTouch3" type="Area2D" parent="."]
+position = Vector2( 2178, 497 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch3"]
+shape = SubResource( 82 )
+
+[node name="RespawnLocationOnTouch4" type="Area2D" parent="."]
+position = Vector2( 6504, 1638 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch4"]
+shape = SubResource( 82 )
+
+[node name="RespawnLocationOnTouch5" type="Area2D" parent="."]
+position = Vector2( 3732, 2299 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch5"]
+shape = SubResource( 82 )
+
+[node name="RespawnLocationOnTouch6" type="Area2D" parent="."]
+position = Vector2( 3307, 1424 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch6"]
+shape = SubResource( 82 )
+
+[node name="RespawnLocationOnTouch7" type="Area2D" parent="."]
+position = Vector2( 2134, 2969 )
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLocationOnTouch7"]
+shape = SubResource( 82 )
 
 [editable path="Player"]

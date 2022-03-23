@@ -113,7 +113,6 @@ func _physics_process(_delta):
 
 			if normal.x > -max_angle && normal.x < max_angle and normal.y < max_angle:
 				var slope_angle = normal.dot(Vector2(0,-1)) - 1
-
 				new_rot += -slope_angle * 3 * normal.x
 			else:
 				new_rot = rot * .5

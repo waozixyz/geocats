@@ -15,7 +15,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player" and not disabled:
-
 		touching = true
 
 func _on_body_exited(body):
