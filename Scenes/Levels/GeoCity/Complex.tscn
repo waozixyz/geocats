@@ -685,7 +685,7 @@ one_way_collision = true
 [node name="Agents" type="Node2D" parent="."]
 
 [node name="Cleopardis" type="Area2D" parent="Agents"]
-position = Vector2( 73, 176 )
+position = Vector2( 73, 188 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
