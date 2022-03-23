@@ -9,7 +9,7 @@ func _ready():
 	#pumpkin_ui.visible = false
 	._ready()
 
-func _process(delta):
+func _process(_delta):
 	if visible:
 		disabled = false
 		if do_something:

@@ -224,9 +224,10 @@ func _on_TabRight_pressed():
 
 
 func _on_ImageButton_pressed():
-	var current_dex = dex_data[current_tab]
+	pass
+	#var current_dex = dex_data[current_tab]
 
-	if current_dex.data.has(active_title):
-		var current_nft = current_dex.data[active_title]
+	#if current_dex.data.has(active_title):
+	#	var current_nft = current_dex.data[active_title]
 
 	

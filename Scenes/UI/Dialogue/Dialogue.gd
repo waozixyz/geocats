@@ -124,7 +124,8 @@ var avatar_right : String = ''
 
 var shaking : bool = false
 func label_clicked(data):
-	OS.shell_open(data)
+	var err = OS.shell_open(data)
+	assert(err == OK)
 func _ready():
 	var err = label.connect("meta_clicked", self, "label_clicked")
 	assert(err == OK)

@@ -7,7 +7,6 @@ onready var giant_pumpkin = $GiantPumpkin
 var res_path = "res://Assets/Levels/GeoCity/GeoCity/"
 
 func _ready():
-	var follow = PROGRESS.variables.get("affogato_follow")
 	
 	#var season = utils.get_season()
 	var season = "Summer"
@@ -50,7 +49,7 @@ func set_theme(theme): #Change to Pumpkin function which is called by collision
 		else:
 			child.play()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var teleport = PROGRESS.variables.get("teleport_geolodge")
 	if teleport:
 		PROGRESS.variables["teleport_geolodge"] = false

@@ -320,14 +320,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 54, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 54, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 50, 54 )
@@ -336,17 +328,25 @@ region = Rect2( 0, 0, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 0, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 54, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=72]
 animations = [ {
-"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
 "frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ), SubResource( 70 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [sub_resource type="AtlasTexture" id=73]
@@ -760,6 +760,7 @@ dialogue_file = "res://Assets/Levels/GeoCity/GeoCity/feline_locked_door.json"
 sound_effect = "res://Assets/UI/Feline/Sounds/Feline_Owch.wav"
 item_node = NodePath("DonutShop")
 unlock_var = "geocity_donutshop_open"
+disable_locked_item = false
 
 [node name="DonutShop" type="Area2D" parent="Portals/LockedItem"]
 script = ExtResource( 19 )

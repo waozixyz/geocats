@@ -9,13 +9,13 @@ func _ready():
 	if not get_tree().get_current_scene().get("player") == null:
 		player = get_tree().get_current_scene().player
 
-func _finished_playing(id, sound, object):
+func _finished_playing(i, sound, object):
 	if object:
 		object.remove_child(sound)
 		object.playing = false
 	else:
 		remove_child(sound)
-	playing.erase(id)
+	playing.erase(i)
 
 func play_sound(sound_file, volume = 100, loop = false, object = null):
 	if sound_file:

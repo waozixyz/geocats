@@ -9,20 +9,25 @@ export(String) var unlock_var
 export(String, FILE, "*.wav, *.ogg") var unlock_sound
 export(float) var unlock_volume = 1
 export(String) var relock_var
-
+export(bool) var one_use = true
+export(bool) var disable_locked_item = true
 func _relock():
 	to_unlock.visible = false
-	to_unlock.disabled = true
-	if disable_player and not to_unlock.disable_player.empty():
+	if disable_locked_item:
+		to_unlock.disabled = true
+	if to_unlock.get(disable_player) and not to_unlock.disable_player.empty():
 		current_scene.set_disable("player", to_unlock.disable_player, false)
 var to_unlock 
 func _check_unlocked():
 	if to_unlock:
-		if PROGRESS.variables.get(relock_var) and PROGRESS.variables[relock_var]:
+		if relock_var and PROGRESS.variables.get(relock_var) and PROGRESS.variables[relock_var]:
 			_relock()
 		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var] :
 			to_unlock.visible = true
 			to_unlock.disabled = false
+			if one_use:
+				disabled = true
+			
 		else:
 			_relock()
 			
@@ -32,5 +37,6 @@ func _ready():
 		printerr("item to unlock not found: " + item_node)
 	_check_unlocked()
 
-func _process(delta):
+func _process(_delta):
 	_check_unlocked()
+
