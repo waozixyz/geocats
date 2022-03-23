@@ -1392,9 +1392,6 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 26 )
 texture_focused = ExtResource( 26 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Horticulture" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
 margin_left = -144.0
@@ -1577,8 +1574,7 @@ position = Vector2( 3499.67, 552 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 24 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 disable_player = "computer"
 make_node_visible = NodePath("../CanvasLayer/Computer")

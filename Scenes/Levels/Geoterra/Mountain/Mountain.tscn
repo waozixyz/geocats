@@ -373,7 +373,7 @@ position = Vector2( 370.889, 674.259 )
 texture = ExtResource( 25 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 54, 4863 )
+position = Vector2( 70, 4863 )
 
 [node name="Camera2D" parent="Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -608,6 +608,7 @@ __meta__ = {
 }
 item_node = NodePath("ToOutpost")
 unlock_var = "DesertOutpostUnlocked"
+disable_locked_item = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Portals/LockedItem"]
 position = Vector2( 4877.09, 3671.92 )

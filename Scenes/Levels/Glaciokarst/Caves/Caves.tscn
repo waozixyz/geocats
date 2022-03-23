@@ -151,6 +151,7 @@ position = Vector2( 442, 2105 )
 script = ExtResource( 2 )
 item_node = NodePath("GoInside")
 unlock_var = "glaciokarst_cathead"
+disable_locked_item = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CatHead"]
 position = Vector2( 2, -19 )

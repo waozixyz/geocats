@@ -247,7 +247,8 @@ func update_inputs():
 
 # player damage function
 func damage(dmg):
-	global.user.hp -= dmg
+	if not current_scene.is_disabled("player"):
+		global.user.hp -= dmg
 	sprite.material.set_shader_param("dmg", true)
 	hurt_sfx.play()
 	
