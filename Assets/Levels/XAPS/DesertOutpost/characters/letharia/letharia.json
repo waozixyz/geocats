@@ -76,31 +76,22 @@
   "4": {
     "type": "question",
     "text": "These Worm-like creatures spend most of their time burrowing underneath the sand.",
-    "options": ["Sand Worms", "Space Worms", "Mooninites"],
+    "options": ["Space Worms", "Sand Worms", "Mooninites"],
     "next": ["chose_option_1", "chose_option_2", "chose_option_3"]
   },
   "chose_option_1": {
-    "type": "action",
-    "operation": "variable",
-    "dictionary": "variables",
-    "text": "Sand Worms! Brilliant!",
-    "value": [["question", "1"]],
-    "next": "4b"
-  },
-  "chose_option_2": {
-    "type": "action",
-    "operation": "variable",
-    "dictionary": "variables",
-    "text": "...Space worms? I'm sorry, but I think you better keep studying...",
-    "value": [["question", "2"]],
+    "type": "text",
+    "content": "...Space worms? I'm sorry, but I think you better keep studying...",
     "next": "knowledge_on"
   },
+  "chose_option_2": {
+    "type": "text",
+    "content": "Sand Worms! Brilliant!",
+    "next": "4b"
+  },
   "chose_option_3": {
-    "type": "action",
-    "operation": "variable",
-    "dictionary": "variables",
-    "text": "You better lay off the catnip and keep studying - Your answer is incorrect.",
-    "value": [["question", "3"]],
+    "type": "text",
+    "content": "You better lay off the catnip and keep studying - Your answer is incorrect.",
     "next": "knowledge_on"
   },
 
@@ -215,7 +206,7 @@
   "chrysoberyl_on_4": {
     "type": "text",
     "content": "Ted's not the most focussed scientist I've met, but having his research is better than having none I suppose... Is that a crystal you have there?",
-    "next": "no option"
+    "next": "no_option"
   },
   "no_option": {
     "type": "text",
@@ -302,6 +293,14 @@
     "position": "left",
     "type": "text",
     "content": "See you again soon! When the time is right, I'll teach you a few techneques like super-dashing!",
+    "next": "finish"
+  },
+  "finish": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [["teleport", true]],
+    "text": "...",
     "next": ""
-  }
+  },
 }

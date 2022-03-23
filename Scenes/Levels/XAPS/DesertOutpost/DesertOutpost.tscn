@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/stars_space.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/far_bg.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Levels/XAPS/DesertOutpost/DesertOutpost.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/geopedia/icons/georing_pressed.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/ernst/ernst.png" type="Texture" id=19]
@@ -55,7 +56,6 @@
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/sol/cactusFarmer2.png" type="Texture" id=54]
 [ext_resource path="res://Scenes/Environment/Teleport/External.gd" type="Script" id=55]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/fier/desertCat.png" type="Texture" id=56]
-[ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=57]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/fg_panel.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/bg_plants.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Levels/XAPS/DesertOutpost/characters/nostoc/nostoc.png" type="Texture" id=60]
@@ -548,7 +548,7 @@ extents = Vector2( 50, 50 )
 extents = Vector2( 37, 35.5 )
 
 [node name="DesertOutpost" type="Node2D"]
-script = ExtResource( 57 )
+script = ExtResource( 16 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )

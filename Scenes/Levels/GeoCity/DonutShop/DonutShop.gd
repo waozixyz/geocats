@@ -10,7 +10,8 @@ func _physics_process(delta):
 	if teleport:
 		PROGRESS.variables["teleport"] = false
 		global.user.location = 0
-		AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
+		var sound = AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
+		sound.pause_mode = PAUSE_MODE_PROCESS
 		SceneChanger.change_scene("Geoterra", "Creek")
 
 
