@@ -162,7 +162,7 @@ extents = Vector2( 10, 4000 )
 extents = Vector2( 10, 492 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 130, 185 )
+extents = Vector2( 130, 108.419 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 17 )
@@ -545,7 +545,7 @@ script = ExtResource( 20 )
 json_file = "res://Assets/Levels/Geoterra/Creek/HangingCat/hanging_cat.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Hanging Cat/Area2D"]
-position = Vector2( 24, -104 )
+position = Vector2( 21.4351, -36.7915 )
 shape = SubResource( 31 )
 
 [node name="HangingCat" type="AnimatedSprite" parent="Cats/Hanging Cat"]
@@ -581,6 +581,7 @@ script = ExtResource( 26 )
 position = Vector2( 56, 3861 )
 
 [node name="Camera2D" parent="Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
 limit_right = 9000
 limit_bottom = 5400
 

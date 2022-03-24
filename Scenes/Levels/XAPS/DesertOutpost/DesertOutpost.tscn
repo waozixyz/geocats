@@ -857,6 +857,7 @@ __meta__ = {
 position = Vector2( 1577.6, 1800 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 68 )
+one_way_collision = true
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="CollisionColliders/Ground2"]
 position = Vector2( 3543.12, 1252.65 )
