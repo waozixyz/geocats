@@ -1,5 +1,6 @@
 {
   "first": {
+    "name": "Ripley",
     "avatar": "sitting_cat.png",
     "position": "left",
     "animation_in": "fade_in",
@@ -15,6 +16,15 @@
   "2": {
     "type": "text",
     "content": "Lucky me, I've got nine lives...",
+    "next": ""
+  },
+  "repeat": {
+    "name": "Ripley",
+    "avatar": "sitting_cat.png",
+    "position": "left",
+    "animation_in": "fade_in",
+    "type": "text",
+    "content": "Some pals of mine are chilling at the top of this tower. Let them know Ripley says hi!",
     "next": ""
   }
 }

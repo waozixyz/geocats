@@ -1,6 +1,7 @@
 {
   "first": {
     "avatar": "sleeping_cat.png",
+    "name": "Freese",
     "position": "left",
     "type": "question",
     "text": "Can you hear the whistling of the Aurora Borealis?",
@@ -11,7 +12,7 @@
   "yes_option": {
     "type": "text",
     "content": "...Electrically charged solar ions,@surfing on solar winds —",
-    "next": "1",
+    "next": "1"
   },
   "no_option": {
     "avatar": "sleeping_cat_annoyed.png",
@@ -19,11 +20,11 @@
     "position": "left",
     "type": "text",
     "content": "...",
-    "next": "",
+    "next": ""
   },
   "1": {
     "type": "text",
     "content": "Having a big party in the Ionosphere!",
-    "next": "",
+    "next": ""
   }
 }
