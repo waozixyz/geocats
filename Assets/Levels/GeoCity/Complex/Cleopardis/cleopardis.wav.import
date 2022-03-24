@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Cleopardis.wav-e6ca1d2f7fb16e541499a32ef2573eec.sample"
+path="res://.import/Cleopardis.wav-1bf0a3db7a068be501bc5097cf9575d3.sample"
 
 [deps]
 
-source_file="res://Assets/Agents/Cleopardis/Cleopardis.wav"
-dest_files=[ "res://.import/Cleopardis.wav-e6ca1d2f7fb16e541499a32ef2573eec.sample" ]
+source_file="res://Assets/Levels/GeoCity/Complex/Cleopardis/Cleopardis.wav"
+dest_files=[ "res://.import/Cleopardis.wav-1bf0a3db7a068be501bc5097cf9575d3.sample" ]
 
 [params]
 

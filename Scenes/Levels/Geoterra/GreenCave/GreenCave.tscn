@@ -30,83 +30,83 @@ extents = Vector2( 46.6365, 32.3975 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 64.9714, 54.129 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 9, 203.27 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 9, 299.142 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 13.9286, 131.468 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 9, 60.4341 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 134.445, 129.817 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 248.793, 102.488 )
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 11 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 11 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 11 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 11 )
-region = Rect2( 60, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 11 )
 region = Rect2( 30, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 11 )
 region = Rect2( 45, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 11 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 11 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 11 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 11 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 11 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 21 ), SubResource( 22 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 19 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 20 ), SubResource( 21 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 33.2397, 28.051 )
 
 [node name="GreenCave" type="Node2D"]
@@ -183,7 +183,9 @@ position = Vector2( -6432.07, -2651.86 )
 polygon = PoolVector2Array( 7746.72, 3606.52, 7708.39, 3635.13, 7670.68, 3646.87, 7584.62, 3647.9, 7513.89, 3605.23, 7489.29, 3585.03, 7485.73, 3554.77, 7541.56, 3617.47, 7614.49, 3642.27, 7668.96, 3641.9, 7701.75, 3631.68, 7743.04, 3593.2 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 0
 
@@ -349,7 +351,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="VineLadder4" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 68.8368, 377.011 )
@@ -361,7 +363,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder4"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 
 [node name="VineLadder3" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 1169.2, 191.155 )
@@ -373,7 +375,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder3"]
 position = Vector2( 0.928589, -4.79605 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="VineLadder5" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 216.536, 867.893 )
@@ -385,7 +387,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder5"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 
 [node name="VineLadder7" type="Area2D" parent="Interactables/Ladders"]
 position = Vector2( 523.604, 508.516 )
@@ -397,7 +399,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Ladders/VineLadder7"]
 position = Vector2( 0, -4.79604 )
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 
 [node name="waterarea" type="Area2D" parent="Interactables"]
 position = Vector2( 136.547, 1131.07 )
@@ -410,7 +412,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea"]
 position = Vector2( 0, 0.747559 )
-shape = SubResource( 13 )
+shape = SubResource( 10 )
 
 [node name="waterarea2" type="Area2D" parent="Interactables"]
 position = Vector2( 519.566, 1167.8 )
@@ -422,7 +424,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/waterarea2"]
-shape = SubResource( 14 )
+shape = SubResource( 11 )
 
 [node name="Cats" type="Node2D" parent="."]
 
@@ -435,14 +437,14 @@ sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/CowboyCat"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 25 )
+frames = SubResource( 22 )
 animation = "idle"
-frame = 13
+frame = 4
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/CowboyCat"]
 position = Vector2( 2.47534, -6.80725 )
-shape = SubResource( 26 )
+shape = SubResource( 23 )
 
 [editable path="Player"]

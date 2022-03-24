@@ -175,7 +175,7 @@
   "chrysoberyl_off_2": {
     "type": "text",
     "content": "It's right by that weird cat that's always hanging above the cliff for fun.",
-    "next": ""
+    "next": "chrysoberyl_off"
   },
   "chrysoberyl_on": {
     "name": "Letharia",

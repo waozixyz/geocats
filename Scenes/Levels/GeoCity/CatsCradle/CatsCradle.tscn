@@ -148,41 +148,29 @@ shader_param/dmg = false
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 15, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 18 )
-region = Rect2( 15, 0, 15, 15 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 18 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
 
@@ -206,29 +194,36 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 20 ), SubResource( 17 ), SubResource( 20 ), SubResource( 20 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 17 ) ],
 "loop": true,
 "name": "blink",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 30 ), SubResource( 31 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 29 ) ],
+"frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "crouch",
 "speed": 5.0
@@ -237,6 +232,11 @@ animations = [ {
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 17 ), SubResource( 29 ), SubResource( 17 ), SubResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=33]
@@ -306,7 +306,7 @@ extents = Vector2( 51, 5 )
 extents = Vector2( 40.5, 34 )
 
 [sub_resource type="RectangleShape2D" id=55]
-extents = Vector2( 27, 4 )
+extents = Vector2( 21.6661, 4 )
 
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 22, 4 )
@@ -520,7 +520,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
+[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=[
+"end",
+]]
 position = Vector2( -26, 636.5 )
 shape = SubResource( 33 )
 
@@ -652,7 +654,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainColliders/Stereo"]
-position = Vector2( 266, 58 )
+position = Vector2( 271.085, 58 )
 shape = SubResource( 55 )
 one_way_collision = true
 
@@ -662,7 +664,7 @@ shape = SubResource( 56 )
 one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1293, 187 )
+position = Vector2( 1235.72, 196.261 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 1440
@@ -745,7 +747,6 @@ texture = ExtResource( 7 )
 position = Vector2( 799.27, 653.255 )
 script = ExtResource( 4 )
 sound_effect = "res://Assets/Levels/GeoCity/CatsCradle/StereoGeoquariumSample.wav"
-sound_volume = 65.378
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/StereoSFX"]
 position = Vector2( -6.53906, 8.40741 )
@@ -879,8 +880,8 @@ margin_right = 205.899
 margin_bottom = 44.8703
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 69 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Basic Techniques"
 fit_content_height = true
@@ -893,8 +894,8 @@ margin_right = 231.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 70 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Here's some advice:
 Use the arrow keys
@@ -915,8 +916,8 @@ margin_right = 307.0
 margin_bottom = 200.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 71 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Advanced Techniques
 "
@@ -930,8 +931,8 @@ margin_right = 293.101
 margin_bottom = 269.13
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 72 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Ladders are everywhere! 
 Use them to reach new heights that would normally be out of reach for a feline."
@@ -948,8 +949,8 @@ margin_right = 623.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 73 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Super Advanced Techniques"
 fit_content_height = true
@@ -962,8 +963,8 @@ margin_right = 629.0
 margin_bottom = 139.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 74 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Cats are expert climbers and
 parkour is an indispensable strategy that all cats should be aware of. If you're ever in danger, consider climbing a tree."
@@ -980,8 +981,8 @@ margin_right = 570.899
 margin_bottom = 171.87
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 75 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Nonaco's GeoRing"
 fit_content_height = true
@@ -994,8 +995,8 @@ margin_right = 469.0
 margin_bottom = 278.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 76 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Life's not always easy on a giant space-ring. But, we believe in you. Good luck on your adventures!"
 fit_content_height = true
@@ -1023,8 +1024,8 @@ margin_top = 90.0
 margin_right = 620.0
 margin_bottom = 530.0
 mouse_filter = 2
-custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 78 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 fit_content_height = true
 script = ExtResource( 12 )
 __meta__ = {
