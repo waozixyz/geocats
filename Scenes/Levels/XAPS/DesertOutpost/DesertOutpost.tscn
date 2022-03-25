@@ -320,7 +320,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=52]
-extents = Vector2( 59.8999, 35.0479 )
+extents = Vector2( 87.225, 59.2281 )
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 56 )
@@ -715,7 +715,7 @@ frame = 6
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sandcat2Area2D"]
-position = Vector2( 3.14985, -10.5166 )
+position = Vector2( 34.4077, 12.2605 )
 shape = SubResource( 52 )
 
 [node name="Fier" type="KinematicBody2D" parent="NPC"]
@@ -789,7 +789,7 @@ flip_h = true
 script = ExtResource( 12 )
 
 [node name="FelineArea" type="Area2D" parent="NPC"]
-position = Vector2( 388.81, 1055.76 )
+position = Vector2( 406.249, 1049.15 )
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
