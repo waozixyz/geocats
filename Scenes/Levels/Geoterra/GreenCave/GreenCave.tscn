@@ -439,7 +439,7 @@ sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 scale = Vector2( 4, 4 )
 frames = SubResource( 22 )
 animation = "idle"
-frame = 4
+frame = 16
 playing = true
 flip_h = true
 
