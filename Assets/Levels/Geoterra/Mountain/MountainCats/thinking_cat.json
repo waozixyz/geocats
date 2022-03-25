@@ -1,15 +1,16 @@
 {
   "first": {
     "avatar": "thinking_cat.png",
+    "name": "Galacticat",
     "position": "left",
     "animation_in": "fade_in",
     "type": "text",
-    "content": "Ears that hear, but do not listen — ",
+    "content": "There's a lot of land to explore. Geoterra isn't even completely mapped out yet!.",
     "next": "1"
   },
   "1": {
     "type": "text",
-    "content": "are no better than eyes that see,@but do not appreciate.",
+    "content": "My pal Garbitage from GeoCity knows lots of cool places to visit.",
     "next": "2"
   },
   "2": {
@@ -19,7 +20,7 @@
   },
   "3": {
     "type": "text",
-    "content": "That cool robot Garbitage shared that knowledge-bomb with me.@If you see him, let him know I say hi.",
+    "content": "Now that you've managed this trip on your own, I bet he has a fun adventure waiting for you",
     "next": ""
   }
 }

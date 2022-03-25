@@ -685,7 +685,7 @@ script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Thinking Cat"]
 script = ExtResource( 20 )
-character_name = "Strange Cat"
+character_name = "Galacticat"
 json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/thinking_cat.json"
 sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/thinking_cat.ogg"
 
@@ -730,7 +730,7 @@ script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Sleeping Cat"]
 script = ExtResource( 20 )
-character_name = "Strange Sleepy Cat"
+character_name = "Freese"
 json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.json"
 sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/sleeping_cat.ogg"
 
@@ -748,7 +748,7 @@ script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="AbovePlayer/Cats/Catnip Cat"]
 script = ExtResource( 20 )
-character_name = "Weird Cat"
+character_name = "Jay"
 json_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.json"
 sound_file = "res://Assets/Levels/Geoterra/Mountain/MountainCats/catnip_cat.ogg"
 

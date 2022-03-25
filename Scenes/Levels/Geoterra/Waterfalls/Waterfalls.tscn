@@ -1941,7 +1941,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-character_name = "Vacation Cat"
+character_name = "Pepper"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat1/VacationCat1.json"
 sound_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat1/VacationCat1.ogg"
 
@@ -1963,7 +1963,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-character_name = "Vacation Cat"
+character_name = "Peanut"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat2/VacationCat2.json"
 sound_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat2/VacationCat2.ogg"
 
@@ -1986,7 +1986,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-character_name = "Vacation Cat"
+character_name = "Lucky"
 json_file = "res://Assets/Levels/Geoterra/Waterfalls/VacationCat3/VacationCat3.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/VacationCat3"]
@@ -2018,7 +2018,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 44 )
 animation = "idle"
-frame = 6
+frame = 17
 playing = true
 flip_h = true
 
