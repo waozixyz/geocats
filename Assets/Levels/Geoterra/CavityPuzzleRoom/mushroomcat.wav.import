@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mushroomcat.wav-e1cc8292234a1d51a294c8b89218ae21.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.wav"
+dest_files=[ "res://.import/mushroomcat.wav-e1cc8292234a1d51a294c8b89218ae21.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

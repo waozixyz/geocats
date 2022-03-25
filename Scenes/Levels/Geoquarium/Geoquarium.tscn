@@ -2217,13 +2217,11 @@ __meta__ = {
 [node name="catellite1" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1102.73, 416.286 )
 frames = SubResource( 130 )
-frame = 1
 playing = true
 
 [node name="catellite2" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1096.23, 532.59 )
 frames = SubResource( 133 )
-frame = 1
 playing = true
 
 [node name="BlueGlow" type="TextureRect" parent="BelowPlayer/SpaceBG"]
@@ -2256,7 +2254,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 137 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]

@@ -1002,7 +1002,7 @@ position = Vector2( 2.29077, 0.729614 )
 shape = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat"]
-position = Vector2( 0.000121832, 2 )
+position = Vector2( -0.226441, 5.94263 )
 shape = SubResource( 61 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
@@ -1031,7 +1031,7 @@ position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat"]
-position = Vector2( 0, 1 )
+position = Vector2( -2.10693, 5.76898 )
 shape = SubResource( 61 )
 
 [node name="AvocatoArea2D" type="Area2D" parent="NPC"]
@@ -1101,7 +1101,7 @@ position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne"]
-position = Vector2( -2.10596, 1.67859 )
+position = Vector2( -1.86951, 6.05444 )
 shape = SubResource( 61 )
 
 [node name="Garbitage" type="Area2D" parent="NPC"]

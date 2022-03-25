@@ -1,0 +1,16 @@
+{
+    "first": {
+      "avatar": "mushroomcat.png",
+      "name": "Mushroom Cat",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "Groundcats prefer to stay indoors and can be quite grumpy - They are quite an elusive group.",
+      "next": "1"
+    },
+    "1": {
+      "type": "text",
+      "content": "...So I guess the Nonaco science department is trying to get an estimate of how many there are in this cave.@I think that's what this machine could be for.",
+      "next": ""
+    }
+  }
