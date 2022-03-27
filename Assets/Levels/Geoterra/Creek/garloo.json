@@ -1,0 +1,31 @@
+{
+    "first": {
+      "avatar": "garloo.png",
+      "name": "Garloo",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "Lost!?",
+      "next": "1"
+    },
+    "1": {
+      "type": "text",
+      "content": "I'm not lost... I'm a free spirit!",
+      "next": "2"
+    },
+    "2": {
+        "type": "text",
+        "content": "I'd rather do my own thing than stay with the group.",
+        "next": "3"
+      },
+      "3": {
+        "type": "text",
+        "content": "...But I guess it could be fun to hang out with my friends again.",
+        "next": "4"
+      },
+      "4": {
+        "type": "text",
+        "content": "Let's go, I'll help you find the other cats!",
+        "next": ""
+      }
+  }

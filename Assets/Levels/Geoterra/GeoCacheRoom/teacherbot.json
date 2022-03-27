@@ -5,12 +5,30 @@
       "position": "left",
       "animation_in": "fade_in",
       "type": "text",
-      "content": "To me, conservation isn't about keeping everyone away from nature.",
+      "content": "Have you seen three kittens running around here? There should be six of us... but I guess a few got bored and ran off.",
       "next": "1"
     },
     "1": {
       "type": "text",
-      "content": "It's about getting everyone out here to appreciate it.@That's why we bring these little monsters out here.",
-      "next": ""
-    }
+      "content": "These students and I are on a nature excursion. We're taking water samples and studying local ecology.",
+      "next": "2"
+    },
+    "2": {
+        "name": "Sparkle",
+        "avatar": "sparkle.png",
+        "animation_in": "fade_in",
+        "position": "left",
+        "type": "text",
+        "content": "Can you help us find them please?",
+        "next": "3"
+      },
+      "3": {
+        "name": "Daisy",
+        "avatar": "daisy.png",
+        "animation_in": "fade_in",
+        "position": "left",
+        "type": "text",
+        "content": "Yeah, we're tired of being educated. We want to go home!",
+        "next": ""
+      }
   }
