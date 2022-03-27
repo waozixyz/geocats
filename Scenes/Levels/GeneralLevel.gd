@@ -72,10 +72,10 @@ func _add_default_nodes():
 	add_child(crt_effect)
 	canvas_layer = CanvasLayer.new()
 	add_child(canvas_layer)
-	canvas_layer.add_child(feline)
 	chat_with.visible = false
 	canvas_layer.add_child(chat_with)
 	canvas_layer.add_child(dialogue)
+	canvas_layer.add_child(feline)
 	
 func next_song():
 	if music is Array:

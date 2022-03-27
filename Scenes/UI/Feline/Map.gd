@@ -17,6 +17,7 @@ var filter_out = ["Arcade", "Battle", "JokeRoom", "CatsCradle", "CavityPuzzleRoo
 
 func _replace_scene_name(scene_name):
 	match scene_name:
+		"DesertOutpost": return "Desert Outpost"
 		"CatsCradle": return "Cat's Cradel"
 		"Complex": return "NONACO Housing Project #420"
 		"Creek": return "Canopy Creek"
@@ -36,9 +37,10 @@ func label_clicked(data):
 	data = data.split(', ')
 	global.user.location = 0
 	SceneChanger.change_scene(data[0], data[1])
-	current_scene.set_disable("e_interact", "map", false)
+	if current_scene is GeneralLevel:
+		current_scene.set_disable("e_interact", "map", false)
 func _update_dialogue(territory):
-	if global.user.visited.has(territory):
+	if global.user.visited.has(territory) or true:
 		exclaim.visible = true
 		question.visible = false
 		var label = exclaim.get_node("RichTextLabel")
@@ -51,8 +53,9 @@ func _update_dialogue(territory):
 			var opt = filter_out.find(t)
 			if opt == -1:
 				# if the scene name has been visited, continue
-				opt = global.user.visited[territory].find(t)
-				if opt != -1:
+				#opt = global.user.visited[territory].find(t)
+
+				if opt != -1 or true:
 					label.append_bbcode("[center] Travel to [/center]")
 					label.newline()
 					label.append_bbcode("[center][color=blue][url=" + territory + ", " + t + "]" + _replace_scene_name(t)  + "[/url][/color][/center]")

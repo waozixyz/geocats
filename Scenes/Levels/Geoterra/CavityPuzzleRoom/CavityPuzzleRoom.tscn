@@ -460,26 +460,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=425]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="AtlasTexture" id=318]
-atlas = ExtResource( 41 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=319]
-atlas = ExtResource( 41 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=320]
-atlas = ExtResource( 41 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=321]
-atlas = ExtResource( 41 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=322]
-atlas = ExtResource( 41 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=323]
 atlas = ExtResource( 41 )
 region = Rect2( 0, 0, 15, 15 )
@@ -516,11 +496,31 @@ region = Rect2( 45, 30, 15, 15 )
 atlas = ExtResource( 41 )
 region = Rect2( 60, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=321]
+atlas = ExtResource( 41 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=322]
+atlas = ExtResource( 41 )
+region = Rect2( 15, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=318]
+atlas = ExtResource( 41 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=319]
+atlas = ExtResource( 41 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=320]
+atlas = ExtResource( 41 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=426]
 animations = [ {
-"frames": [ SubResource( 318 ), SubResource( 319 ), SubResource( 320 ) ],
+"frames": [ SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 324 ), SubResource( 324 ), SubResource( 324 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 325 ), SubResource( 325 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 327 ), SubResource( 327 ), SubResource( 328 ), SubResource( 328 ), SubResource( 328 ), SubResource( 329 ), SubResource( 330 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 330 ), SubResource( 329 ), SubResource( 328 ), SubResource( 327 ) ],
 "loop": true,
-"name": "climb",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 321 ), SubResource( 322 ) ],
@@ -528,9 +528,9 @@ animations = [ {
 "name": "walk",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 324 ), SubResource( 324 ), SubResource( 324 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 325 ), SubResource( 325 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 327 ), SubResource( 327 ), SubResource( 328 ), SubResource( 328 ), SubResource( 328 ), SubResource( 329 ), SubResource( 330 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 330 ), SubResource( 329 ), SubResource( 328 ), SubResource( 327 ) ],
+"frames": [ SubResource( 318 ), SubResource( 319 ), SubResource( 320 ) ],
 "loop": true,
-"name": "idle",
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -800,9 +800,7 @@ position = Vector2( 88, -5.81299 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 4 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 0.833, 1 )
 collision_layer = 7
 collision_mask = 0
@@ -831,6 +829,7 @@ json_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.json"
 sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.wav"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/MushroomCatArea2D"]
+position = Vector2( 4, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 426 )
 animation = "idle"

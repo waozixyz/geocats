@@ -209,16 +209,16 @@ animations = [ {
 extents = Vector2( 974.91, 131.2 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 1057.91, 148.2 )
+extents = Vector2( 176.671, 24.749 )
 
 [sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 1175, 162 )
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 526.71, 72 )
+extents = Vector2( 87.961, 12.024 )
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 12, 1480 )
+extents = Vector2( 12, 1519.86 )
 
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 12, 355.324 )
@@ -300,9 +300,7 @@ centered = false
 
 [node name="Collisions" type="Node2D" parent="."]
 
-[node name="Branches" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="Branches" type="StaticBody2D" parent="Collisions" groups=["end"]]
 visible = false
 
 [node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="Collisions/Branches"]
@@ -339,9 +337,7 @@ one_way_collision = true
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="Collisions/Branches"]
 polygon = PoolVector2Array( 719, 596, 607, 636, 551, 636, 551, 657, 643, 655, 705, 636 )
 
-[node name="BranchePlatforms" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="BranchePlatforms" type="StaticBody2D" parent="Collisions" groups=["end"]]
 visible = false
 
 [node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="Collisions/BranchePlatforms"]
@@ -403,9 +399,7 @@ visible = false
 polygon = PoolVector2Array( 551, 636, 486, 637, 428, 656, 365, 682, 365, 690, 459, 661, 552, 660 )
 one_way_collision = true
 
-[node name="Ground" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 0
 
@@ -436,9 +430,7 @@ polygon = PoolVector2Array( 5301, 3087, 5265, 3087, 5148, 3132, 4959, 3141, 4914
 position = Vector2( 2, -20 )
 polygon = PoolVector2Array( 8972, 5033, 8972, 4960, 8965, 4729, 8869, 4689, 8806, 4689, 8812, 1245, 8998, 1194, 8999, 5033 )
 
-[node name="GroundPlatforms" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="GroundPlatforms" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 0
 
@@ -516,9 +508,7 @@ one_way_collision = true
 polygon = PoolVector2Array( 6991, 2155, 6617, 2154, 6449, 2213, 6387, 2213, 6289, 2250, 6125, 2253, 5962, 2279, 5884, 2278, 5785, 2296, 5487, 2313, 5283, 2312, 5154, 2325, 4956, 2335, 4746, 2374, 4517, 2402, 4386, 2416, 4260, 2415, 4281, 2427, 4422, 2422, 4607, 2401, 4839, 2368, 5012, 2343, 5299, 2327, 5619, 2321, 5897, 2300, 6306, 2267, 6657, 2180, 6996, 2176 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 visible = false
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions/EndWalls"]
@@ -623,25 +613,24 @@ centered = false
 texture = ExtResource( 2 )
 centered = false
 
-[node name="waterarea3" type="Area2D" parent="Creek"]
+[node name="WaterAreaBottomRight" type="Area2D" parent="Creek"]
 position = Vector2( 1146.67, 142.5 )
 scale = Vector2( 0.166667, 0.166667 )
 script = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/WaterAreaBottomRight"]
 position = Vector2( 1125, 4187 )
 shape = SubResource( 40 )
 
-[node name="waterarea2" type="Area2D" parent="Creek"]
+[node name="WaterAreaBottomLeft" type="Area2D" parent="Creek"]
 position = Vector2( 261.333, 191.333 )
-scale = Vector2( 0.166667, 0.166667 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea2"]
-position = Vector2( 1108.09, 4207.2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/WaterAreaBottomLeft"]
+position = Vector2( 184.682, 701.201 )
 shape = SubResource( 41 )
 
 [node name="DeathZone" type="Area2D" parent="Creek"]
@@ -656,19 +645,23 @@ position = Vector2( 2641, 5374 )
 shape = SubResource( 42 )
 
 [node name="waterarea" type="Area2D" parent="Creek"]
-scale = Vector2( 0.166667, 0.166667 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea"]
-position = Vector2( 1108.09, 4207.2 )
+position = Vector2( 185.051, 702.602 )
 shape = SubResource( 43 )
 
-[node name="WaterNoise" type="AudioStreamPlayer2D" parent="Creek"]
+[node name="WaterNoise" type="AudioStreamPlayer2D" parent="Creek/waterarea"]
 position = Vector2( 113.419, 699.342 )
+stream = ExtResource( 25 )
+volume_db = -10.0
+autoplay = true
+
+[node name="WaterNoise2" type="AudioStreamPlayer2D" parent="Creek/waterarea"]
+position = Vector2( 226.333, 695 )
 stream = ExtResource( 25 )
 volume_db = -10.0
 autoplay = true
@@ -752,6 +745,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
+position = Vector2( 0.000488281, -6.56665 )
 shape = SubResource( 44 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]

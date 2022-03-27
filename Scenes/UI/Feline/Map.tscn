@@ -118,8 +118,8 @@ margin_top = 14.0
 margin_right = 173.0
 margin_bottom = 48.0
 theme = ExtResource( 11 )
-custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "Travel to Catnip Conservatory
 Travel to Catnip Conservatory
@@ -144,8 +144,8 @@ margin_top = 14.0
 margin_right = 173.0
 margin_bottom = 48.0
 theme = ExtResource( 11 )
-custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "Travel to Catnip Conservatory
 Travel to Catnip Conservatory
