@@ -14,8 +14,8 @@
       "next": "2"
     },
     "2": {
-        "name": "Sparkle",
-        "avatar": "sparkle.png",
+        "name": "Daisy",
+        "avatar": "daisy.png",
         "animation_in": "fade_in",
         "position": "left",
         "type": "text",
@@ -23,8 +23,8 @@
         "next": "3"
       },
       "3": {
-        "name": "Daisy",
-        "avatar": "daisy.png",
+        "name": "Caramel",
+        "avatar": "caramel.png",
         "animation_in": "fade_in",
         "position": "left",
         "type": "text",
