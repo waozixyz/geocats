@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets/Fonts/QixMono22.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/QixMono16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Levels/TitleScreen/Login.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/ui_buttons.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=4]
@@ -65,9 +65,9 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 274.701
+margin_left = 263.701
 margin_top = 438.7
-margin_right = 364.701
+margin_right = 353.701
 margin_bottom = 473.7
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 7 )
@@ -75,6 +75,15 @@ text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InfoButton" type="Button" parent="."]
+margin_left = 361.701
+margin_top = 438.7
+margin_right = 396.701
+margin_bottom = 473.7
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 7 )
+text = "?"
 
 [node name="Version" type="Label" parent="."]
 margin_left = 9.0

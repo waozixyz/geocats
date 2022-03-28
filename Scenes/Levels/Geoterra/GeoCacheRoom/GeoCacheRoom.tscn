@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/Levels/Geoterra/GeoCacheRoom/Treasure.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/GeneralLevel.gd" type="Script" id=2]
@@ -15,8 +15,12 @@
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/Water1.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/sparkles2.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Levels/Geoterra/Creek/AnimatedSprite.gd" type="Script" id=18]
+[ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/lethe/lethe_spritesheet.png" type="Texture" id=19]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ) ],
 "loop": true,
@@ -24,10 +28,10 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ) ],
 "loop": true,
@@ -35,11 +39,53 @@ animations = [ {
 "speed": 0.6
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 358.888, 60.6786 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 33.9119, 32.5012 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 19 )
+region = Rect2( 9, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 19 )
+region = Rect2( 18, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 19 )
+region = Rect2( 27, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 19 )
+region = Rect2( 36, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 19 )
+region = Rect2( 45, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 19 )
+region = Rect2( 54, 0, 9, 11 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 57.4399, 33.8621 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 18.522, 11.7222 )
 
 [node name="GeoCacheRoom" type="Node2D"]
 script = ExtResource( 2 )
@@ -58,7 +104,7 @@ centered = false
 [node name="Sparkles" type="AnimatedSprite" parent="BelowPlayer"]
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 frame = 1
 playing = true
 centered = false
@@ -75,7 +121,7 @@ next_loc = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGeoCache"]
 position = Vector2( 94, 62.187 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Button" type="Sprite" parent="ExitGeoCache"]
 visible = false
@@ -83,7 +129,9 @@ position = Vector2( 88, -5.81299 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 6 )
 
-[node name="Colliders" type="StaticBody2D" parent="." groups=["end"]]
+[node name="Colliders" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 collision_layer = 7
 collision_mask = 0
 
@@ -118,7 +166,7 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 frame = 1
 playing = true
 centered = false
@@ -131,7 +179,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Treasure" type="Area2D" parent="."]
 script = ExtResource( 1 )
@@ -140,7 +188,7 @@ sound_effect = "res://Assets/UI/Feline/Sounds/feline_beep.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
 position = Vector2( 1106.51, 424.419 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Treasure"]
 position = Vector2( 1106, 421 )
@@ -153,5 +201,36 @@ pause_mode = 2
 stream = ExtResource( 12 )
 autoplay = true
 bus = "Music"
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Lethe" type="KinematicBody2D" parent="NPC"]
+position = Vector2( 971.737, 391.003 )
+script = ExtResource( 17 )
+jump_height = 50
+move_speed = 50
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lethe"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 13 )
+animation = "idle"
+frame = 5
+centered = false
+script = ExtResource( 18 )
+
+[node name="ChatNPC" type="Area2D" parent="NPC/Lethe"]
+script = ExtResource( 16 )
+has_parent = true
+character_name = "Lethe"
+json_file = "res://Assets/Levels/Geoterra/GeoCacheRoom/lethe.json"
+sound_file = "res://Assets/Levels/Geoterra/Creek/caramel/caramel.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lethe/ChatNPC"]
+position = Vector2( 25.2891, 18.3345 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lethe"]
+position = Vector2( 20.4136, 32.334 )
+shape = SubResource( 15 )
 
 [editable path="Player"]

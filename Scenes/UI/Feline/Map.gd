@@ -40,7 +40,7 @@ func label_clicked(data):
 	if current_scene is GeneralLevel:
 		current_scene.set_disable("e_interact", "map", false)
 func _update_dialogue(territory):
-	if global.user.visited.has(territory) or true:
+	if global.user.visited.has(territory):
 		exclaim.visible = true
 		question.visible = false
 		var label = exclaim.get_node("RichTextLabel")

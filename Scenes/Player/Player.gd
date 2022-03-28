@@ -150,7 +150,7 @@ func _physics_process(delta):
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
 	._physics_process(delta)
-	if current_scene.is_disabled(name):
+	if current_scene is GeneralLevel and current_scene.is_disabled(name):
 		if not no_vx:
 			velocity.x = 0
 			currentSpeed = 0

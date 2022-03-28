@@ -196,6 +196,8 @@ gravity=true
 vsyng=false
 fullscreen=false
 bg=false
+backgrounh=false
+background=false
 
 [importer_defaults]
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sparkle.wav-ea5678fe908c228c82deb4988cf91c00.sample"
+
+[deps]
+
+source_file="res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.wav"
+dest_files=[ "res://.import/sparkle.wav-ea5678fe908c228c82deb4988cf91c00.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

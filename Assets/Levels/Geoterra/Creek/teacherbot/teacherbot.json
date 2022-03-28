@@ -1,0 +1,34 @@
+{
+    "first": {
+      "avatar": "teacherbot.png",
+      "name": "Teacherbot",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "Have you seen three kittens running around here? There should be six of us... but I guess a few got bored and ran off.",
+      "next": "1"
+    },
+    "1": {
+      "type": "text",
+      "content": "These students and I are on a nature excursion. We're taking water samples and studying local ecology.",
+      "next": "2"
+    },
+    "2": {
+        "name": "Daisy",
+        "avatar": "daisy.png",
+        "animation_in": "fade_in",
+        "position": "left",
+        "type": "text",
+        "content": "Can you help us find them please?",
+        "next": "3"
+      },
+      "3": {
+        "name": "Caramel",
+        "avatar": "caramel.png",
+        "animation_in": "fade_in",
+        "position": "left",
+        "type": "text",
+        "content": "Yeah, we're tired of being educated. We want to go home!",
+        "next": ""
+      }
+  }
