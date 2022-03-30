@@ -70,3 +70,8 @@ script = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 18.414, 12.334 )
 shape = SubResource( 15 )
+
+[node name="PlatformRaycast" type="RayCast2D" parent="."]
+position = Vector2( 19, 10 )
+enabled = true
+cast_to = Vector2( 0, 16 )

@@ -102,14 +102,15 @@ func _physics_process(_delta):
 	var slide_count = get_slide_count()
 	
 
-	
+	var platforms = []
 	if slide_count > 0:
 		new_rot = 0
 		for i in slide_count:
 			var collision = get_slide_collision(i)
 			if is_on_floor():
 				for child in collision.collider.get_children():
-	
+					if check_child_collision(child):
+						platforms.append(child)
 					if child.get_parent().is_in_group("mushroom"):
 						mushroom = child.get_parent()
 						mushroom.touching = true
@@ -138,11 +139,13 @@ func _physics_process(_delta):
 		if platform_raycast.is_colliding():
 			var shape_id = platform_raycast.get_collider_shape()
 			var collider = platform_raycast.get_collider()
-			if collider is StaticBody2D:
+			if collider is StaticBody2D and collider:
 				var owner_id = collider.shape_find_owner(shape_id)
-				if collider:
-					var hit_node = collider.shape_owner_get_owner(owner_id)
-					if check_child_collision(hit_node):
+
+				var hit_node = collider.shape_owner_get_owner(owner_id)
+
+				if check_child_collision(hit_node):
+					if platforms.find(hit_node) != -1 :
 						allow_fall_trough_timer.start()
 
 
