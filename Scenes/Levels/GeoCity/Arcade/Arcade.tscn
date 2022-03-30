@@ -603,6 +603,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 508 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

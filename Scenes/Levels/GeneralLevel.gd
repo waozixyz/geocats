@@ -91,6 +91,28 @@ func _init_music_array():
 		for m in music:
 			music[i] = get_node(m)
 			i += 1
+
+var followers = []
+
+func add_follower(cat):
+	if not global.user.following.has(cat.name):
+		global.user.following.append(cat.name)
+	cat.position = position
+	followers.append(cat)
+	add_child(cat)
+	cat.set_owner(self)
+	cat.position = player.position
+	if cat.has_node("ChatNPC"):
+		cat.get_node("ChatNPC").disabled = true
+
+
+func remove_follower(cat):
+	if cat:
+		if global.user.following.has(cat.name):
+			global.user.following.remove(cat.name)
+		followers.erase(cat)
+		remove_child(cat)
+		
 func _ready():
 	_add_default_nodes()
 	_init_music_array()
@@ -105,8 +127,16 @@ func _ready():
 	if not respawn_location:
 		respawn_location = player.position
 
+	for follower in global.user.following:
+		var follower_scene = load(utils.find_agent_path(follower))
+		if follower_scene:
+			add_follower(follower_scene.instance())
+		else:
+			printerr("follower invalid: ", follower)
+
 var tween
 func _process(_delta):
+	# dying logic
 	if global.user.hp <= 0:
 		tween = utils.tween(player, "position", respawn_location)
 		set_disable("player", "dead")
@@ -129,3 +159,49 @@ func _process(_delta):
 	if reload_on_death and dead and not tween.is_active():
 		player.position = respawn_location
 		
+	# follow player logic
+	if player.velocity_log.size() > 5:
+		for follower in followers:
+			var dir = (follower.global_position - player.position).normalized()
+			var diff = follower.position - player.position
+
+			var pvel_x = player.velocity_log[0].x
+
+		
+			if follower.velocity.x == 0:
+				follower.sprite.play("idle")
+			elif follower.sprite.frames.has_animation("walk"):
+				follower.sprite.play("walk")
+				
+
+			if abs(diff.y) < 100 and abs(diff.x) < 100:
+				if player.state_machine.active_state.tag == "climb":
+					var x_speed = player.currentSpeed
+					if x_speed < 50:
+						x_speed = 50
+					if diff.x > 5:
+						follower.velocity.x = -x_speed
+					elif diff.x < -5:
+						follower.velocity.x = x_speed
+		
+				else:
+					if not player.grounded:
+						if player.state_machine.active_state.tag == "fall" and player.velocity.y > player.maxSpeed:
+							follower.velocity.y = player.velocity.y
+
+						else:
+							follower.velocity.y = player.velocity_log[0].y
+
+									
+					# callibrate position
+					if diff.x > 60 and pvel_x < 0:
+						follower.velocity.x = -player.currentSpeed
+						follower.sprite.flip_h = not player.sprite.flip_h or follower.mirror_sprite
+					elif diff.x < -60 and pvel_x > 0:
+						follower.velocity.x = player.currentSpeed
+						follower.sprite.flip_h = not (player.sprite.flip_h or follower.mirror_sprite)
+					else:
+						follower.velocity.x = 0
+			else:
+				follower.velocity.x = 0
+		player.velocity_log.pop_front()

@@ -122,6 +122,7 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 centered = false
 

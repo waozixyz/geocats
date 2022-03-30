@@ -63,26 +63,6 @@ func jump(jumpHeight):
 	else:
 		jump_sfx.play()
 
-func add_follower(cat):
-	if not global.user.following.has(cat.name):
-		global.user.following.append(cat.name)
-	cat.position = position
-	followers.append(cat)
-	add_child(cat)
-	cat.set_owner(self)
-	cat.position = Vector2(0,0)
-	if cat.has_node("ChatNPC"):
-		cat.get_node("ChatNPC").disabled = true
-	cat.no_gravity = true
-
-func remove_follower(cat):
-	if cat:
-		if global.user.following.has(cat.name):
-			global.user.following.remove(cat.name)
-		followers.erase(cat)
-		cat.position = position
-		remove_child(cat)
-
 # play default sprite animations
 func default_anim():
 	if vertical > 0:
@@ -122,7 +102,6 @@ func _get_previous_state_tag():
 var followers = []
 # init player
 func _ready():
-	max_angle = .8
 	sprite.play()
 	sprite.playing = true
 	jump_height = 400
@@ -132,12 +111,6 @@ func _ready():
 		position = global.user.position
 		sprite.flip_h  = global.user.direction * -1
 
-	for follower in global.user.following:
-		var follower_scene = load(utils.find_agent_path(follower))
-		if follower_scene:
-			add_follower(follower_scene.instance())
-		else:
-			printerr("follower invalid: ", follower)
 
 
 # main process loop
@@ -180,56 +153,6 @@ func _physics_process(delta):
 
 	# follow player logic
 	velocity_log.append(velocity)
-	if velocity_log.size() > 10:
-		for follower in followers:
-			var pos_x = round(follower.position.x) 
-			var pvel_x = velocity_log[0].x
-
-
-			# reset position to be static
-			follower.velocity = -velocity
-		
-
-			if abs(follower.position.y) < 100 and abs(follower.position.x) < 100:
-		
-				if state_machine.active_state.tag == "climb":
-					var x_speed = currentSpeed
-					if x_speed < 50:
-						x_speed = 50
-					if follower.position.x > 5:
-						follower.velocity.x = -x_speed
-					elif follower.position.x < -5:
-						follower.velocity.x = x_speed
-					else:
-						if follower.position.y > 40:
-							follower.velocity.y = -climb_speed
-						elif follower.position.y < 30:
-							follower.velocity.y = climb_speed
-						else:
-							follower.velocity.y = 0
-				else:
-					if velocity_log[0].y == 0 or grounded and not follower.is_on_floor():
-						follower.apply_gravity()
-					
-					if state_machine.active_state.tag == "fall" and velocity.y > maxSpeed:
-						follower.velocity.y += velocity.y
-					else:
-						follower.velocity.y += velocity_log[0].y
-			
-
-					# callibrate position
-
-					if pos_x > 60 and pvel_x < 0:
-						follower.velocity.x -= currentSpeed
-						follower.sprite.flip_h = not sprite.flip_h or follower.mirror_sprite
-					elif pos_x < -60 and pvel_x > 0:
-
-						follower.velocity.x += currentSpeed
-						follower.sprite.flip_h = not (sprite.flip_h or follower.mirror_sprite)
-			else:
-				follower.apply_gravity()
-
-		velocity_log.pop_front()
 
 # update keyboard inputs
 func update_inputs():
@@ -251,7 +174,7 @@ func update_inputs():
 		#if timer expires and your in coyote time
 		jumpInput = 0 #reset jump input
 		coyoteStartTime = 0 #reset timer
-	
+
 	if is_on_floor():
 		floor_timer.start()
 

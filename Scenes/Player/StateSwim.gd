@@ -5,8 +5,9 @@ var original_anim_speed : float
 
 func enter_logic(player: KinematicBody2D):
 	player.velocity *= 0.5
-
+	player.isDoubleJumped = false
 func logic(player: KinematicBody2D, _delta: float):
+
 	if player.on_ladder and player.vx == 0:
 		return "climb"
 
@@ -25,9 +26,10 @@ func logic(player: KinematicBody2D, _delta: float):
 		return null
 	player.waves.emitting = false
 	if player.grounded:
+
 		return "walk" if player.horizontal != 0 else "idle"
 
-	return "fall"
+	return
 
 func exit_logic(player: KinematicBody2D):
 	player.waves.emitting = false

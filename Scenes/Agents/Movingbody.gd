@@ -47,7 +47,7 @@ var ladder_x : float
 var ladder_y : float
 var ladder_rot : float
 var ladder_tween : Tween
-var max_angle = 0.7
+var max_angle = 0.8
 # tween to ladder function
 func tween_to_ladder():
 	var new_x = ladder_x
@@ -128,7 +128,7 @@ func _physics_process(_delta):
 	if sprite.animation != "climb" and not no_gravity:
 		apply_gravity()
 	if add_move_n_slide:
-		velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
+		velocity = move_and_slide(velocity, Vector2.UP, true, 4, max_angle) #apply velocity to movement
 
 
 

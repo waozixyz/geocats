@@ -61,7 +61,7 @@ mirror_sprite = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 13 )
-animation = "walk"
+animation = "idle"
 centered = false
 offset = Vector2( 0, -5 )
 flip_h = true
