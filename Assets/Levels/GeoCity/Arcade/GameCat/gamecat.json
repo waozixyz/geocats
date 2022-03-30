@@ -4,7 +4,7 @@
     "avatar": "gamecat.png",
     "position": "left",
     "type": "text",
-    "content": "|...",
+    "content": "...",
     "animation_in": "fade_in",
     "next": "0"
   },
@@ -13,8 +13,23 @@
     "avatar": "gamecat.png",
     "position": "left",
     "type": "text",
-    "content": "...This game is terrible,||@yet I can't stop playing...",
+    "content": "...This game is terrible,@yet I can't stop playing...",
     "animation_out": "shake_weak_medium",
     "next": ""
-  }
+  },
+    "repeat": {
+      "name": "Gamecat",
+      "avatar": "gamecat.png",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "One of my friends told me that Geocats is more than just a videogame.@She told me that they're an ancient organisation of cats who spend their time searching the world for Geocaches.",
+      "next": "r2"
+    },
+    "r2": {
+      "position": "left",
+      "type": "text",
+      "content": "Don't get your hopes up though, I've also heard it's almost impossible to join their weird club...",
+      "next": ""
+    }
 }
