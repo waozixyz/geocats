@@ -185,10 +185,13 @@ func _physics_process(delta):
 			var pos_x = round(follower.position.x) 
 			var pvel_x = velocity_log[0].x
 
+
 			# reset position to be static
 			follower.velocity = -velocity
+		
 
 			if abs(follower.position.y) < 100 and abs(follower.position.x) < 100:
+		
 				if state_machine.active_state.tag == "climb":
 					var x_speed = currentSpeed
 					if x_speed < 50:
@@ -205,20 +208,27 @@ func _physics_process(delta):
 						else:
 							follower.velocity.y = 0
 				else:
-					if velocity_log[0].y == 0:
-						follower.apply_gravity(12)
+					if velocity_log[0].y == 0 or grounded and not follower.is_on_floor():
+						follower.apply_gravity()
 					
-					follower.velocity.y += velocity_log[0].y
+					if state_machine.active_state.tag == "fall" and velocity.y > maxSpeed:
+						follower.velocity.y += velocity.y
+					else:
+						follower.velocity.y += velocity_log[0].y
+			
+
 					# callibrate position
 
-					if sprite.flip_h and pos_x > 60 and pvel_x < 0:
+					if pos_x > 60 and pvel_x < 0:
 						follower.velocity.x -= currentSpeed
-						follower.sprite.flip_h = not sprite.flip_h
+						follower.sprite.flip_h = not sprite.flip_h or follower.mirror_sprite
 					elif pos_x < -60 and pvel_x > 0:
+
 						follower.velocity.x += currentSpeed
-						follower.sprite.flip_h = not sprite.flip_h
+						follower.sprite.flip_h = not (sprite.flip_h or follower.mirror_sprite)
 			else:
-				follower.apply_gravity(12)
+				follower.apply_gravity()
+
 		velocity_log.pop_front()
 
 # update keyboard inputs
@@ -263,7 +273,6 @@ func move():
 	if not no_vx:
 		currentSpeed = move_toward(currentSpeed,  maxSpeed - subtractor, acceleration) #accelerate current speed
 		_set_vx(currentSpeed * horizontal)#apply curent speed to velocity and multiply by direction
-
 	velocity = move_and_slide(velocity, Vector2.UP, true, 4, max_angle)
  
 # animation helper function

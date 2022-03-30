@@ -1,0 +1,70 @@
+{
+    "first": {
+      "type": "divert",
+      "condition": "boolean",
+      "dictionary": "quests",
+      "variable": "geoterra_kitten_quest",
+      "true": "0",
+      "false": "hiding1"
+    },
+    "0": {
+      "avatar": "lethe.png",
+      "name": "Lethe",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "...",
+      "next": "1"
+    },
+    "1": {
+      "type": "action",
+      "operation": "variable",
+      "dictionary": "variables",
+      "value": [["geoterra_lethe_visible", true]],
+      "text": "...Heh?",
+      "next": "2"
+    },
+    "2": {
+        "type": "text",
+        "content": "...I was having an amazing dream.@There was this weird bird with a coin in its claws and I was chasing it through space!",
+        "next": "3"
+    },
+    "3": {
+      "type": "text",
+      "content": "...@ ...This better be important!",
+      "next": "4"
+    },
+    "4": {
+      "type": "text",
+      "content": "...@Oh right - I was on a school fieldtrip! Thanks for finding me!",
+      "next": "5"
+    },
+    "5": {
+      "type": "text",
+      "content": "Let's go look for my other classmates!",
+      "next": ""
+    },
+    "hiding1": {
+      "avatar": "lethe.png",
+      "name": "Lethe",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "...zzz",
+      "next": "hiding2",
+    },
+    "hiding2": {
+      "name": "Feline",
+      "avatar": "feline.png",
+      "animation_in": "move_in",
+      "animation_out": "fade_out",
+      "position": "left",
+      "type": "text",
+      "content": "It looks like there's a kitten having a nap in this chest. We better not wake her up...",
+      "next": "",
+    }
+
+  }
+
+
+

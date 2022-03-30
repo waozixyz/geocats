@@ -12,10 +12,18 @@ export(String) var relock_var
 export(bool) var one_use = true
 export(bool) var disable_locked_item = true
 
+func _set_locked_item(flag):
+	if disable_locked_item:
+		if to_unlock is KinematicBody2D:
+			for child in to_unlock.get_children():
+				if child is ChatNPC:
+					child.disabled = flag
+		else:
+			to_unlock.disabled = flag
+
 func _relock():
 	to_unlock.visible = false
-	if disable_locked_item:
-		to_unlock.disabled = true
+	_set_locked_item(false)
 	if to_unlock is E_Interact and not to_unlock.disable_player.empty():
 		current_scene.set_disable("player", to_unlock.disable_player, false)
 	if not dialogue_file:
@@ -27,7 +35,7 @@ func _check_unlocked():
 			_relock()
 		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var]:
 			to_unlock.visible = true
-			to_unlock.disabled = false
+			_set_locked_item(true)
 			if one_use:
 				disabled = true
 			

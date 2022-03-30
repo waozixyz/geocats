@@ -14,6 +14,7 @@ export(bool) var add_move_n_slide = false
 # variables for all entities
 var no_rotate = false
 var no_gravity = false
+export(bool) var mirror_sprite = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
 var current_platforms = {}

@@ -1,5 +1,13 @@
 {
     "first": {
+      "type": "divert",
+      "condition": "boolean",
+      "dictionary": "quests",
+      "variable": "geoterra_kitten_quest_complete",
+      "true": "foundthem1",
+      "false": "0"
+    },
+    "0": {
       "avatar": "teacherbot.png",
       "name": "Teacherbot",
       "position": "left",
@@ -18,17 +26,87 @@
         "avatar": "daisy.png",
         "animation_in": "fade_in",
         "position": "left",
-        "type": "text",
-        "content": "Can you help us find them please?",
-        "next": "3"
+        "type": "question",
+        "text": "Can you help us find them please?",
+        "options": ["Sure", "Not now"],
+        "next": ["3", ""]
       },
-      "3": {
+    "3": {
         "name": "Caramel",
         "avatar": "caramel.png",
         "animation_in": "fade_in",
         "position": "left",
-        "type": "text",
+        "type": "action",
+        "operation": "variable",
+        "dictionary": "quests",
+        "value": [["geoterra_kitten_quest", true]],
         "content": "Yeah, we're tired of being educated. We want to go home!",
+        "next": ""
+      },
+    "foundthem1": {
+      "avatar": "teacherbot.png",
+      "name": "Teacherbot",
+      "position": "left",
+      "animation_in": "fade_in",
+      "type": "text",
+      "content": "There you all are!@If I had emotions, I'd have been worried sick about you kittens!",
+      "next": "foundthem2"
+
+    },
+    "foundthem2": {
+        "avatar": "sparkle.png",
+        "name": "Sparkle",
+        "position": "left",
+        "animation_in": "fade_in",
+        "type": "text",
+        "content": "Sorry Teacherbot...@Next time, we'll give you a heads up before skipping class.",
+        "next": "foundthem3"
+  
+      },
+      "foundthem3": {
+        "avatar": "garloo.png",
+        "name": "Garloo",
+        "position": "left",
+        "animation_in": "fade_in",
+        "type": "text",
+        "content": "...",
+        "next": "foundthem4"
+  
+      },   
+        "foundthem4": {
+        "avatar": "lethe.png",
+        "name": "Lethe",
+        "position": "left",
+        "animation_in": "fade_in",
+        "type": "text",
+        "content": "Is it time to leave yet? I want to go home and have a nap.",
+        "next": "foundthem5"
+      },
+      "foundthem5": {
+        "avatar": "teacherbot.png",
+        "name": "Teacherbot",
+        "position": "left",
+        "animation_in": "fade_in",
+        "type": "text",
+        "content": "By my calculations, yes.@Let's start our hike back to GeoCity.",
+        "next": "foundthem6"
+      },
+      "foundthem6": {
+        "position": "left",
+        "type": "text",
+        "content": "Thank you for all of the help, and good luck on your adventures!",
+        "next": "foundthem7"
+      },
+      "foundthem7": {
+        "position": "left",
+        "type": "text",
+        "content": "There's a telescope at the top of this mountain's lookout tower, it offers an amazing view of the ring we're on.@It's totally worth the climb!",
+        "next": "foundthem8"
+      },
+      "foundthem8": {
+        "position": "left",
+        "type": "text",
+        "content": "See you later!",
         "next": ""
       }
   }

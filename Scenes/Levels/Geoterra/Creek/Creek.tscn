@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/creek_level_fg.png" type="Texture" id=2]
@@ -37,8 +37,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/daisy/daisy_spritesheet.png" type="Texture" id=35]
 [ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=36]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/sparkle/sparkle_spritesheet.png" type="Texture" id=37]
-[ext_resource path="res://Scenes/Levels/Geoterra/Creek/ppp.gd" type="Script" id=38]
-[ext_resource path="res://Scenes/Levels/Geoterra/Creek/Teacherbot.gd" type="Script" id=39]
+[ext_resource path="res://Scenes/Levels/Geoterra/Creek/KittenQuest.gd" type="Script" id=38]
 [ext_resource path="res://Scenes/Levels/Geoterra/Creek/AnimatedSprite.gd" type="Script" id=40]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -172,59 +171,8 @@ extents = Vector2( 10, 4000 )
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 10, 492 )
 
-[sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 130, 108.419 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 31 )
-region = Rect2( 42, 0, 42, 24 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 31 )
-region = Rect2( 0, 0, 42, 24 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 31 )
-region = Rect2( 84, 0, 42, 24 )
-
-[sub_resource type="SpriteFrames" id=35]
-animations = [ {
-"frames": [ SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="GDScript" id=36]
-script/source = "extends AnimatedSprite
-class_name SpriteAutoPlay
-
-# this was created to avoid needing the playing bool true in the scene
-# which keeps rewriting the scene file and causing merge issues
-
-func _ready():
-	play()
-"
-
-[sub_resource type="AtlasTexture" id=73]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 0, 9, 11 )
-
-[sub_resource type="AtlasTexture" id=74]
-atlas = ExtResource( 21 )
-region = Rect2( 9, 0, 9, 11 )
-
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 21 )
-region = Rect2( 18, 0, 9, 11 )
-
-[sub_resource type="SpriteFrames" id=76]
-animations = [ {
-"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 73 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="RectangleShape2D" id=110]
+extents = Vector2( 400, 200 )
 
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 33 )
@@ -311,7 +259,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=93]
-extents = Vector2( 50.9346, 38.2505 )
+extents = Vector2( 25.4999, 22.4999 )
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 32 )
@@ -358,7 +306,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 57.4399, 33.8621 )
+extents = Vector2( 22, 22.0233 )
 
 [sub_resource type="RectangleShape2D" id=109]
 extents = Vector2( 18.522, 11.7222 )
@@ -435,28 +383,79 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 38.731, 28.9434 )
+extents = Vector2( 28.6646, 19.7706 )
 
 [sub_resource type="RectangleShape2D" id=104]
 extents = Vector2( 16.439, 10 )
 
-[sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 974.91, 131.2 )
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 130, 108.419 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 31 )
+region = Rect2( 42, 0, 42, 24 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 31 )
+region = Rect2( 0, 0, 42, 24 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 31 )
+region = Rect2( 84, 0, 42, 24 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 32 ), SubResource( 32 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=36]
+script/source = "extends AnimatedSprite
+class_name SpriteAutoPlay
+
+# this was created to avoid needing the playing bool true in the scene
+# which keeps rewriting the scene file and causing merge issues
+
+func _ready():
+	play()
+"
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 21 )
+region = Rect2( 9, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 21 )
+region = Rect2( 18, 0, 9, 11 )
+
+[sub_resource type="SpriteFrames" id=76]
+animations = [ {
+"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 73 ), SubResource( 74 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 74 ), SubResource( 73 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 1175, 162 )
 
 [sub_resource type="RectangleShape2D" id=80]
-extents = Vector2( 526.71, 72 )
+extents = Vector2( 84.1667, 6.25001 )
 
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 12, 1480 )
 
 [sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 12, 355.324 )
+extents = Vector2( 12, 367.662 )
 
 [sub_resource type="RectangleShape2D" id=83]
-extents = Vector2( 12, 100 )
+extents = Vector2( 12, 125.5 )
 
 [sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 83.0044, 53.769 )
@@ -641,16 +640,16 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Ground"]
 position = Vector2( -1.19209e-06, 0 )
-polygon = PoolVector2Array( 1720.9, 4125.14, 1890.57, 4057.34, 2053.86, 3990.8, 2343.52, 3862.91, 2485, 3798, 2634, 3726, 2788, 3637, 3160, 3480, 3308, 3441, 3600, 3447, 3969, 3555, 4158, 3618, 4410, 3753, 4590, 3843, 4833, 3915, 5040, 3960, 5256, 4041, 5454, 4158, 5873, 4220, 6061, 4260, 6235, 4328, 6362.63, 4385.46, 6055, 4279, 5830, 4238, 5437, 4174, 5230, 4055, 4959, 3960, 4815, 3933, 4609, 3876, 4112, 3643, 3609, 3483, 3401, 3482, 3280, 3488, 2822, 3662, 2410, 3869, 1736.25, 4167.3 )
+polygon = PoolVector2Array( 1720.9, 4125.14, 1890.57, 4057.34, 2053.86, 3990.8, 2343.52, 3862.91, 2485, 3798, 2634, 3726, 2788, 3637, 3160, 3480, 3308, 3441, 3600, 3447, 3969, 3555, 4158, 3618, 4410, 3753, 4590, 3843, 4833, 3915, 5040, 3960, 5256, 4041, 5454, 4158, 5873, 4220, 6061, 4260, 6055, 4279, 5830, 4238, 5437, 4174, 5230, 4055, 4959, 3960, 4815, 3933, 4609, 3876, 4112, 3643, 3609, 3483, 3401, 3482, 3280, 3488, 2822, 3662, 2410, 3869, 1736.25, 4167.3 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions/Ground"]
 polygon = PoolVector2Array( 1749.41, 4115.34, 1596.18, 4167.9, 1362.76, 4181.27, 1141.8, 4181.77, 925.651, 4185.55, 692.1, 4181.9, 510.042, 4160.48, 432.692, 4130.86, 342.608, 4081.09, 202.568, 4009.95, -0.849123, 3948.5, 0.210312, 3948.5, 0.21034, 3972.87, 182.438, 4022.66, 323.079, 4108.81, 490.523, 4209.35, 923.43, 4224.22, 1133.07, 4214.17, 1381.98, 4204.92, 1607.76, 4198.19, 1737.67, 4166.36 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 6449, 4417, 6385, 4433, 6248, 4475, 6033, 4578, 5865, 4640, 5536, 4736, 5276, 4827, 5078, 4884, 4864, 4935, 4487, 5041, 3972, 5135, 3466, 5265, 2706, 5401, 2826, 5400, 3558, 5280, 4043, 5154, 4597, 5041, 4970, 4936, 5457, 4812, 5908, 4664, 6301, 4501, 6394, 4454 )
+polygon = PoolVector2Array( 6385, 4433, 6248, 4475, 6033, 4578, 5865, 4640, 5536, 4736, 5276, 4827, 5078, 4884, 4864, 4935, 4487, 5041, 3972, 5135, 3466, 5265, 2706, 5401, 2826, 5400, 3558, 5280, 4043, 5154, 4597, 5041, 4970, 4936, 5457, 4812, 5908, 4664, 6301, 4501, 6394, 4454 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Collisions/Ground"]
-polygon = PoolVector2Array( 6505, 4446, 6580, 4505, 6667, 4557, 6724, 4603, 6797, 4659, 6879, 4723, 6963, 4774, 7081, 4840, 7291, 4898, 7536, 4941, 7782, 4964, 7995, 4969, 8247, 4979, 8600, 4955, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7736, 5006, 7518, 4998, 7266, 4963, 7018, 4880, 6862, 4782, 6385, 4457, 6384, 4433, 6431, 4416, 6455, 4414, 6480, 4424 )
+polygon = PoolVector2Array( 6505, 4446, 6580, 4505, 6666, 4557, 6817, 4655, 6983, 4785, 7081, 4840, 7291, 4898, 7536, 4941, 7782, 4964, 7995, 4969, 8600, 4955, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7736, 5006, 7518, 4998, 7266, 4963, 7018, 4880, 6862, 4782, 6385, 4457, 6384, 4433, 6431, 4416, 6455, 4414, 6480, 4424 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Collisions/Ground"]
 polygon = PoolVector2Array( 9000, 984, 8965, 984, 8869, 1018, 8832, 1036, 8762, 1079, 8672, 1128, 8595, 1152, 8522, 1159, 8251, 1234, 7820, 1429, 7737, 1491, 7715, 1565, 7693, 1619, 7657, 1650, 7656, 1750, 8229, 1459, 9000, 1186 )
@@ -744,6 +743,10 @@ one_way_collision = true
 polygon = PoolVector2Array( 6991, 2155, 6617, 2154, 6449, 2213, 6387, 2213, 6289, 2250, 6125, 2253, 5962, 2279, 5884, 2278, 5785, 2296, 5487, 2313, 5283, 2312, 5154, 2325, 4956, 2335, 4746, 2374, 4517, 2402, 4386, 2416, 4260, 2415, 4281, 2427, 4422, 2422, 4607, 2401, 4839, 2368, 5012, 2343, 5299, 2327, 5619, 2321, 5897, 2300, 6306, 2267, 6657, 2180, 6996, 2176 )
 one_way_collision = true
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
+polygon = PoolVector2Array( 6061, 4260, 6197, 4312, 6368, 4388, 6054, 4279 )
+one_way_collision = true
+
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 visible = false
 
@@ -762,6 +765,201 @@ shape = SubResource( 30 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/EndWalls"]
 position = Vector2( 4500, -9 )
 shape = SubResource( 28 )
+
+[node name="KittenQuest" type="Area2D" parent="."]
+position = Vector2( 6500, 2059 )
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest"]
+position = Vector2( 97.4995, 0 )
+shape = SubResource( 110 )
+
+[node name="Garloo" type="KinematicBody2D" parent="KittenQuest"]
+position = Vector2( -1757.1, -1455.01 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 36 )
+move_speed = 2
+change_direction = 50
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Garloo"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 61 )
+animation = "idle"
+frame = 4
+playing = true
+centered = false
+flip_h = true
+script = ExtResource( 26 )
+
+[node name="ChatNPC" type="Area2D" parent="KittenQuest/Garloo"]
+script = ExtResource( 20 )
+character_name = "Garloo"
+json_file = "res://Assets/Levels/Geoterra/Creek/garloo/garloo.json"
+sound_file = "res://Assets/Levels/Geoterra/Creek/garloo/garloo.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Garloo/ChatNPC"]
+position = Vector2( -11.1929, 36.9329 )
+shape = SubResource( 54 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KittenQuest/Garloo"]
+position = Vector2( 16.7104, 29.1273 )
+shape = SubResource( 92 )
+
+[node name="Teacherbot" type="KinematicBody2D" parent="KittenQuest"]
+position = Vector2( 267.47, 42.6997 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 36 )
+jump_height = 10
+move_speed = 5
+change_direction = 20
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Teacherbot"]
+position = Vector2( -30.2642, -26.481 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 41 )
+animation = "idle"
+centered = false
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="KittenQuest/Teacherbot"]
+script = ExtResource( 20 )
+has_parent = true
+character_name = "Teacherbot"
+json_file = "res://Assets/Levels/Geoterra/Creek/teacherbot/teacherbot.json"
+sound_file = "res://Assets/Levels/Geoterra/Creek/teacherbot/teacherbot.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Teacherbot/Area2D"]
+shape = SubResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Teacherbot"]
+position = Vector2( -0.540527, 15.6724 )
+shape = SubResource( 108 )
+
+[node name="Daisy" type="KinematicBody2D" parent="KittenQuest"]
+position = Vector2( 86.7695, 58.0798 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 36 )
+move_speed = 25
+change_direction = 50
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Daisy"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 97 )
+animation = "idle"
+script = ExtResource( 26 )
+
+[node name="ChatNPC" type="Area2D" parent="KittenQuest/Daisy"]
+script = ExtResource( 20 )
+has_parent = true
+character_name = "Daisy"
+json_file = "res://Assets/Levels/Geoterra/Creek/daisy/daisy.json"
+sound_file = "res://Assets/Levels/Geoterra/Creek/daisy/daisy.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Daisy/ChatNPC"]
+position = Vector2( 2.72998, -4.58008 )
+shape = SubResource( 93 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KittenQuest/Daisy"]
+position = Vector2( 1.41504, -2.49878 )
+shape = SubResource( 92 )
+
+[node name="Caramel" type="KinematicBody2D" parent="KittenQuest"]
+position = Vector2( -99.9404, 109.85 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 36 )
+jump_height = 50
+move_speed = 5
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Caramel"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 52 )
+animation = "idle"
+frame = 1
+playing = true
+centered = false
+script = ExtResource( 40 )
+
+[node name="ChatNPC" type="Area2D" parent="KittenQuest/Caramel"]
+script = ExtResource( 20 )
+has_parent = true
+character_name = "Caramel"
+json_file = "res://Assets/Levels/Geoterra/Creek/caramel/caramel.json"
+sound_file = "res://Assets/Levels/Geoterra/Creek/caramel/caramel.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Caramel/ChatNPC"]
+position = Vector2( 17.9399, 30.1733 )
+shape = SubResource( 42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Caramel"]
+position = Vector2( 20.4136, 32.334 )
+shape = SubResource( 109 )
+
+[node name="Sparkle" type="KinematicBody2D" parent="KittenQuest"]
+position = Vector2( -3940.41, -1885.26 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 36 )
+jump_height = 300
+move_speed = 300
+change_direction = 400
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Sparkle"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 103 )
+animation = "idle"
+script = ExtResource( 26 )
+
+[node name="ChatNPC" type="Area2D" parent="KittenQuest/Sparkle"]
+script = ExtResource( 20 )
+has_parent = true
+character_name = "Sparkle"
+json_file = "res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.json"
+sound_file = "res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Sparkle/ChatNPC"]
+position = Vector2( 2.21021, -14.79 )
+shape = SubResource( 99 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Sparkle"]
+shape = SubResource( 98 )
+
+[node name="Sandy" type="KinematicBody2D" parent="KittenQuest"]
+position = Vector2( 472.04, 79.0398 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 36 )
+move_speed = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Sandy"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 72 )
+animation = "idle"
+frame = 10
+script = ExtResource( 26 )
+
+[node name="SandyChat" type="Area2D" parent="KittenQuest/Sandy"]
+script = ExtResource( 20 )
+has_parent = true
+character_name = "Sandy"
+json_file = "res://Assets/Levels/Geoterra/Creek/sandy/sandy.json"
+sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sandy/sandkitten.wav"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Sandy/SandyChat"]
+position = Vector2( -10.3755, -1.26929 )
+shape = SubResource( 63 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Sandy"]
+position = Vector2( -1.27295, 6.04688 )
+shape = SubResource( 104 )
 
 [node name="Cats" type="Node2D" parent="."]
 
@@ -785,7 +983,7 @@ shape = SubResource( 31 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 35 )
-frame = 36
+frame = 3
 playing = true
 centered = false
 script = SubResource( 36 )
@@ -812,177 +1010,8 @@ speed_scale = 0.5
 centered = false
 script = ExtResource( 26 )
 
-[node name="Garloo" type="KinematicBody2D" parent="Cats"]
-position = Vector2( 4742.9, 603.988 )
-script = ExtResource( 36 )
-move_speed = 2
-change_direction = 50
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/Garloo"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 61 )
-animation = "idle"
-frame = 5
-playing = true
-centered = false
-flip_h = true
-script = ExtResource( 38 )
-
-[node name="ChatNPC" type="Area2D" parent="Cats/Garloo"]
-script = ExtResource( 20 )
-character_name = "Garloo"
-json_file = "res://Assets/Levels/Geoterra/Creek/garloo/garloo.json"
-sound_file = "res://Assets/Levels/Geoterra/Creek/garloo/garloo.wav"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Garloo/ChatNPC"]
-position = Vector2( -11.1929, 36.9329 )
-shape = SubResource( 54 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cats/Garloo"]
-position = Vector2( 16.7104, 29.1273 )
-shape = SubResource( 92 )
-
-[node name="Teacherbot" type="KinematicBody2D" parent="Cats"]
-position = Vector2( 6767.47, 2101.7 )
-script = ExtResource( 36 )
-jump_height = 10
-move_speed = 5
-change_direction = 20
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/Teacherbot"]
-position = Vector2( -30.2642, -26.481 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 41 )
-animation = "idle"
-centered = false
-script = ExtResource( 39 )
-
-[node name="Area2D" type="Area2D" parent="Cats/Teacherbot"]
-script = ExtResource( 20 )
-has_parent = true
-character_name = "Teacherbot"
-json_file = "res://Assets/Levels/Geoterra/Creek/teacherbot/teacherbot.json"
-sound_file = "res://Assets/Levels/Geoterra/Creek/teacherbot/teacherbot.wav"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Teacherbot/Area2D"]
-shape = SubResource( 37 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Teacherbot"]
-position = Vector2( -0.540527, 15.6724 )
-shape = SubResource( 108 )
-
-[node name="Daisy" type="KinematicBody2D" parent="Cats"]
-position = Vector2( 6586.77, 2117.08 )
-script = ExtResource( 36 )
-move_speed = 25
-change_direction = 50
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/Daisy"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 97 )
-animation = "idle"
-script = ExtResource( 26 )
-
-[node name="ChatNPC" type="Area2D" parent="Cats/Daisy"]
-script = ExtResource( 20 )
-has_parent = true
-character_name = "Daisy"
-json_file = "res://Assets/Levels/Geoterra/Creek/daisy/daisy.json"
-sound_file = "res://Assets/Levels/Geoterra/Creek/daisy/daisy.wav"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Daisy/ChatNPC"]
-position = Vector2( 5.77637, -11.4646 )
-shape = SubResource( 93 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cats/Daisy"]
-position = Vector2( 3.41504, 1.50122 )
-shape = SubResource( 92 )
-
-[node name="Caramel" type="KinematicBody2D" parent="Cats"]
-position = Vector2( 6400.06, 2168.85 )
-script = ExtResource( 36 )
-jump_height = 50
-move_speed = 5
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/Caramel"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 52 )
-animation = "idle"
-frame = 7
-playing = true
-centered = false
-script = ExtResource( 40 )
-
-[node name="ChatNPC" type="Area2D" parent="Cats/Caramel"]
-script = ExtResource( 20 )
-has_parent = true
-character_name = "Caramel"
-json_file = "res://Assets/Levels/Geoterra/Creek/caramel/caramel.json"
-sound_file = "res://Assets/Levels/Geoterra/Creek/caramel/caramel.wav"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Caramel/ChatNPC"]
-position = Vector2( 25.2891, 18.3345 )
-shape = SubResource( 42 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Caramel"]
-position = Vector2( 20.4136, 32.334 )
-shape = SubResource( 109 )
-
-[node name="Sparkle" type="KinematicBody2D" parent="Cats"]
-position = Vector2( 2559.59, 173.743 )
-script = ExtResource( 36 )
-jump_height = 300
-move_speed = 300
-change_direction = 400
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/Sparkle"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 103 )
-animation = "idle"
-script = ExtResource( 26 )
-
-[node name="ChatNPC" type="Area2D" parent="Cats/Sparkle"]
-script = ExtResource( 20 )
-has_parent = true
-character_name = "Sparkle"
-json_file = "res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.json"
-sound_file = "res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.wav"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sparkle/ChatNPC"]
-position = Vector2( 2.21021, -14.79 )
-shape = SubResource( 99 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sparkle"]
-shape = SubResource( 98 )
-
-[node name="Sandy" type="KinematicBody2D" parent="Cats"]
-position = Vector2( 6972.04, 2138.04 )
-script = ExtResource( 36 )
-move_speed = 2
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/Sandy"]
-scale = Vector2( 4, 4 )
-frames = SubResource( 72 )
-animation = "idle"
-frame = 10
-script = ExtResource( 26 )
-
-[node name="SandyChat" type="Area2D" parent="Cats/Sandy"]
-script = ExtResource( 20 )
-character_name = "Sandy"
-json_file = "res://Assets/Levels/Geoterra/Creek/sandy/sandy.json"
-sound_file = "res://Assets/Levels/XAPS/DesertOutpost/characters/sandy/sandkitten.wav"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sandy/SandyChat"]
-position = Vector2( -20.4419, -10.4421 )
-shape = SubResource( 63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/Sandy"]
-position = Vector2( -1.27295, 6.04688 )
-shape = SubResource( 104 )
-
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 6474.46, 1823.23 )
+position = Vector2( 6843, 2582 )
 
 [node name="Camera2D" parent="Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -1027,16 +1056,9 @@ position = Vector2( 1146.67, 142.5 )
 scale = Vector2( 0.166667, 0.166667 )
 script = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/WaterAreaBottomRight"]
-position = Vector2( 1125, 4187 )
-shape = SubResource( 77 )
-
-[node name="WaterAreaBottomLeft" type="Area2D" parent="Creek"]
-position = Vector2( 261.333, 191.333 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Creek/WaterAreaBottomRight"]
+position = Vector2( -6913.01, -876.998 )
+polygon = PoolVector2Array( 7136.99, 4855.99, 7291, 4898, 7536, 4941, 7782, 4964, 7995, 4969, 8600, 4955, 9001, 4938, 9001, 4981, 8327, 5009, 8006, 5011, 7736, 5006, 7518, 4998, 7143.98, 4929.99 )
 
 [node name="DeathZone" type="Area2D" parent="Creek"]
 scale = Vector2( 0.166667, 0.166667 )
@@ -1056,7 +1078,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Creek/waterarea"]
-position = Vector2( 1108.09, 4207.2 )
+position = Vector2( 181.167, 698.917 )
 shape = SubResource( 80 )
 
 [node name="WaterNoise" type="AudioStreamPlayer2D" parent="Creek/waterarea"]
@@ -1145,7 +1167,8 @@ collision_layer = 7
 collision_mask = 0
 script = ExtResource( 12 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
@@ -1157,11 +1180,12 @@ collision_layer = 7
 collision_mask = 0
 script = ExtResource( 12 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
-position = Vector2( 0, -22 )
+position = Vector2( 0, -34.338 )
 shape = SubResource( 82 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
@@ -1170,10 +1194,12 @@ collision_layer = 7
 collision_mask = 0
 script = ExtResource( 12 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2( 0, -3.5 )
 shape = SubResource( 83 )
 
 [node name="Portals" type="Node2D" parent="."]

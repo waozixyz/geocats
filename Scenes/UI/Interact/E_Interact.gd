@@ -60,6 +60,9 @@ func _process(delta):
 			do_something = false
 	if dia_started and dialogue.modulate.a == 0:
 		dia_started = false
+		
+		if not disable_player.empty():
+			current_scene.set_disable("player", disable_player, false)
 		current_scene.set_disable("e_interact", "interact_chat", false)
 		disabled = false
 	if not touching and dia_started:

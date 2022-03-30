@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CowboyCat.png-ff3ef35a5da4bd653cd85c5f9eab72e3.stex"
+path="res://.import/cowboycat.png-a562b3f20494f5a0742c99998d68f387.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ChatIcons/CowboyCat.png"
-dest_files=[ "res://.import/CowboyCat.png-ff3ef35a5da4bd653cd85c5f9eab72e3.stex" ]
+source_file="res://Assets/ChatIcons/cowboycat.png"
+dest_files=[ "res://.import/cowboycat.png-a562b3f20494f5a0742c99998d68f387.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
