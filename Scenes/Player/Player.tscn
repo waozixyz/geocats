@@ -223,6 +223,10 @@ cast_to = Vector2( 23, 0 )
 enabled = true
 cast_to = Vector2( -23, 0 )
 
+[node name="PlatformRaycast" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 15 )
+
 [node name="Waves" parent="." instance=ExtResource( 4 )]
 z_index = 1
 

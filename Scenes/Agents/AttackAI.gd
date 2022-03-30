@@ -43,7 +43,7 @@ func _process(delta):
 			jump(jump_height)
 			jump_timer.start()
 		if player.position.y > position.y + jump_height :
-			fall_through(1)
+			fall_through()
 	else:
 		velocity.x = 0
 	

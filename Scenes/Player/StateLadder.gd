@@ -12,8 +12,8 @@ func enter_logic(player: KinematicBody2D):
 
 func logic(player: KinematicBody2D, _delta: float):
 
-	if player.current_platforms:
-		player.fall_through(0)
+	if player.allow_fall_through:
+		player.fall_through()
 	if not player.on_ladder or abs(player.vx) > 0:
 		return "fall"
 	if player.is_on_floor():

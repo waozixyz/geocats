@@ -188,7 +188,7 @@ func _process(_delta):
 					if player.fall_through_timer.time_left > 0:
 						follower.fall_through()
 						#follower.velocity.y = player.velocity.y
-						print('hi')
+
 					elif player.velocity_log[0].y != 0:
 						if player.velocity_log[0].y < 0 and diff.y > 30 or player.velocity_log[0].y > 0 :
 							if player.state_machine.active_state.tag == "fall" and player.velocity.y > 50:

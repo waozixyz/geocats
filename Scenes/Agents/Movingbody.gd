@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name MovingBody
 
-
+onready var platform_raycast = $PlatformRaycast
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") setget ,_get_gravity
 
 func _get_gravity():
@@ -17,17 +17,18 @@ var no_gravity = false
 export(bool) var mirror_sprite = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
-var current_platforms = {}
-var disabled_platforms = {}
+var current_platforms = 0
+
 # fall through platform
 var fall_through_timer
 # jump height
 export var jump_height = 100
 
 func fall_through(layer_bit = 0):
+	if allow_fall_through:
+		set_collision_mask(0)
+		fall_through_timer.start()
 
-	set_collision_mask(0)
-	fall_through_timer.start()
 
 func check_child_collision(child):
 	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
@@ -47,6 +48,7 @@ var ladder_rot : float
 var ladder_tween : Tween
 var max_angle = 0.8
 var layer_bit = 0
+var allow_fall_through = false
 # tween to ladder function
 func tween_to_ladder():
 	var new_x = ladder_x
@@ -84,24 +86,34 @@ func jump(jumpHeight):
 var new_rot : float
 var mushroom
 func _physics_process(_delta):
+
 	if mushroom and mushroom.touching:
 		mushroom.touching = false
 
 	var rot = sprite.rotation
 	if fall_through_timer.time_left == 0:
 		set_collision_mask(layer_bit)
-		disabled_platforms = {}
-	current_platforms = {}
-	var slide_count = get_slide_count()
+		allow_fall_through = false
 
+	var slide_count = get_slide_count()
+	
+	if platform_raycast and platform_raycast.is_colliding():
+		var shape_id = platform_raycast.get_collider_shape()
+		var collider = platform_raycast.get_collider()
+		if collider is StaticBody2D:
+			var owner_id = collider.shape_find_owner(shape_id)
+			if collider:
+				var hit_node = collider.shape_owner_get_owner(owner_id)
+				if check_child_collision(hit_node):
+					allow_fall_through = true
+				
 	if slide_count > 0:
 		new_rot = 0
 		for i in slide_count:
 			var collision = get_slide_collision(i)
 			if is_on_floor():
 				for child in collision.collider.get_children():
-					if check_child_collision(child):
-						current_platforms[child.get_parent()] = true
+	
 					if child.get_parent().is_in_group("mushroom"):
 						mushroom = child.get_parent()
 						mushroom.touching = true
