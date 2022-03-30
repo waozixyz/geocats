@@ -61,12 +61,12 @@
   },
   "4": {
     "type": "text",
-    "content": "Alright, I get it now.|You’re interested in adventure.@Would you like to assist me with my research?",
+    "content": "Alright, I get it now.|You’re interested in adventures.@Would you like to assist me with my research?",
     "next": "5"
   },
   "5": {
     "type": "text",
-    "content": "There are some mysterious limestone caves nearby in an area called the Glaciokarst.",
+    "content": "There are some mysterious limestone caves nearby, in an area called the Glaciokarst.",
     "next": "6"
   },
   "6": {
@@ -76,12 +76,12 @@
   },
   "7": {
     "type": "text",
-    "content": "Here, I’ve got a hot-fix for your Mapz system.",
+    "content": "Here, I’ve got a hot-fix for your Feline system.",
     "next": "8"
   },
   "8": {
     "type": "text",
-    "content": "|It won’t fix the| other issues with FeLine, but it should help you find the caves.",
+    "content": "|It won’t fix the... other issues with FeLine, but it should help you to travel to the Glaciokarst.",
     "next": "9"
   },
   "9": {
@@ -119,7 +119,7 @@
     "position": "left",
     "animation_in": "fade_in",
     "type": "text",
-    "content": "|If you find anything interesting on your trip spelunking, please let me know.",
+    "content": "The Glaciokarst is south of Geocity, past the river. You can go there by foot, by exiting through the door to our left. You can also use your map by clicking on the place you'd like to travel to.",
     "next": "13"
   },
   "13": {
