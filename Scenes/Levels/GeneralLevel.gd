@@ -99,7 +99,7 @@ func add_follower(cat):
 		global.user.following.append(cat.name)
 	cat.position = position
 	followers.append(cat)
-	add_child(cat)
+	add_child_below_node(player, cat)
 	cat.set_owner(self)
 	cat.position = player.position
 	if cat.has_node("ChatNPC"):
@@ -174,7 +174,7 @@ func _process(_delta):
 				follower.sprite.play("walk")
 				
 
-			if abs(diff.y) < 100 and abs(diff.x) < 100:
+			if abs(diff.y) < 200 and abs(diff.x) < 200:
 				if player.state_machine.active_state.tag == "climb":
 					var x_speed = player.currentSpeed
 					if x_speed < 50:
@@ -185,13 +185,17 @@ func _process(_delta):
 						follower.velocity.x = x_speed
 		
 				else:
-					if not player.grounded:
-						if player.state_machine.active_state.tag == "fall" and player.velocity.y > player.maxSpeed:
-							follower.velocity.y = player.velocity.y
+					if player.fall_through_timer.time_left > 0:
+						follower.fall_through()
+						#follower.velocity.y = player.velocity.y
+						print('hi')
+					elif player.velocity_log[0].y != 0:
+						if player.velocity_log[0].y < 0 and diff.y > 30 or player.velocity_log[0].y > 0 :
+							if player.state_machine.active_state.tag == "fall" and player.velocity.y > 50:
+								follower.velocity.y = player.velocity.y
 
-						else:
-							follower.velocity.y = player.velocity_log[0].y
-
+							else:
+								follower.velocity.y = player.velocity_log[0].y
 									
 					# callibrate position
 					if diff.x > 60 and pvel_x < 0:
@@ -204,4 +208,3 @@ func _process(_delta):
 						follower.velocity.x = 0
 			else:
 				follower.velocity.x = 0
-		player.velocity_log.pop_front()

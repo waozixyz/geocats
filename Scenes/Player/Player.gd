@@ -153,6 +153,8 @@ func _physics_process(delta):
 
 	# follow player logic
 	velocity_log.append(velocity)
+	if velocity_log.size() > 10:
+		velocity_log.pop_front()
 
 # update keyboard inputs
 func update_inputs():

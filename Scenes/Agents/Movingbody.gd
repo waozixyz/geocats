@@ -26,9 +26,7 @@ export var jump_height = 100
 
 func fall_through(layer_bit = 0):
 
-	for platform in current_platforms.keys():
-		platform.set_collision_layer_bit(layer_bit, false)
-		disabled_platforms[platform] = layer_bit
+	set_collision_mask(0)
 	fall_through_timer.start()
 
 func check_child_collision(child):
@@ -48,6 +46,7 @@ var ladder_y : float
 var ladder_rot : float
 var ladder_tween : Tween
 var max_angle = 0.8
+var layer_bit = 0
 # tween to ladder function
 func tween_to_ladder():
 	var new_x = ladder_x
@@ -63,6 +62,7 @@ func tween_to_ladder():
 	ladder_tween.start()
 
 func _ready():
+	layer_bit = collision_layer
 	# add ladder tween
 	ladder_tween = Tween.new()
 	add_child(ladder_tween)
@@ -89,10 +89,7 @@ func _physics_process(_delta):
 
 	var rot = sprite.rotation
 	if fall_through_timer.time_left == 0:
-		for platform in disabled_platforms:
-			var layer_bit = disabled_platforms[platform]
-
-			platform.set_collision_layer_bit(layer_bit, true)
+		set_collision_mask(layer_bit)
 		disabled_platforms = {}
 	current_platforms = {}
 	var slide_count = get_slide_count()

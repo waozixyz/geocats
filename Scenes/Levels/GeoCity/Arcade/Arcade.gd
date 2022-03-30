@@ -10,6 +10,6 @@ func _physics_process(delta):
 
 	if follow and not 'Affogato' in global.user.following:
 		remove_child(affogato)
-		player.add_follower(affogato)
+		add_follower(affogato)
 
 	

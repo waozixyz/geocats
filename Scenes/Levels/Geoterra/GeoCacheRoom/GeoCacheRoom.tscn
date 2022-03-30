@@ -63,6 +63,7 @@ centered = false
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 1 )
+frame = 1
 playing = true
 centered = false
 
