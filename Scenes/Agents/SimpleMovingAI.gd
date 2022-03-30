@@ -43,9 +43,8 @@ func _physics_process(_delta):
 			velocity.x = 0
 		if velocity.x == 0:
 			anim = "idle"
-		else:
-			if sprite.frames.has_animation("walk"):
-				anim = "walk"
+		elif sprite and sprite.frames.has_animation("walk"):
+			anim = "walk"
 	else:
 		anim = "idle"
 		velocity.x = 0
@@ -53,10 +52,11 @@ func _physics_process(_delta):
 	if is_on_wall() and velocity.x != 0:
 		direction *= -1
 
-
-	sprite.flip_h = direction - 1
+	if sprite:
+		sprite.flip_h = direction - 1
+		sprite.play(anim)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
-	sprite.play(anim)
+
 
 
 

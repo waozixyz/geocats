@@ -4,42 +4,42 @@
 [ext_resource path="res://Scenes/Agents/Movingbody.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Levels/Geoterra/GeoCacheRoom/lethe/lethe_spritesheet.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=111]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=112]
 atlas = ExtResource( 3 )
 region = Rect2( 9, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=113]
 atlas = ExtResource( 3 )
 region = Rect2( 18, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=114]
 atlas = ExtResource( 3 )
 region = Rect2( 27, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=115]
 atlas = ExtResource( 3 )
 region = Rect2( 36, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=116]
 atlas = ExtResource( 3 )
 region = Rect2( 45, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=117]
 atlas = ExtResource( 3 )
 region = Rect2( 54, 0, 9, 11 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
+"frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 113 ), SubResource( 113 ), SubResource( 113 ), SubResource( 113 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 11 ) ],
+"frames": [ SubResource( 111 ), SubResource( 116 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0

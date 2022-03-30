@@ -49,6 +49,7 @@ var ladder_tween : Tween
 var max_angle = 0.8
 var layer_bit = 0
 var allow_fall_through = false
+var manage_anim = true
 # tween to ladder function
 func tween_to_ladder():
 	var new_x = ladder_x
@@ -101,7 +102,14 @@ func _physics_process(_delta):
 
 	var slide_count = get_slide_count()
 	
-
+	# set sprite direction
+	if manage_anim:
+		if velocity.x == 0:
+			sprite.play("idle")
+		elif sprite.frames.has_animation("walk"):
+			sprite.play("walk")
+			
+	# check platofrms
 	var platforms = []
 	if slide_count > 0:
 		new_rot = 0
@@ -127,13 +135,13 @@ func _physics_process(_delta):
 		slide_count = 1
 		new_rot = rot * .5
 
-
+	# fix rotation
 	if rot != new_rot:
 		rot = (new_rot / slide_count + rot * 3) / 4
 	if not no_rotate:
 		sprite.rotation = rot
 
-	
+	# check platforms underneath
 	if platform_raycast:
 		platform_raycast.rotation = sprite.rotation
 		if platform_raycast.is_colliding():
@@ -141,13 +149,10 @@ func _physics_process(_delta):
 			var collider = platform_raycast.get_collider()
 			if collider is StaticBody2D and collider:
 				var owner_id = collider.shape_find_owner(shape_id)
-
 				var hit_node = collider.shape_owner_get_owner(owner_id)
-
 				if check_child_collision(hit_node):
 					if platforms.find(hit_node) != -1 :
 						allow_fall_trough_timer.start()
-
 
 	if sprite.animation != "climb" and not no_gravity:
 		apply_gravity()

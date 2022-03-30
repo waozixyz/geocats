@@ -106,12 +106,14 @@ func add_follower(cat):
 		cat.get_node("ChatNPC").disabled = true
 
 
-func remove_follower(cat):
+func remove_follower(cat, full_remove = true):
 	if cat:
 		if global.user.following.has(cat.name):
 			global.user.following.remove(cat.name)
 		followers.erase(cat)
-		remove_child(cat)
+		cat.velocity = Vector2(0,0)
+		if full_remove:
+			remove_child(cat)
 		
 func _ready():
 	_add_default_nodes()
@@ -167,11 +169,7 @@ func _process(_delta):
 
 			var pvel_x = player.velocity_log[0].x
 
-		
-			if follower.velocity.x == 0:
-				follower.sprite.play("idle")
-			elif follower.sprite.frames.has_animation("walk"):
-				follower.sprite.play("walk")
+
 				
 
 			if abs(diff.y) < 200 and abs(diff.x) < 200:
@@ -187,7 +185,6 @@ func _process(_delta):
 				else:
 					if player.fall_through_timer.time_left > 0:
 						follower.fall_through()
-						#follower.velocity.y = player.velocity.y
 
 					elif player.velocity_log[0].y != 0:
 						if player.velocity_log[0].y < 0 and diff.y > 30 or player.velocity_log[0].y > 0 :

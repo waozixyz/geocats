@@ -102,6 +102,7 @@ func _get_previous_state_tag():
 var followers = []
 # init player
 func _ready():
+	manage_anim = false
 	sprite.play()
 	sprite.playing = true
 	jump_height = 400
