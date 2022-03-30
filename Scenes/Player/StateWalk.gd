@@ -8,7 +8,7 @@ func logic(player: KinematicBody2D, _delta: float):
 		return "fall"
 	if player.vertical > 0:
 		player.play("crouch")
-		if player.jumping and player.allow_fall_through:
+		if player.jumping and player.allow_fall_trough_timer.time_left > 0:
 			player.fall_through()
 			return "fall"
 	elif player.vertical < 0:

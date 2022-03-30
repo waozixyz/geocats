@@ -17,15 +17,15 @@ var no_gravity = false
 export(bool) var mirror_sprite = false
 var velocity : Vector2 = Vector2.ZERO
 # one way collding platform
-var current_platforms = 0
 
 # fall through platform
 var fall_through_timer
+var allow_fall_trough_timer
 # jump height
 export var jump_height = 100
 
 func fall_through(layer_bit = 0):
-	if allow_fall_through:
+	if allow_fall_trough_timer.time_left > 0:
 		set_collision_mask(0)
 		fall_through_timer.start()
 
@@ -69,10 +69,14 @@ func _ready():
 	ladder_tween = Tween.new()
 	add_child(ladder_tween)
 	randomize()
+	allow_fall_trough_timer = Timer.new()
 	fall_through_timer = Timer.new()
+	add_child(allow_fall_trough_timer)
 	add_child(fall_through_timer)
 	fall_through_timer.wait_time = 0.2
+	allow_fall_trough_timer.wait_time = 0.2
 	fall_through_timer.one_shot = true
+	allow_fall_trough_timer.one_shot = true
 
 	
 func _stop_playing(stream):
@@ -93,20 +97,12 @@ func _physics_process(_delta):
 	var rot = sprite.rotation
 	if fall_through_timer.time_left == 0:
 		set_collision_mask(layer_bit)
-		allow_fall_through = false
+
 
 	var slide_count = get_slide_count()
 	
-	if platform_raycast and platform_raycast.is_colliding():
-		var shape_id = platform_raycast.get_collider_shape()
-		var collider = platform_raycast.get_collider()
-		if collider is StaticBody2D:
-			var owner_id = collider.shape_find_owner(shape_id)
-			if collider:
-				var hit_node = collider.shape_owner_get_owner(owner_id)
-				if check_child_collision(hit_node):
-					allow_fall_through = true
-				
+
+	
 	if slide_count > 0:
 		new_rot = 0
 		for i in slide_count:
@@ -130,10 +126,26 @@ func _physics_process(_delta):
 		slide_count = 1
 		new_rot = rot * .5
 
+
 	if rot != new_rot:
 		rot = (new_rot / slide_count + rot * 3) / 4
 	if not no_rotate:
 		sprite.rotation = rot
+
+	
+	if platform_raycast:
+		platform_raycast.rotation = sprite.rotation
+		if platform_raycast.is_colliding():
+			var shape_id = platform_raycast.get_collider_shape()
+			var collider = platform_raycast.get_collider()
+			if collider is StaticBody2D:
+				var owner_id = collider.shape_find_owner(shape_id)
+				if collider:
+					var hit_node = collider.shape_owner_get_owner(owner_id)
+					if check_child_collision(hit_node):
+						allow_fall_trough_timer.start()
+
+
 	if sprite.animation != "climb" and not no_gravity:
 		apply_gravity()
 	if add_move_n_slide:

@@ -21,14 +21,14 @@ func logic(player: KinematicBody2D, _delta: float):
 	elapsedIdleTime = OS.get_ticks_msec() - idleStartTime #set elapsed idle time
 
 	if player.on_ladder and player.vertical != 0:
-		if player.allow_fall_through:
+		if player.allow_fall_trough_timer.time_left > 0:
 			player.fall_through()
 			return "climb"
 		elif player.vertical < 0:
 			return "climb"
 	if player.vertical > 0:
 		player.play("crouch")
-		if player.jumping and player.allow_fall_through:
+		if player.jumping and player.allow_fall_trough_timer.time_left > 0:
 			player.fall_through()
 			return "fall"
 	elif player.vertical < 0:

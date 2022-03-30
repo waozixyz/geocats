@@ -703,7 +703,7 @@ polygon = PoolVector2Array( 5778, 2628, 5535, 2619, 5427, 2592, 5346, 2583, 5220
 one_way_collision = true
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
-polygon = PoolVector2Array( 6327, 2673, 6237, 2673, 5958, 2628, 5778, 2628, 5778, 2646, 5958, 2646, 6228, 2691, 6327, 2682 )
+polygon = PoolVector2Array( 6327, 2673, 6237, 2673, 6216.49, 2669.69, 5958, 2628, 5778, 2628, 5778, 2646, 5958, 2646, 6228, 2691, 6327, 2682 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D41" type="CollisionPolygon2D" parent="Collisions/GroundPlatforms"]
@@ -791,7 +791,7 @@ change_direction = 50
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 centered = false
 flip_h = true
@@ -883,7 +883,7 @@ move_speed = 5
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 14
+frame = 6
 playing = true
 centered = false
 script = ExtResource( 40 )
@@ -983,7 +983,7 @@ shape = SubResource( 31 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 35 )
-frame = 19
+frame = 33
 playing = true
 centered = false
 script = SubResource( 36 )

@@ -188,26 +188,6 @@ func _ready():
 	play()
 "
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 44 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 44 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 44 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 44 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 44 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 44 )
 region = Rect2( 0, 0, 15, 15 )
@@ -236,8 +216,33 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 44 )
 region = Rect2( 15, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 44 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 44 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 44 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 44 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=44]
 animations = [ {
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 37 ), SubResource( 37 ), SubResource( 37 ), SubResource( 37 ), SubResource( 38 ), SubResource( 38 ), SubResource( 37 ), SubResource( 37 ), SubResource( 40 ), SubResource( 37 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 37 ), SubResource( 37 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "climb",
@@ -247,11 +252,6 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 37 ), SubResource( 37 ), SubResource( 37 ), SubResource( 37 ), SubResource( 38 ), SubResource( 38 ), SubResource( 37 ), SubResource( 37 ), SubResource( 40 ), SubResource( 37 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 40 ), SubResource( 40 ), SubResource( 37 ), SubResource( 37 ) ],
-"loop": true,
-"name": "idle",
-"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=45]
@@ -262,26 +262,6 @@ extents = Vector2( 87.4824, 68.9417 )
 
 [sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 132, 70.5 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 51 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 51 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 51 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 51 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 51 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 51 )
@@ -303,8 +283,33 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 51 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 51 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=58]
 animations = [ {
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 57 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 54 ), SubResource( 54 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
 "loop": true,
 "name": "climb",
@@ -313,11 +318,6 @@ animations = [ {
 "frames": [ SubResource( 51 ), SubResource( 52 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 57 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 54 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ), SubResource( 54 ), SubResource( 54 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ) ],
-"loop": true,
-"name": "idle",
 "speed": 5.0
 } ]
 
@@ -1768,9 +1768,7 @@ polygon = PoolVector2Array( 7839.14, 3549.82, 7839.14, 3567.83, 7589.44, 3565.43
 position = Vector2( -6660.26, -2084.03 )
 polygon = PoolVector2Array( 7704.68, 3548.62, 7704.68, 3566.63, 7590.64, 3566.63, 7590.64, 3548.62 )
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 7
 collision_mask = 0
 
@@ -1807,9 +1805,7 @@ shape = SubResource( 9 )
 [node name="RightStairsUnder" type="StaticBody2D" parent="Collisions"]
 position = Vector2( 5900, 1800 )
 
-[node name="CollisionPolygon2D7" type="CollisionShape2D" parent="Collisions/RightStairsUnder" groups=[
-"end",
-]]
+[node name="CollisionPolygon2D7" type="CollisionShape2D" parent="Collisions/RightStairsUnder" groups=["end"]]
 position = Vector2( 700.84, 343.259 )
 shape = SubResource( 10 )
 
@@ -1998,7 +1994,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 30 )
 animation = "idle"
-frame = 15
+frame = 21
 playing = true
 centered = false
 script = SubResource( 31 )
@@ -2018,7 +2014,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 44 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 
@@ -2095,6 +2091,10 @@ script = ExtResource( 53 )
 position = Vector2( -2.5, -1 )
 shape = SubResource( 60 )
 
+[node name="PlatformRaycast" type="RayCast2D" parent="NPC/0xoplasmosis"]
+enabled = true
+cast_to = Vector2( 0, 20 )
+
 [node name="0xoplasmosis2" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 349, 2049 )
 collision_layer = 3
@@ -2125,6 +2125,10 @@ script = ExtResource( 53 )
 position = Vector2( -2.5, -1 )
 shape = SubResource( 60 )
 
+[node name="PlatformRaycast" type="RayCast2D" parent="NPC/0xoplasmosis2"]
+enabled = true
+cast_to = Vector2( 0, 20 )
+
 [node name="0xoplasmosis3" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 5632, 2897 )
 collision_layer = 3
@@ -2154,6 +2158,10 @@ script = ExtResource( 53 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/0xoplasmosis3/Area2D"]
 position = Vector2( -2.5, -1 )
 shape = SubResource( 60 )
+
+[node name="PlatformRaycast" type="RayCast2D" parent="NPC/0xoplasmosis3"]
+enabled = true
+cast_to = Vector2( 0, 20 )
 
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2( 6015, 331 )
@@ -2547,8 +2555,8 @@ margin_left = 124.611
 margin_top = 19.7774
 margin_right = 258.611
 margin_bottom = 81.7774
-custom_fonts/font = SubResource( 69 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 69 )
 text = "Chrysoberyl: Anti-0xoplasmotic?"
 autowrap = true
 
@@ -2561,8 +2569,8 @@ margin_left = 25.707
 margin_top = 126.472
 margin_right = 256.707
 margin_bottom = 193.472
-custom_fonts/font = SubResource( 70 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 70 )
 text = "dreaded 0xoplasmosis infection.
 I saw my life flash before my eyes as the monster rushed towards me. Out of fear, I offered it one of my Gemstones..."
 autowrap = true
@@ -2575,8 +2583,8 @@ margin_left = 127.0
 margin_top = 46.0
 margin_right = 251.0
 margin_bottom = 123.0
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "Last week, while I was peacefully going about my business collecting gems, I was rudely interrupted by an obnoxious cat infected with the"
 autowrap = true
 
@@ -2585,8 +2593,8 @@ margin_left = 22.1986
 margin_top = 182.831
 margin_right = 198.199
 margin_bottom = 229.831
-custom_fonts/font = ExtResource( 45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
 text = "...The Chrysoberyl. 
 It caught a ray of sunlight, and refracted into the eyes of the beast before me."
 autowrap = true
@@ -2596,8 +2604,8 @@ margin_left = 278.855
 margin_top = 126.697
 margin_right = 502.855
 margin_bottom = 236.697
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This mechanism briefly stopped the monster from advancing upon me, and I found a window of opportunity to escape. Maybe we could use this rare Chrysoberyl to help these unfortunate cats recover from this ailment? More research is needed."
 autowrap = true
 
@@ -2669,8 +2677,8 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 139.0
 margin_bottom = 135.0
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "I need to leave this stuffy tower before I get turned into one of these wreched monsters."
 autowrap = true
 
@@ -2711,8 +2719,8 @@ margin_top = 5.0
 margin_right = 136.0
 margin_bottom = 128.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "None of the other gemstones I've found seem to work the same way as chrysoberyl does."
 autowrap = true
 
@@ -2756,8 +2764,8 @@ margin_top = 2.0
 margin_right = 134.0
 margin_bottom = 143.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "Hey bro, it's been too long since we've hung out!
 let's go on a hike together soon... I'll bring the catnip  
 
@@ -2798,8 +2806,8 @@ margin_top = 3.0
 margin_right = 132.0
 margin_bottom = 129.0
 theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0.564706, 0, 0, 1 )
+custom_fonts/font = ExtResource( 24 )
 text = "Call back the Nonaco Department of Corperate Technology...
 URGENT!
 [3:26 PM]"
@@ -2838,8 +2846,8 @@ margin_left = 5.80005
 margin_top = 2.0
 margin_right = 133.8
 margin_bottom = 71.0
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "This statue I saw during my visit to the castle was to DIE for. It would look PURRfect in"
 autowrap = true
 __meta__ = {
@@ -2851,8 +2859,8 @@ margin_left = 75.5997
 margin_top = 65.9995
 margin_right = 134.6
 margin_bottom = 130.999
-custom_fonts/font = ExtResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 43 )
 text = "my new
 research
 base."

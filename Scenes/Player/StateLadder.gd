@@ -12,7 +12,7 @@ func enter_logic(player: KinematicBody2D):
 
 func logic(player: KinematicBody2D, _delta: float):
 
-	if player.allow_fall_through:
+	if player.allow_fall_trough_timer.time_left > 0:
 		player.fall_through()
 	if not player.on_ladder or abs(player.vx) > 0:
 		return "fall"
