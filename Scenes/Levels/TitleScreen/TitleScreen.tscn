@@ -1,34 +1,79 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Levels/TitleScreen/TitleScreen.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Scenes/Levels/TitleScreen/Login.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Levels/TitleScreen/Slideshow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/QixMono16.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/UI/ui_buttons.tres" type="Theme" id=5]
+[ext_resource path="res://Scenes/Levels/TitleScreen/Login.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Levels/TitleScreen/InfoBox.gd" type="Script" id=7]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+void fragment(){
+    
+    const float WIDTH = 32.;
+    vec2 cell = floor(UV * WIDTH);
+    
+    vec3 col = abs(
+        vec3(
+			cell.y*sin(-TIME + abs(cell.y)*0.5 ),
+			cell.y*sin(-TIME + abs(cell.y)*0.5 ) * .5,
+			cell.y*sin(-TIME + abs(cell.y)*0.5 ) * .2)
+    ) * (0.3/WIDTH);
+    
+
+    COLOR = vec4(col,1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+extra_spacing_bottom = -5
+extra_spacing_space = -2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Assets/Fonts/qix_mono.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = SubResource( 4 )
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 270, 0, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 150, 270, 150 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 270, 150, 270, 150 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 1 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=16]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/VHS-and-CRT-monitor-effect
@@ -259,8 +304,8 @@ void fragment()
 	COLOR = text;
 }"
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.0
 shader_param/scanlines_width = 0.0
@@ -283,23 +328,113 @@ shader_param/clip_warp = false
 shader_param/vignette_intensity = 0.4
 shader_param/vignette_opacity = 0.5
 
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0.862745 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.09375, 0.0461771, 0.000366211, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://Assets/Fonts/qix_mono.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 26
+font_data = SubResource( 10 )
+
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Login" parent="." instance=ExtResource( 2 )]
+[node name="Login" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="Background" type="ColorRect" parent="Login"]
+material = SubResource( 3 )
+margin_top = 315.0
+margin_right = 641.0
+margin_bottom = 480.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="Login"]
+margin_left = 263.701
+margin_top = 438.7
+margin_right = 353.701
+margin_bottom = 473.7
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 7 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoButton" type="Button" parent="Login"]
+margin_left = 361.701
+margin_top = 438.7
+margin_right = 396.701
+margin_bottom = 473.7
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 7 )
+text = "?"
+
+[node name="Version" type="Label" parent="Login"]
+margin_left = 9.0
+margin_top = 450.0
+margin_right = 246.0
+margin_bottom = 475.0
+custom_colors/font_color = Color( 0.972549, 0.619608, 0.203922, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "V.420 - Demo Days"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="Login"]
+margin_left = 46.0096
+margin_top = 393.7
+margin_right = 611.01
+margin_bottom = 438.7
+custom_fonts/font = SubResource( 5 )
+text = "Welcome to Geocats Complimentary Edition!
+This version is free for anyone to play and have fun with."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="Login"]
+margin_left = 603.0
+margin_top = 324.0
+margin_right = 633.0
+margin_bottom = 349.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -1.90735e-06 )
 scale = Vector2( 2.37037, 2.52 )
-frames = SubResource( 5 )
-frame = 1
+frames = SubResource( 15 )
+frame = 3
 speed_scale = 0.1
 playing = true
 centered = false
 
 [node name="CRT" type="ColorRect" parent="."]
-material = SubResource( 7 )
+material = SubResource( 17 )
 margin_right = 640.0
 margin_bottom = 378.0
 mouse_filter = 2
@@ -311,3 +446,73 @@ __meta__ = {
 stream = ExtResource( 1 )
 autoplay = true
 bus = "Music"
+
+[node name="InfoBox" type="Panel" parent="."]
+margin_left = 54.0
+margin_top = 18.0
+margin_right = 567.0
+margin_bottom = 441.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 8 )
+script = ExtResource( 7 )
+
+[node name="Taskbar" type="Panel" parent="InfoBox"]
+margin_right = 513.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 423, 81 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="InfoBox/Taskbar"]
+margin_left = 470.0
+margin_top = 9.0
+margin_right = 500.0
+margin_bottom = 34.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Received" type="Label" parent="InfoBox/Taskbar"]
+margin_left = 18.0
+margin_top = 9.0
+margin_right = 425.0
+margin_bottom = 36.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.996078, 1, 0.576471, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Welcome to GeoCats!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="RichTextLabel" parent="InfoBox"]
+margin_left = 20.0
+margin_top = 46.0
+margin_right = 498.0
+margin_bottom = 410.0
+theme = ExtResource( 5 )
+text = "Geocats is a 2D action-platformer created by Nonaco, an international team of 5 humans. 
+This game centres around the Geocats, a talented group of cats from a place called Geoterra. They rove their world in search of small treasure chests called geocaches. 
+
+But, not everything in Geoterra is as idylic as it sounds. There have been weird reports of creepy monster-cats attacking the peaceful denizens. Do you have what it takes to join the Geocats and return peace to the lands?
+
+We are working together with Elysium, a carbon-neutral blockchain, to offer up unique Geocat characters to those of us who enjoy collecting, and would like to create their very own digital cat collection. 
+When Elysium goes live, these amazing cats will become playable characters in the game.
+For those who aren't interested in this sort of stuff? That's cool too, the full game's a full experience and is open to anyone to play and enjoy. 
+
+This demo version of Geocats is our showcase. 
+We have been working very dilligently since 2020 to finally bring everyone sample of what we've been working on, and what to look forward to as we continue to build.
+
+We make all of our own art, music, and sound-effects. We've even made our own typeface! It's called Qix Mono, and is free for anyone to use in their own projects if they like. At Nonaco, we utilise and support as much non-proprietary software as possible. Geocats is created in Godot, the free, open-source engine, and all our assets are created with the help of programs like Krita and Gimp. 
+
+There are plenty of ways to find these rare digital felines, both in and outside of the game. From contests and events, to the Vulcan Forged Marketplace - Check out our social media channels for more info!
+
+Our goal is to create an entertaining game that makes our friends, families, and fans happy.
+
+Welcome to Geocats, enjoy!"

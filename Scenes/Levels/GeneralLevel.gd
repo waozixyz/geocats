@@ -18,6 +18,7 @@ var disable = {
 	feline = []
 }
 
+var chatting = []
 
 func set_disable(obj: String, reason: String, state = true):
 	if state:
@@ -94,14 +95,14 @@ func _init_music_array():
 
 var followers = []
 
-func add_follower(cat):
+func add_follower(cat, keep_pos = false):
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
-	cat.position = position
 	followers.append(cat)
 	add_child_below_node(player, cat)
 	cat.set_owner(self)
-	cat.position = player.position
+	if not keep_pos:
+		cat.position = player.position
 	if cat.has_node("ChatNPC"):
 		cat.get_node("ChatNPC").disabled = true
 
@@ -163,11 +164,12 @@ func _process(_delta):
 		
 	# follow player logic
 	if player.velocity_log.size() > 5:
+		var order = 0
 		for follower in followers:
 			var dir = (follower.global_position - player.position).normalized()
 			var diff = follower.position - player.position
 
-			var pvel_x = player.velocity_log[0].x
+			var pvel_x = player.velocity_log[order].x
 
 
 				
@@ -186,13 +188,13 @@ func _process(_delta):
 					if player.fall_through_timer.time_left > 0:
 						follower.fall_through()
 
-					elif player.velocity_log[0].y != 0:
-						if player.velocity_log[0].y < 0 and diff.y > 30 or player.velocity_log[0].y > 0 :
+					elif player.velocity_log[order].y != 0:
+						if player.velocity_log[order].y < 0 and diff.y > 30 or player.velocity_log[order].y > 0 :
 							if player.state_machine.active_state.tag == "fall" and player.velocity.y > 50:
 								follower.velocity.y = player.velocity.y
 
 							else:
-								follower.velocity.y = player.velocity_log[0].y
+								follower.velocity.y = player.velocity_log[order].y
 									
 					# callibrate position
 					if diff.x > 60 and pvel_x < 0:
@@ -205,3 +207,4 @@ func _process(_delta):
 						follower.velocity.x = 0
 			else:
 				follower.velocity.x = 0
+			order += 1

@@ -24,10 +24,11 @@ var allow_fall_trough_timer
 # jump height
 export var jump_height = 100
 
-func fall_through(layer_bit = 0):
-	if allow_fall_trough_timer.time_left > 0:
+func fall_through(force = false):
+	if allow_fall_trough_timer.time_left > 0 or force:
 		set_collision_mask(0)
 		fall_through_timer.start()
+
 
 
 func check_child_collision(child):

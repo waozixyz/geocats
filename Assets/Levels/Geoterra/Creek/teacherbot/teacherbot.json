@@ -5,23 +5,31 @@
       "dictionary": "quests",
       "variable": "geoterra_kitten_quest_complete",
       "true": "foundthem1",
-      "false": "0"
+      "false": "1"
     },
-    "0": {
+    "1": {
       "avatar": "teacherbot.png",
       "name": "Teacherbot",
       "position": "left",
       "animation_in": "fade_in",
       "type": "text",
       "content": "Have you seen three kittens running around here? There should be six of us... but I guess a few got bored and ran off.",
-      "next": "1"
-    },
-    "1": {
-      "type": "text",
-      "content": "These students and I are on a nature excursion. We're taking water samples and studying local ecology.",
       "next": "2"
     },
     "2": {
+      "type": "text",
+      "content": "These students and I are on a nature excursion. We're taking water samples and studying local ecology.",
+      "next": "3",
+    },
+    "3": {
+      "type": "divert",
+      "condition": "boolean",
+      "dictionary": "quests",
+      "variable": "geoterra_kitten_quest",
+      "true": "",
+      "false": "4"
+    },
+    "4": {
         "name": "Daisy",
         "avatar": "daisy.png",
         "animation_in": "fade_in",
@@ -29,9 +37,9 @@
         "type": "question",
         "text": "Can you help us find them please?",
         "options": ["Sure", "Not now"],
-        "next": ["3", ""]
+        "next": ["5", ""]
       },
-    "3": {
+    "5": {
         "name": "Caramel",
         "avatar": "caramel.png",
         "animation_in": "fade_in",
@@ -40,7 +48,7 @@
         "operation": "variable",
         "dictionary": "quests",
         "value": [["geoterra_kitten_quest", true]],
-        "content": "Yeah, we're tired of being educated. We want to go home!",
+        "text": "Yeah, we're tired of being educated. We want to go home!",
         "next": ""
       },
     "foundthem1": {
@@ -107,6 +115,13 @@
         "position": "left",
         "type": "text",
         "content": "See you later!",
-        "next": ""
+        "next": "foundthem9"
+      },
+      "foundthem9" : {
+        "type": "action",
+        "operation": "variable",
+        "dictionary": "variables",
+        "value": [["geoterra_kitten_found_them", true]],
+        "next": "",
       }
   }

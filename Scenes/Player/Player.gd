@@ -108,9 +108,6 @@ func _ready():
 	jump_height = 400
 	state_machine.enter_logic(self) 
 	._ready()
-	if global.user.position:
-		position = global.user.position
-		sprite.flip_h  = global.user.direction * -1
 
 
 

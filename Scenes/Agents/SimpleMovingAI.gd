@@ -23,6 +23,8 @@ func _get_walk_tick():
 	return int(rand_range(walk_delay_range[0], walk_delay_range[1]))
 	
 func _ready():
+	direction = int(sprite.flip_h) * -2 - 1
+
 	._ready()
 	jump_tick = _get_jump_tick()
 	walk_tick = _get_walk_tick()
@@ -38,9 +40,10 @@ func _physics_process(_delta):
 		if (ticks / 10) % walk_tick == 0:
 			velocity.x = move_speed * direction
 			walk_tick = _get_walk_tick()
-		if ticks % change_direction == 0:
-			direction *= -1
-			velocity.x = 0
+		if change_direction > 0:
+			if ticks % change_direction == 0:
+				direction *= -1
+				velocity.x = 0
 		if velocity.x == 0:
 			anim = "idle"
 		elif sprite and sprite.frames.has_animation("walk"):
@@ -53,7 +56,7 @@ func _physics_process(_delta):
 		direction *= -1
 
 	if sprite:
-		sprite.flip_h = direction - 1
+		sprite.flip_h = direction - 1 * (int(mirror_sprite) * 2 - 1)
 		sprite.play(anim)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 

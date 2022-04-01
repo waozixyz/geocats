@@ -1,14 +1,17 @@
 {
     "first": {
+      "type": "divert",
+      "condition": "boolean",
+      "dictionary": "quests",
+      "variable": "geoterra_kitten_quest",
+      "true": "0",
+      "false": "inactive1"
+    },
+    "0": {
       "avatar": "garloo.png",
       "name": "Garloo",
       "position": "left",
       "animation_in": "fade_in",
-      "type": "text",
-      "content": "Lost!?",
-      "next": "1"
-    },
-    "1": {
       "type": "text",
       "content": "I'm not lost... I'm a free spirit!",
       "next": "2"
@@ -26,6 +29,23 @@
       "4": {
         "type": "text",
         "content": "Let's go, I'll help you find the other cats!",
-        "next": ""
+        "next": "5"
+      },
+      "5": {
+        "type": "action",
+        "content": "...",
+        "next": "",
+        "operation": "variable",
+        "dictionary": "variables",
+        "value": [["geoterra_garloo_follow", true]],
+      },
+      "inactive1": {
+        "avatar": "garloo.png",
+        "name": "Garloo",
+        "position": "left",
+        "animation_in": "fade_in",
+        "type": "text",
+        "content": "meow!!",
+        "next": "",
       }
   }

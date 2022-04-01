@@ -5,7 +5,6 @@ onready var sprite = $Sprite
 
 func _process(delta):
 	._process(delta)
-	PROGRESS.quests["geoterra_kitten_quest"] = true
 	if PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var]:
 		sprite.frame = 2
 		disabled = true

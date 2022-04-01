@@ -34,17 +34,20 @@ func _ready():
 var active : bool
 var completed :bool
 func show_chat():
+	current_scene.chatting.append(character_name)
 	active = true
 	chat_with.visible = true
 	chat_with.get_node("Label").text = character_name
 	current_scene.set_disable("e_interact", "chat_npc")
 
 func hide_chat():
-	current_scene.set_disable("e_interact", "chat_npc", false)
-	active = false
-	chat_with.visible = false
-	dialogue.exit()
-	dia_started = false
+	current_scene.chatting.erase(character_name)
+	if current_scene.chatting.size() == 0:
+		current_scene.set_disable("e_interact", "chat_npc", false)
+		active = false
+		chat_with.visible = false
+		dialogue.exit()
+		dia_started = false
 
 func _is_enable_var():
 	if enable_var.empty():

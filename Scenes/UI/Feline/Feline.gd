@@ -90,10 +90,9 @@ func _button_action(label):
 			_open_geodex()
 		"Exit":
 			exit()
-			if OS.get_name() == "HTML5":
-				SceneChanger.change_scene("TitleScreen")
-			else:
-				get_tree().quit()
+
+			SceneChanger.change_scene("TitleScreen")
+
 
 
 # change view in system

@@ -22,7 +22,7 @@ extra_spacing_bottom = -5
 extra_spacing_space = -2
 font_data = ExtResource( 2 )
 
-[node name="ChatWith" type="Panel"]
+[node name="Control" type="Panel"]
 margin_left = 15.0
 margin_top = 9.0
 margin_right = 204.0
