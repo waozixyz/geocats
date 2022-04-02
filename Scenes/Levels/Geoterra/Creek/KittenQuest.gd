@@ -21,6 +21,10 @@ func _ready():
 			remove_child(child)
 	left_bound = collision_shape.position.x - collision_shape.shape.extents.x
 	right_bound = collision_shape.position.x + collision_shape.shape.extents.x
+	for child in global.user.following:
+		var node = get_node_or_null(child)
+		if node:
+			remove_child(node)
 	for child in get_children():
 		if lost_kittens.has(child.name) and left_bound < child.position.x and right_bound > child.position.x and child.visible:
 			found_kittens.append(child)
@@ -78,8 +82,6 @@ func _process(_delta):
 
 	for kitten in new_kittens:
 		var dest = get_node_or_null(kitten.name + "2")
-		if not dest:
-			dest = get_node(kitten.name)
 
 		if abs(kitten.position.x - dest.position.x) < 10 and abs(kitten.position.y - dest.position.y) < 10 :
 			dest.visible = true

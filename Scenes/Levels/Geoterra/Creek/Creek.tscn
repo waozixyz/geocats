@@ -950,7 +950,6 @@ move_speed = 5
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 8
 playing = true
 centered = false
 script = ExtResource( 40 )
@@ -971,7 +970,7 @@ position = Vector2( 20.4136, 32.334 )
 shape = SubResource( 109 )
 
 [node name="Sparkle" parent="KittenQuest" instance=ExtResource( 41 )]
-position = Vector2( 2608, 509 )
+position = Vector2( 2070, 623 )
 
 [node name="Sparkle2" type="KinematicBody2D" parent="KittenQuest"]
 visible = false
@@ -1027,7 +1026,7 @@ shape = SubResource( 63 )
 position = Vector2( -1.27295, 6.04688 )
 shape = SubResource( 104 )
 
-[node name="Lethe" type="KinematicBody2D" parent="KittenQuest"]
+[node name="Lethe2" type="KinematicBody2D" parent="KittenQuest"]
 visible = false
 position = Vector2( 6679, 2119 )
 collision_layer = 2
@@ -1036,11 +1035,11 @@ script = ExtResource( 36 )
 move_speed = 5
 change_direction = 20
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Lethe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Lethe2"]
 position = Vector2( 17, 14 )
 shape = SubResource( 123 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Lethe"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KittenQuest/Lethe2"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 118 )
 animation = "idle"
@@ -1079,7 +1078,7 @@ shape = SubResource( 31 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 35 )
-frame = 10
+frame = 19
 playing = true
 centered = false
 script = SubResource( 36 )
