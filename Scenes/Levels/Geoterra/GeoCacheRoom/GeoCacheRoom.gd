@@ -11,6 +11,6 @@ func _physics_process(delta):
 
 	if follow and not 'Lethe' in global.user.following and dialogue.modulate.a == 0:
 		remove_child(lethe)
-		player.add_follower(lethe)
+		add_follower(lethe)
 
 	
