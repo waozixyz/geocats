@@ -19,21 +19,18 @@ func _ready():
 		visible = false
 		for child in get_children():
 			remove_child(child)
-	var left_bound = collision_shape.position.x - collision_shape.shape.extents.x
-	var right_bound = collision_shape.position.x + collision_shape.shape.extents.x
+	left_bound = collision_shape.position.x - collision_shape.shape.extents.x
+	right_bound = collision_shape.position.x + collision_shape.shape.extents.x
 	for child in get_children():
-
 		if lost_kittens.has(child.name) and left_bound < child.position.x and right_bound > child.position.x and child.visible:
 			found_kittens.append(child)
-			print(child.name)
+
 
 
 	if not is_connected("body_entered", self, "_on_body_entered"):
 		var err = connect("body_entered", self, "_on_body_entered")
 		assert(err == OK) 
-	if not is_connected("body_exited", self, "_on_body_exited"):
-		var err = connect("body_exited", self, "_on_body_exited")
-		assert(err == OK) 
+
 	
 func _on_body_entered(body):
 	if lost_kittens.has(body.name) and not found_kittens.has(body.name):
@@ -52,18 +49,18 @@ func next_waypoint(kitten, fall = false):
 		if current_waypoint < 3:
 			current_waypoint += 1
 
-func _process(delta):
+func _process(_delta):
 	if PROGRESS.variables.has("geoterra_kitten_found_them") and PROGRESS.variables["geoterra_kitten_found_them"]:
 
 		for kitten in get_children():
 			if kitten is KinematicBody2D:
-				var left_bound = waypoint_1.position.x - mv_peed
-				var right_bound =  waypoint_1.position.x + mv_peed
-				if kitten.position.x > left_bound:
+				var lb = waypoint_1.position.x - mv_peed
+				var rb =  waypoint_1.position.x + mv_peed
+				if kitten.position.x > lb:
 					kitten.velocity.x = -mv_peed
 					if kitten == teacher_bot:
 						current_scene.set_disable("player", "animation_teacher")
-				if kitten.position.x < right_bound:
+				if kitten.position.x < rb:
 					remove_child(kitten)
 					if kitten == teacher_bot:
 						current_scene.set_disable("player", "animation_teacher", false)

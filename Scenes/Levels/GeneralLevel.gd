@@ -166,7 +166,6 @@ func _process(_delta):
 	if player.velocity_log.size() > 5:
 		var order = 0
 		for follower in followers:
-			var dir = (follower.global_position - player.position).normalized()
 			var diff = follower.position - player.position
 
 			var pvel_x = player.velocity_log[order].x

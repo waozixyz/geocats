@@ -98,8 +98,10 @@ func _load_data(file_name, default_data):
 		if typeof(file_data) == TYPE_DICTIONARY:
 			return _correct_data(file_data, default_data)
 		else:
-			return default_data
 			printerr("Corrupted data!")
+			return default_data
+
 	else:
-		return default_data
 		printerr("No saved data!")
+		return default_data
+
