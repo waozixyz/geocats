@@ -60,16 +60,16 @@ func _ready():
 	# overwrite data with saved data
 	data = _load_data(data_file, data)
 
-	#user = _load_data(user_file, user)
+	user = _load_data(user_file, user)
 
 	# load audio buses
 	_load_audio_bus("Music")
 	_load_audio_bus("Sound")
 
 	# load dialogue system data
-	#PROGRESS.variables = data.prog_var
-	#PROGRESS.dialogues = data.prog_dia
-	#PROGRESS.quests = data.prog_quests
+	PROGRESS.variables = data.prog_var
+	PROGRESS.dialogues = data.prog_dia
+	PROGRESS.quests = data.prog_quests
 
 func _correct_data(dat, default_data):
 	var out = default_data
