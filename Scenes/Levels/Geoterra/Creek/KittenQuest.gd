@@ -15,7 +15,6 @@ var left_bound = 0
 var right_bound = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	PROGRESS.variables["geoterra_kitten_found_them"] = true
 	if PROGRESS.variables.has("geoterra_kitten_found_them") and PROGRESS.variables["geoterra_kitten_found_them"]:
 		visible = false
 		for child in get_children():

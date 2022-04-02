@@ -950,7 +950,7 @@ move_speed = 5
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 7
+frame = 1
 playing = true
 centered = false
 script = ExtResource( 40 )
@@ -1079,7 +1079,7 @@ shape = SubResource( 31 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 35 )
-frame = 18
+frame = 10
 playing = true
 centered = false
 script = SubResource( 36 )
@@ -1107,7 +1107,7 @@ centered = false
 script = ExtResource( 26 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 35, 3903 )
+position = Vector2( 36, 3909 )
 
 [node name="Camera2D" parent="Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
