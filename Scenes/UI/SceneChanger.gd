@@ -30,8 +30,9 @@ func _get_level_path(level_territory, level_name = ""):
 		printerr("wrong path: ", start, level_territory, "/", end)
 
 func change_scene(level_territory, level_name = ""):
-	global.user.current_territory = level_territory
-	global.user.current_level = level_name
+	if level_territory != "TitleScreen":
+		global.user.current_territory = level_territory
+		global.user.current_level = level_name
 	get_tree().paused = true
 	if global.user.visited.has(level_territory):
 		global.user.visited[level_territory].append(level_name)
