@@ -428,7 +428,7 @@ __meta__ = {
 position = Vector2( 0, -1.90735e-06 )
 scale = Vector2( 2.37037, 2.52 )
 frames = SubResource( 15 )
-frame = 3
+frame = 2
 speed_scale = 0.1
 playing = true
 centered = false
@@ -448,16 +448,23 @@ autoplay = true
 bus = "Music"
 
 [node name="InfoBox" type="Panel" parent="."]
-margin_left = 54.0
-margin_top = 18.0
-margin_right = 567.0
-margin_bottom = 441.0
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 608.0
+margin_bottom = 464.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 8 )
 script = ExtResource( 7 )
 
+[node name="ColorRect" type="ColorRect" parent="InfoBox"]
+margin_left = -32.0
+margin_top = -16.0
+margin_right = 608.0
+margin_bottom = 464.0
+color = Color( 0, 0, 0, 0.345098 )
+
 [node name="Taskbar" type="Panel" parent="InfoBox"]
-margin_right = 513.0
+margin_right = 576.0
 margin_bottom = 45.0
 rect_pivot_offset = Vector2( 423, 81 )
 mouse_filter = 2
@@ -467,16 +474,13 @@ __meta__ = {
 }
 
 [node name="Exit" type="Button" parent="InfoBox/Taskbar"]
-margin_left = 470.0
-margin_top = 9.0
-margin_right = 500.0
-margin_bottom = 34.0
+margin_left = 533.0
+margin_top = 10.0
+margin_right = 563.0
+margin_bottom = 35.0
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 text = "X"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Received" type="Label" parent="InfoBox/Taskbar"]
 margin_left = 18.0
@@ -492,10 +496,10 @@ __meta__ = {
 }
 
 [node name="Description" type="RichTextLabel" parent="InfoBox"]
-margin_left = 20.0
-margin_top = 46.0
-margin_right = 498.0
-margin_bottom = 410.0
+margin_left = 17.0
+margin_top = 57.0
+margin_right = 565.0
+margin_bottom = 434.0
 theme = ExtResource( 5 )
 text = "Geocats is a 2D action-platformer created by Nonaco, an international team of 5 humans. 
 This game centres around the Geocats, a talented group of cats from a place called Geoterra. They rove their world in search of small treasure chests called geocaches. 
