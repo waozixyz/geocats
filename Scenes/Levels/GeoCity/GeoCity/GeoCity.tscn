@@ -260,24 +260,24 @@ extents = Vector2( 75, 47 )
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 76.5, 49 )
 
-[sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 33 )
-region = Rect2( 11, 0, 11, 7 )
-
 [sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 11, 7 )
 
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 33 )
+region = Rect2( 11, 0, 11, 7 )
+
 [sub_resource type="SpriteFrames" id=59]
 animations = [ {
-"frames": [ SubResource( 57 ), SubResource( 58 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 58 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -287,14 +287,6 @@ extents = Vector2( 45.3608, 28.051 )
 [sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 17.8259, 10.1486 )
 
-[sub_resource type="AtlasTexture" id=62]
-atlas = ExtResource( 27 )
-region = Rect2( 22, 0, 11, 7 )
-
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 27 )
-region = Rect2( 0, 0, 11, 7 )
-
 [sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 27 )
 region = Rect2( 0, 0, 11, 7 )
@@ -303,38 +295,26 @@ region = Rect2( 0, 0, 11, 7 )
 atlas = ExtResource( 27 )
 region = Rect2( 11, 0, 11, 7 )
 
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 27 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 11, 7 )
+
 [sub_resource type="SpriteFrames" id=66]
 animations = [ {
-"frames": [ SubResource( 62 ), SubResource( 63 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 62 ), SubResource( 63 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=67]
-atlas = ExtResource( 48 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 48 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 48 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 48 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 48 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 48 )
@@ -356,8 +336,33 @@ region = Rect2( 15, 0, 15, 15 )
 atlas = ExtResource( 48 )
 region = Rect2( 30, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 48 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 48 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 48 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 48 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=77]
 animations = [ {
+"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 75 ), SubResource( 75 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
 "frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "climb",
@@ -367,32 +372,7 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 75 ), SubResource( 75 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ) ],
-"loop": true,
-"name": "idle",
-"speed": 4.0
 } ]
-
-[sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 47 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 47 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 47 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 47 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 47 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 47 )
@@ -414,8 +394,33 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 47 )
 region = Rect2( 60, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 47 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 47 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 47 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 47 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=88]
 animations = [ {
+"frames": [ SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 85 ), SubResource( 85 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 86 ), SubResource( 86 ), SubResource( 85 ), SubResource( 85 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
 "loop": true,
 "name": "climb",
@@ -424,11 +429,6 @@ animations = [ {
 "frames": [ SubResource( 81 ), SubResource( 82 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 85 ), SubResource( 85 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 86 ), SubResource( 86 ), SubResource( 85 ), SubResource( 85 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ) ],
-"loop": true,
-"name": "idle",
 "speed": 5.0
 } ]
 
@@ -442,14 +442,14 @@ region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=91]
 animations = [ {
-"frames": [ SubResource( 89 ), SubResource( 90 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 89 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 89 ), SubResource( 90 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -650,7 +650,7 @@ layers = {
 
 [node name="Bricks" type="StaticBody2D" parent="CollisionColliders"]
 position = Vector2( 2800, 900 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
@@ -678,7 +678,7 @@ one_way_collision = true
 
 [node name="Platforms" type="StaticBody2D" parent="CollisionColliders"]
 position = Vector2( 0, 400 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
@@ -856,7 +856,7 @@ one_way_collision = true
 
 [node name="Walls" type="StaticBody2D" parent="CollisionColliders"]
 position = Vector2( 0, 400 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
@@ -871,17 +871,15 @@ position = Vector2( 0, 1.63159 )
 polygon = PoolVector2Array( 4615, 1040, 4703, 984, 4722, 985, 4725, 844, 4556, 846, 4556, 203, 4799, 201, 4801, 1032 )
 
 [node name="Ground" type="StaticBody2D" parent="CollisionColliders"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/Ground"]
 position = Vector2( 2410, 1515.06 )
 shape = SubResource( 51 )
 
-[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
-"end",
-]]
-collision_layer = 7
+[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionColliders/EndWalls"]
@@ -974,14 +972,10 @@ position = Vector2( -5.5, 1 )
 shape = SubResource( 56 )
 
 [node name="NPC" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="Longcat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3328, 900 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 script = ExtResource( 7 )
 move_speed = 75
@@ -1007,7 +1001,7 @@ shape = SubResource( 61 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4119, 775 )
-collision_layer = 2
+collision_layer = 16
 collision_mask = 2
 script = ExtResource( 7 )
 move_speed = 75
@@ -1036,6 +1030,8 @@ shape = SubResource( 61 )
 
 [node name="AvocatoArea2D" type="Area2D" parent="NPC"]
 position = Vector2( 1646.27, 750.531 )
+collision_layer = 16
+collision_mask = 2
 script = ExtResource( 5 )
 character_name = "Avocato"
 json_file = "res://Assets/Levels/GeoCity/GeoCity/Avocato/avocato.json"
@@ -1056,6 +1052,8 @@ shape = SubResource( 60 )
 
 [node name="ShinobiArea2D" type="Area2D" parent="NPC"]
 position = Vector2( 4749.16, 478.561 )
+collision_layer = 2
+collision_mask = 16
 script = ExtResource( 5 )
 character_name = "Shinobi"
 json_file = "res://Assets/Levels/GeoCity/GeoCity/Shinobi/shinobi.json"
@@ -1076,7 +1074,7 @@ script = ExtResource( 11 )
 
 [node name="Lasagne" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 2029.28, 1386.47 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 script = ExtResource( 7 )
 move_speed = 125

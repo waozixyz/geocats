@@ -63,6 +63,7 @@ centered = false
 scale = Vector2( 0.166667, 0.166667 )
 z_index = 1
 frames = SubResource( 1 )
+frame = 1
 playing = true
 centered = false
 
@@ -87,7 +88,7 @@ scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 6 )
 
 [node name="Colliders" type="StaticBody2D" parent="." groups=["end"]]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders"]
@@ -122,6 +123,7 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 centered = false
 

@@ -7,8 +7,9 @@ onready var explosion = $Explosion
 
 var touching
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	var err = connect("body_entered", self, "_on_body_entered")
+	assert(err == OK)
+
 	#sound.connect("finished", self, "_repeat")
 	
 func _repeat():
@@ -36,5 +37,3 @@ func _process(delta):
 			if not explosion.is_playing():
 				explosion.play()
 
-func _on_body_exited(body):
-	pass

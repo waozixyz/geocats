@@ -384,7 +384,7 @@ __meta__ = {
 }
 
 [node name="StructurePlatforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -447,7 +447,7 @@ shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="Structure" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -472,7 +472,7 @@ polygon = PoolVector2Array( 1306.12, 1699.88, 1331.33, 1747.9, 1339.74, 1827.13,
 
 [node name="Walls" type="StaticBody2D" parent="Collisions"]
 position = Vector2( 2050.42, 4438.18 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -514,7 +514,7 @@ shape = SubResource( 20 )
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
 "end",
 ]]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,

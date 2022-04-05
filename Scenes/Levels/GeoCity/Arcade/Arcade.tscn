@@ -409,7 +409,7 @@ script = ExtResource( 18 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
@@ -430,7 +430,7 @@ shape = SubResource( 497 )
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 position = Vector2( 968, 232 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms"]
@@ -470,7 +470,7 @@ one_way_collision = true
 
 [node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 2408, 1117 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndWalls"]
@@ -503,7 +503,7 @@ bus = "Music"
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 569, 370 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 9 )
 __meta__ = {

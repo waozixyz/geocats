@@ -445,7 +445,7 @@ limit_bottom = 3750
 scale = Vector2( 0.833, 0.833 )
 
 [node name="TopRightSurfacePlatforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D227" type="CollisionPolygon2D" parent="Collisions/TopRightSurfacePlatforms"]
@@ -479,7 +479,7 @@ polygon = PoolVector2Array( 7759.9, 3584.63, 7769.51, 3577.43, 7787.52, 3577.43,
 one_way_collision = true
 
 [node name="TopRightSurface" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -498,7 +498,7 @@ position = Vector2( 7934.22, -24.8109 )
 polygon = PoolVector2Array( -50.6675, 108.845, -0.247559, 5.60322, 45.3672, 4.40277, -20.6553, 141.257 )
 
 [node name="TopGroundPlatforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -879,7 +879,7 @@ polygon = PoolVector2Array( 7731.09, 3588.24, 7739.5, 3578.63, 7757.5, 3571.43, 
 one_way_collision = true
 
 [node name="TopGround" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D120" type="CollisionPolygon2D" parent="Collisions/TopGround"]
@@ -887,7 +887,7 @@ position = Vector2( 0, 1.20048 )
 polygon = PoolVector2Array( 2360.14, 743.097, 2402.16, 695.078, 2506.6, 672.269, 2555.82, 673.469, 2635.05, 685.474, 2684.27, 686.675, 2702.28, 698.68, 2769.51, 698.68, 2831.93, 703.481, 2980.79, 773.109, 3082.83, 811.525, 3133.25, 775.51, 3133.25, 750.3, 3172.87, 745.498, 3195.68, 786.315, 3230.49, 799.52, 3246.1, 812.725, 3265.31, 815.126, 3318.13, 773.109, 3330.13, 762.305, 3390.16, 762.305, 3406.96, 779.112, 3426.17, 801.921, 3369.75, 823.529, 3246.1, 839.136, 3157.26, 812.725, 3067.23, 852.341, 2816.33, 739.496, 2684.27, 722.689, 2453.78, 728.691, 2324.13, 824.73, 2250.9, 887.155, 2234.09, 872.749, 2253.3, 846.339, 2259.3, 827.131, 2292.92, 800.72, 2316.93, 791.116 )
 
 [node name="MiddleGroundPlatforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Collisions/MiddleGroundPlatforms"]
@@ -1500,7 +1500,7 @@ polygon = PoolVector2Array( 5492.2, 2531.81, 5493.4, 2521.01, 5513.81, 2519.81, 
 one_way_collision = true
 
 [node name="MiddleGround" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D70" type="CollisionPolygon2D" parent="Collisions/MiddleGround"]
@@ -1519,7 +1519,7 @@ position = Vector2( -4190.88, -1079.23 )
 polygon = PoolVector2Array( 7755.1, 3576.23, 7834.33, 3575.03, 7834.33, 3599.04, 7716.69, 3602.64, 7565.43, 3635.05, 7337.33, 3714.29, 7338.54, 3692.68, 7501.8, 3636.25, 7611.04, 3600.24, 7684.27, 3576.23 )
 
 [node name="LowerGroundPlatforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/LowerGroundPlatforms"]
@@ -1664,7 +1664,7 @@ polygon = PoolVector2Array( 5789.92, 3821.13, 5833.13, 3800.72, 5936.37, 3800.72
 one_way_collision = true
 
 [node name="LowerGround" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Collisions/LowerGround"]
@@ -1675,7 +1675,7 @@ __meta__ = {
 }
 
 [node name="TowerPlatforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/TowerPlatforms"]
@@ -1749,7 +1749,7 @@ polygon = PoolVector2Array( 7750.3, 3549.82, 7750.3, 3567.83, 7588.24, 3567.83, 
 one_way_collision = true
 
 [node name="Tower" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D162" type="CollisionPolygon2D" parent="Collisions/Tower"]
@@ -1769,7 +1769,7 @@ position = Vector2( -6660.26, -2084.03 )
 polygon = PoolVector2Array( 7704.68, 3548.62, 7704.68, 3566.63, 7590.64, 3566.63, 7590.64, 3548.62 )
 
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
@@ -1994,7 +1994,7 @@ position = Vector2( 4, 10 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 30 )
 animation = "idle"
-frame = 21
+frame = 5
 playing = true
 centered = false
 script = SubResource( 31 )
@@ -2014,7 +2014,7 @@ position = Vector2( 2, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 44 )
 animation = "idle"
-frame = 3
+frame = 15
 playing = true
 flip_h = true
 
@@ -2063,7 +2063,7 @@ shape = SubResource( 47 )
 
 [node name="0xoplasmosis" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 6111, 1475 )
-collision_layer = 3
+collision_layer = 8
 collision_mask = 2
 script = ExtResource( 52 )
 __meta__ = {
@@ -2094,10 +2094,11 @@ shape = SubResource( 60 )
 [node name="PlatformRaycast" type="RayCast2D" parent="NPC/0xoplasmosis"]
 enabled = true
 cast_to = Vector2( 0, 20 )
+collision_mask = 2
 
 [node name="0xoplasmosis2" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 349, 2049 )
-collision_layer = 3
+collision_layer = 8
 collision_mask = 2
 script = ExtResource( 52 )
 __meta__ = {
@@ -2128,10 +2129,11 @@ shape = SubResource( 60 )
 [node name="PlatformRaycast" type="RayCast2D" parent="NPC/0xoplasmosis2"]
 enabled = true
 cast_to = Vector2( 0, 20 )
+collision_mask = 2
 
 [node name="0xoplasmosis3" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 5632, 2897 )
-collision_layer = 3
+collision_layer = 8
 collision_mask = 2
 script = ExtResource( 52 )
 __meta__ = {
@@ -2162,6 +2164,7 @@ shape = SubResource( 60 )
 [node name="PlatformRaycast" type="RayCast2D" parent="NPC/0xoplasmosis3"]
 enabled = true
 cast_to = Vector2( 0, 20 )
+collision_mask = 2
 
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2( 6015, 331 )

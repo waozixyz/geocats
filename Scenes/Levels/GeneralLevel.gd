@@ -96,6 +96,9 @@ func _init_music_array():
 var followers = []
 
 func add_follower(cat, keep_pos = false):
+	if cat is SimpleMovingAI:
+		cat.change_direction = 0
+		cat.jump_height = 0
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
 	followers.append(cat)
@@ -137,6 +140,10 @@ func _ready():
 		else:
 			printerr("follower invalid: ", follower)
 
+func sort_followers(a, b):
+	var diff = a.position - player.position
+	return abs(diff.y) < 60 and abs(diff.x) < 60
+	
 var tween
 func _process(_delta):
 	# dying logic
@@ -163,18 +170,27 @@ func _process(_delta):
 		player.position = respawn_location
 		
 	# follow player logic
-	if player.velocity_log.size() > 5:
-		var order = 0
-		for follower in followers:
-			var diff = follower.position - player.position
+	if player.velocity_log.size() > 15:
+		followers.sort_custom(self, "sort_followers")
 
-			var pvel_x = player.velocity_log[order].x
-
-
-				
-
-			if abs(diff.y) < 200 and abs(diff.x) < 200:
+		for i in followers.size():
+			var follower = followers[i]
+			var obj = player
+			var diff = Vector2(0, 0)
+			if i == 0:
+				obj = player
+			else:
+				#if abs(player.position.x + player.position.y) < abs(followers[i-1].position.x + followers[i-1].position.y) :
+				#	obj = player
+				#else:
+				obj = followers[i - 1]
+			diff = follower.position - obj.position
+			var pvel = player.velocity_log[i * 5]
+		
+			if abs(diff.y) < 120 and abs(diff.x) < 120:
 				if player.state_machine.active_state.tag == "climb":
+					if follower.sprite.frames.has_animation("climb"):
+						follower.anim = "climb"
 					var x_speed = player.currentSpeed
 					if x_speed < 50:
 						x_speed = 50
@@ -182,28 +198,26 @@ func _process(_delta):
 						follower.velocity.x = -x_speed
 					elif diff.x < -5:
 						follower.velocity.x = x_speed
-		
 				else:
-					if player.fall_through_timer.time_left > 0:
+					if obj.fall_through_timer.time_left > 0:
 						follower.fall_through()
-
-					elif player.velocity_log[order].y != 0:
-						if player.velocity_log[order].y < 0 and diff.y > 30 or player.velocity_log[order].y > 0 :
-							if player.state_machine.active_state.tag == "fall" and player.velocity.y > 50:
-								follower.velocity.y = player.velocity.y
-
-							else:
-								follower.velocity.y = player.velocity_log[order].y
-									
+					elif pvel.y < 0 or pvel.y > 0:
+						if player.state_machine.active_state.tag == "fall" and player.velocity.y > 50:
+							follower.velocity.y = player.velocity.y
+						else:
+							if follower.is_on_floor():
+								follower.velocity.y = pvel.y * 0.9
+						
 					# callibrate position
-					if diff.x > 60 and pvel_x < 0:
-						follower.velocity.x = -player.currentSpeed
-						follower.sprite.flip_h = not player.sprite.flip_h or follower.mirror_sprite
-					elif diff.x < -60 and pvel_x > 0:
-						follower.velocity.x = player.currentSpeed
-						follower.sprite.flip_h = not (player.sprite.flip_h or follower.mirror_sprite)
+					if diff.x >= 50 and pvel.x < 0 or diff.x <= -50 and pvel.x > 0:
+						follower.velocity.x = pvel.x * 1.02
 					else:
 						follower.velocity.x = 0
+					if pvel.x < 0:
+						follower.sprite.flip_h = not player.sprite.flip_h or follower.mirror_sprite
+					elif pvel.x > 0:
+						follower.sprite.flip_h = not (player.sprite.flip_h or follower.mirror_sprite)
+	
 			else:
 				follower.velocity.x = 0
-			order += 1
+

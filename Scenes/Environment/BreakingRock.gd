@@ -20,9 +20,7 @@ func _ready():
 
 var shot_particles
 var played_sound 
-func _process(delta):
-
-	var dfps = delta * global.fps
+func _process(_delta):
 	var color = sprite.modulate
 	if color.r > 1:
 		color.r -= .1
@@ -55,5 +53,5 @@ func _process(delta):
 		sprite.frame = frame
 
 	if particles.get_node("0").modulate.a <= 0:
-		remove_child(self)
+		get_parent().remove_child(self)
 

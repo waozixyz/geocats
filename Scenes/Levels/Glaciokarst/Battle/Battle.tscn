@@ -530,7 +530,7 @@ __meta__ = {
 [node name="Boulder" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 385, -142 )
 scale = Vector2( 4.3, 4.3 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 23 )
 breakable = false
@@ -663,7 +663,7 @@ one_way_collision = true
 
 [node name="Mushroom5" type="StaticBody2D" parent="Mushrooms" groups=["mushroom"]]
 position = Vector2( 170.6, 193.4 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 16 )
 __meta__ = {
@@ -752,7 +752,7 @@ one_way_collision = true
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 197, 67 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 29 )
 __meta__ = {
@@ -773,7 +773,7 @@ scale = Vector2( 4, 4 )
 script = ExtResource( 19 )
 
 [node name="Body" type="StaticBody2D" parent="Enemy"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy/Body"]
@@ -807,7 +807,7 @@ centered = false
 
 [node name="Bullet" type="Area2D" parent="Enemy"]
 visible = false
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 26 )
 
@@ -835,6 +835,8 @@ stream = ExtResource( 40 )
 visible = false
 position = Vector2( -83.5928, -27.5275 )
 rotation = 0.349066
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 32 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy/Beam"]
@@ -927,7 +929,7 @@ limit_bottom = 1000
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2( 491, 75 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 23 )
 total_frames = 4
@@ -1030,7 +1032,7 @@ centered = false
 [node name="Walls" type="StaticBody2D" parent="." groups=["end"]]
 visible = false
 scale = Vector2( 0.8, 0.8 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]

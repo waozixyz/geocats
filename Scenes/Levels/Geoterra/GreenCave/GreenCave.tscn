@@ -143,7 +143,7 @@ __meta__ = {
 }
 
 [node name="Ground" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D147" type="CollisionPolygon2D" parent="Collisions/Ground"]
@@ -155,7 +155,7 @@ position = Vector2( -6699.93, -3258.4 )
 polygon = PoolVector2Array( 7748.11, 3570.78, 7804.32, 3571.6, 7811.35, 3578.63, 7854.28, 3579.15, 7861.44, 3610.01, 7841.88, 3628.75, 7766.44, 3627.54, 7735.99, 3605.77, 7686.36, 3588.14, 7662.81, 3585.99, 7620.65, 3550.99, 7556.45, 3550.85, 7465.99, 3521.54, 7381.23, 3520.38, 7299.56, 3479.08, 7247.9, 3479.05, 7213.87, 3495.86, 7163.3, 3494.07, 7105.06, 3496.9, 7099.68, 3550.63, 7108.84, 3653.32, 7122.88, 3669.28, 7180.72, 3668.84, 7198.63, 3686.89, 7243.96, 3693.92, 7295.76, 3688.63, 7347.83, 3710.81, 7391.6, 3710.91, 7431.49, 3724.22, 7474.67, 3712.82, 7568.1, 3670.88, 7612.74, 3668.37, 7621.33, 3690.04, 7654.72, 3722.84, 7757.61, 3744.38, 7728.89, 3770.81, 7533.56, 3752.21, 7491.06, 3764.97, 7422.6, 3771.7, 7382.23, 3756.71, 7241.69, 3756.82, 7191.27, 3806.37, 7137.66, 3847.74, 7128.29, 3892.21, 7076.84, 3968.34, 7075.65, 3981.85, 7046.15, 4010.19, 7046.43, 4066.27, 7029.62, 4082.91, 7027.24, 4156.65, 6997.42, 4187.2, 6966.76, 4185.92, 6950.57, 4169.88, 6917.46, 4137.71, 6916.16, 3990.8, 6887.2, 3959.56, 6885.49, 3936.99, 6871.66, 3903.68, 6846.11, 3869.32, 6845.17, 3812.73, 6894.29, 3806.2, 7014.95, 3805.68, 7020.05, 3794.52, 7049.12, 3773.99, 7050.55, 3452.57, 7313.25, 3452.07, 7397.38, 3494.34, 7477.97, 3494.56, 7515.56, 3502.22, 7528.92, 3512.69, 7545.87, 3513.79, 7565.43, 3524.13, 7656.96, 3525.23, 7671.98, 3547.41 )
 
 [node name="Platforms" type="StaticBody2D" parent="Collisions"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D149" type="CollisionPolygon2D" parent="Collisions/Platforms"]
@@ -186,7 +186,7 @@ one_way_collision = true
 [node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
 "end",
 ]]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/EndWalls"]
@@ -403,7 +403,7 @@ shape = SubResource( 9 )
 
 [node name="waterarea" type="Area2D" parent="Interactables"]
 position = Vector2( 136.547, 1131.07 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 14 )
 __meta__ = {
@@ -416,7 +416,7 @@ shape = SubResource( 10 )
 
 [node name="waterarea2" type="Area2D" parent="Interactables"]
 position = Vector2( 519.566, 1167.8 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 14 )
 __meta__ = {

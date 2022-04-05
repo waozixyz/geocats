@@ -422,7 +422,7 @@ texture = ExtResource( 10 )
 [node name="Box" type="StaticBody2D" parent="."]
 position = Vector2( 1036, 615.851 )
 scale = Vector2( 7, 7 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
@@ -441,7 +441,7 @@ __meta__ = {
 }
 
 [node name="Roof" type="StaticBody2D" parent="."]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Roof"]
@@ -452,7 +452,7 @@ polygon = PoolVector2Array( 1409, -33.0456, 602, 190.263, 626, 214.296, 1524, -3
 visible = false
 position = Vector2( 5, 2.00277 )
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
@@ -490,7 +490,7 @@ polygon = PoolVector2Array( 66.6667, 441.944, 93.3333, 423.919, 92, 442.611 )
 visible = false
 position = Vector2( 5, 2.00277 )
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Platforms"]
@@ -546,7 +546,7 @@ one_way_collision = true
 
 [node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
@@ -562,7 +562,7 @@ shape = SubResource( 29 )
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 917, 468.647 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 15 )
 
@@ -619,7 +619,7 @@ __meta__ = {
 
 [node name="Palmerston" type="KinematicBody2D" parent="."]
 position = Vector2( 1090, 478.661 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 script = ExtResource( 21 )
 __meta__ = {

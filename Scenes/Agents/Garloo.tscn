@@ -31,9 +31,14 @@ region = Rect2( 9, 11, 9, 11 )
 
 [sub_resource type="SpriteFrames" id=61]
 animations = [ {
-"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ) ],
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 55 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -45,7 +50,7 @@ extents = Vector2( 14.9551, 14.5371 )
 
 [node name="Garloo" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 2
 script = ExtResource( 4 )
 mirror_sprite = true
 move_speed = 0
@@ -54,8 +59,7 @@ change_direction = 0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
-animation = "idle"
-centered = false
+animation = "walk"
 flip_h = true
 script = ExtResource( 1 )
 
@@ -66,14 +70,15 @@ json_file = "res://Assets/Levels/Geoterra/Creek/garloo/garloo.json"
 sound_file = "res://Assets/Levels/Geoterra/Creek/garloo/garloo.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChatNPC"]
-position = Vector2( 18.1001, 27.01 )
+position = Vector2( -2, -5 )
 shape = SubResource( 54 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 16.7104, 29.1273 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, -2 )
 shape = SubResource( 92 )
 
 [node name="PlatformRaycast" type="RayCast2D" parent="."]
-position = Vector2( 17, 27 )
+position = Vector2( 0, 1 )
 enabled = true
 cast_to = Vector2( 0, 16 )
+collision_mask = 2

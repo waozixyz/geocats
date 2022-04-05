@@ -2283,7 +2283,7 @@ texture = ExtResource( 41 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3304.62, 2452.31 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonacat"]
@@ -2298,7 +2298,7 @@ shape = SubResource( 143 )
 
 [node name="Lasagne" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4314.69, 1655.65 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
@@ -2314,7 +2314,7 @@ shape = SubResource( 143 )
 
 [node name="0xoplasmosis" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4336.69, 1537.39 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/0xoplasmosis"]
@@ -2331,7 +2331,7 @@ shape = SubResource( 158 )
 
 [node name="2021_tacgnol" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4422.71, 1551.39 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/2021_tacgnol"]
@@ -2348,7 +2348,7 @@ shape = SubResource( 171 )
 
 [node name="ancient_sphinx" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3813.72, 1582.06 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/ancient_sphinx"]
@@ -2365,7 +2365,7 @@ shape = SubResource( 181 )
 
 [node name="Avocato" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3965.37, 1497.31 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Avocato"]
@@ -2382,7 +2382,7 @@ shape = SubResource( 183 )
 
 [node name="Broccoli_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4049.56, 1716.49 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Broccoli_cat"]
@@ -2399,7 +2399,7 @@ shape = SubResource( 196 )
 
 [node name="Catstronaut" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3909.36, 1628.4 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Catstronaut"]
@@ -2415,7 +2415,7 @@ shape = SubResource( 209 )
 
 [node name="Cleopardis" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3284.95, 1708.32 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Cleopardis"]
@@ -2432,7 +2432,7 @@ shape = SubResource( 211 )
 
 [node name="Cowboy_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3869.56, 1195.38 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Cowboy_cat"]
@@ -2449,7 +2449,7 @@ shape = SubResource( 223 )
 
 [node name="Geokitten" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3783.53, 1702.49 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Geokitten"]
@@ -2466,7 +2466,7 @@ shape = SubResource( 237 )
 
 [node name="Groundcat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3783.53, 1461.35 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Groundcat"]
@@ -2483,7 +2483,7 @@ shape = SubResource( 252 )
 
 [node name="Hypercat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3736.46, 1349.32 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Hypercat"]
@@ -2500,7 +2500,7 @@ shape = SubResource( 264 )
 
 [node name="Longcat_2021" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3770.8, 1804.88 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat_2021"]
@@ -2517,7 +2517,7 @@ shape = SubResource( 277 )
 
 [node name="Lunar_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4027.56, 1374.71 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lunar_cat"]
@@ -2534,7 +2534,7 @@ shape = SubResource( 288 )
 
 [node name="Machine_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3667.81, 1708.32 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Machine_cat"]
@@ -2551,7 +2551,7 @@ shape = SubResource( 307 )
 
 [node name="Maneki_model_9" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3493.95, 1237.56 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Maneki_model_9"]
@@ -2568,7 +2568,7 @@ shape = SubResource( 317 )
 
 [node name="Mushroom_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3943.37, 1231.73 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Mushroom_cat"]
@@ -2585,7 +2585,7 @@ shape = SubResource( 333 )
 
 [node name="Neocat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3921.37, 1790.88 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Neocat"]
@@ -2602,7 +2602,7 @@ shape = SubResource( 344 )
 
 [node name="NOCAT" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4733.92, 1404.71 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/NOCAT"]
@@ -2622,7 +2622,7 @@ shape = SubResource( 362 )
 
 [node name="Nonaco_longcat_2020" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3504.31, 1878.67 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonaco_longcat_2020"]
@@ -2637,7 +2637,7 @@ shape = SubResource( 143 )
 
 [node name="Palmerston" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 4071.56, 1011.68 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Palmerston"]
@@ -2656,7 +2656,7 @@ shape = SubResource( 371 )
 
 [node name="Pumpkin_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3835.72, 1350.48 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Pumpkin_cat"]
@@ -2672,7 +2672,7 @@ shape = SubResource( 382 )
 
 [node name="Shinobi" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3714.46, 1148.72 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Shinobi"]
@@ -2689,7 +2689,7 @@ shape = SubResource( 384 )
 
 [node name="Solar_cat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3482.31, 1482.15 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Solar_cat"]
@@ -2706,7 +2706,7 @@ shape = SubResource( 395 )
 
 [node name="Ta_miu_crown_prince_thumose" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3588.02, 1335.32 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ta_miu_crown_prince_thumose"]
@@ -2723,7 +2723,7 @@ shape = SubResource( 405 )
 
 [node name="Viking_geocat" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3348.42, 1489.14 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Viking_geocat"]
@@ -2740,7 +2740,7 @@ shape = SubResource( 416 )
 
 [node name="Yule_cat_2020_Luxury_Edition" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3348.42, 1336.48 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020_Luxury_Edition"]
@@ -2757,7 +2757,7 @@ shape = SubResource( 427 )
 
 [node name="Yule_cat_2020" type="KinematicBody2D" parent="NPC"]
 position = Vector2( 3223.83, 1383.11 )
-collision_layer = 2
+collision_layer = 5
 collision_mask = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020"]
@@ -2837,7 +2837,7 @@ scroll_speed = -0.009
 "end",
 ]]
 scale = Vector2( 1.25, 1.25 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
@@ -2851,7 +2851,7 @@ polygon = PoolVector2Array( 3382.8, 1475.79, 3381.61, 2007.83, 3247.34, 2010.42,
 
 [node name="Walls" type="StaticBody2D" parent="."]
 scale = Vector2( 1.25, 1.25 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
@@ -2865,7 +2865,7 @@ polygon = PoolVector2Array( 3212.8, 781.844, 3511.94, 782.003, 3511.94, 774.688,
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 scale = Vector2( 1.25, 1.25 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
@@ -2902,7 +2902,7 @@ one_way_collision = true
 "end",
 ]]
 position = Vector2( -2, 190.497 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]

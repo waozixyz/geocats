@@ -209,9 +209,9 @@ func _process(_delta):
 	# if there are bullets do this
 	for i in range(bullets.size()):
 		if range(bullets.size()).has(i):
-			var bullet = bullets[i]
-			if (bullet.mode == "tween" and not bullet.tween.is_active()) or bullet.dead:
-				get_parent().remove_child(bullet)
+			var b = bullets[i]
+			if (b.mode == "tween" and not b.tween.is_active()) or b.dead:
+				get_parent().remove_child(b)
 				bullets.remove(i)
 
 	# if there is an attack do this

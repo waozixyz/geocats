@@ -41,7 +41,7 @@ extents = Vector2( 11, 11 )
 
 [node name="Affogato" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -68,3 +68,4 @@ shape = SubResource( 7 )
 [node name="PlatformRaycast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, 10 )
+collision_mask = 2

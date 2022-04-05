@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var sprite = $Sprite
+onready var sprite = get_node_or_null("Sprite")
 export var dmg = 20
 var tween = Tween.new()
 var mode
@@ -13,8 +13,8 @@ var life_timer = 0
 onready var sound = $Sound
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	var err = connect("body_entered", self, "_on_body_entered")
+	assert(err == OK)
 	
 	dest_deg = rand_range(0, 360)
 	deg = rand_range(dest_deg - 360, dest_deg)
@@ -25,8 +25,6 @@ func _on_body_entered(body):
 		body.damage(dmg)
 		dead = true
 
-func _on_body_exited(body):
-	pass
 
 func _process(delta):
 	life_timer += 1 * delta * global.fps

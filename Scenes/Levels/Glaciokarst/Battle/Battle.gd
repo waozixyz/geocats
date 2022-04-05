@@ -46,7 +46,7 @@ var dodging
 var phase
 var dia_started
 
-func _phase_one(dfps):
+func _phase_one():
 	if trigger_battle.touching:
 		for follower in player.followers:
 			follower.visible = false
@@ -115,7 +115,7 @@ func _start_chat(file_name):
 	dia_started = true
 	dialogue.modulate.a = 0.1
 	dialogue.initiate(battle_dialogue_folder + '/' + file_name + '.json')
-func _phase_four(dfps):
+func _phase_four():
 	if not dia_started and is_disabled("player", "battle"):
 		set_disable("player", "battle", false)
 		enemy.vulnerable = true
@@ -159,13 +159,13 @@ func _process(delta):
 
 	if not defeated and not dead:
 		if phase == 1:
-			_phase_one(dfps)
+			_phase_one()
 		elif phase == 2:
 			_phase_two(dfps)
 		elif phase == 3:
 			_phase_three()
 		elif phase == 4:
-			_phase_four(dfps)
+			_phase_four()
 		elif phase == 5:
 			_phase_five()
 		elif phase == 6:

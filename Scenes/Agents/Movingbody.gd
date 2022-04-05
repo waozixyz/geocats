@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name MovingBody
 
 onready var platform_raycast = get_node_or_null("PlatformRaycast")
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") setget ,_get_gravity
 
 func _get_gravity():
@@ -29,8 +30,6 @@ func fall_through(force = false):
 		set_collision_mask(0)
 		fall_through_timer.start()
 
-
-
 func check_child_collision(child):
 	if (child is CollisionShape2D || child is CollisionPolygon2D) && child.is_one_way_collision_enabled():
 		return true
@@ -51,6 +50,7 @@ var max_angle = 0.8
 var layer_bit = 0
 var allow_fall_through = false
 var manage_anim = true
+var anim = "idle"
 # tween to ladder function
 func tween_to_ladder():
 	var new_x = ladder_x
@@ -66,7 +66,7 @@ func tween_to_ladder():
 	ladder_tween.start()
 
 func _ready():
-	layer_bit = collision_layer
+	layer_bit = collision_mask
 	# add ladder tween
 	ladder_tween = Tween.new()
 	add_child(ladder_tween)
@@ -106,9 +106,9 @@ func _physics_process(_delta):
 	# set sprite direction
 	if manage_anim:
 		if velocity.x == 0:
-			sprite.play("idle")
+			anim = "idle"
 		elif sprite.frames.has_animation("walk"):
-			sprite.play("walk")
+			anim = "walk"
 			
 	# check platofrms
 	var platforms = []
@@ -155,11 +155,12 @@ func _physics_process(_delta):
 					if platforms.find(hit_node) != -1 :
 						allow_fall_trough_timer.start()
 
+
 	if sprite.animation != "climb" and not no_gravity:
 		apply_gravity()
 	if add_move_n_slide:
 		velocity = move_and_slide(velocity, Vector2.UP, true, 4, max_angle) #apply velocity to movement
 
-
-
+	if manage_anim:
+		sprite.play(anim)
 

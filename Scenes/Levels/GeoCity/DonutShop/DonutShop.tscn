@@ -238,7 +238,7 @@ position = Vector2( 337, 391 )
 
 [node name="DonutBot" type="StaticBody2D" parent="DonutBot"]
 position = Vector2( -89, -58 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -254,7 +254,7 @@ polygon = PoolVector2Array( 92, 11, 106, 5, 120, -9, 151, -9, 151, 10 )
 
 [node name="Platforms" type="StaticBody2D" parent="DonutBot"]
 position = Vector2( -89, -58 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -282,7 +282,7 @@ position = Vector2( 47.6071, -7.65298 )
 shape = SubResource( 15 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
@@ -314,7 +314,7 @@ position = Vector2( 953, 227 )
 shape = SubResource( 22 )
 
 [node name="Platforms" type="StaticBody2D" parent="."]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
@@ -407,7 +407,7 @@ shape = SubResource( 33 )
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2( 923, 265 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 script = ExtResource( 2 )
 __meta__ = {

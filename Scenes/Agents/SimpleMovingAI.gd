@@ -2,7 +2,7 @@ extends MovingBody
 class_name SimpleMovingAI, "res://Assets/UI/Debug/moving_npc_icon.png"
 
 
-var anim = "idle"
+
 var direction = 1
 
 
@@ -56,7 +56,8 @@ func _physics_process(_delta):
 		direction *= -1
 
 	if sprite:
-		sprite.flip_h = direction - 1 * (int(mirror_sprite) * 2 - 1)
+		if not global.user.following.has(name):
+			sprite.flip_h = direction - 1 * (int(mirror_sprite) * 2 - 1)
 		sprite.play(anim)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 

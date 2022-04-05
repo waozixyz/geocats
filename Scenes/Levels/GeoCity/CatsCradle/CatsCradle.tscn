@@ -162,6 +162,18 @@ region = Rect2( 60, 15, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
@@ -194,18 +206,6 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 17 ), SubResource( 29 ), SubResource( 17 ), SubResource( 17 ) ],
@@ -213,9 +213,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "blink",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ) ],
@@ -223,19 +233,9 @@ animations = [ {
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 17 ) ],
-"loop": true,
-"name": "blink",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
-"loop": true,
-"name": "climb",
 "speed": 5.0
 } ]
 
@@ -469,6 +469,7 @@ __meta__ = {
 position = Vector2( 1291.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
+frame = 1
 playing = true
 centered = false
 
@@ -505,7 +506,7 @@ script = ExtResource( 19 )
 [node name="MainColliders" type="Node2D" parent="."]
 
 [node name="Walls" type="StaticBody2D" parent="MainColliders"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
@@ -541,11 +542,10 @@ position = Vector2( 818, 274 )
 shape = SubResource( 39 )
 
 [node name="Platforms" type="StaticBody2D" parent="MainColliders"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="ShelfCollider" type="CollisionShape2D" parent="MainColliders/Platforms"]
@@ -584,7 +584,7 @@ shape = SubResource( 46 )
 one_way_collision = true
 
 [node name="Stairs" type="StaticBody2D" parent="MainColliders"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainColliders/Stairs"]
@@ -596,7 +596,7 @@ position = Vector2( -420, 247 )
 polygon = PoolVector2Array( 1064, 288, 727, 119, 716, 119, 716, 138, 1024, 288 )
 
 [node name="Floors" type="StaticBody2D" parent="MainColliders"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="BedroomFloor" type="CollisionShape2D" parent="MainColliders/Floors"]
@@ -612,7 +612,7 @@ position = Vector2( 172, 378 )
 shape = SubResource( 49 )
 
 [node name="Ceilings" type="StaticBody2D" parent="MainColliders"]
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="LitterboxHallCeiling" type="CollisionShape2D" parent="MainColliders/Ceilings"]
@@ -637,7 +637,7 @@ shape = SubResource( 54 )
 
 [node name="Stereo" type="StaticBody2D" parent="MainColliders"]
 position = Vector2( 499, 570 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
@@ -744,7 +744,7 @@ shape = SubResource( 61 )
 
 [node name="Statue" type="StaticBody2D" parent="Interactables"]
 position = Vector2( 900, 570 )
-collision_layer = 7
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Statue"]
