@@ -166,6 +166,7 @@ centered = false
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 70, 49 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -173,6 +174,7 @@ centered = false
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
 position = Vector2( 68, 59 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false
@@ -202,7 +204,6 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 11 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -225,6 +226,7 @@ centered = false
 position = Vector2( 816.185, 401 )
 script = ExtResource( 15 )
 add_move_n_slide = false
+mirror_sprite = false
 jump_height = 10
 
 [node name="ChatNPC" parent="Affogato" index="0"]
@@ -397,9 +399,7 @@ position = Vector2( 745, 91 )
 shape = SubResource( 32 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( -11, 235 )
