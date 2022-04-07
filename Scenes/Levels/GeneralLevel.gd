@@ -99,10 +99,13 @@ func add_follower(cat, keep_pos = false):
 	if cat is SimpleMovingAI:
 		cat.change_direction = 0
 		cat.jump_height = 0
+		cat.move_speed = 0
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
 	followers.append(cat)
-	add_child_below_node(player, cat)
+	
+	add_child( cat)
+	move_child(cat, 1)
 	cat.set_owner(self)
 	if not keep_pos:
 		cat.position = player.position
@@ -143,7 +146,10 @@ func _ready():
 func sort_followers(a, b):
 	var diff = a.position - player.position
 	return abs(diff.y) < 60 and abs(diff.x) < 60
-	
+
+func  _clean_position_log():
+	pass
+
 var tween
 func _process(_delta):
 	# dying logic
@@ -168,56 +174,43 @@ func _process(_delta):
 			dead = false
 	if reload_on_death and dead and not tween.is_active():
 		player.position = respawn_location
-		
-	# follow player logic
-	if player.velocity_log.size() > 15:
-		followers.sort_custom(self, "sort_followers")
+	
+	
 
+	# follow player logic
+	var anim = "idle"
+	if player.position_log.size() > followers.size() * 5:
+	#	followers.sort_custom(self, "sort_followers")
 		for i in followers.size():
 			var follower = followers[i]
+			var order = follower.follow_order
 			var obj = player
-			var diff = Vector2(0, 0)
-			if i == 0:
-				obj = player
-			else:
-				#if abs(player.position.x + player.position.y) < abs(followers[i-1].position.x + followers[i-1].position.y) :
-				#	obj = player
-				#else:
+			if i > 0:
 				obj = followers[i - 1]
-			diff = follower.position - obj.position
-			var pvel = player.velocity_log[i * 5]
-		
-			if abs(diff.y) < 120 and abs(diff.x) < 120:
-				if player.state_machine.active_state.tag == "climb":
-					if follower.sprite.frames.has_animation("climb"):
-						follower.anim = "climb"
-					var x_speed = player.currentSpeed
-					if x_speed < 50:
-						x_speed = 50
-					if diff.x > 5:
-						follower.velocity.x = -x_speed
-					elif diff.x < -5:
-						follower.velocity.x = x_speed
-				else:
-					if obj.fall_through_timer.time_left > 0:
-						follower.fall_through()
-					elif pvel.y < 0 or pvel.y > 0:
-						if player.state_machine.active_state.tag == "fall" and player.velocity.y > 50:
-							follower.velocity.y = player.velocity.y
-						else:
-							if follower.is_on_floor():
-								follower.velocity.y = pvel.y * 0.9
-						
-					# callibrate position
-					if diff.x >= 50 and pvel.x < 0 or diff.x <= -50 and pvel.x > 0:
-						follower.velocity.x = pvel.x * 1.02
-					else:
-						follower.velocity.x = 0
-					if pvel.x < 0:
-						follower.sprite.flip_h = not player.sprite.flip_h or follower.mirror_sprite
-					elif pvel.x > 0:
-						follower.sprite.flip_h = not (player.sprite.flip_h or follower.mirror_sprite)
-	
-			else:
-				follower.velocity.x = 0
+			var diff = player.position_log[order] - obj.position
 
+			if abs(diff.y) > 30 or not follower.is_on_floor() and order < player.position_log.size() - 1:
+				order += 1
+				diff = player.position_log[order] - obj.position
+			var max_skip = 10
+			while(abs(diff.x) > 90) and order < player.position_log.size() - 1:
+				anim = "walk"
+				order += 1
+				if abs(diff.y) > 30 and max_skip == 0:
+					break
+				max_skip -= 1
+				diff = player.position_log[order] - obj.position
+			
+			# update sprite orientation
+			if diff.x > 0:
+				follower.sprite.flip_h = not player.sprite.flip_h or follower.mirror_sprite
+			elif diff.x < 0:
+				follower.sprite.flip_h = not (player.sprite.flip_h or follower.mirror_sprite)
+	
+
+
+			if follower.sprite.frames.has_animation(anim):
+				follower.sprite.play(anim)
+			follower.position = player.position_log[order] + Vector2(0, 4)
+			follower.follow_order = order
+	_clean_position_log()

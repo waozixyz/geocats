@@ -18,7 +18,7 @@ var user = {
 	"position": Vector2(0,0),
 	"direction": 0,
 	"hp": 100,
-	"following": [],
+	"following": ["Sparkle", "Lethe", "Garloo"],
 }
 
 var data =  {

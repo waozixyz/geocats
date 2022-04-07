@@ -23,7 +23,7 @@ func _get_walk_tick():
 	return int(rand_range(walk_delay_range[0], walk_delay_range[1]))
 	
 func _ready():
-	direction = int(sprite.flip_h) * -2 - 1
+	direction = int(mirror_sprite) * 2 - 1
 
 	._ready()
 	jump_tick = _get_jump_tick()
@@ -57,7 +57,7 @@ func _physics_process(_delta):
 
 	if sprite:
 		if not global.user.following.has(name):
-			sprite.flip_h = direction - 1 * (int(mirror_sprite) * 2 - 1)
+			sprite.flip_h =  not bool((direction + 1) / 2)
 		sprite.play(anim)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 

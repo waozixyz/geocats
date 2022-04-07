@@ -336,6 +336,14 @@ region = Rect2( 15, 0, 15, 15 )
 atlas = ExtResource( 48 )
 region = Rect2( 30, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 48 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 48 )
 region = Rect2( 30, 15, 15, 15 )
@@ -348,14 +356,6 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 48 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 48 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 48 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=77]
 animations = [ {
 "frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 75 ), SubResource( 75 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ) ],
@@ -363,14 +363,14 @@ animations = [ {
 "name": "idle",
 "speed": 4.0
 }, {
-"frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 70 ), SubResource( 71 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -394,6 +394,14 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 47 )
 region = Rect2( 60, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 47 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 47 )
 region = Rect2( 30, 15, 15, 15 )
@@ -406,14 +414,6 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 47 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 47 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 47 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=88]
 animations = [ {
 "frames": [ SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 85 ), SubResource( 85 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 86 ), SubResource( 86 ), SubResource( 85 ), SubResource( 85 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ) ],
@@ -421,14 +421,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 81 ), SubResource( 82 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -1077,7 +1077,7 @@ position = Vector2( 2029.28, 1386.47 )
 collision_layer = 5
 collision_mask = 2
 script = ExtResource( 7 )
-move_speed = 125
+move_speed = 30
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
@@ -1099,7 +1099,7 @@ position = Vector2( 3.23462, -1.15808 )
 shape = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Lasagne"]
-position = Vector2( -1.86951, 6.05444 )
+position = Vector2( -1.86951, 1.05444 )
 shape = SubResource( 61 )
 
 [node name="Garbitage" type="Area2D" parent="NPC"]

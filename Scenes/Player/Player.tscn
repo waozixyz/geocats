@@ -52,17 +52,13 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 17 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 17 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 17 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 17 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 17 )
@@ -88,13 +84,17 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 17 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 17 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 17 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 17 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -103,9 +103,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "climb",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ) ],
@@ -123,9 +123,9 @@ animations = [ {
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "walk",
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -219,10 +219,12 @@ disabled = true
 [node name="RightRaycast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 23, 0 )
+collision_mask = 2
 
 [node name="LeftRaycast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -23, 0 )
+collision_mask = 2
 
 [node name="PlatformRaycast" type="RayCast2D" parent="."]
 position = Vector2( 0, 10 )

@@ -162,17 +162,13 @@ region = Rect2( 60, 15, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
+region = Rect2( 0, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 18 )
@@ -198,13 +194,17 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
+region = Rect2( 30, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
@@ -213,9 +213,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
-"name": "climb",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 23 ) ],
@@ -233,9 +233,9 @@ animations = [ {
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
-"name": "walk",
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -468,7 +468,6 @@ __meta__ = {
 position = Vector2( 1291.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
-frame = 1
 playing = true
 centered = false
 
@@ -588,7 +587,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainColliders/Stairs"]
 position = Vector2( -50, 0 )
-polygon = PoolVector2Array( 1064, 288, 728, 120, 712, 120, 712, 136, 1024, 288 )
+polygon = PoolVector2Array( 1064, 288, 728, 120, 716, 120, 716, 142, 1024, 288 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MainColliders/Stairs"]
 position = Vector2( -420, 247 )

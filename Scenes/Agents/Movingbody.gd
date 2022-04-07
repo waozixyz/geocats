@@ -17,6 +17,9 @@ var no_rotate = false
 var no_gravity = false
 export(bool) var mirror_sprite = false
 var velocity : Vector2 = Vector2.ZERO
+
+# used for follow logic
+var follow_order = 0
 # one way collding platform
 
 # fall through platform

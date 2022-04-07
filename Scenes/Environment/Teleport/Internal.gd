@@ -15,14 +15,22 @@ func _ready():
 	._ready()
 	
 func _process(_delta):
-	if teleporting and not tween.is_active():
+	if tween and tween.is_active():
+		for follower in current_scene.followers:
+			if follower.follow_order >= temp_order:
+				follower.visible = false
+	
+	elif teleporting:
 		player.visible = true
 		current_scene.set_disable("player", "teleport", false)
 		teleporting = false
-		if player.followers:
-			for follower in player.followers:
-				follower.position = Vector2(0,0)
+		for follower in current_scene.followers:
+			follower.visible = true
+			follower.position = player.position
+			follower.follow_order = 0
+			player.position_log = []
 
+var temp_order = 0
 func _input(_event):
 	if _can_interact():
 		_play_sound()
@@ -31,4 +39,5 @@ func _input(_event):
 			current_scene.set_disable("player", "teleport")
 			chat_with.visible = false
 			player.visible = false
+			temp_order = player.position_log.size() - 1
 			tween = utils.tween(player, "position", to_go.position)

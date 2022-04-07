@@ -113,7 +113,7 @@ func _ready():
 
 # main process loop
 var dmg_blink = 0
-var velocity_log = []
+var position_log = [position]
 
 var no_vx = false
 func _physics_process(delta):
@@ -150,10 +150,8 @@ func _physics_process(delta):
 			dmg_blink = 0
 
 	# follow player logic
-	velocity_log.insert(0, velocity)
-
-	if velocity_log.size() > 20:
-		velocity_log.pop_back()
+	if position_log.size() == 0 or position_log[position_log.size() - 1] != position:
+		position_log.append(position)
 
 # update keyboard inputs
 func update_inputs():

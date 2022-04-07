@@ -271,7 +271,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=75]
-extents = Vector2( 27.4358, 20.873 )
+extents = Vector2( 25.2471, 17 )
 
 [node name="Complex" type="Node2D"]
 script = ExtResource( 8 )
@@ -670,7 +670,6 @@ position = Vector2( 1056, 480 )
 collision_layer = 16
 collision_mask = 2
 script = ExtResource( 6 )
-mirror_sprite = true
 jump_height = 25
 move_speed = 50
 
@@ -689,16 +688,10 @@ sound_volume = 88.048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash/Hogwash"]
 shape = SubResource( 63 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Hogwash"]
-position = Vector2( -0.0546875, 7.01743 )
+position = Vector2( 0, 3 )
 shape = SubResource( 64 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Liet" type="KinematicBody2D" parent="Agents"]
 position = Vector2( 1961, 774 )
@@ -735,7 +728,7 @@ flip_h = true
 script = ExtResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Liet"]
-position = Vector2( 30.0585, 20.9007 )
+position = Vector2( 32.2472, 21 )
 shape = SubResource( 75 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]

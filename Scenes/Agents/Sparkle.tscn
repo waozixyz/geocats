@@ -35,12 +35,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=99]
-extents = Vector2( 25, 13.1731 )
+extents = Vector2( 19.5, 11.6731 )
 
 [sub_resource type="RectangleShape2D" id=98]
-extents = Vector2( 19.8201, 12.0078 )
+extents = Vector2( 15.9101, 10.0039 )
 
 [node name="Sparkle" type="KinematicBody2D"]
+position = Vector2( -1, 0 )
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 4 )
@@ -64,10 +65,11 @@ json_file = "res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.json"
 sound_file = "res://Assets/Levels/Geoterra/Creek/sparkle/sparkle.wav"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChatNPC"]
-position = Vector2( 1, -0.826904 )
+position = Vector2( 4.5, 0.673098 )
 shape = SubResource( 99 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.91005, 2.0039 )
 shape = SubResource( 98 )
 
 [node name="PlatformRaycast" type="RayCast2D" parent="."]
