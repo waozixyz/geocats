@@ -144,9 +144,6 @@ func _ready():
 		else:
 			printerr("follower invalid: ", follower)
 
-func sort_followers(a, b):
-	var diff = a.position - player.position
-	return abs(diff.y) < 60 and abs(diff.x) < 60
 
 func  _clean_position_log():
 	pass

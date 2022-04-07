@@ -645,8 +645,6 @@ one_way_collision = true
 
 [node name="Cleopardis" type="Area2D" parent="Agents"]
 position = Vector2( 73, 188 )
-collision_layer = 16
-collision_mask = 2
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -706,14 +704,14 @@ move_speed = 50
 jump_delay_range = [ 50, 300 ]
 walk_delay_range = [ 6, 30 ]
 
-[node name="Area2D" type="Area2D" parent="Agents/Liet"]
+[node name="Liet" type="Area2D" parent="Agents/Liet"]
 script = ExtResource( 11 )
 has_parent = true
 character_name = "Liet"
 json_file = "res://Assets/Levels/GeoCity/Complex/liet.json"
 sound_file = "res://Assets/Agents/Liet/liet.wav"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Liet/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agents/Liet/Liet"]
 position = Vector2( 18.1068, 16.6215 )
 shape = SubResource( 65 )
 
@@ -738,7 +736,7 @@ autoplay = true
 bus = "Music"
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1210, 236 )
+position = Vector2( 1210, 228 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 2400

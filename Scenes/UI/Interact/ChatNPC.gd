@@ -92,6 +92,7 @@ func _process(_delta):
 		if touching and not active and not disabled and _is_enabled():
 			if has_parent and get_parent().is_on_floor() or not has_parent:
 				show_chat()
+
 		elif (disabled or not touching) and active:
 			hide_chat()
 	if dia_started and dialogue.modulate.a == 0:

@@ -19,7 +19,7 @@ func _process(_delta):
 				follower.visible = false
 	
 	elif teleporting:
-		current_scene.set_disable("chat_with", "teleporting", false)
+		current_scene.set_disable("chat_with", "teleport", false)
 		player.visible = true
 		current_scene.set_disable("player", "teleport", false)
 		teleporting = false
@@ -34,7 +34,7 @@ func _input(_event):
 	if _can_interact():
 		_play_sound()
 		if to_go and not teleporting:
-			current_scene.set_disable("chat_with", "teleporting")
+			current_scene.set_disable("chat_with", "teleport")
 			teleporting = true
 			current_scene.set_disable("player", "teleport")
 			player.visible = false
