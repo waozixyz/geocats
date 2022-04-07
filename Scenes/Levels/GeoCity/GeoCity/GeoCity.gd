@@ -7,7 +7,7 @@ onready var giant_pumpkin = $GiantPumpkin
 var res_path = "res://Assets/Levels/GeoCity/GeoCity/"
 
 func _ready():
-	
+
 	#var season = utils.get_season()
 	var season = "Summer"
 	if season == "Winter":

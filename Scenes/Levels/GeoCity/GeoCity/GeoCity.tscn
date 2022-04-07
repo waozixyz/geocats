@@ -480,7 +480,7 @@ extents = Vector2( 9, 322.855 )
 extents = Vector2( 9, 136.891 )
 
 [sub_resource type="RectangleShape2D" id=98]
-extents = Vector2( 9, 45.4096 )
+extents = Vector2( 9, 58.0434 )
 
 [sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 8.08801, 469.224 )
@@ -996,7 +996,7 @@ position = Vector2( 2.29077, 0.729614 )
 shape = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Longcat"]
-position = Vector2( -0.226441, 5.94263 )
+position = Vector2( 0.000121504, 2 )
 shape = SubResource( 61 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
@@ -1025,11 +1025,11 @@ position = Vector2( -1.00005, 1.00002 )
 shape = SubResource( 60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Nonacat"]
-position = Vector2( -2.10693, 5.76898 )
+position = Vector2( -2.10693, 1.76898 )
 shape = SubResource( 61 )
 
 [node name="AvocatoArea2D" type="Area2D" parent="NPC"]
-position = Vector2( 1646.27, 750.531 )
+position = Vector2( 1646.27, 755.531 )
 collision_layer = 16
 collision_mask = 2
 script = ExtResource( 5 )
@@ -1125,10 +1125,6 @@ __meta__ = {
 }
 
 [node name="Ladders" type="Node2D" parent="."]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="Ladder" type="Area2D" parent="Ladders"]
 position = Vector2( 4338.21, 1103.86 )
@@ -1156,13 +1152,9 @@ shape = SubResource( 97 )
 [node name="Ladder4" type="Area2D" parent="Ladders"]
 position = Vector2( 3649.81, 883.142 )
 script = ExtResource( 41 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
-position = Vector2( 0, -4.73242 )
+position = Vector2( -0.810059, -16.142 )
 shape = SubResource( 98 )
 
 [node name="Ladder5" type="Area2D" parent="Ladders"]
@@ -1174,7 +1166,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
-position = Vector2( 0, -5.99286 )
+position = Vector2( 0, -18.6266 )
 shape = SubResource( 98 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
@@ -1190,11 +1182,14 @@ position = Vector2( 0.911987, 0.223511 )
 shape = SubResource( 99 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1011, 1372 )
+position = Vector2( 4731, 1299 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 4800
 limit_bottom = 1600
+
+[node name="AnimatedSprite" parent="Player" index="1"]
+flip_h = true
 
 [node name="Music" type="Node2D" parent="."]
 __meta__ = {
