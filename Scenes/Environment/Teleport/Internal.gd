@@ -1,8 +1,6 @@
 extends Teleport
 class_name TeleportInternal
 
-onready var chat_with = get_tree().get_current_scene().chat_with
-
 export(NodePath) var node_to_go 
 
 var teleporting
@@ -21,6 +19,7 @@ func _process(_delta):
 				follower.visible = false
 	
 	elif teleporting:
+		current_scene.set_disable("chat_with", "teleporting", false)
 		player.visible = true
 		current_scene.set_disable("player", "teleport", false)
 		teleporting = false
@@ -35,9 +34,9 @@ func _input(_event):
 	if _can_interact():
 		_play_sound()
 		if to_go and not teleporting:
+			current_scene.set_disable("chat_with", "teleporting")
 			teleporting = true
 			current_scene.set_disable("player", "teleport")
-			chat_with.visible = false
 			player.visible = false
 			temp_order = player.position_log.size() - 1
 			tween = utils.tween(player, "position", to_go.position)

@@ -15,6 +15,7 @@ var camera = get_node_or_null("Player/Camera2D") setget, _get_camera
 var disable = {
 	player = [],
 	e_interact = [],
+	chat_with = [],
 	feline = []
 }
 

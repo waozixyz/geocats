@@ -36,6 +36,7 @@ var completed :bool
 func show_chat():
 	current_scene.chatting.append(character_name)
 	active = true
+
 	chat_with.visible = true
 	chat_with.get_node("Label").text = character_name
 	current_scene.set_disable("e_interact", "chat_npc")
@@ -49,25 +50,28 @@ func hide_chat():
 		dialogue.exit()
 		dia_started = false
 
-func _is_enable_var():
+func _is_enabled():
+	var flag = false
 	if enable_var.empty():
-		return true
+		flag = true
 	elif PROGRESS.variables.get(enable_var):
-		return PROGRESS.variables.get(enable_var)
+		flag = PROGRESS.variables.get(enable_var)
+	if flag == false:
+		return false
 	else:
-		return false
-
-
-func _is_skip_var():
-	if skip_var.empty():
-		return false
-	elif PROGRESS.variables.get(skip_var):
-		return PROGRESS.variables.get(skip_var)
-	else:
-		return false
+		if skip_var.empty():
+			flag = false
+		elif PROGRESS.variables.get(skip_var):
+			flag = PROGRESS.variables.get(skip_var)
+		else:
+			flag = false
+		if flag == true:
+			return false
+		else:
+			return not current_scene.is_disabled("chat_with")
 			
 func _process(_delta):
-	if trigger_on_touch and not _is_skip_var() and _is_enable_var():
+	if trigger_on_touch and _is_enabled():
 		if touching and not active:
 			start_chat()
 
@@ -85,7 +89,7 @@ func _process(_delta):
 			if not player_disable.empty():
 				current_scene.set_disable("player", player_disable, false)
 	else:
-		if touching and not active and not disabled and not _is_skip_var() and _is_enable_var():
+		if touching and not active and not disabled and _is_enabled():
 			if has_parent and get_parent().is_on_floor() or not has_parent:
 				show_chat()
 		elif (disabled or not touching) and active:
@@ -108,7 +112,7 @@ func start_chat():
 var dia_started
 func _input(_event):
 	if not trigger_on_touch:
-		if touching and json_file and Input.is_action_just_pressed("interact") and dialogue.modulate.a == 0 and not _is_skip_var() and _is_enable_var():
+		if touching and json_file and Input.is_action_just_pressed("interact") and dialogue.modulate.a == 0 and _is_enabled():
 			if chat_with.visible:
 				start_chat()
 			else:
