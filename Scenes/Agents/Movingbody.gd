@@ -164,6 +164,6 @@ func _physics_process(_delta):
 	if add_move_n_slide:
 		velocity = move_and_slide(velocity, Vector2.UP, true, 4, max_angle) #apply velocity to movement
 
-	if manage_anim:
+	if manage_anim and sprite.animation != anim:
 		sprite.play(anim)
 

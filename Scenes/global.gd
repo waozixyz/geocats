@@ -18,7 +18,7 @@ var user = {
 	"position": Vector2(0,0),
 	"direction": 0,
 	"hp": 100,
-	"following": [],
+	"following": [ "Lethe"],
 }
 
 var data =  {
@@ -67,7 +67,7 @@ func _ready():
 	_load_audio_bus("Sound")
 
 	# load dialogue system data
-	PROGRESS.variables = data.prog_var
+	#PROGRESS.variables = data.prog_var
 	PROGRESS.dialogues = data.prog_dia
 	PROGRESS.quests = data.prog_quests
 

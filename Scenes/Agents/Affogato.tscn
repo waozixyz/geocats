@@ -37,7 +37,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 11, 11 )
+extents = Vector2( 9, 8.5 )
 
 [node name="Affogato" type="KinematicBody2D"]
 collision_layer = 4
@@ -55,7 +55,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -5, -1 )
+position = Vector2( -5, 0 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "idle"
@@ -63,9 +63,11 @@ speed_scale = 2.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 4 )
 shape = SubResource( 7 )
 
 [node name="PlatformRaycast" type="RayCast2D" parent="."]
+position = Vector2( 0, 10 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 2

@@ -226,7 +226,6 @@ centered = false
 position = Vector2( 816.185, 401 )
 script = ExtResource( 15 )
 add_move_n_slide = false
-mirror_sprite = false
 jump_height = 10
 
 [node name="ChatNPC" parent="Affogato" index="0"]

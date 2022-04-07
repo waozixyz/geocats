@@ -1,6 +1,5 @@
 extends MovingBody
 
-var anim = "idle"
 var ticks = 0
 var idle
 

@@ -974,10 +974,13 @@ shape = SubResource( 56 )
 [node name="NPC" type="Node2D" parent="."]
 
 [node name="Longcat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3328, 900 )
+position = Vector2( 3404, 567 )
 collision_layer = 5
 collision_mask = 2
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 move_speed = 75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat"]
@@ -1000,10 +1003,13 @@ position = Vector2( 0.000121504, 2 )
 shape = SubResource( 61 )
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4119, 775 )
+position = Vector2( 4197, 785 )
 collision_layer = 16
 collision_mask = 2
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 move_speed = 75
 jump_delay_range = [ 100, 200 ]
 walk_delay_range = [ 6, 24 ]
@@ -1064,7 +1070,7 @@ position = Vector2( -8.76025, -6.37939 )
 shape = SubResource( 60 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="NPC/ShinobiArea2D"]
-position = Vector2( 5.13379, 1.36212 )
+position = Vector2( 5.13379, 5.36212 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 88 )
 animation = "idle"

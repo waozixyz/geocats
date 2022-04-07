@@ -17,7 +17,7 @@ func _physics_process(delta):
 
 	if "Affogato" in global.user.following:
 		affogato = player.get_node("Affogato")
-		player.remove_follower(affogato)
+		remove_follower(affogato)
 		add_child(affogato)
 		set_disable("player", "donutshop")
 		global.user.following.remove("Affogato")

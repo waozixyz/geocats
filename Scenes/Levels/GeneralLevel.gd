@@ -101,13 +101,17 @@ func add_follower(cat, keep_pos = false):
 		cat.change_direction = 0
 		cat.jump_height = 0
 		cat.move_speed = 0
+	if has_node(cat.name):
+		remove_child(get_node(cat.name))
+
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
 	followers.append(cat)
-	
+	cat.manage_anim = false
 	add_child( cat)
-	move_child(cat, 1)
+	move_child(cat, player.get_index() - 1)
 	cat.set_owner(self)
+	cat.sprite.play("idle")
 	if not keep_pos:
 		cat.position = player.position
 	if cat.has_node("ChatNPC"):
@@ -176,10 +180,11 @@ func _process(_delta):
 	
 
 	# follow player logic
-	var anim = "idle"
+
 	if player.position_log.size() > followers.size() * 5:
 	#	followers.sort_custom(self, "sort_followers")
 		for i in followers.size():
+			var anim = "idle"
 			var follower = followers[i]
 			var order = follower.follow_order
 			var obj = player
@@ -187,8 +192,9 @@ func _process(_delta):
 				obj = followers[i - 1]
 			var diff = player.position_log[order] - obj.position
 
-			if abs(diff.y) > 30 or not follower.is_on_floor() and order < player.position_log.size() - 1:
+			if (abs(diff.y) > 30 or not follower.is_on_floor()) and order < player.position_log.size() - 1:
 				order += 1
+
 				diff = player.position_log[order] - obj.position
 			var max_skip = 10
 			while(abs(diff.x) > 90) and order < player.position_log.size() - 1:
@@ -207,7 +213,7 @@ func _process(_delta):
 	
 
 
-			if follower.sprite.frames.has_animation(anim):
+			if follower.sprite.frames.has_animation(anim) and follower.sprite.animation != anim:
 				follower.sprite.play(anim)
 			follower.position = player.position_log[order] + Vector2(0, 4)
 			follower.follow_order = order

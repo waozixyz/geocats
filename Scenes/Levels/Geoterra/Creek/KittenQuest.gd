@@ -15,7 +15,7 @@ var left_bound = 0
 var right_bound = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if PROGRESS.variables.has("geoterra_kitten_found_them") and PROGRESS.variables["geoterra_kitten_found_them"]:
+	if PROGRESS.variables.get("geoterra_kitten_found_them"):
 		visible = false
 		for child in get_children():
 			remove_child(child)
@@ -54,7 +54,7 @@ func next_waypoint(kitten, fall = false):
 			current_waypoint += 1
 
 func _process(_delta):
-	if PROGRESS.variables.has("geoterra_kitten_found_them") and PROGRESS.variables["geoterra_kitten_found_them"]:
+	if PROGRESS.variables.get("geoterra_kitten_found_them"):
 
 		for kitten in get_children():
 			if kitten is KinematicBody2D:
@@ -72,11 +72,11 @@ func _process(_delta):
 	if found_kittens.size() == 6:
 		PROGRESS.quests["geoterra_kitten_quest_complete"] = true
 	
-	if PROGRESS.variables.has("geoterra_garloo_follow") and PROGRESS.variables["geoterra_garloo_follow"]:
+	if PROGRESS.variables.get("geoterra_garloo_follow"):
 		PROGRESS.variables["geoterra_garloo_follow"] = false
 		current_scene.add_follower(garloo_kitten, true)
 
-	if PROGRESS.variables.has("geoterra_sparkle_follow") and PROGRESS.variables["geoterra_sparkle_follow"]:
+	if PROGRESS.variables.get("geoterra_sparkle_follow"):
 		PROGRESS.variables["geoterra_garloo_follow"] = false
 		current_scene.add_follower(garloo_kitten, true)
 

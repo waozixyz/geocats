@@ -256,14 +256,14 @@ extents = Vector2( 286, 5 )
 [sub_resource type="RectangleShape2D" id=496]
 extents = Vector2( 238, 19 )
 
-[sub_resource type="RectangleShape2D" id=498]
-extents = Vector2( 119, 29 )
-
 [sub_resource type="RectangleShape2D" id=499]
 extents = Vector2( 8, 253 )
 
 [sub_resource type="RectangleShape2D" id=500]
 extents = Vector2( 506, 10 )
+
+[sub_resource type="RectangleShape2D" id=498]
+extents = Vector2( 119, 29 )
 
 [sub_resource type="RectangleShape2D" id=501]
 extents = Vector2( 8, 69 )
@@ -463,11 +463,6 @@ position = Vector2( -669, 48 )
 shape = SubResource( 496 )
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Platforms"]
-position = Vector2( -192, 7 )
-shape = SubResource( 498 )
-one_way_collision = true
-
 [node name="EndWalls" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( 2408, 1117 )
 collision_layer = 2
@@ -488,6 +483,10 @@ shape = SubResource( 500 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndWalls"]
 position = Vector2( 0, 1 )
 polygon = PoolVector2Array( -1714, -646, -1584, -758, -1452, -758, -1452, -853, -1637, -850, -1638, -796, -1680, -773, -1688, -773, -1689, -796, -1737, -796, -1747, -891, -1740, -905, -1700, -905, -1585, -905, -1585, -973, -1446, -972, -1441, -642, -1681, -642 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="EndWalls"]
+position = Vector2( -1632, -878 )
+shape = SubResource( 498 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -564,7 +563,7 @@ json_file = "res://Assets/Levels/GeoCity/Arcade/affogato_arcade.json"
 sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 843, 313 )
+position = Vector2( 698, 372 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 960
@@ -611,7 +610,8 @@ centered = false
 position = Vector2( 922, 314 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 geocity = 3
 next_loc = 1
