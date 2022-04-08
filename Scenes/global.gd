@@ -18,7 +18,7 @@ var user = {
 	"position": Vector2(0,0),
 	"direction": 0,
 	"hp": 100,
-	"following": [ "Lethe"],
+	"following": [ "Affogato"],
 }
 
 var data =  {

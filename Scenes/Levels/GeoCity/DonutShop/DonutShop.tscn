@@ -220,13 +220,13 @@ centered = false
 texture = ExtResource( 9 )
 centered = false
 
-[node name="Affogato" parent="." instance=ExtResource( 6 )]
+[node name="Affogato2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 816.185, 401 )
 script = ExtResource( 15 )
 add_move_n_slide = false
 jump_height = 10
 
-[node name="ChatNPC" parent="Affogato" index="0"]
+[node name="ChatNPC" parent="Affogato2" index="0"]
 has_parent = true
 character_name = "Affogato"
 json_file = "res://Assets/Levels/GeoCity/DonutShop/affogato_donutshop.json"
@@ -442,4 +442,4 @@ scale = Vector2( 0.198469, 0.207692 )
 texture = ExtResource( 14 )
 
 [editable path="Player"]
-[editable path="Affogato"]
+[editable path="Affogato2"]
