@@ -4,7 +4,7 @@ var affogato
 var move_to_pos = false
 
 var step = 0
-func _physics_process(delta):
+func _physics_process(_delta):
 	var teleport = PROGRESS.variables.get("teleport")
 
 	if teleport:

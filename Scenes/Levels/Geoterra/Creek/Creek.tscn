@@ -885,7 +885,6 @@ script = ExtResource( 36 )
 __meta__ = {
 "_edit_group_": true
 }
-mirror_sprite = true
 jump_height = 20
 move_speed = 0
 change_direction = 0
@@ -950,7 +949,7 @@ move_speed = 5
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 10
+frame = 8
 playing = true
 centered = false
 script = ExtResource( 40 )
@@ -1033,8 +1032,9 @@ position = Vector2( 6679, 2119 )
 collision_layer = 5
 collision_mask = 2
 script = ExtResource( 36 )
+jump_height = 10
 move_speed = 5
-change_direction = 20
+change_direction = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KittenQuest/Lethe2"]
 position = Vector2( 17, 14 )
@@ -1079,7 +1079,7 @@ shape = SubResource( 31 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 35 )
-frame = 1
+frame = 7
 playing = true
 centered = false
 script = SubResource( 36 )

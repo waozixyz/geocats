@@ -563,7 +563,7 @@ json_file = "res://Assets/Levels/GeoCity/Arcade/affogato_arcade.json"
 sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 698, 372 )
+position = Vector2( 841, 304 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 960
@@ -602,6 +602,7 @@ centered = false
 [node name="Sign" type="AnimatedSprite" parent="AbovePlayer/Viewport"]
 position = Vector2( 166, 54 )
 frames = SubResource( 508 )
+frame = 1
 speed_scale = 0.1
 playing = true
 centered = false

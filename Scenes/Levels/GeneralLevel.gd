@@ -149,9 +149,6 @@ func _ready():
 			printerr("follower invalid: ", follower)
 
 
-func  _clean_position_log():
-	pass
-
 var tween
 func _process(_delta):
 	# dying logic
@@ -217,4 +214,4 @@ func _process(_delta):
 				follower.sprite.play(anim)
 			follower.position = player.position_log[order] + Vector2(0, 4)
 			follower.follow_order = order
-	_clean_position_log()
+

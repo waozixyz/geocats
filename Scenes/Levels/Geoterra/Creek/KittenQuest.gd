@@ -81,9 +81,12 @@ func _process(_delta):
 		current_scene.add_follower(garloo_kitten, true)
 
 	for kitten in new_kittens:
+		if found_kittens.has(kitten):
+			new_kittens.erase(kitten)
+			break
 		var dest = get_node_or_null(kitten.name + "2")
 
-		if abs(kitten.position.x - dest.position.x) < 10 and abs(kitten.position.y - dest.position.y) < 10 :
+		if abs(kitten.position.x - dest.position.x) < 15 and abs(kitten.position.y - dest.position.y) < 15 :
 			dest.visible = true
 			new_kittens.erase(kitten)
 			found_kittens.append(kitten)
