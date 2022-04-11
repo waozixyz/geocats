@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/garloo/garloo_spritesheet.png" type="Texture" id=2]
@@ -21,6 +21,30 @@ region = Rect2( 36, 0, 9, 11 )
 atlas = ExtResource( 2 )
 region = Rect2( 45, 0, 9, 11 )
 
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 2 )
+region = Rect2( 45, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 2 )
+region = Rect2( 54, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 22, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 2 )
+region = Rect2( 18, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 2 )
+region = Rect2( 27, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 2 )
+region = Rect2( 36, 11, 9, 11 )
+
 [sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 11, 9, 11 )
@@ -34,6 +58,16 @@ animations = [ {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 55 ), SubResource( 55 ), SubResource( 55 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 99 ), SubResource( 100 ), SubResource( 101 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 55 ) ],
@@ -59,7 +93,7 @@ change_direction = 0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 61 )
-animation = "walk"
+animation = "climb"
 flip_h = true
 script = ExtResource( 1 )
 

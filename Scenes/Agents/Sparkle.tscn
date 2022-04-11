@@ -1,34 +1,79 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Creek/sparkle/sparkle_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/UI/Interact/ChatNPC.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=4]
 
-[sub_resource type="AtlasTexture" id=119]
+[sub_resource type="AtlasTexture" id=104]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 10, 6 )
+region = Rect2( 0, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=120]
+[sub_resource type="AtlasTexture" id=105]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 18, 10, 6 )
+region = Rect2( 9, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=121]
+[sub_resource type="AtlasTexture" id=106]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 12, 10, 6 )
+region = Rect2( 18, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=122]
+[sub_resource type="AtlasTexture" id=107]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 6, 10, 6 )
+region = Rect2( 27, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 2 )
+region = Rect2( 36, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 2 )
+region = Rect2( 45, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 2 )
+region = Rect2( 54, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 2 )
+region = Rect2( 18, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 2 )
+region = Rect2( 27, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=117]
+atlas = ExtResource( 2 )
+region = Rect2( 36, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 2 )
+region = Rect2( 45, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 2 )
+region = Rect2( 54, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 2 )
+region = Rect2( 9, 11, 9, 11 )
 
 [sub_resource type="SpriteFrames" id=103]
 animations = [ {
-"frames": [ SubResource( 119 ), SubResource( 120 ), SubResource( 120 ), SubResource( 119 ), SubResource( 119 ), SubResource( 119 ), SubResource( 119 ), SubResource( 119 ) ],
+"frames": [ SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 121 ), SubResource( 122 ), SubResource( 119 ) ],
+"frames": [ SubResource( 115 ), SubResource( 116 ), SubResource( 117 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -53,8 +98,7 @@ change_direction = 400
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 103 )
-animation = "idle"
-frame = 4
+animation = "climb"
 script = ExtResource( 1 )
 
 [node name="ChatNPC" type="Area2D" parent="."]

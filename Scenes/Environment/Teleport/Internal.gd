@@ -28,6 +28,7 @@ func _process(_delta):
 			follower.position = player.position
 			follower.follow_order = 0
 			player.position_log = []
+			player.anime_log = []
 
 var temp_order = 0
 func _input(_event):

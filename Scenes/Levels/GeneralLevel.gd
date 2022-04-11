@@ -181,9 +181,12 @@ func _process(_delta):
 	if player.position_log.size() > followers.size() * 5:
 	#	followers.sort_custom(self, "sort_followers")
 		for i in followers.size():
-			var anim = "idle"
 			var follower = followers[i]
 			var order = follower.follow_order
+			var anim = "idle"
+
+			if player.anime_log[order] == "climb":
+				anim = player.anime_log[order]
 			var obj = player
 			if i > 0:
 				obj = followers[i - 1]

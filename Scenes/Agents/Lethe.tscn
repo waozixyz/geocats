@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Levels/Geoterra/Creek/AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Agents/Movingbody.gd" type="Script" id=2]
@@ -32,11 +32,41 @@ region = Rect2( 45, 0, 9, 11 )
 atlas = ExtResource( 3 )
 region = Rect2( 54, 0, 9, 11 )
 
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 3 )
+region = Rect2( 9, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=125]
+atlas = ExtResource( 3 )
+region = Rect2( 18, 11, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 0, 10, 11 )
+
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 10, 11 )
+
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 117 ), SubResource( 113 ), SubResource( 113 ), SubResource( 113 ), SubResource( 113 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 123 ), SubResource( 124 ), SubResource( 125 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 121 ), SubResource( 122 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 111 ), SubResource( 116 ) ],
@@ -58,7 +88,7 @@ mirror_sprite = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 13 )
-animation = "idle"
+animation = "climb"
 flip_h = true
 script = ExtResource( 1 )
 

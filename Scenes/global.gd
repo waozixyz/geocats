@@ -18,7 +18,7 @@ var user = {
 	"position": Vector2(0,0),
 	"direction": 0,
 	"hp": 100,
-	"following": [ "Affogato"],
+	"following": [],
 }
 
 var data =  {
@@ -60,14 +60,14 @@ func _ready():
 	# overwrite data with saved data
 	data = _load_data(data_file, data)
 
-	#user = _load_data(user_file, user)
+	user = _load_data(user_file, user)
 
 	# load audio buses
 	_load_audio_bus("Music")
 	_load_audio_bus("Sound")
 
 	# load dialogue system data
-	#PROGRESS.variables = data.prog_var
+	PROGRESS.variables = data.prog_var
 	PROGRESS.dialogues = data.prog_dia
 	PROGRESS.quests = data.prog_quests
 

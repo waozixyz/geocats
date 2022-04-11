@@ -162,14 +162,6 @@ region = Rect2( 60, 15, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 18 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 30, 15, 15 )
@@ -206,6 +198,14 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 60, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 18 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 17 ), SubResource( 29 ), SubResource( 17 ), SubResource( 17 ) ],
@@ -213,20 +213,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 17 ) ],
 "loop": true,
-"name": "walk",
+"name": "blink",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ) ],
 "loop": true,
 "name": "slide_wall",
 "speed": 12.0
-}, {
-"frames": [ SubResource( 17 ) ],
-"loop": true,
-"name": "blink",
-"speed": 5.0
 }, {
 "frames": [ SubResource( 23 ) ],
 "loop": true,
@@ -236,6 +231,11 @@ animations = [ {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "climb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -252,7 +252,7 @@ extents = Vector2( 11, 256.5 )
 extents = Vector2( 5, 144 )
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 8.5, 169 )
+extents = Vector2( 18.5, 169 )
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 21, 130 )
@@ -342,7 +342,7 @@ extents = Vector2( 30, 35.5 )
 extents = Vector2( 33.0954, 33.7617 )
 
 [sub_resource type="RectangleShape2D" id=67]
-extents = Vector2( 57.5, 24 )
+extents = Vector2( 53, 24 )
 
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 94, 91.5 )
@@ -469,7 +469,6 @@ __meta__ = {
 position = Vector2( 1291.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
-frame = 1
 playing = true
 centered = false
 
@@ -530,7 +529,7 @@ position = Vector2( 1421, 546 )
 shape = SubResource( 36 )
 
 [node name="BedRoomRightWall" type="CollisionShape2D" parent="MainColliders/Walls"]
-position = Vector2( 1412.5, 197 )
+position = Vector2( 1422.5, 197 )
 shape = SubResource( 37 )
 
 [node name="LitterboxLeftWall" type="CollisionShape2D" parent="MainColliders/Walls"]
@@ -809,7 +808,7 @@ make_node_visible = NodePath("../../BelowPlayer/Dream")
 transition_time = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Dream"]
-position = Vector2( 66.5, 14 )
+position = Vector2( 62, 14 )
 shape = SubResource( 67 )
 
 [node name="ShowInstructionManual" type="Area2D" parent="Interactables"]

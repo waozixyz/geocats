@@ -113,10 +113,12 @@ func _ready():
 
 # main process loop
 var dmg_blink = 0
-var position_log = [position]
+var position_log = []
+var anime_log = []
 
 var no_vx = false
 func _physics_process(delta):
+
 	var dfps = delta * global.fps
 	# make sure wave particles have the right substance
 	waves.substance = water_sub
@@ -152,6 +154,7 @@ func _physics_process(delta):
 	# follow player logic
 	if position_log.size() == 0 or position_log[position_log.size() - 1] != position:
 		position_log.append(position)
+		anime_log.append(sprite.animation)
 
 # update keyboard inputs
 func update_inputs():
