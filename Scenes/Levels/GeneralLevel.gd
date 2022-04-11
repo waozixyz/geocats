@@ -71,6 +71,7 @@ var crt_effect = load("res://Scenes/UI/CRT_Effect.tscn").instance()
 var dialogue = load("res://Scenes/UI/Dialogue/Dialogue.tscn").instance()
 var chat_with =  load("res://Scenes/UI/Interact/ChatWith.tscn").instance()
 func _add_default_nodes():
+	PROGRESS.quests["geoterra_kitten_quest"] = true
 	add_child(crt_effect)
 	canvas_layer = CanvasLayer.new()
 	add_child(canvas_layer)
@@ -96,7 +97,7 @@ func _init_music_array():
 
 var followers = []
 
-func add_follower(cat, keep_pos = false):
+func add_follower(cat):
 	if cat is SimpleMovingAI:
 		cat.change_direction = 0
 		cat.jump_height = 0
@@ -107,13 +108,13 @@ func add_follower(cat, keep_pos = false):
 	if not global.user.following.has(cat.name):
 		global.user.following.append(cat.name)
 	followers.append(cat)
+	if cat.get_parent():
+		cat.get_parent().remove_child(cat)
 	cat.manage_anim = false
 	add_child( cat)
 	move_child(cat, player.get_index() - 1)
 	cat.set_owner(self)
 	cat.sprite.play("idle")
-	if not keep_pos:
-		cat.position = player.position
 	if cat.has_node("ChatNPC"):
 		cat.get_node("ChatNPC").disabled = true
 
@@ -210,7 +211,7 @@ func _process(_delta):
 				follower.sprite.flip_h = not player.sprite.flip_h or follower.mirror_sprite
 			elif diff.x < 0:
 				follower.sprite.flip_h = not (player.sprite.flip_h or follower.mirror_sprite)
-	
+
 
 
 			if follower.sprite.frames.has_animation(anim) and follower.sprite.animation != anim:

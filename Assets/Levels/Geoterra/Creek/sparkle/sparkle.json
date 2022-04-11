@@ -14,12 +14,12 @@
       "animation_in": "fade_in",
       "type": "text",
       "content": "Hey buddy, you're pretty quick.",
-      "next": "1"
+      "next": "2"
     },
     "2": {
       "type": "text",
       "content": "I don't got time to stand around blabbering with you.@Let's go find my friends!",
-      "next": ""
+      "next": "3"
     },
     "3": {
        "type": "action",

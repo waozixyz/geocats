@@ -40,11 +40,12 @@ func play_sound(sound_file, volume = 100, loop = false, object = null):
 		id += 1
 		return sound
 func _process(_delta):
-	if not get_tree().get_current_scene().get("player") == null and player == null:
-		player = get_tree().get_current_scene().player
+	if get_tree().get_current_scene() is GeneralLevel:
+		if not get_tree().get_current_scene().get("player") == null and player == null:
+			player = get_tree().get_current_scene().player
 
-	if (!weakref(player).get_ref()) and not player == null:
-		player = get_tree().get_current_scene().player
+		if (!weakref(player).get_ref()) and not player == null:
+			player = get_tree().get_current_scene().player
 
 	
 	for item in playing.values():

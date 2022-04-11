@@ -32,7 +32,6 @@ func _ready():
 func _physics_process(_delta):
 	if not idle:
 		ticks += 1
-		
 		if ticks % jump_tick == 0:
 			if is_on_floor() and anim == "walk":
 				jump(jump_height)

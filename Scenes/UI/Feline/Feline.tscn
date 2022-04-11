@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/UI/Feline/RedButton/red_button.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Feline/Body/feline_topbar.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/UI/Feline/SettingsView/sfx_on.png" type="Texture" id=18]
 [ext_resource path="res://Assets/UI/Feline/StatusBar/exit.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Fonts/QixMono20.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Assets/Fonts/qix_mono.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://Assets/UI/Feline/Navigator.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/UI/Feline/StatusBar.gd" type="Script" id=28]
 [ext_resource path="res://Assets/UI/Feline/StatusBar/settings.png" type="Texture" id=29]
@@ -46,6 +47,9 @@ bg_color = Color( 0.156863, 0.333333, 0.160784, 1 )
 border_width_top = 1
 border_width_bottom = 1
 border_color = Color( 0.392157, 0.666667, 0.380392, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 21 )
 
 [node name="Feline" type="Control"]
 pause_mode = 2
@@ -77,6 +81,7 @@ __meta__ = {
 }
 
 [node name="MainView" type="Control" parent="System"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -137,7 +142,6 @@ align = 0
 expand_icon = true
 
 [node name="SettingsView" type="Control" parent="System"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -229,6 +233,14 @@ stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Reset" type="Button" parent="System/SettingsView"]
+margin_left = 344.0
+margin_top = 301.0
+margin_right = 457.0
+margin_bottom = 318.0
+custom_fonts/font = SubResource( 20 )
+text = "Reset Saved Data"
 
 [node name="StatusBar" type="Control" parent="System"]
 margin_right = 40.0

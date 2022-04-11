@@ -3,6 +3,7 @@ extends Area2D
 onready var current_scene = get_tree().get_current_scene()
 
 onready var garloo_kitten = $Garloo
+onready var sparkle_kitten = $Sparkle
 onready var collision_shape = $CollisionShape2D
 onready var teacher_bot = $Teacherbot
 onready var waypoint_1 = $Waypoint1
@@ -74,19 +75,19 @@ func _process(_delta):
 	
 	if PROGRESS.variables.get("geoterra_garloo_follow"):
 		PROGRESS.variables["geoterra_garloo_follow"] = false
-		current_scene.add_follower(garloo_kitten, true)
+		current_scene.add_follower(garloo_kitten)
 
 	if PROGRESS.variables.get("geoterra_sparkle_follow"):
-		PROGRESS.variables["geoterra_garloo_follow"] = false
-		current_scene.add_follower(garloo_kitten, true)
+		PROGRESS.variables["geoterra_sparkle_follow"] = false
+		current_scene.add_follower(sparkle_kitten)
 
 	for kitten in new_kittens:
-		if found_kittens.has(kitten):
+		if found_kittens.has(kitten) and new_kittens.has(kitten):
 			new_kittens.erase(kitten)
 			break
 		var dest = get_node_or_null(kitten.name + "2")
 
-		if abs(kitten.position.x - dest.position.x) < 15 and abs(kitten.position.y - dest.position.y) < 15 :
+		if abs(kitten.position.x - dest.position.x) < 30 and abs(kitten.position.y - dest.position.y) < 30 :
 			dest.visible = true
 			new_kittens.erase(kitten)
 			found_kittens.append(kitten)
