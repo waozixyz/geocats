@@ -52,6 +52,18 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 17 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 17 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 17 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 17 )
+region = Rect2( 60, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 15, 15, 15 )
@@ -59,10 +71,6 @@ region = Rect2( 0, 15, 15, 15 )
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 17 )
 region = Rect2( 15, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 17 )
-region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 17 )
@@ -84,17 +92,9 @@ region = Rect2( 0, 30, 15, 15 )
 atlas = ExtResource( 17 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 17 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 17 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 17 )
-region = Rect2( 60, 15, 15, 15 )
+region = Rect2( 30, 0, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -103,10 +103,20 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
+"loop": true,
+"name": "slide_wall",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 9 ) ],
 "loop": true,
@@ -116,16 +126,6 @@ animations = [ {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "blink",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
-"loop": true,
-"name": "slide_wall",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "climb",
 "speed": 5.0
 } ]
 
