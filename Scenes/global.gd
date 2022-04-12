@@ -59,6 +59,7 @@ func _notification(what):
 
 func _ready():
 	init_data()
+	load_data()
 	randomize()
 	for _i in range(0, 7):
 		pumpkin_code += str(int(rand_range(1, 8)))

@@ -26,19 +26,19 @@ func _relock():
 	_set_locked_item(false)
 	if to_unlock is E_Interact and not to_unlock.disable_player.empty():
 		current_scene.set_disable("player", to_unlock.disable_player, false)
-	if not dialogue_file:
+	if not dialogue_file and not one_use:
 		disabled = true
+
 var to_unlock 
 func _check_unlocked():
 	if to_unlock:
 		if relock_var and PROGRESS.variables.get(relock_var) and PROGRESS.variables[relock_var]:
 			_relock()
-		elif PROGRESS.variables.get(unlock_var) and PROGRESS.variables[unlock_var]:
+		elif PROGRESS.variables.get(unlock_var):
 			to_unlock.visible = true
-			_set_locked_item(true)
+			_set_locked_item(false)
 			if one_use:
 				disabled = true
-			
 		else:
 			_relock()
 			

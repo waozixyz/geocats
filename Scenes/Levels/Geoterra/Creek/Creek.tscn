@@ -994,7 +994,7 @@ move_speed = 5
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 14
+frame = 6
 playing = true
 centered = false
 script = ExtResource( 40 )
@@ -1123,7 +1123,7 @@ shape = SubResource( 31 )
 position = Vector2( -107, -53 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 35 )
-frame = 9
+frame = 22
 playing = true
 centered = false
 script = SubResource( 36 )
@@ -1358,7 +1358,6 @@ unlock_var = "geoterra_greencave_unlocked"
 script = ExtResource( 27 )
 territory = 1
 geoterra = 5
-next_loc = 1
 this_loc = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LockedItem/ToGreenCave"]

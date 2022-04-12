@@ -1,7 +1,7 @@
 extends GeneralLevel
 
-onready var below_player = $BehindPlayer
-onready var above_player = $FrontPlayer
+onready var behind_player = get_node_or_null("BehindPlayer")
+onready var above_player = get_node_or_null("AbovePlayer")
 onready var giant_pumpkin = $GiantPumpkin
 
 var res_path = "res://Assets/Levels/GeoCity/GeoCity/"
@@ -19,28 +19,28 @@ func _ready():
 		set_theme("DefaultCity")
 
 func set_theme(theme): #Change to Pumpkin function which is called by collision
-	for child in get_node("BehindPlayer").get_children():
+	for child in behind_player.get_children():
 		if child.get_child_count() > 0 and child is Node2D:
 			if child.name == theme:
 				child.visible = true
 			else:
-				remove_child(child)
-	for child in get_node("AbovePlayer").get_children():
+				behind_player.remove_child(child)
+	for child in above_player.get_children():
 		if child.get_child_count() > 0 and child is Node2D:
 			if child.name == theme:
 				child.visible = true
 			else:
-				remove_child(child)
+				above_player.remove_child(child)
 	var file2Check = File.new()
 	if file2Check.file_exists(res_path + theme + "/buildings.png"):
-		below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
+		behind_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
 	if file2Check.file_exists(res_path + theme + "/sky.png"):
-		below_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
+		behind_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
 
 	if file2Check.file_exists(res_path + theme + "/buildings.png"):
-		below_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
+		behind_player.get_node("Buildings").texture = load(res_path + theme + "/buildings.png")
 	if file2Check.file_exists(res_path + theme + "/sky.png"):
-		below_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
+		behind_player.get_node("Sky").texture = load(res_path + theme + "/sky.png")
 
 
 	for child in get_node("Music").get_children():

@@ -121,7 +121,7 @@ func _phase_four():
 		enemy.vulnerable = true
 		enemy.rage = 1
 		enemy.move_speed *= 2
-		enemy.def = 2
+		enemy.def = 1.4
 		enemy.move()
 	if enemy.hp <= 0:
 		_start_chat("norna_wyrd_caves_2")

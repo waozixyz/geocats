@@ -7,7 +7,7 @@ onready var sprite = $AnimatedSprite
 
 func _check_colliders(now = false):
 	var is_after_battle =  PROGRESS.variables["GlaciokarstAfterBattle"] if PROGRESS.variables.has("GlaciokarstAfterBattle") else false
-
+	
 	if PROGRESS.variables.get(unlock_var) == true or now or global.user.location == 1 and not is_after_battle:
 		sprite.animation = "open"
 		sprite.play()

@@ -54,9 +54,7 @@ func _update_dialogue(territory):
 			if opt == -1:
 				# if the scene name has been visited, continue
 				opt = global.user.visited[territory].find(t)
-				print(opt)
-
-				if opt != -1 or true:
+				if opt != -1:
 					label.append_bbcode("[center] Travel to [/center]")
 					label.newline()
 					label.append_bbcode("[center][color=blue][url=" + territory + ", " + t + "]" + _replace_scene_name(t)  + "[/url][/color][/center]")

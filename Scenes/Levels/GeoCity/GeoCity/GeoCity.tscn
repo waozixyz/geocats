@@ -488,14 +488,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=100]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=101]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 54, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=102]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 54, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 50, 54 )
@@ -504,17 +496,25 @@ region = Rect2( 0, 0, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 0, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 54, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 54, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=105]
 animations = [ {
-"frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 9.0
-}, {
 "frames": [ SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 104 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ) ],
 "loop": true,
 "name": "Happy",
 "speed": 18.0
+}, {
+"frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ) ],
+"loop": true,
+"name": "Sad",
+"speed": 9.0
 } ]
 
 [sub_resource type="AtlasTexture" id=106]
@@ -878,9 +878,7 @@ collision_mask = 0
 position = Vector2( 2410, 1515.06 )
 shape = SubResource( 51 )
 
-[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="CollisionColliders" groups=["end"]]
 collision_layer = 2
 collision_mask = 0
 

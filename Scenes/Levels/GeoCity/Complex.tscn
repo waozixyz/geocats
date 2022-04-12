@@ -370,6 +370,7 @@ __meta__ = {
 sound_effect = 3
 geocity = 2
 this_loc = 1
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/Exit"]
 shape = SubResource( 16 )

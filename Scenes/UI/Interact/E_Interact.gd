@@ -33,10 +33,12 @@ func _is_grounded():
 func _is_disabled():
 	var state = current_scene.is_disabled("e_interact")
 	state = not state and _is_grounded() and button and not (playing and hide_when_playing) and not disabled
+
 	state = not state
 	return state
 var timer = -1
 func _process(delta):
+
 	if timer >= 0:
 		timer += delta
 		disabled = true
