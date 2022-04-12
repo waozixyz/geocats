@@ -45,7 +45,7 @@ func _physics_process(_delta):
 				velocity.x = 0
 		if velocity.x == 0:
 			anim = "idle"
-		elif sprite and sprite.frames.has_animation("walk"):
+		elif sprite and sprite.frames and sprite.frames.has_animation("walk"):
 			anim = "walk"
 	else:
 		anim = "idle"

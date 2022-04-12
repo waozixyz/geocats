@@ -71,7 +71,6 @@ var crt_effect = load("res://Scenes/UI/CRT_Effect.tscn").instance()
 var dialogue = load("res://Scenes/UI/Dialogue/Dialogue.tscn").instance()
 var chat_with =  load("res://Scenes/UI/Interact/ChatWith.tscn").instance()
 func _add_default_nodes():
-	PROGRESS.quests["geoterra_kitten_quest"] = true
 	add_child(crt_effect)
 	canvas_layer = CanvasLayer.new()
 	add_child(canvas_layer)
@@ -112,7 +111,7 @@ func add_follower(cat):
 		cat.get_parent().remove_child(cat)
 	cat.manage_anim = false
 	add_child( cat)
-	move_child(cat, player.get_index() - 1)
+	move_child(cat, player.get_index())
 	cat.set_owner(self)
 	cat.sprite.play("idle")
 	if cat.has_node("ChatNPC"):
@@ -180,7 +179,6 @@ func _process(_delta):
 	# follow player logic
 
 	if player.position_log.size() > followers.size() * 5:
-	#	followers.sort_custom(self, "sort_followers")
 		for i in followers.size():
 			var follower = followers[i]
 			var order = follower.follow_order

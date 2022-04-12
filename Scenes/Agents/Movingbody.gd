@@ -110,7 +110,7 @@ func _physics_process(_delta):
 	if manage_anim:
 		if velocity.x == 0:
 			anim = "idle"
-		elif sprite.frames.has_animation("walk"):
+		elif sprite and sprite.frames and sprite.frames.has_animation("walk"):
 			anim = "walk"
 			
 	# check platofrms

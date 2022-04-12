@@ -1,6 +1,6 @@
 extends GeneralLevel
 
-var affogato
+var affogato 
 var move_to_pos = false
 
 var step = 0
@@ -18,11 +18,12 @@ func _physics_process(_delta):
 	if "Affogato" in global.user.following:
 		for follower in followers:
 			if follower.name == "Affogato":
-				remove_follower(follower)
+
+				remove_follower(follower, false)
+				follower.position = player.position
 				affogato = follower
-				add_child(affogato)
 				set_disable("player", "donutshop")
-				global.user.following.remove("Affogato")
+				
 				move_to_pos = true
 
 	elif move_to_pos and affogato:
