@@ -511,9 +511,7 @@ polygon = PoolVector2Array( 1811.52, 2199.28, 1819.93, 2032.41, 1829.53, 1957.98
 position = Vector2( 418.053, -1408.24 )
 shape = SubResource( 20 )
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 2
 collision_mask = 0
 __meta__ = {
@@ -584,6 +582,7 @@ __meta__ = {
 }
 territory = 1
 next_loc = 4
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ToCreek"]
 position = Vector2( 108, 148 )

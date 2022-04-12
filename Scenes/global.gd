@@ -35,6 +35,7 @@ func init_data():
 		"current_level": "",
 		"visited": {},
 		"location": 0,
+		"flip_h": false,
 		"position": Vector2(0,0),
 		"direction": 0,
 		"hp": 100,

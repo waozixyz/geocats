@@ -11,6 +11,7 @@ export(Territory.XAPS) var xaps
 export(int) var next_loc = 0
 export(int) var this_loc = 0
 export(bool) var use_parent_pos = false
+export(bool) var flip_h = false
 func _get_level_name():
 	match territory:
 		Territory.Names.GeoCity: return Territory.GeoCity.keys()[geocity]
@@ -36,6 +37,7 @@ func _ready():
 func _input(_event):
 	if _can_interact():
 		global.user.location = next_loc
+		global.user.flip_h = flip_h
 		SceneChanger.change_scene(territory_name, level_name)
 		button.visible = false
 

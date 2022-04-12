@@ -53,7 +53,8 @@ func _update_dialogue(territory):
 			var opt = filter_out.find(t)
 			if opt == -1:
 				# if the scene name has been visited, continue
-				#opt = global.user.visited[territory].find(t)
+				opt = global.user.visited[territory].find(t)
+				print(opt)
 
 				if opt != -1 or true:
 					label.append_bbcode("[center] Travel to [/center]")
