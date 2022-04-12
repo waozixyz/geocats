@@ -42,7 +42,7 @@ extents = Vector2( 358.888, 60.6786 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24, 16.5 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.5, 2.5 )
 
 [node name="GeoCacheRoom" type="Node2D"]
@@ -87,7 +87,9 @@ position = Vector2( 88, -5.81299 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 6 )
 
-[node name="Colliders" type="StaticBody2D" parent="." groups=["end"]]
+[node name="Colliders" type="StaticBody2D" parent="." groups=[
+"end",
+]]
 collision_layer = 2
 collision_mask = 0
 
@@ -102,6 +104,7 @@ polygon = PoolVector2Array( 72, 462, 74, 301, 215, 220, 274, 111, 331, 73, 548, 
 position = Vector2( 119, 442 )
 
 [node name="Camera2D" parent="Player" index="0"]
+zoom = Vector2( 1.5, 1.5 )
 limit_right = 1300
 limit_bottom = 700
 
@@ -123,7 +126,6 @@ centered = false
 
 [node name="Waves" type="AnimatedSprite" parent="AbovePlayer/Floor"]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 
@@ -161,7 +163,7 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure/Platform"]
 position = Vector2( 5, 22 )
-shape = SubResource( 16 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="Lethe" parent="." instance=ExtResource( 16 )]

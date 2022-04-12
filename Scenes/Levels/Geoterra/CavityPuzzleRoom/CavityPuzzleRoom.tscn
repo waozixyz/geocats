@@ -833,7 +833,7 @@ bus = "Music"
 [node name="MushroomCatArea2D" type="Area2D" parent="NPC"]
 position = Vector2( 832.665, 430.01 )
 script = ExtResource( 40 )
-character_name = "Mushroom Cat"
+character_name = "Mushroom"
 json_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.json"
 sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.wav"
 

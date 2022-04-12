@@ -769,7 +769,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 dest_zoom = Vector2( 7.5, 7.5 )
-zoom_speed = 5.0
 offset = Vector2( 150, 120 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
