@@ -1,7 +1,7 @@
 {
     "first": {
       "avatar": "mushroomcat.png",
-      "name": "Mushroom Cat",
+      "name": "Mushroom",
       "position": "left",
       "animation_in": "fade_in",
       "type": "text",
@@ -10,7 +10,12 @@
     },
     "1": {
       "type": "text",
-      "content": "...So I guess the Nonaco science department is trying to get an estimate of how many there are in this cave.@I think that's what this machine could be for.",
+      "content": "...So I guess the Nonaco science department is trying to get an estimate of how many there are in this cave.",
+      "next": "2"
+    },
+    "2": {
+      "type": "text",
+      "content": "I think that's what this machine could be for.",
       "next": ""
     }
   }

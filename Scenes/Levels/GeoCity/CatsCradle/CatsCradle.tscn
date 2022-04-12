@@ -146,21 +146,33 @@ void fragment() {
 shader = SubResource( 15 )
 shader_param/dmg = false
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 18 )
 region = Rect2( 45, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 18 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 18 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 18 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 18 )
+region = Rect2( 60, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 18 )
@@ -182,40 +194,28 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 18 )
 region = Rect2( 0, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 18 )
 region = Rect2( 30, 0, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 18 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 18 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 18 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 18 )
 region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 29 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 17 ), SubResource( 29 ), SubResource( 17 ), SubResource( 17 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 20 ), SubResource( 17 ), SubResource( 20 ), SubResource( 20 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
-"name": "blink",
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 24 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ) ],
@@ -223,19 +223,19 @@ animations = [ {
 "name": "slide_wall",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 23 ) ],
+"frames": [ SubResource( 29 ) ],
 "loop": true,
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "blink",
 "speed": 5.0
 } ]
 
@@ -421,7 +421,6 @@ __meta__ = {
 position = Vector2( 1032.14, -7.39 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 __meta__ = {
@@ -469,7 +468,6 @@ __meta__ = {
 position = Vector2( 1291.43, 163.423 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
-frame = 1
 playing = true
 centered = false
 
@@ -513,7 +511,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=["end"]]
+[node name="ExitLeftWall" type="CollisionShape2D" parent="MainColliders/Walls" groups=[
+"end",
+]]
 position = Vector2( -26, 636.5 )
 shape = SubResource( 33 )
 
@@ -870,8 +870,8 @@ margin_right = 205.899
 margin_bottom = 44.8703
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 69 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Basic Techniques"
 fit_content_height = true
@@ -884,8 +884,8 @@ margin_right = 231.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 70 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Here's some advice:
 Use the arrow keys
@@ -906,8 +906,8 @@ margin_right = 307.0
 margin_bottom = 200.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 71 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Advanced Techniques
 "
@@ -921,8 +921,8 @@ margin_right = 293.101
 margin_bottom = 269.13
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 72 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Ladders are everywhere! 
 Use them to reach new heights that would normally be out of reach for a feline."
@@ -939,8 +939,8 @@ margin_right = 623.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 73 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Super Advanced Techniques"
 fit_content_height = true
@@ -953,8 +953,8 @@ margin_right = 629.0
 margin_bottom = 139.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 74 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Cats are expert climbers and
 parkour is an indispensable strategy that all cats should be aware of. If you're ever in danger, consider climbing a tree."
@@ -971,8 +971,8 @@ margin_right = 570.899
 margin_bottom = 171.87
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 75 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Nonaco's GeoRing"
 fit_content_height = true
@@ -985,8 +985,8 @@ margin_right = 469.0
 margin_bottom = 278.0
 rect_pivot_offset = Vector2( 76.1755, 73.42 )
 mouse_filter = 2
-custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 custom_fonts/normal_font = SubResource( 76 )
+custom_colors/default_color = Color( 0.498039, 0.298039, 0.0862745, 1 )
 meta_underlined = false
 text = "Life's not always easy on a giant space-ring. But, we believe in you. Good luck on your adventures!"
 fit_content_height = true
@@ -1013,8 +1013,8 @@ margin_left = 30.0
 margin_top = 90.0
 margin_right = 610.0
 margin_bottom = 395.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Happy Birthday!
 
 It's been a long time, and I hope you're enjoying life on your own.

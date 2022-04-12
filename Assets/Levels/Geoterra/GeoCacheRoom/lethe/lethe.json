@@ -31,12 +31,12 @@
     },
     "3": {
       "type": "text",
-      "content": "...@ ...This better be important!",
+      "content": "...@...This better be important!",
       "next": "4"
     },
     "4": {
       "type": "text",
-      "content": "...@Oh right - I was on a school fieldtrip! Thanks for finding me!",
+      "content": "...@Oh right - I was on a school fieldtrip!@Thanks for finding me!",
       "next": "5"
     },
     "5": {

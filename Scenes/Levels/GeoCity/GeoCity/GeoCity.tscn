@@ -1042,6 +1042,7 @@ script = ExtResource( 5 )
 character_name = "Avocato"
 json_file = "res://Assets/Levels/GeoCity/GeoCity/Avocato/avocato.json"
 sound_file = "res://Assets/Levels/GeoCity/GeoCity/Avocato/avocato.wav"
+trigger_on_touch = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/AvocatoArea2D"]
 position = Vector2( 0.282227, 1.41119 )
@@ -1053,7 +1054,7 @@ flip_h = true
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/AvocatoArea2D"]
-position = Vector2( -8.76025, -6.37939 )
+position = Vector2( -8.99755, -6.37939 )
 shape = SubResource( 60 )
 
 [node name="ShinobiArea2D" type="Area2D" parent="NPC"]
