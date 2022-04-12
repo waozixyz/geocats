@@ -2260,13 +2260,11 @@ __meta__ = {
 [node name="catellite1" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1102.73, 416.286 )
 frames = SubResource( 43 )
-frame = 1
 playing = true
 
 [node name="catellite2" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1096.23, 532.59 )
 frames = SubResource( 46 )
-frame = 1
 playing = true
 
 [node name="BlueGlow" type="TextureRect" parent="BelowPlayer/SpaceBG"]
