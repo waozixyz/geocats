@@ -1,4 +1,4 @@
-[gd_scene load_steps=439 format=2]
+[gd_scene load_steps=455 format=2]
 
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Nonacat/nonacat_spritesheet.png" type="Texture" id=2]
@@ -73,6 +73,8 @@
 [ext_resource path="res://Assets/Levels/Geoquarium/ringworld.png" type="Texture" id=71]
 [ext_resource path="res://Assets/Levels/Geoquarium/starfield.png" type="Texture" id=72]
 [ext_resource path="res://Assets/Levels/Geoquarium/yellowstars.png" type="Texture" id=73]
+[ext_resource path="res://Scenes/Agents/SimpleMovingAI.gd" type="Script" id=74]
+[ext_resource path="res://Assets/Levels/GeoCity/Complex/Cleopardis/Spritesheet.png" type="Texture" id=75]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -789,9 +791,65 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=132]
 extents = Vector2( 20.4043, 10 )
 
+[sub_resource type="AtlasTexture" id=379]
+atlas = ExtResource( 75 )
+region = Rect2( 0, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=380]
+atlas = ExtResource( 75 )
+region = Rect2( 11, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=381]
+atlas = ExtResource( 75 )
+region = Rect2( 22, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=382]
+atlas = ExtResource( 75 )
+region = Rect2( 33, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=383]
+atlas = ExtResource( 75 )
+region = Rect2( 0, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=384]
+atlas = ExtResource( 75 )
+region = Rect2( 11, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=385]
+atlas = ExtResource( 75 )
+region = Rect2( 22, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=386]
+atlas = ExtResource( 75 )
+region = Rect2( 0, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=387]
+atlas = ExtResource( 75 )
+region = Rect2( 11, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=388]
+atlas = ExtResource( 75 )
+region = Rect2( 22, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=389]
+atlas = ExtResource( 75 )
+region = Rect2( 33, 0, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=390]
+atlas = ExtResource( 75 )
+region = Rect2( 0, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=391]
+atlas = ExtResource( 75 )
+region = Rect2( 11, 14, 11, 14 )
+
+[sub_resource type="AtlasTexture" id=392]
+atlas = ExtResource( 75 )
+region = Rect2( 22, 14, 11, 14 )
+
 [sub_resource type="SpriteFrames" id=133]
 animations = [ {
-"frames": [ null, null, null, null, null, null, null ],
+"frames": [ SubResource( 379 ), SubResource( 380 ), SubResource( 381 ), SubResource( 382 ), SubResource( 383 ), SubResource( 384 ), SubResource( 385 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -801,7 +859,7 @@ animations = [ {
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ null, null ],
+"frames": [ SubResource( 386 ), SubResource( 387 ), SubResource( 388 ), SubResource( 389 ), SubResource( 390 ), SubResource( 391 ), SubResource( 392 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -2036,7 +2094,7 @@ extents = Vector2( 35.5122, 1880.53 )
 extents = Vector2( 1515.98, 1318.84 )
 
 [node name="GeoQuarium" type="Node2D"]
-position = Vector2( 0, 500 )
+position = Vector2( 0, 2.36792 )
 script = ExtResource( 4 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -2244,7 +2302,7 @@ texture = ExtResource( 39 )
 [node name="fire" type="AnimatedSprite" parent="BelowPlayer/GeoquariumBG"]
 position = Vector2( -135.012, 15.9977 )
 frames = SubResource( 50 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="underground_room" type="Sprite" parent="BelowPlayer/GeoquariumBG"]
@@ -2272,9 +2330,13 @@ texture = ExtResource( 41 )
 [node name="NPC" type="Node2D" parent="."]
 
 [node name="Nonacat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3304.62, 2452.31 )
+position = Vector2( 3501.73, 2665.91 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 200
+move_speed = 300
+change_direction = 300
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonacat"]
 scale = Vector2( 4, 4 )
@@ -2287,9 +2349,12 @@ position = Vector2( 3.14978, 6.61462 )
 shape = SubResource( 56 )
 
 [node name="Lasagne" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4314.69, 1655.65 )
+position = Vector2( 4314.69, 1825.79 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 300
+change_direction = 350
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lasagne"]
 scale = Vector2( 4, 4 )
@@ -2303,9 +2368,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 56 )
 
 [node name="0xoplasmosis" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4336.69, 1537.39 )
+position = Vector2( 3918.61, 1936.53 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 300
+move_speed = 300
+change_direction = 333
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/0xoplasmosis"]
 scale = Vector2( 4, 4 )
@@ -2320,15 +2389,17 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 71 )
 
 [node name="2021_tacgnol" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4422.71, 1551.39 )
+position = Vector2( 4402.57, 1829.38 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/2021_tacgnol"]
+position = Vector2( -6.99072, -16.0463 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 83 )
-animation = "climb"
-frame = 2
+animation = "idle"
 flip_h = true
 script = ExtResource( 54 )
 
@@ -2337,9 +2408,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 84 )
 
 [node name="ancient_sphinx" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3813.72, 1582.06 )
+position = Vector2( 3774.01, 1936.59 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+move_speed = 100
+change_direction = 350
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/ancient_sphinx"]
 scale = Vector2( 4, 4 )
@@ -2354,9 +2428,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 94 )
 
 [node name="Avocato" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3965.37, 1497.31 )
+position = Vector2( 4071.85, 1860.48 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+move_speed = 50
+change_direction = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Avocato"]
 scale = Vector2( 4, 4 )
@@ -2371,9 +2448,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 106 )
 
 [node name="Broccoli_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4049.56, 1716.49 )
+position = Vector2( 4278.04, 1822.3 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 10
+move_speed = 10
+change_direction = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Broccoli_cat"]
 scale = Vector2( 4, 4 )
@@ -2388,9 +2469,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 119 )
 
 [node name="Catstronaut" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3909.36, 1628.4 )
+position = Vector2( 3854.89, 1936.43 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 600
+change_direction = 300
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Catstronaut"]
 scale = Vector2( 4, 4 )
@@ -2404,15 +2488,18 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 132 )
 
 [node name="Cleopardis" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3284.95, 1708.32 )
+position = Vector2( 3266.92, 1896.43 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 20
+move_speed = 20
+change_direction = 280
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Cleopardis"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 133 )
 animation = "idle"
-frame = 2
 centered = false
 script = ExtResource( 54 )
 
@@ -2421,9 +2508,13 @@ position = Vector2( 20.8, 42.5306 )
 shape = SubResource( 134 )
 
 [node name="Cowboy_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3869.56, 1195.38 )
+position = Vector2( 4300.71, 1074.14 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 300
+move_speed = 400
+change_direction = 260
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Cowboy_cat"]
 scale = Vector2( 4, 4 )
@@ -2438,9 +2529,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 146 )
 
 [node name="Geokitten" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3783.53, 1702.49 )
+position = Vector2( 3623.75, 2702.09 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+move_speed = 400
+change_direction = 500
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Geokitten"]
 scale = Vector2( 4, 4 )
@@ -2455,15 +2549,16 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 160 )
 
 [node name="Groundcat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3783.53, 1461.35 )
+position = Vector2( 3634.99, 1934.25 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Groundcat"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 174 )
-animation = "climb"
-frame = 2
+animation = "idle"
 flip_h = true
 script = ExtResource( 54 )
 
@@ -2472,9 +2567,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 175 )
 
 [node name="Hypercat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3736.46, 1349.32 )
+position = Vector2( 3702.74, 1935.43 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 500
+move_speed = 10
+change_direction = 500
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Hypercat"]
 scale = Vector2( 4, 4 )
@@ -2489,15 +2588,17 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 187 )
 
 [node name="Longcat_2021" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3770.8, 1804.88 )
+position = Vector2( 3567.34, 1939.54 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 220
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Longcat_2021"]
+position = Vector2( -3.23291, -16.4883 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 199 )
-animation = "walk"
-frame = 2
+animation = "idle"
 flip_h = true
 script = ExtResource( 54 )
 
@@ -2506,9 +2607,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 200 )
 
 [node name="Lunar_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4027.56, 1374.71 )
+position = Vector2( 3215.78, 1924.33 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 10
+move_speed = 10
+change_direction = 500
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Lunar_cat"]
 scale = Vector2( 4, 4 )
@@ -2523,9 +2628,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 211 )
 
 [node name="Machine_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3667.81, 1708.32 )
+position = Vector2( 3456.04, 1934.06 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 10
+move_speed = 300
+change_direction = 160
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Machine_cat"]
 scale = Vector2( 4, 4 )
@@ -2540,11 +2649,15 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 230 )
 
 [node name="Maneki_model_9" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3493.95, 1237.56 )
+position = Vector2( 3895.26, 2705.1 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 200
+change_direction = 140
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Maneki_model_9"]
+position = Vector2( -0.179932, -4.32068 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 239 )
 animation = "idle"
@@ -2557,9 +2670,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 240 )
 
 [node name="Mushroom_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3943.37, 1231.73 )
+position = Vector2( 3815.79, 2700.11 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 50
+move_speed = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Mushroom_cat"]
 scale = Vector2( 4, 4 )
@@ -2574,9 +2690,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 256 )
 
 [node name="Neocat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3921.37, 1790.88 )
+position = Vector2( 3367.98, 2701.65 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 400
+move_speed = 200
+change_direction = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Neocat"]
 scale = Vector2( 4, 4 )
@@ -2591,16 +2711,18 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 267 )
 
 [node name="NOCAT" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4733.92, 1404.71 )
+position = Vector2( 4112.85, 2678.18 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 200
+change_direction = 225
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/NOCAT"]
 position = Vector2( -1.33636, -6.2363 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 284 )
-animation = "idle"
-frame = 15
+animation = "walk"
 speed_scale = 0.3
 centered = false
 flip_h = true
@@ -2611,9 +2733,11 @@ position = Vector2( 30.0585, 20.9007 )
 shape = SubResource( 285 )
 
 [node name="Nonaco_longcat_2020" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3504.31, 1878.67 )
+position = Vector2( 3117.12, 2495.26 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Nonaco_longcat_2020"]
 scale = Vector2( 4, 4 )
@@ -2626,9 +2750,12 @@ position = Vector2( 3.14978, 6.61462 )
 shape = SubResource( 56 )
 
 [node name="Palmerston" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 4071.56, 1011.68 )
+position = Vector2( 4076.04, 1053.08 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 200
+change_direction = 300
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Palmerston"]
 position = Vector2( -1.33636, -6.2363 )
@@ -2645,9 +2772,13 @@ position = Vector2( 28.02, 20.7403 )
 shape = SubResource( 294 )
 
 [node name="Pumpkin_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3835.72, 1350.48 )
+position = Vector2( 3299.7, 2527.71 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 25
+move_speed = 0
+change_direction = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Pumpkin_cat"]
 scale = Vector2( 4, 4 )
@@ -2661,9 +2792,13 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 305 )
 
 [node name="Shinobi" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3714.46, 1148.72 )
+position = Vector2( 3791.21, 627.158 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+jump_height = 400
+move_speed = 300
+change_direction = 125
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Shinobi"]
 scale = Vector2( 4, 4 )
@@ -2678,9 +2813,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 317 )
 
 [node name="Solar_cat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3482.31, 1482.15 )
+position = Vector2( 2986.58, 1889.48 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+move_speed = 100
+change_direction = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Solar_cat"]
 scale = Vector2( 4, 4 )
@@ -2695,9 +2833,12 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 328 )
 
 [node name="Ta_miu_crown_prince_thumose" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3588.02, 1335.32 )
+position = Vector2( 3132.56, 1916.34 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+move_speed = 25
+change_direction = 125
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Ta_miu_crown_prince_thumose"]
 scale = Vector2( 4, 4 )
@@ -2712,9 +2853,11 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 338 )
 
 [node name="Viking_geocat" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3348.42, 1489.14 )
+position = Vector2( 2690.43, 1824.85 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Viking_geocat"]
 scale = Vector2( 4, 4 )
@@ -2729,9 +2872,11 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 349 )
 
 [node name="Yule_cat_2020_Luxury_Edition" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3348.42, 1336.48 )
+position = Vector2( 2758.69, 1843.4 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020_Luxury_Edition"]
 scale = Vector2( 4, 4 )
@@ -2746,9 +2891,11 @@ position = Vector2( 0.472534, 5.82715 )
 shape = SubResource( 360 )
 
 [node name="Yule_cat_2020" type="KinematicBody2D" parent="NPC"]
-position = Vector2( 3223.83, 1383.11 )
+position = Vector2( 2631.65, 1827.37 )
 collision_layer = 5
 collision_mask = 2
+script = ExtResource( 74 )
+change_direction = 75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/Yule_cat_2020"]
 scale = Vector2( 4, 4 )
@@ -2808,6 +2955,7 @@ texture = ExtResource( 27 )
 texture = ExtResource( 29 )
 
 [node name="Glass" type="Sprite" parent="AbovePlayer/GeoquariumFG"]
+position = Vector2( 0, 0.0562134 )
 texture = ExtResource( 37 )
 
 [node name="PurpleGlow" type="TextureRect" parent="AbovePlayer"]
@@ -2832,7 +2980,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 2083.82, 1475.83, 2182.43, 1483.25, 2416.07, 1540.51, 2678.1, 1570.45, 2678.21, 1892.15, 2641.59, 1896.9, 2567.23, 1883.69, 2515.62, 1892.29, 2465.84, 1883.38, 2423.82, 1909.4, 2405.61, 1966.14, 2410.02, 1997.55, 2424.25, 2049.56, 2451.24, 2092.74, 2484.12, 2118.74, 2511.11, 2137.88, 2601.88, 2176.15, 2650.26, 2198.04, 2689.72, 2216.19, 3313.29, 2201.72, 3372.46, 2168.27, 3471.88, 2081.69, 3542.72, 1977.84, 3569.09, 1912.06, 3587.46, 1863.61, 3708.08, 1476.44, 3718.68, 1474.28, 3718.68, 1413.92, 3749.1, 1414.41, 3750.57, 1473.3, 3783.45, 1473.3, 3783.45, 1482.13, 3750.08, 1482.13, 3752.05, 1564.56, 3805.53, 1563.58, 3928.2, 1518.93, 3960.06, 1488.46, 3961.44, 1408.59, 3956.37, 1306.72, 3934.2, 1168.61, 3888.93, 1051.29, 3826.39, 920.195, 3732.16, 803.331, 3663.34, 729.425, 3569.85, 643.786, 3466.38, 580.042, 3332.89, 519.531, 3171.59, 472.046, 3019.16, 459.113, 2903.22, 460.499, 2901.88, 450.185, 3099.36, 451.311, 3214.47, 470.909, 3432.23, 550.504, 3595.02, 649.396, 3766.45, 822.927, 3846.12, 934.434, 3942.16, 1170.74, 3966.56, 1335.41, 3968.96, 1462.31, 3963.33, 1538.15, 3935.98, 1692.85, 3839.17, 1912.77, 3753.12, 2037.06, 3618.07, 2178.09, 3444.77, 2291.63, 3275.05, 2362.15, 3043.19, 2402.78, 2879.45, 2394.42, 2719.3, 2364.54, 2579.47, 2304.78, 2421.7, 2212.75, 2302.19, 2108.77, 2198.21, 1982.09, 2114.55, 1838.66, 2047.62, 1648.63, 2026.1, 1506.41, 2028.73, 1343.87, 2057.42, 1162.2, 2127.79, 1011.73, 2220.17, 857.754, 2371.39, 688.818, 2534.79, 571.292, 2716.92, 490.72, 2871.53, 453.64, 2885.99, 464.324, 2743.32, 493.863, 2589.34, 556.711, 2467.42, 631.5, 2376.29, 701.262, 2223.56, 871.078, 2067.07, 1159.55, 2039.05, 1342.94, 2035.28, 1495.93 )
+polygon = PoolVector2Array( 2083.82, 1475.83, 2180.18, 1482.15, 2242.67, 1516.66, 2320.51, 1518.15, 2397.25, 1543.71, 2515.23, 1545.66, 2561.52, 1567.02, 2678.1, 1570.45, 2678.21, 1892.15, 2641.59, 1896.9, 2567.23, 1883.69, 2515.62, 1892.29, 2465.84, 1883.38, 2423.82, 1909.4, 2405.61, 1966.14, 2410.02, 1997.55, 2424.25, 2049.56, 2451.24, 2092.74, 2484.12, 2118.74, 2511.11, 2137.88, 2601.88, 2176.15, 2694.58, 2192.86, 3313.29, 2201.72, 3372.46, 2168.27, 3471.88, 2081.69, 3542.72, 1977.84, 3569.09, 1912.06, 3587.46, 1863.61, 3708.08, 1476.44, 3718.68, 1474.28, 3718.68, 1413.92, 3749.1, 1414.41, 3750.57, 1473.3, 3783.45, 1473.3, 3783.45, 1482.13, 3750.08, 1482.13, 3752.05, 1564.56, 3805.53, 1563.58, 3928.2, 1518.93, 3960.06, 1488.46, 3961.44, 1408.59, 3956.37, 1306.72, 3934.2, 1168.61, 3888.93, 1051.29, 3826.39, 920.195, 3732.16, 803.331, 3663.34, 729.425, 3569.85, 643.786, 3466.38, 580.042, 3332.89, 519.531, 3171.59, 472.046, 3019.16, 459.113, 2903.22, 460.499, 2901.88, 450.185, 3099.36, 451.311, 3214.47, 470.909, 3432.23, 550.504, 3595.02, 649.396, 3766.45, 822.927, 3846.12, 934.434, 3942.16, 1170.74, 3966.56, 1335.41, 3968.96, 1462.31, 3963.33, 1538.15, 3935.98, 1692.85, 3839.17, 1912.77, 3753.12, 2037.06, 3618.07, 2178.09, 3444.77, 2291.63, 3275.05, 2362.15, 3043.19, 2402.78, 2879.45, 2394.42, 2719.3, 2364.54, 2579.47, 2304.78, 2421.7, 2212.75, 2302.19, 2108.77, 2198.21, 1982.09, 2114.55, 1838.66, 2047.62, 1648.63, 2026.1, 1506.41, 2028.73, 1343.87, 2057.42, 1162.2, 2127.79, 1011.73, 2220.17, 857.754, 2371.39, 688.818, 2534.79, 571.292, 2716.92, 490.72, 2871.53, 453.64, 2885.99, 464.324, 2743.32, 493.863, 2589.34, 556.711, 2467.42, 631.5, 2376.29, 701.262, 2223.56, 871.078, 2067.07, 1159.55, 2039.05, 1342.94, 2035.28, 1495.93 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 3173.33, 1565.59, 3230.32, 1507.3, 3278.74, 1507.67, 3311.37, 1476.01, 3342.43, 1475.74, 3342.38, 1946.42, 3268.66, 1945.88, 3257.2, 1952.86, 3249, 1966.82, 3247.79, 2013.14, 3194, 1895.42, 3135.84, 1899.87, 3059.36, 1928.15, 2982.59, 1890.3, 2933.03, 1914.33, 2878.38, 1896.25, 2796.67, 1920.12, 2754.13, 1908.63, 2752.44, 1564.77 )
@@ -2914,7 +3062,7 @@ bus = "Music"
 visible = false
 position = Vector2( 3750, 1787.49 )
 script = ExtResource( 18 )
-dest_zoom = Vector2( 6, 6 )
+dest_zoom = Vector2( 7, 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telescope"]
 shape = SubResource( 378 )
