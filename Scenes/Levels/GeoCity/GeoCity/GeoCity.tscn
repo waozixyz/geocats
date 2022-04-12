@@ -488,14 +488,6 @@ extents = Vector2( 8.08801, 469.224 )
 [sub_resource type="RectangleShape2D" id=100]
 extents = Vector2( 61.5852, 58.9592 )
 
-[sub_resource type="AtlasTexture" id=103]
-atlas = ExtResource( 28 )
-region = Rect2( 0, 0, 50, 54 )
-
-[sub_resource type="AtlasTexture" id=104]
-atlas = ExtResource( 28 )
-region = Rect2( 50, 0, 50, 54 )
-
 [sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 54, 50, 54 )
@@ -504,17 +496,25 @@ region = Rect2( 0, 54, 50, 54 )
 atlas = ExtResource( 28 )
 region = Rect2( 50, 54, 50, 54 )
 
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 54 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 28 )
+region = Rect2( 50, 0, 50, 54 )
+
 [sub_resource type="SpriteFrames" id=105]
 animations = [ {
-"frames": [ SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 104 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ) ],
-"loop": true,
-"name": "Happy",
-"speed": 18.0
-}, {
 "frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ), SubResource( 101 ), SubResource( 101 ), SubResource( 102 ) ],
 "loop": true,
 "name": "Sad",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 103 ), SubResource( 104 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 104 ), SubResource( 104 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 18.0
 } ]
 
 [sub_resource type="AtlasTexture" id=106]
@@ -1036,13 +1036,10 @@ shape = SubResource( 61 )
 
 [node name="AvocatoArea2D" type="Area2D" parent="NPC"]
 position = Vector2( 1646.27, 755.531 )
-collision_layer = 16
-collision_mask = 2
 script = ExtResource( 5 )
 character_name = "Avocato"
 json_file = "res://Assets/Levels/GeoCity/GeoCity/Avocato/avocato.json"
 sound_file = "res://Assets/Levels/GeoCity/GeoCity/Avocato/avocato.wav"
-trigger_on_touch = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/AvocatoArea2D"]
 position = Vector2( 0.282227, 1.41119 )
