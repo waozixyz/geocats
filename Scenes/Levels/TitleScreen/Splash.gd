@@ -11,13 +11,15 @@ func _ready():
 #		particles = utils.get_particle(utils.Particle.Snow)
 #		particles.preprocess = false
 	utils.tween(splash, "fade", 1)
-	add_child(particles)
+	if particles:
+		add_child(particles)
 	loaded = true
 
 
 func _next():
 	SceneChanger.change_scene("TitleScreen")
-	remove_child(particles)
+	if particles:
+		remove_child(particles)
 
 
 func _process(_delta):

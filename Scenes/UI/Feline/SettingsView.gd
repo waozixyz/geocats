@@ -17,6 +17,7 @@ func _sound_slider_moved(value):
 	_change_volume("Sound", value)
 
 func _reset_pressed():
+	global.init_data()
 	SceneChanger.change_scene("TitleScreen")
 	var dir = Directory.new()
 	dir.remove(global.user_file)

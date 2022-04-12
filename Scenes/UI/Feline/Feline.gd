@@ -66,7 +66,6 @@ func _open_map():
 	current_scene.set_disable("e_interact", "map")
 var geodex
 func _open_geodex():
-
 	add_child(geodex)
 	exit()
 
@@ -90,7 +89,7 @@ func _button_action(label):
 			_open_geodex()
 		"Exit":
 			exit()
-
+			global.save_data()
 			SceneChanger.change_scene("TitleScreen")
 
 

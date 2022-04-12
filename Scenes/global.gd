@@ -10,53 +10,60 @@ const user_file = "user://demo_user.json"
 var crt_noise = 0.0
 
 # player stuff
-var user = {
-	"current_territory": "",
-	"current_level": "",
-	"visited": {},
-	"location": 0,
-	"position": Vector2(0,0),
-	"direction": 0,
-	"hp": 100,
-	"following": [],
-}
+var user
 
-var data =  {
-	# api stuff
-	"access_token": "",
-	"renew_token": "",
-	# sound stuff
-	"sound": -6,
-	"music": -6,
-	"nosound": false,
-	"nomusic": false,
-	# dialogue variables
-	"prog_var": {},
-	"prog_dia": {},
-	"prog_quests": {},
-}
-
+var data 
 var pumpkin_code = ""
 
-
+func init_data():
+	data = {
+		# api stuff
+		"access_token": "",
+		"renew_token": "",
+		# sound stuff
+		"sound": -6,
+		"music": -6,
+		"nosound": false,
+		"nomusic": false,
+		# dialogue variables
+		"prog_var": {},
+		"prog_dia": {},
+		"prog_quests": {},
+	}
+	user = {
+		"current_territory": "",
+		"current_level": "",
+		"visited": {},
+		"location": 0,
+		"position": Vector2(0,0),
+		"direction": 0,
+		"hp": 100,
+		"following": [],
+	}
+	
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)
 		
+func save_data():
+	data.prog_var = PROGRESS.variables
+	data.prog_dia = PROGRESS.dialogues
+	data.prog_quests = PROGRESS.quests
+	_save_data(data, data_file)
+	_save_data(user, user_file)
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		data.prog_var = PROGRESS.variables
-		data.prog_dia = PROGRESS.dialogues
-		data.prog_quests = PROGRESS.quests
-		_save_data(data, data_file)
-		_save_data(user, user_file)
+		save_data()
 		get_tree().quit()
 
 
 func _ready():
+	init_data()
 	randomize()
 	for _i in range(0, 7):
 		pumpkin_code += str(int(rand_range(1, 8)))
-		
+
+func load_data():
+	
 	# overwrite data with saved data
 	data = _load_data(data_file, data)
 

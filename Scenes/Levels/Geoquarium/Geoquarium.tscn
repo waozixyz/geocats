@@ -173,10 +173,6 @@ script/source = "extends Node
 export(float) var scroll_speed = 0.004
 func _ready():
 	self.material.set_shader_param(\"scroll_speed\", scroll_speed)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 "
 
 [sub_resource type="ShaderMaterial" id=104]
@@ -381,14 +377,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=138]
-atlas = ExtResource( 2 )
-region = Rect2( 22, 0, 11, 7 )
-
-[sub_resource type="AtlasTexture" id=139]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 11, 7 )
-
 [sub_resource type="AtlasTexture" id=140]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 11, 7 )
@@ -397,16 +385,24 @@ region = Rect2( 0, 0, 11, 7 )
 atlas = ExtResource( 2 )
 region = Rect2( 11, 0, 11, 7 )
 
+[sub_resource type="AtlasTexture" id=138]
+atlas = ExtResource( 2 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=139]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 11, 7 )
+
 [sub_resource type="SpriteFrames" id=142]
 animations = [ {
-"frames": [ SubResource( 138 ), SubResource( 139 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 140 ), SubResource( 141 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 138 ), SubResource( 139 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -423,36 +419,16 @@ region = Rect2( 0, 0, 11, 7 )
 
 [sub_resource type="SpriteFrames" id=146]
 animations = [ {
-"frames": [ SubResource( 144 ), SubResource( 145 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 144 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 144 ), SubResource( 145 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=147]
-atlas = ExtResource( 12 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=148]
-atlas = ExtResource( 12 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=149]
-atlas = ExtResource( 12 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=150]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=151]
-atlas = ExtResource( 12 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=152]
 atlas = ExtResource( 12 )
@@ -474,8 +450,33 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 12 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=147]
+atlas = ExtResource( 12 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=148]
+atlas = ExtResource( 12 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=149]
+atlas = ExtResource( 12 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=150]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 12 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=157]
 animations = [ {
+"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 156 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 153 ), SubResource( 153 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 147 ), SubResource( 148 ), SubResource( 149 ) ],
 "loop": true,
 "name": "climb",
@@ -485,15 +486,30 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 156 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 153 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 154 ), SubResource( 153 ), SubResource( 153 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ), SubResource( 152 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=158]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=165]
+atlas = ExtResource( 65 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=166]
+atlas = ExtResource( 65 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=167]
+atlas = ExtResource( 65 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=168]
+atlas = ExtResource( 65 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=169]
+atlas = ExtResource( 65 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=159]
 atlas = ExtResource( 65 )
@@ -519,28 +535,13 @@ region = Rect2( 15, 30, 15, 15 )
 atlas = ExtResource( 65 )
 region = Rect2( 30, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=165]
-atlas = ExtResource( 65 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=166]
-atlas = ExtResource( 65 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=167]
-atlas = ExtResource( 65 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=168]
-atlas = ExtResource( 65 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=169]
-atlas = ExtResource( 65 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=170]
 animations = [ {
+"frames": [ SubResource( 165 ), SubResource( 166 ), SubResource( 167 ), SubResource( 168 ), SubResource( 169 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 159 ), SubResource( 160 ), SubResource( 161 ) ],
 "loop": true,
 "name": "climb",
@@ -550,15 +551,22 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 165 ), SubResource( 166 ), SubResource( 167 ), SubResource( 168 ), SubResource( 169 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=171]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=177]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=178]
+atlas = ExtResource( 13 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=179]
+atlas = ExtResource( 13 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=172]
 atlas = ExtResource( 13 )
@@ -580,20 +588,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 13 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=177]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=178]
-atlas = ExtResource( 13 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=179]
-atlas = ExtResource( 13 )
-region = Rect2( 45, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=180]
 animations = [ {
+"frames": [ SubResource( 177 ), SubResource( 178 ), SubResource( 179 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 172 ), SubResource( 173 ), SubResource( 174 ) ],
 "loop": true,
 "name": "climb",
@@ -603,35 +604,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 177 ), SubResource( 178 ), SubResource( 179 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=181]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=67]
-atlas = ExtResource( 14 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 14 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 14 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 14 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 14 )
@@ -653,8 +629,33 @@ region = Rect2( 15, 0, 15, 15 )
 atlas = ExtResource( 14 )
 region = Rect2( 30, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 14 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 14 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 14 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 14 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=182]
 animations = [ {
+"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 75 ), SubResource( 75 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
 "frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "climb",
@@ -664,35 +665,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 75 ), SubResource( 75 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 72 ), SubResource( 74 ), SubResource( 74 ), SubResource( 73 ), SubResource( 73 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ), SubResource( 74 ) ],
-"loop": true,
-"name": "idle",
-"speed": 4.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=183]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=184]
-atlas = ExtResource( 11 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=185]
-atlas = ExtResource( 11 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=186]
-atlas = ExtResource( 11 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=187]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=188]
-atlas = ExtResource( 11 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=189]
 atlas = ExtResource( 11 )
@@ -718,8 +694,33 @@ region = Rect2( 15, 15, 15, 15 )
 atlas = ExtResource( 11 )
 region = Rect2( 30, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=184]
+atlas = ExtResource( 11 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=185]
+atlas = ExtResource( 11 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=186]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=187]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=188]
+atlas = ExtResource( 11 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=195]
 animations = [ {
+"frames": [ SubResource( 189 ), SubResource( 190 ), SubResource( 191 ), SubResource( 192 ), SubResource( 193 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 190 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 190 ), SubResource( 194 ), SubResource( 190 ), SubResource( 189 ), SubResource( 189 ), SubResource( 190 ), SubResource( 194 ), SubResource( 191 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 184 ), SubResource( 185 ), SubResource( 186 ) ],
 "loop": true,
 "name": "climb",
@@ -729,15 +730,30 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 189 ), SubResource( 190 ), SubResource( 191 ), SubResource( 192 ), SubResource( 193 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 190 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 189 ), SubResource( 190 ), SubResource( 194 ), SubResource( 190 ), SubResource( 189 ), SubResource( 189 ), SubResource( 190 ), SubResource( 194 ), SubResource( 191 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=196]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=203]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=204]
+atlas = ExtResource( 15 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=205]
+atlas = ExtResource( 15 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=206]
+atlas = ExtResource( 15 )
+region = Rect2( 60, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=207]
+atlas = ExtResource( 15 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=197]
 atlas = ExtResource( 15 )
@@ -763,28 +779,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 15 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=203]
-atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=204]
-atlas = ExtResource( 15 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=205]
-atlas = ExtResource( 15 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=206]
-atlas = ExtResource( 15 )
-region = Rect2( 60, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=207]
-atlas = ExtResource( 15 )
-region = Rect2( 45, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=208]
 animations = [ {
+"frames": [ SubResource( 203 ), SubResource( 204 ), SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 204 ), SubResource( 204 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 207 ), SubResource( 203 ), SubResource( 205 ), SubResource( 205 ), SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 203 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 197 ), SubResource( 198 ), SubResource( 199 ) ],
 "loop": true,
 "name": "climb",
@@ -794,11 +795,6 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 4.0
-}, {
-"frames": [ SubResource( 203 ), SubResource( 204 ), SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 204 ), SubResource( 204 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 203 ), SubResource( 207 ), SubResource( 203 ), SubResource( 205 ), SubResource( 205 ), SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 203 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=209]
@@ -806,6 +802,11 @@ extents = Vector2( 20.4043, 10 )
 
 [sub_resource type="SpriteFrames" id=210]
 animations = [ {
+"frames": [ null, null, null, null, null, null, null ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [  ],
 "loop": true,
 "name": "climb",
@@ -815,35 +816,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ null, null, null, null, null, null, null ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=211]
 extents = Vector2( 18, 17.404 )
-
-[sub_resource type="AtlasTexture" id=212]
-atlas = ExtResource( 21 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=213]
-atlas = ExtResource( 21 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=214]
-atlas = ExtResource( 21 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=215]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=216]
-atlas = ExtResource( 21 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=217]
 atlas = ExtResource( 21 )
@@ -865,8 +841,33 @@ region = Rect2( 45, 0, 15, 15 )
 atlas = ExtResource( 21 )
 region = Rect2( 60, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=212]
+atlas = ExtResource( 21 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=213]
+atlas = ExtResource( 21 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=214]
+atlas = ExtResource( 21 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=215]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=216]
+atlas = ExtResource( 21 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=222]
 animations = [ {
+"frames": [ SubResource( 217 ), SubResource( 218 ), SubResource( 219 ), SubResource( 220 ), SubResource( 221 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 218 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 220 ), SubResource( 221 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 218 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 212 ), SubResource( 213 ), SubResource( 214 ) ],
 "loop": true,
 "name": "climb",
@@ -876,35 +877,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 217 ), SubResource( 218 ), SubResource( 219 ), SubResource( 220 ), SubResource( 221 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 218 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 220 ), SubResource( 221 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 218 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ), SubResource( 217 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=223]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=224]
-atlas = ExtResource( 47 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=225]
-atlas = ExtResource( 47 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=226]
-atlas = ExtResource( 47 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=227]
-atlas = ExtResource( 47 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=228]
-atlas = ExtResource( 47 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=229]
 atlas = ExtResource( 47 )
@@ -934,8 +910,33 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 47 )
 region = Rect2( 15, 15, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=224]
+atlas = ExtResource( 47 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=225]
+atlas = ExtResource( 47 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=226]
+atlas = ExtResource( 47 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=227]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=228]
+atlas = ExtResource( 47 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=236]
 animations = [ {
+"frames": [ SubResource( 229 ), SubResource( 230 ), SubResource( 231 ), SubResource( 232 ), SubResource( 233 ), SubResource( 234 ), SubResource( 235 ), SubResource( 229 ), SubResource( 229 ), SubResource( 229 ), SubResource( 229 ), SubResource( 230 ), SubResource( 230 ), SubResource( 229 ), SubResource( 229 ), SubResource( 232 ), SubResource( 229 ), SubResource( 232 ), SubResource( 232 ), SubResource( 232 ), SubResource( 233 ), SubResource( 232 ), SubResource( 232 ), SubResource( 232 ), SubResource( 229 ), SubResource( 229 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
 "frames": [ SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ],
 "loop": true,
 "name": "climb",
@@ -945,35 +946,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 229 ), SubResource( 230 ), SubResource( 231 ), SubResource( 232 ), SubResource( 233 ), SubResource( 234 ), SubResource( 235 ), SubResource( 229 ), SubResource( 229 ), SubResource( 229 ), SubResource( 229 ), SubResource( 230 ), SubResource( 230 ), SubResource( 229 ), SubResource( 229 ), SubResource( 232 ), SubResource( 229 ), SubResource( 232 ), SubResource( 232 ), SubResource( 232 ), SubResource( 233 ), SubResource( 232 ), SubResource( 232 ), SubResource( 232 ), SubResource( 229 ), SubResource( 229 ) ],
-"loop": true,
-"name": "idle",
-"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=237]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=238]
-atlas = ExtResource( 61 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=239]
-atlas = ExtResource( 61 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=240]
-atlas = ExtResource( 61 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=241]
-atlas = ExtResource( 61 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=242]
-atlas = ExtResource( 61 )
-region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=243]
 atlas = ExtResource( 61 )
@@ -1007,8 +983,33 @@ region = Rect2( 60, 30, 15, 15 )
 atlas = ExtResource( 61 )
 region = Rect2( 15, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=238]
+atlas = ExtResource( 61 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=239]
+atlas = ExtResource( 61 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=240]
+atlas = ExtResource( 61 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=241]
+atlas = ExtResource( 61 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=242]
+atlas = ExtResource( 61 )
+region = Rect2( 45, 0, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=251]
 animations = [ {
+"frames": [ SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 244 ), SubResource( 244 ), SubResource( 245 ), SubResource( 246 ), SubResource( 247 ), SubResource( 248 ), SubResource( 249 ), SubResource( 249 ), SubResource( 249 ), SubResource( 249 ), SubResource( 248 ), SubResource( 247 ), SubResource( 246 ), SubResource( 245 ), SubResource( 244 ), SubResource( 244 ), SubResource( 244 ), SubResource( 250 ), SubResource( 250 ), SubResource( 250 ), SubResource( 250 ), SubResource( 250 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 238 ), SubResource( 239 ), SubResource( 240 ) ],
 "loop": true,
 "name": "climb",
@@ -1018,35 +1019,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 3.0
-}, {
-"frames": [ SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 243 ), SubResource( 244 ), SubResource( 244 ), SubResource( 245 ), SubResource( 246 ), SubResource( 247 ), SubResource( 248 ), SubResource( 249 ), SubResource( 249 ), SubResource( 249 ), SubResource( 249 ), SubResource( 248 ), SubResource( 247 ), SubResource( 246 ), SubResource( 245 ), SubResource( 244 ), SubResource( 244 ), SubResource( 244 ), SubResource( 250 ), SubResource( 250 ), SubResource( 250 ), SubResource( 250 ), SubResource( 250 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=252]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=253]
-atlas = ExtResource( 62 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=254]
-atlas = ExtResource( 62 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=255]
-atlas = ExtResource( 62 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=256]
-atlas = ExtResource( 62 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=257]
-atlas = ExtResource( 62 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=258]
 atlas = ExtResource( 62 )
@@ -1068,8 +1044,33 @@ region = Rect2( 45, 0, 15, 15 )
 atlas = ExtResource( 62 )
 region = Rect2( 60, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=253]
+atlas = ExtResource( 62 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=254]
+atlas = ExtResource( 62 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=255]
+atlas = ExtResource( 62 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=256]
+atlas = ExtResource( 62 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=257]
+atlas = ExtResource( 62 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=263]
 animations = [ {
+"frames": [ SubResource( 258 ), SubResource( 258 ), SubResource( 258 ), SubResource( 259 ), SubResource( 258 ), SubResource( 259 ), SubResource( 258 ), SubResource( 259 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 261 ), SubResource( 261 ), SubResource( 262 ), SubResource( 262 ), SubResource( 262 ), SubResource( 259 ), SubResource( 258 ), SubResource( 258 ), SubResource( 258 ), SubResource( 258 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 253 ), SubResource( 254 ), SubResource( 255 ) ],
 "loop": true,
 "name": "climb",
@@ -1079,15 +1080,30 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 258 ), SubResource( 258 ), SubResource( 258 ), SubResource( 259 ), SubResource( 258 ), SubResource( 259 ), SubResource( 258 ), SubResource( 259 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 260 ), SubResource( 261 ), SubResource( 261 ), SubResource( 262 ), SubResource( 262 ), SubResource( 262 ), SubResource( 259 ), SubResource( 258 ), SubResource( 258 ), SubResource( 258 ), SubResource( 258 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=264]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=271]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=272]
+atlas = ExtResource( 64 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=273]
+atlas = ExtResource( 64 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=274]
+atlas = ExtResource( 64 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=275]
+atlas = ExtResource( 64 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=265]
 atlas = ExtResource( 64 )
@@ -1113,28 +1129,13 @@ region = Rect2( 15, 30, 15, 15 )
 atlas = ExtResource( 64 )
 region = Rect2( 30, 30, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=271]
-atlas = ExtResource( 64 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=272]
-atlas = ExtResource( 64 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=273]
-atlas = ExtResource( 64 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=274]
-atlas = ExtResource( 64 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=275]
-atlas = ExtResource( 64 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=276]
 animations = [ {
+"frames": [ SubResource( 271 ), SubResource( 272 ), SubResource( 273 ), SubResource( 274 ), SubResource( 275 ), SubResource( 271 ), SubResource( 272 ), SubResource( 273 ), SubResource( 274 ), SubResource( 275 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 265 ), SubResource( 266 ), SubResource( 267 ) ],
 "loop": true,
 "name": "climb",
@@ -1144,15 +1145,26 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 271 ), SubResource( 272 ), SubResource( 273 ), SubResource( 274 ), SubResource( 275 ), SubResource( 271 ), SubResource( 272 ), SubResource( 273 ), SubResource( 274 ), SubResource( 275 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=277]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=283]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=284]
+atlas = ExtResource( 49 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=285]
+atlas = ExtResource( 49 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=286]
+atlas = ExtResource( 49 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=278]
 atlas = ExtResource( 49 )
@@ -1174,24 +1186,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 49 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=283]
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=284]
-atlas = ExtResource( 49 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=285]
-atlas = ExtResource( 49 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=286]
-atlas = ExtResource( 49 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=287]
 animations = [ {
+"frames": [ SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 285 ), SubResource( 285 ), SubResource( 285 ), SubResource( 285 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+}, {
 "frames": [ SubResource( 278 ), SubResource( 279 ), SubResource( 280 ) ],
 "loop": true,
 "name": "climb",
@@ -1201,35 +1202,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 2.0
-}, {
-"frames": [ SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 285 ), SubResource( 285 ), SubResource( 285 ), SubResource( 285 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 284 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 283 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ), SubResource( 286 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=288]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=289]
-atlas = ExtResource( 60 )
-region = Rect2( 30, 9, 15, 9 )
-
-[sub_resource type="AtlasTexture" id=290]
-atlas = ExtResource( 60 )
-region = Rect2( 45, 9, 15, 9 )
-
-[sub_resource type="AtlasTexture" id=291]
-atlas = ExtResource( 60 )
-region = Rect2( 60, 9, 15, 9 )
-
-[sub_resource type="AtlasTexture" id=292]
-atlas = ExtResource( 60 )
-region = Rect2( 30, 18, 15, 9 )
-
-[sub_resource type="AtlasTexture" id=293]
-atlas = ExtResource( 60 )
-region = Rect2( 45, 18, 15, 9 )
 
 [sub_resource type="AtlasTexture" id=294]
 atlas = ExtResource( 60 )
@@ -1279,8 +1255,33 @@ region = Rect2( 0, 18, 15, 9 )
 atlas = ExtResource( 60 )
 region = Rect2( 15, 18, 15, 9 )
 
+[sub_resource type="AtlasTexture" id=289]
+atlas = ExtResource( 60 )
+region = Rect2( 30, 9, 15, 9 )
+
+[sub_resource type="AtlasTexture" id=290]
+atlas = ExtResource( 60 )
+region = Rect2( 45, 9, 15, 9 )
+
+[sub_resource type="AtlasTexture" id=291]
+atlas = ExtResource( 60 )
+region = Rect2( 60, 9, 15, 9 )
+
+[sub_resource type="AtlasTexture" id=292]
+atlas = ExtResource( 60 )
+region = Rect2( 30, 18, 15, 9 )
+
+[sub_resource type="AtlasTexture" id=293]
+atlas = ExtResource( 60 )
+region = Rect2( 45, 18, 15, 9 )
+
 [sub_resource type="SpriteFrames" id=306]
 animations = [ {
+"frames": [ SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 295 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 295 ), SubResource( 294 ), SubResource( 294 ), SubResource( 296 ), SubResource( 294 ), SubResource( 296 ), SubResource( 294 ), SubResource( 296 ), SubResource( 297 ), SubResource( 297 ), SubResource( 298 ), SubResource( 299 ), SubResource( 300 ), SubResource( 301 ), SubResource( 302 ), SubResource( 303 ), SubResource( 303 ), SubResource( 304 ), SubResource( 304 ), SubResource( 304 ), SubResource( 304 ), SubResource( 304 ), SubResource( 303 ), SubResource( 302 ), SubResource( 301 ), SubResource( 300 ), SubResource( 299 ), SubResource( 298 ), SubResource( 297 ), SubResource( 296 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 305 ), SubResource( 305 ), SubResource( 305 ), SubResource( 305 ), SubResource( 305 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 289 ), SubResource( 290 ), SubResource( 291 ) ],
 "loop": true,
 "name": "climb",
@@ -1290,15 +1291,22 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 295 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 295 ), SubResource( 294 ), SubResource( 294 ), SubResource( 296 ), SubResource( 294 ), SubResource( 296 ), SubResource( 294 ), SubResource( 296 ), SubResource( 297 ), SubResource( 297 ), SubResource( 298 ), SubResource( 299 ), SubResource( 300 ), SubResource( 301 ), SubResource( 302 ), SubResource( 303 ), SubResource( 303 ), SubResource( 304 ), SubResource( 304 ), SubResource( 304 ), SubResource( 304 ), SubResource( 304 ), SubResource( 303 ), SubResource( 302 ), SubResource( 301 ), SubResource( 300 ), SubResource( 299 ), SubResource( 298 ), SubResource( 297 ), SubResource( 296 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 305 ), SubResource( 305 ), SubResource( 305 ), SubResource( 305 ), SubResource( 305 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ), SubResource( 294 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=307]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=313]
+atlas = ExtResource( 50 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=314]
+atlas = ExtResource( 50 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=315]
+atlas = ExtResource( 50 )
+region = Rect2( 15, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=308]
 atlas = ExtResource( 50 )
@@ -1320,20 +1328,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 50 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=313]
-atlas = ExtResource( 50 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=314]
-atlas = ExtResource( 50 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=315]
-atlas = ExtResource( 50 )
-region = Rect2( 15, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=316]
 animations = [ {
+"frames": [ SubResource( 313 ), SubResource( 313 ), SubResource( 314 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 314 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 315 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 315 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 308 ), SubResource( 309 ), SubResource( 310 ) ],
 "loop": true,
 "name": "climb",
@@ -1343,35 +1344,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 313 ), SubResource( 313 ), SubResource( 314 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 314 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 315 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ), SubResource( 315 ), SubResource( 313 ), SubResource( 313 ), SubResource( 313 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=317]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=318]
-atlas = ExtResource( 51 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=319]
-atlas = ExtResource( 51 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=320]
-atlas = ExtResource( 51 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=321]
-atlas = ExtResource( 51 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=322]
-atlas = ExtResource( 51 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=323]
 atlas = ExtResource( 51 )
@@ -1409,8 +1385,33 @@ region = Rect2( 45, 30, 15, 15 )
 atlas = ExtResource( 51 )
 region = Rect2( 60, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=318]
+atlas = ExtResource( 51 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=319]
+atlas = ExtResource( 51 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=320]
+atlas = ExtResource( 51 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=321]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=322]
+atlas = ExtResource( 51 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=332]
 animations = [ {
+"frames": [ SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 324 ), SubResource( 324 ), SubResource( 324 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 325 ), SubResource( 325 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 327 ), SubResource( 327 ), SubResource( 328 ), SubResource( 328 ), SubResource( 328 ), SubResource( 329 ), SubResource( 330 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 330 ), SubResource( 329 ), SubResource( 328 ), SubResource( 327 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 318 ), SubResource( 319 ), SubResource( 320 ) ],
 "loop": true,
 "name": "climb",
@@ -1420,15 +1421,26 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 3.0
-}, {
-"frames": [ SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 324 ), SubResource( 324 ), SubResource( 324 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 325 ), SubResource( 325 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 326 ), SubResource( 323 ), SubResource( 323 ), SubResource( 323 ), SubResource( 327 ), SubResource( 327 ), SubResource( 328 ), SubResource( 328 ), SubResource( 328 ), SubResource( 329 ), SubResource( 330 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 331 ), SubResource( 330 ), SubResource( 329 ), SubResource( 328 ), SubResource( 327 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=333]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=339]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=340]
+atlas = ExtResource( 48 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=341]
+atlas = ExtResource( 48 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=342]
+atlas = ExtResource( 48 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=334]
 atlas = ExtResource( 48 )
@@ -1450,24 +1462,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 48 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=339]
-atlas = ExtResource( 48 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=340]
-atlas = ExtResource( 48 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=341]
-atlas = ExtResource( 48 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=342]
-atlas = ExtResource( 48 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=343]
 animations = [ {
+"frames": [ SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 340 ), SubResource( 340 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 341 ), SubResource( 341 ), SubResource( 341 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 342 ), SubResource( 342 ), SubResource( 342 ), SubResource( 342 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 334 ), SubResource( 335 ), SubResource( 336 ) ],
 "loop": true,
 "name": "climb",
@@ -1477,23 +1478,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 340 ), SubResource( 340 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 341 ), SubResource( 341 ), SubResource( 341 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 342 ), SubResource( 342 ), SubResource( 342 ), SubResource( 342 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ), SubResource( 339 ) ],
-"loop": true,
-"name": "idle",
-"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=344]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=345]
-atlas = ExtResource( 52 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=346]
-atlas = ExtResource( 52 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=347]
 atlas = ExtResource( 52 )
@@ -1551,50 +1539,50 @@ region = Rect2( 15, 0, 15, 15 )
 atlas = ExtResource( 52 )
 region = Rect2( 30, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=345]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=346]
+atlas = ExtResource( 52 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=361]
 animations = [ {
-"frames": [ SubResource( 345 ), SubResource( 346 ) ],
-"loop": true,
-"name": "walk",
-"speed": 6.0
-}, {
 "frames": [ SubResource( 347 ), SubResource( 348 ), SubResource( 348 ), SubResource( 349 ), SubResource( 350 ), SubResource( 349 ), SubResource( 351 ), SubResource( 352 ), SubResource( 353 ), SubResource( 351 ), SubResource( 348 ), SubResource( 351 ), SubResource( 351 ), SubResource( 350 ), SubResource( 348 ), SubResource( 354 ), SubResource( 355 ), SubResource( 356 ), SubResource( 357 ), SubResource( 358 ), SubResource( 359 ), SubResource( 360 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 345 ), SubResource( 346 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=362]
 extents = Vector2( 27.4358, 20.873 )
 
-[sub_resource type="AtlasTexture" id=363]
-atlas = ExtResource( 8 )
-region = Rect2( 11, 0, 11, 7 )
-
 [sub_resource type="AtlasTexture" id=364]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 11, 7 )
 
+[sub_resource type="AtlasTexture" id=363]
+atlas = ExtResource( 8 )
+region = Rect2( 11, 0, 11, 7 )
+
 [sub_resource type="SpriteFrames" id=365]
 animations = [ {
-"frames": [ SubResource( 363 ), SubResource( 364 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 364 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 363 ), SubResource( 364 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=366]
-atlas = ExtResource( 10 )
-region = Rect2( 13, 0, 13, 8 )
-
-[sub_resource type="AtlasTexture" id=367]
-atlas = ExtResource( 10 )
-region = Rect2( 26, 0, 13, 8 )
 
 [sub_resource type="AtlasTexture" id=368]
 atlas = ExtResource( 10 )
@@ -1604,21 +1592,45 @@ region = Rect2( 0, 0, 13, 8 )
 atlas = ExtResource( 10 )
 region = Rect2( 39, 0, 13, 8 )
 
+[sub_resource type="AtlasTexture" id=366]
+atlas = ExtResource( 10 )
+region = Rect2( 13, 0, 13, 8 )
+
+[sub_resource type="AtlasTexture" id=367]
+atlas = ExtResource( 10 )
+region = Rect2( 26, 0, 13, 8 )
+
 [sub_resource type="SpriteFrames" id=370]
 animations = [ {
-"frames": [ SubResource( 366 ), SubResource( 367 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 368 ), SubResource( 369 ), SubResource( 366 ), SubResource( 367 ), SubResource( 368 ), SubResource( 367 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 366 ), SubResource( 367 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=371]
 extents = Vector2( 25.6066, 12.0048 )
+
+[sub_resource type="AtlasTexture" id=377]
+atlas = ExtResource( 67 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=378]
+atlas = ExtResource( 67 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=379]
+atlas = ExtResource( 67 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=380]
+atlas = ExtResource( 67 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=372]
 atlas = ExtResource( 67 )
@@ -1640,24 +1652,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 67 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=377]
-atlas = ExtResource( 67 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=378]
-atlas = ExtResource( 67 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=379]
-atlas = ExtResource( 67 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=380]
-atlas = ExtResource( 67 )
-region = Rect2( 45, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=381]
 animations = [ {
+"frames": [ SubResource( 377 ), SubResource( 377 ), SubResource( 377 ), SubResource( 378 ), SubResource( 377 ), SubResource( 377 ), SubResource( 379 ), SubResource( 377 ), SubResource( 377 ), SubResource( 380 ), SubResource( 380 ), SubResource( 377 ), SubResource( 377 ), SubResource( 377 ), SubResource( 377 ), SubResource( 377 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 372 ), SubResource( 373 ), SubResource( 374 ) ],
 "loop": true,
 "name": "climb",
@@ -1667,35 +1668,10 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 377 ), SubResource( 377 ), SubResource( 377 ), SubResource( 378 ), SubResource( 377 ), SubResource( 377 ), SubResource( 379 ), SubResource( 377 ), SubResource( 377 ), SubResource( 380 ), SubResource( 380 ), SubResource( 377 ), SubResource( 377 ), SubResource( 377 ), SubResource( 377 ), SubResource( 377 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=382]
 extents = Vector2( 20.4043, 10 )
-
-[sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 55 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 55 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 55 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 55 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 55 )
-region = Rect2( 15, 15, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 55 )
@@ -1717,8 +1693,33 @@ region = Rect2( 60, 0, 15, 15 )
 atlas = ExtResource( 55 )
 region = Rect2( 60, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 55 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 55 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 55 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 55 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=383]
 animations = [ {
+"frames": [ SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 85 ), SubResource( 85 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 86 ), SubResource( 86 ), SubResource( 85 ), SubResource( 85 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
 "loop": true,
 "name": "climb",
@@ -1728,15 +1729,26 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 85 ), SubResource( 85 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 87 ), SubResource( 86 ), SubResource( 86 ), SubResource( 85 ), SubResource( 85 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ), SubResource( 83 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=384]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=390]
+atlas = ExtResource( 56 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=391]
+atlas = ExtResource( 56 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=392]
+atlas = ExtResource( 56 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=393]
+atlas = ExtResource( 56 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=385]
 atlas = ExtResource( 56 )
@@ -1758,24 +1770,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 56 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=390]
-atlas = ExtResource( 56 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=391]
-atlas = ExtResource( 56 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=392]
-atlas = ExtResource( 56 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=393]
-atlas = ExtResource( 56 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=394]
 animations = [ {
+"frames": [ SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 391 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 392 ), SubResource( 393 ), SubResource( 392 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 385 ), SubResource( 386 ), SubResource( 387 ) ],
 "loop": true,
 "name": "climb",
@@ -1785,15 +1786,22 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 391 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ), SubResource( 392 ), SubResource( 393 ), SubResource( 392 ), SubResource( 390 ), SubResource( 390 ), SubResource( 390 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=395]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=401]
+atlas = ExtResource( 63 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=402]
+atlas = ExtResource( 63 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=403]
+atlas = ExtResource( 63 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=396]
 atlas = ExtResource( 63 )
@@ -1815,20 +1823,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 63 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=401]
-atlas = ExtResource( 63 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=402]
-atlas = ExtResource( 63 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=403]
-atlas = ExtResource( 63 )
-region = Rect2( 45, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=404]
 animations = [ {
+"frames": [ SubResource( 401 ), SubResource( 401 ), SubResource( 402 ), SubResource( 401 ), SubResource( 402 ), SubResource( 401 ), SubResource( 401 ), SubResource( 401 ), SubResource( 401 ), SubResource( 403 ), SubResource( 403 ), SubResource( 403 ), SubResource( 403 ), SubResource( 401 ), SubResource( 402 ), SubResource( 402 ), SubResource( 401 ), SubResource( 401 ), SubResource( 401 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 396 ), SubResource( 397 ), SubResource( 398 ) ],
 "loop": true,
 "name": "climb",
@@ -1838,15 +1839,26 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 401 ), SubResource( 401 ), SubResource( 402 ), SubResource( 401 ), SubResource( 402 ), SubResource( 401 ), SubResource( 401 ), SubResource( 401 ), SubResource( 401 ), SubResource( 403 ), SubResource( 403 ), SubResource( 403 ), SubResource( 403 ), SubResource( 401 ), SubResource( 402 ), SubResource( 402 ), SubResource( 401 ), SubResource( 401 ), SubResource( 401 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=405]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=411]
+atlas = ExtResource( 59 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=412]
+atlas = ExtResource( 59 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=413]
+atlas = ExtResource( 59 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=414]
+atlas = ExtResource( 59 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=406]
 atlas = ExtResource( 59 )
@@ -1868,24 +1880,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 59 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=411]
-atlas = ExtResource( 59 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=412]
-atlas = ExtResource( 59 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=413]
-atlas = ExtResource( 59 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=414]
-atlas = ExtResource( 59 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=415]
 animations = [ {
+"frames": [ SubResource( 411 ), SubResource( 412 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 413 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 413 ), SubResource( 414 ), SubResource( 414 ), SubResource( 414 ), SubResource( 413 ), SubResource( 413 ), SubResource( 413 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 406 ), SubResource( 407 ), SubResource( 408 ) ],
 "loop": true,
 "name": "climb",
@@ -1895,15 +1896,26 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 411 ), SubResource( 412 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 413 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 413 ), SubResource( 414 ), SubResource( 414 ), SubResource( 414 ), SubResource( 413 ), SubResource( 413 ), SubResource( 413 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ), SubResource( 411 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=416]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=422]
+atlas = ExtResource( 68 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=423]
+atlas = ExtResource( 68 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=424]
+atlas = ExtResource( 68 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=425]
+atlas = ExtResource( 68 )
+region = Rect2( 45, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=417]
 atlas = ExtResource( 68 )
@@ -1925,24 +1937,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 68 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=422]
-atlas = ExtResource( 68 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=423]
-atlas = ExtResource( 68 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=424]
-atlas = ExtResource( 68 )
-region = Rect2( 30, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=425]
-atlas = ExtResource( 68 )
-region = Rect2( 45, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=426]
 animations = [ {
+"frames": [ SubResource( 422 ), SubResource( 422 ), SubResource( 423 ), SubResource( 422 ), SubResource( 422 ), SubResource( 423 ), SubResource( 424 ), SubResource( 423 ), SubResource( 422 ), SubResource( 422 ), SubResource( 422 ), SubResource( 425 ), SubResource( 422 ), SubResource( 425 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 417 ), SubResource( 418 ), SubResource( 419 ) ],
 "loop": true,
 "name": "climb",
@@ -1952,15 +1953,26 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 422 ), SubResource( 422 ), SubResource( 423 ), SubResource( 422 ), SubResource( 422 ), SubResource( 423 ), SubResource( 424 ), SubResource( 423 ), SubResource( 422 ), SubResource( 422 ), SubResource( 422 ), SubResource( 425 ), SubResource( 422 ), SubResource( 425 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=427]
 extents = Vector2( 20.4043, 10 )
+
+[sub_resource type="AtlasTexture" id=433]
+atlas = ExtResource( 58 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=434]
+atlas = ExtResource( 58 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=435]
+atlas = ExtResource( 58 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=436]
+atlas = ExtResource( 58 )
+region = Rect2( 60, 0, 15, 15 )
 
 [sub_resource type="AtlasTexture" id=428]
 atlas = ExtResource( 58 )
@@ -1982,24 +1994,13 @@ region = Rect2( 0, 15, 15, 15 )
 atlas = ExtResource( 58 )
 region = Rect2( 15, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=433]
-atlas = ExtResource( 58 )
-region = Rect2( 0, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=434]
-atlas = ExtResource( 58 )
-region = Rect2( 15, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=435]
-atlas = ExtResource( 58 )
-region = Rect2( 45, 0, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=436]
-atlas = ExtResource( 58 )
-region = Rect2( 60, 0, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=437]
 animations = [ {
+"frames": [ SubResource( 433 ), SubResource( 433 ), SubResource( 434 ), SubResource( 433 ), SubResource( 435 ), SubResource( 436 ), SubResource( 433 ), SubResource( 433 ), SubResource( 433 ), SubResource( 433 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 428 ), SubResource( 429 ), SubResource( 430 ) ],
 "loop": true,
 "name": "climb",
@@ -2008,11 +2009,6 @@ animations = [ {
 "frames": [ SubResource( 431 ), SubResource( 432 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 433 ), SubResource( 433 ), SubResource( 434 ), SubResource( 433 ), SubResource( 435 ), SubResource( 436 ), SubResource( 433 ), SubResource( 433 ), SubResource( 433 ), SubResource( 433 ) ],
-"loop": true,
-"name": "idle",
 "speed": 5.0
 } ]
 
@@ -2217,11 +2213,13 @@ __meta__ = {
 [node name="catellite1" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1102.73, 416.286 )
 frames = SubResource( 130 )
+frame = 1
 playing = true
 
 [node name="catellite2" type="AnimatedSprite" parent="BelowPlayer/SpaceBG"]
 position = Vector2( 1096.23, 532.59 )
 frames = SubResource( 133 )
+frame = 1
 playing = true
 
 [node name="BlueGlow" type="TextureRect" parent="BelowPlayer/SpaceBG"]
@@ -2833,9 +2831,7 @@ __meta__ = {
 }
 scroll_speed = -0.009
 
-[node name="Ground" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 1.25, 1.25 )
 collision_layer = 2
 collision_mask = 0
@@ -2898,9 +2894,7 @@ position = Vector2( 2627.96, 2130.15 )
 shape = SubResource( 443 )
 one_way_collision = true
 
-[node name="End" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="End" type="StaticBody2D" parent="." groups=["end"]]
 position = Vector2( -2, 190.497 )
 collision_layer = 2
 collision_mask = 0

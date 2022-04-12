@@ -32,7 +32,6 @@ func _play_pressed():
 
 func _next():
 	if get_parent().name == "TitleScreen":
-
 		if global.user.current_territory.empty() or global.user.current_territory == "TitleScreen":
 			SceneChanger.change_scene("GeoCity", "CatsCradle")
 		else:
