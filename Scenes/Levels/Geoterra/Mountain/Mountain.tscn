@@ -415,6 +415,7 @@ extents = Vector2( 84, 53 )
 extents = Vector2( 73, 78 )
 
 [node name="Mountain" type="Node2D"]
+position = Vector2( -684, 672 )
 script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
@@ -433,6 +434,7 @@ __meta__ = {
 
 [node name="Stars" parent="BelowPlayer" instance=ExtResource( 7 )]
 material = SubResource( 76 )
+mouse_filter = 2
 
 [node name="ring" type="Sprite" parent="BelowPlayer"]
 scale = Vector2( 5, 5 )
@@ -457,7 +459,7 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 25 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1865, 1593 )
+position = Vector2( 37, 4892 )
 
 [node name="Camera2D" parent="Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )

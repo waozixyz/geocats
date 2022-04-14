@@ -1,4 +1,4 @@
-[gd_scene load_steps=419 format=2]
+[gd_scene load_steps=416 format=2]
 
 [ext_resource path="res://Scenes/Environment/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/GeoCity/GeoCity/Nonacat/nonacat_spritesheet.png" type="Texture" id=2]
@@ -65,7 +65,6 @@
 [ext_resource path="res://Assets/Player/Spritesheets/ta_miu_crown_prince_thumose_tileset.png" type="Texture" id=63]
 [ext_resource path="res://Assets/Player/Spritesheets/longcat_2021_tileset.png" type="Texture" id=64]
 [ext_resource path="res://Assets/Player/Spritesheets/2021_tacgnol_tileset.png" type="Texture" id=65]
-[ext_resource path="res://Assets/Levels/Geoquarium/starttrails.png" type="Texture" id=66]
 [ext_resource path="res://Assets/Player/Spritesheets/pumpkin_cat_tileset.png" type="Texture" id=67]
 [ext_resource path="res://Assets/Player/Spritesheets/yulecat_luxury_tileset.png" type="Texture" id=68]
 [ext_resource path="res://Assets/Levels/Geoquarium/planet_1.png" type="Texture" id=69]
@@ -191,21 +190,6 @@ shader_param/iResolution = Vector2( 192, 192 )
 shader_param/iMouse = Vector2( 0, 0 )
 shader_param/global_transform = null
 shader_param/offset = null
-
-[sub_resource type="Shader" id=13]
-code = "shader_type canvas_item;
-uniform float scroll_speed;
-
-void fragment(){
-    vec2 shifteduv = UV;
-    shifteduv .x += TIME * scroll_speed;
-    vec4 color = texture(TEXTURE, shifteduv);
-    COLOR = color;
-}"
-
-[sub_resource type="ShaderMaterial" id=14]
-shader = SubResource( 13 )
-shader_param/scroll_speed = 0.0
 
 [sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
@@ -1961,20 +1945,10 @@ centered = false
 material = SubResource( 395 )
 margin_right = 7515.0
 margin_bottom = 3504.0
+mouse_filter = 2
 
 [node name="SpaceBG" type="Node2D" parent="BelowPlayer"]
 scale = Vector2( 5, 5 )
-
-[node name="Startrails" type="Sprite" parent="BelowPlayer/SpaceBG"]
-material = SubResource( 14 )
-texture = ExtResource( 66 )
-centered = false
-
-[node name="Startrails2" type="Sprite" parent="BelowPlayer/SpaceBG"]
-material = SubResource( 14 )
-position = Vector2( 1500, 0 )
-texture = ExtResource( 66 )
-centered = false
 
 [node name="Sun" type="Sprite" parent="BelowPlayer/SpaceBG"]
 material = SubResource( 17 )
@@ -2010,7 +1984,6 @@ scale = Vector2( 5, 5 )
 [node name="Catstellation" type="Sprite" parent="BelowPlayer/SpaceBG2"]
 material = SubResource( 10 )
 position = Vector2( 946.6, 311.126 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 45 )
 
 [node name="GeoquariumBG" type="Node2D" parent="BelowPlayer"]
@@ -2708,45 +2681,38 @@ scroll_speed = -0.009
 
 [node name="catellite1" type="AnimatedSprite" parent="AbovePlayer/SpaceFG"]
 position = Vector2( 352.73, 58.788 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 43 )
 script = ExtResource( 54 )
 
 [node name="catellite2" type="AnimatedSprite" parent="AbovePlayer/SpaceFG"]
 position = Vector2( -575, 179.628 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 46 )
 script = ExtResource( 54 )
 
 [node name="Spacejunk2" type="Sprite" parent="AbovePlayer/SpaceFG"]
 material = SubResource( 35 )
 position = Vector2( -483, 77.228 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 46 )
 
 [node name="Spacejunk3" type="Sprite" parent="AbovePlayer/SpaceFG"]
 material = SubResource( 38 )
 position = Vector2( 514.4, 167.828 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 20 )
 
 [node name="Spacejunk1" type="Sprite" parent="AbovePlayer/SpaceFG"]
 material = SubResource( 32 )
 position = Vector2( -280.2, 170.028 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 57 )
 
 [node name="BlueGlow" type="Sprite" parent="AbovePlayer/SpaceFG"]
 material = SubResource( 47 )
 position = Vector2( -433, -52.3716 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 53 )
 centered = false
 
 [node name="BlueGlow2" type="Sprite" parent="AbovePlayer/SpaceFG"]
 material = SubResource( 47 )
 position = Vector2( 450, -42.3716 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 53 )
 centered = false
 

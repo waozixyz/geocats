@@ -137,7 +137,7 @@ func _ready():
 	if locations:
 		locations[0] = player.position
 		if locations[global.user.location]:
-			#player.position = locations[global.user.location]
+			player.position = locations[global.user.location]
 			player.sprite.flip_h = global.user.flip_h
 	if not respawn_location:
 		respawn_location = player.position
