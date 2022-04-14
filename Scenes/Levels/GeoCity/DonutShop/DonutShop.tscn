@@ -148,8 +148,7 @@ script = ExtResource( 16 )
 [node name="BelowPlayer" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="bg" type="Sprite" parent="BelowPlayer"]
@@ -165,14 +164,15 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="donutbot_head" type="AnimatedSprite" parent="BelowPlayer"]
-position = Vector2( 70, 49 )
+position = Vector2( 69.75, 49.5 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 centered = false
 script = ExtResource( 19 )
 
 [node name="donutbot_body" type="AnimatedSprite" parent="BelowPlayer"]
-position = Vector2( 68, 59 )
+position = Vector2( 68, 59.5 )
 frames = SubResource( 6 )
 speed_scale = 0.1
 centered = false
@@ -203,7 +203,6 @@ centered = false
 [node name="glow_fg" type="AnimatedSprite" parent="AbovePlayer"]
 position = Vector2( 143, 73 )
 frames = SubResource( 11 )
-frame = 1
 speed_scale = 0.3
 playing = true
 centered = false
@@ -223,7 +222,7 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Affogato2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 816.185, 401 )
+position = Vector2( 816.185, 402 )
 script = ExtResource( 15 )
 add_move_n_slide = false
 jump_height = 10
@@ -273,6 +272,7 @@ shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="DonutBot"]
+visible = false
 position = Vector2( -61, -100 )
 script = ExtResource( 13 )
 character_name = "Donutbot"

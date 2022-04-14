@@ -31,7 +31,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 484, 24 )
+extents = Vector2( 489.5, 24 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 41, 19 )
@@ -113,6 +113,7 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="popnnip_FG" type="Sprite" parent="BelowPlayer"]
+position = Vector2( 0.25, 0 )
 texture = ExtResource( 10 )
 centered = false
 
@@ -122,7 +123,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="popnnip_flashing_light" type="AnimatedSprite" parent="BelowPlayer"]
-position = Vector2( 179, 91 )
+position = Vector2( 179, 92 )
 frames = SubResource( 3 )
 speed_scale = 0.2
 script = ExtResource( 5 )
@@ -133,7 +134,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2( -473, 228 )
+position = Vector2( -478.5, 228 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
