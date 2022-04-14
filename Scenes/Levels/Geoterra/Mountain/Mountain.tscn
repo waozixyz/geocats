@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://Assets/Environment/Telescope/telescope.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/solidplatform.png" type="Texture" id=2]
@@ -6,11 +6,10 @@
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_art.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/clouds.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Levels/Geoterra/Mountain/solidcliff.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Environment/Stars.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/ring.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat_2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/sbutton/S_Button_Press.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Levels/Geoterra/Mountain/stars.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Environment/Teleport/Internal.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Mountain.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/MountainCats/mountaincat.png" type="Texture" id=14]
@@ -26,29 +25,120 @@
 [ext_resource path="res://Scenes/Levels/Geoterra/Mountain/Nonabot.gd" type="Script" id=24]
 [ext_resource path="res://Assets/Levels/Geoterra/Mountain/Mountain_Billboard_paws.png" type="Texture" id=25]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 1000, 1000 )
+[sub_resource type="Shader" id=75]
+code = "shader_type canvas_item;
+render_mode unshaded;
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 11 )
-region = Rect2( 1000, 0, 1000, 1000 )
+uniform int iterations = 20;
+uniform float formuparam = 1.00;
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 11 )
-region = Rect2( 2000, 0, 1000, 1000 )
+uniform int volsteps = 20;
+uniform float stepsize = 0.1;
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 11 )
-region = Rect2( 3000, 0, 1000, 1000 )
+uniform float zoom = 0.800;
+uniform float tile = 0.5;
+uniform float speed = 0.001;
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+uniform float brightness = 0.002;
+uniform float darkmatter = 0.100;
+uniform float distfading = 0.650;
+uniform float saturation = 0.750;
+
+uniform vec2 iResolution = vec2(192, 192);
+uniform vec2 iMouse = vec2(0,0);
+
+float SCurve (float value) {
+
+    if (value < 0.5)
+    {
+        return value * value * value * value * value * 16.0; 
+    }
+    
+    value -= 1.0;
+    
+    return value * value * value * value * value * 16.0 + 1.0;
+}
+
+uniform mat4 global_transform;
+varying vec2 world_pos;
+void vertex(){
+    world_pos = (global_transform * vec4(VERTEX, 0.0, 1.0)).xy;
+}
+
+void fragment()
+{
+	//get coords and direction
+	vec2 uv=world_pos.xy/iResolution.xy-.5;
+	uv.y*=iResolution.y/iResolution.x;
+	vec3 dir=vec3(uv*zoom,1.);
+	float time=TIME*speed+.25;
+
+	//mouse rotation
+	float a1=0.5+iMouse.x/iResolution.x*2.;
+	float a2=0.8+iMouse.y/iResolution.y*2.;
+	mat2 rot1=mat2(vec2(cos(a1),sin(a1)),vec2(-sin(a1),cos(a1)));
+	mat2 rot2=mat2(vec2(cos(a2),sin(a2)),vec2(-sin(a2),cos(a2)));
+	dir.xy*=rot1;
+	dir.xz*=rot2;
+	vec3 from=vec3(1.0,0.5,0.5);
+	from-=vec3(0.0,time,0.0);
+	from.xz*=rot1;
+	from.xy*=rot2;
+	
+	//volumetric rendering
+	float s=0.1,fade=1.;
+	vec3 v=vec3(0.);
+	for (int r=0; r<volsteps; r++) {
+		vec3 p=from+s*dir*0.5;
+		p = abs(vec3(tile)-mod(p,vec3(tile*2.))); // tiling fold
+		float pa,a=pa=0.;
+		for (int i=0; i<iterations; i++) { 
+			p=abs(p)/dot(p,p)-formuparam; // the magic formula
+			a+=abs(length(p)-pa); // absolute sum of average change
+			pa=length(p);
+		}
+		float dm=max(0.,darkmatter-a*a*.001); //dark matter
+		a = pow(a, 2.3); // add contrast
+		if (r>6) fade*=1.-dm; // dark matter, don't render near
+		//v+=vec3(dm,dm*.5,0.);
+		v+=fade;
+		v+=vec3(s,s*s,s*s*s*s)*a*brightness*fade; // coloring based on distance
+		fade*=distfading; // distance fading
+		s+=stepsize;
+	}
+    
+	v=mix(vec3(length(v)),v,saturation); //color adjust
+    
+    vec4 C = vec4(v*.01,1.);
+    
+     	C.r = pow(C.r, 0.35); 
+ 	 	C.g = pow(C.g, 0.36); 
+ 	 	C.b = pow(C.b, 0.38); 
+ 	
+    vec4 L = C;   	
+    
+    COLOR.r = mix(L.r, SCurve(C.r), 0.7); 
+    COLOR.g = mix(L.g, SCurve(C.g), 1.0); 
+    COLOR.b = mix(L.b, SCurve(C.b), 0.2);     	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=76]
+shader = SubResource( 75 )
+shader_param/iterations = 20
+shader_param/formuparam = 1.0
+shader_param/volsteps = 5
+shader_param/stepsize = 0.2
+shader_param/zoom = 0.1
+shader_param/tile = 0.5
+shader_param/speed = 0.001
+shader_param/brightness = 0.002
+shader_param/darkmatter = 0.1
+shader_param/distfading = 0.65
+shader_param/saturation = 0.75
+shader_param/iResolution = Vector2( 192, 192 )
+shader_param/iMouse = Vector2( 0, 0 )
+shader_param/global_transform = null
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 363.695, 11.3206 )
@@ -328,29 +418,24 @@ extents = Vector2( 73, 78 )
 script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]
-scale = Vector2( 5, 5 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="Mountain_art" type="Sprite" parent="BelowPlayer"]
+scale = Vector2( 5, 5 )
 texture = ExtResource( 4 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="stars" type="AnimatedSprite" parent="BelowPlayer"]
-frames = SubResource( 5 )
-speed_scale = 0.2
-centered = false
-script = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Stars" parent="BelowPlayer" instance=ExtResource( 7 )]
+material = SubResource( 76 )
 
 [node name="ring" type="Sprite" parent="BelowPlayer"]
+scale = Vector2( 5, 5 )
 texture = ExtResource( 8 )
 centered = false
 __meta__ = {
@@ -358,7 +443,8 @@ __meta__ = {
 }
 
 [node name="telescope" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 349, 309 )
+position = Vector2( 1745, 1545 )
+scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 centered = false
 __meta__ = {
@@ -366,11 +452,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="BelowPlayer"]
-position = Vector2( 370.889, 674.259 )
+position = Vector2( 1854.44, 3371.29 )
+scale = Vector2( 5, 5 )
 texture = ExtResource( 25 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 70, 4863 )
+position = Vector2( 1865, 1593 )
 
 [node name="Camera2D" parent="Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -641,10 +728,6 @@ __meta__ = {
 
 [node name="solidplatform" type="Sprite" parent="AbovePlayer"]
 texture = ExtResource( 2 )
-centered = false
-
-[node name="solidcliff" type="Sprite" parent="AbovePlayer"]
-texture = ExtResource( 7 )
 centered = false
 
 [node name="ground" type="Sprite" parent="AbovePlayer"]

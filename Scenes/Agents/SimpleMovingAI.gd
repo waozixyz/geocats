@@ -57,7 +57,8 @@ func _physics_process(_delta):
 	if sprite:
 		if not global.user.following.has(name):
 			sprite.flip_h =  not bool((direction + 1) / 2)
-		sprite.play(anim)
+		if sprite and sprite.frames and sprite.frames.has_animation(anim):
+			sprite.play(anim)
 	velocity = move_and_slide(velocity, Vector2.UP, true) #apply velocity to movement
 
 

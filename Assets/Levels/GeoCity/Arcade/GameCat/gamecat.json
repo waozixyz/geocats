@@ -23,10 +23,16 @@
       "position": "left",
       "animation_in": "fade_in",
       "type": "text",
-      "content": "One of my friends told me that Geocats is more than just a videogame.@She told me that they're an ancient organisation of cats who spend their time searching the world for Geocaches.",
+      "content": "One of my friends told me that Geocats is more than just a videogame.@She told me that they're an ancient organisation of cats.",
       "next": "r2"
     },
     "r2": {
+      "position": "left",
+      "type": "text",
+      "content": "They spend thier time searching the world for it's hidden treasures and far-out mysteries.",
+      "next": "r3"
+    },
+    "r3": {
       "position": "left",
       "type": "text",
       "content": "Don't get your hopes up though, I've also heard it's almost impossible to join their weird club...",

@@ -205,7 +205,11 @@ cursor=false
 
 texture={
 "compress/mode": 3,
+"detect_3d": false,
 "flags/filter": false
+}
+wav={
+"compress/mode": 1
 }
 
 [input]
