@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FootstepsOnGravelFast.wav-0d93f1a73b4bd3020f498fda967f4ac0.sample"
+
+[deps]
+
+source_file="res://Assets/Environment/Teleport/FootstepsOnGravelFast.wav"
+dest_files=[ "res://.import/FootstepsOnGravelFast.wav-0d93f1a73b4bd3020f498fda967f4ac0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=1

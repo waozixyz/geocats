@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WayoWayo.wav-5c37484e5af7ec59d3454e9a1c37568c.sample"
+
+[deps]
+
+source_file="res://Assets/Environment/Teleport/WayoWayo.wav"
+dest_files=[ "res://.import/WayoWayo.wav-5c37484e5af7ec59d3454e9a1c37568c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=1

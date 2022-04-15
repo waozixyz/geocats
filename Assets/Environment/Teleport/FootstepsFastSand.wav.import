@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FootstepsFastSand.wav-1f8aceb3835817e42e9c0a3a29f4091d.sample"
+
+[deps]
+
+source_file="res://Assets/Environment/Teleport/FootstepsFastSand.wav"
+dest_files=[ "res://.import/FootstepsFastSand.wav-1f8aceb3835817e42e9c0a3a29f4091d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=1

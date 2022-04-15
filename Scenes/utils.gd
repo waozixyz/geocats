@@ -1,8 +1,7 @@
 extends Node
 
-func get_teleport_sound(sound_name):
-	var path = "res://Assets/Environment/Teleport/" + sound_name
-	return path + find_sound_ext(path)
+func get_teleport_sound(sound_name, sound_ext = ".wav"):
+	return "res://Assets/Environment/Teleport/" + sound_name + sound_ext
 
 func get_character_folder(json_file):
 	var regex = RegEx.new()
@@ -24,15 +23,6 @@ func find_agent_path(agent_name):
 		return start + agent_name + '/' + end
 	else:
 		printerr("wrong path: ", start, end)
-
-func find_sound_ext(path):
-	var file2Check = File.new()
-	if file2Check.file_exists(path + ".ogg"):
-		return ".ogg"
-	elif file2Check.file_exists(path + ".wav"):
-		return ".wav"
-	else:
-		printerr("wrong path: ", path)
 
 func toggle(boolean):
 	return false if boolean else true

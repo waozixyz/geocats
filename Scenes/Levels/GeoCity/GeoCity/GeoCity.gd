@@ -7,7 +7,8 @@ onready var giant_pumpkin = $GiantPumpkin
 var res_path = "res://Assets/Levels/GeoCity/GeoCity/"
 
 func _ready():
-
+	AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
+	AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
 	#var season = utils.get_season()
 	var season = "Summer"
 	if season == "Winter":

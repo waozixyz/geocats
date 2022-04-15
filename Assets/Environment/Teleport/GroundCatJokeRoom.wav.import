@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GroundCatJokeRoom.wav-31d1af1f09021e0bd2ccaa950ab0519b.sample"
+
+[deps]
+
+source_file="res://Assets/Environment/Teleport/GroundCatJokeRoom.wav"
+dest_files=[ "res://.import/GroundCatJokeRoom.wav-31d1af1f09021e0bd2ccaa950ab0519b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=1

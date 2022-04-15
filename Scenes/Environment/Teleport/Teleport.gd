@@ -22,4 +22,5 @@ func _play_sound():
 	if sound_effect != Sounds.None:
 		var file_path = utils.get_teleport_sound( Sounds.keys()[sound_effect])
 		var sound = AudioManager.play_sound(file_path, sound_volume)
+
 		sound.pause_mode = PAUSE_MODE_PROCESS

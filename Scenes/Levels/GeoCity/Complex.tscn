@@ -389,9 +389,11 @@ shape = SubResource( 9 )
 
 [node name="IceBoxSFX" type="Area2D" parent="Interactive"]
 position = Vector2( 561.491, 177.263 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
+sound_effect = "res://Assets/Levels/GeoCity/Complex/IceBoxSFX.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive/IceBoxSFX"]
 position = Vector2( -20.9362, 51.9664 )
