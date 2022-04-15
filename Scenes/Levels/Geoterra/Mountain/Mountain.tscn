@@ -415,7 +415,6 @@ extents = Vector2( 84, 53 )
 extents = Vector2( 73, 78 )
 
 [node name="Mountain" type="Node2D"]
-position = Vector2( -684, 672 )
 script = ExtResource( 13 )
 
 [node name="BelowPlayer" type="Node2D" parent="."]

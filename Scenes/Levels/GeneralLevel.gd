@@ -114,6 +114,7 @@ func add_follower(cat):
 	move_child(cat, player.get_index())
 	cat.set_owner(self)
 	cat.sprite.play("idle")
+	cat.follow_order = player.position_log.size() - 1
 	if cat.has_node("ChatNPC"):
 		cat.get_node("ChatNPC").disabled = true
 

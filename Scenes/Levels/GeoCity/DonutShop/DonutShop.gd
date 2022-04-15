@@ -8,12 +8,11 @@ func _physics_process(_delta):
 	var teleport = PROGRESS.variables.get("teleport")
 
 	if teleport:
-		PROGRESS.variables["teleport"] = false
 		global.user.location = 0
 		var sound = AudioManager.play_sound(utils.get_teleport_sound("WayoWayo"))
 		sound.pause_mode = PAUSE_MODE_PROCESS
 		SceneChanger.change_scene("Geoterra", "Creek")
-
+		PROGRESS.variables["teleport"] = false
 
 	if "Affogato" in global.user.following:
 		for follower in followers:

@@ -222,7 +222,7 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Affogato2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 816.185, 402 )
+position = Vector2( 816.185, 409 )
 script = ExtResource( 15 )
 add_move_n_slide = false
 jump_height = 10
@@ -232,6 +232,9 @@ has_parent = true
 character_name = "Affogato"
 json_file = "res://Assets/Levels/GeoCity/DonutShop/affogato_donutshop.json"
 sound_file = "res://Assets/Agents/Affogato/affogato.ogg"
+
+[node name="CollisionShape2D" parent="Affogato2" index="2"]
+position = Vector2( -2, 3.75 )
 
 [node name="DonutBot" type="Node2D" parent="."]
 position = Vector2( 337, 391 )
