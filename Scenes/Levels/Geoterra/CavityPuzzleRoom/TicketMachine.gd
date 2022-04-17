@@ -13,7 +13,7 @@ onready var pull_ticket = $PullTicket
 var frame = 0
 
 var total_frames = 10
-var completed
+
 func _ready():
 
 	#hide_interact = false
@@ -27,9 +27,9 @@ func _ready():
 	assert(err == OK)
 	err = pull_ticket.connect("pressed", self, "_pull_ticket")
 	assert(err == OK)
-	completed = PROGRESS.variables.get("CavityPuzzleTicketPrinted")
-	ticket.visible = true if completed else false
-	if completed:
+	ticket_print_done = PROGRESS.variables.get("CavityPuzzleTicketPrinted")
+	ticket.visible = true if ticket_print_done else false
+	if ticket_print_done:
 		minus.disabled = true
 		plus.disabled = true
 		enter.disabled = true
@@ -38,9 +38,9 @@ func _pull_ticket():
 	pass
 
 func _ticket_pressed():
-	if ticket_print_done:
-		OS.shell_open("https://discord.gg/28jQ9RETNz")
-
+	if ticket_print_done and modulate.a > 0:
+		var err = OS.shell_open("https://discord.gg/28jQ9RETNz")
+		assert(err == OK)
 func _plus_pressed():
 	if sprite.frame < 11:
 		frame += 1
@@ -55,7 +55,6 @@ func _minus_pressed():
 		if frame < 0:
 			frame = total_frames - 1
 		sprite.frame = frame
-	#	sprite.frame = frame
 
 var success
 var failed
@@ -106,7 +105,6 @@ func _process(delta):
 	
 
 func ticket_printed():
-	#nft.reward(nft_id)
 	ticket.visible = true
 
 	ticket_print_done = true

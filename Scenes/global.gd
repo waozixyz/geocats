@@ -45,7 +45,7 @@ func init_data():
 func _enter_tree():
 	get_tree().set_auto_accept_quit(false)
 		
-func save_data():
+func save_game():
 	data.prog_var = PROGRESS.variables
 	data.prog_dia = PROGRESS.dialogues
 	data.prog_quests = PROGRESS.quests
@@ -53,18 +53,18 @@ func save_data():
 	_save_data(user, user_file)
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		save_data()
+		save_game()
 		get_tree().quit()
 
 
 func _ready():
 	init_data()
-	load_data()
+	load_game()
 	randomize()
 	for _i in range(0, 7):
 		pumpkin_code += str(int(rand_range(1, 8)))
 
-func load_data():
+func load_game():
 	
 	# overwrite data with saved data
 	data = _load_data(data_file, data)
@@ -76,7 +76,7 @@ func load_data():
 	_load_audio_bus("Sound")
 
 	# load dialogue system data
-	PROGRESS.variables = data.prog_var
+	#PROGRESS.variables = data.prog_var
 	PROGRESS.dialogues = data.prog_dia
 	PROGRESS.quests = data.prog_quests
 

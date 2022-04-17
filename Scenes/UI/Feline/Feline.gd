@@ -59,10 +59,27 @@ func settings():
 	_change_view(settings_view)
 
 var map
+var temp_hide = []
+func _close_map():
+	map_tween = utils.tween(map, "fade", 0, .5)
+	utils.tween(map.chat, "fade", 0, .5)
+	map.last_territory = ""
+	current_scene.set_disable("e_interact", "map", false)
+	for child in temp_hide:
+		child.visible = true
+		temp_hide.erase(child)
+
 func _open_map():
 	get_parent().add_child(map)
 	utils.tween(map, "fade", 1, .5)
 	exit()
+	for child in current_scene.get_children():
+		if child is CanvasLayer:
+			for c in child.get_children():
+				if c != map and c.visible:
+					c.visible = false
+					temp_hide.append(c)
+
 	current_scene.set_disable("e_interact", "map")
 var geodex
 func _open_geodex():
@@ -89,7 +106,7 @@ func _button_action(label):
 			_open_geodex()
 		"Exit":
 			exit()
-			global.save_data()
+			global.save_game()
 			SceneChanger.change_scene("TitleScreen")
 
 
@@ -121,6 +138,7 @@ var press_timer = 0
 var red_pressed
 var tween
 func _process(delta):
+	visible = true if modulate.a > 0 else false
 
 	var dfps = delta * global.fps
 	if old_view is Control and old_view.modulate.a == 0:
@@ -183,13 +201,9 @@ func _input(event):
 			exit()
 
 		else:
-			if map.modulate.a > 0:
-				map_tween = utils.tween(map, "fade", 0, .5)
-				if map.chat.modulate.a != 0:
-					utils.tween(map.chat, "fade", 0, .5)
-				map.last_territory = ""
-				current_scene.set_disable("e_interact", "map", false)
-			elif tween and not tween.is_active() or not tween:
+			if map.modulate.a > 0 and not utils.is_active(map_tween):
+				_close_map()
+			elif not utils.is_active(tween):
 				current_scene.set_disable("e_interact", "feline")
 				active = true
 				tween = utils.tween(self, "fade", 1, 1)

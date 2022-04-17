@@ -73,7 +73,9 @@ var chat_with =  load("res://Scenes/UI/Interact/ChatWith.tscn").instance()
 func _add_default_nodes():
 	add_child(crt_effect)
 	canvas_layer = CanvasLayer.new()
+
 	add_child(canvas_layer)
+
 	chat_with.visible = false
 	canvas_layer.add_child(chat_with)
 	canvas_layer.add_child(dialogue)

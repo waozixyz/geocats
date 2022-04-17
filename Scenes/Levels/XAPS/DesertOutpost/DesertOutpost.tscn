@@ -788,7 +788,7 @@ player_disable = "feline_outpost"
 shape = SubResource( 68 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 46.8413, 1085.44 )
+position = Vector2( 47, 1056 )
 
 [node name="Camera2D" parent="Player" index="0"]
 zoom = Vector2( 1.5, 1.5 )
@@ -1234,7 +1234,8 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource( 11 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder11"]
@@ -1319,16 +1320,19 @@ position = Vector2( 0, -6 )
 shape = SubResource( 110 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Computer" type="Control" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 193.0
 margin_bottom = 193.0
+mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Computer"]
 margin_top = -193.0
 margin_right = 640.0
 margin_bottom = 287.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -1362,6 +1366,7 @@ margin_left = 294.0
 margin_top = 86.0
 margin_right = 294.0
 margin_bottom = 86.0
+mouse_filter = 1
 script = ExtResource( 53 )
 
 [node name="Weather" type="TextureButton" parent="CanvasLayer/Computer/Buttons"]
@@ -1369,6 +1374,7 @@ margin_left = -267.0
 margin_top = -15.0
 margin_right = -226.0
 margin_bottom = 25.0
+mouse_filter = 1
 group = SubResource( 111 )
 texture_normal = ExtResource( 27 )
 texture_pressed = ExtResource( 25 )
@@ -1383,6 +1389,7 @@ margin_left = -234.0
 margin_top = 32.018
 margin_right = -193.0
 margin_bottom = 72.018
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 26 )
@@ -1394,6 +1401,7 @@ margin_left = -144.0
 margin_top = -15.0
 margin_right = -103.0
 margin_bottom = 25.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 47 )
 texture_pressed = ExtResource( 29 )
@@ -1408,6 +1416,7 @@ margin_left = -205.826
 margin_top = -15.0
 margin_right = -164.826
 margin_bottom = 25.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 28 )
@@ -1422,6 +1431,7 @@ margin_left = -171.274
 margin_top = 32.018
 margin_right = -130.274
 margin_bottom = 72.018
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 40 )
@@ -1436,6 +1446,7 @@ margin_left = -109.0
 margin_top = 32.018
 margin_right = -68.0
 margin_bottom = 72.018
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 50 )
 texture_pressed = ExtResource( 38 )
@@ -1447,6 +1458,7 @@ margin_left = -267.0
 margin_top = 77.0
 margin_right = -226.0
 margin_bottom = 117.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 44 )
 texture_pressed = ExtResource( 42 )
@@ -1461,6 +1473,7 @@ margin_left = -205.826
 margin_top = 77.0
 margin_right = -164.826
 margin_bottom = 117.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 46 )
 texture_pressed = ExtResource( 45 )
@@ -1475,6 +1488,7 @@ margin_left = -144.0
 margin_top = 77.0
 margin_right = -103.0
 margin_bottom = 117.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 31 )
 texture_pressed = ExtResource( 30 )
@@ -1489,6 +1503,7 @@ margin_left = -234.0
 margin_top = 125.982
 margin_right = -193.0
 margin_bottom = 165.982
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 35 )
 texture_pressed = ExtResource( 17 )
@@ -1503,6 +1518,7 @@ margin_left = -171.274
 margin_top = 125.982
 margin_right = -133.183
 margin_bottom = 165.982
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 48 )
 texture_pressed = ExtResource( 51 )
@@ -1517,6 +1533,7 @@ margin_left = -109.0
 margin_top = 125.982
 margin_right = -68.0
 margin_bottom = 165.982
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 34 )
 texture_pressed = ExtResource( 36 )
@@ -1531,6 +1548,7 @@ margin_left = -81.0
 margin_top = -15.0
 margin_right = -40.0
 margin_bottom = 25.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 41 )
 texture_pressed = ExtResource( 33 )
@@ -1545,6 +1563,7 @@ margin_left = -80.0
 margin_top = 77.0
 margin_right = -39.0
 margin_bottom = 117.0
+mouse_filter = 1
 group = SubResource( 112 )
 texture_normal = ExtResource( 49 )
 texture_pressed = ExtResource( 43 )
@@ -1558,6 +1577,7 @@ __meta__ = {
 margin_right = 305.0
 margin_bottom = 150.0
 focus_mode = 2
+mouse_filter = 1
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = ExtResource( 57 )
 selection_enabled = true
@@ -1567,7 +1587,8 @@ position = Vector2( 3499.67, 552 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 24 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 disable_player = "computer"
 make_node_visible = NodePath("../CanvasLayer/Computer")
@@ -1633,6 +1654,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+disable_player = "telescope"
 dest_zoom = Vector2( 4, 4 )
 zoom_speed = 2.0
 offset = Vector2( 600, 200 )
@@ -1651,6 +1673,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+disable_player = "telescope"
 dest_zoom = Vector2( 6, 6 )
 zoom_speed = 3.0
 offset = Vector2( -2000, 0 )

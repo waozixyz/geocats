@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_FG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_corpseflower.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave_bg_vine.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Levels/Geoterra/GreenCave/greencave.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/Environment/Water/Water.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Agents/SpriteAutoPlay.gd" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.374, 1107.3 )
@@ -48,26 +49,6 @@ extents = Vector2( 134.445, 129.817 )
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 248.793, 102.488 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 11 )
-region = Rect2( 30, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 11 )
-region = Rect2( 45, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 11 )
-region = Rect2( 60, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 11 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 15, 15 )
@@ -88,8 +69,33 @@ region = Rect2( 45, 0, 15, 15 )
 atlas = ExtResource( 11 )
 region = Rect2( 60, 0, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 11 )
+region = Rect2( 30, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 11 )
+region = Rect2( 45, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 11 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 20 ), SubResource( 21 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "climb",
@@ -98,11 +104,6 @@ animations = [ {
 "frames": [ SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 20 ), SubResource( 21 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
-"loop": true,
-"name": "idle",
 "speed": 5.0
 } ]
 
@@ -183,9 +184,7 @@ position = Vector2( -6432.07, -2651.86 )
 polygon = PoolVector2Array( 7746.72, 3606.52, 7708.39, 3635.13, 7670.68, 3646.87, 7584.62, 3647.9, 7513.89, 3605.23, 7489.29, 3585.03, 7485.73, 3554.77, 7541.56, 3617.47, 7614.49, 3642.27, 7668.96, 3641.9, 7701.75, 3631.68, 7743.04, 3593.2 )
 one_way_collision = true
 
-[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=[
-"end",
-]]
+[node name="EndWalls" type="StaticBody2D" parent="Collisions" groups=["end"]]
 collision_layer = 2
 collision_mask = 0
 
@@ -436,12 +435,13 @@ json_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.json"
 sound_file = "res://Assets/Levels/Geoterra/GreenCave/cowboycat/CowboyCat.ogg"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Cats/CowboyCat"]
+position = Vector2( 0.469971, 3.79004 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 22 )
 animation = "idle"
-frame = 6
-playing = true
+frame = 18
 flip_h = true
+script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cats/CowboyCat"]
 position = Vector2( 2.47534, -6.80725 )

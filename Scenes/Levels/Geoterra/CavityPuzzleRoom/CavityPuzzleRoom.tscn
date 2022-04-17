@@ -496,6 +496,14 @@ region = Rect2( 45, 30, 15, 15 )
 atlas = ExtResource( 41 )
 region = Rect2( 60, 30, 15, 15 )
 
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 41 )
+region = Rect2( 0, 15, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 41 )
+region = Rect2( 15, 15, 15, 15 )
+
 [sub_resource type="AtlasTexture" id=104]
 atlas = ExtResource( 41 )
 region = Rect2( 30, 15, 15, 15 )
@@ -508,14 +516,6 @@ region = Rect2( 45, 15, 15, 15 )
 atlas = ExtResource( 41 )
 region = Rect2( 60, 15, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=107]
-atlas = ExtResource( 41 )
-region = Rect2( 0, 15, 15, 15 )
-
-[sub_resource type="AtlasTexture" id=108]
-atlas = ExtResource( 41 )
-region = Rect2( 15, 15, 15, 15 )
-
 [sub_resource type="SpriteFrames" id=109]
 animations = [ {
 "frames": [ SubResource( 95 ), SubResource( 95 ), SubResource( 95 ), SubResource( 95 ), SubResource( 96 ), SubResource( 96 ), SubResource( 96 ), SubResource( 95 ), SubResource( 95 ), SubResource( 95 ), SubResource( 95 ), SubResource( 97 ), SubResource( 97 ), SubResource( 98 ), SubResource( 98 ), SubResource( 98 ), SubResource( 98 ), SubResource( 98 ), SubResource( 95 ), SubResource( 95 ), SubResource( 95 ), SubResource( 99 ), SubResource( 99 ), SubResource( 100 ), SubResource( 100 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 103 ), SubResource( 102 ), SubResource( 101 ), SubResource( 100 ), SubResource( 99 ) ],
@@ -523,19 +523,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 104 ), SubResource( 105 ), SubResource( 106 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 107 ), SubResource( 108 ) ],
 "loop": true,
 "name": "walk",
 "speed": 3.0
+}, {
+"frames": [ SubResource( 104 ), SubResource( 105 ), SubResource( 106 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=110]
-extents = Vector2( 45.3608, 28.051 )
+extents = Vector2( 34.6328, 24.8408 )
 
 [node name="CavityPuzzleRoom" type="Node2D"]
 script = ExtResource( 30 )
@@ -611,9 +611,6 @@ margin_top = -2.46155
 margin_right = -121.847
 margin_bottom = -2.46155
 script = ExtResource( 37 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 310, 102 )
@@ -630,9 +627,6 @@ texture_normal = ExtResource( 34 )
 texture_pressed = ExtResource( 35 )
 expand = true
 script = ExtResource( 39 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/addition.ogg"
 
 [node name="Minus" type="TextureButton" parent="CanvasLayer/HUD"]
@@ -694,9 +688,6 @@ margin_top = 245.0
 margin_right = 612.0
 margin_bottom = 272.0
 flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 127, 427 )
@@ -807,9 +798,7 @@ position = Vector2( 88, -5.81299 )
 scale = Vector2( 0.306122, 0.298077 )
 texture = ExtResource( 4 )
 
-[node name="Ground" type="StaticBody2D" parent="." groups=[
-"end",
-]]
+[node name="Ground" type="StaticBody2D" parent="." groups=["end"]]
 scale = Vector2( 0.833, 1 )
 collision_layer = 2
 collision_mask = 0
@@ -838,7 +827,7 @@ json_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.json"
 sound_file = "res://Assets/Levels/Geoterra/CavityPuzzleRoom/mushroomcat.wav"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="NPC/MushroomCatArea2D"]
-position = Vector2( 4, 4 )
+position = Vector2( 5, 4 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 109 )
 animation = "idle"
@@ -847,7 +836,7 @@ flip_h = true
 script = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/MushroomCatArea2D"]
-position = Vector2( -8.76025, -6.37939 )
+position = Vector2( 1.96777, -3.16919 )
 shape = SubResource( 110 )
 
 [editable path="Player"]

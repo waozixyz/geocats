@@ -11,8 +11,9 @@ func _ready():
 			child.connect("pressed", self, "_btn_pressed", [child])
 
 
+		#child.mouseif get_parent().module.a > 0
 func _update_label(file_name):
-	label.text = ""
+	label.text = "" 
 	var path = dir_path + "/" + file_name + ".txt"
 	if file.file_exists(path):
 		file.open(path, File.READ)

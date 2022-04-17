@@ -1,10 +1,9 @@
-extends Node2D
+extends Control
 
 onready var current_scene = get_tree().get_current_scene()
 
 onready var ringmap = $Ringmap
 onready var spotlight = $Spotlight
-onready var territories = $Ringmap/Territories
 onready var chat = $Chat
 onready var question = $Chat/Question
 onready var exclaim = $Chat/Exclaim
@@ -25,9 +24,10 @@ func _replace_scene_name(scene_name):
 		_: return scene_name
 
 func _ready():
-	for territory in territories.get_children():
+	for territory in ringmap.get_children():
 		var err = territory.connect("input_event", self, "_input_event", [territory])
 		assert(err == OK)
+
 	chat.modulate.a = 0
 var last_territory = ""
 var clicked_territory = false
@@ -39,6 +39,7 @@ func label_clicked(data):
 	SceneChanger.change_scene(data[0], data[1])
 	if current_scene is GeneralLevel:
 		current_scene.set_disable("e_interact", "map", false)
+		
 func _update_dialogue(territory):
 	if global.user.visited.has(territory):
 		exclaim.visible = true
@@ -74,8 +75,10 @@ func _update_dialogue(territory):
 func _update_spotlight(pos):
 	spotlight.position = pos
 	spotlight.visible = true
+
 func _input_event(_viewport, event, _shape_idx, territory):
 	if event is InputEventMouse and event.is_pressed() and event.button_index == BUTTON_LEFT:
+
 		if territory.name != "Null":
 			if last_territory != territory.name and chat.modulate.a == 0:
 				utils.tween(chat, "fade", 1, .5)
@@ -86,7 +89,7 @@ func _input_event(_viewport, event, _shape_idx, territory):
 			clicked_territory = false
 
 		_update_spotlight(event.position)
-	
+		get_tree().set_input_as_handled()
 
 
 func _process(_delta):
@@ -101,12 +104,15 @@ func _process(_delta):
 		last_territory = ""
 		
 	if arrow_right.pressed:
-		if ringmap.position.x > -ringmap.texture.get_width() * ringmap.scale.x + 650:
-			ringmap.position.x -= scroll_speed
+		if ringmap.rect_position.x > -ringmap.texture.get_width() * ringmap.rect_scale.x + 650:
+			ringmap.rect_position.x -= scroll_speed
 		spotlight.visible = false
 		clicked_territory = false
 	if arrow_left.pressed:
-		if ringmap.position.x < 0:
-			ringmap.position.x += scroll_speed
+		if ringmap.rect_position.x < 0:
+			ringmap.rect_position.x += scroll_speed
 		spotlight.visible = false
 		clicked_territory = false
+
+
+

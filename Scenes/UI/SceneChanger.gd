@@ -46,6 +46,7 @@ func change_scene(level_territory, level_name = ""):
 		change = true
 		timer = 0
 		sprite.play()
+		global.save_game()
 	else:
 		printerr("missing level path")
 

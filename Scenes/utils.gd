@@ -24,6 +24,11 @@ func find_agent_path(agent_name):
 	else:
 		printerr("wrong path: ", start, end)
 
+func is_active(tween):
+	if tween and tween.is_active():
+		return true
+	else:
+		return false
 func toggle(boolean):
 	return false if boolean else true
 

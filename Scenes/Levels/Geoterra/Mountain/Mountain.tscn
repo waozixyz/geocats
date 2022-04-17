@@ -851,6 +851,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+disable_player = "telescope"
 dest_zoom = Vector2( 7.5, 7.5 )
 offset = Vector2( 150, 120 )
 
