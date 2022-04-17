@@ -76,7 +76,7 @@ func load_game():
 	_load_audio_bus("Sound")
 
 	# load dialogue system data
-	#PROGRESS.variables = data.prog_var
+	PROGRESS.variables = data.prog_var
 	PROGRESS.dialogues = data.prog_dia
 	PROGRESS.quests = data.prog_quests
 
