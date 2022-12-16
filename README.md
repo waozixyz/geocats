@@ -1,6 +1,8 @@
 ![](icon.png)
 
-# Geocats
+**NO LONGER MAINTAINED**
+
+# Geocats 
 
 ### Prerequisites
  - [Godot Engine](https://godotengine.org/)
